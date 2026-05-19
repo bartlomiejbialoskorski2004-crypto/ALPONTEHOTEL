@@ -16,7 +16,7 @@ export default function Hero({ data }: { data: HeroData }) {
   const t = useTranslations("hero");
 
   const sanityImageUrl = data.heroImage?.asset?._ref
-    ? urlFor(data.heroImage).width(2400).quality(85).url()
+    ? (urlFor(data.heroImage)?.width(2400).quality(85).url() ?? null)
     : null;
 
   return (

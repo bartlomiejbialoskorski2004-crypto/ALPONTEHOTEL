@@ -1,9 +1,21 @@
 import createImageUrlBuilder from "@sanity/image-url";
+import type { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
 import type { Image } from "sanity";
-import { dataset, projectId } from "../env";
+import { dataset, isSanityConfigured, projectId } from "../env";
 
-const builder = createImageUrlBuilder({ projectId, dataset });
+let builder: ImageUrlBuilder | null = null;
 
-export function urlFor(source: Image | { asset?: { _ref?: string } }) {
-  return builder.image(source as Image);
+function getBuilder(): ImageUrlBuilder | null {
+  if (builder) return builder;
+  if (!isSanityConfigured) return null;
+  builder = createImageUrlBuilder({ projectId, dataset });
+  return builder;
+}
+
+export function urlFor(
+  source: Image | { asset?: { _ref?: string } },
+): ImageUrlBuilder | null {
+  const b = getBuilder();
+  if (!b) return null;
+  return b.image(source as Image);
 }
