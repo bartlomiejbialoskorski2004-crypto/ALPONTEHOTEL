@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "hotel": "Hôtel",
+    "location": "Emplacement",
+    "contact": "Contact",
+    "bookNow": "Réserver",
+    "language": "Langue",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "hero": {
+    "ctaContact": "Nous contacter",
+    "scrollHint": "Faire défiler"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Réservez votre séjour ou écrivez-nous — nous répondons sous 24 heures.",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "directions": "Itinéraire"
+  },
+  "fallback": {
+    "name": "Al Ponte",
+    "tagline": "Hôtel boutique au bord du lac de Lugano",
+    "address": "Via del Ponte 1, 6900 Lugano, Suisse",
+    "phone": "+41 91 000 00 00",
+    "email": "info@alpontehotel.ch"
+  }
+}
