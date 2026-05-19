@@ -8,6 +8,10 @@ import { client } from "@/sanity/lib/client";
 import { hotelBookingUrlQuery } from "@/sanity/queries";
 import Header from "@/components/Header";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+  "http://localhost:3000";
+
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600"],
@@ -23,14 +27,45 @@ const libreBaskerville = Libre_Baskerville({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Al Ponte — Boutique Hotel, Lago di Lugano",
-  description:
-    "Al Ponte is a boutique hotel on the shores of Lake Lugano, in the Italian-speaking heart of Switzerland.",
-};
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const localePath = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const canonical = `${siteUrl}${localePath || "/"}`;
+
+  const languages = Object.fromEntries(
+    routing.locales.map((l) => [
+      l,
+      `${siteUrl}${l === routing.defaultLocale ? "" : `/${l}`}`,
+    ]),
+  );
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: "Al Ponte — Boutique Hotel, Lago di Lugano",
+    description:
+      "Al Ponte is a boutique hotel on the shores of Lake Lugano, in the Italian-speaking heart of Switzerland.",
+    alternates: {
+      canonical,
+      languages: { ...languages, "x-default": siteUrl },
+    },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      siteName: "Al Ponte",
+      locale,
+      title: "Al Ponte — Boutique Hotel, Lago di Lugano",
+      description:
+        "Al Ponte is a boutique hotel on the shores of Lake Lugano, in the Italian-speaking heart of Switzerland.",
+    },
+  };
 }
 
 async function fetchBookingUrl(): Promise<string | undefined> {
