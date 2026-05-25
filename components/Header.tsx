@@ -101,17 +101,20 @@ export default function Header({ bookingUrl }: Props) {
           setHovered(false);
           setOpenMenu(null);
         }}
-        className={`fixed inset-x-0 top-0 z-40 transition-colors duration-500 ${
-          active
-            ? "bg-paper/95 text-ink backdrop-blur-md"
-            : "bg-transparent text-paper"
+        className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
+          active ? "text-ink" : "text-paper"
         }`}
       >
-        <div
-          className={`grid h-20 grid-cols-[1fr_auto_1fr] items-stretch px-6 transition-colors duration-500 md:h-24 md:px-10 ${
-            active ? "border-b border-mist" : "border-b border-transparent"
-          }`}
-        >
+        {/* Solid white bar that slides down from the top when active */}
+        <motion.div
+          aria-hidden
+          initial={false}
+          animate={{ y: active ? "0%" : "-100%" }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-none absolute inset-x-0 top-0 h-20 border-b border-mist bg-paper md:h-24"
+        />
+
+        <div className="relative z-10 grid h-20 grid-cols-[1fr_auto_1fr] items-stretch px-6 md:h-24 md:px-10">
           <div className="hidden h-full items-center justify-start gap-8 md:flex">
             {left.map(renderTopItem)}
           </div>
@@ -174,7 +177,7 @@ export default function Header({ bookingUrl }: Props) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden overflow-hidden border-t border-mist bg-paper text-ink md:block"
+              className="relative z-10 hidden overflow-hidden bg-paper text-ink md:block"
             >
               <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 md:px-10">
                 {openEntry.mega.items.map((sub) => (
