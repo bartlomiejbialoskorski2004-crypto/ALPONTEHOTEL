@@ -53,7 +53,7 @@ export default function Header({ bookingUrl }: Props) {
               }`}
             >
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Al Ponte"
                 width={40}
                 height={40}

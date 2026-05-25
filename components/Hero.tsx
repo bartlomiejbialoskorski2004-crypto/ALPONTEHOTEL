@@ -1,45 +1,58 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image";
 
 type HeroData = {
   name: string;
   tagline: string;
-  heroImage: { asset?: { _ref?: string } } | null;
+  heroImage?: { asset?: { _ref?: string } } | null;
   bookingUrl?: string;
 };
 
+// Background slideshow. Drop the matching files in /public.
+// Sanity-managed gallery can replace this list in a later iteration.
+const SLIDES = ["/hero-1.jpg", "/hero-2.jpg", "/hero-3.jpg"];
+const SLIDE_INTERVAL = 6000;
+
 export default function Hero({ data }: { data: HeroData }) {
   const t = useTranslations("hero");
+  const [index, setIndex] = useState(0);
+  const reduceMotion = useReducedMotion();
 
-  const sanityImageUrl = data.heroImage?.asset?._ref
-    ? (urlFor(data.heroImage)?.width(2400).quality(85).url() ?? null)
-    : null;
+  useEffect(() => {
+    if (reduceMotion || SLIDES.length < 2) return;
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % SLIDES.length),
+      SLIDE_INTERVAL,
+    );
+    return () => clearInterval(id);
+  }, [reduceMotion]);
 
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
-      {sanityImageUrl ? (
-        <Image
-          src={sanityImageUrl}
-          alt={data.name}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-      ) : (
-        <Image
-          src="/hero.svg"
-          alt={data.name}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-      )}
+      <div className="absolute inset-0" aria-hidden>
+        {SLIDES.map((src, i) => (
+          <motion.div
+            key={src}
+            initial={false}
+            animate={{ opacity: i === index ? 1 : 0 }}
+            transition={{ duration: 1.4, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={src}
+              alt=""
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </motion.div>
+        ))}
+      </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/55" />
 
@@ -51,7 +64,7 @@ export default function Hero({ data }: { data: HeroData }) {
           className="[filter:invert(1)_brightness(1.5)]"
         >
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt=""
             width={96}
             height={96}
@@ -95,15 +108,23 @@ export default function Hero({ data }: { data: HeroData }) {
         >
           {t("ctaContact")}
         </motion.a>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.4em]"
-        >
-          {t("scrollHint")}
-        </motion.div>
+      <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3">
+        {SLIDES.map((src, i) => (
+          <button
+            key={src}
+            type="button"
+            onClick={() => setIndex(i)}
+            aria-label={`${t("scrollHint")} ${i + 1}`}
+            aria-current={i === index}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              i === index
+                ? "w-8 bg-paper"
+                : "w-1.5 bg-paper/50 hover:bg-paper/80"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );

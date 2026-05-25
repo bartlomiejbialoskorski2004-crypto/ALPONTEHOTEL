@@ -63,14 +63,18 @@ The site works without Sanity configured — it falls back to copy in `messages/
 
 ## Assets
 
-Drop these two files into `public/` to replace the SVG placeholders:
+Drop these files into `public/`:
 
-- `public/logo.svg` — circular "AP" monogram
-- `public/hero.svg` — main hero background (or swap to `hero.jpg`/`.png` and update [components/Hero.tsx:32](components/Hero.tsx#L32))
+- `public/logo.png` — circular "AP" monogram, **transparent background** (the hero/header tint it white via a CSS `invert` filter over the dark photos)
+- `public/hero-1.jpg` — balcony / lake-valley view
+- `public/hero-2.jpg` — pool terrace with lake view
+- `public/hero-3.jpg` — historic gate on the Lugano lakefront
 
-Optionally also override `app/icon.svg` (favicon).
+The hero cycles through `hero-1..3.jpg` as a crossfade slideshow (see `SLIDES` in [components/Hero.tsx](components/Hero.tsx)). Add or reorder files there to change the rotation.
 
-Once `heroImage` is set on the `hotel` document in Sanity, it takes precedence over `public/hero.svg`.
+Favicon: `app/icon.png` (generated from the monogram). Next.js auto-scales it.
+
+`public/logo-full.png` is the full lockup (monogram + "Albergo Al Ponte" wordmark) — kept for a future footer/print use; the header, hero and favicon use the monogram-only `logo.png` so the mark stays legible at small sizes.
 
 ## Project structure
 
@@ -84,7 +88,7 @@ components/        # Header, Hero, Contact, BookNowButton, LocaleSwitcher, Mobil
 i18n/              # next-intl routing, navigation, request config
 messages/          # JSON translations per locale
 sanity/            # client, image builder, schema types, GROQ queries
-public/            # logo.svg, hero.svg, etc.
+public/            # logo.png, hero-1.jpg, hero-2.jpg, hero-3.jpg
 ```
 
 ## Scripts

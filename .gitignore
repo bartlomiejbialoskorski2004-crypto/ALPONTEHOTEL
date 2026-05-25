@@ -37,3 +37,6 @@ next-env.d.ts
 
 # sanity
 /.sanity
+
+# claude local settings
+.claude/

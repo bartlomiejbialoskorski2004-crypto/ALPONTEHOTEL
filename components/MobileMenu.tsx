@@ -44,7 +44,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
         >
           <div className="flex h-20 items-center justify-between px-6">
             <Link href="/" onClick={onClose} aria-label="Al Ponte">
-              <Image src="/logo.svg" alt="Al Ponte" width={36} height={36} />
+              <Image src="/logo.png" alt="Al Ponte" width={36} height={36} />
             </Link>
             <button
               type="button"
