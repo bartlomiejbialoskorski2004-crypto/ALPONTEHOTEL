@@ -21,9 +21,11 @@ export const NAV: NavEntry[] = [
   {
     key: "rooms",
     href: "#top",
-    mega: { group: "rooms", items: ["double", "single", "suite", "apartment"] },
+    mega: {
+      group: "rooms",
+      items: ["apartments", "superior", "budgetPlus", "budget"],
+    },
   },
-  { key: "contact", href: "#contact" },
   { key: "info", href: "#top" },
   {
     key: "attractions",
@@ -34,6 +36,7 @@ export const NAV: NavEntry[] = [
     },
   },
   { key: "gallery", href: "#top" },
+  { key: "contact", href: "#contact" },
 ];
 
 export const MEGA_HREF = "#contact";

@@ -12,10 +12,22 @@
   },
   "mega": {
     "rooms": {
-      "double": "Double Room",
-      "single": "Single Room",
-      "suite": "Suite",
-      "apartment": "Apartment"
+      "apartments": {
+        "title": "Apartments",
+        "desc": "With kitchens and bathrooms — an excellent choice for families with children or longer stays."
+      },
+      "superior": {
+        "title": "Superior Rooms",
+        "desc": "Higher-standard rooms with bathrooms and private balconies offering magnificent views of Lugano, the lake and the mountains — the full Ticino atmosphere."
+      },
+      "budgetPlus": {
+        "title": "Budget Plus Rooms",
+        "desc": "More affordable rooms with beautiful views of Lugano, the lake and the mountains (without a private balcony)."
+      },
+      "budget": {
+        "title": "Budget Rooms",
+        "desc": "Our most affordable rooms, with private bathrooms — ideal for business or long-distance travellers seeking comfort at a fair price."
+      }
     },
     "attractions": {
       "lake": "Lake Lugano",

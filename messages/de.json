@@ -12,10 +12,22 @@
   },
   "mega": {
     "rooms": {
-      "double": "Doppelzimmer",
-      "single": "Einzelzimmer",
-      "suite": "Suite",
-      "apartment": "Apartment"
+      "apartments": {
+        "title": "Apartments",
+        "desc": "Mit Küche und Bad — eine ausgezeichnete Wahl für Familien mit Kindern oder längere Aufenthalte."
+      },
+      "superior": {
+        "title": "Superior-Zimmer",
+        "desc": "Zimmer mit höherem Standard, Bad und privatem Balkon mit herrlichem Blick auf Lugano, den See und die Berge — die ganze Atmosphäre des Tessins."
+      },
+      "budgetPlus": {
+        "title": "Budget-Plus-Zimmer",
+        "desc": "Günstigere Zimmer mit schönem Blick auf Lugano, den See und die Berge (ohne eigenen Balkon)."
+      },
+      "budget": {
+        "title": "Budget-Zimmer",
+        "desc": "Unsere günstigsten Zimmer mit eigenem Bad — ideal für Geschäfts- und Fernreisende, die Komfort zu einem fairen Preis suchen."
+      }
     },
     "attractions": {
       "lake": "Luganersee",

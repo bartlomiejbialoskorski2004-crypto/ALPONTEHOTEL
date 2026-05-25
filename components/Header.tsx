@@ -121,17 +121,17 @@ export default function Header({ bookingUrl }: Props) {
             className="absolute left-1/2 top-0 flex h-full -translate-x-1/2 items-center"
           >
             <span
-              className={`inline-flex items-center justify-center transition-[filter,transform] duration-500 ${
+              className={`inline-flex origin-center items-center justify-center transition-[filter,transform] duration-500 ease-out will-change-transform ${
                 active
-                  ? "scale-110"
+                  ? "scale-[0.78] [filter:invert(0)_brightness(1)]"
                   : "scale-100 [filter:invert(1)_brightness(1.5)]"
               }`}
             >
               <Image
                 src="/logo.png"
                 alt="Al Ponte"
-                width={52}
-                height={52}
+                width={64}
+                height={64}
                 priority
               />
             </span>
@@ -174,23 +174,34 @@ export default function Header({ bookingUrl }: Props) {
               className="relative z-10 hidden overflow-hidden bg-paper text-ink lg:block"
             >
               <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 lg:px-10">
-                {openEntry.mega.items.map((sub) => (
-                  <a
-                    key={sub}
-                    href={MEGA_HREF}
-                    className="group block px-8 py-12 first:pl-0"
-                  >
-                    <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
-                      / {t(`nav.${openEntry.mega!.group}`)}
-                    </span>
-                    <span className="mt-4 block font-serif text-2xl leading-tight">
-                      {t(`mega.${openEntry.mega!.group}.${sub}`)}
-                    </span>
-                    <span className="mt-6 block text-xl transition-transform duration-300 group-hover:translate-x-1.5">
-                      →
-                    </span>
-                  </a>
-                ))}
+                {openEntry.mega.items.map((sub) => {
+                  const group = openEntry.mega!.group;
+                  const hasDesc = group === "rooms";
+                  return (
+                    <a
+                      key={sub}
+                      href={MEGA_HREF}
+                      className="group flex flex-col px-8 py-12 first:pl-0"
+                    >
+                      <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                        / {t(`nav.${group}`)}
+                      </span>
+                      <span className="mt-4 block font-serif text-2xl leading-tight">
+                        {hasDesc
+                          ? t(`mega.rooms.${sub}.title`)
+                          : t(`mega.${group}.${sub}`)}
+                      </span>
+                      {hasDesc && (
+                        <span className="mt-3 block text-sm leading-relaxed text-ink/70">
+                          {t(`mega.rooms.${sub}.desc`)}
+                        </span>
+                      )}
+                      <span className="mt-6 block text-xl transition-transform duration-300 group-hover:translate-x-1.5">
+                        →
+                      </span>
+                    </a>
+                  );
+                })}
               </div>
             </motion.div>
           )}

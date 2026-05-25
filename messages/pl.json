@@ -12,10 +12,22 @@
   },
   "mega": {
     "rooms": {
-      "double": "Pokój dwuosobowy",
-      "single": "Pokój jednoosobowy",
-      "suite": "Suite",
-      "apartment": "Apartament"
+      "apartments": {
+        "title": "Apartamenty",
+        "desc": "Z aneksem kuchennym i łazienką — doskonały wybór dla rodzin z dziećmi lub na dłuższe pobyty."
+      },
+      "superior": {
+        "title": "Pokoje Superior",
+        "desc": "Pokoje o wyższym standardzie z łazienką i prywatnym balkonem z zapierającym dech widokiem na Lugano, jezioro i góry — pełnia atmosfery Ticino."
+      },
+      "budgetPlus": {
+        "title": "Pokoje Budget Plus",
+        "desc": "Bardziej przystępne pokoje z pięknym widokiem na Lugano, jezioro i góry (bez osobnego balkonu)."
+      },
+      "budget": {
+        "title": "Pokoje Budget",
+        "desc": "Najtańsze pokoje z prywatną łazienką — idealne dla podróżujących służbowo lub na długich trasach, szukających komfortu w dobrej cenie."
+      }
     },
     "attractions": {
       "lake": "Jezioro Lugano",

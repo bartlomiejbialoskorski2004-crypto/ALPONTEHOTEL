@@ -12,10 +12,22 @@
   },
   "mega": {
     "rooms": {
-      "double": "Camera Doppia",
-      "single": "Camera Singola",
-      "suite": "Suite",
-      "apartment": "Appartamento"
+      "apartments": {
+        "title": "Appartamenti",
+        "desc": "Con cucina e bagno — una scelta eccellente per famiglie con bambini o soggiorni più lunghi."
+      },
+      "superior": {
+        "title": "Camere Superior",
+        "desc": "Camere di standard superiore con bagno e balcone privato, con magnifica vista su Lugano, il lago e le montagne — tutta l'atmosfera del Ticino."
+      },
+      "budgetPlus": {
+        "title": "Camere Budget Plus",
+        "desc": "Camere più convenienti con splendida vista su Lugano, il lago e le montagne (senza balcone privato)."
+      },
+      "budget": {
+        "title": "Camere Budget",
+        "desc": "Le nostre camere più convenienti, con bagno privato — ideali per chi viaggia per lavoro o su lunghe distanze e cerca comfort a un buon prezzo."
+      }
     },
     "attractions": {
       "lake": "Lago di Lugano",

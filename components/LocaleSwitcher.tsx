@@ -67,8 +67,9 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
   return (
     <div
       ref={ref}
+      onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="relative text-xs font-medium uppercase tracking-[0.15em]"
+      className="relative"
     >
       <button
         type="button"
@@ -76,34 +77,17 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={active.toUpperCase()}
-        className="flex items-center gap-2 py-2"
+        className="flex items-center p-2"
       >
         {ActiveFlag && (
-          <ActiveFlag className="h-4 w-6 rounded-[2px] shadow-sm ring-1 ring-black/10" />
+          <ActiveFlag className="h-6 w-9 rounded-[3px] shadow-sm ring-1 ring-black/10" />
         )}
-        <span>{active.toUpperCase()}</span>
-        <svg
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-          className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-          aria-hidden
-        >
-          <path
-            d="M2 3.5L5 6.5L8 3.5"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
       </button>
 
       {open && (
         <div
           role="menu"
-          className="absolute right-0 top-full z-50 mt-3 min-w-[7rem] overflow-hidden border border-mist bg-paper py-1 text-ink shadow-md"
+          className="absolute right-0 top-full z-50 flex flex-col gap-1 p-2"
         >
           {others.map((code) => {
             const Flag = FLAGS[code];
@@ -113,12 +97,12 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
                 type="button"
                 role="menuitem"
                 onClick={() => select(code)}
-                className="flex w-full items-center gap-3 px-4 py-2.5 transition-colors hover:bg-mist"
+                aria-label={code.toUpperCase()}
+                className="transition-transform duration-200 hover:scale-110"
               >
                 {Flag && (
-                  <Flag className="h-4 w-6 rounded-[2px] ring-1 ring-black/10" />
+                  <Flag className="h-6 w-9 rounded-[3px] shadow-md ring-1 ring-black/10" />
                 )}
-                <span>{code.toUpperCase()}</span>
               </button>
             );
           })}

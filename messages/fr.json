@@ -12,10 +12,22 @@
   },
   "mega": {
     "rooms": {
-      "double": "Chambre Double",
-      "single": "Chambre Simple",
-      "suite": "Suite",
-      "apartment": "Appartement"
+      "apartments": {
+        "title": "Appartements",
+        "desc": "Avec cuisine et salle de bain — un excellent choix pour les familles avec enfants ou les longs séjours."
+      },
+      "superior": {
+        "title": "Chambres Supérieures",
+        "desc": "Chambres de standing supérieur avec salle de bain et balcon privé offrant une vue magnifique sur Lugano, le lac et les montagnes — toute l'atmosphère du Tessin."
+      },
+      "budgetPlus": {
+        "title": "Chambres Budget Plus",
+        "desc": "Chambres plus abordables avec une belle vue sur Lugano, le lac et les montagnes (sans balcon privé)."
+      },
+      "budget": {
+        "title": "Chambres Budget",
+        "desc": "Nos chambres les plus abordables, avec salle de bain privée — idéales pour les voyageurs d'affaires ou longue distance en quête de confort à bon prix."
+      }
     },
     "attractions": {
       "lake": "Lac de Lugano",
