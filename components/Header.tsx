@@ -23,6 +23,7 @@ export default function Header({ bookingUrl }: Props) {
   const t = useTranslations("nav");
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -31,16 +32,19 @@ export default function Header({ bookingUrl }: Props) {
     setScrolled(latest > threshold);
   });
 
-  const tone = scrolled ? "ink" : "paper";
+  // White (solid) when scrolled down OR while hovering anywhere on the bar.
+  const active = scrolled || hovered;
 
   return (
     <>
       <motion.header
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-          scrolled
+        initial={{ y: "-100%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={`fixed inset-x-0 top-0 z-40 transition-colors duration-500 ${
+          active
             ? "border-b border-mist bg-paper/95 text-ink backdrop-blur-md"
             : "border-b border-transparent bg-transparent text-paper"
         }`}
@@ -48,8 +52,8 @@ export default function Header({ bookingUrl }: Props) {
         <div className="mx-auto grid h-20 max-w-7xl grid-cols-2 items-center px-6 md:h-24 md:grid-cols-3 md:px-10">
           <Link href="/" aria-label="Al Ponte" className="flex items-center gap-3">
             <span
-              className={`inline-flex h-10 w-10 items-center justify-center transition-colors duration-300 ${
-                scrolled ? "" : "[filter:invert(1)_brightness(1.5)]"
+              className={`inline-flex h-10 w-10 items-center justify-center transition-[filter] duration-500 ${
+                active ? "" : "[filter:invert(1)_brightness(1.5)]"
               }`}
             >
               <Image
@@ -78,10 +82,10 @@ export default function Header({ bookingUrl }: Props) {
           </nav>
 
           <div className="hidden items-center justify-end gap-6 md:flex">
-            <LocaleSwitcher tone={scrolled ? "dark" : "light"} />
+            <LocaleSwitcher tone={active ? "dark" : "light"} />
             <BookNowButton
               href={bookingUrl ?? "#contact"}
-              variant={scrolled ? "primary" : "ghost"}
+              variant={active ? "primary" : "ghost"}
             />
           </div>
 
