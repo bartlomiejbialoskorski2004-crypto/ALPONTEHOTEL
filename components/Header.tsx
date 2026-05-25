@@ -120,12 +120,17 @@ export default function Header({ bookingUrl }: Props) {
             onMouseEnter={() => setOpenMenu(null)}
             className="absolute left-1/2 top-0 flex h-full -translate-x-1/2 items-center"
           >
-            <span
-              className={`inline-flex origin-center items-center justify-center transition-[filter,transform] duration-500 ease-out will-change-transform ${
-                active
-                  ? "scale-[0.78] [filter:invert(0)_brightness(1)]"
-                  : "scale-100 [filter:invert(1)_brightness(1.5)]"
-              }`}
+            <motion.span
+              initial={false}
+              animate={{
+                scale: active ? 0.78 : 1,
+                filter: active
+                  ? "invert(0) brightness(1)"
+                  : "invert(1) brightness(1.5)",
+              }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              style={{ willChange: "transform, filter" }}
+              className="inline-flex origin-center items-center justify-center"
             >
               <Image
                 src="/logo.png"
@@ -134,7 +139,7 @@ export default function Header({ bookingUrl }: Props) {
                 height={64}
                 priority
               />
-            </span>
+            </motion.span>
           </Link>
 
           <div className="ml-auto flex h-full items-center gap-5">
