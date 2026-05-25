@@ -1,36 +1,39 @@
 // Shared navigation structure, used by Header (desktop megamenu) and
 // MobileMenu. Labels live in messages/*.json under "nav" and "mega".
-// Sub-item hrefs are placeholders (#contact / #top) until the matching
-// sections exist — wire them up as the site grows.
+// All entries render on the left of the bar. Sub-item / link hrefs are
+// placeholders (#top / #contact) until the matching sections exist.
 
-export type MegaGroup = "hotel" | "experiences";
-export type NavKey = "hotel" | "experiences" | "location" | "contact";
+export type MegaGroup = "rooms" | "attractions";
+export type NavKey =
+  | "rooms"
+  | "contact"
+  | "info"
+  | "attractions"
+  | "gallery";
 
 export type NavEntry = {
   key: NavKey;
-  side: "left" | "right";
   href: string;
   mega?: { group: MegaGroup; items: string[] };
 };
 
 export const NAV: NavEntry[] = [
   {
-    key: "hotel",
-    side: "left",
+    key: "rooms",
     href: "#top",
-    mega: { group: "hotel", items: ["rooms", "suites", "amenities", "gallery"] },
+    mega: { group: "rooms", items: ["double", "single", "suite", "apartment"] },
   },
+  { key: "contact", href: "#contact" },
+  { key: "info", href: "#top" },
   {
-    key: "experiences",
-    side: "left",
-    href: "#contact",
+    key: "attractions",
+    href: "#top",
     mega: {
-      group: "experiences",
-      items: ["lake", "dining", "wellness", "excursions"],
+      group: "attractions",
+      items: ["lake", "sanSalvatore", "monteBre", "oldTown"],
     },
   },
-  { key: "location", side: "right", href: "#contact" },
-  { key: "contact", side: "right", href: "#contact" },
+  { key: "gallery", href: "#top" },
 ];
 
 export const MEGA_HREF = "#contact";

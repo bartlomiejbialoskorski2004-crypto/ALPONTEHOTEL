@@ -1,26 +1,27 @@
 {
   "nav": {
-    "hotel": "Hotel",
-    "experiences": "Erlebnisse",
-    "location": "Lage",
+    "rooms": "Zimmer",
     "contact": "Kontakt",
+    "info": "Allgemeine Informationen und Hausordnung",
+    "attractions": "Sehenswürdigkeiten",
+    "gallery": "Galerie",
     "bookNow": "Jetzt buchen",
     "language": "Sprache",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen"
   },
   "mega": {
-    "hotel": {
-      "rooms": "Zimmer",
-      "suites": "Suiten",
-      "amenities": "Services",
-      "gallery": "Galerie"
+    "rooms": {
+      "double": "Doppelzimmer",
+      "single": "Einzelzimmer",
+      "suite": "Suite",
+      "apartment": "Apartment"
     },
-    "experiences": {
+    "attractions": {
       "lake": "Luganersee",
-      "dining": "Restaurant",
-      "wellness": "Wellness",
-      "excursions": "Ausflüge"
+      "sanSalvatore": "Monte San Salvatore",
+      "monteBre": "Monte Brè",
+      "oldTown": "Altstadt"
     }
   },
   "hero": {

@@ -28,16 +28,11 @@ export default function Header({ bookingUrl }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const threshold =
-      typeof window !== "undefined" ? window.innerHeight * 0.8 : 600;
-    setScrolled(latest > threshold);
+    setScrolled(latest > 24);
   });
 
   // White (solid) when scrolled down, hovering the bar, or a megamenu is open.
   const active = scrolled || hovered || openMenu !== null;
-
-  const left = NAV.filter((n) => n.side === "left");
-  const right = NAV.filter((n) => n.side === "right");
   const openEntry = NAV.find((n) => n.mega?.group === openMenu) ?? null;
 
   const renderTopItem = (item: NavEntry) => {
@@ -47,7 +42,7 @@ export default function Header({ bookingUrl }: Props) {
           key={item.key}
           href={item.href}
           onMouseEnter={() => setOpenMenu(null)}
-          className="text-xs font-medium uppercase tracking-[0.2em] transition-opacity hover:opacity-60"
+          className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em] transition-opacity hover:opacity-60"
         >
           {t(`nav.${item.key}`)}
         </a>
@@ -61,7 +56,7 @@ export default function Header({ bookingUrl }: Props) {
         onMouseEnter={() => setOpenMenu(group)}
         className="relative flex h-full items-center"
       >
-        <span className="flex cursor-default items-center gap-1.5 text-xs font-medium uppercase tracking-[0.2em]">
+        <span className="flex cursor-default items-center gap-1.5 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]">
           {t(`nav.${item.key}`)}
           <svg
             width="10"
@@ -111,23 +106,25 @@ export default function Header({ bookingUrl }: Props) {
           initial={false}
           animate={{ y: active ? "0%" : "-100%" }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="pointer-events-none absolute inset-x-0 top-0 h-20 border-b border-mist bg-paper md:h-24"
+          className="pointer-events-none absolute inset-x-0 top-0 h-20 border-b border-mist bg-paper lg:h-24"
         />
 
-        <div className="relative z-10 grid h-20 grid-cols-[1fr_auto_1fr] items-stretch px-6 md:h-24 md:px-10">
-          <div className="hidden h-full items-center justify-start gap-8 md:flex">
-            {left.map(renderTopItem)}
-          </div>
+        <div className="relative z-10 flex h-20 items-stretch justify-between px-6 lg:h-24 lg:px-10">
+          <nav className="hidden h-full items-center gap-6 lg:flex">
+            {NAV.map(renderTopItem)}
+          </nav>
 
           <Link
             href="/"
             aria-label="Al Ponte"
             onMouseEnter={() => setOpenMenu(null)}
-            className="flex h-full items-center justify-center"
+            className="absolute left-1/2 top-0 flex h-full -translate-x-1/2 items-center"
           >
             <span
-              className={`inline-flex items-center justify-center transition-[filter] duration-500 ${
-                active ? "" : "[filter:invert(1)_brightness(1.5)]"
+              className={`inline-flex items-center justify-center transition-[filter,transform] duration-500 ${
+                active
+                  ? "scale-110"
+                  : "scale-100 [filter:invert(1)_brightness(1.5)]"
               }`}
             >
               <Image
@@ -140,11 +137,8 @@ export default function Header({ bookingUrl }: Props) {
             </span>
           </Link>
 
-          <div className="flex h-full items-center justify-end gap-6">
-            <nav className="hidden h-full items-center gap-8 md:flex">
-              {right.map(renderTopItem)}
-            </nav>
-            <div className="hidden items-center gap-6 md:flex">
+          <div className="ml-auto flex h-full items-center gap-5">
+            <div className="hidden items-center gap-5 lg:flex">
               <LocaleSwitcher tone={active ? "dark" : "light"} />
               <BookNowButton
                 href={bookingUrl ?? "#contact"}
@@ -155,7 +149,7 @@ export default function Header({ bookingUrl }: Props) {
               type="button"
               onClick={() => setMobileOpen(true)}
               aria-label={t("nav.openMenu")}
-              className="p-2 md:hidden"
+              className="p-2 lg:hidden"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
@@ -177,9 +171,9 @@ export default function Header({ bookingUrl }: Props) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 hidden overflow-hidden bg-paper text-ink md:block"
+              className="relative z-10 hidden overflow-hidden bg-paper text-ink lg:block"
             >
-              <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 md:px-10">
+              <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 lg:px-10">
                 {openEntry.mega.items.map((sub) => (
                   <a
                     key={sub}

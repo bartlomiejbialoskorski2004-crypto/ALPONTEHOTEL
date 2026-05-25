@@ -1,26 +1,27 @@
 {
   "nav": {
-    "hotel": "Hotel",
-    "experiences": "Esperienze",
-    "location": "Posizione",
+    "rooms": "Camere",
     "contact": "Contatti",
+    "info": "Informazioni e regolamento",
+    "attractions": "Attrazioni turistiche",
+    "gallery": "Galleria",
     "bookNow": "Prenota Ora",
     "language": "Lingua",
     "openMenu": "Apri menu",
     "closeMenu": "Chiudi menu"
   },
   "mega": {
-    "hotel": {
-      "rooms": "Camere",
-      "suites": "Suite",
-      "amenities": "Servizi",
-      "gallery": "Galleria"
+    "rooms": {
+      "double": "Camera Doppia",
+      "single": "Camera Singola",
+      "suite": "Suite",
+      "apartment": "Appartamento"
     },
-    "experiences": {
+    "attractions": {
       "lake": "Lago di Lugano",
-      "dining": "Ristorante",
-      "wellness": "Benessere",
-      "excursions": "Escursioni"
+      "sanSalvatore": "Monte San Salvatore",
+      "monteBre": "Monte Brè",
+      "oldTown": "Centro storico"
     }
   },
   "hero": {
