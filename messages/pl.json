@@ -1,12 +1,27 @@
 {
   "nav": {
     "hotel": "Hotel",
+    "experiences": "Atrakcje",
     "location": "Lokalizacja",
     "contact": "Kontakt",
     "bookNow": "Rezerwuj",
     "language": "Język",
     "openMenu": "Otwórz menu",
     "closeMenu": "Zamknij menu"
+  },
+  "mega": {
+    "hotel": {
+      "rooms": "Pokoje",
+      "suites": "Apartamenty",
+      "amenities": "Udogodnienia",
+      "gallery": "Galeria"
+    },
+    "experiences": {
+      "lake": "Jezioro Lugano",
+      "dining": "Restauracja",
+      "wellness": "Wellness",
+      "excursions": "Wycieczki"
+    }
   },
   "hero": {
     "ctaContact": "Skontaktuj się",

@@ -1,12 +1,27 @@
 {
   "nav": {
     "hotel": "Hotel",
+    "experiences": "Experiences",
     "location": "Location",
     "contact": "Contact",
     "bookNow": "Book Now",
     "language": "Language",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
+  },
+  "mega": {
+    "hotel": {
+      "rooms": "Rooms",
+      "suites": "Suites",
+      "amenities": "Amenities",
+      "gallery": "Gallery"
+    },
+    "experiences": {
+      "lake": "Lake Lugano",
+      "dining": "Dining",
+      "wellness": "Wellness",
+      "excursions": "Excursions"
+    }
   },
   "hero": {
     "ctaContact": "Get in touch",

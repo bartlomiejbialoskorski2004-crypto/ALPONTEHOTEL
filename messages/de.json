@@ -1,12 +1,27 @@
 {
   "nav": {
     "hotel": "Hotel",
+    "experiences": "Erlebnisse",
     "location": "Lage",
     "contact": "Kontakt",
     "bookNow": "Jetzt buchen",
     "language": "Sprache",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen"
+  },
+  "mega": {
+    "hotel": {
+      "rooms": "Zimmer",
+      "suites": "Suiten",
+      "amenities": "Services",
+      "gallery": "Galerie"
+    },
+    "experiences": {
+      "lake": "Luganersee",
+      "dining": "Restaurant",
+      "wellness": "Wellness",
+      "excursions": "Ausflüge"
+    }
   },
   "hero": {
     "ctaContact": "Kontaktieren Sie uns",

@@ -1,12 +1,27 @@
 {
   "nav": {
     "hotel": "Hotel",
+    "experiences": "Esperienze",
     "location": "Posizione",
     "contact": "Contatti",
     "bookNow": "Prenota Ora",
     "language": "Lingua",
     "openMenu": "Apri menu",
     "closeMenu": "Chiudi menu"
+  },
+  "mega": {
+    "hotel": {
+      "rooms": "Camere",
+      "suites": "Suite",
+      "amenities": "Servizi",
+      "gallery": "Galleria"
+    },
+    "experiences": {
+      "lake": "Lago di Lugano",
+      "dining": "Ristorante",
+      "wellness": "Benessere",
+      "excursions": "Escursioni"
+    }
   },
   "hero": {
     "ctaContact": "Contattaci",

@@ -7,18 +7,13 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import BookNowButton from "./BookNowButton";
 import LocaleSwitcher from "./LocaleSwitcher";
+import { NAV } from "./menu";
 
 type Props = {
   open: boolean;
   onClose: () => void;
   bookingUrl?: string;
 };
-
-const items: { key: "hotel" | "location" | "contact"; href: string }[] = [
-  { key: "hotel", href: "#top" },
-  { key: "location", href: "#contact" },
-  { key: "contact", href: "#contact" },
-];
 
 export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
   const t = useTranslations("nav");
@@ -64,7 +59,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
           </div>
 
           <nav className="flex flex-1 flex-col items-center justify-center gap-8 px-6">
-            {items.map((item) => (
+            {NAV.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
