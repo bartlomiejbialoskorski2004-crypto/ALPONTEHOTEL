@@ -48,6 +48,10 @@
     "email": "E-mail",
     "directions": "Come raggiungerci"
   },
+  "rooms": {
+    "title": "Camere",
+    "intro": "Il nostro hotel offre camere e appartamenti di varie dimensioni e categorie. Accogliamo famiglie grandi e piccole, coppie e chi viaggia per lavoro. Tutte le camere dispongono di SMART TV e Wi-Fi gratuito. È vietato fumare — ogni camera è dotata di un moderno sistema antincendio."
+  },
   "amenities": {
     "eyebrow": "Servizi",
     "pool": {

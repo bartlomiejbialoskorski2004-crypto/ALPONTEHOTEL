@@ -48,6 +48,10 @@
     "email": "E-mail",
     "directions": "Itinéraire"
   },
+  "rooms": {
+    "title": "Chambres",
+    "intro": "Notre hôtel propose chambres et appartements de différentes tailles et catégories. Nous accueillons familles grandes et petites, couples et voyageurs d'affaires. Toutes les chambres sont équipées de SMART TV et de Wi-Fi gratuit. Il est interdit de fumer — chaque chambre dispose d'un système anti-incendie moderne."
+  },
   "amenities": {
     "eyebrow": "Services",
     "pool": {

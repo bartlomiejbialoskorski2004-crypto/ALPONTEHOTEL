@@ -48,6 +48,10 @@
     "email": "E-mail",
     "directions": "Directions"
   },
+  "rooms": {
+    "title": "Rooms",
+    "intro": "Our hotel offers rooms and apartments of various sizes and standards. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted — every room is equipped with a modern fire & alarm system."
+  },
   "amenities": {
     "eyebrow": "Amenities",
     "pool": {

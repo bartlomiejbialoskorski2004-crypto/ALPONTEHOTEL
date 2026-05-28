@@ -199,10 +199,11 @@ export default function Header({ bookingUrl }: Props) {
                 {openEntry.mega.items.map((sub) => {
                   const group = openEntry.mega!.group;
                   const hasDesc = group === "rooms";
+                  const href = group === "rooms" ? "#rooms" : MEGA_HREF;
                   return (
                     <a
                       key={sub}
-                      href={MEGA_HREF}
+                      href={href}
                       className="group flex flex-col px-8 py-12 first:pl-0"
                     >
                       <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">

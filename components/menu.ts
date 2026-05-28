@@ -20,7 +20,7 @@ export type NavEntry = {
 export const NAV: NavEntry[] = [
   {
     key: "rooms",
-    href: "#top",
+    href: "#rooms",
     mega: {
       group: "rooms",
       items: ["apartments", "superior", "budgetPlus", "budget"],

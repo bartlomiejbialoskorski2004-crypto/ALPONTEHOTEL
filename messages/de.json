@@ -48,6 +48,10 @@
     "email": "E-Mail",
     "directions": "Anfahrt"
   },
+  "rooms": {
+    "title": "Zimmer",
+    "intro": "Unser Hotel bietet Zimmer und Apartments in verschiedenen Größen und Kategorien. Wir empfangen große und kleine Familien, Paare sowie Geschäftsreisende. Alle Zimmer verfügen über SMART TV und kostenloses WLAN. Rauchen ist nicht gestattet — jedes Zimmer hat ein modernes Brandschutzsystem."
+  },
   "amenities": {
     "eyebrow": "Services",
     "pool": {

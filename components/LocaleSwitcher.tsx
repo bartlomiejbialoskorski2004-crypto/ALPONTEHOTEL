@@ -80,7 +80,7 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
         className="flex items-center p-2"
       >
         {ActiveFlag && (
-          <ActiveFlag className="h-6 w-9 rounded-[3px] shadow-sm ring-1 ring-black/10" />
+          <ActiveFlag className="h-6 w-9 rounded-none shadow-sm ring-1 ring-black/10" />
         )}
       </button>
 
@@ -101,7 +101,7 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
                 className="transition-transform duration-200 hover:scale-110"
               >
                 {Flag && (
-                  <Flag className="h-6 w-9 rounded-[3px] shadow-md ring-1 ring-black/10" />
+                  <Flag className="h-6 w-9 rounded-none shadow-md ring-1 ring-black/10" />
                 )}
               </button>
             );
