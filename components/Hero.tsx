@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -57,14 +57,18 @@ export default function Hero({ data }: { data: HeroData }) {
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/55" />
 
       <div className="relative flex min-h-[100svh] flex-col items-center justify-center px-6 text-center text-paper">
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="font-serif text-5xl leading-none tracking-tight md:text-7xl"
-        >
-          {data.name}
-        </motion.h1>
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={index}
+            initial={reduceMotion ? false : { opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: 100 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="font-serif text-5xl leading-none tracking-tight md:text-7xl"
+          >
+            {data.name}
+          </motion.h1>
+        </AnimatePresence>
       </div>
 
       <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3">
