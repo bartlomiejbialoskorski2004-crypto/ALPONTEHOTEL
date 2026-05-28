@@ -85,13 +85,13 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Vue sur le lac", "desc": "Le Lac de Lugano depuis le balcon." },
-      "2": { "title": "Piscine & terrasse", "desc": "Piscine extérieure avec vue panoramique." },
-      "3": { "title": "Suite", "desc": "Chambres claires et calmes, pensées pour le repos." },
-      "4": { "title": "Panorama des montagnes", "desc": "Les sommets tessinois encadrent le lac." },
-      "5": { "title": "Heure dorée", "desc": "Lugano au coucher du soleil depuis l'hôtel." },
-      "6": { "title": "Restaurant", "desc": "Lumière du matin au petit-déjeuner." },
-      "7": { "title": "Bord du lac", "desc": "Le portail du Parco Ciani, à quelques pas." }
+      "1": { "title": "Clocher au crépuscule", "desc": "Le campanile du village à l'heure bleue." },
+      "2": { "title": "Vue depuis la terrasse", "desc": "Montagnes, lac et vallée depuis l'hôtel." },
+      "3": { "title": "Cascade du jardin", "desc": "Un coin tranquille de notre jardin." },
+      "4": { "title": "Lever de soleil sur Lugano", "desc": "L'aube sur le lac et la ville." },
+      "5": { "title": "Al Ponte", "desc": "La façade de l'hôtel, encadrée par un palmier." },
+      "6": { "title": "Vue alpine", "desc": "Sommets enneigés de l'autre côté de la vallée." },
+      "7": { "title": "Village au crépuscule", "desc": "Maisons et église au pied des Alpes." }
     }
   },
   "fallback": {

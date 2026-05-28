@@ -85,13 +85,13 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Vista sul lago", "desc": "Il Lago di Lugano dal balcone." },
-      "2": { "title": "Piscina e terrazza", "desc": "Piscina all'aperto con vista panoramica." },
-      "3": { "title": "Suite", "desc": "Camere luminose, pensate per riposare." },
-      "4": { "title": "Panorama alpino", "desc": "Le vette ticinesi incorniciano il lago." },
-      "5": { "title": "Ora d'oro", "desc": "Lugano al tramonto dalla struttura." },
-      "6": { "title": "Ristorante", "desc": "Luce del mattino a colazione." },
-      "7": { "title": "Lungolago", "desc": "Il cancello di Parco Ciani, a pochi passi." }
+      "1": { "title": "Campanile al crepuscolo", "desc": "Il campanile del borgo all'ora blu." },
+      "2": { "title": "Vista dalla terrazza", "desc": "Monti, lago e vallata dall'hotel." },
+      "3": { "title": "Cascata nel giardino", "desc": "Un angolo tranquillo del nostro giardino." },
+      "4": { "title": "Alba su Lugano", "desc": "L'alba sul lago e sulla città." },
+      "5": { "title": "Al Ponte", "desc": "La facciata dell'hotel, incorniciata da una palma." },
+      "6": { "title": "Vista alpina", "desc": "Vette innevate al di là della valle." },
+      "7": { "title": "Borgo al tramonto", "desc": "Case e chiesa ai piedi delle Alpi." }
     }
   },
   "fallback": {

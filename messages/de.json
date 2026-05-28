@@ -85,13 +85,13 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Seeblick", "desc": "Der Luganersee vom Balkon aus." },
-      "2": { "title": "Pool & Terrasse", "desc": "Außenpool mit Panoramablick." },
-      "3": { "title": "Suite", "desc": "Helle, ruhige Zimmer zum Entspannen." },
-      "4": { "title": "Bergpanorama", "desc": "Tessiner Gipfel rahmen den See ein." },
-      "5": { "title": "Goldene Stunde", "desc": "Lugano bei Sonnenuntergang vom Hotel." },
-      "6": { "title": "Restaurant", "desc": "Morgenlicht beim Frühstück." },
-      "7": { "title": "Seeufer", "desc": "Das Tor zum Parco Ciani, wenige Schritte entfernt." }
+      "1": { "title": "Glockenturm in der Dämmerung", "desc": "Der Campanile des Dorfes zur blauen Stunde." },
+      "2": { "title": "Blick von der Terrasse", "desc": "Berge, See und Tal vom Hotel aus." },
+      "3": { "title": "Wasserfall im Garten", "desc": "Eine ruhige Ecke unseres Gartens." },
+      "4": { "title": "Sonnenaufgang über Lugano", "desc": "Morgendämmerung über See und Stadt." },
+      "5": { "title": "Al Ponte", "desc": "Die Hotelfassade, eingerahmt von einer hohen Palme." },
+      "6": { "title": "Alpenblick", "desc": "Schneebedeckte Gipfel auf der anderen Talseite." },
+      "7": { "title": "Dorf in der Dämmerung", "desc": "Häuser und Kirche zu Füßen der Alpen." }
     }
   },
   "fallback": {

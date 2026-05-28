@@ -85,13 +85,13 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Lake View", "desc": "Lake Lugano from the balcony." },
-      "2": { "title": "Pool & Terrace", "desc": "Outdoor pool with panoramic views." },
-      "3": { "title": "Suite", "desc": "Light, calm rooms designed to rest." },
-      "4": { "title": "Mountain Panorama", "desc": "Ticino peaks framing the lake." },
-      "5": { "title": "Golden Hour", "desc": "Lugano at sunset from the property." },
-      "6": { "title": "Dining", "desc": "Morning light over breakfast." },
-      "7": { "title": "Lakefront", "desc": "Parco Ciani gate, a short walk away." }
+      "1": { "title": "Bell Tower at Dusk", "desc": "The village campanile at blue hour." },
+      "2": { "title": "View from the Terrace", "desc": "Mountains, lake and valley from the hotel." },
+      "3": { "title": "Garden Cascade", "desc": "A quiet corner of our garden." },
+      "4": { "title": "Sunrise over Lugano", "desc": "Daybreak across the lake and city." },
+      "5": { "title": "Al Ponte", "desc": "The hotel facade, framed by a tall palm." },
+      "6": { "title": "Alpine View", "desc": "Snow-capped peaks across the valley." },
+      "7": { "title": "Village at Dusk", "desc": "Houses and church beneath the Alps." }
     }
   },
   "fallback": {

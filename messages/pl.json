@@ -85,13 +85,13 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Widok na jezioro", "desc": "Jezioro Lugano z balkonu." },
-      "2": { "title": "Basen i taras", "desc": "Odkryty basen z panoramicznym widokiem." },
-      "3": { "title": "Suite", "desc": "Jasne, spokojne pokoje stworzone do odpoczynku." },
-      "4": { "title": "Panorama gór", "desc": "Szczyty Ticino oprawiają jezioro." },
-      "5": { "title": "Złota godzina", "desc": "Lugano o zachodzie słońca z hotelu." },
-      "6": { "title": "Restauracja", "desc": "Poranne światło przy śniadaniu." },
-      "7": { "title": "Lungolago", "desc": "Brama Parco Ciani w kilku minutach spaceru." }
+      "1": { "title": "Dzwonnica o zmierzchu", "desc": "Wiejski campanile w niebieskiej godzinie." },
+      "2": { "title": "Widok z tarasu", "desc": "Góry, jezioro i dolina z hotelu." },
+      "3": { "title": "Kaskada w ogrodzie", "desc": "Cichy zakątek naszego ogrodu." },
+      "4": { "title": "Wschód słońca nad Lugano", "desc": "Świt nad jeziorem i miastem." },
+      "5": { "title": "Al Ponte", "desc": "Fasada hotelu w cieniu wysokiej palmy." },
+      "6": { "title": "Widok alpejski", "desc": "Ośnieżone szczyty po drugiej stronie doliny." },
+      "7": { "title": "Wioska o zmierzchu", "desc": "Domy i kościół u stóp Alp." }
     }
   },
   "fallback": {
