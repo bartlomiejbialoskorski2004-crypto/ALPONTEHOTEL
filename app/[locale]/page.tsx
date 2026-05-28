@@ -31,7 +31,7 @@ export default async function HomePage({
 
   return (
     <main id="top">
-      <Hero data={data} />
+      <Hero />
       <Contact />
     </main>
   );
