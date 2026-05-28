@@ -4,10 +4,10 @@ import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import {
   HandHeart,
+  Hammer,
   Mountain,
   ParkingMeter,
   PawPrint,
-  Sparkles,
   Ticket,
   Waves,
   Wifi,
@@ -31,7 +31,7 @@ const ITEMS: { key: ItemKey; Icon: LucideIcon }[] = [
   { key: "hosts", Icon: HandHeart },
   { key: "ticket", Icon: Ticket },
   { key: "wifi", Icon: Wifi },
-  { key: "renovated", Icon: Sparkles },
+  { key: "renovated", Icon: Hammer },
   { key: "parking", Icon: ParkingMeter },
 ];
 
@@ -42,22 +42,10 @@ export default function Amenities() {
   return (
     <section
       id="amenities"
-      aria-labelledby="amenities-eyebrow"
       className="bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
-        <motion.p
-          id="amenities-eyebrow"
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center text-[11px] font-medium uppercase tracking-[0.3em] text-forest"
-        >
-          / {t("eyebrow")}
-        </motion.p>
-
-        <ul className="mt-14 grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+        <ul className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map(({ key, Icon }, i) => (
             <motion.li
               key={key}
@@ -72,15 +60,15 @@ export default function Amenities() {
               className="group flex flex-col items-start"
             >
               <Icon
-                size={36}
-                strokeWidth={1.25}
-                className="text-forest transition-colors duration-300 group-hover:text-forest-soft"
+                size={28}
+                strokeWidth={1}
+                className="text-ink transition-colors duration-300 group-hover:text-ink/60"
                 aria-hidden
               />
-              <h3 className="mt-5 font-serif text-lg leading-tight lg:text-xl">
+              <h3 className="mt-5 font-serif text-base leading-tight">
                 {t(`${key}.title`)}
               </h3>
-              <p className="mt-2 max-w-xs text-sm leading-relaxed text-ink/70">
+              <p className="mt-2 max-w-xs text-xs leading-relaxed text-ink/60">
                 {t(`${key}.desc`)}
               </p>
             </motion.li>
