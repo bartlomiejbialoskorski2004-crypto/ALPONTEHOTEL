@@ -35,7 +35,7 @@ export const NAV: NavEntry[] = [
       items: ["lake", "sanSalvatore", "monteBre", "oldTown"],
     },
   },
-  { key: "gallery", href: "#top" },
+  { key: "gallery", href: "#gallery" },
   { key: "contact", href: "#contact" },
 ];
 

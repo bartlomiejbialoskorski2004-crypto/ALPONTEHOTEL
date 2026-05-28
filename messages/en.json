@@ -83,6 +83,17 @@
       "desc": "Convenient public parking right at the hotel — CHF 5 per day, no reservation needed."
     }
   },
+  "gallery": {
+    "items": {
+      "1": { "title": "Lake View", "desc": "Lake Lugano from the balcony." },
+      "2": { "title": "Pool & Terrace", "desc": "Outdoor pool with panoramic views." },
+      "3": { "title": "Suite", "desc": "Light, calm rooms designed to rest." },
+      "4": { "title": "Mountain Panorama", "desc": "Ticino peaks framing the lake." },
+      "5": { "title": "Golden Hour", "desc": "Lugano at sunset from the property." },
+      "6": { "title": "Dining", "desc": "Morning light over breakfast." },
+      "7": { "title": "Lakefront", "desc": "Parco Ciani gate, a short walk away." }
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Boutique hotel on Lake Lugano",

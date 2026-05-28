@@ -83,6 +83,17 @@
       "desc": "Wygodny parking publiczny przy hotelu — 5 CHF/dzień, bez rezerwacji."
     }
   },
+  "gallery": {
+    "items": {
+      "1": { "title": "Widok na jezioro", "desc": "Jezioro Lugano z balkonu." },
+      "2": { "title": "Basen i taras", "desc": "Odkryty basen z panoramicznym widokiem." },
+      "3": { "title": "Suite", "desc": "Jasne, spokojne pokoje stworzone do odpoczynku." },
+      "4": { "title": "Panorama gór", "desc": "Szczyty Ticino oprawiają jezioro." },
+      "5": { "title": "Złota godzina", "desc": "Lugano o zachodzie słońca z hotelu." },
+      "6": { "title": "Restauracja", "desc": "Poranne światło przy śniadaniu." },
+      "7": { "title": "Lungolago", "desc": "Brama Parco Ciani w kilku minutach spaceru." }
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Butikowy hotel nad jeziorem Lugano",

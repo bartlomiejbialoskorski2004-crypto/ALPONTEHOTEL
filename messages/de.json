@@ -83,6 +83,17 @@
       "desc": "Bequemer öffentlicher Parkplatz direkt am Hotel — CHF 5 pro Tag, keine Reservierung nötig."
     }
   },
+  "gallery": {
+    "items": {
+      "1": { "title": "Seeblick", "desc": "Der Luganersee vom Balkon aus." },
+      "2": { "title": "Pool & Terrasse", "desc": "Außenpool mit Panoramablick." },
+      "3": { "title": "Suite", "desc": "Helle, ruhige Zimmer zum Entspannen." },
+      "4": { "title": "Bergpanorama", "desc": "Tessiner Gipfel rahmen den See ein." },
+      "5": { "title": "Goldene Stunde", "desc": "Lugano bei Sonnenuntergang vom Hotel." },
+      "6": { "title": "Restaurant", "desc": "Morgenlicht beim Frühstück." },
+      "7": { "title": "Seeufer", "desc": "Das Tor zum Parco Ciani, wenige Schritte entfernt." }
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Boutique-Hotel am Luganersee",
