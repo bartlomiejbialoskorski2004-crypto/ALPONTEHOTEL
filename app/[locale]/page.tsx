@@ -35,8 +35,8 @@ export default async function HomePage({
   return (
     <main id="top">
       <Hero />
-      <Rooms />
       <Amenities />
+      <Rooms />
       <Gallery />
       <Contact />
     </main>
