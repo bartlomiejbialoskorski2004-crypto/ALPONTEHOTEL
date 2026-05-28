@@ -4,6 +4,7 @@ import { client } from "@/sanity/lib/client";
 import { hotelQuery, type HotelDoc } from "@/sanity/queries";
 import { routing } from "@/i18n/routing";
 import Hero from "@/components/Hero";
+import Amenities from "@/components/Amenities";
 import Contact from "@/components/Contact";
 
 export default async function HomePage({
@@ -32,6 +33,7 @@ export default async function HomePage({
   return (
     <main id="top">
       <Hero />
+      <Amenities />
       <Contact />
     </main>
   );

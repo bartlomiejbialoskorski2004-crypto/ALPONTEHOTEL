@@ -48,6 +48,41 @@
     "email": "E-mail",
     "directions": "Wskazówki dojazdu"
   },
+  "amenities": {
+    "eyebrow": "Udogodnienia",
+    "pool": {
+      "title": "Basen",
+      "desc": "Odśwież się w naszym odkrytym basenie z panoramą jeziora Lugano."
+    },
+    "pet": {
+      "title": "Przyjazny zwierzętom",
+      "desc": "Twój pupil jest mile widziany (niewielka opłata)."
+    },
+    "view": {
+      "title": "Piękny widok",
+      "desc": "Panorama jeziora Lugano i gór z pokoi, balkonów i basenu."
+    },
+    "hosts": {
+      "title": "Życzliwi gospodarze",
+      "desc": "Ciepły, wielojęzyczny zespół rodzinny gotowy zatroszczyć się o Ciebie jak o domownika."
+    },
+    "ticket": {
+      "title": "Ticino Ticket",
+      "desc": "Bezpłatny nielimitowany transport publiczny w całym Ticino — wliczony w cenę pobytu."
+    },
+    "wifi": {
+      "title": "Bezpłatne Wi-Fi",
+      "desc": "Szybkie Wi-Fi w całym hotelu, pokojach, na tarasach i przy basenie."
+    },
+    "renovated": {
+      "title": "Remont w 2026",
+      "desc": "Całkowicie odnowiony w 2026 — świeże, nowoczesne pokoje z zapierającą dech panoramą."
+    },
+    "parking": {
+      "title": "Parking",
+      "desc": "Wygodny parking publiczny przy hotelu — 5 CHF/dzień, bez rezerwacji."
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Butikowy hotel nad jeziorem Lugano",

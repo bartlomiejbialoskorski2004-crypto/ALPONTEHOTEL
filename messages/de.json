@@ -48,6 +48,41 @@
     "email": "E-Mail",
     "directions": "Anfahrt"
   },
+  "amenities": {
+    "eyebrow": "Services",
+    "pool": {
+      "title": "Schwimmbad",
+      "desc": "Erfrischen Sie sich in unserem Außenpool mit Panoramablick auf den Luganersee."
+    },
+    "pet": {
+      "title": "Haustierfreundlich",
+      "desc": "Ihr Vierbeiner ist willkommen (kleine Gebühr)."
+    },
+    "view": {
+      "title": "Schöne Aussicht",
+      "desc": "Panoramablick auf den Luganersee und die Berge von Zimmern, Balkonen und Pool."
+    },
+    "hosts": {
+      "title": "Freundliche Gastgeber",
+      "desc": "Ein herzliches, mehrsprachiges Familienteam, das Sie wie zu Hause empfängt."
+    },
+    "ticket": {
+      "title": "Ticino Ticket",
+      "desc": "Kostenlose unbegrenzte Nutzung des öffentlichen Verkehrs im Tessin — in jedem Aufenthalt inklusive."
+    },
+    "wifi": {
+      "title": "Kostenloses WLAN",
+      "desc": "Schnelles WLAN im gesamten Hotel, in Zimmern, auf Terrassen und am Pool."
+    },
+    "renovated": {
+      "title": "Renoviert 2026",
+      "desc": "Komplett renoviert im Jahr 2026 — frische, moderne Zimmer mit atemberaubendem Panoramablick."
+    },
+    "parking": {
+      "title": "Parkplatz",
+      "desc": "Bequemer öffentlicher Parkplatz direkt am Hotel — CHF 5 pro Tag, keine Reservierung nötig."
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Boutique-Hotel am Luganersee",

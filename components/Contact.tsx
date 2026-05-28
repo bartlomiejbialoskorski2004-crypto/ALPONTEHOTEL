@@ -5,7 +5,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-label="Contact"
-      className="min-h-[70vh] w-full bg-paper"
+      className="min-h-[30vh] w-full bg-paper"
     />
   );
 }

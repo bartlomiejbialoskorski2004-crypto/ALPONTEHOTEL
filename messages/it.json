@@ -48,6 +48,41 @@
     "email": "E-mail",
     "directions": "Come raggiungerci"
   },
+  "amenities": {
+    "eyebrow": "Servizi",
+    "pool": {
+      "title": "Piscina",
+      "desc": "Rinfrescati nella nostra piscina all'aperto con vista panoramica sul Lago di Lugano."
+    },
+    "pet": {
+      "title": "Pet Friendly",
+      "desc": "Il tuo amico a quattro zampe è il benvenuto (piccolo supplemento)."
+    },
+    "view": {
+      "title": "Vista mozzafiato",
+      "desc": "Panorama sul Lago di Lugano e sulle montagne da camere, balconi e piscina."
+    },
+    "hosts": {
+      "title": "Ospiti gentili",
+      "desc": "Una famiglia multilingue, calorosa, pronta a farti sentire come a casa."
+    },
+    "ticket": {
+      "title": "Ticino Ticket",
+      "desc": "Trasporto pubblico illimitato e gratuito in tutto il Ticino — incluso in ogni soggiorno."
+    },
+    "wifi": {
+      "title": "Wi-Fi gratuito",
+      "desc": "Wi-Fi ad alta velocità in tutto l'hotel, camere, terrazze e piscina."
+    },
+    "renovated": {
+      "title": "Rinnovato nel 2026",
+      "desc": "Completamente rinnovato nel 2026 — camere moderne con splendida vista panoramica."
+    },
+    "parking": {
+      "title": "Parcheggio",
+      "desc": "Parcheggio pubblico comodo proprio in hotel — CHF 5 al giorno, senza prenotazione."
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Hotel boutique sul Lago di Lugano",

@@ -48,6 +48,41 @@
     "email": "E-mail",
     "directions": "Directions"
   },
+  "amenities": {
+    "eyebrow": "Amenities",
+    "pool": {
+      "title": "Swimming Pool",
+      "desc": "Cool off in our outdoor pool with panoramic views of Lake Lugano."
+    },
+    "pet": {
+      "title": "Pet Friendly",
+      "desc": "Your furry friend is welcome (small fee applies)."
+    },
+    "view": {
+      "title": "Beautiful View",
+      "desc": "Panoramic Lake Lugano and mountain vistas from rooms, balconies and pool."
+    },
+    "hosts": {
+      "title": "Kind Hosts",
+      "desc": "A warm, multilingual family team ready to make you feel at home."
+    },
+    "ticket": {
+      "title": "Ticino Ticket",
+      "desc": "Free unlimited public transport across Ticino — included with every stay."
+    },
+    "wifi": {
+      "title": "Free Wi-Fi",
+      "desc": "High-speed Wi-Fi throughout the hotel, rooms, terraces and pool area."
+    },
+    "renovated": {
+      "title": "Renovated in 2026",
+      "desc": "Fully renovated in 2026 — fresh, modern rooms with stunning panoramic views."
+    },
+    "parking": {
+      "title": "Parking Available",
+      "desc": "Convenient public parking right at the hotel — CHF 5 per day, no reservation needed."
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Boutique hotel on Lake Lugano",

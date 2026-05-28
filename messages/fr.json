@@ -48,6 +48,41 @@
     "email": "E-mail",
     "directions": "Itinéraire"
   },
+  "amenities": {
+    "eyebrow": "Services",
+    "pool": {
+      "title": "Piscine",
+      "desc": "Rafraîchissez-vous dans notre piscine extérieure avec vue panoramique sur le Lac de Lugano."
+    },
+    "pet": {
+      "title": "Animaux acceptés",
+      "desc": "Votre compagnon à quatre pattes est le bienvenu (petit supplément)."
+    },
+    "view": {
+      "title": "Belle vue",
+      "desc": "Panorama sur le Lac de Lugano et les montagnes depuis les chambres, balcons et piscine."
+    },
+    "hosts": {
+      "title": "Hôtes chaleureux",
+      "desc": "Une équipe familiale multilingue, prête à vous accueillir comme à la maison."
+    },
+    "ticket": {
+      "title": "Ticino Ticket",
+      "desc": "Transports publics illimités gratuits dans tout le Tessin — inclus dans chaque séjour."
+    },
+    "wifi": {
+      "title": "Wi-Fi gratuit",
+      "desc": "Wi-Fi haut débit dans tout l'hôtel, chambres, terrasses et piscine."
+    },
+    "renovated": {
+      "title": "Rénové en 2026",
+      "desc": "Entièrement rénové en 2026 — chambres modernes et vues panoramiques magnifiques."
+    },
+    "parking": {
+      "title": "Parking",
+      "desc": "Parking public pratique à l'hôtel — 5 CHF par jour, sans réservation."
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Hôtel boutique au bord du lac de Lugano",
