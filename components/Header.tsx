@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -26,14 +26,27 @@ export default function Header({ bookingUrl }: Props) {
   const [hovered, setHovered] = useState(false);
   const [openMenu, setOpenMenu] = useState<MegaGroup | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [vw, setVw] = useState(0);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 24);
   });
 
+  useEffect(() => {
+    const update = () => setVw(window.innerWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   // White (solid) when scrolled down, hovering the bar, or a megamenu is open.
   const active = scrolled || hovered || openMenu !== null;
   const openEntry = NAV.find((n) => n.mega?.group === openMenu) ?? null;
+
+  // Logo slides from center to the left padding when the page is scrolled.
+  // Width 64 -> half = 32; padding 24 (mobile) / 40 (lg).
+  const leftPad = vw >= 1024 ? 40 : 24;
+  const logoX = scrolled && vw > 0 ? leftPad - vw / 2 : -32;
 
   const renderTopItem = (item: NavEntry) => {
     if (!item.mega) {
@@ -110,37 +123,48 @@ export default function Header({ bookingUrl }: Props) {
         />
 
         <div className="relative z-10 flex h-20 items-stretch justify-between px-6 lg:h-24 lg:px-10">
-          <nav className="hidden h-full items-center gap-6 lg:flex">
-            {NAV.map(renderTopItem)}
-          </nav>
-
-          <Link
-            href="/"
-            aria-label="Al Ponte"
-            onMouseEnter={() => setOpenMenu(null)}
-            className="absolute left-1/2 top-0 flex h-full -translate-x-1/2 items-center"
+          <motion.nav
+            initial={false}
+            animate={{ paddingLeft: scrolled ? 96 : 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden h-full items-center gap-6 lg:flex"
           >
-            <motion.span
-              initial={false}
-              animate={{
-                scale: active ? 0.78 : 1,
-                filter: active
-                  ? "invert(0) brightness(1)"
-                  : "invert(1) brightness(1.5)",
-              }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              style={{ willChange: "transform, filter" }}
-              className="inline-flex origin-center items-center justify-center"
+            {NAV.map(renderTopItem)}
+          </motion.nav>
+
+          <motion.div
+            initial={false}
+            animate={{ x: logoX }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute left-1/2 top-0 z-10 flex h-full items-center"
+          >
+            <Link
+              href="/"
+              aria-label="Al Ponte"
+              onMouseEnter={() => setOpenMenu(null)}
             >
-              <Image
-                src="/logo.png"
-                alt="Al Ponte"
-                width={64}
-                height={64}
-                priority
-              />
-            </motion.span>
-          </Link>
+              <motion.span
+                initial={false}
+                animate={{
+                  scale: active ? 0.78 : 1,
+                  filter: active
+                    ? "invert(0) brightness(1)"
+                    : "invert(1) brightness(1.5)",
+                }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                style={{ willChange: "transform, filter" }}
+                className="inline-flex origin-center items-center justify-center"
+              >
+                <Image
+                  src="/logo.png"
+                  alt="Al Ponte"
+                  width={64}
+                  height={64}
+                  priority
+                />
+              </motion.span>
+            </Link>
+          </motion.div>
 
           <div className="ml-auto flex h-full items-center gap-5">
             <div className="hidden items-center gap-5 lg:flex">
