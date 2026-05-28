@@ -32,7 +32,7 @@ export default async function HomePage({
   return (
     <main id="top">
       <Hero data={data} />
-      <Contact data={data} />
+      <Contact />
     </main>
   );
 }
