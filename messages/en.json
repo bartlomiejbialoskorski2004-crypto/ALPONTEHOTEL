@@ -52,6 +52,27 @@
     "title": "Rooms",
     "intro": "Our hotel offers rooms and apartments of various sizes and standards. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted — every room is equipped with a modern fire & alarm system."
   },
+  "triple": {
+    "title": "Triple Deluxe Apartment",
+    "intro": "Ideal for families or small groups who appreciate space, comfort, and independence. The private kitchen and balcony overlooking Lugano and the lake create the perfect setting for both short and long stays.",
+    "tags": {
+      "bath": "Private Bathroom",
+      "kitchen": "Private Kitchen",
+      "tv": "Smart TV",
+      "balcony": "Balcony with View",
+      "wifi": "Wi-Fi",
+      "shower": "Shower Gel",
+      "towels": "Towels"
+    },
+    "features": {
+      "king": { "title": "King Size Bed", "desc": "with 2 duvets" },
+      "single": { "title": "Single Bed", "desc": "perfect for one person" },
+      "view": { "title": "View for Lugano", "desc": "city, lake, mountains" },
+      "balcony": { "title": "Balcony", "desc": "with beautiful view" },
+      "space": { "title": "A Lot of Space", "desc": "for longer stays" },
+      "wifi": { "title": "Wi-Fi", "desc": "throughout the room" }
+    }
+  },
   "amenities": {
     "eyebrow": "Amenities",
     "pool": {

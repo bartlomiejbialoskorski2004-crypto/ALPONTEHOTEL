@@ -5,6 +5,7 @@ import { hotelQuery, type HotelDoc } from "@/sanity/queries";
 import { routing } from "@/i18n/routing";
 import Hero from "@/components/Hero";
 import Rooms from "@/components/Rooms";
+import TripleDeluxe from "@/components/TripleDeluxe";
 import Amenities from "@/components/Amenities";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
@@ -37,6 +38,7 @@ export default async function HomePage({
       <Hero />
       <Amenities />
       <Rooms />
+      <TripleDeluxe />
       <Gallery />
       <Contact />
     </main>
