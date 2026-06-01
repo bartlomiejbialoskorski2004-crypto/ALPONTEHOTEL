@@ -26,6 +26,15 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// Hex equivalents of the CSS @theme tokens — motion can't interpolate var()
+// cleanly, so we feed it real colour values for the adaptive bar.
+const COLORS = {
+  paper: "#fafaf7",
+  forest: "#1f3d2b",
+  forestBorder: "#2d5239",
+  mist: "rgba(10,10,10,0.08)",
+};
+
 const MEGA_ICONS: Record<string, LucideIcon> = {
   // rooms
   apartments: Home,
@@ -55,8 +64,12 @@ export default function Header({ bookingUrl }: Props) {
     setScrolled(latest > 24);
   });
 
-  // White (solid) when scrolled down, hovering the bar, or a megamenu is open.
+  // Visible bar when scrolled down, hovering the bar, or a megamenu is open.
   const active = scrolled || hovered || openMenu !== null;
+  // Bar tone: paper while hovering over the hero (no scroll yet), forest once
+  // scrolled past the hero onto the white content sections.
+  const onPaper = active && !scrolled;
+  const onForest = active && scrolled;
   const openEntry = NAV.find((n) => n.mega?.group === openMenu) ?? null;
 
   const renderTopItem = (item: NavEntry) => {
@@ -121,7 +134,7 @@ export default function Header({ bookingUrl }: Props) {
           setOpenMenu(null);
         }}
         className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-          active ? "text-ink" : "text-paper"
+          onPaper ? "text-ink" : "text-paper"
         }`}
       >
         {/* Centered logo (always white). z-0 so the white bar slides over it.
@@ -150,14 +163,19 @@ export default function Header({ bookingUrl }: Props) {
           </motion.span>
         </Link>
 
-        {/* Solid white bar that slides down from the top when active.
-            z-[1] sits over the centered logo so it physically covers it. */}
+        {/* Adaptive bar that slides down from the top when active.
+            Paper while hovering over the hero, forest once scrolled onto
+            the white content sections. z-[1] keeps it over the centered logo. */}
         <motion.div
           aria-hidden
           initial={false}
-          animate={{ y: active ? "0%" : "-100%" }}
+          animate={{
+            y: active ? "0%" : "-100%",
+            backgroundColor: onForest ? COLORS.forest : COLORS.paper,
+            borderBottomColor: onForest ? COLORS.forestBorder : COLORS.mist,
+          }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 border-b border-mist bg-paper lg:h-24"
+          className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 border-b lg:h-24"
         />
 
         <div className="relative z-10 flex h-20 items-stretch justify-between px-6 lg:h-24 lg:px-10">
@@ -172,6 +190,9 @@ export default function Header({ bookingUrl }: Props) {
               href="/"
               aria-label="Al Ponte"
               onMouseEnter={() => setOpenMenu(null)}
+              className={`transition-[filter] duration-500 ${
+                onForest ? "[filter:invert(1)_brightness(1.5)]" : ""
+              }`}
             >
               <Image
                 src="/logo.png"
@@ -197,10 +218,10 @@ export default function Header({ bookingUrl }: Props) {
               onMouseEnter={() => setOpenMenu(null)}
               className="relative z-30 hidden items-center gap-5 lg:flex"
             >
-              <LocaleSwitcher tone={active ? "dark" : "light"} />
+              <LocaleSwitcher tone={onPaper ? "dark" : "light"} />
               <BookNowButton
                 href={bookingUrl ?? "#contact"}
-                variant={active ? "primary" : "ghost"}
+                variant={onPaper ? "primary" : "ghost"}
               />
             </div>
             <button

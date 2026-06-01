@@ -116,7 +116,7 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="absolute left-1/2 top-full z-50 flex -translate-x-1/2 flex-row gap-2 pt-2"
+            className="absolute left-1/2 top-full z-50 flex -translate-x-1/2 flex-row gap-2 pt-2 sm:flex-col sm:gap-1"
           >
             {others.map((code) => {
               const Flag = FLAGS[code];
