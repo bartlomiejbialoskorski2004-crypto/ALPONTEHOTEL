@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import StickerPeel from "./StickerPeel";
 
 // Background slideshow. Drop the matching files in /public.
 // Sanity-managed gallery can replace this list in a later iteration.
@@ -77,6 +78,21 @@ export default function Hero() {
       </motion.div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/55" />
+
+      {/* Peelable AP monogram sticker — sits over the hero photos but
+          outside the parallax wrapper so it stays put while the photos
+          drift. Draggable within the hero section bounds. */}
+      <StickerPeel
+        imageSrc="/logo.png"
+        width={170}
+        rotate={-12}
+        peelBackHoverPct={25}
+        peelBackActivePct={45}
+        shadowIntensity={0.5}
+        lightingIntensity={0.15}
+        initialPosition={{ x: 60, y: 140 }}
+        className="z-20"
+      />
 
       <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3">
         {SLIDES.map((src, i) => (
