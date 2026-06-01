@@ -14,17 +14,6 @@ import BookNowButton from "./BookNowButton";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileMenu from "./MobileMenu";
 import { MEGA_HREF, NAV, type MegaGroup, type NavEntry } from "./menu";
-import {
-  Bed,
-  BedDouble,
-  Home,
-  Landmark,
-  Mountain,
-  MountainSnow,
-  Star,
-  Waves,
-  type LucideIcon,
-} from "lucide-react";
 
 // Hex equivalents of the CSS @theme tokens — motion can't interpolate var()
 // cleanly, so we feed it real colour values for the adaptive bar.
@@ -35,17 +24,20 @@ const COLORS = {
   mist: "rgba(10,10,10,0.08)",
 };
 
-const MEGA_ICONS: Record<string, LucideIcon> = {
+// User-provided thumbnails for each megamenu item. Drop matching JPGs into
+// public/mega/ — onError in the render hides the <img> if a file is missing
+// so the card text still reads cleanly.
+const MEGA_IMAGES: Record<string, string> = {
   // rooms
-  apartments: Home,
-  superior: Star,
-  budgetPlus: BedDouble,
-  budget: Bed,
+  apartments: "/mega/apartments.jpg",
+  superior: "/mega/superior.jpg",
+  budgetPlus: "/mega/budgetPlus.jpg",
+  budget: "/mega/budget.jpg",
   // attractions
-  lake: Waves,
-  sanSalvatore: MountainSnow,
-  monteBre: Mountain,
-  oldTown: Landmark,
+  lake: "/mega/lake.jpg",
+  sanSalvatore: "/mega/sanSalvatore.jpg",
+  monteBre: "/mega/monteBre.jpg",
+  oldTown: "/mega/oldTown.jpg",
 };
 
 type Props = {
@@ -226,7 +218,9 @@ export default function Header({ bookingUrl }: Props) {
               <LocaleSwitcher tone={onPaper ? "dark" : "light"} />
               <BookNowButton
                 href={bookingUrl ?? "#contact"}
-                variant={onPaper ? "primary" : "ghost"}
+                variant={
+                  onForest ? "light" : onPaper ? "primary" : "ghost"
+                }
               />
             </div>
             <button
@@ -262,22 +256,29 @@ export default function Header({ bookingUrl }: Props) {
                   const group = openEntry.mega!.group;
                   const hasDesc = group === "rooms";
                   const href = group === "rooms" ? "#rooms" : MEGA_HREF;
-                  const Icon = MEGA_ICONS[sub];
+                  const imgSrc = MEGA_IMAGES[sub];
                   return (
                     <a
                       key={sub}
                       href={href}
                       className="group flex flex-col px-8 py-12 first:pl-0"
                     >
-                      {Icon && (
-                        <Icon
-                          size={28}
-                          strokeWidth={1}
-                          className="text-ink transition-colors duration-300 group-hover:text-forest"
-                          aria-hidden
-                        />
+                      {imgSrc && (
+                        <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden bg-ink/[0.06]">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={imgSrc}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                            onError={(e) => {
+                              e.currentTarget.style.display = "none";
+                            }}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                          />
+                        </div>
                       )}
-                      <span className="mt-5 text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                      <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
                         / {t(`nav.${group}`)}
                       </span>
                       <span className="mt-4 block font-serif text-2xl leading-tight">
