@@ -56,20 +56,25 @@ export default function Header({ bookingUrl }: Props) {
   const t = useTranslations();
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [openMenu, setOpenMenu] = useState<MegaGroup | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 24);
+    const threshold =
+      typeof window !== "undefined" ? window.innerHeight * 0.9 : 800;
+    setPastHero(latest > threshold);
   });
 
   // Visible bar when scrolled down, hovering the bar, or a megamenu is open.
   const active = scrolled || hovered || openMenu !== null;
-  // Bar tone: paper while hovering over the hero (no scroll yet), forest once
-  // scrolled past the hero onto the white content sections.
-  const onPaper = active && !scrolled;
-  const onForest = active && scrolled;
+  // Bar tone: paper while the hero is still behind it (hover at top, or
+  // scrolling within hero); forest once the bar moves over the white
+  // content sections below the hero.
+  const onPaper = active && !pastHero;
+  const onForest = active && pastHero;
   const openEntry = NAV.find((n) => n.mega?.group === openMenu) ?? null;
 
   const renderTopItem = (item: NavEntry) => {
