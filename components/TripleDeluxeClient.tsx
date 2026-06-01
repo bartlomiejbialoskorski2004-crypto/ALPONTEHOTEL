@@ -10,6 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Droplet,
+  Expand,
   Maximize2,
   Mountain,
   Square,
@@ -17,6 +18,7 @@ import {
   Umbrella,
   Utensils,
   Wifi,
+  X,
   type LucideIcon,
 } from "lucide-react";
 
@@ -75,6 +77,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
   const t = useTranslations("triple");
   const tNav = useTranslations("nav");
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
+  const [lightbox, setLightbox] = useState(false);
   const stripRef = useRef<HTMLDivElement>(null);
 
   const total = photos.length;
@@ -101,6 +104,24 @@ export default function TripleDeluxeClient({ photos }: Props) {
       });
     }
   }, [index]);
+
+  // Lightbox: lock body scroll + Escape + arrow keys
+  useEffect(() => {
+    if (!lightbox) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(false);
+      else if (e.key === "ArrowLeft") paginate(-1);
+      else if (e.key === "ArrowRight") paginate(1);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lightbox]);
 
   return (
     <section
@@ -135,9 +156,9 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   key={key}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="inline-flex items-center gap-2 bg-paper px-3 py-2 text-[10px] font-medium uppercase tracking-[0.2em] text-ink shadow-[0_1px_0_rgba(10,10,10,0.04)] transition-shadow hover:shadow-[0_4px_12px_rgba(10,10,10,0.08)]"
+                  className="inline-flex items-center gap-2 bg-paper/60 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-ink"
                 >
-                  <Icon size={14} strokeWidth={1.5} aria-hidden />
+                  <Icon size={14} strokeWidth={1.25} aria-hidden />
                   <span>{t(`tags.${key}`)}</span>
                 </motion.li>
               ))}
@@ -152,7 +173,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
             <motion.ul
               variants={fadeUp}
-              className="mt-12 grid grid-cols-3 gap-x-4 gap-y-10 text-center"
+              className="mt-12 grid grid-cols-3 gap-x-4 gap-y-8 text-center"
             >
               {FEATURES.map(({ key, Icon }) => (
                 <motion.li
@@ -162,12 +183,12 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   className="group flex flex-col items-center"
                 >
                   <Icon
-                    size={28}
+                    size={24}
                     strokeWidth={1}
                     className="text-ink transition-colors duration-300 group-hover:text-forest"
                     aria-hidden
                   />
-                  <h3 className="mt-3 text-sm font-semibold text-ink">
+                  <h3 className="mt-3 text-sm font-medium text-ink">
                     {t(`features.${key}.title`)}
                   </h3>
                   <p className="mt-1 text-xs leading-relaxed text-ink/60">
@@ -181,7 +202,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
           <motion.a
             href="#contact"
             variants={fadeUp}
-            className="group relative mt-auto block overflow-hidden bg-ink/[0.08] py-5 text-center text-xs font-semibold uppercase tracking-[0.3em] text-ink transition-colors duration-500 hover:bg-forest hover:text-paper"
+            className="group relative mt-auto block overflow-hidden bg-ink/[0.04] py-5 text-center text-xs font-medium uppercase tracking-[0.3em] text-ink transition-colors duration-500 hover:bg-forest hover:text-paper"
           >
             <span className="relative z-10">{tNav("bookNow")}</span>
             <span
@@ -193,7 +214,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
         {/* Right — sticky carousel with thumbnail strip */}
         <div className="relative lg:sticky lg:top-24 lg:self-start">
-          <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink/10">
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-ink/10 lg:aspect-auto lg:h-[calc(100vh-8rem)]">
             {hasPhotos && (
               <AnimatePresence
                 initial={false}
@@ -221,10 +242,11 @@ export default function TripleDeluxeClient({ photos }: Props) {
                     if (info.offset.x < -60) paginate(1);
                     else if (info.offset.x > 60) paginate(-1);
                   }}
+                  onClick={() => setLightbox(true)}
                   draggable={false}
                   loading="eager"
                   decoding="async"
-                  className="absolute inset-0 h-full w-full cursor-grab object-cover select-none active:cursor-grabbing"
+                  className="absolute inset-0 h-full w-full cursor-zoom-in object-cover select-none"
                 />
               </AnimatePresence>
             )}
@@ -274,6 +296,20 @@ export default function TripleDeluxeClient({ photos }: Props) {
                 </div>
               </>
             )}
+
+            {hasPhotos && (
+              <motion.button
+                type="button"
+                onClick={() => setLightbox(true)}
+                aria-label="Open full image"
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 18 }}
+                className="absolute bottom-3 right-3 z-10 inline-flex h-10 w-10 items-center justify-center bg-paper/85 text-ink shadow-sm backdrop-blur-md transition-colors hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest"
+              >
+                <Expand size={16} strokeWidth={1.5} />
+              </motion.button>
+            )}
           </div>
 
           {/* Thumbnail strip */}
@@ -310,6 +346,90 @@ export default function TripleDeluxeClient({ photos }: Props) {
           )}
         </div>
       </div>
+
+      {/* Lightbox — full image with object-contain */}
+      <AnimatePresence>
+        {lightbox && hasPhotos && (
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Photo viewer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            onClick={() => setLightbox(false)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 p-4 backdrop-blur"
+          >
+            <AnimatePresence mode="wait" initial={false} custom={direction}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <motion.img
+                key={index}
+                src={photos[index]}
+                alt=""
+                custom={direction}
+                initial={{ opacity: 0, x: direction > 0 ? 40 : -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: direction > 0 ? -40 : 40 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                onClick={(e) => e.stopPropagation()}
+                className="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl"
+              />
+            </AnimatePresence>
+
+            <motion.button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox(false);
+              }}
+              aria-label="Close"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              className="absolute right-4 top-4 inline-flex h-12 w-12 items-center justify-center bg-paper/10 text-paper backdrop-blur-md transition-colors hover:bg-paper/20"
+            >
+              <X size={20} strokeWidth={1.5} />
+            </motion.button>
+
+            {total > 1 && (
+              <>
+                <motion.button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    paginate(-1);
+                  }}
+                  aria-label="Previous photo"
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="absolute left-4 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-paper/10 text-paper backdrop-blur-md transition-colors hover:bg-paper/20"
+                >
+                  <ChevronLeft size={20} strokeWidth={1.5} />
+                </motion.button>
+                <motion.button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    paginate(1);
+                  }}
+                  aria-label="Next photo"
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="absolute right-4 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-paper/10 text-paper backdrop-blur-md transition-colors hover:bg-paper/20"
+                >
+                  <ChevronRight size={20} strokeWidth={1.5} />
+                </motion.button>
+
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-serif text-sm tracking-[0.3em] text-paper/80">
+                  {String(index + 1).padStart(2, "0")}
+                  <span className="mx-2 text-paper/40">/</span>
+                  {String(total).padStart(2, "0")}
+                </div>
+              </>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

@@ -101,10 +101,10 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={active.toUpperCase()}
-        className="flex items-center p-2"
+        className="flex items-center p-2.5 sm:p-2"
       >
         {ActiveFlag && (
-          <ActiveFlag className="h-6 w-9 rounded-none shadow-sm ring-1 ring-black/10" />
+          <ActiveFlag className="h-7 w-10 rounded-none shadow-sm ring-1 ring-black/10 sm:h-6 sm:w-9" />
         )}
       </button>
 
@@ -116,7 +116,7 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="absolute right-0 top-full z-50 flex flex-col gap-1 p-2"
+            className="absolute left-1/2 top-full z-50 flex -translate-x-1/2 flex-col gap-1 pt-2"
           >
             {others.map((code) => {
               const Flag = FLAGS[code];
@@ -132,7 +132,7 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
                   whileTap={{ scale: 0.95 }}
                 >
                   {Flag && (
-                    <Flag className="h-6 w-9 rounded-none shadow-md ring-1 ring-black/10" />
+                    <Flag className="h-7 w-10 rounded-none shadow-md ring-1 ring-black/10 sm:h-6 sm:w-9" />
                   )}
                 </motion.button>
               );
