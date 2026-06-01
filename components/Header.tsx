@@ -14,6 +14,30 @@ import BookNowButton from "./BookNowButton";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileMenu from "./MobileMenu";
 import { MEGA_HREF, NAV, type MegaGroup, type NavEntry } from "./menu";
+import {
+  Bed,
+  BedDouble,
+  Home,
+  Landmark,
+  Mountain,
+  MountainSnow,
+  Star,
+  Waves,
+  type LucideIcon,
+} from "lucide-react";
+
+const MEGA_ICONS: Record<string, LucideIcon> = {
+  // rooms
+  apartments: Home,
+  superior: Star,
+  budgetPlus: BedDouble,
+  budget: Bed,
+  // attractions
+  lake: Waves,
+  sanSalvatore: MountainSnow,
+  monteBre: Mountain,
+  oldTown: Landmark,
+};
 
 type Props = {
   bookingUrl?: string;
@@ -169,7 +193,10 @@ export default function Header({ bookingUrl }: Props) {
           </motion.nav>
 
           <div className="ml-auto flex h-full items-center gap-5">
-            <div className="hidden items-center gap-5 lg:flex">
+            <div
+              onMouseEnter={() => setOpenMenu(null)}
+              className="relative z-30 hidden items-center gap-5 lg:flex"
+            >
               <LocaleSwitcher tone={active ? "dark" : "light"} />
               <BookNowButton
                 href={bookingUrl ?? "#contact"}
@@ -209,13 +236,22 @@ export default function Header({ bookingUrl }: Props) {
                   const group = openEntry.mega!.group;
                   const hasDesc = group === "rooms";
                   const href = group === "rooms" ? "#rooms" : MEGA_HREF;
+                  const Icon = MEGA_ICONS[sub];
                   return (
                     <a
                       key={sub}
                       href={href}
                       className="group flex flex-col px-8 py-12 first:pl-0"
                     >
-                      <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                      {Icon && (
+                        <Icon
+                          size={28}
+                          strokeWidth={1}
+                          className="text-ink transition-colors duration-300 group-hover:text-forest"
+                          aria-hidden
+                        />
+                      )}
+                      <span className="mt-5 text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
                         / {t(`nav.${group}`)}
                       </span>
                       <span className="mt-4 block font-serif text-2xl leading-tight">

@@ -81,7 +81,7 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
     router.replace(
       // @ts-expect-error -- pathname/params typed strictly per route
       { pathname, params },
-      { locale: code },
+      { locale: code, scroll: false },
     );
   };
 
@@ -116,7 +116,7 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="absolute left-1/2 top-full z-50 flex -translate-x-1/2 flex-col gap-1 pt-2"
+            className="absolute left-1/2 top-full z-50 flex -translate-x-1/2 flex-row gap-2 pt-2"
           >
             {others.map((code) => {
               const Flag = FLAGS[code];
