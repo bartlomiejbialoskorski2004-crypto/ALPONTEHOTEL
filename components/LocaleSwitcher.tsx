@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { ComponentType } from "react";
+import { AnimatePresence, motion, type Variants } from "motion/react";
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
 import IT from "country-flag-icons/react/3x2/IT";
@@ -13,6 +14,29 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 type FlagComponent = ComponentType<{ className?: string; title?: string }>;
+
+const popoverVariants: Variants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.05,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const flagItemVariants: Variants = {
+  hidden: { opacity: 0, y: -8 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 const FLAGS: Record<string, FlagComponent> = {
   it: IT,
@@ -84,30 +108,38 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
         )}
       </button>
 
-      {open && (
-        <div
-          role="menu"
-          className="absolute right-0 top-full z-50 flex flex-col gap-1 p-2"
-        >
-          {others.map((code) => {
-            const Flag = FLAGS[code];
-            return (
-              <button
-                key={code}
-                type="button"
-                role="menuitem"
-                onClick={() => select(code)}
-                aria-label={code.toUpperCase()}
-                className="transition-transform duration-200 hover:scale-110"
-              >
-                {Flag && (
-                  <Flag className="h-6 w-9 rounded-none shadow-md ring-1 ring-black/10" />
-                )}
-              </button>
-            );
-          })}
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="menu"
+            variants={popoverVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="absolute right-0 top-full z-50 flex flex-col gap-1 p-2"
+          >
+            {others.map((code) => {
+              const Flag = FLAGS[code];
+              return (
+                <motion.button
+                  key={code}
+                  variants={flagItemVariants}
+                  type="button"
+                  role="menuitem"
+                  onClick={() => select(code)}
+                  aria-label={code.toUpperCase()}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {Flag && (
+                    <Flag className="h-6 w-9 rounded-none shadow-md ring-1 ring-black/10" />
+                  )}
+                </motion.button>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
