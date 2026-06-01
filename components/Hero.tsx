@@ -5,11 +5,11 @@ import {
   motion,
   useReducedMotion,
   useScroll,
+  useSpring,
   useTransform,
 } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import StickerPeel from "./StickerPeel";
 
 // Background slideshow. Drop the matching files in /public.
 // Sanity-managed gallery can replace this list in a later iteration.
@@ -42,9 +42,16 @@ export default function Hero() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const heroY = useTransform(scrollY, [0, vh || 800], [0, -(vh || 800) * 0.35]);
-  const heroScale = useTransform(scrollY, [0, vh || 800], [1, 1.12]);
-  const heroOpacity = useTransform(scrollY, [0, vh || 800], [1, 0.55]);
+  // Smooth scrollY via spring — gives the parallax a buttery follow even
+  // on top of Lenis. The photo layer keeps a baseline scale 1.1 (over-fill)
+  // so a small y shift never exposes the bottom of the section.
+  const smoothY = useSpring(scrollY, {
+    stiffness: 80,
+    damping: 30,
+    mass: 0.4,
+  });
+  const heroY = useTransform(smoothY, [0, vh || 800], [0, -(vh || 800) * 0.08]);
+  const heroScale = useTransform(smoothY, [0, vh || 800], [1.1, 1.22]);
 
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
@@ -52,9 +59,7 @@ export default function Hero() {
         className="absolute inset-0"
         aria-hidden
         style={
-          reduceMotion
-            ? undefined
-            : { y: heroY, scale: heroScale, opacity: heroOpacity }
+          reduceMotion ? undefined : { y: heroY, scale: heroScale }
         }
       >
         {SLIDES.map((src, i) => (
@@ -77,22 +82,7 @@ export default function Hero() {
         ))}
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/55" />
-
-      {/* Peelable AP monogram sticker — sits over the hero photos but
-          outside the parallax wrapper so it stays put while the photos
-          drift. Draggable within the hero section bounds. */}
-      <StickerPeel
-        imageSrc="/logo.png"
-        width={170}
-        rotate={-12}
-        peelBackHoverPct={25}
-        peelBackActivePct={45}
-        shadowIntensity={0.5}
-        lightingIntensity={0.15}
-        initialPosition={{ x: 60, y: 140 }}
-        className="z-20"
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/15 to-black/45" />
 
       <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3">
         {SLIDES.map((src, i) => (
