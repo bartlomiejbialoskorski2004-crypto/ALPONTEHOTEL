@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { client } from "@/sanity/lib/client";
 import { hotelBookingUrlQuery } from "@/sanity/queries";
 import Header from "@/components/Header";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -105,6 +106,7 @@ export default async function LocaleLayout({
     >
       <body>
         <NextIntlClientProvider messages={messages} locale={locale as Locale}>
+          <SmoothScroll />
           <Header bookingUrl={bookingUrl} />
           {children}
         </NextIntlClientProvider>

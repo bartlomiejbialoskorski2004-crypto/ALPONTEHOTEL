@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -24,9 +29,33 @@ export default function Hero() {
     return () => clearInterval(id);
   }, [reduceMotion]);
 
+  // Scroll-linked parallax / scale / fade for the photo layer. Maps the
+  // first viewport-height of scroll onto a gentle y / scale / opacity
+  // shift so the hero feels alive as the user moves down the page.
+  const { scrollY } = useScroll();
+  const [vh, setVh] = useState(0);
+  useEffect(() => {
+    const update = () => setVh(window.innerHeight);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const heroY = useTransform(scrollY, [0, vh || 800], [0, -(vh || 800) * 0.35]);
+  const heroScale = useTransform(scrollY, [0, vh || 800], [1, 1.12]);
+  const heroOpacity = useTransform(scrollY, [0, vh || 800], [1, 0.55]);
+
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
-      <div className="absolute inset-0" aria-hidden>
+      <motion.div
+        className="absolute inset-0"
+        aria-hidden
+        style={
+          reduceMotion
+            ? undefined
+            : { y: heroY, scale: heroScale, opacity: heroOpacity }
+        }
+      >
         {SLIDES.map((src, i) => (
           <motion.div
             key={src}
@@ -45,7 +74,7 @@ export default function Hero() {
             />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/55" />
 

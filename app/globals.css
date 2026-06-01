@@ -12,10 +12,6 @@
   --color-overlay: rgba(10, 10, 10, 0.35);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   background: var(--color-paper);
