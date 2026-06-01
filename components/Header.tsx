@@ -100,13 +100,22 @@ export default function Header({ bookingUrl }: Props) {
           active ? "text-ink" : "text-paper"
         }`}
       >
-        {/* Centered logo (always white). z-0 so the white bar slides over it. */}
+        {/* Centered logo (always white). z-0 so the white bar slides over it.
+            On active, the logo itself slides up out of the bar with a fade. */}
         <Link
           href="/"
           aria-label="Al Ponte"
           className="absolute left-1/2 top-0 z-0 flex h-20 -translate-x-1/2 items-center lg:h-24"
         >
-          <span className="inline-flex items-center justify-center [filter:invert(1)_brightness(1.5)]">
+          <motion.span
+            initial={false}
+            animate={{
+              y: active ? "-150%" : 0,
+              opacity: active ? 0 : 1,
+            }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center justify-center [filter:invert(1)_brightness(1.5)]"
+          >
             <Image
               src="/logo.png"
               alt="Al Ponte"
@@ -114,7 +123,7 @@ export default function Header({ bookingUrl }: Props) {
               height={64}
               priority
             />
-          </span>
+          </motion.span>
         </Link>
 
         {/* Solid white bar that slides down from the top when active.
