@@ -29,15 +29,15 @@ const COLORS = {
 // so the card text still reads cleanly.
 const MEGA_IMAGES: Record<string, string> = {
   // rooms
-  apartments: "/mega/apartments.jpg",
-  superior: "/mega/superior.jpg",
-  budgetPlus: "/mega/budgetPlus.jpg",
-  budget: "/mega/budget.jpg",
+  apartments: "/mega/aparta.jpeg",
+  superior: "/mega/sup.jpeg",
+  budgetPlus: "/mega/glownebudgpl.jpeg",
+  budget: "/mega/glownebudg.jpeg",
   // attractions
-  lake: "/mega/lake.jpg",
-  sanSalvatore: "/mega/sanSalvatore.jpg",
-  monteBre: "/mega/monteBre.jpg",
-  oldTown: "/mega/oldTown.jpg",
+  lake: "/mega/Lakelugano.jpg",
+  sanSalvatore: "/mega/sansalvatore.jpg",
+  monteBre: "/mega/bre.jpg",
+  oldTown: "/mega/Oldtown.jpg",
 };
 
 type Props = {
