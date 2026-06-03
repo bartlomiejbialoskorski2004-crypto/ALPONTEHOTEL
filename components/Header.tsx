@@ -13,7 +13,7 @@ import { Link } from "@/i18n/navigation";
 import BookNowButton from "./BookNowButton";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileMenu from "./MobileMenu";
-import { MEGA_HREF, NAV, type MegaGroup, type NavEntry } from "./menu";
+import { NAV, type MegaGroup, type NavEntry } from "./menu";
 
 // Hex equivalents of the CSS @theme tokens — motion can't interpolate var()
 // cleanly, so we feed it real colour values for the adaptive bar.
@@ -33,11 +33,14 @@ const MEGA_IMAGES: Record<string, string> = {
   superior: "/mega/sup.jpeg",
   budgetPlus: "/mega/glownebudgpl.jpeg",
   budget: "/mega/glownebudg.jpeg",
-  // attractions
-  lake: "/mega/Lakelugano.jpg",
-  sanSalvatore: "/mega/sansalvatore.jpg",
-  monteBre: "/mega/bre.jpg",
-  oldTown: "/mega/Oldtown.jpg",
+};
+
+// Thumbnails for the Attractions megamenu (deep-links into /attractions).
+const ATTRACTION_THUMBS: Record<string, string> = {
+  mountains: "/mega/sansalvatore.jpg",
+  lugano: "/mega/Oldtown.jpg",
+  villages: "/mega/Lakelugano.jpg",
+  cademario: "/gallery/1.jpg",
 };
 
 type Props = {
@@ -98,31 +101,42 @@ export default function Header({ bookingUrl }: Props) {
     }
     const group = item.mega.group;
     const isOpen = openMenu === group;
+    const labelInner = (
+      <>
+        {t(`nav.${item.key}`)}
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="none"
+          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          aria-hidden
+        >
+          <path
+            d="M2 3.5L5 6.5L8 3.5"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </>
+    );
+    const labelClass =
+      "flex items-center gap-1.5 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]";
     return (
       <div
         key={item.key}
         onMouseEnter={() => setOpenMenu(group)}
         className="relative flex h-full items-center"
       >
-        <span className="flex cursor-default items-center gap-1.5 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]">
-          {t(`nav.${item.key}`)}
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 10 10"
-            fill="none"
-            className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-            aria-hidden
-          >
-            <path
-              d="M2 3.5L5 6.5L8 3.5"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
+        {item.href.startsWith("/") ? (
+          <Link href={item.href} className={labelClass}>
+            {labelInner}
+          </Link>
+        ) : (
+          <span className={`${labelClass} cursor-default`}>{labelInner}</span>
+        )}
         <span
           className={`absolute bottom-0 left-0 h-[2px] w-full origin-left bg-forest transition-transform duration-300 ${
             isOpen ? "scale-x-100" : "scale-x-0"
@@ -265,53 +279,99 @@ export default function Header({ bookingUrl }: Props) {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="relative z-10 hidden overflow-hidden bg-paper text-ink lg:block"
             >
-              <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 lg:px-10">
-                {openEntry.mega.items.map((sub) => {
-                  const group = openEntry.mega!.group;
-                  const hasDesc = group === "rooms";
-                  const href = group === "rooms" ? "#rooms" : MEGA_HREF;
-                  const imgSrc = MEGA_IMAGES[sub];
+              {(() => {
+                const group = openEntry.mega!.group;
+                const isRooms = group === "rooms";
+                const isInfo = group === "info";
+
+                if (isInfo) {
                   return (
-                    <a
-                      key={sub}
-                      href={href}
-                      className="group flex flex-col px-8 py-12 first:pl-0"
-                    >
-                      {imgSrc && (
-                        <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden bg-ink/[0.06]">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={imgSrc}
-                            alt=""
-                            loading="lazy"
-                            decoding="async"
-                            onError={(e) => {
-                              e.currentTarget.style.display = "none";
-                            }}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                          />
-                        </div>
-                      )}
+                    <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
                       <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
-                        / {t(`nav.${group}`)}
+                        / {t(`nav.${openEntry.key}`)}
                       </span>
-                      <span className="mt-4 block font-serif text-2xl leading-tight">
-                        {hasDesc
-                          ? t(`mega.rooms.${sub}.title`)
-                          : t(`mega.${group}.${sub}`)}
-                      </span>
-                      {hasDesc && (
-                        <span className="mt-3 block text-sm leading-relaxed text-ink/70">
-                          {t(`mega.rooms.${sub}.desc`)}
-                        </span>
-                      )}
-                      <span className="mt-6 block text-xl transition-transform duration-300 group-hover:translate-x-1.5">
-                        →
-                      </span>
-                    </a>
+                      <div className="mt-6 grid grid-cols-2 gap-x-12 md:grid-cols-3">
+                        {openEntry.mega!.items.map((sub) => (
+                          <Link
+                            key={sub.key}
+                            href={sub.href}
+                            onClick={() => setOpenMenu(null)}
+                            className="group flex items-center justify-between gap-4 border-b border-mist py-4"
+                          >
+                            <span className="font-serif text-lg leading-tight">
+                              {t(`info.nav.${sub.key}`)}
+                            </span>
+                            <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
+                              →
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   );
-                })}
-              </div>
+                }
+
+                return (
+                  <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 lg:px-10">
+                    {openEntry.mega!.items.map((sub) => {
+                      const title = isRooms
+                        ? t(`mega.rooms.${sub.key}.title`)
+                        : t(`attractions.nav.${sub.key}`);
+                      const imgSrc = isRooms
+                        ? MEGA_IMAGES[sub.key]
+                        : ATTRACTION_THUMBS[sub.key];
+                      const inner = (
+                        <>
+                          {imgSrc && (
+                            <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden bg-ink/[0.06]">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={imgSrc}
+                                alt=""
+                                loading="lazy"
+                                decoding="async"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                }}
+                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                              />
+                            </div>
+                          )}
+                          <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                            / {t(`nav.${openEntry.key}`)}
+                          </span>
+                          <span className="mt-4 block font-serif text-2xl leading-tight">
+                            {title}
+                          </span>
+                          {isRooms && (
+                            <span className="mt-3 block text-sm leading-relaxed text-ink/70">
+                              {t(`mega.rooms.${sub.key}.desc`)}
+                            </span>
+                          )}
+                          <span className="mt-6 block text-xl transition-transform duration-300 group-hover:translate-x-1.5">
+                            →
+                          </span>
+                        </>
+                      );
+                      const className = "group flex flex-col px-8 py-12 first:pl-0";
+                      return sub.href.startsWith("/") ? (
+                        <Link
+                          key={sub.key}
+                          href={sub.href}
+                          onClick={() => setOpenMenu(null)}
+                          className={className}
+                        >
+                          {inner}
+                        </Link>
+                      ) : (
+                        <a key={sub.key} href={sub.href} className={className}>
+                          {inner}
+                        </a>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
             </motion.div>
           )}
         </AnimatePresence>
