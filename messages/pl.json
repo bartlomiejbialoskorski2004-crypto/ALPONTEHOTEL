@@ -204,6 +204,169 @@
     },
     "signoff": "Serdecznie pozdrawiamy — Zespół Hotelu Al Ponte Albergo."
   },
+  "attractions": {
+    "seoTitle": "Atrakcje w Cademario i Ticino – Przewodnik dla Gości Al Ponte",
+    "seoDescription": "Odkryj najlepsze atrakcje okolic Cademario i Lugano. Poznaj szlaki piesze, urokliwe wioski i górskie szczyty dostępne bezpłatnie z Ticino Ticket!",
+    "eyebrow": "Odkryj Ticino",
+    "title": "Twoje idealne wakacje zaczynają się tutaj",
+    "intro": "Witamy w Ticino, regionie pełnym uroku, natury i niezapomnianych wrażeń. Aby pomóc Ci w pełni wykorzystać Twój pobyt, przygotowaliśmy inspirujący wybór atrakcji — wszystkie łatwo dostępne i bezstresowe dzięki Twojemu Ticino Ticket, który otrzymasz w cenie rezerwacji.",
+    "videoLabel": "Zobacz film",
+    "videoUrl": "https://www.youtube.com/watch?v=0UnqdqDfpnA",
+    "tocTitle": "Spis treści",
+    "backToTop": "Do góry",
+    "closing": "Wszystko w zasięgu ręki — i bezpłatnie z Twoim Ticino Ticket.",
+    "nav": {
+      "ticket": "Ticino Ticket",
+      "cademario": "Cademario",
+      "lugano": "Lugano",
+      "mountains": "Góry",
+      "nature": "Spacery",
+      "luino": "Targ w Luino",
+      "villages": "Wioski nad jeziorem",
+      "shopping": "Zakupy",
+      "asconaLocarno": "Ascona i Locarno",
+      "italy": "Wycieczki do Włoch",
+      "adventure": "Przygoda"
+    },
+    "sections": {
+      "ticket": {
+        "title": "Bezpłatny Ticino Ticket",
+        "items": [
+          {
+            "text": "Po przyjeździe po prostu zaparkuj samochód i zacznij zwiedzanie. Przystanek autobusowy znajduje się zaledwie 25 metrów od hotelu, a dogodne połączenia kursują co godzinę. Ostatni autobus powrotny do Al Ponte odjeżdża z Lugano (Autosilo Balestra) o 22:00, a w piątki i soboty kursy są wydłużone aż do północy.",
+            "links": [{ "label": "Ticino Ticket", "url": "https://www.ticino.ch/it/ticket.html" }]
+          }
+        ]
+      },
+      "cademario": {
+        "title": "Odkryj Cademario",
+        "items": [
+          { "text": "W samym Cademario warto zobaczyć:" },
+          {
+            "heading": "Kościół San Bernardo",
+            "text": "XII-wieczna romańska świątynia, malowniczo położona wśród kasztanowców, oferująca jeden z najpiękniejszych punktów widokowych w regionie."
+          },
+          {
+            "heading": "Klasztor SS. Francesco e Chiara (Klasztor Klarysek)",
+            "text": "Nowoczesny klasztor sióstr klarysek, założony w 1992 roku. To miejsce ciszy i kontemplacji przyciąga odwiedzających spokojną energią i skromną, ale piękną architekturą, wkomponowaną w alpejski krajobraz.",
+            "links": [{ "label": "Klasztor SS. Francesco e Chiara", "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900" }]
+          },
+          {
+            "heading": "Wędrówki i natura",
+            "text": "Liczne szlaki prowadzą przez lasy Malcantone, idealne na piesze wycieczki z widokiem na jezioro Lugano.",
+            "links": [{ "label": "Szlaki piesze", "url": "https://www.luganoregion.com/en/things-to-do/sport-and-nature/nature/hiking" }]
+          },
+          {
+            "text": "Cademario to także doskonałe miejsce dla miłośników rowerów i wycieczek rowerowych.",
+            "links": [{ "label": "Trasy rowerowe", "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/" }]
+          }
+        ]
+      },
+      "lugano": {
+        "title": "Czarujące Lugano",
+        "items": [
+          {
+            "text": "Zacznij swoją przygodę od relaksującego popołudniowego spaceru po pięknym Parco Ciani, a następnie udaj się na wyśmienitą kolację w Lugano. Latem skorzystaj z rowerów wodnych lub odświeżającej kąpieli w jeziorze.",
+            "links": [{ "label": "Lugano na świeżym powietrzu", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura" }]
+          }
+        ]
+      },
+      "mountains": {
+        "title": "Górskie Przygody",
+        "items": [
+          {
+            "text": "Spektakularne panoramy czekają na Ciebie na Monte Generoso, Monte Brè i Monte San Salvatore. Wszystkie trzy szczyty są widoczne z Al Ponte i można do nich łatwo dotrzeć autobusem lub pociągiem — całkowicie bezpłatnie z Twoim Ticino Ticket.",
+            "links": [
+              { "label": "Monte Generoso", "url": "https://www.montegeneroso.ch/en/plan/railway" },
+              { "label": "Monte San Salvatore", "url": "https://www.montesansalvatore.ch/" },
+              { "label": "Monte Brè", "url": "https://www.montebre.ch/" }
+            ]
+          }
+        ]
+      },
+      "nature": {
+        "title": "Spacery na łonie natury",
+        "items": [
+          {
+            "text": "Zaledwie 1 km od hotelu znajdziesz idylliczne ścieżki przyrodnicze oferujące zapierające dech w piersiach widoki. Podążaj szlakiem, aby odkryć mały, orzeźwiający wodospad i stary Mulino (młyn) — idealne miejsce na spokojną popołudniową ucieczkę od codzienności.",
+            "links": [
+              { "label": "Ścieżki przyrodnicze", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo" },
+              { "label": "Maglio del Malcantone", "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html" }
+            ]
+          }
+        ]
+      },
+      "luino": {
+        "title": "Włoska Atmosfera na Targu w Luino",
+        "items": [
+          {
+            "text": "W każdą środę wybierz się autobusem na słynny targ w Luino nad jeziorem Maggiore. Ciesz się tętniącą życiem atmosferą zakupów, lokalnymi produktami i urokiem Włoch tuż za granicą.",
+            "links": [{ "label": "Targ w Luino", "url": "https://ilmercatodiluino.it/" }]
+          }
+        ]
+      },
+      "villages": {
+        "title": "Urokliwe Miejscowości Nadjeziorne",
+        "items": [
+          {
+            "text": "Odkryj Caslano, malowniczą wioskę z autentycznym włosko-tessyńskim klimatem.",
+            "links": [{ "label": "Caslano", "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html" }]
+          },
+          {
+            "text": "W pobliżu rodziny pokochają małe, ale urocze Zoo w Magliaso.",
+            "links": [{ "label": "Zoo al Maglio", "url": "https://www.zooalmaglio.ch/" }]
+          },
+          {
+            "text": "Odwiedź Melide i kultową Swissminiatur, oddaloną o zaledwie kilka minut jazdy pociągiem.",
+            "links": [{ "label": "Swissminiatur", "url": "https://www.swissminiatur.ch/" }]
+          },
+          {
+            "text": "Możesz też zwiedzić Morcote i zachwycający Parco Scherrer podczas malowniczego rejsu statkiem po jeziorze.",
+            "links": [{ "label": "Morcote", "url": "https://www.visitmorcote.ch/" }]
+          }
+        ]
+      },
+      "shopping": {
+        "title": "Zakupy i Styl",
+        "items": [
+          {
+            "text": "Dla miłośników zakupów czeka Fox Town w Mendrisio z markowymi outletami i świetnymi okazjami — otwarte nawet w niedziele i łatwo dostępne pociągiem.",
+            "links": [{ "label": "FoxTown Mendrisio", "url": "https://www.foxtown.com/" }]
+          }
+        ]
+      },
+      "asconaLocarno": {
+        "title": "Ascona i Locarno",
+        "items": [
+          {
+            "text": "Nie przegap Ascony i Locarno, dwóch eleganckich miast nad jeziorem Maggiore. Odpocznij na nadmorskich promenadach, odwiedź lokalne kawiarnie i ciesz się magiczną atmosferą.",
+            "links": [{ "label": "Ascona & Locarno", "url": "https://www.ascona-locarno.com/it/esplora/ascona" }]
+          }
+        ]
+      },
+      "italy": {
+        "title": "Wycieczki do Włoch",
+        "items": [
+          {
+            "text": "Rozszerz swoją przygodę o przejażdżkę pociągiem TILO do Como lub Mediolanu — idealnych miejsc na kontakt z kulturą, zakupy i słynne na całym świecie lody.",
+            "links": [{ "label": "Pociągi TILO", "url": "https://www.tilo.ch/" }]
+          }
+        ]
+      },
+      "adventure": {
+        "title": "Przygoda i Zabawa na Świeżym Powietrzu",
+        "items": [
+          {
+            "text": "Dla poszukiwaczy wrażeń doliny Verzasca i Maggia oferują zapierające dech w piersiach krajobrazy, krystalicznie czyste rzeki i ekscytujące aktywności, takie jak skoki na bungy w Verzasca czy pokazy Red Bull Cliff Diving.",
+            "links": [
+              { "label": "Valle Verzasca", "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca" },
+              { "label": "Red Bull Cliff Diving", "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243" }
+            ]
+          }
+        ]
+      }
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Butikowy hotel nad jeziorem Lugano",

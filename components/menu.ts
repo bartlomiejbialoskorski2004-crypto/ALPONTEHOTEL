@@ -27,14 +27,7 @@ export const NAV: NavEntry[] = [
     },
   },
   { key: "info", href: "/informations" },
-  {
-    key: "attractions",
-    href: "#top",
-    mega: {
-      group: "attractions",
-      items: ["lake", "sanSalvatore", "monteBre", "oldTown"],
-    },
-  },
+  { key: "attractions", href: "/attractions" },
   { key: "gallery", href: "#gallery" },
   { key: "contact", href: "#contact" },
 ];

@@ -204,6 +204,169 @@
     },
     "signoff": "Cordiali saluti — il team dell'Hotel Al Ponte Albergo."
   },
+  "attractions": {
+    "seoTitle": "Cosa vedere a Cademario e in Ticino | Guida per i nostri ospiti",
+    "seoDescription": "Scopri le migliori attrazioni di Cademario e dintorni. Escursioni, borghi pittoreschi e vette panoramiche accessibili gratuitamente con il Ticino Ticket!",
+    "eyebrow": "Scoprite il Ticino",
+    "title": "La vostra vacanza perfetta inizia qui",
+    "intro": "Benvenuti in Ticino, una regione ricca di fascino, natura ed esperienze indimenticabili. Per aiutarvi a trarre il massimo dal vostro soggiorno, abbiamo selezionato per voi una serie di attività stimolanti, tutte facilmente accessibili e senza stress grazie al vostro Ticino Ticket, incluso nella prenotazione.",
+    "videoLabel": "Guarda il video",
+    "videoUrl": "https://www.youtube.com/watch?v=0UnqdqDfpnA",
+    "tocTitle": "Indice",
+    "backToTop": "Torna su",
+    "closing": "Tutto a portata di mano — e gratis con il vostro Ticino Ticket.",
+    "nav": {
+      "ticket": "Ticino Ticket",
+      "cademario": "Cademario",
+      "lugano": "Lugano",
+      "mountains": "Montagne",
+      "nature": "Passeggiate",
+      "luino": "Mercato di Luino",
+      "villages": "Borghi sul lago",
+      "shopping": "Shopping",
+      "asconaLocarno": "Ascona e Locarno",
+      "italy": "Gite in Italia",
+      "adventure": "Avventura"
+    },
+    "sections": {
+      "ticket": {
+        "title": "Ticino Ticket Gratuito",
+        "items": [
+          {
+            "text": "Al vostro arrivo, parcheggiate l'auto e iniziate a esplorare. La fermata dell'autobus si trova a soli 25 metri dall'hotel, con collegamenti comodi ogni ora. L'ultimo autobus per tornare ad Al Ponte parte da Lugano (Autosilo Balestra) alle 22:00, con servizio esteso fino a mezzanotte il venerdì e il sabato.",
+            "links": [{ "label": "Ticino Ticket", "url": "https://www.ticino.ch/it/ticket.html" }]
+          }
+        ]
+      },
+      "cademario": {
+        "title": "Scoprire Cademario",
+        "items": [
+          { "text": "A Cademario meritano una visita:" },
+          {
+            "heading": "Chiesa di San Bernardo",
+            "text": "Una chiesa romanica del XII secolo, pittorescamente immersa tra i castagni, che offre uno dei punti panoramici più belli della regione."
+          },
+          {
+            "heading": "Monastero SS. Francesco e Chiara",
+            "text": "Un monastero moderno delle clarisse, fondato nel 1992. Questo luogo di pace e contemplazione attrae i visitatori con la sua energia serena e la sua architettura modesta ma splendida, integrata nel paesaggio alpino.",
+            "links": [{ "label": "Monastero SS. Francesco e Chiara", "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900" }]
+          },
+          {
+            "heading": "Escursioni e Natura",
+            "text": "Numerosi sentieri attraversano i boschi del Malcantone, ideali per escursioni con vista sul Lago di Lugano.",
+            "links": [{ "label": "Sentieri escursionistici", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo" }]
+          },
+          {
+            "text": "Cademario è anche un luogo ideale per gli amanti della bicicletta e dei tour su due ruote.",
+            "links": [{ "label": "Itinerari in bici", "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/" }]
+          }
+        ]
+      },
+      "lugano": {
+        "title": "L'incanto di Lugano",
+        "items": [
+          {
+            "text": "Iniziate il vostro viaggio con una rilassante passeggiata pomeridiana nel bellissimo Parco Ciani, seguita da una deliziosa cena a Lugano. In estate, godetevi un giro in pedalò o una nuotata rinfrescante nel lago.",
+            "links": [{ "label": "Lugano all'aperto", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura" }]
+          }
+        ]
+      },
+      "mountains": {
+        "title": "Avventure in Montagna",
+        "items": [
+          {
+            "text": "Spettacolari viste panoramiche vi attendono sul Monte Generoso, sul Monte Brè e sul Monte San Salvatore. Tutte e tre le cime sono visibili dall'Al Ponte e sono facilmente raggiungibili in autobus o in treno, completamente gratis con il vostro Ticino Ticket.",
+            "links": [
+              { "label": "Monte Generoso", "url": "https://www.montegeneroso.ch/en/plan/railway" },
+              { "label": "Monte San Salvatore", "url": "https://www.montesansalvatore.ch/" },
+              { "label": "Monte Brè", "url": "https://www.montebre.ch/" }
+            ]
+          }
+        ]
+      },
+      "nature": {
+        "title": "Passeggiate nella Natura",
+        "items": [
+          {
+            "text": "A solo 1 km dall'hotel troverete idilliaci sentieri naturalistici che offrono panorami mozzafiato. Seguite il sentiero per scoprire una piccola cascata rinfrescante e un antico Mulino, perfetto per una tranquilla fuga pomeridiana.",
+            "links": [
+              { "label": "Sentieri naturalistici", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo" },
+              { "label": "Maglio del Malcantone", "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html" }
+            ]
+          }
+        ]
+      },
+      "luino": {
+        "title": "Atmosfera Italiana al Mercato di Luino",
+        "items": [
+          {
+            "text": "Ogni mercoledì, prendete l'autobus per il famoso mercato di Luino sul Lago Maggiore. Godetevi una vivace atmosfera di shopping, prodotti locali e il fascino dell'Italia appena oltre il confine.",
+            "links": [{ "label": "Mercato di Luino", "url": "https://ilmercatodiluino.it/" }]
+          }
+        ]
+      },
+      "villages": {
+        "title": "Incroci tra Borghi e Lago",
+        "items": [
+          {
+            "text": "Scoprite Caslano, un villaggio pittoresco con un'autentica atmosfera ticinese.",
+            "links": [{ "label": "Caslano", "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html" }]
+          },
+          {
+            "text": "Nelle vicinanze, le famiglie apprezzeranno il piccolo ma delizioso Zoo di Magliaso.",
+            "links": [{ "label": "Zoo al Maglio", "url": "https://www.zooalmaglio.ch/" }]
+          },
+          {
+            "text": "Visitate Melide e l'iconica Swissminiatur, a pochi minuti di treno.",
+            "links": [{ "label": "Swissminiatur", "url": "https://www.swissminiatur.ch/" }]
+          },
+          {
+            "text": "Oppure esplorate Morcote e l'incantevole Parco Scherrer con un suggestivo giro in battello sul lago.",
+            "links": [{ "label": "Morcote", "url": "https://www.visitmorcote.ch/" }]
+          }
+        ]
+      },
+      "shopping": {
+        "title": "Shopping e Stile",
+        "items": [
+          {
+            "text": "Per gli amanti dello shopping, Fox Town a Mendrisio vi aspetta con outlet di design e grandi offerte, aperto anche la domenica e facilmente raggiungibile in treno.",
+            "links": [{ "label": "FoxTown Mendrisio", "url": "https://www.foxtown.com/" }]
+          }
+        ]
+      },
+      "asconaLocarno": {
+        "title": "Ascona e Locarno",
+        "items": [
+          {
+            "text": "Non perdetevi Ascona e Locarno, due eleganti cittadine sul Lago Maggiore. Rilassatevi lungo le loro passeggiate a lago, visitate i caffè locali e godetevi l'atmosfera magica.",
+            "links": [{ "label": "Ascona & Locarno", "url": "https://www.ascona-locarno.com/it/esplora/ascona" }]
+          }
+        ]
+      },
+      "italy": {
+        "title": "Gite in Italia",
+        "items": [
+          {
+            "text": "Estendete la vostra avventura con un viaggio in treno TILO verso Como o Milano, destinazioni ideali per cultura, shopping e il famoso gelato.",
+            "links": [{ "label": "Treni TILO", "url": "https://www.tilo.ch/" }]
+          }
+        ]
+      },
+      "adventure": {
+        "title": "Avventura e Divertimento all'Aperto",
+        "items": [
+          {
+            "text": "Per chi cerca il brivido, la Valle Verzasca e la Valle Maggia offrono paesaggi mozzafiato, fiumi cristallini e attività emozionanti come il bungee jumping a Verzasca o lo spettacolo Red Bull Cliff Diving.",
+            "links": [
+              { "label": "Valle Verzasca", "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca" },
+              { "label": "Red Bull Cliff Diving", "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243" }
+            ]
+          }
+        ]
+      }
+    }
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Hotel boutique sul Lago di Lugano",
