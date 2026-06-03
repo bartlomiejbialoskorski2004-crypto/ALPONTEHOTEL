@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { getLenis } from "./lenisStore";
 
 export type TocSection = { id: string; num: string; label: string };
@@ -28,11 +29,13 @@ type Props = {
   tocTitle: string;
 };
 
-// Shared table of contents: a sticky scroll-spy sidebar on desktop and a
-// sticky top bar that drops down the full index on mobile. Labels are
-// passed in already-localised so this stays presentation-only.
+// Shared table of contents: a sticky scroll-spy sidebar that slides in from
+// the left on desktop, and a sticky top chip bar on mobile (stays in flow so
+// it never covers content). Labels arrive already-localised.
 export default function PageToc({ sections, tocTitle }: Props) {
+  const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
+  const chipRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   // Scroll-spy: flip the active entry as a section crosses the upper third
   // of the viewport.
@@ -67,6 +70,16 @@ export default function PageToc({ sections, tocTitle }: Props) {
     }
   }, [sections]);
 
+  // Keep the active chip centered in the mobile bar as the reader scrolls.
+  useEffect(() => {
+    const chip = chipRefs.current[activeId];
+    chip?.scrollIntoView({
+      inline: "center",
+      block: "nearest",
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  }, [activeId, reduceMotion]);
+
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setActiveId(id);
@@ -75,10 +88,15 @@ export default function PageToc({ sections, tocTitle }: Props) {
 
   return (
     <>
-      {/* Desktop: sticky side index with scroll-spy, vertically centered. */}
-      <nav
+      {/* Desktop: sticky scroll-spy sidebar that slides in from the left
+          once its column reaches the viewport. */}
+      <motion.nav
         aria-label={tocTitle}
-        className="sticky top-1/2 hidden -translate-y-1/2 lg:block"
+        initial={reduceMotion ? false : { opacity: 0, x: -24, y: "-50%" }}
+        whileInView={{ opacity: 1, x: 0, y: "-50%" }}
+        viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="sticky top-1/2 hidden lg:block"
       >
         <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.25em] text-ink/40">
           {tocTitle}
@@ -111,37 +129,36 @@ export default function PageToc({ sections, tocTitle }: Props) {
             );
           })}
         </ul>
-      </nav>
+      </motion.nav>
 
-      {/* Mobile: always-visible side rail pinned to the right edge. */}
+      {/* Mobile: sticky top chip bar, in normal flow so it never covers
+          content; the active chip auto-centers. */}
       <nav
         aria-label={tocTitle}
-        className="fixed right-0 top-1/2 z-30 -translate-y-1/2 lg:hidden"
+        className="sticky top-20 z-30 -mx-6 mb-10 border-y border-mist bg-paper/95 backdrop-blur lg:hidden"
       >
-        <ul className="flex flex-col items-end gap-0.5 rounded-l-xl border border-r-0 border-mist bg-paper/85 py-3 pr-2 pl-3 backdrop-blur">
+        <ul className="flex gap-2 overflow-x-auto px-6 py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {sections.map((s) => {
             const active = activeId === s.id;
             return (
-              <li key={s.id} className="w-full">
+              <li key={s.id} className="shrink-0">
                 <a
+                  ref={(el) => {
+                    chipRefs.current[s.id] = el;
+                  }}
                   href={`#${s.id}`}
                   onClick={(e) => handleClick(e, s.id)}
                   aria-current={active ? "true" : undefined}
-                  aria-label={s.label}
-                  className="flex items-center justify-end gap-2 py-1"
+                  className={`flex items-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs transition-colors ${
+                    active
+                      ? "border-forest bg-forest text-paper"
+                      : "border-mist text-ink/70"
+                  }`}
                 >
-                  {active && (
-                    <span className="max-w-[42vw] truncate text-[11px] font-medium text-forest">
-                      {s.label}
-                    </span>
-                  )}
-                  <span
-                    className={`text-[11px] font-medium tabular-nums tracking-[0.15em] transition-colors ${
-                      active ? "text-forest" : "text-ink/35"
-                    }`}
-                  >
+                  <span className="text-[10px] font-medium tabular-nums tracking-[0.15em] opacity-70">
                     {s.num}
                   </span>
+                  {s.label}
                 </a>
               </li>
             );
