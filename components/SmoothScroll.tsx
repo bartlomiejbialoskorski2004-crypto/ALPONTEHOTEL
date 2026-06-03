@@ -2,9 +2,11 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { setLenis } from "./lenisStore";
 
 // Global momentum-based smooth scroll. Skipped when the user prefers
-// reduced motion; falls back to native scroll there.
+// reduced motion; falls back to native scroll there. The live instance
+// is published via lenisStore so anchor components can scroll with it.
 export default function SmoothScroll() {
   useEffect(() => {
     if (
@@ -18,6 +20,7 @@ export default function SmoothScroll() {
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
+    setLenis(lenis);
 
     let rafId = 0;
     const raf = (time: number) => {
@@ -29,6 +32,7 @@ export default function SmoothScroll() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      setLenis(null);
     };
   }, []);
 

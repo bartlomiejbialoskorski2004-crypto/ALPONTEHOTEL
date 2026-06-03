@@ -123,6 +123,25 @@
     "eyebrow": "Informazioni",
     "title": "Informazioni generali e regolamento dell'Hotel Al Ponte Albergo",
     "address": "Via Cantonale 61, 6936 Cademario, Svizzera",
+    "toc": { "title": "Indice" },
+    "backToTop": "Torna su",
+    "nav": {
+      "hours": "Orari",
+      "safety": "Sicurezza",
+      "pool": "Piscina",
+      "parking": "Parcheggio",
+      "tax": "Tassa di soggiorno",
+      "services": "Servizi",
+      "tv": "TV",
+      "transport": "Ticino Ticket",
+      "requests": "Richieste"
+    },
+    "facts": {
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "reception": "Reception",
+      "phone": "Telefono"
+    },
     "hours": {
       "title": "Informazioni di base — orari di apertura",
       "openYearRound": "L'hotel è aperto tutto l'anno.",

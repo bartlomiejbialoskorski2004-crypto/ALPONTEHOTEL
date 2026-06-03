@@ -123,6 +123,25 @@
     "eyebrow": "Informations",
     "title": "General information and hotel terms & conditions",
     "address": "Via Cantonale 61, 6936 Cademario, Switzerland",
+    "toc": { "title": "Contents" },
+    "backToTop": "Back to top",
+    "nav": {
+      "hours": "Hours",
+      "safety": "Safety",
+      "pool": "Pool",
+      "parking": "Parking",
+      "tax": "Tourist tax",
+      "services": "Services",
+      "tv": "TV",
+      "transport": "Ticino Ticket",
+      "requests": "Requests"
+    },
+    "facts": {
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "reception": "Reception",
+      "phone": "Phone"
+    },
     "hours": {
       "title": "Basic information — opening hours",
       "openYearRound": "The hotel is open all year round.",

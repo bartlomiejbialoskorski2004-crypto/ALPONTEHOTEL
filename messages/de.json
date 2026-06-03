@@ -123,6 +123,25 @@
     "eyebrow": "Informationen",
     "title": "Allgemeine Informationen und Hausordnung des Hotels Al Ponte Albergo",
     "address": "Via Cantonale 61, 6936 Cademario, Schweiz",
+    "toc": { "title": "Inhalt" },
+    "backToTop": "Nach oben",
+    "nav": {
+      "hours": "Öffnungszeiten",
+      "safety": "Sicherheit",
+      "pool": "Schwimmbad",
+      "parking": "Parken",
+      "tax": "Kurtaxe",
+      "services": "Leistungen",
+      "tv": "Fernsehen",
+      "transport": "Ticino Ticket",
+      "requests": "Wünsche"
+    },
+    "facts": {
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "reception": "Rezeption",
+      "phone": "Telefon"
+    },
     "hours": {
       "title": "Grundlegende Informationen — Öffnungszeiten",
       "openYearRound": "Das Hotel ist ganzjährig geöffnet.",
