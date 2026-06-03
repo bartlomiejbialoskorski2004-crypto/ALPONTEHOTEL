@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, type MouseEvent } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { useEffect, useState, type MouseEvent } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { getLenis } from "./lenisStore";
 
 export type TocSection = { id: string; num: string; label: string };
@@ -36,7 +36,7 @@ export default function PageToc({ sections, tocTitle }: Props) {
   const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
   const [visible, setVisible] = useState(false);
-  const chipRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const [open, setOpen] = useState(false);
 
   // Scroll-spy: flip the active entry as a section crosses the upper third
   // of the viewport.
@@ -87,18 +87,40 @@ export default function PageToc({ sections, tocTitle }: Props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Keep the active chip centered in the mobile bar as the reader scrolls.
+  // Lock background scroll while the mobile list is open; Escape closes it.
   useEffect(() => {
-    const chip = chipRefs.current[activeId];
-    chip?.scrollIntoView({
-      inline: "center",
-      block: "nearest",
-      behavior: reduceMotion ? "auto" : "smooth",
-    });
-  }, [activeId, reduceMotion]);
+    if (!open) return;
+    const lenis = getLenis();
+    lenis?.stop();
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      lenis?.start();
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+    setActiveId(id);
+    scrollToTarget(`#${id}`);
+  };
+
+  const activeIndex = Math.max(
+    0,
+    sections.findIndex((s) => s.id === activeId),
+  );
+  const activeSection = sections[activeIndex] ?? sections[0];
+  const prev = activeIndex > 0 ? sections[activeIndex - 1] : null;
+  const next =
+    activeIndex < sections.length - 1 ? sections[activeIndex + 1] : null;
+
+  const goto = (id: string) => {
     setActiveId(id);
     scrollToTarget(`#${id}`);
   };
@@ -152,40 +174,115 @@ export default function PageToc({ sections, tocTitle }: Props) {
         </ul>
       </motion.nav>
 
-      {/* Mobile: sticky top chip bar, in normal flow so it never covers
-          content; the active chip auto-centers. */}
-      <nav
-        aria-label={tocTitle}
-        className="sticky top-20 z-30 -mx-6 mb-10 border-y border-mist bg-paper/95 backdrop-blur lg:hidden"
-      >
-        <ul className="flex gap-2 overflow-x-auto px-6 py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {sections.map((s) => {
-            const active = activeId === s.id;
-            return (
-              <li key={s.id} className="shrink-0">
-                <a
-                  ref={(el) => {
-                    chipRefs.current[s.id] = el;
-                  }}
-                  href={`#${s.id}`}
-                  onClick={(e) => handleClick(e, s.id)}
-                  aria-current={active ? "true" : undefined}
-                  className={`flex items-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs transition-colors ${
-                    active
-                      ? "border-forest bg-forest text-paper"
-                      : "border-mist text-ink/70"
-                  }`}
-                >
-                  <span className="text-[10px] font-medium tabular-nums tracking-[0.15em] opacity-70">
-                    {s.num}
-                  </span>
-                  {s.label}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      {/* Mobile: bottom dock with current section + prev/next; tap the title
+          to open the full list above it. Never covers the reading area. */}
+      <div className="fixed inset-x-0 bottom-0 z-30 lg:hidden" aria-label={tocTitle}>
+        <AnimatePresence>
+          {open && (
+            <>
+              <motion.div
+                key="backdrop"
+                onClick={() => setOpen(false)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 -z-10 bg-ink/30"
+                aria-hidden
+              />
+              <motion.ul
+                key="list"
+                initial={reduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                animate={reduceMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
+                exit={reduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-x-0 bottom-full max-h-[60vh] overflow-y-auto border-t border-mist bg-paper"
+              >
+                {sections.map((s) => {
+                  const active = activeId === s.id;
+                  return (
+                    <li key={s.id}>
+                      <a
+                        href={`#${s.id}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpen(false);
+                          requestAnimationFrame(() => goto(s.id));
+                        }}
+                        aria-current={active ? "true" : undefined}
+                        className={`flex items-center gap-4 border-l-2 px-6 py-3.5 transition-colors ${
+                          active
+                            ? "border-l-forest text-forest"
+                            : "border-l-transparent text-ink/75"
+                        }`}
+                      >
+                        <span className="text-[11px] font-medium tabular-nums tracking-[0.2em] text-forest">
+                          {s.num}
+                        </span>
+                        <span className={`flex-1 text-base ${active ? "font-medium" : ""}`}>
+                          {s.label}
+                        </span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </motion.ul>
+            </>
+          )}
+        </AnimatePresence>
+
+        <div className="flex items-stretch border-t border-mist bg-paper/95 backdrop-blur pb-[env(safe-area-inset-bottom)]">
+          <button
+            type="button"
+            onClick={() => prev && goto(prev.id)}
+            disabled={!prev}
+            aria-label="Previous section"
+            className="flex w-14 items-center justify-center text-ink/60 transition-colors hover:text-forest disabled:opacity-25"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
+              <path d="M11 4L6 9L11 14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            className="flex flex-1 items-center justify-center gap-2 border-x border-mist py-3.5"
+          >
+            <span className="text-[11px] font-medium tabular-nums tracking-[0.2em] text-forest">
+              {activeSection?.num}
+            </span>
+            <span className="max-w-[55vw] truncate text-sm font-medium text-ink">
+              {activeSection?.label}
+            </span>
+            <motion.svg
+              width="13"
+              height="13"
+              viewBox="0 0 14 14"
+              fill="none"
+              aria-hidden
+              animate={{ rotate: open ? 180 : 0 }}
+              transition={{ duration: 0.25 }}
+              className="text-ink/40"
+            >
+              <path d="M3 5L7 9L11 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            </motion.svg>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => next && goto(next.id)}
+            disabled={!next}
+            aria-label="Next section"
+            className="flex w-14 items-center justify-center text-ink/60 transition-colors hover:text-forest disabled:opacity-25"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
+              <path d="M7 4L12 9L7 14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </>
   );
 }

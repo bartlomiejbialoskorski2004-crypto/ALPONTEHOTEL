@@ -130,7 +130,7 @@ export default async function Informations() {
           <PageToc sections={tocSections} tocTitle={t("toc.title")} />
         </aside>
 
-        <div className="min-w-0">
+        <div className="min-w-0 pb-28 lg:pb-0">
           <section id="hours" className="scroll-mt-24 lg:scroll-mt-28">
             <SectionHead num="01" title={t("hours.title")} />
             <div className="mt-10 divide-y divide-mist border-y border-mist">

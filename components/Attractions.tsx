@@ -78,7 +78,7 @@ export default async function Attractions() {
           <PageToc sections={tocSections} tocTitle={t("tocTitle")} />
         </aside>
 
-        <div className="min-w-0">
+        <div className="min-w-0 pb-28 lg:pb-0">
           {/* Intro video, framed as a real video. */}
           <div className="mb-20 lg:mb-24">
             <VideoCard
