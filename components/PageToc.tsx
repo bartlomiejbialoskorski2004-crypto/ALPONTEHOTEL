@@ -71,21 +71,21 @@ export default function PageToc({ sections, tocTitle }: Props) {
     }
   }, [sections]);
 
-  // Reveal the desktop sidebar only once the reader scrolls down to the
-  // content (the first section crosses the 60% line). It slides in from the
-  // left then, and slides back out when scrolling up to the hero.
+  // Reveal the desktop sidebar once the page hero has scrolled mostly away,
+  // so it slides in from the left after the hero (identical timing on every
+  // page that shares this TOC) and slides back out when you return to it.
   useEffect(() => {
-    const first = sections[0]?.id;
-    if (!first) return;
     const onScroll = () => {
-      const el = document.getElementById(first);
-      if (!el) return;
-      setVisible(el.getBoundingClientRect().top < window.innerHeight * 0.6);
+      const hero = document.querySelector("main section");
+      const heroBottom = hero
+        ? hero.getBoundingClientRect().bottom
+        : window.innerHeight;
+      setVisible(heroBottom <= window.innerHeight * 0.35);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [sections]);
+  }, []);
 
   // Keep the active chip centered in the mobile bar as the reader scrolls.
   useEffect(() => {
