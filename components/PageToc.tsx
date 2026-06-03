@@ -35,6 +35,7 @@ type Props = {
 export default function PageToc({ sections, tocTitle }: Props) {
   const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
+  const [visible, setVisible] = useState(false);
   const chipRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   // Scroll-spy: flip the active entry as a section crosses the upper third
@@ -70,6 +71,22 @@ export default function PageToc({ sections, tocTitle }: Props) {
     }
   }, [sections]);
 
+  // Reveal the desktop sidebar only once the reader scrolls down to the
+  // content (the first section crosses the 60% line). It slides in from the
+  // left then, and slides back out when scrolling up to the hero.
+  useEffect(() => {
+    const first = sections[0]?.id;
+    if (!first) return;
+    const onScroll = () => {
+      const el = document.getElementById(first);
+      if (!el) return;
+      setVisible(el.getBoundingClientRect().top < window.innerHeight * 0.6);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [sections]);
+
   // Keep the active chip centered in the mobile bar as the reader scrolls.
   useEffect(() => {
     const chip = chipRefs.current[activeId];
@@ -92,11 +109,15 @@ export default function PageToc({ sections, tocTitle }: Props) {
           once its column reaches the viewport. */}
       <motion.nav
         aria-label={tocTitle}
-        initial={reduceMotion ? false : { opacity: 0, x: -24, y: "-50%" }}
-        whileInView={{ opacity: 1, x: 0, y: "-50%" }}
-        viewport={{ once: true, margin: "-20% 0px -20% 0px" }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        initial={false}
+        animate={
+          reduceMotion
+            ? { opacity: visible ? 1 : 0, x: 0, y: "-50%" }
+            : { opacity: visible ? 1 : 0, x: visible ? 0 : -80, y: "-50%" }
+        }
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         className="sticky top-1/2 hidden lg:block"
+        style={{ pointerEvents: visible ? "auto" : "none" }}
       >
         <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.25em] text-ink/40">
           {tocTitle}
