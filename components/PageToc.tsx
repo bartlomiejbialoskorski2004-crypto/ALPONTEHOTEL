@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, type MouseEvent } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { getLenis } from "./lenisStore";
 
 export type TocSection = { id: string; num: string; label: string };
@@ -33,9 +32,7 @@ type Props = {
 // sticky top bar that drops down the full index on mobile. Labels are
 // passed in already-localised so this stays presentation-only.
 export default function PageToc({ sections, tocTitle }: Props) {
-  const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
-  const [open, setOpen] = useState(false);
 
   // Scroll-spy: flip the active entry as a section crosses the upper third
   // of the viewport.
@@ -70,35 +67,19 @@ export default function PageToc({ sections, tocTitle }: Props) {
     }
   }, [sections]);
 
-  // Close the dropdown on Escape.
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
-
-  const activeSection = sections.find((s) => s.id === activeId) ?? sections[0];
-
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setActiveId(id);
     scrollToTarget(`#${id}`);
   };
 
-  const handleBarNav = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    setActiveId(id);
-    setOpen(false);
-    requestAnimationFrame(() => scrollToTarget(`#${id}`));
-  };
-
   return (
     <>
-      {/* Desktop: sticky side index with scroll-spy. */}
-      <nav aria-label={tocTitle} className="sticky top-28 hidden lg:block">
+      {/* Desktop: sticky side index with scroll-spy, vertically centered. */}
+      <nav
+        aria-label={tocTitle}
+        className="sticky top-1/2 hidden -translate-y-1/2 lg:block"
+      >
         <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.25em] text-ink/40">
           {tocTitle}
         </p>
@@ -132,95 +113,41 @@ export default function PageToc({ sections, tocTitle }: Props) {
         </ul>
       </nav>
 
-      {/* Mobile: sticky top bar that drops down the full index. */}
-      <div className="sticky top-20 z-30 -mx-6 mb-12 lg:hidden">
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-label={tocTitle}
-          className="flex w-full items-center gap-3 border-y border-mist bg-paper/95 px-6 py-4 backdrop-blur"
-        >
-          <span className="text-[11px] font-medium tabular-nums tracking-[0.2em] text-forest">
-            {activeSection?.num}
-          </span>
-          <span className="flex-1 truncate text-left text-sm font-medium text-ink">
-            {activeSection?.label}
-          </span>
-          <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-ink/40">
-            {tocTitle}
-          </span>
-          <motion.svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            aria-hidden
-            animate={{ rotate: open ? 180 : 0 }}
-            transition={{ duration: 0.25 }}
-          >
-            <path
-              d="M3 5L7 9L11 5"
-              stroke="currentColor"
-              strokeWidth="1.3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </motion.svg>
-        </button>
-
-        <AnimatePresence>
-          {open && (
-            <>
-              <motion.div
-                key="backdrop"
-                onClick={() => setOpen(false)}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="fixed inset-0 -z-10 bg-ink/20"
-                aria-hidden
-              />
-              <motion.ul
-                key="panel"
-                initial={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
-                animate={reduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1 }}
-                exit={reduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden border-b border-mist bg-paper shadow-[0_12px_30px_rgba(10,10,10,0.12)]"
-              >
-                {sections.map((s) => {
-                  const active = activeId === s.id;
-                  return (
-                    <li key={s.id}>
-                      <a
-                        href={`#${s.id}`}
-                        onClick={(e) => handleBarNav(e, s.id)}
-                        aria-current={active ? "true" : undefined}
-                        className={`flex items-center gap-4 border-l-2 px-6 py-3.5 transition-colors ${
-                          active
-                            ? "border-l-forest text-forest"
-                            : "border-l-transparent text-ink/75"
-                        }`}
-                      >
-                        <span className="text-[11px] font-medium tabular-nums tracking-[0.2em] text-forest">
-                          {s.num}
-                        </span>
-                        <span
-                          className={`flex-1 text-base ${active ? "font-medium" : ""}`}
-                        >
-                          {s.label}
-                        </span>
-                      </a>
-                    </li>
-                  );
-                })}
-              </motion.ul>
-            </>
-          )}
-        </AnimatePresence>
-      </div>
+      {/* Mobile: always-visible side rail pinned to the right edge. */}
+      <nav
+        aria-label={tocTitle}
+        className="fixed right-0 top-1/2 z-30 -translate-y-1/2 lg:hidden"
+      >
+        <ul className="flex flex-col items-end gap-0.5 rounded-l-xl border border-r-0 border-mist bg-paper/85 py-3 pr-2 pl-3 backdrop-blur">
+          {sections.map((s) => {
+            const active = activeId === s.id;
+            return (
+              <li key={s.id} className="w-full">
+                <a
+                  href={`#${s.id}`}
+                  onClick={(e) => handleClick(e, s.id)}
+                  aria-current={active ? "true" : undefined}
+                  aria-label={s.label}
+                  className="flex items-center justify-end gap-2 py-1"
+                >
+                  {active && (
+                    <span className="max-w-[42vw] truncate text-[11px] font-medium text-forest">
+                      {s.label}
+                    </span>
+                  )}
+                  <span
+                    className={`text-[11px] font-medium tabular-nums tracking-[0.15em] transition-colors ${
+                      active ? "text-forest" : "text-ink/35"
+                    }`}
+                  >
+                    {s.num}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </>
   );
 }

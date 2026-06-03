@@ -55,9 +55,11 @@ export const NAV: NavEntry[] = [
       group: "attractions",
       items: [
         { key: "mountains", href: "/attractions#mountains" },
-        { key: "lugano", href: "/attractions#lugano" },
-        { key: "villages", href: "/attractions#villages" },
         { key: "cademario", href: "/attractions#cademario" },
+        { key: "lugano", href: "/attractions#lugano" },
+        { key: "nature", href: "/attractions#nature" },
+        { key: "villages", href: "/attractions#villages" },
+        { key: "adventure", href: "/attractions#adventure" },
       ],
     },
   },

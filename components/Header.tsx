@@ -35,14 +35,6 @@ const MEGA_IMAGES: Record<string, string> = {
   budget: "/mega/glownebudg.jpeg",
 };
 
-// Thumbnails for the Attractions megamenu (deep-links into /attractions).
-const ATTRACTION_THUMBS: Record<string, string> = {
-  mountains: "/mega/sansalvatore.jpg",
-  lugano: "/mega/Oldtown.jpg",
-  villages: "/mega/Lakelugano.jpg",
-  cademario: "/gallery/1.jpg",
-};
-
 type Props = {
   bookingUrl?: string;
 };
@@ -281,10 +273,15 @@ export default function Header({ bookingUrl }: Props) {
             >
               {(() => {
                 const group = openEntry.mega!.group;
-                const isRooms = group === "rooms";
-                const isInfo = group === "info";
 
-                if (isInfo) {
+                // Rooms keeps its real photo cards; Informations and
+                // Attractions render as clean text quick-links (no
+                // loosely-related imagery).
+                if (group !== "rooms") {
+                  const labelFor = (key: string) =>
+                    group === "attractions"
+                      ? t(`attractions.nav.${key}`)
+                      : t(`info.nav.${key}`);
                   return (
                     <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
                       <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
@@ -299,7 +296,7 @@ export default function Header({ bookingUrl }: Props) {
                             className="group flex items-center justify-between gap-4 border-b border-mist py-4"
                           >
                             <span className="font-serif text-lg leading-tight">
-                              {t(`info.nav.${sub.key}`)}
+                              {labelFor(sub.key)}
                             </span>
                             <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
                               →
@@ -314,14 +311,13 @@ export default function Header({ bookingUrl }: Props) {
                 return (
                   <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 lg:px-10">
                     {openEntry.mega!.items.map((sub) => {
-                      const title = isRooms
-                        ? t(`mega.rooms.${sub.key}.title`)
-                        : t(`attractions.nav.${sub.key}`);
-                      const imgSrc = isRooms
-                        ? MEGA_IMAGES[sub.key]
-                        : ATTRACTION_THUMBS[sub.key];
-                      const inner = (
-                        <>
+                      const imgSrc = MEGA_IMAGES[sub.key];
+                      return (
+                        <a
+                          key={sub.key}
+                          href={sub.href}
+                          className="group flex flex-col px-8 py-12 first:pl-0"
+                        >
                           {imgSrc && (
                             <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden bg-ink/[0.06]">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -341,31 +337,14 @@ export default function Header({ bookingUrl }: Props) {
                             / {t(`nav.${openEntry.key}`)}
                           </span>
                           <span className="mt-4 block font-serif text-2xl leading-tight">
-                            {title}
+                            {t(`mega.rooms.${sub.key}.title`)}
                           </span>
-                          {isRooms && (
-                            <span className="mt-3 block text-sm leading-relaxed text-ink/70">
-                              {t(`mega.rooms.${sub.key}.desc`)}
-                            </span>
-                          )}
+                          <span className="mt-3 block text-sm leading-relaxed text-ink/70">
+                            {t(`mega.rooms.${sub.key}.desc`)}
+                          </span>
                           <span className="mt-6 block text-xl transition-transform duration-300 group-hover:translate-x-1.5">
                             →
                           </span>
-                        </>
-                      );
-                      const className = "group flex flex-col px-8 py-12 first:pl-0";
-                      return sub.href.startsWith("/") ? (
-                        <Link
-                          key={sub.key}
-                          href={sub.href}
-                          onClick={() => setOpenMenu(null)}
-                          className={className}
-                        >
-                          {inner}
-                        </Link>
-                      ) : (
-                        <a key={sub.key} href={sub.href} className={className}>
-                          {inner}
                         </a>
                       );
                     })}

@@ -24,14 +24,10 @@ const SECTION_ORDER = [
 // Real repo photos mapped to matching sections. Sections without a match
 // render as text-only blocks for editorial rhythm. Drop user-supplied
 // extras into /public/attractions and swap the path here.
+// Only photos we are confident actually depict the place are used.
 const SECTION_IMAGES: Partial<Record<(typeof SECTION_ORDER)[number], string>> = {
-  cademario: "/gallery/1.jpg",
   lugano: "/mega/Oldtown.jpg",
   mountains: "/mega/sansalvatore.jpg",
-  nature: "/gallery/3.jpg",
-  villages: "/gallery/2.jpg",
-  asconaLocarno: "/gallery/7.jpg",
-  adventure: "/gallery/6.jpg",
 };
 
 const YOUTUBE_THUMB =

@@ -8,6 +8,7 @@ import Rooms from "@/components/Rooms";
 import TripleDeluxe from "@/components/TripleDeluxe";
 import Amenities from "@/components/Amenities";
 import Gallery from "@/components/Gallery";
+import AttractionsTeaser from "@/components/AttractionsTeaser";
 import Contact from "@/components/Contact";
 
 export default async function HomePage({
@@ -40,6 +41,7 @@ export default async function HomePage({
       <Rooms />
       <TripleDeluxe />
       <Gallery />
+      <AttractionsTeaser />
       <Contact />
     </main>
   );

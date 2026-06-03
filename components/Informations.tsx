@@ -175,17 +175,6 @@ export default async function Informations() {
             <p className={sectionBody}>{t("pool.body")}</p>
           </section>
 
-          {/* Ambient image divider — a visual breather. */}
-          <div className="relative mt-20 aspect-[16/9] w-full overflow-hidden lg:mt-28 lg:aspect-[21/9]">
-            <Image
-              src="/gallery/2.jpg"
-              alt=""
-              fill
-              sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover"
-            />
-          </div>
-
           <section id="parking" className={block}>
             <SectionHead num="04" title={t("parking.title")} />
             <p className={sectionBody}>{t("parking.body")}</p>
