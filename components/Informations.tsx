@@ -79,7 +79,7 @@ export default async function Informations() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6 py-16 lg:grid lg:grid-cols-[15rem_1fr] lg:gap-16 lg:px-10 lg:py-24">
-        <aside className="mb-12 lg:mb-0">
+        <aside>
           <InformationsToc />
         </aside>
 
