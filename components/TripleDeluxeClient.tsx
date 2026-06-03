@@ -214,7 +214,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
         {/* Right — sticky carousel with thumbnail strip */}
         <div className="relative lg:sticky lg:top-24 lg:self-start">
-          <div className="relative aspect-[3/4] w-full overflow-hidden bg-ink/10 lg:aspect-auto lg:h-[calc(100vh-8rem)]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink/10 lg:aspect-auto lg:h-[calc(100svh-12rem)]">
             {hasPhotos && (
               <AnimatePresence
                 initial={false}
