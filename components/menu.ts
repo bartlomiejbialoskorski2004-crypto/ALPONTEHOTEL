@@ -26,7 +26,7 @@ export const NAV: NavEntry[] = [
       items: ["apartments", "superior", "budgetPlus", "budget"],
     },
   },
-  { key: "info", href: "#top" },
+  { key: "info", href: "/informations" },
   {
     key: "attractions",
     href: "#top",

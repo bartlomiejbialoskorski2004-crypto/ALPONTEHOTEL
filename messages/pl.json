@@ -119,6 +119,72 @@
       "7": { "title": "Wioska o zmierzchu", "desc": "Domy i kościół u stóp Alp." }
     }
   },
+  "info": {
+    "eyebrow": "Informacje",
+    "title": "Informacje ogólne i regulamin hotelu Al Ponte Albergo",
+    "address": "Via Cantonale 61, 6936 Cademario, Szwajcaria",
+    "hours": {
+      "title": "Podstawowe informacje — godziny pracy",
+      "openYearRound": "Hotel jest czynny cały rok.",
+      "checkInOut": "Doba hotelowa zaczyna się o godzinie 15:30, a kończy się o godzinie 10:00.",
+      "receptionHours": "Recepcja czynna jest w godzinach: od 7:30 do 11:00 oraz od 15:30 do 19:30.",
+      "phone": "W godzinach pracy recepcji możliwy kontakt telefoniczny pod numerem +41 91 605 24 92.",
+      "emailOutsideHours": "Poza godzinami pracy recepcji kontakt możliwy przez e-mail: gatti@al-ponte.ch lub przez chat Booking.com.",
+      "checkInDetails": "Zameldowanie (Check-in): możliwe w godzinach 15:30 — 24:00, ale po godzinie 19:30 recepcja jest nieczynna i możliwe jest tylko samodzielne zameldowanie (self check-in).",
+      "checkOutDetails": "Wymeldowanie (Check-out): 7:30 — 10:00.",
+      "breakfast": "Śniadanie (dostępne w sali śniadaniowej): od 8:00 do 10:00.",
+      "pool": "Basen jest czynny od godziny 8:00 do 19:30.",
+      "quietHours": "Cisza nocna obowiązuje od godziny 22:00 do 7:00."
+    },
+    "safety": {
+      "intro": "W naszym hotelu możesz się czuć bezpiecznie. Wszystkie pomieszczenia, w tym wszystkie pokoje hotelowe, są wyposażone w nowoczesny system przeciwpożarowy i alarmowy, co powoduje, że na terenie całego obiektu (w tym w pokojach) nie wolno palić papierosów ani żadnych innych wyrobów tytoniowych (w tym e-papierosów) lub świec, ogni sztucznych ani innych źródeł ognia lub dymu. Wszystkie pomieszczenia wspólne w hotelu (takie jak m.in. lobby, recepcja, korytarze, taras, klatki schodowe oraz sala śniadaniowa) są monitorowane za pomocą kamer monitoringu CCTV. Administratorem danych jest firma Al Ponte Albergo SAGL.",
+      "smokingBan": "Na terenie obiektu obowiązuje całkowity zakaz palenia papierosów i wszelkich innych wyrobów tytoniowych w całym budynku, w tym m.in. we wszystkich pokojach, korytarzach, sali śniadaniowej. Wynika on z konieczności zainstalowania i uruchomienia bardzo czułego systemu przeciwpożarowego, co wynika z przepisów prawa.",
+      "acknowledgment": "Dokonując rezerwacji pokoju w naszym hotelu poświadczasz, że zapoznałeś się z regulaminem naszego obiektu oraz zgadzasz się z wszelkimi jego postanowieniami, w tym przede wszystkim z przepisami przeciwpożarowymi, oraz akceptujesz fakt, że w sytuacji niezastosowania się do całkowitego zakazu palenia papierosów lub innych wyrobów tytoniowych na terenie całego obiektu, w razie wywołania alarmu pożarowego dobrowolnie i bez żadnego sprzeciwu poniesiesz opłatę dodatkową związaną z wyzwoleniem alarmu przeciwpożarowego.",
+      "pleaseNote": "UWAGA: gość pokrywa wszystkie koszty związane z interwencją straży pożarnej lub innych służb porządkowych — nie mniej niż 1500 CHF (minimalny koszt jaki hotel musi ponieść w związku z interwencją straży pożarnej — UWAGA: koszty te mogą być wielokrotnie wyższe)."
+    },
+    "pool": {
+      "title": "Informacja na temat basenu",
+      "body": "Na terenie hotelu do dyspozycji gości znajduje się kryty basen. Korzystanie z basenu jest bezpłatne, natomiast opłatom podlegają dodatkowe ręczniki oraz szlafrok — wydawane są one w recepcji (w godzinach pracy recepcji) na życzenie klienta."
+    },
+    "parking": {
+      "title": "Informacja na temat parkingu",
+      "body": "Hotel nie posiada własnego parkingu. W pobliżu hotelu znajduje się parking publiczny Al Ponte oraz wiele miejsc postojowych przy ulicy. Koszt parkingu wynosi 5 CHF za dobę, a opłatę należy uiścić w parkometrze znajdującym się przy parkingu lub za pomocą specjalnych aplikacji. Recepcja nie pobiera opłat za parking."
+    },
+    "tax": {
+      "title": "Podatek turystyczny",
+      "body": "Cena noclegu (rezerwacji) nie obejmuje podatku turystycznego, który wynosi 4,20 CHF za osobę za dobę hotelową i powinien zostać uiszczony w recepcji podczas zameldowania (a w przypadku gości, którzy przyjechali późno i korzystali z self check-in — następnego dnia rano)."
+    },
+    "services": {
+      "title": "Cennik usług dodatkowych",
+      "items": {
+        "1": "Wcześniejsze zameldowanie (za każdą rozpoczętą godzinę przed standardowym czasem zameldowania) — 20 CHF.",
+        "2": "Późniejsze wymeldowanie (za każdą rozpoczętą godzinę po godzinie 10:00) — 25 CHF.",
+        "3": "Opłata za zgubienie klucza — 50 CHF/szt.",
+        "4": "Dodatkowe sprzątanie na życzenie — 40 CHF/pojedyncze sprzątanie.",
+        "5": "Dodatkowy ręcznik na basen — 5 CHF/szt.",
+        "6": "Szlafrok na basen — 8 CHF/szt.",
+        "7": "Dodatkowa lodówka na życzenie (w miarę dostępności) — 20 CHF/szt.",
+        "8": "Łóżeczko dla dziecka na życzenie (w miarę dostępności) — 25 CHF/szt.",
+        "9": "Dodatkowe rozkładane łóżko w pokoju (w miarę dostępności i miejsca w pokoju) — 50 CHF.",
+        "10": "Opłata za zwierzęta domowe — 20 CHF/dzień/zwierzę.",
+        "11": "Opłata dodatkowa związana z wyzwoleniem alarmu przeciwpożarowego — nie mniej niż 1500 CHF. UWAGA: gość pokrywa wszystkie koszty związane z interwencją straży pożarnej lub innych służb porządkowych — nie mniej niż 1500 CHF (minimalny koszt jaki hotel musi ponieść w związku z wyzwoleniem alarmu oraz interwencją straży pożarnej).",
+        "12": "Śniadanie (o ile nie jest już wliczone w cenę noclegu) — 12 CHF od osoby (płatność w recepcji)."
+      }
+    },
+    "tv": {
+      "title": "Informacja na temat TV",
+      "body": "Wszystkie pokoje w naszym hotelu są wyposażone w telewizory z funkcją SMART TV, ale muszą Państwo mieć swój własny dostęp (abonament) do serwisów takich jak np. Zatto, Netflix lub Disney, aby oglądać telewizję lub filmy."
+    },
+    "transport": {
+      "title": "Darmowy bilet na komunikację miejską",
+      "body": "Jeśli chcą Państwo otrzymać bilet Ticino Ticket, aby korzystać z bezpłatnej komunikacji miejskiej w kantonie Ticino podczas pobytu w naszym hotelu, prosimy o podanie adresu e-mail, na który wyślemy bilet w wersji elektronicznej. Ticino Ticket pozwoli Państwu zredukować koszty transportu."
+    },
+    "otherRequests": {
+      "title": "Inne życzenia gości",
+      "body": "Nasz zespół przygotowuje się na Państwa przyjazd i z niecierpliwością oczekuje na możliwość ugoszczenia Państwa w naszym hotelu. Prosimy o poinformowanie nas przed przyjazdem, jeśli możemy jeszcze w czymś Państwu pomóc."
+    },
+    "signoff": "Serdecznie pozdrawiamy — Zespół Hotelu Al Ponte Albergo."
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Butikowy hotel nad jeziorem Lugano",

@@ -119,6 +119,72 @@
       "7": { "title": "Borgo al tramonto", "desc": "Case e chiesa ai piedi delle Alpi." }
     }
   },
+  "info": {
+    "eyebrow": "Informazioni",
+    "title": "Informazioni generali e regolamento dell'Hotel Al Ponte Albergo",
+    "address": "Via Cantonale 61, 6936 Cademario, Svizzera",
+    "hours": {
+      "title": "Informazioni di base — orari di apertura",
+      "openYearRound": "L'hotel è aperto tutto l'anno.",
+      "checkInOut": "Il check-in è alle 15:30 e il check-out alle 10:00.",
+      "receptionHours": "La reception è aperta dalle 7:30 alle 11:00 e dalle 15:30 alle 19:30.",
+      "phone": "Durante gli orari di apertura della reception, è possibile contattarci telefonicamente al numero: +41 91 605 24 92.",
+      "emailOutsideHours": "Al di fuori degli orari di apertura della reception, è possibile contattarci via e-mail all'indirizzo gatti@al-ponte.ch o tramite la chat di Booking.com.",
+      "checkInDetails": "Check-in: disponibile dalle 15:30 a mezzanotte, ma dopo le 19:30 la reception è chiusa ed è possibile solo effettuare il self check-in.",
+      "checkOutDetails": "Check-out: dalle 7:30 alle 10:00.",
+      "breakfast": "Colazione (disponibile nella sala colazioni): dalle 8:00 alle 10:00.",
+      "pool": "La piscina è aperta dalle 8:00 alle 19:30.",
+      "quietHours": "Il silenzio è richiesto dalle 22:00 alle 7:00."
+    },
+    "safety": {
+      "intro": "Nel nostro hotel potete sentirvi al sicuro. Tutti i locali, comprese tutte le camere, sono dotati di un moderno sistema antincendio e di allarme, pertanto in tutta la struttura (comprese le camere) è vietato fumare sigarette o qualsiasi altro prodotto del tabacco, nonché accendere candele, fuochi d'artificio o altre fonti di fuoco o fumo. Tutte le aree comuni dell'hotel (come ad esempio la hall, la reception, i corridoi, la terrazza, le scale e la sala colazioni) sono monitorate tramite telecamere a circuito chiuso (CCTV). Il titolare del trattamento dei dati è la società Al Ponte Albergo SAGL.",
+      "smokingBan": "All'interno della struttura vige il divieto assoluto di fumare sigarette e qualsiasi altro prodotto del tabacco in tutto l'edificio, inclusi, tra l'altro, tutte le camere, i corridoi e la sala colazioni. Ciò deriva dalla necessità di installare e mettere in funzione un sistema antincendio altamente sensibile, come previsto dalla legge.",
+      "acknowledgment": "Effettuando la prenotazione di una camera nel nostro hotel, dichiari di aver preso visione del regolamento della nostra struttura e di accettare tutte le sue disposizioni, in particolare le norme antincendio, e accetti il fatto che, in caso di mancato rispetto del divieto assoluto di fumare sigarette o altri prodotti del tabacco all'interno dell'intera struttura, in caso di attivazione dell'allarme antincendio, ti assumerai volontariamente e senza alcuna obiezione un costo aggiuntivo relativo all'attivazione dell'allarme antincendio.",
+      "pleaseNote": "NOTA: l'ospite copre tutti i costi relativi all'intervento dei vigili del fuoco o di altri servizi di sicurezza — non meno di 1500 CHF (costo minimo che l'hotel deve sostenere in relazione all'intervento dei vigili del fuoco — NOTA: tali costi possono essere molto più elevati)."
+    },
+    "pool": {
+      "title": "Informazioni sulla piscina",
+      "body": "L'hotel offre una piscina coperta. L'utilizzo della piscina è gratuito, ma asciugamani e accappatoi aggiuntivi sono disponibili su richiesta presso la reception (durante gli orari di apertura)."
+    },
+    "parking": {
+      "title": "Informazioni sul parcheggio",
+      "body": "L'hotel non dispone di un parcheggio privato. Nelle vicinanze dell'hotel si trova un parcheggio pubblico, Al Ponte, e numerosi posti auto in strada. Il parcheggio costa CHF 5 al giorno e deve essere pagato al parchimetro situato accanto al parcheggio o tramite apposite app. La reception non addebita alcun costo per il parcheggio."
+    },
+    "tax": {
+      "title": "Tassa di soggiorno",
+      "body": "Il prezzo del soggiorno (prenotazione) non include la tassa di soggiorno, pari a CHF 4.20 a persona a notte. Tale tassa deve essere pagata alla reception al momento del check-in (o la mattina successiva per gli ospiti che arrivano in tarda serata e utilizzano il self check-in)."
+    },
+    "services": {
+      "title": "Listino prezzi per i servizi aggiuntivi",
+      "items": {
+        "1": "Check-in anticipato (per ogni ora a partire dall'orario di check-in standard) — CHF 20.",
+        "2": "Check-out posticipato (per ogni ora a partire dalle 10:00) — CHF 25.",
+        "3": "Penale per smarrimento della chiave — 50 CHF/pz.",
+        "4": "Pulizia extra su richiesta — CHF 40/pulizia singola.",
+        "5": "Telo piscina extra — CHF 5/cad.",
+        "6": "Accappatoio piscina — CHF 8/cad.",
+        "7": "Frigorifero extra su richiesta (soggetto a disponibilità) — CHF 20/cad.",
+        "8": "Culla su richiesta (soggetto a disponibilità) — CHF 25/cad.",
+        "9": "Letto pieghevole extra in camera (soggetto a disponibilità e spazio in camera) — CHF 50.",
+        "10": "Supplemento per animali domestici — CHF 20/giorno/animale.",
+        "11": "Supplemento per l'attivazione dell'allarme antincendio — non inferiore a CHF 1.500. NOTA: l'ospite si fa carico di tutti i costi relativi all'intervento dei vigili del fuoco o di altri servizi di emergenza — non inferiore a CHF 1.500 (il costo minimo che l'hotel deve sostenere in relazione all'attivazione dell'allarme e all'intervento dei vigili del fuoco).",
+        "12": "Colazione (salvo se già inclusa nella tariffa della camera) — CHF 12 a persona (da pagare alla reception)."
+      }
+    },
+    "tv": {
+      "title": "Informazioni sulla TV",
+      "body": "Tutte le camere del nostro hotel sono dotate di televisori con funzione SMART TV, ma per poter guardare i canali o i servizi è necessario disporre di un proprio abbonamento a piattaforme come Zatto, Netflix o Disney."
+    },
+    "transport": {
+      "title": "Biglietto gratuito per i mezzi pubblici",
+      "body": "Se desiderate ricevere il Ticino Ticket per usufruire dei mezzi pubblici gratuiti nel Cantone Ticino durante il vostro soggiorno nel nostro hotel, vi preghiamo di fornirci un indirizzo e-mail al quale invieremo il biglietto in formato elettronico. Il Ticino Ticket vi consentirà di ridurre i costi di trasporto."
+    },
+    "otherRequests": {
+      "title": "Altre richieste degli ospiti",
+      "body": "Il nostro team si sta preparando per il vostro arrivo e non vede l'ora di darvi il benvenuto nel nostro hotel. Vi preghiamo di comunicarci prima del vostro arrivo se possiamo esservi d'aiuto in altro modo."
+    },
+    "signoff": "Cordiali saluti — il team dell'Hotel Al Ponte Albergo."
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Hotel boutique sul Lago di Lugano",

@@ -59,16 +59,32 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
           </div>
 
           <nav className="flex flex-1 flex-col items-center justify-center gap-8 px-6">
-            {NAV.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                onClick={onClose}
-                className="font-serif text-3xl text-ink transition-colors hover:text-forest"
-              >
-                {t(item.key)}
-              </a>
-            ))}
+            {NAV.map((item) => {
+              const className =
+                "font-serif text-3xl text-ink transition-colors hover:text-forest";
+              if (item.href.startsWith("/")) {
+                return (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    onClick={onClose}
+                    className={className}
+                  >
+                    {t(item.key)}
+                  </Link>
+                );
+              }
+              return (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  onClick={onClose}
+                  className={className}
+                >
+                  {t(item.key)}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="flex flex-col items-center gap-6 px-6 pb-10">

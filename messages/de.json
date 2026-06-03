@@ -119,6 +119,72 @@
       "7": { "title": "Dorf in der Dämmerung", "desc": "Häuser und Kirche zu Füßen der Alpen." }
     }
   },
+  "info": {
+    "eyebrow": "Informationen",
+    "title": "Allgemeine Informationen und Hausordnung des Hotels Al Ponte Albergo",
+    "address": "Via Cantonale 61, 6936 Cademario, Schweiz",
+    "hours": {
+      "title": "Grundlegende Informationen — Öffnungszeiten",
+      "openYearRound": "Das Hotel ist ganzjährig geöffnet.",
+      "checkInOut": "Der Check-in beginnt um 15:30 Uhr und der Check-out endet um 10:00 Uhr.",
+      "receptionHours": "Die Rezeption ist zu folgenden Zeiten geöffnet: von 7:30 bis 11:00 Uhr und von 15:30 bis 19:30 Uhr.",
+      "phone": "Während der Öffnungszeiten der Rezeption ist eine telefonische Kontaktaufnahme unter der Nummer +41 91 605 24 92 möglich.",
+      "emailOutsideHours": "Außerhalb der Öffnungszeiten der Rezeption ist eine Kontaktaufnahme per E-Mail unter gatti@al-ponte.ch oder über den Chat von Booking.com möglich.",
+      "checkInDetails": "Check-in: möglich von 15:30 bis 24:00 Uhr; nach 19:30 Uhr ist die Rezeption geschlossen und es ist nur ein Selbst-Check-in möglich.",
+      "checkOutDetails": "Check-out: 7:30 — 10:00 Uhr.",
+      "breakfast": "Frühstück (im Frühstücksraum): von 8:00 bis 10:00 Uhr.",
+      "pool": "Der Pool ist von 8:00 bis 19:30 Uhr geöffnet.",
+      "quietHours": "Die Nachtruhe gilt von 22:00 bis 7:00 Uhr."
+    },
+    "safety": {
+      "intro": "In unserem Hotel können Sie sich sicher fühlen. Alle Räumlichkeiten, einschließlich aller Hotelzimmer, sind mit einem modernen Brandschutz- und Alarmsystem ausgestattet. Aus diesem Grund ist es auf dem gesamten Gelände (einschließlich der Zimmer) verboten, Zigaretten oder andere Tabakwaren (einschließlich E-Zigaretten) sowie Kerzen, Feuerwerkskörper oder andere Feuer- oder Rauchquellen zu verwenden. Alle Gemeinschaftsräume des Hotels (wie z. B. Lobby, Rezeption, Flure, Terrasse, Treppenhäuser und Frühstücksraum) werden mit CCTV-Kameras überwacht. Der Datenverantwortliche ist die Firma Al Ponte Albergo SAGL.",
+      "smokingBan": "Auf dem gesamten Gelände der Anlage gilt ein absolutes Rauchverbot für Zigaretten und alle anderen Tabakwaren im gesamten Gebäude, darunter u. a. in allen Zimmern, Fluren und im Frühstücksraum. Dies ergibt sich aus der Notwendigkeit, ein hochsensibles Brandmeldesystem zu installieren und in Betrieb zu nehmen, was gesetzlich vorgeschrieben ist.",
+      "acknowledgment": "Mit der Buchung eines Zimmers in unserem Hotel bestätigen Sie, dass Sie die Hausordnung unserer Einrichtung zur Kenntnis genommen haben und allen darin enthaltenen Bestimmungen zustimmen, insbesondere den Brandschutzvorschriften, und dass Sie akzeptieren, dass Sie im Falle der Nichtbeachtung des absoluten Rauchverbots für Zigaretten oder andere Tabakwaren auf dem gesamten Gelände im Falle der Auslösung eines Feueralarms freiwillig und ohne Widerspruch eine zusätzliche Gebühr für die Auslösung des Feueralarms zu tragen haben.",
+      "pleaseNote": "ACHTUNG: Der Gast trägt alle Kosten im Zusammenhang mit dem Einsatz der Feuerwehr oder anderer Ordnungskräfte — mindestens 1500 CHF (Mindestkosten, die dem Hotel durch den Einsatz der Feuerwehr entstehen — ACHTUNG: Diese Kosten können um ein Vielfaches höher ausfallen)."
+    },
+    "pool": {
+      "title": "Informationen zum Schwimmbad",
+      "body": "Auf dem Hotelgelände steht den Gästen ein Hallenbad zur Verfügung. Die Nutzung des Schwimmbads ist kostenlos, zusätzliche Handtücher und Bademäntel sind jedoch kostenpflichtig — diese werden auf Wunsch des Gastes an der Rezeption (während der Öffnungszeiten der Rezeption) ausgegeben."
+    },
+    "parking": {
+      "title": "Informationen zum Parken",
+      "body": "Das Hotel verfügt über keine eigenen Parkplätze. In der Nähe des Hotels befindet sich der öffentliche Parkplatz „Al Ponte\" sowie zahlreiche Parkplätze an der Straße. Die Parkgebühr beträgt 5 CHF pro Tag und ist am Parkautomaten auf dem Parkplatz oder über spezielle Apps zu entrichten. Die Rezeption erhebt keine Parkgebühren."
+    },
+    "tax": {
+      "title": "Kurtaxe",
+      "body": "Der Übernachtungspreis (Buchungspreis) beinhaltet nicht die Kurtaxe, die 4,20 CHF pro Person und Übernachtung beträgt und beim Check-in an der Rezeption zu entrichten ist (bei Gästen, die spät angekommen sind und den Self-Check-in genutzt haben, am nächsten Morgen)."
+    },
+    "services": {
+      "title": "Preisliste für Zusatzleistungen",
+      "items": {
+        "1": "Früher Check-in (für jede angefangene Stunde vor der regulären Check-in-Zeit) — 20 CHF.",
+        "2": "Später Check-out (für jede angefangene Stunde nach 10:00 Uhr) — 25 CHF.",
+        "3": "Gebühr für verlorenen Schlüssel — 50 CHF/Stück.",
+        "4": "Zusätzliche Reinigung auf Anfrage — 40 CHF/einmalige Reinigung.",
+        "5": "Zusätzliches Badetuch für den Pool — 5 CHF/Stück.",
+        "6": "Bademantel für den Pool — 8 CHF/Stück.",
+        "7": "Zusätzlicher Kühlschrank auf Anfrage (je nach Verfügbarkeit) — 20 CHF/Stück.",
+        "8": "Babybett auf Anfrage (je nach Verfügbarkeit) — 25 CHF/Stück.",
+        "9": "Zusätzliches Klappbett im Zimmer (je nach Verfügbarkeit und Platz im Zimmer) — 50 CHF.",
+        "10": "Gebühr für Haustiere — 20 CHF/Tag/Tier.",
+        "11": "Zusatzgebühr im Zusammenhang mit der Auslösung des Feueralarms — mindestens 1500 CHF. HINWEIS: Der Gast trägt alle Kosten im Zusammenhang mit dem Einsatz der Feuerwehr oder anderer Ordnungskräfte — mindestens 1500 CHF (Mindestkosten, die dem Hotel durch die Auslösung des Alarms und den Einsatz der Feuerwehr entstehen).",
+        "12": "Frühstück (sofern nicht bereits im Übernachtungspreis enthalten) — 12 CHF pro Person (Bezahlung an der Rezeption)."
+      }
+    },
+    "tv": {
+      "title": "Hinweis zum Fernsehen",
+      "body": "In unserem Hotel sind alle Zimmer mit Fernsehern mit SMART-TV-Funktion ausgestattet; Sie benötigen jedoch einen eigenen Zugang (Abonnement) zu Diensten wie z. B. Zatto, Netflix oder Disney, um fernzusehen oder Filme anzuschauen."
+    },
+    "transport": {
+      "title": "Kostenloses Ticket für den öffentlichen Nahverkehr",
+      "body": "Wenn Sie ein Ticino Ticket erhalten möchten, um während Ihres Aufenthalts in unserem Hotel den öffentlichen Nahverkehr im Kanton Tessin kostenlos zu nutzen, geben Sie bitte Ihre E-Mail-Adresse an, an die wir Ihnen das Ticket in elektronischer Form zusenden. Mit dem Ticino Ticket können Sie Ihre Transportkosten senken."
+    },
+    "otherRequests": {
+      "title": "Sonstige Gästewünsche",
+      "body": "Unser Team bereitet sich auf Ihre Ankunft vor und freut sich darauf, Sie in unserem Hotel begrüßen zu dürfen. Bitte teilen Sie uns vor Ihrer Ankunft mit, ob wir Ihnen noch in irgendeiner Weise behilflich sein können."
+    },
+    "signoff": "Mit freundlichen Grüßen — das Team des Hotels Al Ponte Albergo."
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Boutique-Hotel am Luganersee",

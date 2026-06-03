@@ -71,12 +71,26 @@ export default function Header({ bookingUrl }: Props) {
 
   const renderTopItem = (item: NavEntry) => {
     if (!item.mega) {
+      const className =
+        "whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em] transition-opacity hover:opacity-60";
+      if (item.href.startsWith("/")) {
+        return (
+          <Link
+            key={item.key}
+            href={item.href}
+            onMouseEnter={() => setOpenMenu(null)}
+            className={className}
+          >
+            {t(`nav.${item.key}`)}
+          </Link>
+        );
+      }
       return (
         <a
           key={item.key}
           href={item.href}
           onMouseEnter={() => setOpenMenu(null)}
-          className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em] transition-opacity hover:opacity-60"
+          className={className}
         >
           {t(`nav.${item.key}`)}
         </a>

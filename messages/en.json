@@ -119,6 +119,72 @@
       "7": { "title": "Village at Dusk", "desc": "Houses and church beneath the Alps." }
     }
   },
+  "info": {
+    "eyebrow": "Informations",
+    "title": "General information and hotel terms & conditions",
+    "address": "Via Cantonale 61, 6936 Cademario, Switzerland",
+    "hours": {
+      "title": "Basic information — opening hours",
+      "openYearRound": "The hotel is open all year round.",
+      "checkInOut": "Check-in is from 15:30 and check-out is by 10:00.",
+      "receptionHours": "Reception is open from 07:30 to 11:00 and from 15:30 to 19:30.",
+      "phone": "During reception opening hours, you can contact us by phone on +41 91 605 24 92.",
+      "emailOutsideHours": "Outside reception opening hours, you can contact us by email at gatti@al-ponte.ch or via Booking.com chat.",
+      "checkInDetails": "Check-in: available between 15:30 and 24:00, but after 19:30 the reception is closed and only self check-in is available.",
+      "checkOutDetails": "Check-out: 07:30 — 10:00.",
+      "breakfast": "Breakfast (served in the breakfast room): from 08:00 to 10:00.",
+      "pool": "The swimming pool is open from 08:00 to 19:30.",
+      "quietHours": "Quiet hours are from 22:00 to 07:00."
+    },
+    "safety": {
+      "intro": "You can feel safe in our hotel. All areas, including all hotel rooms, are equipped with a modern fire and alarm system, which means that smoking, the use of any other tobacco products, candles, fireworks or other sources of fire or smoke is strictly prohibited throughout the premises (including in the rooms). All communal areas in the hotel (such as the lobby, reception, corridors, terrace, stairwells and breakfast room) are monitored by CCTV cameras. The data controller is Al Ponte Albergo SAGL.",
+      "smokingBan": "Smoking of cigarettes and all other tobacco products is strictly prohibited throughout the entire building, including all rooms, corridors and the breakfast room. This is due to the need to install and operate a highly sensitive fire alarm system, as required by law.",
+      "acknowledgment": "By booking a room at our hotel, you confirm that you have read our house rules and agree to all their provisions, including, in particular, the fire safety regulations, and you accept that in the event of failure to comply with the total ban on smoking cigarettes or other tobacco products throughout the premises, in the event of a fire alarm being triggered, you will voluntarily and without objection bear the additional cost associated with the activation of the fire alarm.",
+      "pleaseNote": "PLEASE NOTE: the guest shall cover all costs associated with the intervention of the fire brigade or other emergency services — not less than CHF 1,500 (the minimum cost the hotel must bear in connection with the fire brigade's intervention — PLEASE NOTE: these costs may be many times higher)."
+    },
+    "pool": {
+      "title": "Information about the swimming pool",
+      "body": "There is an indoor swimming pool available to guests on the hotel premises. Use of the swimming pool is free of charge, but additional towels and a bathrobe are subject to a charge — these are issued at reception (during reception opening hours) upon the guest's request."
+    },
+    "parking": {
+      "title": "Parking",
+      "body": "The hotel does not have its own car park. There is a public car park, Al Ponte, near the hotel, as well as plenty of on-street parking spaces. Parking costs CHF 5 per night, and the fee must be paid at the parking meter located at the car park or via a dedicated app. The reception does not collect parking fees."
+    },
+    "tax": {
+      "title": "Tourist tax",
+      "body": "The price of accommodation (booking) does not include the tourist tax, which is CHF 4.20 per person per night and must be paid at reception upon check-in (or the following morning for guests who arrived late and used self check-in)."
+    },
+    "services": {
+      "title": "Price list for additional services",
+      "items": {
+        "1": "Early check-in (for each hour or part thereof before the standard check-in time) — CHF 20.",
+        "2": "Late check-out (for each hour or part thereof after 10:00) — CHF 25.",
+        "3": "Key replacement fee — CHF 50 per key.",
+        "4": "Additional cleaning on request — CHF 40 per cleaning session.",
+        "5": "Additional pool towel — CHF 5 per towel.",
+        "6": "Bathrobe for the pool — CHF 8 per item.",
+        "7": "Additional fridge on request (subject to availability) — CHF 20 per item.",
+        "8": "Cot on request (subject to availability) — CHF 25 per item.",
+        "9": "Additional fold-out bed in the room (subject to availability and space in the room) — CHF 50.",
+        "10": "Pet fee — CHF 20 per day per pet.",
+        "11": "Additional charge for triggering the fire alarm — no less than CHF 1,500. PLEASE NOTE: the guest is liable for all costs associated with the intervention of the fire brigade or other emergency services — no less than CHF 1,500 (the minimum cost the hotel must bear in connection with the alarm being triggered and the fire brigade's intervention).",
+        "12": "Breakfast (unless already included in the room rate) — CHF 12 per person (payment at reception)."
+      }
+    },
+    "tv": {
+      "title": "Information regarding TV",
+      "body": "All rooms in our hotel are equipped with SMART TVs, but you must have your own access (subscription) to services such as Zatto, Netflix or Disney in order to watch TV or films."
+    },
+    "transport": {
+      "title": "Free public transport ticket",
+      "body": "If you would like to receive a Ticino Ticket to use free public transport in the canton of Ticino during your stay at our hotel, please provide an email address to which we can send the ticket electronically. The Ticino Ticket will help you reduce your transport costs."
+    },
+    "otherRequests": {
+      "title": "Other guest requests",
+      "body": "Our team is preparing for your arrival and looks forward to welcoming you to our hotel. Please let us know before your arrival if there is anything else we can assist you with."
+    },
+    "signoff": "Warm regards — the Al Ponte Albergo Hotel team."
+  },
   "fallback": {
     "name": "Al Ponte",
     "tagline": "Boutique hotel on Lake Lugano",
