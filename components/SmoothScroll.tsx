@@ -29,8 +29,33 @@ export default function SmoothScroll() {
     };
     rafId = requestAnimationFrame(raf);
 
+    // Smooth-scroll every same-page anchor through Lenis (header-offset
+    // aware). Cross-page links (/path#id) and links already handled by a
+    // component (defaultPrevented, e.g. the TOC) are left alone.
+    const HEADER_OFFSET = 96;
+    const onAnchorClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey)
+        return;
+      const target = e.target as HTMLElement | null;
+      const anchor = target?.closest<HTMLAnchorElement>("a[href]");
+      const href = anchor?.getAttribute("href");
+      if (!href || !href.startsWith("#") || href === "#") return;
+      const el = document.querySelector(href);
+      if (!el) return;
+      e.preventDefault();
+      // Wait a frame so any overlay that closes on click (e.g. the mobile
+      // menu restoring body scroll) settles before Lenis moves.
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() =>
+          lenis.scrollTo(el as HTMLElement, { offset: -HEADER_OFFSET }),
+        ),
+      );
+    };
+    document.addEventListener("click", onAnchorClick);
+
     return () => {
       cancelAnimationFrame(rafId);
+      document.removeEventListener("click", onAnchorClick);
       lenis.destroy();
       setLenis(null);
     };
