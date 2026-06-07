@@ -65,18 +65,18 @@ export default function Header({ bookingUrl }: Props) {
   const onForest = active && pastHero;
   const openEntry = NAV.find((n) => n.mega?.group === openMenu) ?? null;
 
-  // Nav label with an elegant arrow that slides out to the left on hover —
-  // consistent with the "→" arrows used across the site (replaces the old
-  // dropdown caret).
+  // Nav label with an elegant arrow that slides out to the right on hover,
+  // growing the item so the rest of the nav reflows to make room. Consistent
+  // with the "→" arrows used across the site (replaces the old dropdown caret).
   const labelWithArrow = (key: string) => (
-    <span className="relative inline-flex items-center">
+    <span className="inline-flex items-center">
+      <FlipText>{t(`nav.${key}`)}</FlipText>
       <span
         aria-hidden
-        className="absolute right-full mr-1.5 text-xs leading-none opacity-0 translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+        className="inline-block max-w-0 -translate-x-1 overflow-hidden whitespace-nowrap leading-none opacity-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:ml-1.5 group-hover:max-w-[1.5em] group-hover:translate-x-0 group-hover:opacity-100"
       >
-        ←
+        →
       </span>
-      <FlipText>{t(`nav.${key}`)}</FlipText>
     </span>
   );
 
