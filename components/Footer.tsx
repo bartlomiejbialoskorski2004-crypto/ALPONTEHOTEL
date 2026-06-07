@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import FlipText from "./FlipText";
@@ -13,18 +14,6 @@ import {
   PHONE_HREF,
 } from "./contact-info";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
-
-// Giant wordmark: each letter rides up from a clipped mask, staggered.
-const wordmarkContainer: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.06, delayChildren: 0.08 } },
-};
-const wordmarkLetter: Variants = {
-  hidden: { y: "115%" },
-  show: { y: 0, transition: { duration: 0.85, ease: EASE } },
-};
-
 type Props = {
   bookingUrl?: string;
 };
@@ -34,6 +23,19 @@ export default function Footer({ bookingUrl }: Props) {
   const reduceMotion = useReducedMotion();
   const pathname = usePathname();
   const isHome = pathname === "/";
+
+  // Scroll-driven parallax: the giant wordmark rises from below the bottom
+  // edge as the footer passes through the viewport.
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const wordmarkY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? ["0%", "0%"] : ["55%", "-18%"],
+  );
 
   // Same-page hashes smooth-scroll via Lenis on the homepage; from sub-pages
   // they need a leading "/" so Next navigates home first.
@@ -48,38 +50,10 @@ export default function Footer({ bookingUrl }: Props) {
     "group inline-flex text-[12px] font-medium uppercase tracking-[0.18em] text-paper/65 transition-colors hover:text-paper";
 
   return (
-    <footer className="bg-forest text-paper">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-        {/* Big "Al Ponte" wordmark — letters wipe up on scroll into view */}
-        <motion.div
-          aria-label={name}
-          initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "show"}
-          viewport={{ once: true, margin: "-80px" }}
-          variants={wordmarkContainer}
-          className="flex flex-wrap gap-x-[0.28em] font-serif text-[clamp(3.25rem,14vw,12rem)] leading-[0.85] tracking-tight"
-        >
-          {name.split(" ").map((wordPart, wi) => (
-            <span key={wi} aria-hidden className="inline-flex">
-              {[...wordPart].map((ch, i) => (
-                <span
-                  key={i}
-                  className="inline-block overflow-hidden pb-[0.12em]"
-                >
-                  <motion.span
-                    variants={wordmarkLetter}
-                    className="inline-block"
-                  >
-                    {ch}
-                  </motion.span>
-                </span>
-              ))}
-            </span>
-          ))}
-        </motion.div>
-
+    <footer ref={ref} className="relative overflow-hidden bg-ink text-paper">
+      <div className="mx-auto max-w-7xl px-6 pt-12 pb-10 lg:px-10 lg:pt-16 lg:pb-12">
         {/* Link columns */}
-        <div className="mt-16 grid gap-12 border-t border-paper/15 pt-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:pt-16">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {/* Explore */}
           <nav className="flex flex-col gap-5" aria-label={t("footer.explore")}>
             <span className={colHead}>/ {t("footer.explore")}</span>
@@ -172,7 +146,7 @@ export default function Footer({ bookingUrl }: Props) {
 
       {/* Bottom bar */}
       <div className="border-t border-paper/15">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:flex-row sm:items-center sm:justify-between lg:px-10">
           <span>
             © {year} {name} — {t("footer.rights")}
           </span>
@@ -198,6 +172,19 @@ export default function Footer({ bookingUrl }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Giant "Al Ponte" wordmark — full-bleed, rises with scroll, clipped
+          by the footer's edges. Decorative: the name is already exposed by the
+          columns above, so this stays out of the a11y tree. */}
+      <motion.div
+        style={{ y: wordmarkY }}
+        aria-hidden
+        className="pointer-events-none select-none"
+      >
+        <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(5rem,30vw,28rem)] leading-[0.75] tracking-tight text-paper">
+          {name}
+        </span>
+      </motion.div>
     </footer>
   );
 }
