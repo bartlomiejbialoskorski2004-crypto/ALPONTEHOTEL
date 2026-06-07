@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import FlipText from "./FlipText";
 
 type Variant = "primary" | "ghost" | "light";
 
@@ -27,7 +28,7 @@ export default function BookNowButton({
   const t = useTranslations("nav");
 
   const base =
-    "inline-flex items-center border border-transparent px-5 py-2.5 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300";
+    "group inline-flex items-center border border-transparent px-5 py-2.5 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300";
   const styles = VARIANT_CLASSES[variant];
 
   const external = href.startsWith("http");
@@ -39,7 +40,7 @@ export default function BookNowButton({
       rel={external ? "noopener noreferrer" : undefined}
       className={`${base} ${styles} ${className}`}
     >
-      {t("bookNow")}
+      <FlipText>{t("bookNow")}</FlipText>
     </a>
   );
 }

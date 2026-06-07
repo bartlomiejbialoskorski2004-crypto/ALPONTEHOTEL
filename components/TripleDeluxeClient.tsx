@@ -21,6 +21,7 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
+import FlipText from "./FlipText";
 
 const TAGS: { key: string; Icon: LucideIcon }[] = [
   { key: "bath", Icon: Bath },
@@ -204,7 +205,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
             variants={fadeUp}
             className="group relative mt-auto block overflow-hidden bg-ink/[0.04] py-5 text-center text-xs font-medium uppercase tracking-[0.3em] text-ink transition-colors duration-500 hover:bg-forest hover:text-paper"
           >
-            <span className="relative z-10">{tNav("bookNow")}</span>
+            <FlipText className="relative z-10">{tNav("bookNow")}</FlipText>
             <span
               aria-hidden
               className="pointer-events-none absolute inset-y-0 -left-full w-1/2 bg-gradient-to-r from-transparent via-paper/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[300%]"

@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import BookNowButton from "./BookNowButton";
+import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { NAV } from "./menu";
 
@@ -61,7 +62,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
           <nav className="flex flex-1 flex-col items-center justify-center gap-8 px-6">
             {NAV.map((item) => {
               const className =
-                "font-serif text-3xl text-ink transition-colors hover:text-forest";
+                "group font-serif text-3xl text-ink transition-colors hover:text-forest";
               if (item.href.startsWith("/")) {
                 return (
                   <Link
@@ -70,7 +71,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
                     onClick={onClose}
                     className={className}
                   >
-                    {t(item.key)}
+                    <FlipText>{t(item.key)}</FlipText>
                   </Link>
                 );
               }
@@ -81,7 +82,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
                   onClick={onClose}
                   className={className}
                 >
-                  {t(item.key)}
+                  <FlipText>{t(item.key)}</FlipText>
                 </a>
               );
             })}

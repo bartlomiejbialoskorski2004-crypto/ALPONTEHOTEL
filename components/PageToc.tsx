@@ -3,6 +3,7 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { getLenis } from "./lenisStore";
+import FlipText from "./FlipText";
 
 export type TocSection = { id: string; num: string; label: string };
 
@@ -296,10 +297,15 @@ export function BackToTop({ label }: { label: string }) {
         e.preventDefault();
         scrollToTarget("#top");
       }}
-      className="mt-10 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.25em] text-ink/50 transition-colors hover:text-forest"
+      className="group mt-10 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.25em] text-ink/50 transition-colors hover:text-forest"
     >
-      <span aria-hidden>↑</span>
-      {label}
+      <span
+        aria-hidden
+        className="transition-transform duration-300 group-hover:-translate-y-1"
+      >
+        ↑
+      </span>
+      <FlipText>{label}</FlipText>
     </a>
   );
 }

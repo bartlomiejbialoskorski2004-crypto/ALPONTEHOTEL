@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import BookNowButton from "./BookNowButton";
+import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
@@ -67,7 +68,7 @@ export default function Header({ bookingUrl }: Props) {
   const renderTopItem = (item: NavEntry) => {
     if (!item.mega) {
       const className =
-        "whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em] transition-opacity hover:opacity-60";
+        "group whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]";
       if (item.href.startsWith("/")) {
         return (
           <Link
@@ -76,7 +77,7 @@ export default function Header({ bookingUrl }: Props) {
             onMouseEnter={() => setOpenMenu(null)}
             className={className}
           >
-            {t(`nav.${item.key}`)}
+            <FlipText>{t(`nav.${item.key}`)}</FlipText>
           </Link>
         );
       }
@@ -87,7 +88,7 @@ export default function Header({ bookingUrl }: Props) {
           onMouseEnter={() => setOpenMenu(null)}
           className={className}
         >
-          {t(`nav.${item.key}`)}
+          <FlipText>{t(`nav.${item.key}`)}</FlipText>
         </a>
       );
     }
@@ -95,7 +96,7 @@ export default function Header({ bookingUrl }: Props) {
     const isOpen = openMenu === group;
     const labelInner = (
       <>
-        {t(`nav.${item.key}`)}
+        <FlipText>{t(`nav.${item.key}`)}</FlipText>
         <svg
           width="10"
           height="10"
@@ -115,7 +116,7 @@ export default function Header({ bookingUrl }: Props) {
       </>
     );
     const labelClass =
-      "flex items-center gap-1.5 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]";
+      "group flex items-center gap-1.5 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]";
     return (
       <div
         key={item.key}
@@ -290,14 +291,14 @@ export default function Header({ bookingUrl }: Props) {
                       <div className="mt-6 grid grid-cols-2 gap-x-12 md:grid-cols-3">
                         {openEntry.mega!.items.map((sub) => (
                           <Link
-                            key={sub.key}
-                            href={sub.href}
+                            key={sub}
+                            href={`/${group}#${sub}`}
                             onClick={() => setOpenMenu(null)}
                             className="group flex items-center justify-between gap-4 border-b border-mist py-4"
                           >
-                            <span className="font-serif text-lg leading-tight">
-                              {labelFor(sub.key)}
-                            </span>
+                            <FlipText className="font-serif text-lg leading-tight">
+                              {labelFor(sub)}
+                            </FlipText>
                             <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
                               →
                             </span>
@@ -311,11 +312,11 @@ export default function Header({ bookingUrl }: Props) {
                 return (
                   <div className="mx-auto grid max-w-7xl grid-cols-4 divide-x divide-mist px-6 lg:px-10">
                     {openEntry.mega!.items.map((sub) => {
-                      const imgSrc = MEGA_IMAGES[sub.key];
+                      const imgSrc = MEGA_IMAGES[sub];
                       return (
                         <a
-                          key={sub.key}
-                          href={sub.href}
+                          key={sub}
+                          href="#rooms"
                           className="group flex flex-col px-8 py-12 first:pl-0"
                         >
                           {imgSrc && (
@@ -336,11 +337,11 @@ export default function Header({ bookingUrl }: Props) {
                           <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
                             / {t(`nav.${openEntry.key}`)}
                           </span>
-                          <span className="mt-4 block font-serif text-2xl leading-tight">
-                            {t(`mega.rooms.${sub.key}.title`)}
-                          </span>
+                          <FlipText className="mt-4 font-serif text-2xl leading-tight">
+                            {t(`mega.rooms.${sub}.title`)}
+                          </FlipText>
                           <span className="mt-3 block text-sm leading-relaxed text-ink/70">
-                            {t(`mega.rooms.${sub.key}.desc`)}
+                            {t(`mega.rooms.${sub}.desc`)}
                           </span>
                           <span className="mt-6 block text-xl transition-transform duration-300 group-hover:translate-x-1.5">
                             →

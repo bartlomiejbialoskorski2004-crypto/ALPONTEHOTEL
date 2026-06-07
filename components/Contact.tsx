@@ -2,17 +2,19 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
+import FlipText from "./FlipText";
 
 const PHONE = "+41 91 605 24 92";
 const PHONE_HREF = "tel:+41916052492";
 const EMAIL = "gatti@al-ponte.ch";
-const MAPS_QUERY = "Via Cantonale 61, 6936 Cademario";
+// Short link to the Al Ponte place — opens the named pin in Google Maps.
+const MAPS_LINK = "https://maps.app.goo.gl/3M8a77hu2zk6tvhq5";
+// Embedded map: query by name so the marker reads "Al Ponte", `t=k` for
+// satellite imagery.
+const MAPS_QUERY = "Al Ponte, Via Cantonale 61, 6936 Cademario";
 const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(
   MAPS_QUERY,
-)}&z=15&output=embed`;
-const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  MAPS_QUERY,
-)}`;
+)}&t=k&z=16&output=embed`;
 
 export default function Contact() {
   const t = useTranslations();
@@ -52,7 +54,14 @@ export default function Contact() {
                 {t("contact.address")}
               </dt>
               <dd className="flex-1 text-base leading-relaxed">
-                {t("info.address")}
+                <a
+                  href={MAPS_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-forest"
+                >
+                  {t("info.address")}
+                </a>
               </dd>
             </div>
             <div className="flex items-baseline gap-6 py-5">
@@ -87,9 +96,9 @@ export default function Contact() {
             href={MAPS_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-8 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-forest transition-opacity hover:opacity-70"
+            className="group mt-8 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-forest"
           >
-            {t("contact.directions")}
+            <FlipText>{t("contact.directions")}</FlipText>
             <span
               aria-hidden
               className="transition-transform duration-300 group-hover:translate-x-1"
@@ -102,11 +111,11 @@ export default function Contact() {
         {/* Map */}
         <div className="relative min-h-[22rem] overflow-hidden border border-mist lg:min-h-0">
           <iframe
-            title={`Al Ponte — ${MAPS_QUERY}`}
+            title="Al Ponte"
             src={MAPS_EMBED}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="h-full w-full border-0 [filter:grayscale(0.35)_contrast(1.05)]"
+            className="h-full w-full border-0"
           />
         </div>
       </motion.div>

@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import FlipText from "./FlipText";
 
 // Small homepage band teasing the Discover Ticino attractions page.
 export default function AttractionsTeaser() {
@@ -42,10 +43,15 @@ export default function AttractionsTeaser() {
         </p>
         <Link
           href="/attractions"
-          className="mt-10 inline-flex items-center gap-2 border border-paper/40 px-7 py-3 text-[11px] font-medium uppercase tracking-[0.22em] text-paper transition-colors hover:bg-paper hover:text-forest"
+          className="group mt-10 inline-flex items-center gap-2 border border-paper/40 px-7 py-3 text-[11px] font-medium uppercase tracking-[0.22em] text-paper transition-colors hover:bg-paper hover:text-forest"
         >
-          {t("attractions.eyebrow")}
-          <span aria-hidden>→</span>
+          <FlipText>{t("attractions.eyebrow")}</FlipText>
+          <span
+            aria-hidden
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          >
+            →
+          </span>
         </Link>
       </motion.div>
     </section>

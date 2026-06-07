@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FlipText from "./FlipText";
 
 export type LinkItem = { label: string; url: string };
 
@@ -11,7 +12,7 @@ export function ResourceLink({ label, url }: LinkItem) {
       rel="noopener noreferrer"
       className="group inline-flex items-center gap-2 border border-ink/15 px-4 py-2 text-[12px] font-medium uppercase tracking-[0.14em] text-ink/80 transition-colors hover:border-forest hover:text-forest"
     >
-      {label}
+      <FlipText>{label}</FlipText>
       <span
         aria-hidden
         className="text-[13px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
