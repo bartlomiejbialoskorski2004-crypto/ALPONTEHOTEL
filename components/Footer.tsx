@@ -39,7 +39,7 @@ export default function Footer({ bookingUrl }: Props) {
   const wordmarkY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["45%", "0%"],
+    reduceMotion ? ["0%", "0%"] : ["80%", "0%"],
   );
 
   // Same-page hashes smooth-scroll via Lenis on the homepage; from sub-pages
@@ -195,12 +195,11 @@ export default function Footer({ bookingUrl }: Props) {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-paper/15">
+      {/* Bottom bar — opaque band (z-10) so the giant wordmark behind it can
+          never cover the copyright. */}
+      <div className="relative z-10 border-t border-paper/15 bg-ink">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <span>
-            © {year} {name} — {t("footer.rights")}
-          </span>
+          <span>©{year} Hotel Al Ponte Cademario</span>
           <div className="flex items-center gap-6">
             <Link
               href="/informations"
@@ -230,7 +229,7 @@ export default function Footer({ bookingUrl }: Props) {
       <motion.div
         style={{ y: wordmarkY }}
         aria-hidden
-        className="pointer-events-none select-none"
+        className="relative z-0 pointer-events-none select-none"
       >
         <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(4rem,26vw,24rem)] leading-[0.75] tracking-tight text-paper">
           {name}
