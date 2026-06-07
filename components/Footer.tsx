@@ -7,8 +7,10 @@ import { Link, usePathname } from "@/i18n/navigation";
 import FlipText from "./FlipText";
 import { NAV } from "./menu";
 import {
+  BOOKING,
   EMAIL,
   EMAIL_HREF,
+  INSTAGRAM,
   MAPS_LINK,
   PHONE,
   PHONE_HREF,
@@ -34,7 +36,7 @@ export default function Footer({ bookingUrl }: Props) {
   const wordmarkY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["55%", "-18%"],
+    reduceMotion ? ["0%", "0%"] : ["20%", "-6%"],
   );
 
   // Same-page hashes smooth-scroll via Lenis on the homepage; from sub-pages
@@ -140,6 +142,52 @@ export default function Footer({ bookingUrl }: Props) {
                 →
               </span>
             </a>
+
+            {/* Social */}
+            <div className="mt-2 flex items-center gap-3">
+              <a
+                href={INSTAGRAM}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-paper/25 text-paper transition-colors hover:bg-paper hover:text-ink"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+                </svg>
+              </a>
+              <a
+                href={BOOKING}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Booking.com"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-paper/25 font-serif text-lg leading-none text-paper transition-colors hover:bg-paper hover:text-ink"
+              >
+                B.
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -181,7 +229,7 @@ export default function Footer({ bookingUrl }: Props) {
         aria-hidden
         className="pointer-events-none select-none"
       >
-        <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(5rem,30vw,28rem)] leading-[0.75] tracking-tight text-paper">
+        <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(3.25rem,18vw,16rem)] leading-[0.75] tracking-tight text-paper">
           {name}
         </span>
       </motion.div>

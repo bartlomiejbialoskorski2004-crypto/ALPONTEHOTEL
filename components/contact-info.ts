@@ -6,6 +6,11 @@ export const PHONE_HREF = "tel:+41916052492";
 export const EMAIL = "gatti@al-ponte.ch";
 export const EMAIL_HREF = `mailto:${EMAIL}`;
 
+// Social — single source of truth for the footer icons.
+export const INSTAGRAM = "https://www.instagram.com/alponterooms/";
+export const BOOKING =
+  "https://www.booking.com/hotel/ch/al-ponte-cademario.pl.html";
+
 // Short link to the Al Ponte place — opens the named pin in Google Maps.
 export const MAPS_LINK = "https://maps.app.goo.gl/3M8a77hu2zk6tvhq5";
 
