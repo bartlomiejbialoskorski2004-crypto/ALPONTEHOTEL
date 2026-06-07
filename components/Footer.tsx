@@ -61,7 +61,7 @@ export default function Footer({ bookingUrl }: Props) {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {/* Explore */}
           <nav className="flex flex-col gap-5" aria-label={t("footer.explore")}>
-            <span className={colHead}>/ {t("footer.explore")}</span>
+            <span className={colHead}>{t("footer.explore")}</span>
             <div className="flex flex-col gap-3.5">
               {NAV.map((item) => {
                 const label = t(`nav.${item.key}`);
@@ -87,7 +87,7 @@ export default function Footer({ bookingUrl }: Props) {
 
           {/* Rooms */}
           <nav className="flex flex-col gap-5" aria-label={t("footer.rooms")}>
-            <span className={colHead}>/ {t("footer.rooms")}</span>
+            <span className={colHead}>{t("footer.rooms")}</span>
             <div className="flex flex-col gap-3.5">
               {NAV[0].mega!.items.map((key) => (
                 <a key={key} href={anchor("#rooms")} className={navLink}>
@@ -99,7 +99,7 @@ export default function Footer({ bookingUrl }: Props) {
 
           {/* Contact */}
           <div className="flex flex-col gap-5">
-            <span className={colHead}>/ {t("footer.contact")}</span>
+            <span className={colHead}>{t("footer.contact")}</span>
             <div className="flex flex-col gap-3.5 text-sm leading-relaxed text-paper/65">
               <a
                 href={MAPS_LINK}
@@ -126,7 +126,7 @@ export default function Footer({ bookingUrl }: Props) {
 
           {/* Reservations */}
           <div className="flex flex-col gap-5">
-            <span className={colHead}>/ {t("footer.book")}</span>
+            <span className={colHead}>{t("footer.book")}</span>
             <p className="max-w-[16rem] text-sm leading-relaxed text-paper/65">
               {t("fallback.tagline")}
             </p>
@@ -195,9 +195,8 @@ export default function Footer({ bookingUrl }: Props) {
         </div>
       </div>
 
-      {/* Bottom bar — opaque band (z-10) so the giant wordmark behind it can
-          never cover the copyright. */}
-      <div className="relative z-10 border-t border-paper/15 bg-ink">
+      {/* Bottom bar */}
+      <div className="border-t border-paper/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:flex-row sm:items-center sm:justify-between lg:px-10">
           <span>©{year} Hotel Al Ponte Cademario</span>
           <div className="flex items-center gap-6">
@@ -224,12 +223,13 @@ export default function Footer({ bookingUrl }: Props) {
       </div>
 
       {/* Giant "Al Ponte" wordmark — full-bleed, rises with scroll, clipped
-          by the footer's edges. Decorative: the name is already exposed by the
-          columns above, so this stays out of the a11y tree. */}
+          by the footer's bottom edge. Sits clear below the copyright (mt gap)
+          and only ever moves downward, so it never covers it. Decorative: the
+          name is already exposed by the columns above. */}
       <motion.div
         style={{ y: wordmarkY }}
         aria-hidden
-        className="relative z-0 pointer-events-none select-none"
+        className="pointer-events-none mt-10 select-none lg:mt-16"
       >
         <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(4rem,26vw,24rem)] leading-[0.75] tracking-tight text-paper">
           {name}

@@ -3,7 +3,7 @@
 // All entries render on the left of the bar. Sub-item / link hrefs are
 // placeholders (#top / #contact) until the matching sections exist.
 
-export type MegaGroup = "rooms" | "attractions";
+export type MegaGroup = "rooms" | "attractions" | "informations";
 export type NavKey =
   | "rooms"
   | "contact"
@@ -26,8 +26,22 @@ export const NAV: NavEntry[] = [
       items: ["apartments", "superior", "budgetPlus", "budget"],
     },
   },
-  { key: "info", href: "/informations" },
-  { key: "attractions", href: "/attractions" },
+  {
+    key: "info",
+    href: "/informations",
+    mega: {
+      group: "informations",
+      items: ["hours", "pool", "parking", "services", "tax", "transport"],
+    },
+  },
+  {
+    key: "attractions",
+    href: "/attractions",
+    mega: {
+      group: "attractions",
+      items: ["mountains", "cademario", "lugano", "nature", "villages", "adventure"],
+    },
+  },
   { key: "gallery", href: "#gallery" },
   { key: "contact", href: "#contact" },
 ];

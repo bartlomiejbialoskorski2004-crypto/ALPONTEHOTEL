@@ -33,7 +33,7 @@ export default function AttractionsTeaser() {
         className="relative mx-auto max-w-3xl px-6 py-20 text-center lg:px-10 lg:py-28"
       >
         <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-paper/70">
-          / {t("nav.attractions")}
+          {t("nav.attractions")}
         </span>
         <h2 className="mt-6 font-serif text-3xl leading-tight lg:text-5xl">
           {t("attractions.title")}

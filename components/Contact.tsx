@@ -25,7 +25,7 @@ export default function Contact() {
         {/* Details */}
         <div className="flex flex-col">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
-            / {t("contact.title")}
+            {t("contact.title")}
           </span>
           <h2
             id="contact-title"

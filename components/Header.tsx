@@ -65,6 +65,21 @@ export default function Header({ bookingUrl }: Props) {
   const onForest = active && pastHero;
   const openEntry = NAV.find((n) => n.mega?.group === openMenu) ?? null;
 
+  // Nav label with an elegant arrow that slides out to the left on hover —
+  // consistent with the "→" arrows used across the site (replaces the old
+  // dropdown caret).
+  const labelWithArrow = (key: string) => (
+    <span className="relative inline-flex items-center">
+      <span
+        aria-hidden
+        className="absolute right-full mr-1.5 text-xs leading-none opacity-0 translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+      >
+        ←
+      </span>
+      <FlipText>{t(`nav.${key}`)}</FlipText>
+    </span>
+  );
+
   const renderTopItem = (item: NavEntry) => {
     if (!item.mega) {
       const className =
@@ -77,7 +92,7 @@ export default function Header({ bookingUrl }: Props) {
             onMouseEnter={() => setOpenMenu(null)}
             className={className}
           >
-            <FlipText>{t(`nav.${item.key}`)}</FlipText>
+            {labelWithArrow(item.key)}
           </Link>
         );
       }
@@ -88,35 +103,15 @@ export default function Header({ bookingUrl }: Props) {
           onMouseEnter={() => setOpenMenu(null)}
           className={className}
         >
-          <FlipText>{t(`nav.${item.key}`)}</FlipText>
+          {labelWithArrow(item.key)}
         </a>
       );
     }
     const group = item.mega.group;
     const isOpen = openMenu === group;
-    const labelInner = (
-      <>
-        <FlipText>{t(`nav.${item.key}`)}</FlipText>
-        <svg
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
-          fill="none"
-          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-          aria-hidden
-        >
-          <path
-            d="M2 3.5L5 6.5L8 3.5"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </>
-    );
+    const labelInner = labelWithArrow(item.key);
     const labelClass =
-      "group flex items-center gap-1.5 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]";
+      "group flex items-center whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.15em]";
     return (
       <div
         key={item.key}
@@ -286,7 +281,7 @@ export default function Header({ bookingUrl }: Props) {
                   return (
                     <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
                       <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
-                        / {t(`nav.${openEntry.key}`)}
+                        {t(`nav.${openEntry.key}`)}
                       </span>
                       <div className="mt-6 grid grid-cols-2 gap-x-12 md:grid-cols-3">
                         {openEntry.mega!.items.map((sub) => (
@@ -335,7 +330,7 @@ export default function Header({ bookingUrl }: Props) {
                             </div>
                           )}
                           <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
-                            / {t(`nav.${openEntry.key}`)}
+                            {t(`nav.${openEntry.key}`)}
                           </span>
                           <FlipText className="mt-4 font-serif text-2xl leading-tight">
                             {t(`mega.rooms.${sub}.title`)}

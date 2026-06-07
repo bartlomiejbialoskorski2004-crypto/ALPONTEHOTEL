@@ -99,7 +99,7 @@ export default async function Informations() {
         <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/55 to-forest/90" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-40 lg:px-10 lg:pb-16 lg:pt-48">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75">
-            / {t("eyebrow")}
+            {t("eyebrow")}
           </span>
           <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-[1.05] lg:text-6xl">
             {t("title")}

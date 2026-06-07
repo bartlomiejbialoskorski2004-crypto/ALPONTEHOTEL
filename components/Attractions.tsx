@@ -62,7 +62,7 @@ export default async function Attractions() {
         <div className="absolute inset-0 bg-gradient-to-b from-forest/65 via-forest/45 to-forest/85" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-16 pt-40 lg:px-10 lg:pb-24 lg:pt-48">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75">
-            / {t("eyebrow")}
+            {t("eyebrow")}
           </span>
           <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-[1.04] lg:text-7xl">
             {t("title")}
