@@ -31,12 +31,15 @@ export default function Footer({ bookingUrl }: Props) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    // The footer is the last element on the page, so it never scrolls past
+    // the viewport top — end the range at "end end" (page fully scrolled) so
+    // the parallax can actually run its full course.
+    offset: ["start end", "end end"],
   });
   const wordmarkY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["20%", "-6%"],
+    reduceMotion ? ["0%", "0%"] : ["45%", "0%"],
   );
 
   // Same-page hashes smooth-scroll via Lenis on the homepage; from sub-pages
@@ -144,17 +147,17 @@ export default function Footer({ bookingUrl }: Props) {
             </a>
 
             {/* Social */}
-            <div className="mt-2 flex items-center gap-3">
+            <div className="mt-2 flex items-center gap-5">
               <a
                 href={INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-paper/25 text-paper transition-colors hover:bg-paper hover:text-ink"
+                className="text-paper/65 transition-colors hover:text-paper"
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="22"
+                  height="22"
                   viewBox="0 0 24 24"
                   fill="none"
                   aria-hidden
@@ -183,7 +186,7 @@ export default function Footer({ bookingUrl }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Booking.com"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-paper/25 font-serif text-lg leading-none text-paper transition-colors hover:bg-paper hover:text-ink"
+                className="font-serif text-2xl leading-none text-paper/65 transition-colors hover:text-paper"
               >
                 B.
               </a>
@@ -229,7 +232,7 @@ export default function Footer({ bookingUrl }: Props) {
         aria-hidden
         className="pointer-events-none select-none"
       >
-        <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(3.25rem,18vw,16rem)] leading-[0.75] tracking-tight text-paper">
+        <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(4rem,26vw,24rem)] leading-[0.75] tracking-tight text-paper">
           {name}
         </span>
       </motion.div>
