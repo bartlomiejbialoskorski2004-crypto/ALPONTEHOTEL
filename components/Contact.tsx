@@ -3,18 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import FlipText from "./FlipText";
-
-const PHONE = "+41 91 605 24 92";
-const PHONE_HREF = "tel:+41916052492";
-const EMAIL = "gatti@al-ponte.ch";
-// Short link to the Al Ponte place — opens the named pin in Google Maps.
-const MAPS_LINK = "https://maps.app.goo.gl/3M8a77hu2zk6tvhq5";
-// Embedded map: query by name so the marker reads "Al Ponte", `t=k` for
-// satellite imagery.
-const MAPS_QUERY = "Al Ponte, Via Cantonale 61, 6936 Cademario";
-const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(
-  MAPS_QUERY,
-)}&t=k&z=16&output=embed`;
+import { EMAIL, MAPS_EMBED, MAPS_LINK, PHONE, PHONE_HREF } from "./contact-info";
 
 export default function Contact() {
   const t = useTranslations();

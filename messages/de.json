@@ -10,6 +10,14 @@
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen"
   },
+  "footer": {
+    "explore": "Entdecken",
+    "rooms": "Zimmer",
+    "contact": "Kontakt",
+    "book": "Reservierungen",
+    "rights": "Alle Rechte vorbehalten",
+    "backToTop": "Nach oben"
+  },
   "mega": {
     "rooms": {
       "apartments": {

@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { client } from "@/sanity/lib/client";
 import { hotelBookingUrlQuery } from "@/sanity/queries";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 
 const siteUrl =
@@ -109,6 +110,7 @@ export default async function LocaleLayout({
           <SmoothScroll />
           <Header bookingUrl={bookingUrl} />
           {children}
+          <Footer bookingUrl={bookingUrl} />
         </NextIntlClientProvider>
       </body>
     </html>
