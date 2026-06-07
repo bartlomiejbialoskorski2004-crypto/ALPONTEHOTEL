@@ -73,7 +73,7 @@ export default function Header({ bookingUrl }: Props) {
       <FlipText>{t(`nav.${key}`)}</FlipText>
       <span
         aria-hidden
-        className="inline-block max-w-0 -translate-x-1 overflow-hidden whitespace-nowrap leading-none opacity-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:ml-1.5 group-hover:max-w-[1.5em] group-hover:translate-x-0 group-hover:opacity-100"
+        className="inline-block max-w-0 -translate-x-1 overflow-hidden whitespace-nowrap leading-none opacity-0 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:ml-1.5 group-hover:max-w-[1.5em] group-hover:translate-x-0 group-hover:opacity-100"
       >
         →
       </span>
@@ -92,7 +92,7 @@ export default function Header({ bookingUrl }: Props) {
             onMouseEnter={() => setOpenMenu(null)}
             className={className}
           >
-            {labelWithArrow(item.key)}
+            <FlipText>{t(`nav.${item.key}`)}</FlipText>
           </Link>
         );
       }
