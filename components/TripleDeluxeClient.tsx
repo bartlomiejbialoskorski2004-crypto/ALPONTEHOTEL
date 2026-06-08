@@ -157,35 +157,48 @@ export default function TripleDeluxeClient({ photos }: Props) {
       className="bg-paper px-6 py-16 text-ink lg:px-10 lg:py-32"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
+        {/* Mobile-only title — on phones the gallery sits right under it,
+            above the description. Hidden on desktop where the in-panel title
+            (below) takes over. */}
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center font-serif text-2xl uppercase leading-tight tracking-tight sm:text-4xl lg:hidden"
+        >
+          {t("title")}
+        </motion.h2>
+
         {/* Left — staggered content panel */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={containerVariants}
-          className="flex flex-col bg-mist"
+          className="flex flex-col bg-mist lg:col-start-1 lg:row-start-1"
         >
           <div className="flex flex-1 flex-col p-6 sm:p-8 lg:p-12">
             <motion.h2
               id="triple-title"
               variants={fadeUp}
-              className="text-center font-serif text-2xl uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+              className="hidden text-center font-serif text-2xl uppercase leading-tight tracking-tight sm:text-4xl lg:block lg:text-5xl"
             >
               {t("title")}
             </motion.h2>
 
             <motion.ul
               variants={fadeUp}
-              className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2 sm:mt-8"
+              className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-1.5 sm:mt-8 sm:gap-2"
             >
               {TAGS.map(({ key, Icon }) => (
                 <motion.li
                   key={key}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="inline-flex items-center gap-2 bg-paper/60 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-ink"
+                  className="inline-flex items-center gap-1.5 bg-paper/60 px-2 py-1 text-[9px] font-medium uppercase tracking-[0.15em] text-ink sm:gap-2 sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.2em]"
                 >
-                  <Icon size={14} strokeWidth={1.25} aria-hidden />
+                  <Icon size={12} strokeWidth={1.25} aria-hidden />
                   <span>{t(`tags.${key}`)}</span>
                 </motion.li>
               ))}
@@ -244,7 +257,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
         </motion.div>
 
         {/* Right — sticky carousel with thumbnail strip */}
-        <div className="relative lg:sticky lg:top-24 lg:self-start">
+        <div className="relative lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/10 sm:aspect-[4/5] lg:aspect-auto lg:h-[calc(100svh-12rem)]">
             {hasPhotos && (
               <AnimatePresence
