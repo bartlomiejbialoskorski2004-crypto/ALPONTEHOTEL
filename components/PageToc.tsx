@@ -4,6 +4,7 @@ import { useEffect, useState, type MouseEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { getLenis } from "./lenisStore";
 import FlipText from "./FlipText";
+import FlipOnChange from "./FlipOnChange";
 
 export type TocSection = { id: string; num: string; label: string };
 
@@ -251,12 +252,14 @@ export default function PageToc({ sections, tocTitle }: Props) {
             aria-expanded={open}
             className="flex flex-1 items-center justify-center gap-2 border-x border-mist py-3.5"
           >
-            <span className="text-[11px] font-medium tabular-nums tracking-[0.2em] text-forest">
-              {activeSection?.num}
-            </span>
-            <span className="max-w-[55vw] truncate text-sm font-medium text-ink">
-              {activeSection?.label}
-            </span>
+            <FlipOnChange
+              value={activeSection?.num ?? ""}
+              className="text-[11px] font-medium tabular-nums tracking-[0.2em] text-forest"
+            />
+            <FlipOnChange
+              value={activeSection?.label ?? ""}
+              className="max-w-[55vw] text-sm font-medium text-ink"
+            />
             <motion.svg
               width="13"
               height="13"

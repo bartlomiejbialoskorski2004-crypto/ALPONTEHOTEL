@@ -29,6 +29,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import FlipText from "./FlipText";
+import FlipOnChange from "./FlipOnChange";
 
 const TAGS: { key: string; Icon: LucideIcon }[] = [
   { key: "bath", Icon: Bath },
@@ -427,19 +428,8 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   <ChevronRight size={20} strokeWidth={1.5} />
                 </motion.button>
 
-                <div className="absolute right-3 top-3 z-10 flex items-baseline bg-paper/85 px-3 py-1.5 font-serif text-xs tracking-[0.25em] text-ink backdrop-blur-md">
-                  <AnimatePresence mode="wait" initial={false}>
-                    <motion.span
-                      key={index}
-                      initial={{ y: 8, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -8, opacity: 0 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="inline-block w-[1.5em] text-right"
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </motion.span>
-                  </AnimatePresence>
+                <div className="absolute right-3 top-3 z-10 flex items-center bg-paper/85 px-3 py-1.5 font-serif text-xs tracking-[0.25em] text-ink backdrop-blur-md">
+                  <FlipOnChange value={String(index + 1).padStart(2, "0")} />
                   <span className="mx-1 text-ink/40">/</span>
                   <span className="text-ink/60">
                     {String(total).padStart(2, "0")}
@@ -571,8 +561,8 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   <ChevronRight size={20} strokeWidth={1.5} />
                 </motion.button>
 
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-serif text-sm tracking-[0.3em] text-paper/80">
-                  {String(index + 1).padStart(2, "0")}
+                <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center font-serif text-sm tracking-[0.3em] text-paper/80">
+                  <FlipOnChange value={String(index + 1).padStart(2, "0")} />
                   <span className="mx-2 text-paper/40">/</span>
                   {String(total).padStart(2, "0")}
                 </div>

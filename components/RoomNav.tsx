@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { getLenis } from "./lenisStore";
 import { ROOM_PANELS } from "./roomPanels";
+import FlipOnChange from "./FlipOnChange";
 
 // Sits just below the fixed header (h-20 / lg:h-24).
 const HEADER_OFFSET = 96;
@@ -95,12 +96,14 @@ export default function RoomNav() {
           onClick={() => scrollToTarget(active.id)}
           className="flex min-w-0 flex-col items-start text-left"
         >
-          <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-forest">
-            {t(`mega.rooms.${active.categoryKey}.title`)}
-          </span>
-          <span className="truncate font-serif text-sm leading-tight text-ink sm:text-base">
-            {t(active.nameKey)}
-          </span>
+          <FlipOnChange
+            value={t(`mega.rooms.${active.categoryKey}.title`)}
+            className="text-[10px] font-medium uppercase tracking-[0.25em] text-forest"
+          />
+          <FlipOnChange
+            value={t(active.nameKey)}
+            className="font-serif text-sm leading-tight text-ink sm:text-base"
+          />
         </button>
 
         <div className="flex shrink-0 items-center gap-3">
@@ -126,8 +129,8 @@ export default function RoomNav() {
               ))}
             </div>
           )}
-          <span className="text-[11px] tabular-nums tracking-[0.15em] text-ink/45">
-            {String(activeIndex + 1).padStart(2, "0")}/
+          <span className="flex items-center text-[11px] tabular-nums tracking-[0.15em] text-ink/45">
+            <FlipOnChange value={String(activeIndex + 1).padStart(2, "0")} />/
             {String(ROOM_PANELS.length).padStart(2, "0")}
           </span>
         </div>

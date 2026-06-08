@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { MediaItemType } from "./InteractiveBentoGallery";
+import FlipOnChange from "./FlipOnChange";
 
 // Accessible mobile gallery: a clean 2-column tappable grid that opens a
 // simple fullscreen viewer (swipe / arrows / counter / caption). Replaces the
@@ -118,8 +119,8 @@ export default function MobileGallery({ items }: { items: MediaItemType[] }) {
 
             {total > 1 && (
               <>
-                <div className="absolute left-1/2 top-5 -translate-x-1/2 font-serif text-sm tracking-[0.3em] text-paper/80">
-                  {String(index + 1).padStart(2, "0")}
+                <div className="absolute left-1/2 top-5 flex -translate-x-1/2 items-center font-serif text-sm tracking-[0.3em] text-paper/80">
+                  <FlipOnChange value={String(index + 1).padStart(2, "0")} />
                   <span className="mx-2 text-paper/40">/</span>
                   {String(total).padStart(2, "0")}
                 </div>
