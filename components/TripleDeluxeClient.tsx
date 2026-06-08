@@ -176,7 +176,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={containerVariants}
-          className="flex flex-col bg-mist lg:col-start-1 lg:row-start-1"
+          className="order-3 flex flex-col bg-mist lg:order-none lg:col-start-1 lg:row-start-1"
         >
           <div className="flex flex-1 flex-col p-6 sm:p-8 lg:p-12">
             <motion.h2
@@ -213,14 +213,14 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
             <motion.ul
               variants={fadeUp}
-              className="mt-8 grid grid-cols-3 gap-x-3 gap-y-6 text-center sm:mt-12 sm:gap-x-4 sm:gap-y-8"
+              className="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-12 lg:grid lg:grid-cols-3 lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none]"
             >
               {FEATURES.map(({ key, Icon }) => (
                 <motion.li
                   key={key}
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="group flex flex-col items-center"
+                  className="group flex min-w-[42%] shrink-0 snap-center flex-col items-center text-center sm:min-w-[33%] lg:min-w-0 lg:shrink"
                 >
                   <Icon
                     size={24}
@@ -257,7 +257,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
         </motion.div>
 
         {/* Right — sticky carousel with thumbnail strip */}
-        <div className="relative lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
+        <div className="relative order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/10 sm:aspect-[4/5] lg:aspect-auto lg:h-[calc(100svh-12rem)]">
             {hasPhotos && (
               <AnimatePresence
