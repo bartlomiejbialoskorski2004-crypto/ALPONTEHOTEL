@@ -237,7 +237,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
           variants={containerVariants}
           className="order-3 flex flex-col bg-mist lg:order-none lg:col-start-1 lg:row-start-1"
         >
-          <div className="flex flex-1 flex-col p-6 sm:p-8 lg:p-12">
+          <div className="flex flex-1 flex-col px-4 pb-6 pt-1 sm:px-8 sm:pb-8 lg:p-12">
             <motion.h2
               id="triple-title"
               variants={fadeUp}
@@ -248,7 +248,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
             <motion.ul
               variants={fadeUp}
-              className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-1.5 sm:mt-8 sm:gap-2"
+              className="mx-auto flex max-w-2xl flex-wrap justify-center gap-1.5 sm:gap-2 lg:mt-8"
             >
               {TAGS.map(({ key, Icon }) => (
                 <motion.li
@@ -265,7 +265,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
             <motion.p
               variants={fadeUp}
-              className="mx-auto mt-6 max-w-xl text-center text-sm leading-relaxed text-ink/70 sm:mt-10"
+              className="mx-auto mt-5 max-w-xl text-center text-sm leading-relaxed text-ink/70 sm:mt-10"
             >
               {t("intro")}
             </motion.p>
@@ -278,7 +278,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
               onPointerMove={onFeatPointerMove}
               onPointerUp={endFeatDrag}
               onPointerLeave={endFeatDrag}
-              className="mt-8 flex cursor-grab snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden active:cursor-grabbing sm:mt-12 lg:grid lg:cursor-default lg:grid-cols-3 lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none]"
+              className="mt-5 flex cursor-grab snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden active:cursor-grabbing sm:mt-12 lg:grid lg:cursor-default lg:grid-cols-3 lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none]"
             >
               {FEATURES.map(({ key, Icon }) => (
                 <motion.li
@@ -306,7 +306,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
             {/* Slider dots — mobile affordance for the features carousel */}
             <motion.div
               variants={fadeUp}
-              className="mt-5 flex items-center justify-center gap-2 lg:hidden"
+              className="mt-4 flex items-center justify-center gap-2 lg:hidden"
             >
               {FEATURES.map(({ key }, i) => (
                 <button
