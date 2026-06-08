@@ -342,7 +342,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
         {/* Right — sticky carousel with thumbnail strip. On mobile it's a gray
             (mist) card whose top holds the title, with the photo inside it;
             full desktop layout unchanged. */}
-        <div className="relative order-2 mb-10 bg-mist p-4 lg:order-none lg:m-0 lg:bg-transparent lg:p-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
+        <div className="relative order-2 bg-mist p-4 lg:order-none lg:m-0 lg:bg-transparent lg:p-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
           {/* Mobile-only title inside the gray card */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}

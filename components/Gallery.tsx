@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import InteractiveBentoGallery, {
   type MediaItemType,
 } from "./InteractiveBentoGallery";
+import MobileGallery from "./MobileGallery";
 
 // Bento layout — keep the spans from the source design (4 tall + 3 wide).
 // To add / reorder slots, edit this list. Drop the matching files in
@@ -62,7 +63,14 @@ export default async function Gallery() {
       className="bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
-        <InteractiveBentoGallery mediaItems={items} />
+        {/* Mobile: accessible 2-col grid + fullscreen viewer */}
+        <div className="lg:hidden">
+          <MobileGallery items={items} />
+        </div>
+        {/* Desktop: interactive bento */}
+        <div className="hidden lg:block">
+          <InteractiveBentoGallery mediaItems={items} />
+        </div>
       </div>
     </section>
   );
