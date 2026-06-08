@@ -1,7 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, type Variants } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+  type Variants,
+} from "motion/react";
 import { useTranslations } from "next-intl";
 import {
   Bath,
@@ -81,6 +88,25 @@ export default function TripleDeluxeClient({ photos }: Props) {
   const [lightbox, setLightbox] = useState(false);
   const stripRef = useRef<HTMLDivElement>(null);
 
+  // Magnetic Book Now: the label is pulled toward the cursor and trails it
+  // (spring lag) before settling back to centre on mouse-leave.
+  const reduceMotion = useReducedMotion();
+  const bookRef = useRef<HTMLAnchorElement>(null);
+  const magX = useMotionValue(0);
+  const magY = useMotionValue(0);
+  const springX = useSpring(magX, { stiffness: 120, damping: 12, mass: 0.3 });
+  const springY = useSpring(magY, { stiffness: 120, damping: 12, mass: 0.3 });
+  const onBookMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (reduceMotion || !bookRef.current) return;
+    const r = bookRef.current.getBoundingClientRect();
+    magX.set((e.clientX - (r.left + r.width / 2)) * 0.3);
+    magY.set((e.clientY - (r.top + r.height / 2)) * 0.6);
+  };
+  const onBookLeave = () => {
+    magX.set(0);
+    magY.set(0);
+  };
+
   const total = photos.length;
   const hasPhotos = total > 0;
 
@@ -128,9 +154,9 @@ export default function TripleDeluxeClient({ photos }: Props) {
     <section
       id="triple-deluxe"
       aria-labelledby="triple-title"
-      className="bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
+      className="bg-paper px-6 py-16 text-ink lg:px-10 lg:py-32"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
         {/* Left — staggered content panel */}
         <motion.div
           initial="hidden"
@@ -139,18 +165,18 @@ export default function TripleDeluxeClient({ photos }: Props) {
           variants={containerVariants}
           className="flex flex-col bg-mist"
         >
-          <div className="flex flex-1 flex-col p-8 lg:p-12">
+          <div className="flex flex-1 flex-col p-6 sm:p-8 lg:p-12">
             <motion.h2
               id="triple-title"
               variants={fadeUp}
-              className="text-center font-serif text-3xl uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+              className="text-center font-serif text-2xl uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl"
             >
               {t("title")}
             </motion.h2>
 
             <motion.ul
               variants={fadeUp}
-              className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-2"
+              className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2 sm:mt-8"
             >
               {TAGS.map(({ key, Icon }) => (
                 <motion.li
@@ -167,14 +193,14 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
             <motion.p
               variants={fadeUp}
-              className="mx-auto mt-10 max-w-xl text-center text-sm leading-relaxed text-ink/70"
+              className="mx-auto mt-6 max-w-xl text-center text-sm leading-relaxed text-ink/70 sm:mt-10"
             >
               {t("intro")}
             </motion.p>
 
             <motion.ul
               variants={fadeUp}
-              className="mt-12 grid grid-cols-3 gap-x-4 gap-y-8 text-center"
+              className="mt-8 grid grid-cols-3 gap-x-3 gap-y-6 text-center sm:mt-12 sm:gap-x-4 sm:gap-y-8"
             >
               {FEATURES.map(({ key, Icon }) => (
                 <motion.li
@@ -189,7 +215,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
                     className="text-ink transition-colors duration-300 group-hover:text-forest"
                     aria-hidden
                   />
-                  <h3 className="mt-3 text-sm font-medium text-ink">
+                  <h3 className="mt-3 text-[13px] font-medium text-ink sm:text-sm">
                     {t(`features.${key}.title`)}
                   </h3>
                   <p className="mt-1 text-xs leading-relaxed text-ink/60">
@@ -201,21 +227,25 @@ export default function TripleDeluxeClient({ photos }: Props) {
           </div>
 
           <motion.a
+            ref={bookRef}
             href="#contact"
             variants={fadeUp}
-            className="group relative mt-auto block overflow-hidden bg-ink/[0.04] py-5 text-center text-xs font-medium uppercase tracking-[0.3em] text-ink transition-colors duration-500 hover:bg-forest hover:text-paper"
+            onMouseMove={onBookMove}
+            onMouseLeave={onBookLeave}
+            className="group relative mt-auto block bg-ink/[0.04] py-5 text-center text-xs font-medium uppercase tracking-[0.3em] text-ink transition-colors duration-500 hover:bg-forest hover:text-paper"
           >
-            <FlipText className="relative z-10">{tNav("bookNow")}</FlipText>
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-y-0 -left-full w-1/2 bg-gradient-to-r from-transparent via-paper/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[300%]"
-            />
+            <motion.span
+              style={{ x: springX, y: springY }}
+              className="relative z-10 inline-block"
+            >
+              <FlipText>{tNav("bookNow")}</FlipText>
+            </motion.span>
           </motion.a>
         </motion.div>
 
         {/* Right — sticky carousel with thumbnail strip */}
         <div className="relative lg:sticky lg:top-24 lg:self-start">
-          <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink/10 lg:aspect-auto lg:h-[calc(100svh-12rem)]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/10 sm:aspect-[4/5] lg:aspect-auto lg:h-[calc(100svh-12rem)]">
             {hasPhotos && (
               <AnimatePresence
                 initial={false}
@@ -261,7 +291,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 18 }}
-                  className="absolute left-3 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-paper/85 text-ink shadow-sm backdrop-blur-md transition-colors hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest"
+                  className="absolute left-3 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-paper/85 text-ink shadow-sm backdrop-blur-md transition-colors hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest sm:h-12 sm:w-12"
                 >
                   <ChevronLeft size={20} strokeWidth={1.5} />
                 </motion.button>
@@ -272,7 +302,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 18 }}
-                  className="absolute right-3 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-paper/85 text-ink shadow-sm backdrop-blur-md transition-colors hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest"
+                  className="absolute right-3 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-paper/85 text-ink shadow-sm backdrop-blur-md transition-colors hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest sm:h-12 sm:w-12"
                 >
                   <ChevronRight size={20} strokeWidth={1.5} />
                 </motion.button>
@@ -327,7 +357,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   onClick={() => jumpTo(i)}
                   aria-label={`Go to photo ${i + 1}`}
                   aria-current={i === index}
-                  className={`relative h-14 w-14 flex-shrink-0 overflow-hidden bg-ink/10 transition-all duration-300 lg:h-16 lg:w-16 ${
+                  className={`relative h-12 w-12 flex-shrink-0 overflow-hidden bg-ink/10 transition-all duration-300 sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${
                     i === index
                       ? "opacity-100 ring-2 ring-forest"
                       : "opacity-60 hover:opacity-100"
