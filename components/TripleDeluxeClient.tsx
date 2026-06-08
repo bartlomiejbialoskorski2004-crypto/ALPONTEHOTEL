@@ -227,7 +227,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
       aria-labelledby="triple-title"
       className="bg-paper px-6 py-16 text-ink lg:px-10 lg:py-32"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-10">
         {/* Mobile-only title — editorial, flush to the section's left edge.
             The gallery sits right under it (with the category eyebrow tying
             them together). Hidden on desktop where the in-panel title takes
@@ -237,14 +237,14 @@ export default function TripleDeluxeClient({ photos }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="-ml-6 pl-2 lg:hidden"
+          className="-ml-6 pl-1 lg:hidden"
         >
+          <p className="mb-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-forest/70">
+            {tRooms("apartments.title")}
+          </p>
           <h2 className="text-left font-serif text-3xl uppercase leading-[1.05] tracking-tight text-ink">
             {t("title")}
           </h2>
-          <p className="mt-2.5 text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
-            {tRooms("apartments.title")}
-          </p>
         </motion.div>
 
         {/* Left — staggered content panel */}
@@ -358,9 +358,10 @@ export default function TripleDeluxeClient({ photos }: Props) {
           </motion.a>
         </motion.div>
 
-        {/* Right — sticky carousel with thumbnail strip */}
-        <div className="relative order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
-          <div className="relative aspect-[4/3] w-full overflow-hidden border border-mist bg-ink/10 sm:aspect-[4/5] lg:aspect-auto lg:border-0 lg:h-[calc(100svh-12rem)]">
+        {/* Right — sticky carousel with thumbnail strip. On mobile it's a gray
+            (mist) container the title sits on; full desktop layout unchanged. */}
+        <div className="relative order-2 -ml-6 mb-10 bg-mist p-2.5 lg:order-none lg:m-0 lg:bg-transparent lg:p-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/10 sm:aspect-[4/5] lg:aspect-auto lg:h-[calc(100svh-12rem)]">
             {hasPhotos && (
               <AnimatePresence
                 initial={false}
