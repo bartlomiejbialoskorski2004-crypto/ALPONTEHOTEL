@@ -38,25 +38,10 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
           transition={{ duration: 0.25, ease: "easeOut" }}
           className="fixed inset-0 z-50 flex flex-col bg-paper text-ink"
         >
-          <div className="flex h-20 items-center justify-between px-6">
+          <div className="flex h-20 items-center px-6">
             <Link href="/" onClick={onClose} aria-label="Al Ponte">
               <Image src="/logo.png" alt="Al Ponte" width={36} height={36} />
             </Link>
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label={t("closeMenu")}
-              className="p-2"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M6 6L18 18M6 18L18 6"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
           </div>
 
           <nav className="flex flex-1 flex-col items-center justify-center gap-8 px-6">

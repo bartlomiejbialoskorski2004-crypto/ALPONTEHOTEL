@@ -13,6 +13,7 @@ import { Link } from "@/i18n/navigation";
 import BookNowButton from "./BookNowButton";
 import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
+import MenuToggle from "./MenuToggle";
 import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
 
@@ -239,21 +240,6 @@ export default function Header({ bookingUrl }: Props) {
                 }
               />
             </div>
-            <button
-              type="button"
-              onClick={() => setMobileOpen(true)}
-              aria-label={t("nav.openMenu")}
-              className="p-2 lg:hidden"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M4 7H20M4 12H20M4 17H20"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
           </div>
         </div>
 
@@ -356,6 +342,17 @@ export default function Header({ bookingUrl }: Props) {
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
         bookingUrl={bookingUrl}
+      />
+
+      {/* Single persistent toggle — sits above the overlay (z-[60]) so the two
+          lines smoothly morph into an X in place. */}
+      <MenuToggle
+        open={mobileOpen}
+        onClick={() => setMobileOpen((v) => !v)}
+        label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+        className={`fixed right-4 top-4 z-[60] transition-colors duration-300 lg:hidden ${
+          mobileOpen || onPaper ? "text-ink" : "text-paper"
+        }`}
       />
     </>
   );
