@@ -48,9 +48,15 @@ const FLAGS: Record<string, FlagComponent> = {
 
 type Props = {
   tone?: "dark" | "light";
+  // "right" anchors the dropdown to the flag's right edge so it doesn't
+  // overflow when the switcher sits near the screen's right edge (mobile bar).
+  align?: "center" | "right";
 };
 
-export default function LocaleSwitcher({ tone = "dark" }: Props) {
+export default function LocaleSwitcher({
+  tone = "dark",
+  align = "center",
+}: Props) {
   const active = useLocale();
   const pathname = usePathname();
   const params = useParams();
@@ -116,7 +122,9 @@ export default function LocaleSwitcher({ tone = "dark" }: Props) {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="absolute left-1/2 top-full z-50 flex -translate-x-1/2 flex-row gap-2 pt-2 sm:flex-col sm:gap-1"
+            className={`absolute top-full z-50 flex flex-row gap-2 pt-2 sm:flex-col sm:gap-1 ${
+              align === "right" ? "right-0" : "left-1/2 -translate-x-1/2"
+            }`}
           >
             {others.map((code) => {
               const Flag = FLAGS[code];

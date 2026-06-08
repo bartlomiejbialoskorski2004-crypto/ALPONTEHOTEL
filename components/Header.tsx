@@ -344,16 +344,32 @@ export default function Header({ bookingUrl }: Props) {
         bookingUrl={bookingUrl}
       />
 
-      {/* Single persistent toggle — sits above the overlay (z-[60]) so the two
-          lines smoothly morph into an X in place. */}
-      <MenuToggle
-        open={mobileOpen}
-        onClick={() => setMobileOpen((v) => !v)}
-        label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
-        className={`fixed right-4 top-4 z-[60] transition-colors duration-300 lg:hidden ${
-          mobileOpen || onPaper ? "text-ink" : "text-paper"
-        }`}
-      />
+      {/* Mobile top-right controls (above the overlay, z-[60]): the language
+          flag slides in from the top once the bar is active (scrolled), to the
+          left of the persistent morphing toggle. */}
+      <div className="fixed right-4 top-4 z-[60] flex items-center gap-1.5 lg:hidden">
+        <AnimatePresence>
+          {active && !mobileOpen && (
+            <motion.div
+              key="mobile-locale"
+              initial={{ opacity: 0, y: -14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -14 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <LocaleSwitcher tone={onPaper ? "dark" : "light"} align="right" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <MenuToggle
+          open={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+          label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+          className={`transition-colors duration-300 ${
+            mobileOpen || onPaper ? "text-ink" : "text-paper"
+          }`}
+        />
+      </div>
     </>
   );
 }
