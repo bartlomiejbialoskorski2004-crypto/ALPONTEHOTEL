@@ -58,7 +58,56 @@
   },
   "rooms": {
     "title": "Camere",
-    "intro": "Il nostro hotel offre camere e appartamenti di varie dimensioni e categorie. Accogliamo famiglie grandi e piccole, coppie e chi viaggia per lavoro. Tutte le camere dispongono di SMART TV e Wi-Fi gratuito. È vietato fumare — ogni camera è dotata di un moderno sistema antincendio."
+    "intro": "Il nostro hotel offre camere e appartamenti di varie dimensioni e categorie. Accogliamo famiglie grandi e piccole, coppie e chi viaggia per lavoro. Tutte le camere dispongono di SMART TV e Wi-Fi gratuito. È vietato fumare — ogni camera è dotata di un moderno sistema antincendio.",
+    "amenities": {
+      "bath": "Bagno privato",
+      "kitchen": "Cucina privata",
+      "tv": "Smart TV",
+      "wifi": "Wi-Fi",
+      "balcony": "Balcone",
+      "terrace": "Terrazza",
+      "view": "Vista lago e montagne",
+      "kingBed": "Letto king-size",
+      "kettle": "Bollitore e tazze"
+    },
+    "items": {
+      "bigFamily": {
+        "name": "Appartamento Familiare Grande",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale king-size con 2 piumoni, 2 letti singoli e divano letto matrimoniale, comodini, scrivania o tavolo, sedie, armadio, smart TV, Wi-Fi, terrazza con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, cucina privata attrezzata con forno a microonde, piano cottura elettrico, frigorifero, lavello, bollitore, pentole, piatti, tazze e posate"
+      },
+      "tripleDependance": {
+        "name": "Appartamento Triplo Indipendente",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia (con bagnoschiuma), letto matrimoniale king-size con 2 piumoni, letto singolo, comodini, scrivania o tavolo, sedie, armadio, smart TV, Wi-Fi, terrazza con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, cucina privata attrezzata con forno a microonde, piano cottura elettrico, frigorifero, lavello, bollitore, pentole, piatti, tazze e posate. Questo appartamento è un angolo intimo ed esclusivo con giardino privato, valutato tramite stelle, che offre maggiore privacy e tranquillità."
+      },
+      "doubleSuperior": {
+        "name": "Camera Doppia Superior",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, comodini, scrivania o tavolo, sedie, armadio o appendiabiti, Smart TV, Wi-Fi, balcone con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore con tazze."
+      },
+      "tripleSuperior": {
+        "name": "Camera Tripla Superior",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale king-size con 2 piumoni, letto singolo, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, balcone con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore con tazze."
+      },
+      "doublePanoramaBudgetPlus": {
+        "name": "Camera Doppia Panoramica Budget Plus",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore con tazze."
+      },
+      "familyBudgetPlusTerrace": {
+        "name": "Camera Famiglia Economica Plus con Terrazza",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, 2 divani letto, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, terrazza con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore e tazze."
+      },
+      "singleBudget": {
+        "name": "Camera Singola Economica",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto singolo, comodino, scrivania o tavolo, sedia, appendiabiti, Smart TV, Wi-Fi, bollitore con tazze."
+      },
+      "doubleBudget": {
+        "name": "Camera Doppia Economica",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, bollitore con tazze."
+      },
+      "twinBudget": {
+        "name": "Camera Twin Economica",
+        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, 2 letti singoli, comodini, scrivania o tavolo, sedie, appendiabiti, smart TV, Wi-Fi, bollitore con tazze."
+      }
+    }
   },
   "triple": {
     "title": "Triple Deluxe Apartment",
@@ -73,12 +122,30 @@
       "towels": "Asciugamani"
     },
     "features": {
-      "king": { "title": "Letto matrimoniale", "desc": "con 2 piumini" },
-      "single": { "title": "Letto singolo", "desc": "perfetto per una persona" },
-      "view": { "title": "Vista su Lugano", "desc": "città, lago, montagne" },
-      "balcony": { "title": "Balcone", "desc": "con splendida vista" },
-      "space": { "title": "Tanto spazio", "desc": "per soggiorni lunghi" },
-      "wifi": { "title": "Wi-Fi", "desc": "in tutta la camera" }
+      "king": {
+        "title": "Letto matrimoniale",
+        "desc": "con 2 piumini"
+      },
+      "single": {
+        "title": "Letto singolo",
+        "desc": "perfetto per una persona"
+      },
+      "view": {
+        "title": "Vista su Lugano",
+        "desc": "città, lago, montagne"
+      },
+      "balcony": {
+        "title": "Balcone",
+        "desc": "con splendida vista"
+      },
+      "space": {
+        "title": "Tanto spazio",
+        "desc": "per soggiorni lunghi"
+      },
+      "wifi": {
+        "title": "Wi-Fi",
+        "desc": "in tutta la camera"
+      }
     }
   },
   "amenities": {
@@ -118,20 +185,43 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Campanile al crepuscolo", "desc": "Il campanile del borgo all'ora blu." },
-      "2": { "title": "Vista dalla terrazza", "desc": "Monti, lago e vallata dall'hotel." },
-      "3": { "title": "Cascata nel giardino", "desc": "Un angolo tranquillo del nostro giardino." },
-      "4": { "title": "Alba su Lugano", "desc": "L'alba sul lago e sulla città." },
-      "5": { "title": "Al Ponte", "desc": "La facciata dell'hotel, incorniciata da una palma." },
-      "6": { "title": "Vista alpina", "desc": "Vette innevate al di là della valle." },
-      "7": { "title": "Borgo al tramonto", "desc": "Case e chiesa ai piedi delle Alpi." }
+      "1": {
+        "title": "Campanile al crepuscolo",
+        "desc": "Il campanile del borgo all'ora blu."
+      },
+      "2": {
+        "title": "Vista dalla terrazza",
+        "desc": "Monti, lago e vallata dall'hotel."
+      },
+      "3": {
+        "title": "Cascata nel giardino",
+        "desc": "Un angolo tranquillo del nostro giardino."
+      },
+      "4": {
+        "title": "Alba su Lugano",
+        "desc": "L'alba sul lago e sulla città."
+      },
+      "5": {
+        "title": "Al Ponte",
+        "desc": "La facciata dell'hotel, incorniciata da una palma."
+      },
+      "6": {
+        "title": "Vista alpina",
+        "desc": "Vette innevate al di là della valle."
+      },
+      "7": {
+        "title": "Borgo al tramonto",
+        "desc": "Case e chiesa ai piedi delle Alpi."
+      }
     }
   },
   "info": {
     "eyebrow": "Informazioni",
     "title": "Informazioni generali e regolamento dell'Hotel Al Ponte Albergo",
     "address": "Via Cantonale 61, 6936 Cademario, Svizzera",
-    "toc": { "title": "Indice" },
+    "toc": {
+      "title": "Indice"
+    },
     "backToTop": "Torna su",
     "nav": {
       "hours": "Orari",
@@ -242,14 +332,21 @@
         "items": [
           {
             "text": "Al vostro arrivo, parcheggiate l'auto e iniziate a esplorare. La fermata dell'autobus si trova a soli 25 metri dall'hotel, con collegamenti comodi ogni ora. L'ultimo autobus per tornare ad Al Ponte parte da Lugano (Autosilo Balestra) alle 22:00, con servizio esteso fino a mezzanotte il venerdì e il sabato.",
-            "links": [{ "label": "Ticino Ticket", "url": "https://www.ticino.ch/it/ticket.html" }]
+            "links": [
+              {
+                "label": "Ticino Ticket",
+                "url": "https://www.ticino.ch/it/ticket.html"
+              }
+            ]
           }
         ]
       },
       "cademario": {
         "title": "Scoprire Cademario",
         "items": [
-          { "text": "A Cademario meritano una visita:" },
+          {
+            "text": "A Cademario meritano una visita:"
+          },
           {
             "heading": "Chiesa di San Bernardo",
             "text": "Una chiesa romanica del XII secolo, pittorescamente immersa tra i castagni, che offre uno dei punti panoramici più belli della regione."
@@ -257,16 +354,31 @@
           {
             "heading": "Monastero SS. Francesco e Chiara",
             "text": "Un monastero moderno delle clarisse, fondato nel 1992. Questo luogo di pace e contemplazione attrae i visitatori con la sua energia serena e la sua architettura modesta ma splendida, integrata nel paesaggio alpino.",
-            "links": [{ "label": "Monastero SS. Francesco e Chiara", "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900" }]
+            "links": [
+              {
+                "label": "Monastero SS. Francesco e Chiara",
+                "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900"
+              }
+            ]
           },
           {
             "heading": "Escursioni e Natura",
             "text": "Numerosi sentieri attraversano i boschi del Malcantone, ideali per escursioni con vista sul Lago di Lugano.",
-            "links": [{ "label": "Sentieri escursionistici", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo" }]
+            "links": [
+              {
+                "label": "Sentieri escursionistici",
+                "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo"
+              }
+            ]
           },
           {
             "text": "Cademario è anche un luogo ideale per gli amanti della bicicletta e dei tour su due ruote.",
-            "links": [{ "label": "Itinerari in bici", "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/" }]
+            "links": [
+              {
+                "label": "Itinerari in bici",
+                "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/"
+              }
+            ]
           }
         ]
       },
@@ -275,7 +387,12 @@
         "items": [
           {
             "text": "Iniziate il vostro viaggio con una rilassante passeggiata pomeridiana nel bellissimo Parco Ciani, seguita da una deliziosa cena a Lugano. In estate, godetevi un giro in pedalò o una nuotata rinfrescante nel lago.",
-            "links": [{ "label": "Lugano all'aperto", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura" }]
+            "links": [
+              {
+                "label": "Lugano all'aperto",
+                "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura"
+              }
+            ]
           }
         ]
       },
@@ -285,9 +402,18 @@
           {
             "text": "Spettacolari viste panoramiche vi attendono sul Monte Generoso, sul Monte Brè e sul Monte San Salvatore. Tutte e tre le cime sono visibili dall'Al Ponte e sono facilmente raggiungibili in autobus o in treno, completamente gratis con il vostro Ticino Ticket.",
             "links": [
-              { "label": "Monte Generoso", "url": "https://www.montegeneroso.ch/en/plan/railway" },
-              { "label": "Monte San Salvatore", "url": "https://www.montesansalvatore.ch/" },
-              { "label": "Monte Brè", "url": "https://www.montebre.ch/" }
+              {
+                "label": "Monte Generoso",
+                "url": "https://www.montegeneroso.ch/en/plan/railway"
+              },
+              {
+                "label": "Monte San Salvatore",
+                "url": "https://www.montesansalvatore.ch/"
+              },
+              {
+                "label": "Monte Brè",
+                "url": "https://www.montebre.ch/"
+              }
             ]
           }
         ]
@@ -298,8 +424,14 @@
           {
             "text": "A solo 1 km dall'hotel troverete idilliaci sentieri naturalistici che offrono panorami mozzafiato. Seguite il sentiero per scoprire una piccola cascata rinfrescante e un antico Mulino, perfetto per una tranquilla fuga pomeridiana.",
             "links": [
-              { "label": "Sentieri naturalistici", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo" },
-              { "label": "Maglio del Malcantone", "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html" }
+              {
+                "label": "Sentieri naturalistici",
+                "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo"
+              },
+              {
+                "label": "Maglio del Malcantone",
+                "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html"
+              }
             ]
           }
         ]
@@ -309,7 +441,12 @@
         "items": [
           {
             "text": "Ogni mercoledì, prendete l'autobus per il famoso mercato di Luino sul Lago Maggiore. Godetevi una vivace atmosfera di shopping, prodotti locali e il fascino dell'Italia appena oltre il confine.",
-            "links": [{ "label": "Mercato di Luino", "url": "https://ilmercatodiluino.it/" }]
+            "links": [
+              {
+                "label": "Mercato di Luino",
+                "url": "https://ilmercatodiluino.it/"
+              }
+            ]
           }
         ]
       },
@@ -318,19 +455,39 @@
         "items": [
           {
             "text": "Scoprite Caslano, un villaggio pittoresco con un'autentica atmosfera ticinese.",
-            "links": [{ "label": "Caslano", "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html" }]
+            "links": [
+              {
+                "label": "Caslano",
+                "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html"
+              }
+            ]
           },
           {
             "text": "Nelle vicinanze, le famiglie apprezzeranno il piccolo ma delizioso Zoo di Magliaso.",
-            "links": [{ "label": "Zoo al Maglio", "url": "https://www.zooalmaglio.ch/" }]
+            "links": [
+              {
+                "label": "Zoo al Maglio",
+                "url": "https://www.zooalmaglio.ch/"
+              }
+            ]
           },
           {
             "text": "Visitate Melide e l'iconica Swissminiatur, a pochi minuti di treno.",
-            "links": [{ "label": "Swissminiatur", "url": "https://www.swissminiatur.ch/" }]
+            "links": [
+              {
+                "label": "Swissminiatur",
+                "url": "https://www.swissminiatur.ch/"
+              }
+            ]
           },
           {
             "text": "Oppure esplorate Morcote e l'incantevole Parco Scherrer con un suggestivo giro in battello sul lago.",
-            "links": [{ "label": "Morcote", "url": "https://www.visitmorcote.ch/" }]
+            "links": [
+              {
+                "label": "Morcote",
+                "url": "https://www.visitmorcote.ch/"
+              }
+            ]
           }
         ]
       },
@@ -339,7 +496,12 @@
         "items": [
           {
             "text": "Per gli amanti dello shopping, Fox Town a Mendrisio vi aspetta con outlet di design e grandi offerte, aperto anche la domenica e facilmente raggiungibile in treno.",
-            "links": [{ "label": "FoxTown Mendrisio", "url": "https://www.foxtown.com/" }]
+            "links": [
+              {
+                "label": "FoxTown Mendrisio",
+                "url": "https://www.foxtown.com/"
+              }
+            ]
           }
         ]
       },
@@ -348,7 +510,12 @@
         "items": [
           {
             "text": "Non perdetevi Ascona e Locarno, due eleganti cittadine sul Lago Maggiore. Rilassatevi lungo le loro passeggiate a lago, visitate i caffè locali e godetevi l'atmosfera magica.",
-            "links": [{ "label": "Ascona & Locarno", "url": "https://www.ascona-locarno.com/it/esplora/ascona" }]
+            "links": [
+              {
+                "label": "Ascona & Locarno",
+                "url": "https://www.ascona-locarno.com/it/esplora/ascona"
+              }
+            ]
           }
         ]
       },
@@ -357,7 +524,12 @@
         "items": [
           {
             "text": "Estendete la vostra avventura con un viaggio in treno TILO verso Como o Milano, destinazioni ideali per cultura, shopping e il famoso gelato.",
-            "links": [{ "label": "Treni TILO", "url": "https://www.tilo.ch/" }]
+            "links": [
+              {
+                "label": "Treni TILO",
+                "url": "https://www.tilo.ch/"
+              }
+            ]
           }
         ]
       },
@@ -367,8 +539,14 @@
           {
             "text": "Per chi cerca il brivido, la Valle Verzasca e la Valle Maggia offrono paesaggi mozzafiato, fiumi cristallini e attività emozionanti come il bungee jumping a Verzasca o lo spettacolo Red Bull Cliff Diving.",
             "links": [
-              { "label": "Valle Verzasca", "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca" },
-              { "label": "Red Bull Cliff Diving", "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243" }
+              {
+                "label": "Valle Verzasca",
+                "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca"
+              },
+              {
+                "label": "Red Bull Cliff Diving",
+                "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243"
+              }
             ]
           }
         ]

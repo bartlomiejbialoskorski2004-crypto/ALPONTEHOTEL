@@ -18,4 +18,13 @@ export type RoomPanel = {
 
 export const ROOM_PANELS: RoomPanel[] = [
   { id: "triple-deluxe", categoryKey: "apartments", nameKey: "triple.title" },
+  { id: "big-family", categoryKey: "apartments", nameKey: "rooms.items.bigFamily.name" },
+  { id: "triple-dependance", categoryKey: "apartments", nameKey: "rooms.items.tripleDependance.name" },
+  { id: "double-superior", categoryKey: "superior", nameKey: "rooms.items.doubleSuperior.name" },
+  { id: "triple-superior", categoryKey: "superior", nameKey: "rooms.items.tripleSuperior.name" },
+  { id: "double-panorama-budget-plus", categoryKey: "budgetPlus", nameKey: "rooms.items.doublePanoramaBudgetPlus.name" },
+  { id: "family-budget-plus-terrace", categoryKey: "budgetPlus", nameKey: "rooms.items.familyBudgetPlusTerrace.name" },
+  { id: "single-budget", categoryKey: "budget", nameKey: "rooms.items.singleBudget.name" },
+  { id: "double-budget", categoryKey: "budget", nameKey: "rooms.items.doubleBudget.name" },
+  { id: "twin-budget", categoryKey: "budget", nameKey: "rooms.items.twinBudget.name" },
 ];

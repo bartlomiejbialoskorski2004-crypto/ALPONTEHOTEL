@@ -11,6 +11,8 @@ import Gallery from "@/components/Gallery";
 import AttractionsTeaser from "@/components/AttractionsTeaser";
 import Contact from "@/components/Contact";
 import RoomNav from "@/components/RoomNav";
+import RoomPanel from "@/components/RoomPanel";
+import { ROOM_DETAILS } from "@/components/roomData";
 
 export default async function HomePage({
   params,
@@ -42,6 +44,9 @@ export default async function HomePage({
       <Amenities />
       <Rooms />
       <TripleDeluxe />
+      {ROOM_DETAILS.map((room) => (
+        <RoomPanel key={room.id} {...room} />
+      ))}
       <Gallery />
       <AttractionsTeaser />
       <Contact />

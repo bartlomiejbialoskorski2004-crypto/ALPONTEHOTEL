@@ -58,7 +58,56 @@
   },
   "rooms": {
     "title": "Zimmer",
-    "intro": "Unser Hotel bietet Zimmer und Apartments in verschiedenen Größen und Kategorien. Wir empfangen große und kleine Familien, Paare sowie Geschäftsreisende. Alle Zimmer verfügen über SMART TV und kostenloses WLAN. Rauchen ist nicht gestattet — jedes Zimmer hat ein modernes Brandschutzsystem."
+    "intro": "Unser Hotel bietet Zimmer und Apartments in verschiedenen Größen und Kategorien. Wir empfangen große und kleine Familien, Paare sowie Geschäftsreisende. Alle Zimmer verfügen über SMART TV und kostenloses WLAN. Rauchen ist nicht gestattet — jedes Zimmer hat ein modernes Brandschutzsystem.",
+    "amenities": {
+      "bath": "Privates Bad",
+      "kitchen": "Private Küche",
+      "tv": "Smart TV",
+      "wifi": "WLAN",
+      "balcony": "Balkon",
+      "terrace": "Terrasse",
+      "view": "Blick auf See und Berge",
+      "kingBed": "Kingsize-Bett",
+      "kettle": "Wasserkocher mit Tassen"
+    },
+    "items": {
+      "bigFamily": {
+        "name": "Big Family Apartment",
+        "desc": "Diese Zimmerkategorie ist ausgestattet mit: Badezimmer mit WC und Dusche (inkl. Duschgel), Doppelbett (Kingsize) mit 2 Bettdecken, 2 Einzelbetten und Doppelschlafsofa, Nachttische, Schreibtisch oder Tisch, Stühle, Kleiderschrank, Smart-TV, WLAN, Terrasse mit Blick auf Lugano, den Luganersee und die Berge, private Küche mit Mikrowelle, Elektroherd, Kühlschrank, Spüle, Wasserkocher, Töpfen, Tellern, Tassen und Besteck"
+      },
+      "tripleDependance": {
+        "name": "Triple Dependance Apartment",
+        "desc": "Diese Zimmerkategorie ist ausgestattet mit: Badezimmer mit WC und Dusche (inkl. Duschgel), Doppelbett (Kingsize) mit 2 Bettdecken, Einzelbett, Nachttischen, Schreibtisch oder Tisch, Stühlen, Kleiderschrank, Smart-TV, WLAN, Terrasse mit Blick auf Lugano, den Luganersee und die Berge, privater Küche mit Mikrowelle, Elektroherd, Kühlschrank, Spüle, Wasserkocher, Töpfen, Tellern, Tassen und Besteck. Dieses Apartment ist ein intimer und exklusiver Rückzugsort mit privatem Garten, der mit Sternen ausgezeichnet ist und zusätzliche Privatsphäre und Ruhe bietet."
+      },
+      "doubleSuperior": {
+        "name": "Doppelzimmer Superior",
+        "desc": "Diese Zimmerkategorie ist ausgestattet mit: Badezimmer mit WC und Dusche mit Duschgel, Doppelbett mit 2 Bettdecken, Nachttischen, Schreibtisch oder Tisch, Stühlen, Kleiderschrank oder Kleiderbügeln, Smart-TV, WLAN, Balkon mit Blick auf Lugano, den Luganersee und die Berge, Wasserkocher mit Tassen."
+      },
+      "tripleSuperior": {
+        "name": "Triple Superior Zimmer",
+        "desc": "Diese Zimmerkategorie ist ausgestattet mit: Badezimmer mit WC und Dusche mit Duschgel, Doppelbett (Kingsize) mit 2 Bettdecken, Einzelbett, Nachttische, Schreibtisch oder Tisch, Stühle, Kleiderbügel, Smart-TV, WLAN, Balkon mit Blick auf die Stadt Lugano, den Luganersee und die Berge, Wasserkocher mit Tassen."
+      },
+      "doublePanoramaBudgetPlus": {
+        "name": "Doppel-Panorama-Zimmer Budget Plus",
+        "desc": "Diese Zimmerkategorie bietet: Badezimmer mit WC und Dusche (inkl. Duschgel), Doppelbett mit 2 Bettdecken, Nachttische, Schreibtisch oder Tisch, Stühle, Kleiderbügel, Smart-TV, WLAN, Blick auf Lugano, den Luganersee und die Berge, Wasserkocher mit Tassen."
+      },
+      "familyBudgetPlusTerrace": {
+        "name": "Familien-Budget-Plus-Zimmer mit Terrasse",
+        "desc": "Diese Zimmerkategorie bietet: Badezimmer mit WC und Dusche (inkl. Duschgel), Doppelbett mit 2 Bettdecken, 2 Schlafsofas, Nachttische, Schreibtisch oder Tisch, Stühle, Kleiderbügel, Smart-TV, WLAN, Terrasse mit Blick auf Lugano, den Luganersee und die Berge, Wasserkocher und Tassen."
+      },
+      "singleBudget": {
+        "name": "Einzel-Budget-Zimmer",
+        "desc": "Diese Zimmerkategorie bietet: Badezimmer mit WC und Dusche (inkl. Duschgel), Einzelbett, Nachttisch, Schreibtisch oder Tisch, Stuhl, Kleiderbügel, Smart-TV, WLAN, Wasserkocher mit Tassen."
+      },
+      "doubleBudget": {
+        "name": "Budget-Doppelzimmer",
+        "desc": "Diese Zimmerkategorie ist ausgestattet mit: Badezimmer mit WC und Dusche inklusive Duschgel, Doppelbett mit 2 Bettdecken, Nachttischen, Schreibtisch oder Tisch, Stühlen, Kleiderbügeln, Smart-TV, WLAN und Wasserkocher mit Tassen."
+      },
+      "twinBudget": {
+        "name": "Budget-Zimmer mit zwei Einzelbetten",
+        "desc": "Diese Zimmerkategorie ist ausgestattet mit: Badezimmer mit WC und Dusche inklusive Duschgel, 2 Einzelbetten, Nachttischen, Schreibtisch oder Tisch, Stühlen, Kleiderbügeln, Smart-TV, WLAN und Wasserkocher mit Tassen."
+      }
+    }
   },
   "triple": {
     "title": "Triple Deluxe Apartment",
@@ -73,12 +122,30 @@
       "towels": "Handtücher"
     },
     "features": {
-      "king": { "title": "Kingsize-Bett", "desc": "mit 2 Bettdecken" },
-      "single": { "title": "Einzelbett", "desc": "perfekt für eine Person" },
-      "view": { "title": "Blick auf Lugano", "desc": "Stadt, See, Berge" },
-      "balcony": { "title": "Balkon", "desc": "mit herrlicher Aussicht" },
-      "space": { "title": "Viel Platz", "desc": "für längere Aufenthalte" },
-      "wifi": { "title": "WLAN", "desc": "im gesamten Zimmer" }
+      "king": {
+        "title": "Kingsize-Bett",
+        "desc": "mit 2 Bettdecken"
+      },
+      "single": {
+        "title": "Einzelbett",
+        "desc": "perfekt für eine Person"
+      },
+      "view": {
+        "title": "Blick auf Lugano",
+        "desc": "Stadt, See, Berge"
+      },
+      "balcony": {
+        "title": "Balkon",
+        "desc": "mit herrlicher Aussicht"
+      },
+      "space": {
+        "title": "Viel Platz",
+        "desc": "für längere Aufenthalte"
+      },
+      "wifi": {
+        "title": "WLAN",
+        "desc": "im gesamten Zimmer"
+      }
     }
   },
   "amenities": {
@@ -118,20 +185,43 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Glockenturm in der Dämmerung", "desc": "Der Campanile des Dorfes zur blauen Stunde." },
-      "2": { "title": "Blick von der Terrasse", "desc": "Berge, See und Tal vom Hotel aus." },
-      "3": { "title": "Wasserfall im Garten", "desc": "Eine ruhige Ecke unseres Gartens." },
-      "4": { "title": "Sonnenaufgang über Lugano", "desc": "Morgendämmerung über See und Stadt." },
-      "5": { "title": "Al Ponte", "desc": "Die Hotelfassade, eingerahmt von einer hohen Palme." },
-      "6": { "title": "Alpenblick", "desc": "Schneebedeckte Gipfel auf der anderen Talseite." },
-      "7": { "title": "Dorf in der Dämmerung", "desc": "Häuser und Kirche zu Füßen der Alpen." }
+      "1": {
+        "title": "Glockenturm in der Dämmerung",
+        "desc": "Der Campanile des Dorfes zur blauen Stunde."
+      },
+      "2": {
+        "title": "Blick von der Terrasse",
+        "desc": "Berge, See und Tal vom Hotel aus."
+      },
+      "3": {
+        "title": "Wasserfall im Garten",
+        "desc": "Eine ruhige Ecke unseres Gartens."
+      },
+      "4": {
+        "title": "Sonnenaufgang über Lugano",
+        "desc": "Morgendämmerung über See und Stadt."
+      },
+      "5": {
+        "title": "Al Ponte",
+        "desc": "Die Hotelfassade, eingerahmt von einer hohen Palme."
+      },
+      "6": {
+        "title": "Alpenblick",
+        "desc": "Schneebedeckte Gipfel auf der anderen Talseite."
+      },
+      "7": {
+        "title": "Dorf in der Dämmerung",
+        "desc": "Häuser und Kirche zu Füßen der Alpen."
+      }
     }
   },
   "info": {
     "eyebrow": "Informationen",
     "title": "Allgemeine Informationen und Hausordnung des Hotels Al Ponte Albergo",
     "address": "Via Cantonale 61, 6936 Cademario, Schweiz",
-    "toc": { "title": "Inhalt" },
+    "toc": {
+      "title": "Inhalt"
+    },
     "backToTop": "Nach oben",
     "nav": {
       "hours": "Öffnungszeiten",
@@ -242,14 +332,21 @@
         "items": [
           {
             "text": "Nach Ihrer Ankunft können Sie Ihr Auto einfach stehen lassen und mit der Erkundung beginnen. Die Bushaltestelle liegt nur 25 Meter vom Hotel entfernt, mit bequemen Verbindungen im Stundentakt. Der letzte Bus zurück nach Al Ponte fährt in Lugano (Autosilo Balestra) um 22:00 Uhr ab, am Freitag und Samstag sogar mit verlängertem Service bis Mitternacht.",
-            "links": [{ "label": "Ticino Ticket", "url": "https://www.ticino.ch/de/ticket.html" }]
+            "links": [
+              {
+                "label": "Ticino Ticket",
+                "url": "https://www.ticino.ch/de/ticket.html"
+              }
+            ]
           }
         ]
       },
       "cademario": {
         "title": "Cademario entdecken",
         "items": [
-          { "text": "Direkt in Cademario sehenswert:" },
+          {
+            "text": "Direkt in Cademario sehenswert:"
+          },
           {
             "heading": "Kirche San Bernardo",
             "text": "Eine romanische Kirche aus dem 12. Jahrhundert, malerisch in Kastanienwälder gebettet, die einen der schönsten Aussichtspunkte der Region bietet."
@@ -257,16 +354,31 @@
           {
             "heading": "Monastero SS. Francesco e Chiara",
             "text": "Ein modernes Kloster der Klarissen, gegründet 1992. Dieser Ort der Ruhe und Kontemplation zieht Besucher mit seiner friedlichen Energie und seiner schlichten, aber schönen Architektur an, die sich perfekt in die Alpenlandschaft einfügt.",
-            "links": [{ "label": "Monastero SS. Francesco e Chiara", "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900" }]
+            "links": [
+              {
+                "label": "Monastero SS. Francesco e Chiara",
+                "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900"
+              }
+            ]
           },
           {
             "heading": "Wandern und Natur",
             "text": "Zahlreiche Wege führen durch die Wälder des Malcantone, ideal für Wanderungen mit Blick auf den Luganersee.",
-            "links": [{ "label": "Wanderwege", "url": "https://www.luganoregion.com/de/erleben/sport-und-natur/natur/wandern" }]
+            "links": [
+              {
+                "label": "Wanderwege",
+                "url": "https://www.luganoregion.com/de/erleben/sport-und-natur/natur/wandern"
+              }
+            ]
           },
           {
             "text": "Cademario ist auch ein großartiger Ort für Radfahrer und Biketouren.",
-            "links": [{ "label": "Radtouren in Cademario", "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/" }]
+            "links": [
+              {
+                "label": "Radtouren in Cademario",
+                "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/"
+              }
+            ]
           }
         ]
       },
@@ -275,7 +387,12 @@
         "items": [
           {
             "text": "Beginnen Sie Ihre Reise mit einem entspannten Nachmittagsspaziergang durch den wunderschönen Parco Ciani, gefolgt von einem köstlichen Abendessen in Lugano. Im Sommer können Sie Pedalo fahren oder ein erfrischendes Bad im See genießen.",
-            "links": [{ "label": "Lugano im Freien", "url": "https://www.luganoregion.com/de/erleben/sport-und-natur" }]
+            "links": [
+              {
+                "label": "Lugano im Freien",
+                "url": "https://www.luganoregion.com/de/erleben/sport-und-natur"
+              }
+            ]
           }
         ]
       },
@@ -285,9 +402,18 @@
           {
             "text": "Spektakuläre Panoramaausblicke erwarten Sie auf dem Monte Generoso, Monte Brè und Monte San Salvatore. Alle drei Gipfel sind vom Al Ponte aus sichtbar und mit Bus oder Bahn leicht erreichbar – komplett kostenlos mit Ihrem Ticino Ticket.",
             "links": [
-              { "label": "Monte Generoso", "url": "https://www.montegeneroso.ch/en/plan/railway" },
-              { "label": "Monte San Salvatore", "url": "https://www.montesansalvatore.ch/" },
-              { "label": "Monte Brè", "url": "https://www.montebre.ch/" }
+              {
+                "label": "Monte Generoso",
+                "url": "https://www.montegeneroso.ch/en/plan/railway"
+              },
+              {
+                "label": "Monte San Salvatore",
+                "url": "https://www.montesansalvatore.ch/"
+              },
+              {
+                "label": "Monte Brè",
+                "url": "https://www.montebre.ch/"
+              }
             ]
           }
         ]
@@ -298,8 +424,14 @@
           {
             "text": "Nur 1 km vom Hotel entfernt finden Sie idyllische Naturpfade mit atemberaubenden Ausblicken. Folgen Sie dem Pfad, um einen kleinen, erfrischenden Wasserfall und ein altes Mulino (Mühle) zu entdecken – perfekt für eine ruhige Auszeit am Nachmittag.",
             "links": [
-              { "label": "Naturpfade", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo" },
-              { "label": "Maglio del Malcantone", "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html" }
+              {
+                "label": "Naturpfade",
+                "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo"
+              },
+              {
+                "label": "Maglio del Malcantone",
+                "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html"
+              }
             ]
           }
         ]
@@ -309,7 +441,12 @@
         "items": [
           {
             "text": "Jeden Mittwoch können Sie mit dem Bus zum berühmten Markt von Luino am Lago Maggiore fahren. Genießen Sie die lebendige Shopping-Atmosphäre, lokale Produkte und den Charme Italiens direkt hinter der Grenze.",
-            "links": [{ "label": "Markt von Luino", "url": "https://ilmercatodiluino.it/" }]
+            "links": [
+              {
+                "label": "Markt von Luino",
+                "url": "https://ilmercatodiluino.it/"
+              }
+            ]
           }
         ]
       },
@@ -318,19 +455,39 @@
         "items": [
           {
             "text": "Entdecken Sie Caslano, ein malerisches Dorf mit echtem italienisch-tessiner Ambiente.",
-            "links": [{ "label": "Caslano", "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html" }]
+            "links": [
+              {
+                "label": "Caslano",
+                "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html"
+              }
+            ]
           },
           {
             "text": "In der Nähe werden Familien den kleinen, aber feinen Zoo in Magliaso lieben.",
-            "links": [{ "label": "Zoo al Maglio", "url": "https://www.zooalmaglio.ch/" }]
+            "links": [
+              {
+                "label": "Zoo al Maglio",
+                "url": "https://www.zooalmaglio.ch/"
+              }
+            ]
           },
           {
             "text": "Besuchen Sie Melide und das berühmte Swissminiatur, nur wenige Zugminuten entfernt.",
-            "links": [{ "label": "Swissminiatur", "url": "https://www.swissminiatur.ch/" }]
+            "links": [
+              {
+                "label": "Swissminiatur",
+                "url": "https://www.swissminiatur.ch/"
+              }
+            ]
           },
           {
             "text": "Oder erkunden Sie Morcote und den zauberhaften Parco Scherrer bei einer malerischen Bootsfahrt auf dem See.",
-            "links": [{ "label": "Morcote", "url": "https://www.visitmorcote.ch/" }]
+            "links": [
+              {
+                "label": "Morcote",
+                "url": "https://www.visitmorcote.ch/"
+              }
+            ]
           }
         ]
       },
@@ -339,7 +496,12 @@
         "items": [
           {
             "text": "Für Shopping-Liebhaber erwartet Sie das Fox Town in Mendrisio mit Designer-Outlets und tollen Angeboten – auch sonntags geöffnet und bequem mit dem Zug erreichbar.",
-            "links": [{ "label": "FoxTown Mendrisio", "url": "https://www.foxtown.com/" }]
+            "links": [
+              {
+                "label": "FoxTown Mendrisio",
+                "url": "https://www.foxtown.com/"
+              }
+            ]
           }
         ]
       },
@@ -348,7 +510,12 @@
         "items": [
           {
             "text": "Verpassen Sie nicht Ascona und Locarno, zwei elegante Städte am Lago Maggiore. Entspannen Sie an den Seepromenaden, besuchen Sie lokale Cafés und genießen Sie die magische Atmosphäre.",
-            "links": [{ "label": "Ascona & Locarno", "url": "https://www.ascona-locarno.com/it/esplora/ascona" }]
+            "links": [
+              {
+                "label": "Ascona & Locarno",
+                "url": "https://www.ascona-locarno.com/it/esplora/ascona"
+              }
+            ]
           }
         ]
       },
@@ -357,7 +524,12 @@
         "items": [
           {
             "text": "Erweitern Sie Ihr Abenteuer mit einer TILO-Zugfahrt nach Como oder Mailand – ideale Ziele für Kultur, Shopping und weltberühmtes Gelato.",
-            "links": [{ "label": "TILO-Züge", "url": "https://www.tilo.ch/" }]
+            "links": [
+              {
+                "label": "TILO-Züge",
+                "url": "https://www.tilo.ch/"
+              }
+            ]
           }
         ]
       },
@@ -367,8 +539,14 @@
           {
             "text": "Für Abenteuerlustige bieten das Verzascatal und das Maggiatal atemberaubende Landschaften, kristallklare Flüsse und spannende Aktivitäten wie Bungee-Jumping im Verzasca-Tal oder die Red Bull Cliff Diving Show.",
             "links": [
-              { "label": "Valle Verzasca", "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca" },
-              { "label": "Red Bull Cliff Diving", "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243" }
+              {
+                "label": "Valle Verzasca",
+                "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca"
+              },
+              {
+                "label": "Red Bull Cliff Diving",
+                "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243"
+              }
             ]
           }
         ]

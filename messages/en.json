@@ -58,7 +58,56 @@
   },
   "rooms": {
     "title": "Rooms",
-    "intro": "Our hotel offers rooms and apartments of various sizes and standards. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted — every room is equipped with a modern fire & alarm system."
+    "intro": "Our hotel offers rooms and apartments of various sizes and standards. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted — every room is equipped with a modern fire & alarm system.",
+    "amenities": {
+      "bath": "Private Bathroom",
+      "kitchen": "Private Kitchen",
+      "tv": "Smart TV",
+      "wifi": "Wi-Fi",
+      "balcony": "Balcony",
+      "terrace": "Terrace",
+      "view": "Lake & Mountain View",
+      "kingBed": "King-size Bed",
+      "kettle": "Kettle & Cups"
+    },
+    "items": {
+      "bigFamily": {
+        "name": "Big Family Apartment",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with showergel, double kingsize bed with 2 duvets, 2 single beds and double sofa bed, bedside tables, desk or table, chairs, wardrobe, smart TV, Wi-Fi, terrace with a view of Lugano city, Lugano Lake and the mountains, private kitchen equipped with microwave, electric stove, fridge, sink, kettle, pots, plates, cups and cutlery"
+      },
+      "tripleDependance": {
+        "name": "Triple Dependance Apartment",
+        "desc": "This room category is equipped with: bathroom with toilet and shower (with showergel), double kingsize bed with 2 duvets, single bed, bedside tables, desk or table, chairs, wardrobe, smart TV, Wi-Fi, terrace with a view of Lugano city, Lugano Lake and the mountains, private kitchen equipped with microwave, electric stove, fridge, sink, kettle, pots, plates, cups and cutlery. This apartment is an intimate and exclusive corner with a private garden, assessed via stars, offering added privacy and tranquility."
+      },
+      "doubleSuperior": {
+        "name": "Double Superior Room",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with showergel, double bed with 2 duvets, bedside tables, desk or table, chairs, wardrobe or clothes hangers, smart TV, Wi-Fi, balcony with a view of Lugano city, Lugano Lake and the mountains, kettle with mugs."
+      },
+      "tripleSuperior": {
+        "name": "Triple Superior Room",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with showergel, double kingsize bed with 2 duvets, single bed, bedside tables, desk or table, chairs, clothes hangers, smart TV, Wi-Fi, balcony with a view of Lugano city, Lugano Lake and the mountains, kettle with mugs."
+      },
+      "doublePanoramaBudgetPlus": {
+        "name": "Double Panorama Budget Plus Room",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with showergel, double bed with 2 duvets, bedside tables, desk or table, chairs, clothes hangers, smart TV, Wi-Fi, view of Lugano city, Lugano Lake and the mountains, kettle with mugs."
+      },
+      "familyBudgetPlusTerrace": {
+        "name": "Family Budget Plus Room with Terrace",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with showergel, double bed with 2 duvets, 2 sofa beds, bedside tables, desk or table, chairs, clothes hangers, smart TV, Wi-Fi, terrace with a view of Lugano city, Lugano Lake and the mountains, kettle and mugs."
+      },
+      "singleBudget": {
+        "name": "Single Budget Room",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with shower gel, single bed, bedside table, desk or table, chair, clothes hangers, smart TV, Wi-Fi, kettle with mugs."
+      },
+      "doubleBudget": {
+        "name": "Double Budget Room",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with showergel, double bed with 2 duvets, bedside tables, desk or table, chairs, clothes hangers, smart TV, Wi-Fi, kettle with mugs."
+      },
+      "twinBudget": {
+        "name": "Twin Budget Room",
+        "desc": "This room category is equipped with: bathroom with toilet and shower with shower gel, 2 single beds, bedside tables, desk or table, chairs, clothes hangers, smart TV, Wi-Fi, kettle with cups."
+      }
+    }
   },
   "triple": {
     "title": "Triple Deluxe Apartment",
@@ -73,12 +122,30 @@
       "towels": "Towels"
     },
     "features": {
-      "king": { "title": "King Size Bed", "desc": "with 2 duvets" },
-      "single": { "title": "Single Bed", "desc": "perfect for one person" },
-      "view": { "title": "View for Lugano", "desc": "city, lake, mountains" },
-      "balcony": { "title": "Balcony", "desc": "with beautiful view" },
-      "space": { "title": "A Lot of Space", "desc": "for longer stays" },
-      "wifi": { "title": "Wi-Fi", "desc": "throughout the room" }
+      "king": {
+        "title": "King Size Bed",
+        "desc": "with 2 duvets"
+      },
+      "single": {
+        "title": "Single Bed",
+        "desc": "perfect for one person"
+      },
+      "view": {
+        "title": "View for Lugano",
+        "desc": "city, lake, mountains"
+      },
+      "balcony": {
+        "title": "Balcony",
+        "desc": "with beautiful view"
+      },
+      "space": {
+        "title": "A Lot of Space",
+        "desc": "for longer stays"
+      },
+      "wifi": {
+        "title": "Wi-Fi",
+        "desc": "throughout the room"
+      }
     }
   },
   "amenities": {
@@ -118,20 +185,43 @@
   },
   "gallery": {
     "items": {
-      "1": { "title": "Bell Tower at Dusk", "desc": "The village campanile at blue hour." },
-      "2": { "title": "View from the Terrace", "desc": "Mountains, lake and valley from the hotel." },
-      "3": { "title": "Garden Cascade", "desc": "A quiet corner of our garden." },
-      "4": { "title": "Sunrise over Lugano", "desc": "Daybreak across the lake and city." },
-      "5": { "title": "Al Ponte", "desc": "The hotel facade, framed by a tall palm." },
-      "6": { "title": "Alpine View", "desc": "Snow-capped peaks across the valley." },
-      "7": { "title": "Village at Dusk", "desc": "Houses and church beneath the Alps." }
+      "1": {
+        "title": "Bell Tower at Dusk",
+        "desc": "The village campanile at blue hour."
+      },
+      "2": {
+        "title": "View from the Terrace",
+        "desc": "Mountains, lake and valley from the hotel."
+      },
+      "3": {
+        "title": "Garden Cascade",
+        "desc": "A quiet corner of our garden."
+      },
+      "4": {
+        "title": "Sunrise over Lugano",
+        "desc": "Daybreak across the lake and city."
+      },
+      "5": {
+        "title": "Al Ponte",
+        "desc": "The hotel facade, framed by a tall palm."
+      },
+      "6": {
+        "title": "Alpine View",
+        "desc": "Snow-capped peaks across the valley."
+      },
+      "7": {
+        "title": "Village at Dusk",
+        "desc": "Houses and church beneath the Alps."
+      }
     }
   },
   "info": {
     "eyebrow": "Informations",
     "title": "General information and hotel terms & conditions",
     "address": "Via Cantonale 61, 6936 Cademario, Switzerland",
-    "toc": { "title": "Contents" },
+    "toc": {
+      "title": "Contents"
+    },
     "backToTop": "Back to top",
     "nav": {
       "hours": "Hours",
@@ -242,14 +332,21 @@
         "items": [
           {
             "text": "After arriving, simply park your car and start exploring. The bus stop is just 25 meters from the hotel, with convenient connections every hour. The last bus back to Al Ponte leaves Lugano (Autosilo Balestra) at 22:00, with extended service until midnight on Fridays and Saturdays.",
-            "links": [{ "label": "Ticino Ticket", "url": "https://www.ticino.ch/it/ticket.html" }]
+            "links": [
+              {
+                "label": "Ticino Ticket",
+                "url": "https://www.ticino.ch/it/ticket.html"
+              }
+            ]
           }
         ]
       },
       "cademario": {
         "title": "Discover Cademario",
         "items": [
-          { "text": "In Cademario itself, worth seeing:" },
+          {
+            "text": "In Cademario itself, worth seeing:"
+          },
           {
             "heading": "Chiesa San Bernardo",
             "text": "A 12th-century Romanesque church, picturesquely nestled among chestnut trees, offering one of the most beautiful viewpoints in the region."
@@ -257,16 +354,31 @@
           {
             "heading": "Monastero SS. Francesco e Chiara (Monastery of St. Clare)",
             "text": "A modern monastery of the Poor Clare nuns, founded in 1992. This place of peace and contemplation attracts visitors with its peaceful energy and its modest yet beautiful architecture, nestled into the Alpine landscape.",
-            "links": [{ "label": "Monastero SS. Francesco e Chiara", "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900" }]
+            "links": [
+              {
+                "label": "Monastero SS. Francesco e Chiara",
+                "url": "https://www.cademario.ch/Il-Comune/Cultura-e-sport/Monastero-SS-Francesco-e-Chiara-84dc2900"
+              }
+            ]
           },
           {
             "heading": "Hiking and Nature",
             "text": "Numerous trails lead through the Malcantone forests, ideal for hiking with views of Lake Lugano.",
-            "links": [{ "label": "Hiking trails", "url": "https://www.luganoregion.com/en/things-to-do/sport-and-nature/nature/hiking" }]
+            "links": [
+              {
+                "label": "Hiking trails",
+                "url": "https://www.luganoregion.com/en/things-to-do/sport-and-nature/nature/hiking"
+              }
+            ]
           },
           {
             "text": "Cademario is also a great place for lovers of bicycles and bicycle tours.",
-            "links": [{ "label": "Cycling in Cademario", "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/" }]
+            "links": [
+              {
+                "label": "Cycling in Cademario",
+                "url": "https://www.outdooractive.com/en/cycle-routes/cademario/cycling-in-cademario/3601446/"
+              }
+            ]
           }
         ]
       },
@@ -275,7 +387,12 @@
         "items": [
           {
             "text": "Begin your journey with a relaxing afternoon stroll through the beautiful Parco Ciani, followed by a delightful dinner in Lugano. In summer, enjoy pedal boating or a refreshing swim in the lake.",
-            "links": [{ "label": "Lugano outdoors", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura" }]
+            "links": [
+              {
+                "label": "Lugano outdoors",
+                "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura"
+              }
+            ]
           }
         ]
       },
@@ -285,9 +402,18 @@
           {
             "text": "Spectacular panoramic views await you on Monte Generoso, Monte Brè, and Monte San Salvatore. All three peaks are visible from Al Ponte and are easily reachable by bus or train—completely free with your Ticino Ticket.",
             "links": [
-              { "label": "Monte Generoso", "url": "https://www.montegeneroso.ch/en/plan/railway" },
-              { "label": "Monte San Salvatore", "url": "https://www.montesansalvatore.ch/" },
-              { "label": "Monte Brè", "url": "https://www.montebre.ch/" }
+              {
+                "label": "Monte Generoso",
+                "url": "https://www.montegeneroso.ch/en/plan/railway"
+              },
+              {
+                "label": "Monte San Salvatore",
+                "url": "https://www.montesansalvatore.ch/"
+              },
+              {
+                "label": "Monte Brè",
+                "url": "https://www.montebre.ch/"
+              }
             ]
           }
         ]
@@ -298,8 +424,14 @@
           {
             "text": "Just 1 km from the hotel you'll find idyllic nature trails offering breathtaking views. Follow the path to discover a small, refreshing waterfall and an old Mulino—perfect for a peaceful afternoon escape.",
             "links": [
-              { "label": "Nature trails", "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo" },
-              { "label": "Maglio del Malcantone", "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html" }
+              {
+                "label": "Nature trails",
+                "url": "https://www.luganoregion.com/it/cosa-fare/sport-e-natura/natura/escursionismo"
+              },
+              {
+                "label": "Maglio del Malcantone",
+                "url": "https://www.ticino.ch/it/commons/details/Edificio-Storico-Maglio-del-Malcantone/2710.html"
+              }
             ]
           }
         ]
@@ -309,7 +441,12 @@
         "items": [
           {
             "text": "Every Wednesday, take the bus to the famous Luino Market on Lago Maggiore. Enjoy a vibrant shopping atmosphere, local products, and the charm of Italy just across the border.",
-            "links": [{ "label": "Luino Market", "url": "https://ilmercatodiluino.it/" }]
+            "links": [
+              {
+                "label": "Luino Market",
+                "url": "https://ilmercatodiluino.it/"
+              }
+            ]
           }
         ]
       },
@@ -318,19 +455,39 @@
         "items": [
           {
             "text": "Discover Caslano, a picturesque village with a genuine Italian-Ticino ambiance.",
-            "links": [{ "label": "Caslano", "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html" }]
+            "links": [
+              {
+                "label": "Caslano",
+                "url": "https://www.ticino.ch/it/commons/details/Caslano/142695.html"
+              }
+            ]
           },
           {
             "text": "Nearby, families will love the small yet delightful Zoo in Magliaso.",
-            "links": [{ "label": "Zoo al Maglio", "url": "https://www.zooalmaglio.ch/" }]
+            "links": [
+              {
+                "label": "Zoo al Maglio",
+                "url": "https://www.zooalmaglio.ch/"
+              }
+            ]
           },
           {
             "text": "Visit Melide and the iconic Swissminiatur, only minutes away by train.",
-            "links": [{ "label": "Swissminiatur", "url": "https://www.swissminiatur.ch/" }]
+            "links": [
+              {
+                "label": "Swissminiatur",
+                "url": "https://www.swissminiatur.ch/"
+              }
+            ]
           },
           {
             "text": "Or explore Morcote and the enchanting Parco Scherrer with a scenic boat ride along the lake.",
-            "links": [{ "label": "Morcote", "url": "https://www.visitmorcote.ch/" }]
+            "links": [
+              {
+                "label": "Morcote",
+                "url": "https://www.visitmorcote.ch/"
+              }
+            ]
           }
         ]
       },
@@ -339,7 +496,12 @@
         "items": [
           {
             "text": "For shopping lovers, Fox Town in Mendrisio awaits with designer outlets and great deals—open even on Sundays and easily reachable by train.",
-            "links": [{ "label": "FoxTown Mendrisio", "url": "https://www.foxtown.com/" }]
+            "links": [
+              {
+                "label": "FoxTown Mendrisio",
+                "url": "https://www.foxtown.com/"
+              }
+            ]
           }
         ]
       },
@@ -348,7 +510,12 @@
         "items": [
           {
             "text": "Don't miss Ascona and Locarno, two elegant towns on Lake Maggiore. Relax along their lakeside promenades, visit local cafés, and enjoy the magical atmosphere.",
-            "links": [{ "label": "Ascona & Locarno", "url": "https://www.ascona-locarno.com/it/esplora/ascona" }]
+            "links": [
+              {
+                "label": "Ascona & Locarno",
+                "url": "https://www.ascona-locarno.com/it/esplora/ascona"
+              }
+            ]
           }
         ]
       },
@@ -357,7 +524,12 @@
         "items": [
           {
             "text": "Extend your adventure with a TILO train ride to Como or Milan—ideal destinations for culture, shopping, and world-famous gelato.",
-            "links": [{ "label": "TILO trains", "url": "https://www.tilo.ch/" }]
+            "links": [
+              {
+                "label": "TILO trains",
+                "url": "https://www.tilo.ch/"
+              }
+            ]
           }
         ]
       },
@@ -367,8 +539,14 @@
           {
             "text": "For thrill-seekers, the Verzasca Valley and Maggia Valley offer breathtaking landscapes, crystal-clear rivers, and exciting activities such as bungee jumping at Verzasca or watching the Red Bull Cliff Diving show.",
             "links": [
-              { "label": "Valle Verzasca", "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca" },
-              { "label": "Red Bull Cliff Diving", "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243" }
+              {
+                "label": "Valle Verzasca",
+                "url": "https://www.ascona-locarno.com/it/esplora/valle-verzasca"
+              },
+              {
+                "label": "Red Bull Cliff Diving",
+                "url": "https://www.ascona-locarno.com/it/events/details/international-cliff-diving-championship/10243"
+              }
             ]
           }
         ]
