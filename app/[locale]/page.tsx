@@ -10,6 +10,7 @@ import Amenities from "@/components/Amenities";
 import Gallery from "@/components/Gallery";
 import AttractionsTeaser from "@/components/AttractionsTeaser";
 import Contact from "@/components/Contact";
+import RoomNav from "@/components/RoomNav";
 
 export default async function HomePage({
   params,
@@ -36,6 +37,7 @@ export default async function HomePage({
 
   return (
     <main id="top">
+      <RoomNav />
       <Hero />
       <Amenities />
       <Rooms />

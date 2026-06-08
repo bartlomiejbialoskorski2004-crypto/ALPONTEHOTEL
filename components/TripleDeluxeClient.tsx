@@ -84,6 +84,7 @@ type Props = {
 export default function TripleDeluxeClient({ photos }: Props) {
   const t = useTranslations("triple");
   const tNav = useTranslations("nav");
+  const tRooms = useTranslations("mega.rooms");
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
   const [lightbox, setLightbox] = useState(false);
   const stripRef = useRef<HTMLDivElement>(null);
@@ -105,6 +106,76 @@ export default function TripleDeluxeClient({ photos }: Props) {
   const onBookLeave = () => {
     magX.set(0);
     magY.set(0);
+  };
+
+  // Features slider (mobile only): autoplay + drag-to-scroll + dot sync.
+  const featRef = useRef<HTMLUListElement>(null);
+  const [featIndex, setFeatIndex] = useState(0);
+  const featPausedUntil = useRef(0);
+
+  const scrollFeatTo = (i: number) => {
+    const strip = featRef.current;
+    if (!strip) return;
+    const child = strip.children[i] as HTMLElement | undefined;
+    if (!child) return;
+    strip.scrollTo({
+      left: child.offsetLeft - (strip.clientWidth - child.clientWidth) / 2,
+      behavior: "smooth",
+    });
+  };
+
+  // Keep the active dot in sync with manual scroll/swipe.
+  const onFeatScroll = () => {
+    const strip = featRef.current;
+    if (!strip) return;
+    const center = strip.scrollLeft + strip.clientWidth / 2;
+    let nearest = 0;
+    let best = Infinity;
+    Array.from(strip.children).forEach((c, i) => {
+      const el = c as HTMLElement;
+      const cc = el.offsetLeft + el.clientWidth / 2;
+      const d = Math.abs(cc - center);
+      if (d < best) {
+        best = d;
+        nearest = i;
+      }
+    });
+    setFeatIndex(nearest);
+  };
+
+  // Slow autoplay; only runs where the strip overflows (mobile) and pauses
+  // briefly after any user interaction.
+  useEffect(() => {
+    if (reduceMotion) return;
+    const strip = featRef.current;
+    if (!strip) return;
+    const id = window.setInterval(() => {
+      if (strip.scrollWidth <= strip.clientWidth + 4) return;
+      if (Date.now() < featPausedUntil.current) return;
+      const next = (featIndex + 1) % FEATURES.length;
+      scrollFeatTo(next);
+    }, 3500);
+    return () => window.clearInterval(id);
+  }, [featIndex, reduceMotion]);
+
+  // Pointer drag-to-scroll (mouse); touch swipes natively.
+  const featDrag = useRef<{ startX: number; startLeft: number } | null>(null);
+  const onFeatPointerDown = (e: React.PointerEvent<HTMLUListElement>) => {
+    featPausedUntil.current = Date.now() + 5000;
+    if (e.pointerType !== "mouse") return;
+    featDrag.current = {
+      startX: e.clientX,
+      startLeft: featRef.current?.scrollLeft ?? 0,
+    };
+  };
+  const onFeatPointerMove = (e: React.PointerEvent<HTMLUListElement>) => {
+    if (!featDrag.current || !featRef.current) return;
+    featRef.current.scrollLeft =
+      featDrag.current.startLeft - (e.clientX - featDrag.current.startX);
+  };
+  const endFeatDrag = () => {
+    featDrag.current = null;
+    featPausedUntil.current = Date.now() + 5000;
   };
 
   const total = photos.length;
@@ -157,18 +228,24 @@ export default function TripleDeluxeClient({ photos }: Props) {
       className="bg-paper px-6 py-16 text-ink lg:px-10 lg:py-32"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
-        {/* Mobile-only title — on phones the gallery sits right under it,
-            above the description. Hidden on desktop where the in-panel title
-            (below) takes over. */}
-        <motion.h2
+        {/* Mobile-only title — editorial, flush to the section's left edge.
+            The gallery sits right under it (with the category eyebrow tying
+            them together). Hidden on desktop where the in-panel title takes
+            over. */}
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center font-serif text-2xl uppercase leading-tight tracking-tight sm:text-4xl lg:hidden"
+          className="-ml-6 pl-2 lg:hidden"
         >
-          {t("title")}
-        </motion.h2>
+          <h2 className="text-left font-serif text-3xl uppercase leading-[1.05] tracking-tight text-ink">
+            {t("title")}
+          </h2>
+          <p className="mt-2.5 text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
+            {tRooms("apartments.title")}
+          </p>
+        </motion.div>
 
         {/* Left — staggered content panel */}
         <motion.div
@@ -212,15 +289,21 @@ export default function TripleDeluxeClient({ photos }: Props) {
             </motion.p>
 
             <motion.ul
+              ref={featRef}
               variants={fadeUp}
-              className="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-12 lg:grid lg:grid-cols-3 lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none]"
+              onScroll={onFeatScroll}
+              onPointerDown={onFeatPointerDown}
+              onPointerMove={onFeatPointerMove}
+              onPointerUp={endFeatDrag}
+              onPointerLeave={endFeatDrag}
+              className="mt-8 flex cursor-grab snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden active:cursor-grabbing sm:mt-12 lg:grid lg:cursor-default lg:grid-cols-3 lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none]"
             >
               {FEATURES.map(({ key, Icon }) => (
                 <motion.li
                   key={key}
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="group flex min-w-[42%] shrink-0 snap-center flex-col items-center text-center sm:min-w-[33%] lg:min-w-0 lg:shrink"
+                  className="group flex min-w-[42%] shrink-0 snap-center flex-col items-center text-center select-none sm:min-w-[33%] lg:min-w-0 lg:shrink"
                 >
                   <Icon
                     size={24}
@@ -237,6 +320,25 @@ export default function TripleDeluxeClient({ photos }: Props) {
                 </motion.li>
               ))}
             </motion.ul>
+
+            {/* Slider dots — mobile affordance for the features carousel */}
+            <motion.div
+              variants={fadeUp}
+              className="mt-5 flex items-center justify-center gap-2 lg:hidden"
+            >
+              {FEATURES.map(({ key }, i) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => scrollFeatTo(i)}
+                  aria-label={`Go to feature ${i + 1}`}
+                  aria-current={i === featIndex}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === featIndex ? "w-4 bg-forest" : "w-1.5 bg-ink/20"
+                  }`}
+                />
+              ))}
+            </motion.div>
           </div>
 
           <motion.a
@@ -258,7 +360,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
         {/* Right — sticky carousel with thumbnail strip */}
         <div className="relative order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/10 sm:aspect-[4/5] lg:aspect-auto lg:h-[calc(100svh-12rem)]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden border border-mist bg-ink/10 sm:aspect-[4/5] lg:aspect-auto lg:border-0 lg:h-[calc(100svh-12rem)]">
             {hasPhotos && (
               <AnimatePresence
                 initial={false}
