@@ -92,12 +92,16 @@ export default function Hero() {
             onClick={() => setIndex(i)}
             aria-label={`${t("scrollHint")} ${i + 1}`}
             aria-current={i === index}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              i === index
-                ? "w-8 bg-paper"
-                : "w-1.5 bg-paper/50 hover:bg-paper/80"
-            }`}
-          />
+            className="group flex h-4 items-center"
+          >
+            <span
+              className={`block h-[2px] transition-all duration-500 ${
+                i === index
+                  ? "w-8 bg-paper"
+                  : "w-4 bg-paper/45 group-hover:bg-paper/80"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

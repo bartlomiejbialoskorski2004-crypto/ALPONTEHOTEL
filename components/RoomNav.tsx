@@ -105,7 +105,7 @@ export default function RoomNav() {
 
         <div className="flex shrink-0 items-center gap-3">
           {ROOM_PANELS.length > 1 && (
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               {ROOM_PANELS.map((p, i) => (
                 <button
                   key={p.id}
@@ -113,10 +113,16 @@ export default function RoomNav() {
                   onClick={() => scrollToTarget(p.id)}
                   aria-label={t(p.nameKey)}
                   aria-current={i === activeIndex}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === activeIndex ? "w-5 bg-forest" : "w-1.5 bg-ink/25"
-                  }`}
-                />
+                  className="group flex h-4 items-center"
+                >
+                  <span
+                    className={`block h-[2px] transition-all duration-300 ${
+                      i === activeIndex
+                        ? "w-6 bg-forest"
+                        : "w-3 bg-ink/30 group-hover:bg-ink/50"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           )}

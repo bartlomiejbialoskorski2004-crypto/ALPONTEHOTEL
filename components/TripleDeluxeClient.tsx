@@ -314,10 +314,16 @@ export default function TripleDeluxeClient({ photos }: Props) {
                   onClick={() => scrollFeatTo(i)}
                   aria-label={`Go to feature ${i + 1}`}
                   aria-current={i === featIndex}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === featIndex ? "w-4 bg-forest" : "w-1.5 bg-ink/20"
-                  }`}
-                />
+                  className="group flex h-4 items-center"
+                >
+                  <span
+                    className={`block h-[2px] transition-all duration-300 ${
+                      i === featIndex
+                        ? "w-6 bg-forest"
+                        : "w-3 bg-ink/25 group-hover:bg-ink/45"
+                    }`}
+                  />
+                </button>
               ))}
             </motion.div>
           </div>
