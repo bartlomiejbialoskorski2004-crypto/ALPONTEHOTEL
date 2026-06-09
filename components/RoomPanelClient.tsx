@@ -300,7 +300,9 @@ export default function RoomPanelClient({
               onPointerMove={onFeatPointerMove}
               onPointerUp={endFeatDrag}
               onPointerLeave={endFeatDrag}
-              className="mt-5 flex cursor-grab snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden active:cursor-grabbing sm:mt-12 lg:grid lg:cursor-default lg:grid-cols-3 lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none]"
+              className={`mt-5 flex cursor-grab snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden active:cursor-grabbing sm:mt-12 lg:grid lg:cursor-default lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none] ${
+                features.length === 4 ? "lg:grid-cols-2" : "lg:grid-cols-3"
+              }`}
             >
               {features.map((key) => {
                 const Icon = FEATURE_ICONS[key];
@@ -521,7 +523,7 @@ export default function RoomPanelClient({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             onClick={() => setLightbox(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 p-4 backdrop-blur"
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-ink/95 p-4 backdrop-blur"
           >
             <AnimatePresence mode="wait" initial={false} custom={direction}>
               {/* eslint-disable-next-line @next/next/no-img-element */}

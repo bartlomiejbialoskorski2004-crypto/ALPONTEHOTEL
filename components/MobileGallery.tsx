@@ -74,7 +74,7 @@ export default function MobileGallery({ items }: { items: MediaItemType[] }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             onClick={() => setOpen(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 p-4 backdrop-blur"
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-ink/95 p-4 backdrop-blur"
           >
             <AnimatePresence mode="wait" initial={false} custom={dir}>
               {/* eslint-disable-next-line @next/next/no-img-element */}

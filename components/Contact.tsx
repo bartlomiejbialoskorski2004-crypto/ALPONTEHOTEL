@@ -20,7 +20,7 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16"
+        className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-16"
       >
         {/* Details */}
         <div className="flex flex-col">
@@ -29,20 +29,17 @@ export default function Contact() {
           </span>
           <h2
             id="contact-title"
-            className="mt-6 font-serif text-3xl leading-tight lg:text-5xl"
+            className="mt-5 font-serif text-4xl leading-[1.05] lg:text-6xl"
           >
             {t("fallback.name")}
           </h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-ink/70">
-            {t("contact.intro")}
-          </p>
 
-          <dl className="mt-12 divide-y divide-mist border-y border-mist">
-            <div className="flex items-baseline gap-6 py-5">
-              <dt className="w-24 shrink-0 text-[11px] font-medium uppercase tracking-[0.2em] text-ink/45">
+          <dl className="mt-10 border-t border-mist lg:mt-auto">
+            <div className="grid gap-1 border-b border-mist py-6 sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6">
+              <dt className="text-[11px] font-medium uppercase tracking-[0.25em] text-ink/40">
                 {t("contact.address")}
               </dt>
-              <dd className="flex-1 text-base leading-relaxed">
+              <dd className="text-lg leading-snug">
                 <a
                   href={MAPS_LINK}
                   target="_blank"
@@ -53,24 +50,21 @@ export default function Contact() {
                 </a>
               </dd>
             </div>
-            <div className="flex items-baseline gap-6 py-5">
-              <dt className="w-24 shrink-0 text-[11px] font-medium uppercase tracking-[0.2em] text-ink/45">
+            <div className="grid gap-1 border-b border-mist py-6 sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6">
+              <dt className="text-[11px] font-medium uppercase tracking-[0.25em] text-ink/40">
                 {t("contact.phone")}
               </dt>
-              <dd className="flex-1 text-base tabular-nums">
-                <a
-                  href={PHONE_HREF}
-                  className="transition-colors hover:text-forest"
-                >
+              <dd className="text-lg tabular-nums">
+                <a href={PHONE_HREF} className="transition-colors hover:text-forest">
                   {PHONE}
                 </a>
               </dd>
             </div>
-            <div className="flex items-baseline gap-6 py-5">
-              <dt className="w-24 shrink-0 text-[11px] font-medium uppercase tracking-[0.2em] text-ink/45">
+            <div className="grid gap-1 border-b border-mist py-6 sm:grid-cols-[7rem_1fr] sm:items-baseline sm:gap-6">
+              <dt className="text-[11px] font-medium uppercase tracking-[0.25em] text-ink/40">
                 {t("contact.email")}
               </dt>
-              <dd className="flex-1 text-base">
+              <dd className="text-lg">
                 <a
                   href={`mailto:${EMAIL}`}
                   className="transition-colors hover:text-forest"
@@ -80,25 +74,10 @@ export default function Contact() {
               </dd>
             </div>
           </dl>
-
-          <a
-            href={MAPS_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-8 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-forest"
-          >
-            <FlipText>{t("contact.directions")}</FlipText>
-            <span
-              aria-hidden
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </a>
         </div>
 
         {/* Map */}
-        <div className="relative min-h-[22rem] overflow-hidden border border-mist lg:min-h-0">
+        <div className="relative min-h-[24rem] overflow-hidden border border-mist lg:min-h-[32rem]">
           <iframe
             title="Al Ponte"
             src={MAPS_EMBED}
@@ -106,6 +85,20 @@ export default function Contact() {
             referrerPolicy="no-referrer-when-downgrade"
             className="h-full w-full border-0"
           />
+          <a
+            href={MAPS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group absolute bottom-4 left-4 inline-flex items-center gap-2 border border-mist bg-paper/90 px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.22em] text-ink shadow-sm backdrop-blur transition-colors hover:text-forest"
+          >
+            <FlipText>{t("contact.directions")}</FlipText>
+            <span
+              aria-hidden
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              ↗
+            </span>
+          </a>
         </div>
       </motion.div>
     </section>
