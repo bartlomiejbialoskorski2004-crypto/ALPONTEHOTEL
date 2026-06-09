@@ -39,6 +39,7 @@ import {
 } from "lucide-react";
 import FlipText from "./FlipText";
 import FlipOnChange from "./FlipOnChange";
+import { BOOKING } from "./contact-info";
 
 // Shared amenity chip icons; labels come from `rooms.amenities.<key>`.
 const AMENITY_ICONS: Record<string, LucideIcon> = {
@@ -362,7 +363,9 @@ export default function RoomPanelClient({
 
           <motion.a
             ref={bookRef}
-            href="#contact"
+            href={BOOKING}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={fadeUp}
             onMouseMove={onBookMove}
             onMouseLeave={onBookLeave}

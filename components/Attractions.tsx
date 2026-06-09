@@ -2,7 +2,6 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import PageToc, { BackToTop, type TocSection } from "./PageToc";
 import EditorialSection, { type EditorialItem } from "./EditorialSection";
-import { VideoCard } from "./ResourceLink";
 
 type Section = { title: string; items: EditorialItem[] };
 
@@ -29,9 +28,6 @@ const SECTION_IMAGES: Partial<Record<(typeof SECTION_ORDER)[number], string>> = 
   lugano: "/mega/Oldtown.jpg",
   mountains: "/mega/sansalvatore.jpg",
 };
-
-const YOUTUBE_THUMB =
-  "https://i.ytimg.com/vi/0UnqdqDfpnA/hqdefault.jpg";
 
 export default async function Attractions() {
   const t = await getTranslations("attractions");
@@ -79,15 +75,6 @@ export default async function Attractions() {
         </aside>
 
         <div className="min-w-0 pb-28 lg:pb-0">
-          {/* Intro video, framed as a real video. */}
-          <div className="mb-20 lg:mb-24">
-            <VideoCard
-              url={t("videoUrl")}
-              thumbnail={YOUTUBE_THUMB}
-              label={t("videoLabel")}
-            />
-          </div>
-
           {SECTION_ORDER.map((id, i) => {
             const section = sections[id];
             if (!section) return null;

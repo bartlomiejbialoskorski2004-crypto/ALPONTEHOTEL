@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import FlipText from "./FlipText";
 import FlipOnChange from "./FlipOnChange";
+import { BOOKING } from "./contact-info";
 
 const TAGS: { key: string; Icon: LucideIcon }[] = [
   { key: "bath", Icon: Bath },
@@ -331,7 +332,9 @@ export default function TripleDeluxeClient({ photos }: Props) {
 
           <motion.a
             ref={bookRef}
-            href="#contact"
+            href={BOOKING}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={fadeUp}
             onMouseMove={onBookMove}
             onMouseLeave={onBookLeave}

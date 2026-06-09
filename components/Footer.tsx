@@ -131,10 +131,9 @@ export default function Footer({ bookingUrl }: Props) {
               {t("fallback.tagline")}
             </p>
             <a
-              href={bookingUrl ?? anchor("#contact")}
-              {...(bookingUrl
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
+              href={BOOKING}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group mt-1 inline-flex w-fit items-center gap-2 border border-paper/30 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-paper transition-colors hover:bg-paper hover:text-forest"
             >
               <FlipText>{t("nav.bookNow")}</FlipText>

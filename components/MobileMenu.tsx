@@ -9,6 +9,7 @@ import BookNowButton from "./BookNowButton";
 import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { NAV } from "./menu";
+import { BOOKING } from "./contact-info";
 
 type Props = {
   open: boolean;
@@ -76,7 +77,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
           <div className="flex flex-col items-center gap-6 px-6 pb-10">
             <LocaleSwitcher tone="dark" />
             <BookNowButton
-              href={bookingUrl ?? "#contact"}
+              href={BOOKING}
               variant="primary"
               className="w-full justify-center"
             />

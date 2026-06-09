@@ -16,6 +16,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import MenuToggle from "./MenuToggle";
 import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
+import { BOOKING } from "./contact-info";
 
 // Hex equivalents of the CSS @theme tokens — motion can't interpolate var()
 // cleanly, so we feed it real colour values for the adaptive bar.
@@ -234,7 +235,7 @@ export default function Header({ bookingUrl }: Props) {
             >
               <LocaleSwitcher tone={onPaper ? "dark" : "light"} />
               <BookNowButton
-                href={bookingUrl ?? "#contact"}
+                href={BOOKING}
                 variant={
                   onForest ? "light" : onPaper ? "primary" : "ghost"
                 }
