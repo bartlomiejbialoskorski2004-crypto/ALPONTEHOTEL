@@ -77,6 +77,16 @@ export default function RoomNav() {
   const active = ROOM_PANELS[activeIndex] ?? ROOM_PANELS[0];
   if (!active) return null;
 
+  // Position within the active room's category (e.g. 1/3 Apartments), not the
+  // global 1/10. ROOM_PANELS is grouped contiguously by category.
+  const catRooms = ROOM_PANELS.filter(
+    (p) => p.categoryKey === active.categoryKey,
+  );
+  const posInCat = Math.max(
+    0,
+    catRooms.findIndex((p) => p.id === active.id),
+  );
+
   return (
     <motion.nav
       aria-label={t("nav.rooms")}
@@ -107,20 +117,20 @@ export default function RoomNav() {
         </button>
 
         <div className="flex shrink-0 items-center gap-3">
-          {ROOM_PANELS.length > 1 && (
+          {catRooms.length > 1 && (
             <div className="flex items-center gap-2">
-              {ROOM_PANELS.map((p, i) => (
+              {catRooms.map((p, i) => (
                 <button
                   key={p.id}
                   type="button"
                   onClick={() => scrollToTarget(p.id)}
                   aria-label={t(p.nameKey)}
-                  aria-current={i === activeIndex}
+                  aria-current={i === posInCat}
                   className="group flex h-4 items-center"
                 >
                   <span
                     className={`block h-[2px] transition-all duration-300 ${
-                      i === activeIndex
+                      i === posInCat
                         ? "w-6 bg-forest"
                         : "w-3 bg-ink/30 group-hover:bg-ink/50"
                     }`}
@@ -130,8 +140,8 @@ export default function RoomNav() {
             </div>
           )}
           <span className="flex items-center text-[11px] tabular-nums tracking-[0.15em] text-ink/45">
-            <FlipOnChange value={String(activeIndex + 1).padStart(2, "0")} />/
-            {String(ROOM_PANELS.length).padStart(2, "0")}
+            <FlipOnChange value={String(posInCat + 1).padStart(2, "0")} />/
+            {String(catRooms.length).padStart(2, "0")}
           </span>
         </div>
       </div>

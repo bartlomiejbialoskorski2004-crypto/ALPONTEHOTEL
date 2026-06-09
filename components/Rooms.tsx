@@ -52,7 +52,7 @@ export default function Rooms() {
                 type="button"
                 onClick={() => setOpenKey((k) => (k === key ? null : key))}
                 aria-expanded={openKey === key}
-                className="group/card relative flex min-h-[9.5rem] w-full flex-col items-center justify-center bg-mist p-4 text-center transition-colors duration-500 hover:bg-ink/[0.08] sm:min-h-[18rem] sm:cursor-default sm:p-8 lg:p-10"
+                className="group/card relative flex min-h-[9.5rem] w-full flex-col items-center justify-center bg-mist px-4 pb-4 pt-9 text-center transition-colors duration-500 hover:bg-ink/[0.08] sm:min-h-[18rem] sm:cursor-default sm:p-8 lg:p-10"
               >
                 <span className="absolute left-1/2 top-4 -translate-x-1/2 text-[9px] font-medium uppercase tracking-[0.3em] text-forest sm:top-6 sm:text-[10px]">
                   {String(i + 1).padStart(2, "0")}
@@ -69,14 +69,23 @@ export default function Rooms() {
                 >
                   {t(`mega.rooms.${key}.desc`)}
                 </p>
-                {/* Subtle tap affordance (mobile): a "+" that turns into an "×". */}
+                {/* Subtle tap affordance (mobile): a thin chevron that flips
+                    up when open — matches the site's line-icon style. */}
                 <span
                   aria-hidden
-                  className={`mt-3 inline-block text-base leading-none text-forest transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] sm:hidden ${
-                    openKey === key ? "rotate-45" : ""
+                  className={`mt-3 inline-flex text-forest transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] sm:hidden ${
+                    openKey === key ? "rotate-180" : ""
                   }`}
                 >
-                  +
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M3 5L7 9L11 5"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </span>
               </button>
             </motion.li>

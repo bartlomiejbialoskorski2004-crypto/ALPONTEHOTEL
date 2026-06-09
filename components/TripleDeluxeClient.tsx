@@ -226,7 +226,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
     <section
       id="triple-deluxe"
       aria-labelledby="triple-title"
-      className="bg-paper px-6 py-16 text-ink lg:px-10 lg:py-32"
+      className="scroll-mt-28 bg-paper px-6 pb-16 pt-24 text-ink sm:py-24 lg:scroll-mt-36 lg:px-10 lg:py-32"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-10">
         {/* Left — staggered content panel */}
