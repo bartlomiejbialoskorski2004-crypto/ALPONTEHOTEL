@@ -64,48 +64,103 @@
       "kitchen": "Cuisine privée",
       "tv": "Smart TV",
       "wifi": "Wi-Fi",
-      "balcony": "Balcon",
-      "terrace": "Terrasse",
-      "view": "Vue lac et montagnes",
-      "kingBed": "Lit king-size",
-      "kettle": "Bouilloire et tasses"
+      "terrace": "Terrasse avec vue",
+      "balcony": "Balcon avec vue",
+      "showerGel": "Gel douche",
+      "towels": "Serviettes",
+      "hairdryer": "Sèche-cheveux",
+      "kettle": "Bouilloire",
+      "desk": "Bureau",
+      "clothesHangers": "Cintres",
+      "bedsideTables": "Tables de chevet",
+      "cups": "Tasses"
     },
     "items": {
       "bigFamily": {
         "name": "Appartement Grande Famille",
-        "desc": "Cet appartement comprend : une salle de bain avec WC et douche (gel douche), un lit double king-size avec 2 couettes, 2 lits simples et un canapé-lit double, des tables de chevet, un bureau ou une table, des chaises, une armoire, une smart TV, le Wi-Fi, une terrasse avec vue sur la ville de Lugano, le lac de Lugano et les montagnes, une cuisine privée équipée d'un micro-ondes, de plaques électriques, d'un réfrigérateur, d'un évier, d'une bouilloire, de casseroles, d'assiettes, de tasses et de couverts."
+        "desc": "Le choix idéal pour les grandes familles et les groupes d'amis. Le vaste séjour, la terrasse panoramique et la cuisine entièrement équipée garantissent un séjour confortable au cœur du Tessin."
       },
       "tripleDependance": {
         "name": "Appartement Triple Dépendance",
-        "desc": "Cet appartement comprend : une salle de bain avec WC et douche (gel douche), un lit double king-size avec deux couettes, un lit simple, des tables de chevet, un bureau ou une table, des chaises, une armoire, une smart TV, le Wi-Fi, une terrasse avec vue sur la ville de Lugano, le lac de Lugano et les montagnes, une cuisine privée équipée d'un micro-ondes, de plaques électriques, d'un réfrigérateur, d'un évier, d'une bouilloire, de casseroles, d'assiettes, de tasses et de couverts. Cet appartement est un havre de paix et d'exclusivité avec un jardin privé, classé par étoiles, offrant une tranquillité et une intimité optimales."
+        "desc": "Une excellente solution pour ceux qui recherchent le confort d'un appartement à un prix abordable. Des espaces fonctionnels, une cuisine privée et une terrasse panoramique en font la base idéale pour explorer Lugano."
       },
       "doubleSuperior": {
         "name": "Chambre Double Supérieure",
-        "desc": "Cette catégorie de chambre comprend : une salle de bains avec WC et douche (gel douche inclus), un lit double avec deux couettes, des tables de chevet, un bureau ou une table, des chaises, une armoire ou des cintres, une smart TV, le Wi-Fi, un balcon avec vue sur la ville de Lugano, le lac de Lugano et les montagnes, et une bouilloire avec des tasses."
+        "desc": "Idéale pour les couples en quête de confort et d'une atmosphère particulière. Le balcon privé donnant sur Lugano, le lac et les montagnes offre des moments de détente inoubliables."
       },
       "tripleSuperior": {
         "name": "Chambre Triple Supérieure",
-        "desc": "Cette catégorie de chambre est équipée de : salle de bains avec toilettes et douche avec gel douche, lit double king size avec 2 couettes, lit simple, tables de chevet, bureau ou table, chaises, cintres, smart TV, Wi-Fi, balcon avec vue sur la ville de Lugano, le lac de Lugano et les montagnes, bouilloire avec tasses."
+        "desc": "Idéale pour les familles ou petits groupes en quête d'espace et d'un confort supérieur. Le balcon panoramique et le mobilier de bon goût garantissent un séjour agréable."
       },
       "doublePanoramaBudgetPlus": {
         "name": "Chambre Double Panoramique Budget Plus",
-        "desc": "Cette catégorie de chambre est équipée de : salle de bain avec WC et douche (gel douche inclus), lit double avec 2 couettes, tables de chevet, bureau ou table, chaises, cintres, Smart TV, Wi-Fi, vue sur la ville de Lugano, le lac de Lugano et les montagnes, bouilloire et tasses."
+        "desc": "Idéale pour ceux qui recherchent confort et panoramas à couper le souffle. Le confort et la vue panoramique sur Lugano font de cette chambre le choix parfait pour une escapade romantique ou un voyage d'agrément."
       },
       "familyBudgetPlusTerrace": {
         "name": "Chambre Familiale Budget Plus avec Terrasse",
-        "desc": "Cette catégorie de chambre est équipée de : salle de bain avec WC et douche (gel douche inclus), lit double avec 2 couettes, 2 canapés-lits, tables de chevet, bureau ou table, chaises, cintres, Smart TV, Wi-Fi, terrasse avec vue sur la ville de Lugano, le lac de Lugano et les montagnes, bouilloire et tasses."
+        "desc": "Idéale pour les familles en quête d'espace à un prix abordable. La terrasse panoramique et les espaces fonctionnels garantissent confort et liberté durant le séjour."
       },
       "singleBudget": {
         "name": "Chambre Simple Budget",
-        "desc": "Cette catégorie de chambre est équipée de : salle de bain avec WC et douche (gel douche inclus), lit simple, table de chevet, bureau ou table, chaise, cintres, Smart TV, Wi-Fi, bouilloire et tasses."
+        "desc": "Idéale pour les voyageurs solo ou les voyages d'affaires. Confortable, fonctionnelle et économique. Parfaite pour de courts séjours ou des escales."
       },
       "doubleBudget": {
         "name": "Chambre Double Économique",
-        "desc": "Cette catégorie de chambre est équipée de : salle de bain avec WC et douche (gel douche fourni), lit double avec 2 couettes, tables de chevet, bureau ou table, chaises, cintres, Smart TV, Wi-Fi, bouilloire et tasses."
+        "desc": "Un excellent choix pour les couples recherchant un séjour confortable à un prix abordable. Le standard simple mais accueillant est idéal pour de courts séjours en ville ou des voyages d'affaires."
       },
       "twinBudget": {
         "name": "Chambre Twin Économique",
-        "desc": "Cette catégorie de chambre est équipée de : salle de bain avec WC et douche (gel douche fourni), 2 lits simples, tables de chevet, bureau ou table, chaises, cintres, Smart TV, Wi-Fi, bouilloire et tasses."
+        "desc": "Idéale pour les voyageurs et les hommes d'affaires. Confortable, fonctionnelle et économique. Parfaite pour de courts séjours ou des haltes."
+      }
+    },
+    "features": {
+      "kingBed": {
+        "title": "Lit King Size",
+        "desc": "avec 2 couettes"
+      },
+      "doubleBed": {
+        "title": "Lit Double",
+        "desc": "avec 2 couettes"
+      },
+      "twoSingles": {
+        "title": "2 Lits Simples",
+        "desc": "idéal pour deux"
+      },
+      "twoSinglesTwin": {
+        "title": "Deux Lits Simples",
+        "desc": "idéal pour deux"
+      },
+      "singleBed": {
+        "title": "Lit Simple",
+        "desc": "parfait pour une personne"
+      },
+      "sofaBed": {
+        "title": "Canapé-lit",
+        "desc": "pour deux personnes"
+      },
+      "view": {
+        "title": "Belle Vue",
+        "desc": "Lugano, le lac et les montagnes"
+      },
+      "balcony": {
+        "title": "Balcon",
+        "desc": "avec une belle vue"
+      },
+      "terrace": {
+        "title": "Terrasse",
+        "desc": "parfaite pour un café le matin avec vue"
+      },
+      "space": {
+        "title": "Beaucoup d'Espace",
+        "desc": "pour les longs séjours"
+      },
+      "privateBath": {
+        "title": "Salle de Bain Privée",
+        "desc": "avec sèche-cheveux"
+      },
+      "wifi": {
+        "title": "Wi-Fi",
+        "desc": "dans toute la chambre"
       }
     }
   },

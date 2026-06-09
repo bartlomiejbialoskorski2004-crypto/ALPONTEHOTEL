@@ -1,8 +1,8 @@
 // The 9 non-flagship room detail panels, in homepage / RoomNav order. Each
 // entry drives a <RoomPanel>: photos come from `public/<folder>`, text from
-// `rooms.items.<ns>.{name,desc}`, chips from `amenities` (keys -> shared
-// `rooms.amenities.*` labels + icons). Add a room = one row here + its folder
-// + i18n + a roomPanels.ts entry.
+// `rooms.items.<ns>.{name,desc}`, chips from `amenities` and feature tiles from
+// `features` (keys -> shared `rooms.amenities.*` / `rooms.features.*` labels +
+// icons). Add a room = one row here + its folder + i18n + a roomPanels.ts entry.
 
 export type RoomDetail = {
   id: string;
@@ -10,6 +10,7 @@ export type RoomDetail = {
   categoryKey: "apartments" | "superior" | "budgetPlus" | "budget";
   ns: string;
   amenities: string[];
+  features: string[];
 };
 
 export const ROOM_DETAILS: RoomDetail[] = [
@@ -18,62 +19,95 @@ export const ROOM_DETAILS: RoomDetail[] = [
     folder: "Big family apartment",
     categoryKey: "apartments",
     ns: "bigFamily",
-    amenities: ["bath", "kitchen", "tv", "wifi", "terrace", "kingBed"],
+    amenities: ["bath", "kitchen", "tv", "terrace", "wifi", "showerGel", "towels"],
+    features: ["kingBed", "twoSingles", "sofaBed", "view", "terrace", "wifi"],
   },
   {
     id: "triple-dependance",
     folder: "Triple dependance apartment",
     categoryKey: "apartments",
     ns: "tripleDependance",
-    amenities: ["bath", "kitchen", "tv", "wifi", "terrace", "kingBed"],
+    amenities: [
+      "bath", "kitchen", "wifi", "tv", "kettle", "desk",
+      "clothesHangers", "hairdryer", "showerGel", "towels",
+    ],
+    features: ["kingBed", "singleBed", "view", "terrace", "space", "wifi"],
   },
   {
     id: "double-superior",
     folder: "Double superior room",
     categoryKey: "superior",
     ns: "doubleSuperior",
-    amenities: ["bath", "tv", "wifi", "balcony", "view", "kettle"],
+    amenities: [
+      "bath", "hairdryer", "balcony", "wifi", "tv", "kettle",
+      "desk", "clothesHangers", "showerGel", "towels",
+    ],
+    features: ["doubleBed", "view", "balcony", "wifi"],
   },
   {
     id: "triple-superior",
     folder: "Triple superior room",
     categoryKey: "superior",
     ns: "tripleSuperior",
-    amenities: ["bath", "tv", "wifi", "balcony", "view", "kettle"],
+    amenities: [
+      "bath", "hairdryer", "balcony", "wifi", "tv", "kettle",
+      "desk", "showerGel", "clothesHangers", "towels",
+    ],
+    features: ["kingBed", "singleBed", "balcony", "wifi"],
   },
   {
     id: "double-panorama-budget-plus",
     folder: "Double panorama budget plus room",
     categoryKey: "budgetPlus",
     ns: "doublePanoramaBudgetPlus",
-    amenities: ["bath", "tv", "wifi", "view", "kettle"],
+    amenities: [
+      "bath", "hairdryer", "wifi", "tv", "kettle", "desk",
+      "clothesHangers", "showerGel", "towels",
+    ],
+    features: ["doubleBed", "view", "privateBath", "wifi"],
   },
   {
     id: "family-budget-plus-terrace",
     folder: "Family budget plus room with tarrace",
     categoryKey: "budgetPlus",
     ns: "familyBudgetPlusTerrace",
-    amenities: ["bath", "tv", "wifi", "terrace", "kettle"],
+    amenities: [
+      "bath", "hairdryer", "terrace", "wifi", "tv", "kettle",
+      "desk", "showerGel", "clothesHangers", "towels",
+    ],
+    features: ["kingBed", "sofaBed", "terrace", "wifi"],
   },
   {
     id: "single-budget",
     folder: "Single budget room",
     categoryKey: "budget",
     ns: "singleBudget",
-    amenities: ["bath", "tv", "wifi", "kettle"],
+    amenities: [
+      "bath", "hairdryer", "wifi", "kettle", "tv", "desk",
+      "showerGel", "clothesHangers", "towels",
+    ],
+    features: ["singleBed", "privateBath", "wifi"],
   },
   {
     id: "double-budget",
     folder: "Double budget room",
     categoryKey: "budget",
     ns: "doubleBudget",
-    amenities: ["bath", "tv", "wifi", "kettle"],
+    amenities: [
+      "bath", "wifi", "hairdryer", "tv", "kettle", "bedsideTables",
+      "cups", "showerGel", "clothesHangers", "towels",
+    ],
+    features: ["doubleBed", "privateBath", "wifi"],
   },
   {
     id: "twin-budget",
     folder: "Twin budget room",
     categoryKey: "budget",
     ns: "twinBudget",
-    amenities: ["bath", "tv", "wifi", "kettle"],
+    amenities: [
+      "bath", "wifi", "hairdryer", "tv", "kettle", "bedsideTables",
+      "cups", "showerGel", "clothesHangers", "towels",
+    ],
+    features: ["twoSinglesTwin", "privateBath", "wifi"],
   },
 ];

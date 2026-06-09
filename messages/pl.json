@@ -64,48 +64,103 @@
       "kitchen": "Prywatna kuchnia",
       "tv": "Smart TV",
       "wifi": "Wi-Fi",
-      "balcony": "Balkon",
-      "terrace": "Taras",
-      "view": "Widok na jezioro i góry",
-      "kingBed": "Łóżko king-size",
-      "kettle": "Czajnik i kubki"
+      "terrace": "Taras z widokiem",
+      "balcony": "Balkon z widokiem",
+      "showerGel": "Żel pod prysznic",
+      "towels": "Ręczniki",
+      "hairdryer": "Suszarka",
+      "kettle": "Czajnik",
+      "desk": "Biurko",
+      "clothesHangers": "Wieszaki na ubrania",
+      "bedsideTables": "Szafki nocne",
+      "cups": "Kubki"
     },
     "items": {
       "bigFamily": {
         "name": "Big Family Apartment",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, podwójne łóżko typu king-size z 2 kołdrami, 2 łóżka pojedyncze i rozkładaną sofę dwuosobową, szafki nocne, biurko lub stolik, krzesła, szafę, telewizor Smart TV, Wi-Fi, taras z widokiem na miasto Lugano, jezioro Lugano i góry, prywatną kuchnię wyposażoną w kuchenkę mikrofalową, kuchenkę elektryczną, lodówkę, zlew, czajnik, garnki, talerze, kubki i sztućce."
+        "desc": "Idealny wybór dla dużych rodzin i grup przyjaciół. Przestronny salon, panoramiczny taras i w pełni wyposażona kuchnia zapewniają komfortowy pobyt w sercu Ticino."
       },
       "tripleDependance": {
         "name": "Triple Dependance Apartment",
-        "desc": "W pokojach tej kategorii znajdują się: łazienka z toaletą i prysznicem z żelem pod prysznic, podwójne łóżko king-size z 2 kołdrami, łóżko pojedyncze, szafki nocne, biurko lub stół, krzesła, szafa, telewizor Smart TV, Wi-Fi, taras z widokiem na Lugano i jezioro, prywatna kuchnia wyposażona w kuchenkę mikrofalową, kuchenkę elektryczną, lodówkę, zlew, czajnik, garnki, talerze, kubki i sztućce."
+        "desc": "Świetne rozwiązanie dla szukających komfortu apartamentu w przystępnej cenie. Funkcjonalna przestrzeń, prywatna kuchnia i panoramiczny taras czynią go idealną bazą do zwiedzania Lugano."
       },
       "doubleSuperior": {
         "name": "Double Superior Room",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, łóżko małżeńskie z 2 kołdrami, szafki nocne, biurko lub stolik, krzesła, szafę lub wieszaki na ubrania, telewizor Smart TV, Wi-Fi, balkon z widokiem na miasto Lugano, jezioro Lugano i góry, czajnik i kubki."
+        "desc": "Idealny dla par szukających komfortu i wyjątkowej atmosfery. Prywatny balkon z widokiem na Lugano, jezioro i góry zapewnia niezapomniane chwile relaksu."
       },
       "tripleSuperior": {
         "name": "Triple Superior Room",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, podwójne łóżko typu king-size z 2 kołdrami, łóżko pojedyncze, szafki nocne, biurko lub stolik, krzesła, wieszaki na ubrania, telewizor Smart TV, Wi-Fi, balkon z widokiem na miasto Lugano, jezioro Lugano i góry, czajnik i kubki."
+        "desc": "Idealny dla rodzin lub małych grup szukających przestrzeni i podwyższonego komfortu. Panoramiczny balkon i gustowne wyposażenie zapewniają przyjemny pobyt."
       },
       "doublePanoramaBudgetPlus": {
         "name": "Double Panorama Budget Plus Room",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, łóżko małżeńskie z 2 kołdrami, szafki nocne, biurko lub stolik, krzesła, wieszaki na ubrania, telewizor Smart TV, Wi-Fi, widok na miasto Lugano, jezioro Lugano i góry, czajnik i kubki."
+        "desc": "Idealny dla szukających komfortu i zapierających dech widoków. Komfort i panoramiczny widok na Lugano czynią ten pokój idealnym na romantyczny wypad lub wyjazd wypoczynkowy."
       },
       "familyBudgetPlusTerrace": {
         "name": "Family Budget Plus Room with Terrace",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, łóżko małżeńskie z 2 kołdrami, 2 rozkładane sofy, szafki nocne, biurko lub stolik, krzesła, wieszaki na ubrania, telewizor Smart TV, Wi-Fi, taras z widokiem na miasto Lugano, jezioro Lugano i góry, czajnik i kubki."
+        "desc": "Idealny dla rodzin szukających przestrzeni w przystępnej cenie. Panoramiczny taras i funkcjonalna przestrzeń zapewniają komfort i swobodę podczas pobytu."
       },
       "singleBudget": {
         "name": "Single Budget Room",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, łóżko pojedyncze, szafkę nocną, biurko lub stolik, krzesło, wieszaki na ubrania, smart TV, Wi-Fi, czajnik z kubkami."
+        "desc": "Idealny dla podróżujących solo lub w podróży służbowej. Wygodny, funkcjonalny i ekonomiczny. Idealny na krótkie pobyty lub przystanki."
       },
       "doubleBudget": {
         "name": "Double Budget Room",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, łóżko małżeńskie z 2 kołdrami, szafki nocne, biurko lub stolik, krzesła, wieszaki na ubrania, smart TV, Wi-Fi, czajnik z kubkami."
+        "desc": "Doskonały wybór dla par szukających komfortowego pobytu w przystępnej cenie. Prosty, ale przytulny standard jest idealny na krótkie pobyty w mieście lub podróże służbowe."
       },
       "twinBudget": {
         "name": "Twin Budget Room",
-        "desc": "Pokoje tej kategorii wyposażone są w: łazienkę z toaletą i prysznicem z żelem pod prysznic, 2 łóżka pojedyncze, szafki nocne, biurko lub stolik, krzesła, wieszaki na ubrania, telewizor Smart TV, Wi-Fi, czajnik, kubki."
+        "desc": "Idealny dla podróżnych i osób w podróży służbowej. Wygodny, funkcjonalny i ekonomiczny. Idealny na krótkie pobyty lub przystanki."
+      }
+    },
+    "features": {
+      "kingBed": {
+        "title": "Łóżko King Size",
+        "desc": "z 2 kołdrami"
+      },
+      "doubleBed": {
+        "title": "Łóżko Małżeńskie",
+        "desc": "z 2 kołdrami"
+      },
+      "twoSingles": {
+        "title": "2 Łóżka Pojedyncze",
+        "desc": "idealne dla dwóch osób"
+      },
+      "twoSinglesTwin": {
+        "title": "Dwa Łóżka Pojedyncze",
+        "desc": "idealne dla dwóch osób"
+      },
+      "singleBed": {
+        "title": "Łóżko Pojedyncze",
+        "desc": "idealne dla jednej osoby"
+      },
+      "sofaBed": {
+        "title": "Sofa z Funkcją Spania",
+        "desc": "dla dwóch osób"
+      },
+      "view": {
+        "title": "Piękny Widok",
+        "desc": "Lugano, jezioro i góry"
+      },
+      "balcony": {
+        "title": "Balkon",
+        "desc": "z pięknym widokiem"
+      },
+      "terrace": {
+        "title": "Taras",
+        "desc": "idealny na poranną kawę z widokiem"
+      },
+      "space": {
+        "title": "Dużo Przestrzeni",
+        "desc": "na dłuższe pobyty"
+      },
+      "privateBath": {
+        "title": "Prywatna Łazienka",
+        "desc": "z suszarką"
+      },
+      "wifi": {
+        "title": "Wi-Fi",
+        "desc": "w całym pokoju"
       }
     }
   },

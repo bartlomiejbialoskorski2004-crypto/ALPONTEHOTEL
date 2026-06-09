@@ -27,7 +27,14 @@ function listPhotos(folder: string): string[] {
   );
 }
 
-export default function RoomPanel({ id, folder, categoryKey, ns, amenities }: RoomDetail) {
+export default function RoomPanel({
+  id,
+  folder,
+  categoryKey,
+  ns,
+  amenities,
+  features,
+}: RoomDetail) {
   const photos = listPhotos(folder);
   return (
     <RoomPanelClient
@@ -36,6 +43,7 @@ export default function RoomPanel({ id, folder, categoryKey, ns, amenities }: Ro
       categoryKey={categoryKey}
       ns={ns}
       amenities={amenities}
+      features={features}
     />
   );
 }

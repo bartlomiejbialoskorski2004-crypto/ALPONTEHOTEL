@@ -64,48 +64,103 @@
       "kitchen": "Cucina privata",
       "tv": "Smart TV",
       "wifi": "Wi-Fi",
-      "balcony": "Balcone",
-      "terrace": "Terrazza",
-      "view": "Vista lago e montagne",
-      "kingBed": "Letto king-size",
-      "kettle": "Bollitore e tazze"
+      "terrace": "Terrazza con vista",
+      "balcony": "Balcone con vista",
+      "showerGel": "Gel doccia",
+      "towels": "Asciugamani",
+      "hairdryer": "Asciugacapelli",
+      "kettle": "Bollitore",
+      "desk": "Scrivania",
+      "clothesHangers": "Grucce per vestiti",
+      "bedsideTables": "Comodini",
+      "cups": "Tazze"
     },
     "items": {
       "bigFamily": {
         "name": "Appartamento Familiare Grande",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale king-size con 2 piumoni, 2 letti singoli e divano letto matrimoniale, comodini, scrivania o tavolo, sedie, armadio, smart TV, Wi-Fi, terrazza con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, cucina privata attrezzata con forno a microonde, piano cottura elettrico, frigorifero, lavello, bollitore, pentole, piatti, tazze e posate"
+        "desc": "La scelta ideale per famiglie numerose e gruppi di amici. L'ampio soggiorno, la terrazza panoramica e la cucina completamente attrezzata garantiscono un soggiorno confortevole nel cuore del Ticino."
       },
       "tripleDependance": {
         "name": "Appartamento Triplo Indipendente",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia (con bagnoschiuma), letto matrimoniale king-size con 2 piumoni, letto singolo, comodini, scrivania o tavolo, sedie, armadio, smart TV, Wi-Fi, terrazza con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, cucina privata attrezzata con forno a microonde, piano cottura elettrico, frigorifero, lavello, bollitore, pentole, piatti, tazze e posate. Questo appartamento è un angolo intimo ed esclusivo con giardino privato, valutato tramite stelle, che offre maggiore privacy e tranquillità."
+        "desc": "Un'ottima soluzione per chi cerca il comfort di un appartamento a un prezzo accessibile. Spazi funzionali, una cucina privata e una terrazza panoramica lo rendono la base ideale per esplorare Lugano."
       },
       "doubleSuperior": {
         "name": "Camera Doppia Superior",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, comodini, scrivania o tavolo, sedie, armadio o appendiabiti, Smart TV, Wi-Fi, balcone con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore con tazze."
+        "desc": "Ideale per coppie in cerca di comfort e un'atmosfera speciale. Il balcone privato con vista su Lugano, sul lago e sulle montagne offre momenti di relax indimenticabili."
       },
       "tripleSuperior": {
         "name": "Camera Tripla Superior",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale king-size con 2 piumoni, letto singolo, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, balcone con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore con tazze."
+        "desc": "Ideale per famiglie o piccoli gruppi in cerca di spazio e comfort superiori. Il balcone panoramico e gli arredi di buon gusto garantiscono un soggiorno piacevole."
       },
       "doublePanoramaBudgetPlus": {
         "name": "Camera Doppia Panoramica Budget Plus",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore con tazze."
+        "desc": "Ideale per chi cerca comfort e panorami mozzafiato. Il comfort e la vista panoramica su Lugano rendono questa camera la scelta perfetta per una fuga romantica o un viaggio di piacere."
       },
       "familyBudgetPlusTerrace": {
         "name": "Camera Famiglia Economica Plus con Terrazza",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, 2 divani letto, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, terrazza con vista sulla città di Lugano, sul lago di Lugano e sulle montagne, bollitore e tazze."
+        "desc": "Ideale per famiglie in cerca di spazio a un prezzo accessibile. La terrazza panoramica e gli spazi funzionali garantiscono comfort e libertà durante il soggiorno."
       },
       "singleBudget": {
         "name": "Camera Singola Economica",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto singolo, comodino, scrivania o tavolo, sedia, appendiabiti, Smart TV, Wi-Fi, bollitore con tazze."
+        "desc": "Ideale per chi viaggia da solo o per viaggi d'affari. Comodo, funzionale ed economico. Perfetto per brevi soggiorni o scali."
       },
       "doubleBudget": {
         "name": "Camera Doppia Economica",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, letto matrimoniale con 2 piumoni, comodini, scrivania o tavolo, sedie, appendiabiti, Smart TV, Wi-Fi, bollitore con tazze."
+        "desc": "Una scelta eccellente per le coppie che cercano un soggiorno confortevole a un prezzo accessibile. Lo standard semplice ma accogliente è ideale per brevi soggiorni in città o viaggi di lavoro."
       },
       "twinBudget": {
         "name": "Camera Twin Economica",
-        "desc": "Questa tipologia di camera è dotata di: bagno con WC e doccia con gel doccia, 2 letti singoli, comodini, scrivania o tavolo, sedie, appendiabiti, smart TV, Wi-Fi, bollitore con tazze."
+        "desc": "Ideale per viaggiatori e uomini d'affari. Comoda, funzionale ed economica. Perfetta per brevi soggiorni o soste."
+      }
+    },
+    "features": {
+      "kingBed": {
+        "title": "Letto King Size",
+        "desc": "con 2 piumoni"
+      },
+      "doubleBed": {
+        "title": "Letto Matrimoniale",
+        "desc": "con 2 piumoni"
+      },
+      "twoSingles": {
+        "title": "2 Letti Singoli",
+        "desc": "ideali per due persone"
+      },
+      "twoSinglesTwin": {
+        "title": "Due Letti Singoli",
+        "desc": "ideali per due persone"
+      },
+      "singleBed": {
+        "title": "Letto Singolo",
+        "desc": "perfetto per una persona"
+      },
+      "sofaBed": {
+        "title": "Divano Letto",
+        "desc": "per due persone"
+      },
+      "view": {
+        "title": "Bella Vista",
+        "desc": "su Lugano, il lago e le montagne"
+      },
+      "balcony": {
+        "title": "Balcone",
+        "desc": "con una splendida vista"
+      },
+      "terrace": {
+        "title": "Terrazza",
+        "desc": "perfetta per un caffè del mattino con vista"
+      },
+      "space": {
+        "title": "Molto Spazio",
+        "desc": "per soggiorni più lunghi"
+      },
+      "privateBath": {
+        "title": "Bagno Privato",
+        "desc": "con asciugacapelli"
+      },
+      "wifi": {
+        "title": "Wi-Fi",
+        "desc": "in tutta la camera"
       }
     }
   },

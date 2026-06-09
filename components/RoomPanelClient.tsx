@@ -12,17 +12,28 @@ import {
 import { useTranslations } from "next-intl";
 import {
   Bath,
+  Bed,
   BedDouble,
+  BedSingle,
   ChevronLeft,
   ChevronRight,
   Coffee,
+  CupSoda,
+  Droplet,
   Expand,
-  Eye,
+  Lamp,
+  Maximize2,
   Mountain,
+  PenLine,
+  Shirt,
+  Sofa,
+  Square,
+  Tent,
   Tv,
   Umbrella,
   Utensils,
   Wifi,
+  Wind,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -35,11 +46,32 @@ const AMENITY_ICONS: Record<string, LucideIcon> = {
   kitchen: Utensils,
   tv: Tv,
   wifi: Wifi,
-  balcony: Mountain,
   terrace: Umbrella,
-  view: Eye,
-  kingBed: BedDouble,
+  balcony: Mountain,
+  showerGel: Droplet,
+  towels: Square,
+  hairdryer: Wind,
   kettle: Coffee,
+  desk: PenLine,
+  clothesHangers: Shirt,
+  bedsideTables: Lamp,
+  cups: CupSoda,
+};
+
+// Shared feature-tile icons; title/desc come from `rooms.features.<key>`.
+const FEATURE_ICONS: Record<string, LucideIcon> = {
+  kingBed: BedDouble,
+  doubleBed: BedDouble,
+  twoSingles: Bed,
+  twoSinglesTwin: Bed,
+  singleBed: BedSingle,
+  sofaBed: Sofa,
+  view: Mountain,
+  balcony: Umbrella,
+  terrace: Tent,
+  space: Maximize2,
+  privateBath: Bath,
+  wifi: Wifi,
 };
 
 const containerVariants: Variants = {
@@ -68,6 +100,7 @@ type Props = {
   categoryKey: string;
   ns: string;
   amenities: string[];
+  features: string[];
 };
 
 // Generic room detail panel (Triple-Deluxe visual style without the bespoke
@@ -79,6 +112,7 @@ export default function RoomPanelClient({
   categoryKey,
   ns,
   amenities,
+  features,
 }: Props) {
   const t = useTranslations();
   const tNav = useTranslations("nav");
@@ -103,6 +137,71 @@ export default function RoomPanelClient({
   const onBookLeave = () => {
     magX.set(0);
     magY.set(0);
+  };
+
+  // Features slider (mobile only): autoplay + drag-to-scroll + dot sync.
+  const featRef = useRef<HTMLUListElement>(null);
+  const [featIndex, setFeatIndex] = useState(0);
+  const featPausedUntil = useRef(0);
+
+  const scrollFeatTo = (i: number) => {
+    const strip = featRef.current;
+    if (!strip) return;
+    const child = strip.children[i] as HTMLElement | undefined;
+    if (!child) return;
+    strip.scrollTo({
+      left: child.offsetLeft - (strip.clientWidth - child.clientWidth) / 2,
+      behavior: "smooth",
+    });
+  };
+
+  const onFeatScroll = () => {
+    const strip = featRef.current;
+    if (!strip) return;
+    const center = strip.scrollLeft + strip.clientWidth / 2;
+    let nearest = 0;
+    let best = Infinity;
+    Array.from(strip.children).forEach((c, i) => {
+      const el = c as HTMLElement;
+      const cc = el.offsetLeft + el.clientWidth / 2;
+      const d = Math.abs(cc - center);
+      if (d < best) {
+        best = d;
+        nearest = i;
+      }
+    });
+    setFeatIndex(nearest);
+  };
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const strip = featRef.current;
+    if (!strip) return;
+    const id = window.setInterval(() => {
+      if (strip.scrollWidth <= strip.clientWidth + 4) return;
+      if (Date.now() < featPausedUntil.current) return;
+      scrollFeatTo((featIndex + 1) % features.length);
+    }, 3500);
+    return () => window.clearInterval(id);
+  }, [featIndex, reduceMotion, features.length]);
+
+  const featDrag = useRef<{ startX: number; startLeft: number } | null>(null);
+  const onFeatPointerDown = (e: React.PointerEvent<HTMLUListElement>) => {
+    featPausedUntil.current = Date.now() + 5000;
+    if (e.pointerType !== "mouse") return;
+    featDrag.current = {
+      startX: e.clientX,
+      startLeft: featRef.current?.scrollLeft ?? 0,
+    };
+  };
+  const onFeatPointerMove = (e: React.PointerEvent<HTMLUListElement>) => {
+    if (!featDrag.current || !featRef.current) return;
+    featRef.current.scrollLeft =
+      featDrag.current.startLeft - (e.clientX - featDrag.current.startX);
+  };
+  const endFeatDrag = () => {
+    featDrag.current = null;
+    featPausedUntil.current = Date.now() + 5000;
   };
 
   const total = photos.length;
@@ -191,6 +290,72 @@ export default function RoomPanelClient({
             >
               {t(`rooms.items.${ns}.desc`)}
             </motion.p>
+
+            {/* Feature tiles — mobile carousel, desktop 3-col grid */}
+            <motion.ul
+              ref={featRef}
+              variants={fadeUp}
+              onScroll={onFeatScroll}
+              onPointerDown={onFeatPointerDown}
+              onPointerMove={onFeatPointerMove}
+              onPointerUp={endFeatDrag}
+              onPointerLeave={endFeatDrag}
+              className="mt-5 flex cursor-grab snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden active:cursor-grabbing sm:mt-12 lg:grid lg:cursor-default lg:grid-cols-3 lg:gap-x-4 lg:gap-y-8 lg:overflow-visible lg:pb-0 lg:[scroll-snap-type:none]"
+            >
+              {features.map((key) => {
+                const Icon = FEATURE_ICONS[key];
+                return (
+                  <motion.li
+                    key={key}
+                    whileHover={{ y: -3 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="group flex min-w-[42%] shrink-0 snap-center select-none flex-col items-center text-center sm:min-w-[33%] lg:min-w-0 lg:shrink"
+                  >
+                    {Icon && (
+                      <Icon
+                        size={24}
+                        strokeWidth={1}
+                        className="text-ink transition-colors duration-300 group-hover:text-forest"
+                        aria-hidden
+                      />
+                    )}
+                    <h3 className="mt-3 text-[13px] font-medium text-ink sm:text-sm">
+                      {t(`rooms.features.${key}.title`)}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-ink/60">
+                      {t(`rooms.features.${key}.desc`)}
+                    </p>
+                  </motion.li>
+                );
+              })}
+            </motion.ul>
+
+            {/* Slider dots — mobile affordance for the features carousel */}
+            {features.length > 1 && (
+              <motion.div
+                variants={fadeUp}
+                className="mt-4 flex items-center justify-center gap-2 lg:hidden"
+              >
+                {features.map((key, i) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => scrollFeatTo(i)}
+                    aria-label={`Go to feature ${i + 1}`}
+                    aria-current={i === featIndex}
+                    className="group flex h-4 items-center"
+                  >
+                    <span
+                      className={`block h-[2px] transition-all duration-300 ${
+                        i === featIndex
+                          ? "w-6 bg-forest"
+                          : "w-3 bg-ink/25 group-hover:bg-ink/45"
+                      }`}
+                    />
+                  </button>
+                ))}
+              </motion.div>
+            )}
           </div>
 
           <motion.a
