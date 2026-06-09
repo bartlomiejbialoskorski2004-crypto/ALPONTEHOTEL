@@ -614,5 +614,10 @@
     "address": "Via del Ponte 1, 6900 Lugano, Switzerland",
     "phone": "+41 91 000 00 00",
     "email": "info@alpontehotel.ch"
+  },
+  "reviews": {
+    "eyebrow": "Reviews",
+    "title": "What our guests say",
+    "reviewsLabel": "reviews"
   }
 }
