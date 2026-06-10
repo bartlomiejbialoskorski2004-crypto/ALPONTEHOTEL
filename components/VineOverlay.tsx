@@ -117,14 +117,18 @@ function leavesAlong(
     const seed = opts.seed * 13 + i;
     const flank = seed % 2 === 0 ? -64 : 64;
     const jitter = ((seed * 47) % 19) - 9;
-    const scale = 0.8 + (((seed * 31) % 10) / 10) * 0.4;
-    leaves.push({
-      t: opts.from + (l / total) * opts.span,
+    const scale = 0.7 + (((seed * 31) % 10) / 10) * 0.4;
+    const t = opts.from + (l / total) * opts.span;
+    const place = (fl: number, sc: number, dt: number): Leaf => ({
+      t: t + dt,
       soft: seed % 3 === 1,
       transform: `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)}) rotate(${(
-        ang + 90 + flank + jitter
-      ).toFixed(1)}) scale(${scale.toFixed(2)})`,
+        ang + 90 + fl + jitter
+      ).toFixed(1)}) scale(${sc.toFixed(2)})`,
     });
+    leaves.push(place(flank, scale, 0));
+    // Every third node carries an opposite pair leaf, like a real vine.
+    if (i % 3 === 2) leaves.push(place(-flank, scale * 0.8, 0.004));
     i += 1;
   }
   return leaves;
@@ -253,7 +257,7 @@ function generate(main: HTMLElement): Organism | null {
         px(0.91, rm.b - 24),
       ],
       width: 3.4,
-      spacing: 130,
+      spacing: 85,
       seed: 21,
     },
     // …with a sub-branch bowing toward the centre at heading level.
@@ -264,7 +268,7 @@ function generate(main: HTMLElement): Organism | null {
         px(0.8, rm.t + 0.4 * rm.h),
       ],
       width: 2.2,
-      spacing: 85,
+      spacing: 60,
       seed: 33,
     },
     // Rooms: thick diagonal from the left stem across the cards' top.
@@ -276,38 +280,38 @@ function generate(main: HTMLElement): Organism | null {
         px(0.4, rm.t + 0.68 * rm.h),
       ],
       width: 4.2,
-      spacing: 110,
+      spacing: 75,
       seed: 8,
     },
     // Small offshoots along the rest of the page.
     {
       pts: [aAmen, px(0.78, am.t + 0.42 * am.h), px(0.72, am.t + 0.55 * am.h)],
       width: 2.4,
-      spacing: 120,
+      spacing: 80,
       seed: 4,
     },
     {
       pts: [aTriple, px(0.16, td.t + 0.4 * td.h), px(0.22, td.t + 0.52 * td.h)],
       width: 2.4,
-      spacing: 120,
+      spacing: 80,
       seed: 12,
     },
     {
       pts: [aGallery, px(0.8, ga.t + 0.78 * ga.h), px(0.74, ga.t + 0.9 * ga.h)],
       width: 2.4,
-      spacing: 120,
+      spacing: 80,
       seed: 17,
     },
     {
       pts: [aReviews, px(0.8, rv.t + 0.6 * rv.h), px(0.72, rv.t + 0.72 * rv.h)],
       width: 2.2,
-      spacing: 110,
+      spacing: 75,
       seed: 26,
     },
     {
       pts: [aContact, px(0.36, ct.t + 0.45 * ct.h), px(0.44, ct.t + 0.58 * ct.h)],
       width: 2.4,
-      spacing: 120,
+      spacing: 80,
       seed: 31,
     },
   ];
@@ -351,8 +355,11 @@ function generate(main: HTMLElement): Organism | null {
 
     // Main stem in contiguous chunks of varying thickness; each chunk draws
     // over its own slice of the global progress, so the stroke stays one
-    // continuous line.
-    const widths = [5, 4.2, 3.4, 3.8, 2.8].map((w) => w * wScale);
+    // continuous line. The width ramp is gentle (steps <= 0.4px) so the
+    // taper never reads as separate joints.
+    const widths = [5, 4.6, 4.2, 3.9, 3.6, 3.3, 3, 2.8, 2.6].map(
+      (w) => w * wScale,
+    );
     const nChunks = widths.length;
     const stems: Stem[] = [];
     const per = Math.ceil(segs.length / nChunks);
@@ -369,7 +376,7 @@ function generate(main: HTMLElement): Organism | null {
 
     // Leaves on the main stem.
     const leaves: Leaf[] = leavesAlong(fullEl, {
-      spacing: mobile ? 320 : 230,
+      spacing: mobile ? 210 : 140,
       from: 0,
       span: 1,
       seed: 1,
@@ -382,7 +389,9 @@ function generate(main: HTMLElement): Organism | null {
       const el = makePath(d);
       const len = el.getTotalLength();
       const from = fracNearest(samplePts, sampleLens, total, def.pts[0]);
-      const span = len / total;
+      // Branches finish shortly after the main tip passes their junction —
+      // nothing in view should ever look half-grown.
+      const span = Math.min(0.018, (len / total) * 0.45);
       stems.push({ d, from, span, width: def.width * wScale });
       leaves.push(
         ...leavesAlong(el, {
@@ -437,15 +446,14 @@ function LeafNode({
   progress: MotionValue<number>;
   animate: boolean;
 }) {
-  // Sprouts only after the stem tip passes the node.
-  const opacity = useTransform(progress, [leaf.t, leaf.t + 0.035], [0, 1]);
-  const scale = useTransform(progress, [leaf.t, leaf.t + 0.05], [0, 1]);
-  const rotate = useTransform(progress, [leaf.t, leaf.t + 0.05], [-22, 0]);
+  // Sprouts only after the stem tip passes the node, completing quickly so
+  // foliage in view never looks half-grown.
+  const opacity = useTransform(progress, [leaf.t, leaf.t + 0.02], [0, 1]);
+  const scale = useTransform(progress, [leaf.t, leaf.t + 0.03], [0, 1]);
+  const rotate = useTransform(progress, [leaf.t, leaf.t + 0.03], [-22, 0]);
   return (
     <g transform={leaf.transform}>
-      <motion.path
-        d={LEAF_D}
-        className={leaf.soft ? "fill-forest-soft" : "fill-forest"}
+      <motion.g
         style={
           animate
             ? {
@@ -457,7 +465,22 @@ function LeafNode({
               }
             : undefined
         }
-      />
+      >
+        {/* Petiole: a short stalk starting inside the stem stroke, welding
+            the leaf to the stem — one organism. */}
+        <path
+          d="M0 2 L0 -7"
+          className="stroke-forest"
+          strokeWidth={1.6}
+          strokeLinecap="round"
+        />
+        <g transform="translate(0 -7)">
+          <path
+            d={LEAF_D}
+            className={leaf.soft ? "fill-forest-soft" : "fill-forest"}
+          />
+        </g>
+      </motion.g>
     </g>
   );
 }
@@ -497,14 +520,16 @@ export default function VineOverlay() {
     };
   }, []);
 
-  // Global growth: the drawn tip tracks ~80% down the viewport via the
+  // Global growth: the drawn tip tracks the viewport's bottom edge via the
   // monotonic y→length lookup (so horizontal excursions wait for the scroll
-  // to reach them); a soft spring keeps the motion organic on top of Lenis.
+  // to reach them) — everything actually in view is already fully grown,
+  // and the growing happens at the lower edge. A soft spring keeps the
+  // motion organic on top of Lenis.
   const { scrollY } = useScroll();
   const raw = useTransform(scrollY, (v) => {
     const o = orgRef.current;
     if (!o) return 0;
-    const targetY = v + vhRef.current * 0.8 - mainTopRef.current;
+    const targetY = v + vhRef.current * 0.95 - mainTopRef.current;
     const { ys, lens } = o;
     if (targetY <= ys[0]) return 0;
     let lo = 0;
@@ -517,8 +542,8 @@ export default function VineOverlay() {
     return Math.min(1, lens[lo] / o.total);
   });
   const progress = useSpring(raw, {
-    stiffness: 90,
-    damping: 28,
+    stiffness: 120,
+    damping: 26,
     restDelta: 0.0005,
   });
 
