@@ -43,7 +43,7 @@ export default function Amenities() {
       id="amenities"
       className="relative overflow-hidden bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="relative z-[2] mx-auto max-w-7xl">
         <ul className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map(({ key, Icon }, i) => (
             <motion.li
