@@ -19,7 +19,14 @@ export default function Contact() {
       <Vine
         variant="sprig"
         side="right"
+        weight="thick"
         className="absolute right-0 top-10 w-20 sm:w-28 lg:w-40"
+      />
+      <Vine
+        variant="tall"
+        side="left"
+        weight="thin"
+        className="absolute left-0 top-1/3 w-20 sm:w-28 lg:w-40"
       />
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 16 }}

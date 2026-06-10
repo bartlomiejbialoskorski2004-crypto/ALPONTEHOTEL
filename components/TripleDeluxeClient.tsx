@@ -231,14 +231,22 @@ export default function TripleDeluxeClient({ photos }: Props) {
       className="relative scroll-mt-28 bg-paper px-6 pb-16 pt-24 text-ink sm:py-24 lg:scroll-mt-36 lg:px-10 lg:py-32"
     >
       <Vine
-        variant="tall"
+        variant="column"
         side="left"
-        className="absolute left-0 top-16 w-24 sm:w-32 lg:w-48"
+        weight="regular"
+        className="absolute left-0 top-16 w-16 sm:w-24 lg:w-36"
       />
       <Vine
         variant="sprig"
         side="right"
+        weight="thick"
         className="absolute right-0 top-2 w-16 sm:w-24 lg:w-32"
+      />
+      <Vine
+        variant="sprig"
+        side="left"
+        weight="thin"
+        className="absolute bottom-10 left-[6%] z-10 w-24 -rotate-6 sm:w-32 lg:w-44"
       />
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-10">
         {/* Left — staggered content panel */}

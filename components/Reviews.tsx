@@ -129,7 +129,14 @@ export default function Reviews() {
       <Vine
         variant="sprig"
         side="left"
+        weight="regular"
         className="absolute left-0 top-4 w-20 sm:w-28 lg:w-36"
+      />
+      <Vine
+        variant="sprig"
+        side="right"
+        weight="thin"
+        className="absolute bottom-8 right-0 w-16 sm:w-24 lg:w-32"
       />
       <motion.div
         initial="hidden"

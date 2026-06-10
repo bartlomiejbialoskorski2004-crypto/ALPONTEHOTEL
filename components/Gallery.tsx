@@ -66,7 +66,14 @@ export default async function Gallery() {
       <Vine
         variant="sprig"
         side="right"
+        weight="thick"
         className="absolute right-0 top-6 w-20 sm:w-28 lg:w-40"
+      />
+      <Vine
+        variant="column"
+        side="left"
+        weight="thin"
+        className="absolute left-0 top-1/4 w-14 sm:w-20 lg:w-28"
       />
       <div className="relative mx-auto max-w-7xl">
         {/* Mobile: accessible 2-col grid + fullscreen viewer */}
