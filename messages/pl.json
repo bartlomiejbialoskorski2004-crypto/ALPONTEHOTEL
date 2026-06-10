@@ -618,6 +618,52 @@
   "reviews": {
     "eyebrow": "Opinie",
     "title": "Co mówią nasi goście",
-    "reviewsLabel": "opinii"
+    "reviewsLabel": "opinii",
+    "items": {
+      "danny": {
+        "quote": "Nasz pobyt w Al Ponte był wspaniały! W Cademario macie zapierający dech widok na region Lugano. Obsługa była fantastyczna!",
+        "meta": "Stany Zjednoczone"
+      },
+      "domeh": {
+        "quote": "Widok jest po prostu zapierający dech! Położony wysoko nad Lugano, naprawdę czujesz się ponad wszystkim.",
+        "meta": ""
+      },
+      "iren": {
+        "quote": "Al Ponte to ciepły, rodzinny klejnot, który naprawdę przerósł nasze oczekiwania. Czuliśmy się jak w domu.",
+        "meta": "Turcja"
+      },
+      "dachelle": {
+        "quote": "Jedzenie było pyszne, personel bardzo miły i uważny, a widoki niesamowite!",
+        "meta": ""
+      },
+      "robert": {
+        "quote": "Miejsce ma wyjątkową atmosferę. Właściciele są super przyjaźni. Jedzenie wyśmienite. Widok zapierający dech.",
+        "meta": "Polska"
+      },
+      "michaelt": {
+        "quote": "Widok z balkonu to po prostu marzenie, a my mieliśmy całkowity spokój i ciszę.",
+        "meta": ""
+      },
+      "sadaf": {
+        "quote": "Wspaniała gospodyni, prawdziwa przyjemność ją poznać. Obiekt położony niemal na szczycie góry, z fantastycznym widokiem.",
+        "meta": "Indie"
+      },
+      "icegirl": {
+        "quote": "Rodzinny hotel, mały, ale przyjemny! Super sympatyczni ludzie — jesteśmy tu już drugi rok z rzędu.",
+        "meta": ""
+      },
+      "romuald": {
+        "quote": "Wyjątkowe widoki. Personel nienaganny. Idealna czystość. Cisza, spokój.",
+        "meta": "Szwajcaria"
+      },
+      "jose": {
+        "quote": "W Al Ponte, jeśli dobrze wchłoniesz energię tego miejsca, naprawdę można się zrelaksować.",
+        "meta": ""
+      },
+      "patrick": {
+        "quote": "Uroczy, rodzinny hotel z niesamowitymi widokami na Jezioro Lugano. Bardzo mili, przyjaźni właściciele.",
+        "meta": "Holandia"
+      }
+    }
   }
 }

@@ -1,96 +1,29 @@
 import { BOOKING } from "./contact-info";
 
-// Real guest reviews pulled from the hotel's Booking.com and Tripadvisor
-// pages (short, attributed quotes). Obvious typos lightly tidied for a clean
-// presentation; replace any quote here with the exact source text if needed.
+// Guest reviews from the hotel's Booking.com / Tripadvisor pages. The quote +
+// country live in i18n (`reviews.items.<id>.{quote,meta}`) so they follow the
+// site language; the name + source stay here.
 
 export type ReviewSource = "booking" | "tripadvisor";
 
 export type Review = {
-  quote: string;
+  id: string;
   name: string;
-  meta: string; // country (Booking) — empty for Tripadvisor
   source: ReviewSource;
 };
 
 export const REVIEWS: Review[] = [
-  {
-    quote:
-      "Our stay at Al Ponte was amazing! Located in Cademario, you have a stunning view of the Lugano region. The service all around was fantastico!",
-    name: "Danny",
-    meta: "United States",
-    source: "booking",
-  },
-  {
-    quote:
-      "The view is simply breathtaking! Situated high above Lugano, you really feel like you are above all else.",
-    name: "Dome H",
-    meta: "",
-    source: "tripadvisor",
-  },
-  {
-    quote:
-      "Al Ponte is a warm, family-run gem that truly exceeded our expectations. We truly felt at home.",
-    name: "Iren",
-    meta: "Turkey",
-    source: "booking",
-  },
-  {
-    quote:
-      "The food was delicious, the staff was so kind and attentive, and the views were amazing!",
-    name: "Dachelle J",
-    meta: "",
-    source: "tripadvisor",
-  },
-  {
-    quote:
-      "The place has a unique atmosphere. The owners are super friendly. Food excellent. The view breathtaking.",
-    name: "Robert",
-    meta: "Poland",
-    source: "booking",
-  },
-  {
-    quote:
-      "The balcony view is just a dream and we had total peace and quiet.",
-    name: "Michael T",
-    meta: "",
-    source: "tripadvisor",
-  },
-  {
-    quote:
-      "Fabulous hostess, a real pleasure to meet her. Property was nearly on top of a mountain and had a fantastic view.",
-    name: "Sadaf",
-    meta: "India",
-    source: "booking",
-  },
-  {
-    quote:
-      "Family-run hotel, small but nice! Super friendly people — we've been here for the second year in a row.",
-    name: "Icegirl80",
-    meta: "",
-    source: "tripadvisor",
-  },
-  {
-    quote:
-      "Exceptional views. Staff impeccable. Super clean. Silence, calmness.",
-    name: "Romuald",
-    meta: "Switzerland",
-    source: "booking",
-  },
-  {
-    quote:
-      "At the Bridge, if you absorb the energy of the place well, you can really relax.",
-    name: "José P",
-    meta: "",
-    source: "tripadvisor",
-  },
-  {
-    quote:
-      "Lovely hotel run by a family, with amazing views on Lake Lugano. Very nice, friendly owners.",
-    name: "Patrick",
-    meta: "Netherlands",
-    source: "booking",
-  },
+  { id: "danny", name: "Danny", source: "booking" },
+  { id: "domeh", name: "Dome H", source: "tripadvisor" },
+  { id: "iren", name: "Iren", source: "booking" },
+  { id: "dachelle", name: "Dachelle J", source: "tripadvisor" },
+  { id: "robert", name: "Robert", source: "booking" },
+  { id: "michaelt", name: "Michael T", source: "tripadvisor" },
+  { id: "sadaf", name: "Sadaf", source: "booking" },
+  { id: "icegirl", name: "Icegirl80", source: "tripadvisor" },
+  { id: "romuald", name: "Romuald", source: "booking" },
+  { id: "jose", name: "José P", source: "tripadvisor" },
+  { id: "patrick", name: "Patrick", source: "booking" },
 ];
 
 export const RATINGS = {

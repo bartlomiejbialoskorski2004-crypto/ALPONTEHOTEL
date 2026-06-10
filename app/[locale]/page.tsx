@@ -39,7 +39,7 @@ export default async function HomePage({
   };
 
   return (
-    <main id="top">
+    <main id="top" className="overflow-x-clip">
       <RoomNav />
       <Hero />
       <Amenities />

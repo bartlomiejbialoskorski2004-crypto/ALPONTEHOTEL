@@ -4,6 +4,8 @@ import { motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { REVIEWS, RATINGS, type Review, type ReviewSource } from "./reviewsData";
 
+type CardData = Review & { quote: string; meta: string };
+
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
   visible: {
@@ -41,14 +43,14 @@ function SourceMark({ source }: { source: ReviewSource }) {
   );
 }
 
-function ReviewCard({ r }: { r: Review }) {
+function ReviewCard({ r }: { r: CardData }) {
   return (
-    <li className="flex h-44 w-[17rem] shrink-0 flex-col border border-mist bg-paper p-5">
-      <p className="text-[13px] leading-relaxed text-ink/80 line-clamp-3">
+    <li className="flex h-36 w-[14rem] shrink-0 flex-col border border-mist bg-paper p-4 sm:h-40 sm:w-[16rem] sm:p-5">
+      <p className="text-xs leading-relaxed text-ink/80 line-clamp-3 sm:text-[13px]">
         {r.quote}
       </p>
       <div className="mt-auto flex items-center gap-2.5 border-t border-mist pt-3">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-mist font-serif text-sm text-forest">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mist font-serif text-sm text-forest sm:h-9 sm:w-9">
           {r.name.charAt(0)}
         </span>
         <div className="min-w-0">
@@ -67,16 +69,21 @@ function ReviewCard({ r }: { r: Review }) {
 export default function Reviews() {
   const t = useTranslations("reviews");
 
-  const rowA = REVIEWS.filter((_, i) => i % 2 === 0);
-  const rowB = REVIEWS.filter((_, i) => i % 2 === 1);
+  const cards: CardData[] = REVIEWS.map((r) => ({
+    ...r,
+    quote: t(`items.${r.id}.quote`),
+    meta: t(`items.${r.id}.meta`),
+  }));
+  const rowA = cards.filter((_, i) => i % 2 === 0);
+  const rowB = cards.filter((_, i) => i % 2 === 1);
 
   const badge =
-    "group inline-flex items-center gap-4 border border-mist bg-paper px-5 py-3.5 transition-colors hover:border-forest";
+    "group inline-flex items-center gap-3 border border-mist bg-paper px-4 py-3 transition-colors hover:border-forest sm:gap-4 sm:px-5 sm:py-3.5";
 
   return (
     <section
       aria-labelledby="reviews-title"
-      className="bg-paper py-20 text-ink lg:py-28"
+      className="bg-paper py-14 text-ink lg:py-20"
     >
       <motion.div
         initial="hidden"
@@ -91,7 +98,7 @@ export default function Reviews() {
           </span>
           <h2
             id="reviews-title"
-            className="mt-5 font-serif text-3xl leading-[1.05] lg:text-5xl"
+            className="mt-5 font-serif text-2xl leading-[1.05] sm:text-3xl lg:text-5xl"
           >
             {t("title")}
           </h2>
@@ -113,7 +120,7 @@ export default function Reviews() {
               Booking.com
             </span>
             <span className="h-7 w-px bg-mist" />
-            <span className="flex items-baseline gap-1 font-serif text-2xl leading-none">
+            <span className="flex items-baseline gap-1 font-serif text-xl leading-none sm:text-2xl">
               {RATINGS.booking.score}
               <span className="font-sans text-xs text-ink/45">
                 /{RATINGS.booking.scale}
@@ -138,7 +145,7 @@ export default function Reviews() {
               </span>
             </span>
             <span className="h-7 w-px bg-mist" />
-            <span className="flex items-baseline gap-1 font-serif text-2xl leading-none">
+            <span className="flex items-baseline gap-1 font-serif text-xl leading-none sm:text-2xl">
               {RATINGS.tripadvisor.score}
               <span className="font-sans text-xs text-ink/45">
                 /{RATINGS.tripadvisor.scale}
@@ -153,14 +160,14 @@ export default function Reviews() {
         {/* Infinite marquees — two rows, opposite directions */}
         <motion.div
           variants={fadeUp}
-          className="mt-12 flex flex-col gap-4 [mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] lg:mt-14"
+          className="mx-auto mt-10 flex max-w-5xl flex-col gap-3.5 overflow-hidden px-6 [mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] lg:px-10"
         >
-          <ul className="flex w-max gap-4 animate-[marquee-left_42s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:[animation:none]">
+          <ul className="flex w-max gap-3.5 animate-[marquee-left_42s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:[animation:none]">
             {[...rowA, ...rowA].map((r, i) => (
               <ReviewCard key={`a-${i}`} r={r} />
             ))}
           </ul>
-          <ul className="flex w-max gap-4 animate-[marquee-right_50s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:[animation:none]">
+          <ul className="flex w-max gap-3.5 animate-[marquee-right_50s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:[animation:none]">
             {[...rowB, ...rowB].map((r, i) => (
               <ReviewCard key={`b-${i}`} r={r} />
             ))}

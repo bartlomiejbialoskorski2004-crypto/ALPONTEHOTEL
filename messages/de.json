@@ -618,6 +618,52 @@
   "reviews": {
     "eyebrow": "Bewertungen",
     "title": "Was unsere Gäste sagen",
-    "reviewsLabel": "Bewertungen"
+    "reviewsLabel": "Bewertungen",
+    "items": {
+      "danny": {
+        "quote": "Unser Aufenthalt im Al Ponte war fantastisch! In Cademario hat man einen atemberaubenden Blick auf die Region Lugano. Der Service war rundum fantastisch!",
+        "meta": "USA"
+      },
+      "domeh": {
+        "quote": "Die Aussicht ist einfach atemberaubend! Hoch über Lugano gelegen, fühlt man sich wirklich über allem.",
+        "meta": ""
+      },
+      "iren": {
+        "quote": "Al Ponte ist ein herzliches, familiengeführtes Juwel, das unsere Erwartungen übertroffen hat. Wir haben uns wie zu Hause gefühlt.",
+        "meta": "Türkei"
+      },
+      "dachelle": {
+        "quote": "Das Essen war köstlich, das Personal sehr freundlich und aufmerksam, und die Aussichten waren fantastisch!",
+        "meta": ""
+      },
+      "robert": {
+        "quote": "Der Ort hat eine einzigartige Atmosphäre. Die Besitzer sind super freundlich. Essen ausgezeichnet. Die Aussicht atemberaubend.",
+        "meta": "Polen"
+      },
+      "michaelt": {
+        "quote": "Der Blick vom Balkon ist einfach ein Traum, und wir hatten völlige Ruhe.",
+        "meta": ""
+      },
+      "sadaf": {
+        "quote": "Fabelhafte Gastgeberin, eine echte Freude, sie kennenzulernen. Das Hotel lag fast auf einem Berggipfel und hatte eine fantastische Aussicht.",
+        "meta": "Indien"
+      },
+      "icegirl": {
+        "quote": "Familiengeführtes Hotel, klein aber fein! Super freundliche Menschen — wir sind schon das zweite Jahr in Folge hier.",
+        "meta": ""
+      },
+      "romuald": {
+        "quote": "Außergewöhnliche Ausblicke. Personal tadellos. Super sauber. Stille, Ruhe.",
+        "meta": "Schweiz"
+      },
+      "jose": {
+        "quote": "Im Al Ponte kann man wirklich entspannen, wenn man die Energie des Ortes in sich aufnimmt.",
+        "meta": ""
+      },
+      "patrick": {
+        "quote": "Schönes, familiengeführtes Hotel mit herrlichem Blick auf den Luganersee. Sehr nette, freundliche Besitzer.",
+        "meta": "Niederlande"
+      }
+    }
   }
 }

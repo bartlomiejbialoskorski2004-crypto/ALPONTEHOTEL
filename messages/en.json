@@ -618,6 +618,52 @@
   "reviews": {
     "eyebrow": "Reviews",
     "title": "What our guests say",
-    "reviewsLabel": "reviews"
+    "reviewsLabel": "reviews",
+    "items": {
+      "danny": {
+        "quote": "Our stay at Al Ponte was amazing! Located in Cademario, you have a stunning view of the Lugano region. The service all around was fantastico!",
+        "meta": "United States"
+      },
+      "domeh": {
+        "quote": "The view is simply breathtaking! Situated high above Lugano, you really feel like you are above all else.",
+        "meta": ""
+      },
+      "iren": {
+        "quote": "Al Ponte is a warm, family-run gem that truly exceeded our expectations. We truly felt at home.",
+        "meta": "Turkey"
+      },
+      "dachelle": {
+        "quote": "The food was delicious, the staff was so kind and attentive, and the views were amazing!",
+        "meta": ""
+      },
+      "robert": {
+        "quote": "The place has a unique atmosphere. The owners are super friendly. Food excellent. The view breathtaking.",
+        "meta": "Poland"
+      },
+      "michaelt": {
+        "quote": "The balcony view is just a dream and we had total peace and quiet.",
+        "meta": ""
+      },
+      "sadaf": {
+        "quote": "Fabulous hostess, a real pleasure to meet her. Property was nearly on top of a mountain and had a fantastic view.",
+        "meta": "India"
+      },
+      "icegirl": {
+        "quote": "Family-run hotel, small but nice! Super friendly people — we've been here for the second year in a row.",
+        "meta": ""
+      },
+      "romuald": {
+        "quote": "Exceptional views. Staff impeccable. Super clean. Silence, calmness.",
+        "meta": "Switzerland"
+      },
+      "jose": {
+        "quote": "At Al Ponte, if you absorb the energy of the place well, you can really relax.",
+        "meta": ""
+      },
+      "patrick": {
+        "quote": "Lovely hotel run by a family, with amazing views on Lake Lugano. Very nice, friendly owners.",
+        "meta": "Netherlands"
+      }
+    }
   }
 }

@@ -13,7 +13,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-title"
-      className="bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
+      className="bg-paper px-6 pt-24 pb-16 text-ink lg:px-10 lg:pt-32 lg:pb-20"
     >
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 16 }}

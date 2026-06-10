@@ -618,6 +618,52 @@
   "reviews": {
     "eyebrow": "Recensioni",
     "title": "Cosa dicono i nostri ospiti",
-    "reviewsLabel": "recensioni"
+    "reviewsLabel": "recensioni",
+    "items": {
+      "danny": {
+        "quote": "Il nostro soggiorno all'Al Ponte è stato fantastico! A Cademario si gode una vista mozzafiato sulla regione di Lugano. Il servizio è stato fantastico!",
+        "meta": "Stati Uniti"
+      },
+      "domeh": {
+        "quote": "La vista è semplicemente mozzafiato! Situato in alto sopra Lugano, ci si sente davvero sopra ogni cosa.",
+        "meta": ""
+      },
+      "iren": {
+        "quote": "Al Ponte è un gioiello accogliente a conduzione familiare che ha superato le nostre aspettative. Ci siamo sentiti davvero a casa.",
+        "meta": "Turchia"
+      },
+      "dachelle": {
+        "quote": "Il cibo era delizioso, il personale gentilissimo e attento, e i panorami fantastici!",
+        "meta": ""
+      },
+      "robert": {
+        "quote": "Il posto ha un'atmosfera unica. I proprietari sono super cordiali. Cibo eccellente. La vista mozzafiato.",
+        "meta": "Polonia"
+      },
+      "michaelt": {
+        "quote": "La vista dal balcone è un sogno e abbiamo goduto di pace e tranquillità totali.",
+        "meta": ""
+      },
+      "sadaf": {
+        "quote": "Padrona di casa favolosa, un vero piacere conoscerla. La struttura era quasi in cima a una montagna e aveva una vista fantastica.",
+        "meta": "India"
+      },
+      "icegirl": {
+        "quote": "Hotel a conduzione familiare, piccolo ma carino! Persone super cordiali: siamo qui per il secondo anno di fila.",
+        "meta": ""
+      },
+      "romuald": {
+        "quote": "Viste eccezionali. Personale impeccabile. Pulizia impeccabile. Silenzio, calma.",
+        "meta": "Svizzera"
+      },
+      "jose": {
+        "quote": "All'Al Ponte, se ci si lascia avvolgere dall'energia del posto, ci si rilassa davvero.",
+        "meta": ""
+      },
+      "patrick": {
+        "quote": "Delizioso hotel a conduzione familiare, con viste splendide sul Lago di Lugano. Proprietari molto gentili e cordiali.",
+        "meta": "Paesi Bassi"
+      }
+    }
   }
 }

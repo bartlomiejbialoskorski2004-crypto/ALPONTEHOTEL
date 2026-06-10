@@ -618,6 +618,52 @@
   "reviews": {
     "eyebrow": "Avis",
     "title": "Ce que disent nos hôtes",
-    "reviewsLabel": "avis"
+    "reviewsLabel": "avis",
+    "items": {
+      "danny": {
+        "quote": "Notre séjour à l'Al Ponte a été incroyable ! À Cademario, vous avez une vue imprenable sur la région de Lugano. Le service était fantastique !",
+        "meta": "États-Unis"
+      },
+      "domeh": {
+        "quote": "La vue est tout simplement à couper le souffle ! Situé en hauteur au-dessus de Lugano, on se sent vraiment au-dessus de tout.",
+        "meta": ""
+      },
+      "iren": {
+        "quote": "Al Ponte est un joyau chaleureux et familial qui a dépassé nos attentes. Nous nous sommes vraiment sentis chez nous.",
+        "meta": "Turquie"
+      },
+      "dachelle": {
+        "quote": "La nourriture était délicieuse, le personnel très aimable et attentionné, et les vues magnifiques !",
+        "meta": ""
+      },
+      "robert": {
+        "quote": "L'endroit a une atmosphère unique. Les propriétaires sont super sympathiques. Cuisine excellente. La vue à couper le souffle.",
+        "meta": "Pologne"
+      },
+      "michaelt": {
+        "quote": "La vue depuis le balcon est un rêve et nous avons eu un calme et une tranquillité absolus.",
+        "meta": ""
+      },
+      "sadaf": {
+        "quote": "Hôtesse fabuleuse, un vrai plaisir de la rencontrer. L'établissement était presque au sommet d'une montagne et offrait une vue fantastique.",
+        "meta": "Inde"
+      },
+      "icegirl": {
+        "quote": "Hôtel familial, petit mais charmant ! Des gens super sympathiques — nous venons ici pour la deuxième année consécutive.",
+        "meta": ""
+      },
+      "romuald": {
+        "quote": "Vues exceptionnelles. Personnel impeccable. Très propre. Silence, calme.",
+        "meta": "Suisse"
+      },
+      "jose": {
+        "quote": "À l'Al Ponte, si l'on absorbe bien l'énergie du lieu, on peut vraiment se détendre.",
+        "meta": ""
+      },
+      "patrick": {
+        "quote": "Charmant hôtel familial, avec des vues magnifiques sur le lac de Lugano. Propriétaires très gentils et accueillants.",
+        "meta": "Pays-Bas"
+      }
+    }
   }
 }
