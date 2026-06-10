@@ -1,49 +1,22 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import FlipText from "./FlipText";
+import ParallaxImage from "./ParallaxImage";
 
 // Small homepage band teasing the Discover Ticino attractions page.
 export default function AttractionsTeaser() {
   const t = useTranslations();
   const reduceMotion = useReducedMotion();
 
-  // Scroll-driven parallax: the background photo drifts vertically as the band
-  // passes through the viewport while the text stays put. The image layer is
-  // taller than the section so the drift never exposes a blank edge.
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const imgY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["-12%", "12%"],
-  );
-
   return (
     <section
-      ref={ref}
       aria-label={t("nav.attractions")}
       className="relative flex min-h-[52svh] w-full items-center overflow-hidden bg-forest text-paper"
     >
-      <motion.div
-        style={{ y: imgY }}
-        className="absolute -inset-y-[12%] inset-x-0"
-      >
-        <Image
-          src="/mega/Lakelugano.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-      </motion.div>
+      <ParallaxImage src="/mega/Lakelugano.jpg" />
       <div className="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/65 to-forest/85" />
 
       <motion.div

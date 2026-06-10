@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
   useScroll,
-  useSpring,
   useTransform,
 } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -30,37 +29,30 @@ export default function Hero() {
     return () => clearInterval(id);
   }, [reduceMotion]);
 
-  // Scroll-linked parallax / scale / fade for the photo layer. Maps the
-  // first viewport-height of scroll onto a gentle y / scale / opacity
-  // shift so the hero feels alive as the user moves down the page.
-  const { scrollY } = useScroll();
-  const [vh, setVh] = useState(0);
-  useEffect(() => {
-    const update = () => setVh(window.innerHeight);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  // Smooth scrollY via spring — gives the parallax a buttery follow even
-  // on top of Lenis. The photo layer keeps a baseline scale 1.1 (over-fill)
-  // so a small y shift never exposes the bottom of the section.
-  const smoothY = useSpring(scrollY, {
-    stiffness: 80,
-    damping: 30,
-    mass: 0.4,
+  // Scroll-driven parallax: the photo layer drifts vertically as the hero
+  // passes through the viewport — the same effect shared with the sub-page
+  // heroes (see ParallaxImage). The layer is taller than the section so the
+  // drift never exposes an edge.
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
   });
-  const heroY = useTransform(smoothY, [0, vh || 800], [0, -(vh || 800) * 0.08]);
-  const heroScale = useTransform(smoothY, [0, vh || 800], [1.1, 1.22]);
+  const heroY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? ["0%", "0%"] : ["0%", "-18%"],
+  );
 
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden">
+    <section
+      ref={ref}
+      className="relative min-h-[100svh] w-full overflow-hidden"
+    >
       <motion.div
-        className="absolute inset-0"
+        className="absolute -inset-y-[12%] inset-x-0"
         aria-hidden
-        style={
-          reduceMotion ? undefined : { y: heroY, scale: heroScale }
-        }
+        style={reduceMotion ? undefined : { y: heroY }}
       >
         {SLIDES.map((src, i) => (
           <motion.div

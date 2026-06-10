@@ -34,7 +34,7 @@ export default function Rooms() {
             id="rooms-title"
             className="mt-5 font-serif text-2xl leading-[1.05] sm:text-3xl lg:text-5xl"
           >
-            {t("rooms.title")}
+            {t("rooms.heading")}
           </h2>
         </motion.div>
 

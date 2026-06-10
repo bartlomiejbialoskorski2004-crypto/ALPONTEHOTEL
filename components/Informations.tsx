@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
 import PageToc, { BackToTop, type TocSection } from "./PageToc";
+import ParallaxImage from "./ParallaxImage";
 
 const SERVICE_KEYS = [
   "1",
@@ -88,14 +88,7 @@ export default async function Informations() {
     <article className="bg-paper text-ink">
       {/* Hero band — hotel facade under a forest wash. */}
       <section className="relative flex min-h-[58svh] w-full items-end overflow-hidden bg-forest text-paper">
-        <Image
-          src="/gallery/5.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        <ParallaxImage src="/gallery/5.jpg" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/55 to-forest/90" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-40 lg:px-10 lg:pb-16 lg:pt-48">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75">

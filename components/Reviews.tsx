@@ -29,28 +29,33 @@ function OwlMark() {
 
 // Subtle 5-star mark; the forest row is clipped to the score fraction so the
 // rating reads visually (e.g. 8.8/10 → ~88% filled).
+const STAR_PATH =
+  "M12 2l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.77l-5.88 3.09 1.12-6.55L2.48 8.92l6.58-.96L12 2z";
+
 function Stars({ fraction }: { fraction: number }) {
   const pct = `${Math.max(0, Math.min(1, fraction)) * 100}%`;
   const row = (cls: string) => (
-    <div className={`flex gap-0.5 ${cls}`}>
+    <span className={`flex flex-nowrap gap-0.5 ${cls}`}>
       {[0, 1, 2, 3, 4].map((i) => (
-        <svg key={i} width="13" height="13" viewBox="0 0 24 24" aria-hidden>
-          <path
-            d="M12 2.5l2.7 5.9 6.4.7-4.8 4.4 1.3 6.3L12 17.8 6.4 19.8l1.3-6.3L3 9.1l6.4-.7z"
-            fill="currentColor"
-          />
+        <svg
+          key={i}
+          className="h-3.5 w-3.5 shrink-0"
+          viewBox="0 0 24 24"
+          aria-hidden
+        >
+          <path d={STAR_PATH} fill="currentColor" />
         </svg>
       ))}
-    </div>
+    </span>
   );
   return (
-    <span className="relative inline-block" aria-hidden>
-      {row("text-ink/15")}
+    <span className="relative inline-flex" aria-hidden>
+      {row("text-gold/25")}
       <span
-        className="absolute inset-y-0 left-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden"
         style={{ width: pct }}
       >
-        {row("text-forest")}
+        {row("whitespace-nowrap text-gold")}
       </span>
     </span>
   );
