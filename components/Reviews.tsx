@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
-import { REVIEWS, RATINGS, type ReviewSource } from "./reviewsData";
+import { REVIEWS, RATINGS, type Review, type ReviewSource } from "./reviewsData";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
@@ -29,81 +28,47 @@ function OwlMark() {
 function SourceMark({ source }: { source: ReviewSource }) {
   if (source === "booking") {
     return (
-      <span className="text-[11px] font-bold tracking-tight text-[#003b95]">
+      <span className="text-[10px] font-bold tracking-tight text-[#003b95]">
         Booking.com
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 text-[11px] font-semibold tracking-tight text-ink/70">
-      <span className="h-2 w-2 rounded-full bg-[#00aa6c]" />
+    <span className="inline-flex items-center gap-1 text-[10px] font-semibold tracking-tight text-ink/70">
+      <span className="h-1.5 w-1.5 rounded-full bg-[#00aa6c]" />
       Tripadvisor
     </span>
   );
 }
 
+function ReviewCard({ r }: { r: Review }) {
+  return (
+    <li className="flex h-44 w-[17rem] shrink-0 flex-col border border-mist bg-paper p-5">
+      <p className="text-[13px] leading-relaxed text-ink/80 line-clamp-3">
+        {r.quote}
+      </p>
+      <div className="mt-auto flex items-center gap-2.5 border-t border-mist pt-3">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-mist font-serif text-sm text-forest">
+          {r.name.charAt(0)}
+        </span>
+        <div className="min-w-0">
+          <p className="truncate text-[13px] font-medium text-ink">{r.name}</p>
+          <p className="mt-0.5 flex items-center gap-1.5 text-[11px] text-ink/45">
+            {r.meta && <span>{r.meta}</span>}
+            {r.meta && <span className="text-ink/20">·</span>}
+            <SourceMark source={r.source} />
+          </p>
+        </div>
+      </div>
+    </li>
+  );
+}
+
 export default function Reviews() {
   const t = useTranslations("reviews");
-  const reduceMotion = useReducedMotion();
 
-  // Carousel: drag-to-scroll (mouse) + touch swipe + slow autoplay + dots.
-  const stripRef = useRef<HTMLUListElement>(null);
-  const [index, setIndex] = useState(0);
-  const pausedUntil = useRef(0);
-
-  const scrollTo = (i: number) => {
-    const strip = stripRef.current;
-    const child = strip?.children[i] as HTMLElement | undefined;
-    if (!strip || !child) return;
-    strip.scrollTo({
-      left: child.offsetLeft - (strip.clientWidth - child.clientWidth) / 2,
-      behavior: "smooth",
-    });
-  };
-
-  const onScroll = () => {
-    const strip = stripRef.current;
-    if (!strip) return;
-    const center = strip.scrollLeft + strip.clientWidth / 2;
-    let nearest = 0;
-    let best = Infinity;
-    Array.from(strip.children).forEach((c, i) => {
-      const el = c as HTMLElement;
-      const d = Math.abs(el.offsetLeft + el.clientWidth / 2 - center);
-      if (d < best) {
-        best = d;
-        nearest = i;
-      }
-    });
-    setIndex(nearest);
-  };
-
-  useEffect(() => {
-    if (reduceMotion) return;
-    const strip = stripRef.current;
-    if (!strip) return;
-    const id = window.setInterval(() => {
-      if (strip.scrollWidth <= strip.clientWidth + 4) return;
-      if (Date.now() < pausedUntil.current) return;
-      scrollTo((index + 1) % REVIEWS.length);
-    }, 4500);
-    return () => window.clearInterval(id);
-  }, [index, reduceMotion]);
-
-  const drag = useRef<{ x: number; left: number } | null>(null);
-  const onDown = (e: React.PointerEvent<HTMLUListElement>) => {
-    pausedUntil.current = Date.now() + 6000;
-    if (e.pointerType !== "mouse") return;
-    drag.current = { x: e.clientX, left: stripRef.current?.scrollLeft ?? 0 };
-  };
-  const onMove = (e: React.PointerEvent<HTMLUListElement>) => {
-    if (!drag.current || !stripRef.current) return;
-    stripRef.current.scrollLeft = drag.current.left - (e.clientX - drag.current.x);
-  };
-  const endDrag = () => {
-    drag.current = null;
-    pausedUntil.current = Date.now() + 6000;
-  };
+  const rowA = REVIEWS.filter((_, i) => i % 2 === 0);
+  const rowB = REVIEWS.filter((_, i) => i % 2 === 1);
 
   const badge =
     "group inline-flex items-center gap-4 border border-mist bg-paper px-5 py-3.5 transition-colors hover:border-forest";
@@ -111,17 +76,16 @@ export default function Reviews() {
   return (
     <section
       aria-labelledby="reviews-title"
-      className="bg-paper px-6 py-20 text-ink lg:px-10 lg:py-28"
+      className="bg-paper py-20 text-ink lg:py-28"
     >
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-        className="mx-auto max-w-7xl"
       >
         {/* Heading */}
-        <motion.div variants={fadeUp} className="text-center">
+        <motion.div variants={fadeUp} className="px-6 text-center lg:px-10">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
             {t("eyebrow")}
           </span>
@@ -136,7 +100,7 @@ export default function Reviews() {
         {/* Rating badges */}
         <motion.div
           variants={fadeUp}
-          className="mt-8 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 flex flex-wrap items-center justify-center gap-4 px-6 lg:px-10"
         >
           <a
             href={RATINGS.booking.url}
@@ -186,71 +150,21 @@ export default function Reviews() {
           </a>
         </motion.div>
 
-        {/* Review carousel */}
-        <motion.ul
-          ref={stripRef}
-          variants={fadeUp}
-          onScroll={onScroll}
-          onPointerDown={onDown}
-          onPointerMove={onMove}
-          onPointerUp={endDrag}
-          onPointerLeave={endDrag}
-          className="mt-12 flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden active:cursor-grabbing lg:mt-14"
-        >
-          {REVIEWS.map((r, i) => (
-            <li
-              key={i}
-              className="flex min-w-[82%] shrink-0 snap-center flex-col border border-mist bg-paper p-6 sm:min-w-[46%] sm:p-7 lg:min-w-[31%]"
-            >
-              <span
-                aria-hidden
-                className="font-serif text-4xl leading-none text-forest/25"
-              >
-                &ldquo;
-              </span>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/80">
-                {r.quote}
-              </p>
-              <div className="mt-6 flex items-center gap-3 border-t border-mist pt-5">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mist font-serif text-base text-forest">
-                  {r.name.charAt(0)}
-                </span>
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-ink">
-                    {r.name}
-                  </p>
-                  <p className="mt-0.5 flex items-center gap-2 text-xs text-ink/45">
-                    {r.meta && <span>{r.meta}</span>}
-                    {r.meta && <span className="text-ink/20">·</span>}
-                    <SourceMark source={r.source} />
-                  </p>
-                </div>
-              </div>
-            </li>
-          ))}
-        </motion.ul>
-
-        {/* Dots */}
+        {/* Infinite marquees — two rows, opposite directions */}
         <motion.div
           variants={fadeUp}
-          className="mt-6 flex items-center justify-center gap-2"
+          className="mt-12 flex flex-col gap-4 [mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] lg:mt-14"
         >
-          {REVIEWS.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => scrollTo(i)}
-              aria-label={`Go to review ${i + 1}`}
-              aria-current={i === index}
-              className="group flex h-4 items-center"
-            >
-              <span
-                className={`block h-[2px] transition-all duration-300 ${
-                  i === index ? "w-6 bg-forest" : "w-3 bg-ink/25 group-hover:bg-ink/45"
-                }`}
-              />
-            </button>
-          ))}
+          <ul className="flex w-max gap-4 animate-[marquee-left_42s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:[animation:none]">
+            {[...rowA, ...rowA].map((r, i) => (
+              <ReviewCard key={`a-${i}`} r={r} />
+            ))}
+          </ul>
+          <ul className="flex w-max gap-4 animate-[marquee-right_50s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:[animation:none]">
+            {[...rowB, ...rowB].map((r, i) => (
+              <ReviewCard key={`b-${i}`} r={r} />
+            ))}
+          </ul>
         </motion.div>
       </motion.div>
     </section>
