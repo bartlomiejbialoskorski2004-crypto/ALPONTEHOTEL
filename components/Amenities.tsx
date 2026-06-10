@@ -13,7 +13,6 @@ import {
   Wifi,
   type LucideIcon,
 } from "lucide-react";
-import Vine from "./Vine";
 type ItemKey =
   | "pool"
   | "pet"
@@ -44,25 +43,7 @@ export default function Amenities() {
       id="amenities"
       className="relative overflow-hidden bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
     >
-      <Vine
-        variant="tall"
-        side="right"
-        weight="thick"
-        className="absolute -top-4 right-0 w-24 sm:w-32 lg:w-52"
-      />
-      <Vine
-        variant="sprig"
-        side="left"
-        weight="regular"
-        className="absolute left-0 top-1/3 w-20 sm:w-28 lg:w-40"
-      />
-      <Vine
-        variant="arch"
-        side="left"
-        weight="thin"
-        className="absolute bottom-6 left-0 w-48 sm:w-64 lg:w-96"
-      />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl">
         <ul className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map(({ key, Icon }, i) => (
             <motion.li

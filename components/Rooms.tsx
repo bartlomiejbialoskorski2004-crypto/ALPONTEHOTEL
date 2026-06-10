@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import Vine from "./Vine";
 
 const CATEGORIES = ["apartments", "superior", "budgetPlus", "budget"] as const;
 
@@ -18,42 +17,9 @@ export default function Rooms() {
     <section
       id="rooms"
       aria-labelledby="rooms-title"
-      className="relative bg-paper px-6 py-16 text-ink sm:py-24 lg:px-10 lg:py-32"
+      className="bg-paper px-6 py-16 text-ink sm:py-24 lg:px-10 lg:py-32"
     >
-      {/* Densest vine cluster on the page — arranged per the sketch: a
-          runner along the top-left, stems down both edges, a branchy vine
-          crossing the cards in front, and a sprig bowing in from the right. */}
-      <Vine
-        variant="arch"
-        side="left"
-        weight="thin"
-        className="absolute left-0 top-8 w-56 sm:w-80 lg:w-[30rem]"
-      />
-      <Vine
-        variant="column"
-        side="left"
-        weight="regular"
-        className="absolute left-0 top-1/4 w-16 sm:w-24 lg:w-36"
-      />
-      <Vine
-        variant="tall"
-        side="left"
-        weight="thick"
-        className="absolute left-[4%] top-1/3 z-10 w-32 rotate-12 sm:w-44 lg:w-64"
-      />
-      <Vine
-        variant="column"
-        side="right"
-        weight="thick"
-        className="absolute right-0 top-6 w-20 sm:w-28 lg:w-40"
-      />
-      <Vine
-        variant="sprig"
-        side="right"
-        weight="thin"
-        className="absolute right-[8%] top-1/4 z-10 w-24 sm:w-32 lg:w-44"
-      />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}

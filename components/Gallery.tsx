@@ -3,7 +3,6 @@ import InteractiveBentoGallery, {
   type MediaItemType,
 } from "./InteractiveBentoGallery";
 import MobileGallery from "./MobileGallery";
-import Vine from "./Vine";
 
 // Bento layout — keep the spans from the source design (4 tall + 3 wide).
 // To add / reorder slots, edit this list. Drop the matching files in
@@ -61,21 +60,9 @@ export default async function Gallery() {
   return (
     <section
       id="gallery"
-      className="relative bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
+      className="bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
     >
-      <Vine
-        variant="sprig"
-        side="right"
-        weight="thick"
-        className="absolute right-0 top-6 w-20 sm:w-28 lg:w-40"
-      />
-      <Vine
-        variant="column"
-        side="left"
-        weight="thin"
-        className="absolute left-0 top-1/4 w-14 sm:w-20 lg:w-28"
-      />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl">
         {/* Mobile: accessible 2-col grid + fullscreen viewer */}
         <div className="lg:hidden">
           <MobileGallery items={items} />
