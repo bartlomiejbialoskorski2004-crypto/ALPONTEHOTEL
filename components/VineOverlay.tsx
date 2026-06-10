@@ -241,8 +241,16 @@ function generate(main: HTMLElement): Organism | null {
   const fullD = `${moveTo(pts[0])} ${segs.join(" ")}`;
 
   // Branches: [anchor, ...points] — the rooms section gets the dense sketch
-  // set; the rest of the page gets small offshoots.
-  const branchDefs: { pts: P[]; width: number; spacing: number; seed: number }[] = [
+  // set; the rest of the page gets small offshoots. Anchors must lie on the
+  // main stem (a waypoint) — or, with `parent`, on a previous branch, so the
+  // start fraction is derived from the parent's own growth window.
+  const branchDefs: {
+    pts: P[];
+    width: number;
+    spacing: number;
+    seed: number;
+    parent?: number;
+  }[] = [
     // Rooms: long branch arcing right across the top, descending the right
     // edge…
     {
@@ -270,6 +278,7 @@ function generate(main: HTMLElement): Organism | null {
       width: 2.2,
       spacing: 60,
       seed: 33,
+      parent: 0,
     },
     // Rooms: thick diagonal from the left stem across the cards' top.
     {
@@ -384,14 +393,37 @@ function generate(main: HTMLElement): Organism | null {
     });
 
     // Branches + their leaves.
+    const grown: { el: SVGPathElement; from: number; span: number }[] = [];
     for (const def of branchDefs) {
       const d = `${moveTo(def.pts[0])} ${bezierSegs(def.pts).join(" ")}`;
       const el = makePath(d);
       const len = el.getTotalLength();
-      const from = fracNearest(samplePts, sampleLens, total, def.pts[0]);
-      // Branches finish shortly after the main tip passes their junction —
+      // Junction time: fraction of the global growth at which the anchor
+      // point gets drawn — on the main stem, or within the parent branch's
+      // own window for sub-branches (so a child never precedes its parent).
+      let from: number;
+      if (def.parent !== undefined && grown[def.parent]) {
+        const par = grown[def.parent];
+        const parLen = par.el.getTotalLength();
+        let bestL = 0;
+        let bestD = Infinity;
+        for (let s = 0; s <= 120; s += 1) {
+          const l = (s / 120) * parLen;
+          const sp = par.el.getPointAtLength(l);
+          const dd = Math.hypot(sp.x - def.pts[0].x, sp.y - def.pts[0].y);
+          if (dd < bestD) {
+            bestD = dd;
+            bestL = l;
+          }
+        }
+        from = par.from + (bestL / parLen) * par.span;
+      } else {
+        from = fracNearest(samplePts, sampleLens, total, def.pts[0]);
+      }
+      // Branches finish shortly after the tip passes their junction —
       // nothing in view should ever look half-grown.
       const span = Math.min(0.018, (len / total) * 0.45);
+      grown.push({ el, from, span });
       stems.push({ d, from, span, width: def.width * wScale });
       leaves.push(
         ...leavesAlong(el, {
@@ -446,11 +478,23 @@ function LeafNode({
   progress: MotionValue<number>;
   animate: boolean;
 }) {
-  // Sprouts only after the stem tip passes the node, completing quickly so
-  // foliage in view never looks half-grown.
-  const opacity = useTransform(progress, [leaf.t, leaf.t + 0.02], [0, 1]);
-  const scale = useTransform(progress, [leaf.t, leaf.t + 0.03], [0, 1]);
-  const rotate = useTransform(progress, [leaf.t, leaf.t + 0.03], [-22, 0]);
+  // Sprouts only once the stem tip is already past the node (small delay),
+  // completing quickly so foliage in view never looks half-grown.
+  const opacity = useTransform(
+    progress,
+    [leaf.t + 0.004, leaf.t + 0.022],
+    [0, 1],
+  );
+  const scale = useTransform(
+    progress,
+    [leaf.t + 0.004, leaf.t + 0.032],
+    [0, 1],
+  );
+  const rotate = useTransform(
+    progress,
+    [leaf.t + 0.004, leaf.t + 0.032],
+    [-22, 0],
+  );
   return (
     <g transform={leaf.transform}>
       <motion.g
