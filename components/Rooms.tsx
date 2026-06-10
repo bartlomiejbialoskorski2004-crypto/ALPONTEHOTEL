@@ -20,9 +20,23 @@ export default function Rooms() {
       className="bg-paper px-6 py-16 text-ink sm:py-24 lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
-        <h2 id="rooms-title" className="sr-only">
-          {t("rooms.title")}
-        </h2>
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 text-center lg:mb-10"
+        >
+          <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
+            {t("nav.rooms")}
+          </span>
+          <h2
+            id="rooms-title"
+            className="mt-5 font-serif text-2xl leading-[1.05] sm:text-3xl lg:text-5xl"
+          >
+            {t("rooms.title")}
+          </h2>
+        </motion.div>
 
         <motion.p
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}

@@ -82,6 +82,13 @@ export default function Footer({ bookingUrl }: Props) {
                   </a>
                 );
               })}
+              {/* Less-obvious on-page sections */}
+              <a href={anchor("#amenities")} className={navLink}>
+                <FlipText>{t("footer.amenities")}</FlipText>
+              </a>
+              <a href={anchor("#reviews")} className={navLink}>
+                <FlipText>{t("footer.reviews")}</FlipText>
+              </a>
             </div>
           </nav>
 

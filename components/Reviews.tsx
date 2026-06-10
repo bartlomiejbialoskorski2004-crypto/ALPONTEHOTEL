@@ -27,6 +27,35 @@ function OwlMark() {
   );
 }
 
+// Subtle 5-star mark; the forest row is clipped to the score fraction so the
+// rating reads visually (e.g. 8.8/10 → ~88% filled).
+function Stars({ fraction }: { fraction: number }) {
+  const pct = `${Math.max(0, Math.min(1, fraction)) * 100}%`;
+  const row = (cls: string) => (
+    <div className={`flex gap-0.5 ${cls}`}>
+      {[0, 1, 2, 3, 4].map((i) => (
+        <svg key={i} width="13" height="13" viewBox="0 0 24 24" aria-hidden>
+          <path
+            d="M12 2.5l2.7 5.9 6.4.7-4.8 4.4 1.3 6.3L12 17.8 6.4 19.8l1.3-6.3L3 9.1l6.4-.7z"
+            fill="currentColor"
+          />
+        </svg>
+      ))}
+    </div>
+  );
+  return (
+    <span className="relative inline-block" aria-hidden>
+      {row("text-ink/15")}
+      <span
+        className="absolute inset-y-0 left-0 overflow-hidden"
+        style={{ width: pct }}
+      >
+        {row("text-forest")}
+      </span>
+    </span>
+  );
+}
+
 function SourceMark({ source }: { source: ReviewSource }) {
   if (source === "booking") {
     return (
@@ -80,8 +109,14 @@ export default function Reviews() {
   const badge =
     "group inline-flex items-center gap-3 border border-mist bg-paper px-4 py-3 transition-colors hover:border-forest sm:gap-4 sm:px-5 sm:py-3.5";
 
+  const bookingFraction =
+    Number(RATINGS.booking.score) / Number(RATINGS.booking.scale);
+  const tripadvisorFraction =
+    Number(RATINGS.tripadvisor.score) / Number(RATINGS.tripadvisor.scale);
+
   return (
     <section
+      id="reviews"
       aria-labelledby="reviews-title"
       className="bg-paper py-14 text-ink lg:py-20"
     >
@@ -126,6 +161,7 @@ export default function Reviews() {
                 /{RATINGS.booking.scale}
               </span>
             </span>
+            <Stars fraction={bookingFraction} />
             <span className="text-[11px] uppercase tracking-[0.15em] text-ink/45">
               {RATINGS.booking.count} {t("reviewsLabel")}
             </span>
@@ -151,6 +187,7 @@ export default function Reviews() {
                 /{RATINGS.tripadvisor.scale}
               </span>
             </span>
+            <Stars fraction={tripadvisorFraction} />
             <span className="text-[11px] uppercase tracking-[0.15em] text-ink/45">
               {RATINGS.tripadvisor.count} {t("reviewsLabel")}
             </span>
