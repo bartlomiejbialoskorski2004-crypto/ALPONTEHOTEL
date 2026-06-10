@@ -3,6 +3,7 @@
 import { motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { REVIEWS, RATINGS, type Review, type ReviewSource } from "./reviewsData";
+import Vine from "./Vine";
 
 type CardData = Review & { quote: string; meta: string };
 
@@ -123,13 +124,19 @@ export default function Reviews() {
     <section
       id="reviews"
       aria-labelledby="reviews-title"
-      className="bg-paper py-14 text-ink lg:py-20"
+      className="relative bg-paper py-14 text-ink lg:py-20"
     >
+      <Vine
+        variant="sprig"
+        side="left"
+        className="absolute left-0 top-4 w-20 sm:w-28 lg:w-36"
+      />
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+        className="relative"
       >
         {/* Heading */}
         <motion.div variants={fadeUp} className="px-6 text-center lg:px-10">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
+import Vine from "./Vine";
 
 const CATEGORIES = ["apartments", "superior", "budgetPlus", "budget"] as const;
 
@@ -17,9 +18,19 @@ export default function Rooms() {
     <section
       id="rooms"
       aria-labelledby="rooms-title"
-      className="bg-paper px-6 py-16 text-ink sm:py-24 lg:px-10 lg:py-32"
+      className="relative bg-paper px-6 py-16 text-ink sm:py-24 lg:px-10 lg:py-32"
     >
-      <div className="mx-auto max-w-7xl">
+      <Vine
+        variant="sprig"
+        side="left"
+        className="absolute left-0 top-8 w-20 sm:w-28 lg:w-40"
+      />
+      <Vine
+        variant="tall"
+        side="right"
+        className="absolute right-0 top-1/4 w-24 sm:w-32 lg:w-52"
+      />
+      <div className="relative mx-auto max-w-7xl">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
