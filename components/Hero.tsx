@@ -41,7 +41,7 @@ export default function Hero() {
   const heroY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["0%", "-18%"],
+    reduceMotion ? ["0%", "0%"] : ["0%", "-12%"],
   );
 
   return (
@@ -50,7 +50,7 @@ export default function Hero() {
       className="relative min-h-[100svh] w-full overflow-hidden"
     >
       <motion.div
-        className="absolute -inset-y-[12%] inset-x-0"
+        className="absolute -inset-y-[18%] inset-x-0"
         aria-hidden
         style={reduceMotion ? undefined : { y: heroY }}
       >
@@ -77,24 +77,41 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/15 to-black/45" />
 
       <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3">
-        {SLIDES.map((src, i) => (
-          <button
-            key={src}
-            type="button"
-            onClick={() => setIndex(i)}
-            aria-label={`${t("scrollHint")} ${i + 1}`}
-            aria-current={i === index}
-            className="group flex h-4 items-center"
-          >
-            <span
-              className={`block h-[2px] transition-all duration-500 ${
-                i === index
-                  ? "w-8 bg-paper"
-                  : "w-4 bg-paper/45 group-hover:bg-paper/80"
-              }`}
-            />
-          </button>
-        ))}
+        {SLIDES.map((src, i) => {
+          const isActive = i === index;
+          return (
+            <button
+              key={src}
+              type="button"
+              onClick={() => setIndex(i)}
+              aria-label={`${t("scrollHint")} ${i + 1}`}
+              aria-current={isActive}
+              className="group flex h-4 items-center"
+            >
+              <span
+                className={`relative block h-[2px] overflow-hidden transition-all duration-500 ${
+                  isActive ? "w-8 bg-paper/30" : "w-4 bg-paper/45 group-hover:bg-paper/80"
+                }`}
+              >
+                {/* Loading-progress fill: drains the active slide's remaining
+                    time. Keyed by index so it restarts on every slide change. */}
+                {isActive && (
+                  <motion.span
+                    key={index}
+                    className="absolute inset-y-0 left-0 block bg-paper"
+                    initial={{ width: reduceMotion ? "100%" : 0 }}
+                    animate={{ width: "100%" }}
+                    transition={
+                      reduceMotion
+                        ? { duration: 0 }
+                        : { duration: SLIDE_INTERVAL / 1000, ease: "linear" }
+                    }
+                  />
+                )}
+              </span>
+            </button>
+          );
+        })}
       </div>
     </section>
   );

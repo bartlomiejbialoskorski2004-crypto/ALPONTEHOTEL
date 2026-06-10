@@ -50,12 +50,16 @@ type Props = {
   tone?: "dark" | "light";
   // "right" anchors the dropdown to the flag's right edge so it doesn't
   // overflow when the switcher sits near the screen's right edge (mobile bar).
-  align?: "center" | "right";
+  align?: "center" | "right" | "left";
+  // "flag" (default) shows the country flag; "letters" shows the locale code
+  // (e.g. "PL") — a compact, always-legible text switcher.
+  variant?: "flag" | "letters";
 };
 
 export default function LocaleSwitcher({
   tone = "dark",
   align = "center",
+  variant = "flag",
 }: Props) {
   const active = useLocale();
   const pathname = usePathname();
@@ -93,6 +97,14 @@ export default function LocaleSwitcher({
 
   const ActiveFlag = FLAGS[active];
   const others = routing.locales.filter((c) => c !== active);
+  const letters = variant === "letters";
+
+  const alignClass =
+    align === "right"
+      ? "right-0"
+      : align === "left"
+        ? "left-0"
+        : "left-1/2 -translate-x-1/2";
 
   return (
     <div
@@ -107,10 +119,18 @@ export default function LocaleSwitcher({
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={active.toUpperCase()}
-        className="flex items-center p-2.5 sm:p-2"
+        className={
+          letters
+            ? "flex items-center p-1 text-sm font-medium uppercase tracking-[0.15em]"
+            : "flex items-center p-2.5 sm:p-2"
+        }
       >
-        {ActiveFlag && (
-          <ActiveFlag className="h-7 w-10 rounded-none shadow-sm ring-1 ring-black/10 sm:h-6 sm:w-9" />
+        {letters ? (
+          <span>{active.toUpperCase()}</span>
+        ) : (
+          ActiveFlag && (
+            <ActiveFlag className="h-7 w-10 rounded-none shadow-sm ring-1 ring-black/10 sm:h-6 sm:w-9" />
+          )
         )}
       </button>
 
@@ -122,9 +142,11 @@ export default function LocaleSwitcher({
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className={`absolute top-full z-50 flex flex-row gap-2 pt-2 sm:flex-col sm:gap-1 ${
-              align === "right" ? "right-0" : "left-1/2 -translate-x-1/2"
-            }`}
+            className={`absolute top-full z-50 flex pt-2 ${
+              letters
+                ? "flex-col gap-1.5"
+                : "flex-row gap-2 sm:flex-col sm:gap-1"
+            } ${alignClass}`}
           >
             {others.map((code) => {
               const Flag = FLAGS[code];
@@ -136,11 +158,20 @@ export default function LocaleSwitcher({
                   role="menuitem"
                   onClick={() => select(code)}
                   aria-label={code.toUpperCase()}
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: letters ? 1.05 : 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  className={
+                    letters
+                      ? "text-left text-sm font-medium uppercase tracking-[0.15em] opacity-70 transition-opacity hover:opacity-100"
+                      : undefined
+                  }
                 >
-                  {Flag && (
-                    <Flag className="h-7 w-10 rounded-none shadow-md ring-1 ring-black/10 sm:h-6 sm:w-9" />
+                  {letters ? (
+                    code.toUpperCase()
+                  ) : (
+                    Flag && (
+                      <Flag className="h-7 w-10 rounded-none shadow-md ring-1 ring-black/10 sm:h-6 sm:w-9" />
+                    )
                   )}
                 </motion.button>
               );

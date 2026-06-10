@@ -345,6 +345,22 @@ export default function Header({ bookingUrl }: Props) {
         bookingUrl={bookingUrl}
       />
 
+      {/* Mobile top-left language switcher (letter format, e.g. "PL"). Always
+          visible; tone follows the bar/hero like the rest of the header. */}
+      {!mobileOpen && (
+        <div
+          className={`fixed left-4 top-4 z-[60] lg:hidden ${
+            onPaper ? "text-ink" : "text-paper"
+          }`}
+        >
+          <LocaleSwitcher
+            tone={onPaper ? "dark" : "light"}
+            variant="letters"
+            align="left"
+          />
+        </div>
+      )}
+
       {/* Mobile top-right controls (above the overlay, z-[60]): the language
           flag slides in from the top once the bar is active (scrolled), to the
           left of the persistent morphing toggle. */}
