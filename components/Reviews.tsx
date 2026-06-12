@@ -3,6 +3,7 @@
 import { motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { REVIEWS, RATINGS, type Review, type ReviewSource } from "./reviewsData";
+import Sprig from "./Sprig";
 
 type CardData = Review & { quote: string; meta: string };
 
@@ -142,6 +143,7 @@ export default function Reviews() {
           >
             {t("title")}
           </h2>
+          <Sprig className="mx-auto mt-5 w-16" />
         </motion.div>
 
         {/* Rating badges */}

@@ -13,6 +13,8 @@ import {
   Wifi,
   type LucideIcon,
 } from "lucide-react";
+import Sprig from "./Sprig";
+
 type ItemKey =
   | "pool"
   | "pet"
@@ -43,6 +45,11 @@ export default function Amenities() {
       id="amenities"
       className="relative overflow-hidden bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
     >
+      {/* Quiet corner flourish in the section's empty padding. */}
+      <Sprig
+        shape="crescent"
+        className="absolute right-6 top-8 w-10 opacity-80 lg:right-10 lg:w-14"
+      />
       <div className="mx-auto max-w-7xl">
         <ul className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map(({ key, Icon }, i) => (

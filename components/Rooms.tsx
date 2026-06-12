@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
+import Sprig from "./Sprig";
 
 const CATEGORIES = ["apartments", "superior", "budgetPlus", "budget"] as const;
 
@@ -36,6 +37,7 @@ export default function Rooms() {
           >
             {t("rooms.heading")}
           </h2>
+          <Sprig className="mx-auto mt-5 w-20" />
         </motion.div>
 
         <motion.p

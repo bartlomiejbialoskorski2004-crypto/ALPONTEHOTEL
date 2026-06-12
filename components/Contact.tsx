@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import FlipText from "./FlipText";
+import Sprig from "./Sprig";
 import { EMAIL, MAPS_EMBED, MAPS_LINK, PHONE, PHONE_HREF } from "./contact-info";
 
 export default function Contact() {
@@ -32,6 +33,7 @@ export default function Contact() {
           >
             {t("fallback.name")}
           </h2>
+          <Sprig className="mx-auto mt-6 w-16" />
           <a
             href={MAPS_LINK}
             target="_blank"
