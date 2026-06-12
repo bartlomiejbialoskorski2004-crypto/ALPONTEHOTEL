@@ -213,14 +213,20 @@ export default function RoomPanelClient({
   const jumpTo = (target: number) =>
     setIndex(([i]) => [target, target === i ? 0 : target > i ? 1 : -1]);
 
-  // Keep the active thumbnail centred in the strip.
+  // Keep the active thumbnail centred in the strip. Horizontal-only scroll
+  // (not scrollIntoView), so it can never move the page vertically — on
+  // mount, scrollIntoView used to ride the viewport down to the strips.
   useEffect(() => {
     const strip = stripRef.current;
     if (!strip) return;
     const active = strip.querySelector<HTMLElement>(
       `[data-thumb-index="${index}"]`,
     );
-    active?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    if (!active) return;
+    strip.scrollTo({
+      left: active.offsetLeft - (strip.clientWidth - active.clientWidth) / 2,
+      behavior: "smooth",
+    });
   }, [index]);
 
   // Lightbox: lock body scroll + Escape + arrow keys.
