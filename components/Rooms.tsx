@@ -25,7 +25,7 @@ export default function Rooms() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-[2] mb-8 text-center lg:mb-10"
+          className="mb-8 text-center lg:mb-10"
         >
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
             {t("nav.rooms")}
@@ -43,7 +43,7 @@ export default function Rooms() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-[2] mx-auto max-w-3xl text-center text-sm leading-relaxed text-ink/70"
+          className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-ink/70"
         >
           {t("rooms.intro")}
         </motion.p>

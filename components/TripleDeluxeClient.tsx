@@ -236,7 +236,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={containerVariants}
-          className="relative z-[2] order-3 flex flex-col bg-mist lg:order-none lg:col-start-1 lg:row-start-1"
+          className="order-3 flex flex-col bg-mist lg:order-none lg:col-start-1 lg:row-start-1"
         >
           <div className="flex flex-1 flex-col px-4 pb-6 pt-1 sm:px-8 sm:pb-8 lg:p-12">
             <motion.h2

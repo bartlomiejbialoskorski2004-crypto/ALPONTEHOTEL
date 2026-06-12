@@ -23,7 +23,7 @@ export default function Contact() {
         className="mx-auto max-w-7xl"
       >
         {/* Centred heading + contact line */}
-        <div className="relative z-[2] mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
             {t("contact.title")}
           </span>

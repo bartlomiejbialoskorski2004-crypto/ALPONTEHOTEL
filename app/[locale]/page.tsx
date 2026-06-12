@@ -13,7 +13,6 @@ import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 import RoomNav from "@/components/RoomNav";
 import RoomPanel from "@/components/RoomPanel";
-import VineOverlay from "@/components/VineOverlay";
 import { ROOM_DETAILS } from "@/components/roomData";
 
 export default async function HomePage({
@@ -40,8 +39,7 @@ export default async function HomePage({
   };
 
   return (
-    <main id="top" className="relative overflow-x-clip">
-      <VineOverlay />
+    <main id="top" className="overflow-x-clip">
       <RoomNav />
       <Hero />
       <Amenities />

@@ -130,7 +130,6 @@ export default function Reviews() {
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-        className="relative z-[2]"
       >
         {/* Heading */}
         <motion.div variants={fadeUp} className="px-6 text-center lg:px-10">
