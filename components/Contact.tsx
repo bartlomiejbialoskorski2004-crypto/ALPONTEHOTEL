@@ -13,17 +13,16 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-title"
-      className="bg-paper px-6 pt-24 pb-0 text-ink lg:px-10 lg:pt-32 lg:pb-0"
+      className="bg-paper pt-24 pb-0 text-ink lg:pt-32 lg:pb-0"
     >
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto max-w-7xl"
       >
         {/* Centred heading + contact line */}
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl px-6 text-center">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
             {t("contact.title")}
           </span>
@@ -60,8 +59,8 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map */}
-        <div className="relative mt-12 min-h-[24rem] overflow-hidden border border-mist lg:mt-16 lg:min-h-[34rem]">
+        {/* Map — full-bleed across the viewport */}
+        <div className="relative mt-12 min-h-[24rem] w-full overflow-hidden border-y border-mist lg:mt-16 lg:min-h-[34rem]">
           <iframe
             title="Al Ponte"
             src={MAPS_EMBED}

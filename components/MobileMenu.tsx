@@ -10,6 +10,7 @@ import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { NAV } from "./menu";
 import { BOOKING } from "./contact-info";
+import { useAnchor } from "./useAnchor";
 
 type Props = {
   open: boolean;
@@ -19,6 +20,7 @@ type Props = {
 
 export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
   const t = useTranslations("nav");
+  const anchor = useAnchor();
 
   useEffect(() => {
     if (!open) return;
@@ -64,7 +66,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
               return (
                 <a
                   key={item.key}
-                  href={item.href}
+                  href={anchor(item.href)}
                   onClick={onClose}
                   className={className}
                 >

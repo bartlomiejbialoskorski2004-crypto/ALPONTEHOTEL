@@ -17,6 +17,7 @@ import MenuToggle from "./MenuToggle";
 import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
 import { BOOKING } from "./contact-info";
+import { useAnchor } from "./useAnchor";
 
 // Hex equivalents of the CSS @theme tokens — motion can't interpolate var()
 // cleanly, so we feed it real colour values for the adaptive bar.
@@ -44,6 +45,7 @@ type Props = {
 
 export default function Header({ bookingUrl }: Props) {
   const t = useTranslations();
+  const anchor = useAnchor();
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
@@ -101,7 +103,7 @@ export default function Header({ bookingUrl }: Props) {
       return (
         <a
           key={item.key}
-          href={item.href}
+          href={anchor(item.href)}
           onMouseEnter={() => setOpenMenu(null)}
           className={className}
         >
@@ -298,7 +300,7 @@ export default function Header({ bookingUrl }: Props) {
                       return (
                         <a
                           key={sub}
-                          href="#rooms"
+                          href={anchor("#rooms")}
                           className="group flex flex-col px-8 py-12 first:pl-0"
                         >
                           {imgSrc && (

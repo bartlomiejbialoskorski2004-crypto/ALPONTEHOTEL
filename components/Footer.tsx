@@ -3,9 +3,10 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import FlipText from "./FlipText";
 import { NAV } from "./menu";
+import { useAnchor } from "./useAnchor";
 import {
   BOOKING,
   EMAIL,
@@ -23,8 +24,8 @@ type Props = {
 export default function Footer({ bookingUrl }: Props) {
   const t = useTranslations();
   const reduceMotion = useReducedMotion();
-  const pathname = usePathname();
-  const isHome = pathname === "/";
+  // Locale-aware homepage anchors (works from sub-pages in any language).
+  const anchor = useAnchor();
 
   // Scroll-driven parallax: the giant wordmark rises from below the bottom
   // edge as the footer passes through the viewport.
@@ -41,10 +42,6 @@ export default function Footer({ bookingUrl }: Props) {
     [0, 1],
     reduceMotion ? ["0%", "0%"] : ["80%", "0%"],
   );
-
-  // Same-page hashes smooth-scroll via Lenis on the homepage; from sub-pages
-  // they need a leading "/" so Next navigates home first.
-  const anchor = (hash: string) => (isHome ? hash : `/${hash}`);
 
   const name = t("fallback.name"); // "Al Ponte"
   const year = new Date().getFullYear();
