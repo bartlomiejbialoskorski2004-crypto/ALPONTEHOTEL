@@ -62,7 +62,7 @@
   },
   "rooms": {
     "title": "Pokoje",
-    "intro": "Nasz hotel oferuje pokoje i apartamenty o różnych metrażach i standardach. Witamy duże i małe rodziny, pary oraz osoby podróżujące służbowo. Wszystkie pokoje wyposażone są w SMART TV oraz bezpłatne Wi-Fi. Palenie jest zabronione — każdy pokój ma nowoczesny system przeciwpożarowy.",
+    "intro": "Nasz hotel oferuje pokoje i apartamenty o różnych metrażach i standardach, wiele z widokiem na jezioro i góry. Witamy duże i małe rodziny, pary oraz osoby podróżujące służbowo. Wszystkie pokoje wyposażone są w SMART TV oraz bezpłatne Wi-Fi. Palenie jest zabronione — każdy pokój ma nowoczesny system przeciwpożarowy.",
     "amenities": {
       "bath": "Prywatna łazienka",
       "kitchen": "Prywatna kuchnia",
@@ -211,6 +211,7 @@
   "amenities": {
     "eyebrow": "Udogodnienia",
     "title": "Udogodnienia i komfort hotelu",
+    "intro": "Położony nad Jeziorem Lugano, w lasach powyżej Cademario, Al Ponte to mały, rodzinny hotel, w którym dobrze czują się pary, rodziny oraz goście podróżujący ze swoim pupilem. Parking znajduje się tuż obok hotelu, a bilet Ticino Ticket — wliczony w pobyt — pozwala swobodnie poruszać się po całym kantonie.",
     "pool": {
       "title": "Basen",
       "desc": "Odśwież się w naszym odkrytym basenie z panoramą jeziora Lugano."

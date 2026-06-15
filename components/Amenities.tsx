@@ -57,6 +57,9 @@ export default function Amenities() {
         <h2 className="mt-5 max-w-2xl font-serif text-3xl leading-[1.05] lg:text-5xl">
           {t("title")}
         </h2>
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink/70 lg:text-base">
+          {t("intro")}
+        </p>
         <ul className="mt-14 grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map(({ key, Icon }, i) => (
             <motion.li

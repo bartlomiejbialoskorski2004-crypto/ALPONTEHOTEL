@@ -62,7 +62,7 @@
   },
   "rooms": {
     "title": "Rooms",
-    "intro": "Our hotel offers rooms and apartments of various sizes and standards. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted — every room is equipped with a modern fire & alarm system.",
+    "intro": "Our hotel offers rooms and apartments of various sizes and standards, many with views of the lake and mountains. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted — every room is equipped with a modern fire & alarm system.",
     "amenities": {
       "bath": "Private Bathroom",
       "kitchen": "Private Kitchen",
@@ -211,6 +211,7 @@
   "amenities": {
     "eyebrow": "Amenities",
     "title": "Hotel amenities & comforts",
+    "intro": "Set above Cademario in the woods overlooking Lake Lugano, Al Ponte is a small family-run house where couples, families and guests travelling with a pet all feel at ease. Parking sits right next to the hotel, and the Ticino Ticket — included with your stay — takes you across the canton with ease.",
     "pool": {
       "title": "Swimming Pool",
       "desc": "Cool off in our outdoor pool with panoramic views of Lake Lugano."

@@ -62,7 +62,7 @@
   },
   "rooms": {
     "title": "Camere",
-    "intro": "Il nostro hotel offre camere e appartamenti di varie dimensioni e categorie. Accogliamo famiglie grandi e piccole, coppie e chi viaggia per lavoro. Tutte le camere dispongono di SMART TV e Wi-Fi gratuito. È vietato fumare — ogni camera è dotata di un moderno sistema antincendio.",
+    "intro": "Il nostro hotel offre camere e appartamenti di varie dimensioni e categorie, molti con vista sul lago e sulle montagne. Accogliamo famiglie grandi e piccole, coppie e chi viaggia per lavoro. Tutte le camere dispongono di SMART TV e Wi-Fi gratuito. È vietato fumare — ogni camera è dotata di un moderno sistema antincendio.",
     "amenities": {
       "bath": "Bagno privato",
       "kitchen": "Cucina privata",
@@ -211,6 +211,7 @@
   "amenities": {
     "eyebrow": "Servizi",
     "title": "Servizi e comfort dell'hotel",
+    "intro": "Affacciato sul Lago di Lugano, tra i boschi sopra Cademario, Al Ponte è una piccola casa di famiglia dove si sentono a loro agio coppie, famiglie e chi viaggia con il proprio animale. Il parcheggio è proprio accanto all'hotel e il Ticino Ticket, incluso nel soggiorno, vi accompagna per tutto il Cantone senza pensieri.",
     "pool": {
       "title": "Piscina",
       "desc": "Rinfrescati nella nostra piscina all'aperto con vista panoramica sul Lago di Lugano."
