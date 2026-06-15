@@ -281,6 +281,7 @@
       "title": "Sommaire"
     },
     "backToTop": "Haut de page",
+    "download": "Télécharger le règlement (PDF)",
     "nav": {
       "hours": "Horaires",
       "safety": "Sécurité",
@@ -302,7 +303,7 @@
       "title": "Informations générales — horaires d'ouverture",
       "openYearRound": "L'hôtel est ouvert toute l'année.",
       "checkInOut": "L'enregistrement s'effectue à partir de 15h30 et le départ avant 10h00.",
-      "receptionHours": "La réception est ouverte de 7h30 à 11h00 et de 15h30 à 19h30.",
+      "receptionHours": "La réception est ouverte de 7h30 à 11h00, et les vendredis et samedis également de 15h30 à 19h30.",
       "phone": "Pendant les heures d'ouverture de la réception, vous pouvez nous joindre par téléphone au +41 91 605 24 92.",
       "emailOutsideHours": "En dehors des heures d'ouverture de la réception, vous pouvez nous contacter par e-mail : gatti@al-ponte.ch ou via le chat Booking.com.",
       "checkInDetails": "Enregistrement (check-in) : possible de 15h30 à minuit, mais après 19h30 la réception est fermée et seul l'enregistrement en libre-service (self check-in) est possible.",

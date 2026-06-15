@@ -1,6 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import PageToc, { BackToTop, type TocSection } from "./PageToc";
 import ParallaxImage from "./ParallaxImage";
+import DownloadLink from "./DownloadLink";
+
+// Locale-shared, multilingual rules PDF served from /public.
+const RULES_PDF = "/regulamin-al-ponte-albergo.pdf";
 
 const SERVICE_KEYS = [
   "1",
@@ -34,7 +38,7 @@ const HOURS_KEYS = [
 const FACTS = [
   { key: "checkIn", value: "15:30" },
   { key: "checkOut", value: "10:00" },
-  { key: "reception", value: "7:30–11:00 · 15:30–19:30" },
+  { key: "reception", value: "7:30–11:00" },
   { key: "phone", value: "+41 91 605 24 92" },
 ] as const;
 
@@ -88,7 +92,7 @@ export default async function Informations() {
     <article className="bg-paper text-ink">
       {/* Hero band — hotel facade under a forest wash. */}
       <section className="relative flex min-h-[58svh] w-full items-end overflow-hidden bg-forest text-paper">
-        <ParallaxImage src="/gallery/5.jpg" priority />
+        <ParallaxImage src="/hero-2.jpg" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/55 to-forest/90" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-40 lg:px-10 lg:pb-16 lg:pt-48">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75">
@@ -115,6 +119,10 @@ export default async function Informations() {
               </div>
             ))}
           </dl>
+
+          <div className="mt-10">
+            <DownloadLink href={RULES_PDF} label={t("download")} variant="light" />
+          </div>
         </div>
       </section>
 
@@ -225,6 +233,9 @@ export default async function Informations() {
             <p className="font-serif text-xl italic leading-relaxed text-ink/80 lg:text-2xl">
               {t("signoff")}
             </p>
+            <div className="mt-10">
+              <DownloadLink href={RULES_PDF} label={t("download")} variant="dark" />
+            </div>
             <BackToTop label={t("backToTop")} />
           </div>
         </div>
