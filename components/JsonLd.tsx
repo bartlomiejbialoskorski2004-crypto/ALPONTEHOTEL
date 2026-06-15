@@ -12,7 +12,14 @@ function JsonLd({ data }: { data: object }) {
 }
 
 // Site-wide Hotel + WebSite graph. Render once, in the locale layout.
-export function HotelJsonLd({ locale }: { locale: string }) {
+// `description` is the localized home description (schema description field).
+export function HotelJsonLd({
+  locale,
+  description,
+}: {
+  locale: string;
+  description?: string;
+}) {
   const hotelId = `${siteUrl}/#hotel`;
   const websiteId = `${siteUrl}/#website`;
 
@@ -24,6 +31,7 @@ export function HotelJsonLd({ locale }: { locale: string }) {
         "@id": hotelId,
         name: HOTEL.name,
         legalName: HOTEL.legalName,
+        ...(description ? { description } : {}),
         url: localeUrl(locale),
         image: [`${siteUrl}/opengraph-image`],
         telephone: HOTEL.telephone,

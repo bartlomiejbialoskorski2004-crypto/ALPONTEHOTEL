@@ -101,9 +101,10 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
-  const [bookingUrl, messages] = await Promise.all([
+  const [bookingUrl, messages, t] = await Promise.all([
     fetchBookingUrl(),
     getMessages(),
+    getTranslations({ locale, namespace: "seo" }),
   ]);
 
   return (
@@ -112,7 +113,7 @@ export default async function LocaleLayout({
       className={`${montserrat.variable} ${libreBaskerville.variable}`}
     >
       <body>
-        <HotelJsonLd locale={locale} />
+        <HotelJsonLd locale={locale} description={t("home.description")} />
         <NextIntlClientProvider messages={messages} locale={locale as Locale}>
           <SmoothScroll />
           <Header bookingUrl={bookingUrl} />
