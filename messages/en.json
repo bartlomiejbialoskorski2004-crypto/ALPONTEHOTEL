@@ -48,7 +48,9 @@
   },
   "hero": {
     "ctaContact": "Get in touch",
-    "scrollHint": "Scroll"
+    "scrollHint": "Scroll",
+    "seoH1": "Hotel Al Ponte Cademario — rooms and apartments with Lake Lugano views",
+    "imageAlt": "Hotel Al Ponte in Cademario with panoramic views over Lake Lugano"
   },
   "contact": {
     "title": "Contact",
@@ -208,6 +210,7 @@
   },
   "amenities": {
     "eyebrow": "Amenities",
+    "title": "Hotel amenities & comforts",
     "pool": {
       "title": "Swimming Pool",
       "desc": "Cool off in our outdoor pool with panoramic views of Lake Lugano."
@@ -242,6 +245,8 @@
     }
   },
   "gallery": {
+    "eyebrow": "Gallery",
+    "title": "The hotel, the views and the surroundings",
     "items": {
       "1": {
         "title": "Bell Tower at Dusk",
@@ -364,6 +369,8 @@
     "signoff": "Warm regards — the Al Ponte Albergo Hotel team."
   },
   "attractions": {
+    "teaserCta": "Discover Ticino's attractions",
+    "lakeAlt": "Panoramic view over Lake Lugano from the Ticino mountains",
     "seoTitle": "Things to do in Cademario & Ticino",
     "seoDescription": "Discover the best attractions around Cademario and Lugano. Hiking trails, charming villages and panoramic peaks, all free with your Ticino Ticket!",
     "eyebrow": "Discover Ticino",

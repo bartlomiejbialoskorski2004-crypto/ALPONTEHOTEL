@@ -48,7 +48,9 @@
   },
   "hero": {
     "ctaContact": "Contattaci",
-    "scrollHint": "Scorri"
+    "scrollHint": "Scorri",
+    "seoH1": "Hotel Al Ponte Cademario — camere e appartamenti con vista sul Lago di Lugano",
+    "imageAlt": "Hotel Al Ponte a Cademario con vista panoramica sul Lago di Lugano"
   },
   "contact": {
     "title": "Contatti",
@@ -208,6 +210,7 @@
   },
   "amenities": {
     "eyebrow": "Servizi",
+    "title": "Servizi e comfort dell'hotel",
     "pool": {
       "title": "Piscina",
       "desc": "Rinfrescati nella nostra piscina all'aperto con vista panoramica sul Lago di Lugano."
@@ -242,6 +245,8 @@
     }
   },
   "gallery": {
+    "eyebrow": "Galleria",
+    "title": "L'hotel, le viste e i dintorni",
     "items": {
       "1": {
         "title": "Campanile al crepuscolo",
@@ -364,6 +369,8 @@
     "signoff": "Cordiali saluti — il team dell'Hotel Al Ponte Albergo."
   },
   "attractions": {
+    "teaserCta": "Scopri le attrazioni del Ticino",
+    "lakeAlt": "Vista panoramica sul Lago di Lugano dalle montagne del Ticino",
     "seoTitle": "Cosa vedere a Cademario e in Ticino",
     "seoDescription": "Scopri le migliori attrazioni di Cademario e dintorni. Escursioni, borghi pittoreschi e vette panoramiche accessibili gratuitamente con il Ticino Ticket!",
     "eyebrow": "Scoprite il Ticino",

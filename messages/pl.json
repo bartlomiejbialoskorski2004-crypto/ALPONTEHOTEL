@@ -48,7 +48,9 @@
   },
   "hero": {
     "ctaContact": "Skontaktuj się",
-    "scrollHint": "Przewiń"
+    "scrollHint": "Przewiń",
+    "seoH1": "Hotel Al Ponte Cademario — pokoje i apartamenty z widokiem na Jezioro Lugano",
+    "imageAlt": "Hotel Al Ponte w Cademario z panoramicznym widokiem na Jezioro Lugano"
   },
   "contact": {
     "title": "Kontakt",
@@ -208,6 +210,7 @@
   },
   "amenities": {
     "eyebrow": "Udogodnienia",
+    "title": "Udogodnienia i komfort hotelu",
     "pool": {
       "title": "Basen",
       "desc": "Odśwież się w naszym odkrytym basenie z panoramą jeziora Lugano."
@@ -242,6 +245,8 @@
     }
   },
   "gallery": {
+    "eyebrow": "Galeria",
+    "title": "Hotel, widoki i okolica",
     "items": {
       "1": {
         "title": "Dzwonnica o zmierzchu",
@@ -364,6 +369,8 @@
     "signoff": "Serdecznie pozdrawiamy — Zespół Hotelu Al Ponte Albergo."
   },
   "attractions": {
+    "teaserCta": "Odkryj atrakcje Ticino",
+    "lakeAlt": "Panoramiczny widok na Jezioro Lugano z gór Ticino",
     "seoTitle": "Atrakcje w Cademario i Ticino",
     "seoDescription": "Odkryj najlepsze atrakcje okolic Cademario i Lugano. Poznaj szlaki piesze, urokliwe wioski i górskie szczyty dostępne bezpłatnie z Ticino Ticket!",
     "eyebrow": "Odkryj Ticino",

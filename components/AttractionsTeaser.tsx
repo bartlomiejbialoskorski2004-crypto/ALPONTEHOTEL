@@ -16,7 +16,10 @@ export default function AttractionsTeaser() {
       aria-label={t("nav.attractions")}
       className="relative flex min-h-[52svh] w-full items-center overflow-hidden bg-forest text-paper"
     >
-      <ParallaxImage src="/mega/Lakelugano.jpg" />
+      <ParallaxImage
+        src="/mega/Lakelugano.jpg"
+        alt={t("attractions.lakeAlt")}
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/65 to-forest/85" />
 
       <motion.div
@@ -39,7 +42,7 @@ export default function AttractionsTeaser() {
           href="/attractions"
           className="group mt-10 inline-flex items-center gap-2 border border-paper/40 px-7 py-3 text-[11px] font-medium uppercase tracking-[0.22em] text-paper transition-colors hover:bg-paper hover:text-forest"
         >
-          <FlipText>{t("attractions.eyebrow")}</FlipText>
+          <FlipText>{t("attractions.teaserCta")}</FlipText>
           <span
             aria-hidden
             className="transition-transform duration-300 group-hover:translate-x-1"

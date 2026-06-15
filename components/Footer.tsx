@@ -188,10 +188,10 @@ export default function Footer({ bookingUrl }: Props) {
                 href={BOOKING}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Booking.com"
                 className="font-serif text-2xl leading-none text-paper/65 transition-colors hover:text-paper"
               >
-                B.
+                <span aria-hidden>B.</span>
+                <span className="sr-only">Booking.com</span>
               </a>
             </div>
           </div>

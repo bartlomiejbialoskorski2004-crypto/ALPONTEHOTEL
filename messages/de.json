@@ -48,7 +48,9 @@
   },
   "hero": {
     "ctaContact": "Kontaktieren Sie uns",
-    "scrollHint": "Scrollen"
+    "scrollHint": "Scrollen",
+    "seoH1": "Hotel Al Ponte Cademario — Zimmer und Apartments mit Blick auf den Luganersee",
+    "imageAlt": "Hotel Al Ponte in Cademario mit Panoramablick auf den Luganersee"
   },
   "contact": {
     "title": "Kontakt",
@@ -208,6 +210,7 @@
   },
   "amenities": {
     "eyebrow": "Services",
+    "title": "Ausstattung & Komfort des Hotels",
     "pool": {
       "title": "Schwimmbad",
       "desc": "Erfrischen Sie sich in unserem Außenpool mit Panoramablick auf den Luganersee."
@@ -242,6 +245,8 @@
     }
   },
   "gallery": {
+    "eyebrow": "Galerie",
+    "title": "Das Hotel, die Ausblicke und die Umgebung",
     "items": {
       "1": {
         "title": "Glockenturm in der Dämmerung",
@@ -364,6 +369,8 @@
     "signoff": "Mit freundlichen Grüßen — das Team des Hotels Al Ponte Albergo."
   },
   "attractions": {
+    "teaserCta": "Entdecken Sie die Ausflugsziele im Tessin",
+    "lakeAlt": "Panoramablick auf den Luganersee von den Tessiner Bergen",
     "seoTitle": "Ausflugsziele in Cademario & Tessin",
     "seoDescription": "Entdecken Sie die besten Attraktionen in Cademario und Lugano. Wandern, Kultur und Bergabenteuer – mit dem Ticino Ticket fahren Sie kostenlos!",
     "eyebrow": "Entdecken Sie das Tessin",

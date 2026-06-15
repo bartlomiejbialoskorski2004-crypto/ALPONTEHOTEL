@@ -82,6 +82,7 @@ const block = "mt-20 scroll-mt-24 border-t border-mist pt-16 lg:mt-28 lg:scroll-
 
 export default async function Informations() {
   const t = await getTranslations("info");
+  const tHero = await getTranslations("hero");
 
   const tocSections: TocSection[] = NAV_KEYS.map((id, i) => ({
     id,
@@ -93,7 +94,7 @@ export default async function Informations() {
     <article className="bg-paper text-ink">
       {/* Hero band — hotel facade under a forest wash. */}
       <section className="relative flex min-h-[58svh] w-full items-end overflow-hidden bg-forest text-paper">
-        <ParallaxImage src="/hero-2.jpg" priority />
+        <ParallaxImage src="/hero-2.jpg" alt={tHero("imageAlt")} priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/55 to-forest/90" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-44 lg:px-10 lg:pb-16 lg:pt-48">
           <span className="block pr-12 text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75 lg:pr-0">

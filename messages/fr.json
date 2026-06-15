@@ -48,7 +48,9 @@
   },
   "hero": {
     "ctaContact": "Nous contacter",
-    "scrollHint": "Faire défiler"
+    "scrollHint": "Faire défiler",
+    "seoH1": "Hotel Al Ponte Cademario — chambres et appartements avec vue sur le lac de Lugano",
+    "imageAlt": "Hôtel Al Ponte à Cademario avec vue panoramique sur le lac de Lugano"
   },
   "contact": {
     "title": "Contact",
@@ -208,6 +210,7 @@
   },
   "amenities": {
     "eyebrow": "Services",
+    "title": "Équipements et conforts de l'hôtel",
     "pool": {
       "title": "Piscine",
       "desc": "Rafraîchissez-vous dans notre piscine extérieure avec vue panoramique sur le Lac de Lugano."
@@ -242,6 +245,8 @@
     }
   },
   "gallery": {
+    "eyebrow": "Galerie",
+    "title": "L'hôtel, les vues et les environs",
     "items": {
       "1": {
         "title": "Clocher au crépuscule",
@@ -364,6 +369,8 @@
     "signoff": "Cordialement — l'équipe de l'hôtel Al Ponte Albergo."
   },
   "attractions": {
+    "teaserCta": "Découvrez les attractions du Tessin",
+    "lakeAlt": "Vue panoramique sur le lac de Lugano depuis les montagnes du Tessin",
     "seoTitle": "Attractions à Cademario et au Tessin",
     "seoDescription": "Découvrez les incontournables de Cademario et de la région de Lugano. Randonnées, villages de charme et sommets accessibles gratuitement avec le Ticino Ticket !",
     "eyebrow": "Découvrez le Tessin",

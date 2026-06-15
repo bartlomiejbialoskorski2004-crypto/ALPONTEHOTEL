@@ -51,7 +51,13 @@ export default function Amenities() {
         className="absolute right-6 top-8 w-10 opacity-80 lg:right-10 lg:w-14"
       />
       <div className="mx-auto max-w-7xl">
-        <ul className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+        <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-ink/50">
+          {t("eyebrow")}
+        </span>
+        <h2 className="mt-5 max-w-2xl font-serif text-3xl leading-[1.05] lg:text-5xl">
+          {t("title")}
+        </h2>
+        <ul className="mt-14 grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {ITEMS.map(({ key, Icon }, i) => (
             <motion.li
               key={key}

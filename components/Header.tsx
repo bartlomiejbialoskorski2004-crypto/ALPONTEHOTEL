@@ -305,16 +305,12 @@ export default function Header({ bookingUrl }: Props) {
                         >
                           {imgSrc && (
                             <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden bg-ink/[0.06]">
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
+                              <Image
                                 src={imgSrc}
-                                alt=""
-                                loading="lazy"
-                                decoding="async"
-                                onError={(e) => {
-                                  e.currentTarget.style.display = "none";
-                                }}
-                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                                alt={t(`mega.rooms.${sub}.title`)}
+                                fill
+                                sizes="(max-width: 1024px) 0px, 22vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                               />
                             </div>
                           )}

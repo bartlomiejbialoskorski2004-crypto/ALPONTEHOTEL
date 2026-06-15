@@ -121,6 +121,8 @@ export default function RoomPanelClient({
   const [lightbox, setLightbox] = useState(false);
   const stripRef = useRef<HTMLDivElement>(null);
   const titleId = `${id}-title`;
+  const roomName = t(`rooms.items.${ns}.name`);
+  const photoAlt = (n: number) => (n > 1 ? `${roomName} (${n})` : roomName);
 
   // Magnetic Book Now.
   const reduceMotion = useReducedMotion();
@@ -409,7 +411,7 @@ export default function RoomPanelClient({
                 <motion.img
                   key={index}
                   src={photos[index]}
-                  alt=""
+                  alt={photoAlt(index + 1)}
                   custom={direction}
                   variants={slideVariants}
                   initial="enter"
@@ -539,7 +541,7 @@ export default function RoomPanelClient({
               <motion.img
                 key={index}
                 src={photos[index]}
-                alt=""
+                alt={photoAlt(index + 1)}
                 custom={direction}
                 initial={{ opacity: 0, x: direction > 0 ? 40 : -40 }}
                 animate={{ opacity: 1, x: 0 }}

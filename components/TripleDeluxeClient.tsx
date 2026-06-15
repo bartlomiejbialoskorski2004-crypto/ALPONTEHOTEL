@@ -87,6 +87,8 @@ export default function TripleDeluxeClient({ photos }: Props) {
   const t = useTranslations("triple");
   const tNav = useTranslations("nav");
   const tRooms = useTranslations("mega.rooms");
+  const photoAlt = (n: number) =>
+    n > 1 ? `${t("title")} (${n})` : t("title");
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
   const [lightbox, setLightbox] = useState(false);
   const stripRef = useRef<HTMLDivElement>(null);
@@ -379,7 +381,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
                 <motion.img
                   key={index}
                   src={photos[index]}
-                  alt=""
+                  alt={photoAlt(index + 1)}
                   custom={direction}
                   variants={slideVariants}
                   initial="enter"
@@ -510,7 +512,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
               <motion.img
                 key={index}
                 src={photos[index]}
-                alt=""
+                alt={photoAlt(index + 1)}
                 custom={direction}
                 initial={{ opacity: 0, x: direction > 0 ? 40 : -40 }}
                 animate={{ opacity: 1, x: 0 }}

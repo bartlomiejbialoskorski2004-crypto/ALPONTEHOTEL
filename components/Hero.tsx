@@ -49,6 +49,10 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-[100svh] w-full overflow-hidden"
     >
+      {/* Single semantic page heading — visually hidden so the minimalist hero
+          stays image-only, but present for SEO and screen readers. */}
+      <h1 className="sr-only">{t("seoH1")}</h1>
+
       <motion.div
         className="absolute -inset-y-[18%] inset-x-0"
         aria-hidden
@@ -64,7 +68,7 @@ export default function Hero() {
           >
             <Image
               src={src}
-              alt=""
+              alt={i === 0 ? t("imageAlt") : ""}
               fill
               priority={i === 0}
               sizes="100vw"

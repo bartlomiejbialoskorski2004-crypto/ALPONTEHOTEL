@@ -63,6 +63,14 @@ export default async function Gallery() {
       className="bg-paper px-6 py-24 text-ink lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
+        <div className="mb-12 lg:mb-16">
+          <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-ink/50">
+            {t("eyebrow")}
+          </span>
+          <h2 className="mt-5 max-w-2xl font-serif text-3xl leading-[1.05] lg:text-5xl">
+            {t("title")}
+          </h2>
+        </div>
         {/* Mobile: accessible 2-col grid + fullscreen viewer */}
         <div className="lg:hidden">
           <MobileGallery items={items} />
