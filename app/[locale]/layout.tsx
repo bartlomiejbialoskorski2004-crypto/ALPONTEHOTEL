@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
 import { Montserrat, Libre_Baskerville } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { setRequestLocale, getMessages } from "next-intl/server";
+import {
+  setRequestLocale,
+  getMessages,
+  getTranslations,
+} from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { client } from "@/sanity/lib/client";
 import { hotelBookingUrlQuery } from "@/sanity/queries";
+import {
+  localeUrl,
+  buildLanguages,
+  ogLocale,
+  ogAlternateLocales,
+  siteUrl,
+} from "@/lib/site";
+import { HotelJsonLd } from "@/components/JsonLd";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "http://localhost:3000";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -39,33 +47,31 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const localePath = locale === routing.defaultLocale ? "" : `/${locale}`;
-  const canonical = `${siteUrl}${localePath || "/"}`;
-
-  const languages = Object.fromEntries(
-    routing.locales.map((l) => [
-      l,
-      `${siteUrl}${l === routing.defaultLocale ? "" : `/${l}`}`,
-    ]),
-  );
+  const t = await getTranslations({ locale, namespace: "seo" });
+  const canonical = localeUrl(locale);
+  const title = t("home.title");
+  const description = t("home.description");
 
   return {
-    metadataBase: new URL(siteUrl),
-    title: "Al Ponte — Boutique Hotel, Lago di Lugano",
-    description:
-      "Al Ponte is a boutique hotel on the shores of Lake Lugano, in the Italian-speaking heart of Switzerland.",
+    title: { default: title, template: t("titleTemplate") },
+    description,
     alternates: {
       canonical,
-      languages: { ...languages, "x-default": siteUrl },
+      languages: { ...buildLanguages(), "x-default": `${siteUrl}/` },
     },
     openGraph: {
       type: "website",
       url: canonical,
-      siteName: "Al Ponte",
-      locale,
-      title: "Al Ponte — Boutique Hotel, Lago di Lugano",
-      description:
-        "Al Ponte is a boutique hotel on the shores of Lake Lugano, in the Italian-speaking heart of Switzerland.",
+      siteName: t("siteName"),
+      locale: ogLocale(locale),
+      alternateLocale: ogAlternateLocales(locale),
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }
@@ -106,6 +112,7 @@ export default async function LocaleLayout({
       className={`${montserrat.variable} ${libreBaskerville.variable}`}
     >
       <body>
+        <HotelJsonLd locale={locale} />
         <NextIntlClientProvider messages={messages} locale={locale as Locale}>
           <SmoothScroll />
           <Header bookingUrl={bookingUrl} />

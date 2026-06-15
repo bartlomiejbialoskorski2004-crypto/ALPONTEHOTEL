@@ -364,7 +364,7 @@
     "signoff": "Warm regards — the Al Ponte Albergo Hotel team."
   },
   "attractions": {
-    "seoTitle": "Things to do in Cademario & Ticino | Al Ponte Guest Guide",
+    "seoTitle": "Things to do in Cademario & Ticino",
     "seoDescription": "Discover the best attractions around Cademario and Lugano. Hiking trails, charming villages and panoramic peaks, all free with your Ticino Ticket!",
     "eyebrow": "Discover Ticino",
     "title": "Your Perfect Holiday Starts Here",
@@ -612,6 +612,19 @@
           }
         ]
       }
+    }
+  },
+  "seo": {
+    "siteName": "Al Ponte",
+    "titleTemplate": "%s · Al Ponte",
+    "ogAlt": "Al Ponte — boutique hotel above Lake Lugano, Ticino",
+    "home": {
+      "title": "Al Ponte — Boutique Hotel on Lake Lugano, Ticino",
+      "description": "Boutique hotel in Cademario, above Lugano. Panoramic lake views, indoor pool, free Wi-Fi and a free Ticino Ticket included. Book your stay in Ticino, Switzerland."
+    },
+    "informations": {
+      "title": "Information & house rules",
+      "description": "Opening hours, check-in and check-out, swimming pool, parking, tourist tax and house rules for Al Ponte Albergo in Cademario, Ticino."
     }
   },
   "fallback": {

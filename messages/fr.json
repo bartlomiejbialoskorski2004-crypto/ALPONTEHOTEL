@@ -364,7 +364,7 @@
     "signoff": "Cordialement — l'équipe de l'hôtel Al Ponte Albergo."
   },
   "attractions": {
-    "seoTitle": "Attractions à Cademario et au Tessin | Guide de séjour",
+    "seoTitle": "Attractions à Cademario et au Tessin",
     "seoDescription": "Découvrez les incontournables de Cademario et de la région de Lugano. Randonnées, villages de charme et sommets accessibles gratuitement avec le Ticino Ticket !",
     "eyebrow": "Découvrez le Tessin",
     "title": "Vos vacances idéales commencent ici",
@@ -612,6 +612,19 @@
           }
         ]
       }
+    }
+  },
+  "seo": {
+    "siteName": "Al Ponte",
+    "titleTemplate": "%s · Al Ponte",
+    "ogAlt": "Al Ponte — hôtel boutique au-dessus du lac de Lugano, Tessin",
+    "home": {
+      "title": "Al Ponte — Hôtel Boutique au Lac de Lugano, Tessin",
+      "description": "Hôtel boutique à Cademario, au-dessus de Lugano. Vue panoramique sur le lac, piscine couverte, Wi-Fi gratuit et Ticino Ticket inclus. Réservez votre séjour au Tessin, en Suisse."
+    },
+    "informations": {
+      "title": "Informations et règlement",
+      "description": "Horaires, arrivée et départ, piscine, parking, taxe de séjour et règlement de l'hôtel Al Ponte Albergo à Cademario, au Tessin."
     }
   },
   "fallback": {
