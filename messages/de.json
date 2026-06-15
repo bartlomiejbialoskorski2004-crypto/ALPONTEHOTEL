@@ -297,7 +297,8 @@
       "checkIn": "Check-in",
       "checkOut": "Check-out",
       "reception": "Rezeption",
-      "phone": "Telefon"
+      "phone": "Telefon",
+      "receptionNote": "Auch Fr & Sa 15:30–19:30"
     },
     "hours": {
       "title": "Grundlegende Informationen — Öffnungszeiten",
@@ -307,6 +308,7 @@
       "phone": "Während der Öffnungszeiten der Rezeption ist eine telefonische Kontaktaufnahme unter der Nummer +41 91 605 24 92 möglich.",
       "emailOutsideHours": "Außerhalb der Öffnungszeiten der Rezeption ist eine Kontaktaufnahme per E-Mail unter gatti@al-ponte.ch oder über den Chat von Booking.com möglich.",
       "checkInDetails": "Check-in: möglich von 15:30 bis 24:00 Uhr; nach 19:30 Uhr ist die Rezeption geschlossen und es ist nur ein Selbst-Check-in möglich.",
+      "checkInBox": "Hinweis: Sollten wir Sie nicht persönlich empfangen können, hinterlegen wir Ihre Schlüssel in einem abschließbaren Safe (BOX) und senden Ihnen den Code für den Safe zu.",
       "checkOutDetails": "Check-out: 7:30 — 10:00 Uhr.",
       "breakfast": "Frühstück (im Frühstücksraum): von 8:00 bis 10:00 Uhr.",
       "pool": "Der Pool ist von 8:00 bis 19:30 Uhr geöffnet.",

@@ -28,6 +28,7 @@ const HOURS_KEYS = [
   "phone",
   "emailOutsideHours",
   "checkInDetails",
+  "checkInBox",
   "checkOutDetails",
   "breakfast",
   "pool",
@@ -94,11 +95,11 @@ export default async function Informations() {
       <section className="relative flex min-h-[58svh] w-full items-end overflow-hidden bg-forest text-paper">
         <ParallaxImage src="/hero-2.jpg" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/55 to-forest/90" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-40 lg:px-10 lg:pb-16 lg:pt-48">
-          <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75">
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-44 lg:px-10 lg:pb-16 lg:pt-48">
+          <span className="block pr-12 text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75 lg:pr-0">
             {t("eyebrow")}
           </span>
-          <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-[1.05] lg:text-6xl">
+          <h1 className="mt-6 max-w-3xl text-balance font-serif text-3xl leading-[1.08] sm:text-4xl sm:leading-[1.05] lg:text-6xl">
             {t("title")}
           </h1>
           <div className="mt-10 h-px w-16 bg-paper/30" />
@@ -107,15 +108,20 @@ export default async function Informations() {
           </p>
 
           {/* Quick-reference facts. */}
-          <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-paper/20 pt-8 sm:grid-cols-4">
+          <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-paper/20 pt-8 sm:gap-x-8 sm:grid-cols-4">
             {FACTS.map((f) => (
               <div key={f.key}>
-                <dt className="text-[10px] font-medium uppercase tracking-[0.2em] text-paper/60">
+                <dt className="text-[10px] font-medium uppercase leading-snug tracking-[0.2em] text-paper/60">
                   {t(`facts.${f.key}`)}
                 </dt>
                 <dd className="mt-2 font-serif text-base leading-tight tabular-nums lg:text-lg">
                   {f.value}
                 </dd>
+                {f.key === "reception" && (
+                  <dd className="mt-1 text-[10px] leading-snug tracking-wide text-paper/55">
+                    {t("facts.receptionNote")}
+                  </dd>
+                )}
               </div>
             ))}
           </dl>
