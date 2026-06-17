@@ -8,6 +8,8 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 // - Google Maps embed (iframe) in Contact.tsx -> frame-src google
 // - Sanity CDN (cdn.sanity.io) + YouTube thumbnails (i.ytimg.com) -> img-src
 // - Sanity API (when CMS is connected) -> connect-src
+// - Vercel Speed Insights: script from va.vercel-scripts.com, beacons to
+//   vitals.vercel-insights.com -> script-src + connect-src
 // next/font self-hosts the fonts under /_next, so font-src stays 'self'.
 //
 // TODO(security): script-src/style-src currently allow 'unsafe-inline' because
@@ -18,12 +20,12 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 // Content-Security-Policy-Report-Only to Content-Security-Policy to enforce.
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://cdn.sanity.io https://i.ytimg.com",
   "font-src 'self'",
   "frame-src https://maps.google.com https://www.google.com",
-  "connect-src 'self' https://cdn.sanity.io",
+  "connect-src 'self' https://cdn.sanity.io https://vitals.vercel-insights.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
