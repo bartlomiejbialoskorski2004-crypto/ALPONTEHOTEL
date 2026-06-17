@@ -15,9 +15,9 @@ import Image from "next/image";
 // `position` is the mobile crop focus (desktop always centres); some shots read
 // better framed from the right on a narrow viewport.
 const SLIDES = [
-  { src: "/hero-1.png", position: "object-right" },
-  { src: "/hero-2.png", position: "object-center" },
-  { src: "/hero-3.png", position: "object-right" },
+  { src: "/hero1.jpg", position: "object-right" },
+  { src: "/Hero2.jpg", position: "object-center" },
+  { src: "/hero3.jpg", position: "object-right" },
 ];
 const SLIDE_INTERVAL = 6000;
 
