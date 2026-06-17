@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -52,6 +52,19 @@ export default function Header({ bookingUrl }: Props) {
   const [hovered, setHovered] = useState(false);
   const [openMenu, setOpenMenu] = useState<MegaGroup | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Hover only applies to devices with a real pointer. On touch, a tap fires
+  // mouseenter without a matching mouseleave, which would latch `hovered` true
+  // and keep the bar from retracting when scrolling back to the top. Start
+  // false (SSR-safe) and enable after a client-side pointer-capability check.
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setCanHover(mq.matches);
+    const onChange = () => setCanHover(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 24);
@@ -145,8 +158,11 @@ export default function Header({ bookingUrl }: Props) {
         initial={{ y: "-100%" }}
         animate={{ y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-        onMouseEnter={() => setHovered(true)}
+        onMouseEnter={() => {
+          if (canHover) setHovered(true);
+        }}
         onMouseLeave={() => {
+          if (!canHover) return;
           setHovered(false);
           setOpenMenu(null);
         }}
