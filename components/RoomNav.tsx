@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { getLenis } from "./lenisStore";
+import { getHeaderHidden, subscribeHeaderHidden } from "./headerStore";
 import { ROOM_PANELS } from "./roomPanels";
 import FlipOnChange from "./FlipOnChange";
 
@@ -31,6 +32,24 @@ export default function RoomNav() {
   const reduceMotion = useReducedMotion();
   const [visible, setVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  // Follow the main header: when it slides away on scroll-down, this bar rides
+  // up by the header height so it docks at the top instead of floating below a
+  // gap; it drops back under the header when the header returns.
+  const [headerHidden, setHeaderHidden] = useState(false);
+  const [headerH, setHeaderH] = useState(96);
+
+  useEffect(() => {
+    setHeaderHidden(getHeaderHidden());
+    return subscribeHeaderHidden(setHeaderHidden);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const apply = () => setHeaderH(mq.matches ? 96 : 80);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
 
   useEffect(() => {
     const compute = () => {
@@ -88,6 +107,15 @@ export default function RoomNav() {
   );
 
   return (
+    // Outer wrapper owns the header-follow lift (in px). The inner nav keeps its
+    // own panel show/hide animation (in %) — separating units avoids a px/%
+    // clash on the same axis of one element.
+    <motion.div
+      initial={false}
+      animate={{ y: headerHidden ? -headerH : 0 }}
+      transition={{ duration: reduceMotion ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] }}
+      className="pointer-events-none fixed inset-x-0 top-0 z-30"
+    >
     <motion.nav
       aria-label={t("nav.rooms")}
       initial={false}
@@ -98,7 +126,7 @@ export default function RoomNav() {
       }
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       style={{ pointerEvents: visible ? "auto" : "none" }}
-      className="fixed inset-x-0 top-20 z-30 border-b border-mist bg-paper/90 backdrop-blur lg:top-24"
+      className="relative mt-20 border-b border-mist bg-paper/90 backdrop-blur lg:mt-24"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2.5 lg:px-10">
         <button
@@ -146,5 +174,6 @@ export default function RoomNav() {
         </div>
       </div>
     </motion.nav>
+    </motion.div>
   );
 }

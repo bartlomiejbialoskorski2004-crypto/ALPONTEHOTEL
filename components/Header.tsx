@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
+  useReducedMotion,
   useScroll,
 } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -18,6 +19,7 @@ import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
 import { BOOKING } from "./contact-info";
 import { useAnchor } from "./useAnchor";
+import { setHeaderHidden } from "./headerStore";
 
 // Hex equivalents of the CSS @theme tokens — motion can't interpolate var()
 // cleanly, so we feed it real colour values for the adaptive bar.
@@ -57,6 +59,13 @@ export default function Header({ bookingUrl }: Props) {
   // and keep the bar from retracting when scrolling back to the top. Start
   // false (SSR-safe) and enable after a client-side pointer-capability check.
   const [canHover, setCanHover] = useState(false);
+  // Scroll-direction-aware hide: once past the room-categories boundary, the
+  // whole header slides up on scroll-down and back on scroll-up. `mounted`
+  // gates the entrance animation so the hide/show transition doesn't fight it.
+  const [hidden, setHidden] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const lastY = useRef(0);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -66,11 +75,49 @@ export default function Header({ bookingUrl }: Props) {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
+  useEffect(() => setMounted(true), []);
+
+  // Mega/mobile menu must never stay behind a hidden header.
+  useEffect(() => {
+    if (openMenu !== null || mobileOpen) setHidden(false);
+  }, [openMenu, mobileOpen]);
+
+  // Publish hidden state so sibling navs (RoomNav) can stay docked to the top.
+  useEffect(() => {
+    setHeaderHidden(hidden);
+  }, [hidden]);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
+    const vh = typeof window !== "undefined" ? window.innerHeight : 800;
     setScrolled(latest > 24);
-    const threshold =
-      typeof window !== "undefined" ? window.innerHeight * 0.9 : 800;
-    setPastHero(latest > threshold);
+    setPastHero(latest > vh * 0.9);
+
+    // Hide-on-scroll only kicks in past a boundary: the room-categories
+    // section (#rooms) on the homepage, or the hero bottom on subpages.
+    const HEADER_OFFSET = 96;
+    const rooms = document.getElementById("rooms");
+    let pastBoundary: boolean;
+    if (rooms) {
+      pastBoundary = rooms.getBoundingClientRect().top <= HEADER_OFFSET;
+    } else {
+      const hero = document.querySelector("main section");
+      const heroBottom = hero ? hero.getBoundingClientRect().bottom : vh;
+      pastBoundary = heroBottom <= HEADER_OFFSET;
+    }
+
+    // Direction with a small deadzone: ignore sub-6px jitter (and don't advance
+    // lastY) so slow drags accumulate rather than flip the state every pixel.
+    const delta = latest - lastY.current;
+    if (Math.abs(delta) < 6) return;
+    lastY.current = latest;
+
+    if (delta > 0) {
+      setHidden(
+        pastBoundary && latest > vh * 0.9 && !mobileOpen && openMenu === null,
+      );
+    } else {
+      setHidden(false);
+    }
   });
 
   // Visible bar when scrolled down, hovering the bar, or a megamenu is open.
@@ -156,8 +203,14 @@ export default function Header({ bookingUrl }: Props) {
     <>
       <motion.header
         initial={{ y: "-100%" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        animate={{ y: hidden ? "-100%" : "0%" }}
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : mounted
+              ? { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+              : { duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }
+        }
         onMouseEnter={() => {
           if (canHover) setHovered(true);
         }}
