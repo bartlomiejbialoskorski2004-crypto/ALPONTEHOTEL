@@ -438,9 +438,21 @@ export default function Header({ bookingUrl }: Props) {
       </motion.div>
 
       {/* Mobile top-right controls (above the overlay, z-[60]): the language
-          flag slides in from the top once the bar is active (scrolled), to the
-          left of the persistent morphing toggle. */}
-      <div className="fixed right-4 top-4 z-[60] flex items-center gap-1.5 lg:hidden">
+          flag (visible once scrolled) and the morphing menu toggle. The whole
+          block rides up with the header when it hides on scroll-down, and
+          returns on scroll-up — except while the mobile menu is open, when the
+          toggle must stay reachable. */}
+      <motion.div
+        initial={false}
+        animate={{
+          y: hidden && !mobileOpen ? "-150%" : 0,
+          opacity: hidden && !mobileOpen ? 0 : 1,
+        }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed right-4 top-4 z-[60] flex items-center gap-1.5 lg:hidden ${
+          hidden && !mobileOpen ? "pointer-events-none" : ""
+        }`}
+      >
         <AnimatePresence>
           {active && !mobileOpen && (
             <motion.div
@@ -462,7 +474,7 @@ export default function Header({ bookingUrl }: Props) {
             mobileOpen || onPaper ? "text-ink" : "text-paper"
           }`}
         />
-      </div>
+      </motion.div>
     </>
   );
 }
