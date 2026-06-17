@@ -12,7 +12,7 @@ import Image from "next/image";
 
 // Background slideshow. Drop the matching files in /public.
 // Sanity-managed gallery can replace this list in a later iteration.
-const SLIDES = ["/hero-1.jpg", "/hero-2.jpg", "/hero-3.jpg"];
+const SLIDES = ["/hero-1.png", "/hero-2.png", "/hero-3.png"];
 const SLIDE_INTERVAL = 6000;
 
 export default function Hero() {
