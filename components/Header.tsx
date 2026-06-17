@@ -343,21 +343,30 @@ export default function Header({ bookingUrl }: Props) {
         bookingUrl={bookingUrl}
       />
 
-      {/* Mobile top-left language switcher (letter format, e.g. "PL"). Always
-          visible; tone follows the bar/hero like the rest of the header. */}
-      {!mobileOpen && (
-        <div
-          className={`fixed left-4 top-4 z-[60] lg:hidden ${
-            onPaper ? "text-ink" : "text-paper"
-          }`}
-        >
-          <LocaleSwitcher
-            tone={onPaper ? "dark" : "light"}
-            variant="letters"
-            align="left"
-          />
-        </div>
-      )}
+      {/* Mobile top-left language switcher (letter format, e.g. "PL").
+          Vertically centred to the header bar (level with the logo + menu
+          toggle). Slides up and fades out on scroll, mirroring the centred
+          logo, so it never overlaps the logo — once scrolled, the right-side
+          flag switcher takes over. Hidden while the mobile menu is open. */}
+      <motion.div
+        initial={false}
+        animate={{
+          y: active ? "-150%" : 0,
+          opacity: active ? 0 : 1,
+        }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed left-4 top-0 z-[60] flex h-20 items-center lg:hidden ${
+          active || mobileOpen ? "pointer-events-none" : ""
+        } ${onPaper ? "text-ink" : "text-paper"} ${
+          mobileOpen ? "hidden" : ""
+        }`}
+      >
+        <LocaleSwitcher
+          tone={onPaper ? "dark" : "light"}
+          variant="letters"
+          align="left"
+        />
+      </motion.div>
 
       {/* Mobile top-right controls (above the overlay, z-[60]): the language
           flag slides in from the top once the bar is active (scrolled), to the
