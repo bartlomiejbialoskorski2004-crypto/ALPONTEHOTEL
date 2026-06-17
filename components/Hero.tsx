@@ -12,7 +12,13 @@ import Image from "next/image";
 
 // Background slideshow. Drop the matching files in /public.
 // Sanity-managed gallery can replace this list in a later iteration.
-const SLIDES = ["/hero-1.png", "/hero-2.png", "/hero-3.png"];
+// `position` is the mobile crop focus (desktop always centres); some shots read
+// better framed from the right on a narrow viewport.
+const SLIDES = [
+  { src: "/hero-1.png", position: "object-right" },
+  { src: "/hero-2.png", position: "object-center" },
+  { src: "/hero-3.png", position: "object-right" },
+];
 const SLIDE_INTERVAL = 6000;
 
 export default function Hero() {
@@ -58,21 +64,21 @@ export default function Hero() {
         aria-hidden
         style={reduceMotion ? undefined : { y: heroY }}
       >
-        {SLIDES.map((src, i) => (
+        {SLIDES.map((slide, i) => (
           <motion.div
-            key={src}
+            key={slide.src}
             initial={false}
             animate={{ opacity: i === index ? 1 : 0 }}
             transition={{ duration: 1.4, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <Image
-              src={src}
+              src={slide.src}
               alt={i === 0 ? t("imageAlt") : ""}
               fill
               priority={i === 0}
               sizes="100vw"
-              className="object-cover object-center"
+              className={`object-cover ${slide.position} lg:object-center`}
             />
           </motion.div>
         ))}
@@ -81,11 +87,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/15 to-black/45" />
 
       <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3">
-        {SLIDES.map((src, i) => {
+        {SLIDES.map((slide, i) => {
           const isActive = i === index;
           return (
             <button
-              key={src}
+              key={slide.src}
               type="button"
               onClick={() => setIndex(i)}
               aria-label={`${t("scrollHint")} ${i + 1}`}
