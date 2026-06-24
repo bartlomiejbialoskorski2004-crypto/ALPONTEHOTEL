@@ -47,9 +47,12 @@ export default function Footer({ bookingUrl }: Props) {
   const name = t("fallback.name"); // "Al Ponte"
   const year = new Date().getFullYear();
 
-  // Credit button toggles to the "book a call" label on click and opens
-  // viralabs.pl in a new tab.
+  // Credit button: first click plays the focus blur burst (1s) on the
+  // VIRALABS.PL label, then the label flips to t("footer.bookCall"); a
+  // second click on that active label opens viralabs.pl. The ref guards
+  // against repeat clicks while the swap timer is pending.
   const [viralabsClicked, setViralabsClicked] = useState(false);
+  const viralabsSwapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const colHead =
     "text-[11px] font-medium uppercase tracking-[0.3em] text-paper/40";
@@ -232,17 +235,24 @@ export default function Footer({ bookingUrl }: Props) {
               highlightHueDeg={270}
               ariaLabel="Viralabs.pl — created by"
               onClick={() => {
-                if (!viralabsClicked) {
-                  // First click: just flip the label to "UMÓW ROZMOWĘ".
-                  setViralabsClicked(true);
+                if (viralabsClicked) {
+                  // Second deliberate click — label already shows the
+                  // active text — open viralabs.pl.
+                  window.open(
+                    "https://viralabs.pl",
+                    "_blank",
+                    "noopener,noreferrer",
+                  );
                   return;
                 }
-                // Second click (on the active label): now open viralabs.pl.
-                window.open(
-                  "https://viralabs.pl",
-                  "_blank",
-                  "noopener,noreferrer",
-                );
+                // First click: let the focus-letter blur burst play out
+                // (1s) BEFORE swapping the label. Ignore repeat clicks
+                // while the timer is pending.
+                if (viralabsSwapTimer.current !== null) return;
+                viralabsSwapTimer.current = setTimeout(() => {
+                  setViralabsClicked(true);
+                  viralabsSwapTimer.current = null;
+                }, 1000);
               }}
             />
           </div>
