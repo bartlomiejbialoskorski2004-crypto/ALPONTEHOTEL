@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import FlipText from "./FlipText";
 import { NAV } from "./menu";
 import { useAnchor } from "./useAnchor";
+import AnimatedGenerateButton from "./ui/animated-generate-button-shadcn-tailwind";
 import {
   BOOKING,
   EMAIL,
@@ -45,6 +46,10 @@ export default function Footer({ bookingUrl }: Props) {
 
   const name = t("fallback.name"); // "Al Ponte"
   const year = new Date().getFullYear();
+
+  // Credit button toggles to the "book a call" label on click and opens
+  // viralabs.pl in a new tab.
+  const [viralabsClicked, setViralabsClicked] = useState(false);
 
   const colHead =
     "text-[11px] font-medium uppercase tracking-[0.3em] text-paper/40";
@@ -202,14 +207,40 @@ export default function Footer({ bookingUrl }: Props) {
       <div className="border-t border-paper/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:grid sm:grid-cols-3 sm:items-center lg:px-10">
           <span className="sm:justify-self-start">©{year} Hotel Al Ponte Cademario</span>
-          <a
-            href="https://viralabs.pl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[10px] uppercase tracking-[0.18em] text-paper/35 transition-colors hover:text-paper/60 sm:justify-self-center"
+          {/* Credit — animated glass button. Idle: "VIRALABS.PL". On click:
+              opens viralabs.pl and flips the label to the localized
+              "BOOK A CALL". The button consumes shadcn-style HSL tokens
+              (--background / --foreground / --border), which we scope
+              locally so it renders correctly inside the dark footer. */}
+          <div
+            className="viralabs-credit-tokens flex flex-col items-center gap-1 sm:justify-self-center"
+            style={
+              {
+                ["--background" as string]: "0 0% 6%",
+                ["--foreground" as string]: "48 23% 97%",
+                ["--border" as string]: "0 0% 60%",
+              } as React.CSSProperties
+            }
           >
-            {t("footer.createdBy")} Viralabs.pl
-          </a>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-paper/35">
+              {t("footer.createdBy")}
+            </span>
+            <AnimatedGenerateButton
+              labelIdle="VIRALABS.PL"
+              labelActive={t("footer.bookCall")}
+              generating={viralabsClicked}
+              highlightHueDeg={270}
+              ariaLabel="Viralabs.pl — created by"
+              onClick={() => {
+                setViralabsClicked(true);
+                window.open(
+                  "https://viralabs.pl",
+                  "_blank",
+                  "noopener,noreferrer",
+                );
+              }}
+            />
+          </div>
           <div className="flex items-center gap-6 sm:justify-self-end">
             <Link
               href="/informations"
