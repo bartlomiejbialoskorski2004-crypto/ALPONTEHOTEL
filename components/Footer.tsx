@@ -206,17 +206,53 @@ export default function Footer({ bookingUrl }: Props) {
             href="https://viralabs.pl"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 text-[10px] tracking-[0.15em] text-paper/35 transition-colors hover:text-paper/70 sm:justify-self-center"
+            aria-label="Created by Viralabs.pl"
+            className="viralabs-link group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-paper/35 sm:justify-self-center"
           >
-            <span>Created by</span>
-            <span className="relative inline-block">
-              <span className="relative z-10 text-[#b9a4ff] transition-colors group-hover:text-[#d4c5ff]">
-                Viralabs.pl
-              </span>
+            {/* Prefix — locale-aware, never reacts to hover. */}
+            <span>{t("footer.createdBy")}</span>
+
+            {/* Brand wordmark + orbital system share one positioning context
+                so the planets orbit the brand, not the whole link. */}
+            <span className="relative inline-block px-3 py-1">
+              {/* Soft purple halo behind the wordmark — blooms on hover. */}
               <span
                 aria-hidden
-                className="animate-viralabs-pulse pointer-events-none absolute inset-x-0 -bottom-0.5 h-px bg-[#b9a4ff]/70"
+                className="pointer-events-none absolute inset-0 rounded-full bg-[#b9a4ff]/0 blur-md transition-colors duration-700 ease-out group-hover:bg-[#b9a4ff]/30"
               />
+
+              {/* The brand. Wakes up on hover via motion/react. */}
+              <motion.span
+                className="relative z-10 inline-block font-medium tracking-[0.22em]"
+                initial={false}
+                animate={{
+                  color: "#b9a4ff",
+                  textShadow: "0 0 0px rgba(185,164,255,0)",
+                  y: 0,
+                }}
+                whileHover={
+                  reduceMotion
+                    ? undefined
+                    : {
+                        color: "#e4dbff",
+                        textShadow: "0 0 12px rgba(212,197,255,0.55)",
+                        y: -1,
+                      }
+                }
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                VIRALABS.PL
+              </motion.span>
+
+              {/* Orbiting planets — fade out on link hover (see CSS). */}
+              <span aria-hidden className="viralabs-system">
+                <span className="viralabs-orbit viralabs-orbit-a">
+                  <span className="viralabs-planet" />
+                </span>
+                <span className="viralabs-orbit viralabs-orbit-b">
+                  <span className="viralabs-planet viralabs-planet-b" />
+                </span>
+              </span>
             </span>
           </a>
           <div className="flex items-center gap-6 sm:justify-self-end">

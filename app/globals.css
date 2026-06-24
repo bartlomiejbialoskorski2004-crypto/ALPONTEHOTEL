@@ -45,23 +45,99 @@ body {
   }
 }
 
-@keyframes viralabs-pulse {
-  0%,
-  100% {
-    opacity: 0.35;
+/* Tiny planetary system around the VIRALABS.PL wordmark in the footer.
+   Two orbits, two periods, two phases — together they read as a small
+   solar system. Pure CSS so the loop is smooth and ignores React render
+   cadence (same approach as the marquees above). */
+@keyframes viralabs-orbit-a {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-rx)) rotate(0deg);
   }
-  50% {
-    opacity: 1;
+  to {
+    transform: rotate(360deg) translateX(var(--orbit-rx)) rotate(-360deg);
+  }
+}
+@keyframes viralabs-orbit-b {
+  from {
+    transform: rotate(140deg) translateX(var(--orbit-rx)) rotate(-140deg);
+  }
+  to {
+    transform: rotate(500deg) translateX(var(--orbit-rx)) rotate(-500deg);
   }
 }
 
-.animate-viralabs-pulse {
-  animation: viralabs-pulse 2.8s ease-in-out infinite;
+.viralabs-system {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.viralabs-orbit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  opacity: 0.85;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+.viralabs-orbit-a {
+  --orbit-rx: 78px;
+  animation: viralabs-orbit-a 9s linear infinite;
+}
+.viralabs-orbit-b {
+  --orbit-rx: 56px;
+  animation: viralabs-orbit-b 13s linear infinite;
+  opacity: 0.55;
+}
+
+.viralabs-planet {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #d4c5ff, #6a4fb8 70%, #2d1f55 100%);
+  box-shadow:
+    0 0 6px rgba(185, 164, 255, 0.55),
+    0 0 14px rgba(185, 164, 255, 0.25);
+  /* Squashed vertically so the orbit reads as a tilted ellipse, not a flat
+     circle. */
+  transform: scaleY(0.42);
+}
+.viralabs-planet-b {
+  width: 4px;
+  height: 4px;
+  left: -2px;
+  top: -2px;
+  opacity: 0.85;
+}
+
+/* Hover on the credit link: planets retreat inward and fade out, then
+   pause — so they wait, paused, until the cursor leaves. */
+.viralabs-link:hover .viralabs-orbit {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.viralabs-link:hover .viralabs-orbit-a,
+.viralabs-link:hover .viralabs-orbit-b {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-viralabs-pulse {
+  .viralabs-orbit-a,
+  .viralabs-orbit-b {
     animation: none;
-    opacity: 0.7;
+  }
+  .viralabs-orbit {
+    opacity: 0.4;
   }
 }
