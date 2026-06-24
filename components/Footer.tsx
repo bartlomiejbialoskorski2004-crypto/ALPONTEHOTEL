@@ -200,9 +200,26 @@ export default function Footer({ bookingUrl }: Props) {
 
       {/* Bottom bar */}
       <div className="border-t border-paper/15">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <span>©{year} Hotel Al Ponte Cademario</span>
-          <div className="flex items-center gap-6">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:grid sm:grid-cols-3 sm:items-center lg:px-10">
+          <span className="sm:justify-self-start">©{year} Hotel Al Ponte Cademario</span>
+          <a
+            href="https://viralabs.pl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 text-[10px] tracking-[0.15em] text-paper/35 transition-colors hover:text-paper/70 sm:justify-self-center"
+          >
+            <span>Created by</span>
+            <span className="relative inline-block">
+              <span className="relative z-10 text-[#b9a4ff] transition-colors group-hover:text-[#d4c5ff]">
+                Viralabs.pl
+              </span>
+              <span
+                aria-hidden
+                className="animate-viralabs-pulse pointer-events-none absolute inset-x-0 -bottom-0.5 h-px bg-[#b9a4ff]/70"
+              />
+            </span>
+          </a>
+          <div className="flex items-center gap-6 sm:justify-self-end">
             <Link
               href="/informations"
               className="group inline-flex transition-colors hover:text-paper"

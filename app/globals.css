@@ -44,3 +44,24 @@ body {
     transform: translateX(0);
   }
 }
+
+@keyframes viralabs-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-viralabs-pulse {
+  animation: viralabs-pulse 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-viralabs-pulse {
+    animation: none;
+    opacity: 0.7;
+  }
+}
