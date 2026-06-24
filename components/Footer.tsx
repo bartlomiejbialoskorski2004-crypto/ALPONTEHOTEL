@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import FlipText from "./FlipText";
 import { NAV } from "./menu";
 import { useAnchor } from "./useAnchor";
+import { GlassButton } from "./ui/glass-button";
 import {
   BOOKING,
   EMAIL,
@@ -202,49 +203,55 @@ export default function Footer({ bookingUrl }: Props) {
       <div className="border-t border-paper/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:grid sm:grid-cols-3 sm:items-center lg:px-10">
           <span className="sm:justify-self-start">©{year} Hotel Al Ponte Cademario</span>
-          <a
-            href="https://viralabs.pl"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Created by Viralabs.pl"
-            className="viralabs-link group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-paper/35 sm:justify-self-center"
-          >
+          <div className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-paper/35 sm:justify-self-center">
             {/* Prefix — locale-aware, never reacts to hover. */}
             <span>{t("footer.createdBy")}</span>
 
             {/* Brand wordmark + orbital system share one positioning context
-                so the planets orbit the brand, not the whole link. */}
-            <span className="relative inline-block px-3 py-1">
-              {/* Soft purple halo behind the wordmark — blooms on hover. */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-full bg-[#b9a4ff]/0 blur-md transition-colors duration-700 ease-out group-hover:bg-[#b9a4ff]/30"
-              />
+                so the planets orbit the brand, not the whole credit row. */}
+            <span className="viralabs-brand relative inline-block">
+              {/* Faint orbital ring traces — sit behind the glass button. */}
+              <span aria-hidden className="viralabs-rings">
+                <span className="viralabs-ring viralabs-ring-a" />
+                <span className="viralabs-ring viralabs-ring-b" />
+              </span>
 
-              {/* The brand. Wakes up on hover via motion/react. */}
-              <motion.span
-                className="relative z-10 inline-block font-medium tracking-[0.22em]"
-                initial={false}
-                animate={{
-                  color: "#b9a4ff",
-                  textShadow: "0 0 0px rgba(185,164,255,0)",
-                  y: 0,
-                }}
-                whileHover={
-                  reduceMotion
-                    ? undefined
-                    : {
-                        color: "#e4dbff",
-                        textShadow: "0 0 12px rgba(212,197,255,0.55)",
-                        y: -1,
-                      }
+              <GlassButton
+                size="sm"
+                onClick={() =>
+                  window.open(
+                    "https://viralabs.pl",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
                 }
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                aria-label="Created by Viralabs.pl"
+                className="relative z-10"
               >
-                VIRALABS.PL
-              </motion.span>
+                <motion.span
+                  className="inline-block font-medium tracking-[0.22em]"
+                  initial={false}
+                  animate={{
+                    color: "#b9a4ff",
+                    textShadow: "0 0 0px rgba(185,164,255,0)",
+                    y: 0,
+                  }}
+                  whileHover={
+                    reduceMotion
+                      ? undefined
+                      : {
+                          color: "#e4dbff",
+                          textShadow: "0 0 12px rgba(212,197,255,0.55)",
+                          y: -1,
+                        }
+                  }
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  VIRALABS.PL
+                </motion.span>
+              </GlassButton>
 
-              {/* Orbiting planets — fade out on link hover (see CSS). */}
+              {/* Orbiting planets — fade out on hover (see CSS). */}
               <span aria-hidden className="viralabs-system">
                 <span className="viralabs-orbit viralabs-orbit-a">
                   <span className="viralabs-planet" />
@@ -254,7 +261,7 @@ export default function Footer({ bookingUrl }: Props) {
                 </span>
               </span>
             </span>
-          </a>
+          </div>
           <div className="flex items-center gap-6 sm:justify-self-end">
             <Link
               href="/informations"

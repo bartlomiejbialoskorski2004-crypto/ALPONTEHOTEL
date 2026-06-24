@@ -98,46 +98,264 @@ body {
   opacity: 0.55;
 }
 
+/* Planet body: a small sphere with day-side highlight + night-side terminator.
+   We use a wrapper for the squashed-ellipse projection so the planet itself
+   stays round (otherwise the shading would also squash). */
 .viralabs-planet {
   position: absolute;
-  left: -3px;
-  top: -3px;
-  width: 6px;
-  height: 6px;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  /* Squashed vertically — sells the tilted-orbital-plane feel. */
+  transform: scaleY(0.46);
+  filter: drop-shadow(0 0 6px rgba(185, 164, 255, 0.55))
+    drop-shadow(0 0 14px rgba(185, 164, 255, 0.2));
+  animation: viralabs-twinkle 4.7s ease-in-out infinite;
+}
+.viralabs-planet::before {
+  /* The body itself. */
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  width: 8px;
+  height: 8px;
   border-radius: 9999px;
-  background: radial-gradient(circle at 30% 30%, #d4c5ff, #6a4fb8 70%, #2d1f55 100%);
+  background:
+    /* Specular highlight (top-left). */
+    radial-gradient(
+        circle at 28% 26%,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0) 28%
+      ),
+    /* Day side → terminator → night side. */
+      radial-gradient(
+        circle at 38% 36%,
+        #efe7ff 0%,
+        #c8b6ff 35%,
+        #7c5fd0 65%,
+        #2b1a5e 92%
+      );
   box-shadow:
-    0 0 6px rgba(185, 164, 255, 0.55),
-    0 0 14px rgba(185, 164, 255, 0.25);
-  /* Squashed vertically so the orbit reads as a tilted ellipse, not a flat
-     circle. */
-  transform: scaleY(0.42);
+    /* Subtle rim light on the far edge. */
+    inset -1px -1px 1px rgba(255, 255, 255, 0.12),
+    /* Outer atmospheric glow. */
+    0 0 4px rgba(212, 197, 255, 0.6);
+}
+.viralabs-planet::after {
+  /* Soft atmosphere halo — slightly larger than the body, very diffuse. */
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(185, 164, 255, 0.45) 0%,
+    rgba(185, 164, 255, 0.12) 45%,
+    rgba(185, 164, 255, 0) 75%
+  );
+  pointer-events: none;
 }
 .viralabs-planet-b {
-  width: 4px;
-  height: 4px;
-  left: -2px;
-  top: -2px;
-  opacity: 0.85;
+  transform: scaleY(0.46);
+  filter: drop-shadow(0 0 4px rgba(200, 180, 255, 0.5));
+  animation:
+    viralabs-twinkle 6.1s ease-in-out infinite,
+    viralabs-twinkle 6.1s ease-in-out infinite;
+  animation-delay: -1.8s;
+}
+.viralabs-planet-b::before {
+  left: -2.5px;
+  top: -2.5px;
+  width: 5px;
+  height: 5px;
+  background:
+    radial-gradient(
+        circle at 30% 28%,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0) 30%
+      ),
+    radial-gradient(
+      circle at 40% 38%,
+      #fff4d6 0%,
+      #ffd07a 40%,
+      #c87a3a 75%,
+      #3a1d0d 100%
+    );
+}
+.viralabs-planet-b::after {
+  left: -5px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 130, 0.4) 0%,
+    rgba(255, 200, 130, 0.1) 50%,
+    rgba(255, 200, 130, 0) 75%
+  );
+}
+
+/* Faint elliptical ring traces — the path the planets follow. Pure
+   decoration; sells the orbital metaphor at a glance. */
+.viralabs-rings {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.viralabs-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(185, 164, 255, 0.18);
+  border-radius: 9999px;
+  transform: translate(-50%, -50%) scaleY(0.46);
+}
+.viralabs-ring-a {
+  width: 156px;
+  height: 156px;
+}
+.viralabs-ring-b {
+  width: 112px;
+  height: 112px;
+  border-color: rgba(255, 200, 130, 0.18);
+}
+
+@keyframes viralabs-twinkle {
+  0%,
+  100% {
+    opacity: 0.92;
+  }
+  50% {
+    opacity: 0.55;
+  }
 }
 
 /* Hover on the credit link: planets retreat inward and fade out, then
-   pause — so they wait, paused, until the cursor leaves. */
-.viralabs-link:hover .viralabs-orbit {
+   pause — so they wait, paused, until the cursor leaves. The rings fade
+   too, leaving the wordmark + halo as the only focus. */
+.viralabs-brand:hover .viralabs-orbit {
   opacity: 0;
-  transform: scale(0.6);
+  transform: scale(0.55);
 }
-.viralabs-link:hover .viralabs-orbit-a,
-.viralabs-link:hover .viralabs-orbit-b {
+.viralabs-brand:hover .viralabs-orbit-a,
+.viralabs-brand:hover .viralabs-orbit-b {
   animation-play-state: paused;
+}
+.viralabs-brand:hover .viralabs-rings {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .viralabs-orbit-a,
-  .viralabs-orbit-b {
+  .viralabs-orbit-b,
+  .viralabs-planet,
+  .viralabs-planet-b {
     animation: none;
   }
   .viralabs-orbit {
     opacity: 0.4;
   }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Glass Button — used for the VIRALABS.PL credit in the footer. Frosted
+   pill with a soft inner highlight and a colored ground shadow. */
+.glass-button-wrap {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+.glass-button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background:
+    /* Top highlight band. */
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.04) 38%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    /* Subtle tint so it reads on both light and dark sections. */
+    rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  box-shadow:
+    /* Crisp inner highlight along the top edge. */
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    /* Soft inner shading along the bottom edge for depth. */
+    inset 0 -6px 12px -6px rgba(0, 0, 0, 0.35),
+    /* External outline glow. */
+    0 1px 2px rgba(0, 0, 0, 0.25);
+  color: inherit;
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glass-button:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.06) 40%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -6px 12px -6px rgba(0, 0, 0, 0.35),
+    0 2px 10px rgba(185, 164, 255, 0.25);
+  transform: translateY(-1px);
+}
+.glass-button:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -3px 8px -4px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+.glass-button:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -6px 12px -6px rgba(0, 0, 0, 0.35),
+    0 0 0 2px rgba(185, 164, 255, 0.55);
+}
+.glass-button-text {
+  color: inherit;
+}
+.glass-button-shadow {
+  position: absolute;
+  inset: auto 8% 0 8%;
+  z-index: 0;
+  height: 10px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(185, 164, 255, 0.35),
+    rgba(185, 164, 255, 0) 70%
+  );
+  filter: blur(6px);
+  transform: translateY(60%);
+  pointer-events: none;
+  transition: opacity 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.glass-button-wrap:hover .glass-button-shadow {
+  opacity: 0.8;
 }
