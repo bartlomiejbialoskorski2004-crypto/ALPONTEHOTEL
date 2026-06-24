@@ -67,32 +67,51 @@ export default function AnimatedGenerateButton({
             d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
           ></path>
         </svg>
-        <div className="ui-anim-txt-wrapper relative flex min-w-[6.4em] items-center">
-          <div
-            className={clsx(
-              "ui-anim-txt-1 absolute",
-              generating ? "opacity-0" : "animate-[ui-appear_1s_ease-in-out_forwards]"
-            )}
-          >
-            {Array.from(labelIdle).map((ch, i) => (
-              <span key={i} className="ui-anim-letter inline-block">
-                {ch}
+        {(() => {
+          // Spacer sets the wrapper width to the LONGER of the two labels, so
+          // either label always fits on one line and the button doesn't
+          // change size during the idle↔active swap.
+          const longerLabel =
+            labelActive.length >= labelIdle.length ? labelActive : labelIdle;
+          return (
+            <div className="ui-anim-txt-wrapper relative flex items-center">
+              <span
+                aria-hidden
+                className="invisible inline-flex whitespace-nowrap"
+              >
+                {Array.from(longerLabel).map((ch, i) => (
+                  <span key={`s-${i}`} className="inline-block">
+                    {ch}
+                  </span>
+                ))}
               </span>
-            ))}
-          </div>
-          <div
-            className={clsx(
-              "ui-anim-txt-2 absolute",
-              generating ? "opacity-100" : "opacity-0"
-            )}
-          >
-            {Array.from(labelActive).map((ch, i) => (
-              <span key={i} className="ui-anim-letter inline-block">
-                {ch}
-              </span>
-            ))}
-          </div>
-        </div>
+              <div
+                className={clsx(
+                  "ui-anim-txt-1 absolute inset-0 flex items-center justify-center whitespace-nowrap transition-opacity duration-400 ease-in-out",
+                  generating ? "opacity-0" : "opacity-100"
+                )}
+              >
+                {Array.from(labelIdle).map((ch, i) => (
+                  <span key={i} className="ui-anim-letter inline-block">
+                    {ch}
+                  </span>
+                ))}
+              </div>
+              <div
+                className={clsx(
+                  "ui-anim-txt-2 absolute inset-0 flex items-center justify-center whitespace-nowrap transition-opacity duration-400 ease-in-out",
+                  generating ? "opacity-100" : "opacity-0"
+                )}
+              >
+                {Array.from(labelActive).map((ch, i) => (
+                  <span key={i} className="ui-anim-letter inline-block">
+                    {ch}
+                  </span>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
       </button>
       <style jsx>{`
         .ui-anim-btn {
@@ -177,24 +196,12 @@ export default function AnimatedGenerateButton({
           }
         }
 
-        /* Focus swaps idle/active text with delays mimicking original */
-        .ui-anim-btn:focus .ui-anim-txt-1 {
-          animation: ui-opacity-swap 0.3s ease-in-out forwards;
-          animation-delay: 1s;
-        }
-        .ui-anim-btn:focus .ui-anim-txt-2 {
-          animation: ui-opacity-swap 0.3s ease-in-out reverse forwards;
-          animation-delay: 1s;
-        }
-
-        @keyframes ui-opacity-swap {
-          0% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
+        /* Idle/active label swap is driven by React state + Tailwind
+           transition-opacity on the txt-1/txt-2 layers — see JSX. We
+           intentionally do NOT animate opacity here on :focus, because
+           that would fight the controlled prop and cause the active
+           label to flash to 0 mid-animation. The focused-letter blur
+           burst (below) still plays on click. */
 
         .ui-anim-btn:focus .ui-anim-letter {
           animation:
