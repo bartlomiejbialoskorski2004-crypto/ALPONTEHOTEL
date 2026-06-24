@@ -232,7 +232,12 @@ export default function Footer({ bookingUrl }: Props) {
               highlightHueDeg={270}
               ariaLabel="Viralabs.pl — created by"
               onClick={() => {
-                setViralabsClicked(true);
+                if (!viralabsClicked) {
+                  // First click: just flip the label to "UMÓW ROZMOWĘ".
+                  setViralabsClicked(true);
+                  return;
+                }
+                // Second click (on the active label): now open viralabs.pl.
                 window.open(
                   "https://viralabs.pl",
                   "_blank",
