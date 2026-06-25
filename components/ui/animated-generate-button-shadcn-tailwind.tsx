@@ -39,7 +39,7 @@ export default function AnimatedGenerateButton({
         className={clsx(
           "ui-anim-btn",
           "relative flex items-center justify-center cursor-pointer select-none",
-          "rounded-[14px] px-3 py-1",
+          "rounded-[10px] px-2 py-0.5",
           "bg-[hsl(var(--background))] text-[hsl(var(--foreground))]",
           "border border-[hsl(var(--border))]/20",
           "shadow-[inset_0px_1px_1px_rgba(255,255,255,0.2),inset_0px_2px_2px_rgba(255,255,255,0.15),inset_0px_4px_4px_rgba(255,255,255,0.1),inset_0px_8px_8px_rgba(255,255,255,0.05),inset_0px_16px_16px_rgba(255,255,255,0.05),0_-1px_1px_rgba(0,0,0,0.02),0_-2px_2px_rgba(0,0,0,0.03),0_-4px_4px_rgba(0,0,0,0.05),0_-8px_8px_rgba(0,0,0,0.06),0_-16px_16px_rgba(0,0,0,0.08)]",
@@ -53,7 +53,7 @@ export default function AnimatedGenerateButton({
       >
         <svg
           className={clsx(
-            "ui-anim-btn-svg mr-1.5 h-3.5 w-3.5 flex-grow-0",
+            "ui-anim-btn-svg mr-1 h-3 w-3 flex-grow-0",
             "fill-[color:var(--ui-anim-svg-fill)]",
             "transition-[fill,filter,opacity] duration-400"
           )}
@@ -93,7 +93,7 @@ export default function AnimatedGenerateButton({
               >
                 {Array.from(labelIdle).map((ch, i) => (
                   <span key={i} className="ui-anim-letter inline-block">
-                    {ch === " " ? " " : ch}
+                    {ch === " " ? " " : ch}
                   </span>
                 ))}
               </div>
@@ -105,7 +105,7 @@ export default function AnimatedGenerateButton({
               >
                 {Array.from(labelActive).map((ch, i) => (
                   <span key={i} className="ui-anim-letter inline-block">
-                    {ch === " " ? " " : ch}
+                    {ch === " " ? " " : ch}
                   </span>
                 ))}
               </div>
@@ -115,8 +115,8 @@ export default function AnimatedGenerateButton({
       </button>
       <style jsx>{`
         .ui-anim-btn {
-          --padding: 3px;
-          --radius: 14px;
+          --padding: 2px;
+          --radius: 10px;
           --transition: 0.4s;
           --highlight: hsl(var(--highlight-hue), 100%, 70%);
           --highlight-50: hsla(var(--highlight-hue), 100%, 70%, 0.5);
