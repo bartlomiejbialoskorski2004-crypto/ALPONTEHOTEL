@@ -29,7 +29,7 @@
         "desc": "Z aneksem kuchennym i łazienką — doskonały wybór dla rodzin z dziećmi lub na dłuższe pobyty."
       },
       "superior": {
-        "title": "Pokoje Superior",
+        "title": "Widok na jezioro",
         "desc": "Pokoje o wyższym standardzie z łazienką i prywatnym balkonem z zapierającym dech widokiem na Lugano, jezioro i góry — pełnia atmosfery Ticino."
       },
       "budgetPlus": {
@@ -91,11 +91,11 @@
         "desc": "Świetne rozwiązanie dla szukających komfortu apartamentu w przystępnej cenie. Funkcjonalna przestrzeń, prywatna kuchnia i panoramiczny taras czynią go idealną bazą do zwiedzania Lugano."
       },
       "doubleSuperior": {
-        "name": "Double Superior Room",
+        "name": "Pokój dwuosobowy z widokiem na jezioro",
         "desc": "Idealny dla par szukających komfortu i wyjątkowej atmosfery. Prywatny balkon z widokiem na Lugano, jezioro i góry zapewnia niezapomniane chwile relaksu."
       },
       "tripleSuperior": {
-        "name": "Triple Superior Room",
+        "name": "Pokój trzyosobowy z widokiem na jezioro",
         "desc": "Idealny dla rodzin lub małych grup szukających przestrzeni i podwyższonego komfortu. Panoramiczny balkon i gustowne wyposażenie zapewniają przyjemny pobyt."
       },
       "doublePanoramaBudgetPlus": {

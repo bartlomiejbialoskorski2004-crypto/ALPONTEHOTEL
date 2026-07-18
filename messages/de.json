@@ -29,7 +29,7 @@
         "desc": "Mit Küche und Bad — eine ausgezeichnete Wahl für Familien mit Kindern oder längere Aufenthalte."
       },
       "superior": {
-        "title": "Superior-Zimmer",
+        "title": "Zimmer mit Seeblick",
         "desc": "Zimmer mit höherem Standard, Bad und privatem Balkon mit herrlichem Blick auf Lugano, den See und die Berge — die ganze Atmosphäre des Tessins."
       },
       "budgetPlus": {
@@ -91,11 +91,11 @@
         "desc": "Eine großartige Lösung für alle, die den Komfort eines Apartments zu einem erschwinglichen Preis suchen. Funktionale Räume, eine private Küche und eine Panoramaterrasse machen es zum idealen Ausgangspunkt, um Lugano zu erkunden."
       },
       "doubleSuperior": {
-        "name": "Doppelzimmer Superior",
+        "name": "Doppelzimmer mit Seeblick",
         "desc": "Ideal für Paare, die Komfort und eine besondere Atmosphäre suchen. Der private Balkon mit Blick auf Lugano, den See und die Berge bietet unvergessliche Momente der Entspannung."
       },
       "tripleSuperior": {
-        "name": "Triple Superior Zimmer",
+        "name": "Dreibettzimmer mit Seeblick",
         "desc": "Ideal für Familien oder kleine Gruppen, die Platz und gehobenen Komfort suchen. Der Panoramabalkon und die geschmackvolle Einrichtung sorgen für einen angenehmen Aufenthalt."
       },
       "doublePanoramaBudgetPlus": {

@@ -29,7 +29,7 @@
         "desc": "With kitchens and bathrooms — an excellent choice for families with children or longer stays."
       },
       "superior": {
-        "title": "Superior Rooms",
+        "title": "Lake View Rooms",
         "desc": "Higher-standard rooms with bathrooms and private balconies offering magnificent views of Lugano, the lake and the mountains — the full Ticino atmosphere."
       },
       "budgetPlus": {
@@ -91,11 +91,11 @@
         "desc": "A great solution for those seeking the comfort of an apartment at an affordable price. Functional spaces, a private kitchen and a panoramic terrace make it the ideal base to explore Lugano."
       },
       "doubleSuperior": {
-        "name": "Double Superior Room",
+        "name": "Double Room with Lake View",
         "desc": "Ideal for couples seeking comfort and a special atmosphere. The private balcony overlooking Lugano, the lake and the mountains offers unforgettable moments of relaxation."
       },
       "tripleSuperior": {
-        "name": "Triple Superior Room",
+        "name": "Triple Room with Lake View",
         "desc": "Ideal for families or small groups seeking extra space and superior comfort. The panoramic balcony and tasteful furnishings ensure a pleasant stay."
       },
       "doublePanoramaBudgetPlus": {

@@ -29,7 +29,7 @@
         "desc": "Avec cuisine et salle de bain — un excellent choix pour les familles avec enfants ou les longs séjours."
       },
       "superior": {
-        "title": "Chambres Supérieures",
+        "title": "Chambres vue lac",
         "desc": "Chambres de standing supérieur avec salle de bain et balcon privé offrant une vue magnifique sur Lugano, le lac et les montagnes — toute l'atmosphère du Tessin."
       },
       "budgetPlus": {
@@ -91,11 +91,11 @@
         "desc": "Une excellente solution pour ceux qui recherchent le confort d'un appartement à un prix abordable. Des espaces fonctionnels, une cuisine privée et une terrasse panoramique en font la base idéale pour explorer Lugano."
       },
       "doubleSuperior": {
-        "name": "Chambre Double Supérieure",
+        "name": "Chambre Double vue lac",
         "desc": "Idéale pour les couples en quête de confort et d'une atmosphère particulière. Le balcon privé donnant sur Lugano, le lac et les montagnes offre des moments de détente inoubliables."
       },
       "tripleSuperior": {
-        "name": "Chambre Triple Supérieure",
+        "name": "Chambre Triple vue lac",
         "desc": "Idéale pour les familles ou petits groupes en quête d'espace et d'un confort supérieur. Le balcon panoramique et le mobilier de bon goût garantissent un séjour agréable."
       },
       "doublePanoramaBudgetPlus": {
