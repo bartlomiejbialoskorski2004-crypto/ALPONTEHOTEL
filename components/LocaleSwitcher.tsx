@@ -67,6 +67,18 @@ export default function LocaleSwitcher({
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  // Hover-to-open only with a real pointer. On touch, a tap fires an emulated
+  // mouseenter followed by click, which would open and immediately toggle the
+  // list shut again (visible flicker).
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setCanHover(mq.matches);
+    const onChange = () => setCanHover(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -109,8 +121,8 @@ export default function LocaleSwitcher({
   return (
     <div
       ref={ref}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={canHover ? () => setOpen(true) : undefined}
+      onMouseLeave={canHover ? () => setOpen(false) : undefined}
       className="relative"
     >
       <button
@@ -135,49 +147,64 @@ export default function LocaleSwitcher({
       </button>
 
       <AnimatePresence>
-        {open && (
-          <motion.div
-            role="menu"
-            variants={popoverVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className={`absolute top-full z-50 flex pt-2 ${
-              letters
-                ? "flex-col gap-1.5"
-                : "flex-row gap-2 sm:flex-col sm:gap-1"
-            } ${alignClass}`}
-          >
-            {others.map((code) => {
-              const Flag = FLAGS[code];
-              return (
-                <motion.button
+        {open &&
+          (letters ? (
+            // Letters: one centred column directly under the active code
+            // (same padding + tracking as the trigger), a single quick fade
+            // with no per-item stagger or scale.
+            <motion.div
+              key="letters"
+              role="menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              className="absolute inset-x-0 top-full z-50 flex flex-col items-center pt-2"
+            >
+              {others.map((code) => (
+                <button
                   key={code}
-                  variants={flagItemVariants}
                   type="button"
                   role="menuitem"
                   onClick={() => select(code)}
                   aria-label={code.toUpperCase()}
-                  whileHover={{ scale: letters ? 1.05 : 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={
-                    letters
-                      ? "text-left text-sm font-medium uppercase tracking-[0.15em] opacity-70 transition-opacity hover:opacity-100"
-                      : undefined
-                  }
+                  className="p-1 text-center text-sm font-medium uppercase tracking-[0.15em] opacity-70 transition-opacity hover:opacity-100"
                 >
-                  {letters ? (
-                    code.toUpperCase()
-                  ) : (
-                    Flag && (
+                  {code.toUpperCase()}
+                </button>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="flags"
+              role="menu"
+              variants={popoverVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className={`absolute top-full z-50 flex flex-row gap-2 pt-2 sm:flex-col sm:gap-1 ${alignClass}`}
+            >
+              {others.map((code) => {
+                const Flag = FLAGS[code];
+                return (
+                  <motion.button
+                    key={code}
+                    variants={flagItemVariants}
+                    type="button"
+                    role="menuitem"
+                    onClick={() => select(code)}
+                    aria-label={code.toUpperCase()}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {Flag && (
                       <Flag className="h-7 w-10 rounded-none shadow-md ring-1 ring-black/10 sm:h-6 sm:w-9" />
-                    )
-                  )}
-                </motion.button>
-              );
-            })}
-          </motion.div>
-        )}
+                    )}
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+          ))}
       </AnimatePresence>
     </div>
   );

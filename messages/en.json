@@ -169,7 +169,8 @@
         "desc": "throughout the room"
       }
     },
-    "heading": "Something for everyone"
+    "heading": "Something for everyone",
+    "viewCategory": "View rooms"
   },
   "triple": {
     "title": "Triple Deluxe Apartment",

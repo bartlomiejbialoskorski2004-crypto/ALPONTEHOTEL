@@ -13,7 +13,9 @@ const HEADER_OFFSET = 96;
 // Extra room so a room's title clears both the header and this bar on click.
 const SCROLL_OFFSET = 150;
 
-function scrollToTarget(id: string) {
+// Shared with the room-category cards (Rooms.tsx) so every jump to a room
+// panel lands with the same offset.
+export function scrollToRoom(id: string) {
   const lenis = getLenis();
   if (lenis) {
     lenis.scrollTo(`#${id}`, { offset: -SCROLL_OFFSET });
@@ -131,7 +133,7 @@ export default function RoomNav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2.5 lg:px-10">
         <button
           type="button"
-          onClick={() => scrollToTarget(active.id)}
+          onClick={() => scrollToRoom(active.id)}
           className="flex min-w-0 flex-col items-start text-left"
         >
           <FlipOnChange
@@ -151,7 +153,7 @@ export default function RoomNav() {
                 <button
                   key={p.id}
                   type="button"
-                  onClick={() => scrollToTarget(p.id)}
+                  onClick={() => scrollToRoom(p.id)}
                   aria-label={t(p.nameKey)}
                   aria-current={i === posInCat}
                   className="group flex h-4 items-center"
