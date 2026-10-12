@@ -26,11 +26,11 @@
     "rooms": {
       "apartments": {
         "title": "Appartamenti",
-        "desc": "Con cucina e bagno — una scelta eccellente per famiglie con bambini o soggiorni più lunghi."
+        "desc": "Con cucina e bagno - una scelta eccellente per famiglie con bambini o soggiorni più lunghi."
       },
       "superior": {
         "title": "Camere vista lago",
-        "desc": "Camere di standard superiore con bagno e balcone privato, con magnifica vista su Lugano, il lago e le montagne — tutta l'atmosfera del Ticino."
+        "desc": "Camere di standard superiore con bagno e balcone privato, con magnifica vista su Lugano, il lago e le montagne - tutta l'atmosfera del Ticino."
       },
       "budgetPlus": {
         "title": "Camere Budget Plus",
@@ -38,7 +38,7 @@
       },
       "budget": {
         "title": "Camere Budget",
-        "desc": "Le nostre camere più convenienti, con bagno privato — ideali per chi viaggia per lavoro o su lunghe distanze e cerca comfort a un buon prezzo."
+        "desc": "Le nostre camere più convenienti, con bagno privato - ideali per chi viaggia per lavoro o su lunghe distanze e cerca comfort a un buon prezzo."
       }
     },
     "attractions": {
@@ -51,7 +51,7 @@
   "hero": {
     "ctaContact": "Contattaci",
     "scrollHint": "Scorri",
-    "seoH1": "Hotel Al Ponte Cademario — camere e appartamenti con vista sul Lago di Lugano",
+    "seoH1": "Hotel Al Ponte Cademario - camere e appartamenti con vista sul Lago di Lugano",
     "imageAlt": "Hotel Al Ponte a Cademario con vista panoramica sul Lago di Lugano"
   },
   "contact": {
@@ -64,7 +64,7 @@
   },
   "rooms": {
     "title": "Camere",
-    "intro": "Il nostro hotel offre camere e appartamenti di varie dimensioni e categorie, molti con vista sul lago e sulle montagne. Accogliamo famiglie grandi e piccole, coppie e chi viaggia per lavoro. Tutte le camere dispongono di SMART TV e Wi-Fi gratuito. È vietato fumare — ogni camera è dotata di un moderno sistema antincendio.",
+    "intro": "Il nostro hotel offre camere e appartamenti di varie dimensioni e categorie, molti con vista sul lago e sulle montagne. Accogliamo famiglie grandi e piccole, coppie e chi viaggia per lavoro. Tutte le camere dispongono di SMART TV e Wi-Fi gratuito. È vietato fumare - ogni camera è dotata di un moderno sistema antincendio.",
     "amenities": {
       "bath": "Bagno privato",
       "kitchen": "Cucina privata",
@@ -215,7 +215,8 @@
     "title": "Servizi e comfort dell'hotel",
     "pool": {
       "title": "Piscina",
-      "desc": "Rinfrescati nella nostra piscina all'aperto con vista panoramica sul Lago di Lugano."
+      "desc": "Rinfrescati nella nostra piscina all'aperto con vista panoramica sul Lago di Lugano.",
+      "note": "Temporaneamente chiusa: 12.10.2026 - 14.03.2027"
     },
     "pet": {
       "title": "Pet Friendly",
@@ -231,7 +232,7 @@
     },
     "ticket": {
       "title": "Ticino Ticket",
-      "desc": "Trasporto pubblico illimitato e gratuito in tutto il Ticino — incluso in ogni soggiorno."
+      "desc": "Trasporto pubblico illimitato e gratuito in tutto il Ticino - incluso in ogni soggiorno."
     },
     "wifi": {
       "title": "Wi-Fi gratuito",
@@ -239,11 +240,11 @@
     },
     "renovated": {
       "title": "Rinnovato nel 2026",
-      "desc": "Completamente rinnovato nel 2026 — camere moderne con splendida vista panoramica."
+      "desc": "Completamente rinnovato nel 2026 - camere moderne con splendida vista panoramica."
     },
     "parking": {
       "title": "Parcheggio",
-      "desc": "Parcheggio pubblico comodo proprio in hotel — CHF 5 al giorno, senza prenotazione."
+      "desc": "Parcheggio pubblico comodo proprio in hotel - CHF 5 al giorno, senza prenotazione."
     }
   },
   "gallery": {
@@ -308,7 +309,7 @@
       "receptionNote": "Anche ven. e sab. 15:30–19:30"
     },
     "hours": {
-      "title": "Informazioni di base — orari di apertura",
+      "title": "Informazioni di base - orari di apertura",
       "openYearRound": "L'hotel è aperto tutto l'anno.",
       "checkInOut": "Il check-in è alle 15:30 e il check-out alle 10:00.",
       "receptionHours": "La reception è aperta dalle 7:30 alle 11:00 e, il venerdì e il sabato, anche dalle 15:30 alle 19:30.",
@@ -318,17 +319,18 @@
       "checkInBox": "NOTA: Qualora non fossimo in grado di accogliervi di persona, lasceremo le vostre chiavi in un armadietto (CASETTA – BOX) speciale e vi invieremo le istruzioni con il codice per aprirlo.",
       "checkOutDetails": "Check-out: dalle 7:30 alle 10:00.",
       "breakfast": "Colazione (disponibile nella sala colazioni): dalle 8:00 alle 10:00.",
-      "pool": "La piscina è aperta dalle 8:00 alle 19:30.",
+      "pool": "La piscina è aperta dalle 8:00 alle 19:30 (temporaneamente chiusa dal 12.10.2026 al 14.03.2027).",
       "quietHours": "Il silenzio è richiesto dalle 22:00 alle 7:00."
     },
     "safety": {
       "intro": "Nel nostro hotel potete sentirvi al sicuro. Tutti i locali, comprese tutte le camere, sono dotati di un moderno sistema antincendio e di allarme, pertanto in tutta la struttura (comprese le camere) è vietato fumare sigarette o qualsiasi altro prodotto del tabacco, nonché accendere candele, fuochi d'artificio o altre fonti di fuoco o fumo. Tutte le aree comuni dell'hotel (come ad esempio la hall, la reception, i corridoi, la terrazza, le scale e la sala colazioni) sono monitorate tramite telecamere a circuito chiuso (CCTV). Il titolare del trattamento dei dati è la società Al Ponte Albergo SAGL.",
       "smokingBan": "All'interno della struttura vige il divieto assoluto di fumare sigarette e qualsiasi altro prodotto del tabacco in tutto l'edificio, inclusi, tra l'altro, tutte le camere, i corridoi e la sala colazioni. Ciò deriva dalla necessità di installare e mettere in funzione un sistema antincendio altamente sensibile, come previsto dalla legge.",
       "acknowledgment": "Effettuando la prenotazione di una camera nel nostro hotel, dichiari di aver preso visione del regolamento della nostra struttura e di accettare tutte le sue disposizioni, in particolare le norme antincendio, e accetti il fatto che, in caso di mancato rispetto del divieto assoluto di fumare sigarette o altri prodotti del tabacco all'interno dell'intera struttura, in caso di attivazione dell'allarme antincendio, ti assumerai volontariamente e senza alcuna obiezione un costo aggiuntivo relativo all'attivazione dell'allarme antincendio.",
-      "pleaseNote": "NOTA: l'ospite copre tutti i costi relativi all'intervento dei vigili del fuoco o di altri servizi di sicurezza — non meno di 1500 CHF (costo minimo che l'hotel deve sostenere in relazione all'intervento dei vigili del fuoco — NOTA: tali costi possono essere molto più elevati)."
+      "pleaseNote": "NOTA: l'ospite copre tutti i costi relativi all'intervento dei vigili del fuoco o di altri servizi di sicurezza - non meno di 1500 CHF (costo minimo che l'hotel deve sostenere in relazione all'intervento dei vigili del fuoco - NOTA: tali costi possono essere molto più elevati)."
     },
     "pool": {
       "title": "Informazioni sulla piscina",
+      "closure": "La piscina è temporaneamente chiusa dal 12.10.2026 al 14.03.2027.",
       "body": "L'hotel offre una piscina coperta. L'utilizzo della piscina è gratuito, ma asciugamani e accappatoi aggiuntivi sono disponibili su richiesta presso la reception (durante gli orari di apertura)."
     },
     "parking": {
@@ -342,18 +344,18 @@
     "services": {
       "title": "Listino prezzi per i servizi aggiuntivi",
       "items": {
-        "1": "Check-in anticipato (per ogni ora a partire dall'orario di check-in standard) — CHF 20.",
-        "2": "Check-out posticipato (per ogni ora a partire dalle 10:00) — CHF 25.",
-        "3": "Penale per smarrimento della chiave — 50 CHF/pz.",
-        "4": "Pulizia extra su richiesta — CHF 40/pulizia singola.",
-        "5": "Telo piscina extra — CHF 5/cad.",
-        "6": "Accappatoio piscina — CHF 8/cad.",
-        "7": "Frigorifero extra su richiesta (soggetto a disponibilità) — CHF 20/cad.",
-        "8": "Culla su richiesta (soggetto a disponibilità) — CHF 25/cad.",
-        "9": "Letto pieghevole extra in camera (soggetto a disponibilità e spazio in camera) — CHF 50.",
-        "10": "Supplemento per animali domestici — CHF 20/giorno/animale.",
-        "11": "Supplemento per l'attivazione dell'allarme antincendio — non inferiore a CHF 1.500. NOTA: l'ospite si fa carico di tutti i costi relativi all'intervento dei vigili del fuoco o di altri servizi di emergenza — non inferiore a CHF 1.500 (il costo minimo che l'hotel deve sostenere in relazione all'attivazione dell'allarme e all'intervento dei vigili del fuoco).",
-        "12": "Colazione (salvo se già inclusa nella tariffa della camera) — CHF 12 a persona (da pagare alla reception)."
+        "1": "Check-in anticipato (per ogni ora a partire dall'orario di check-in standard) - CHF 20.",
+        "2": "Check-out posticipato (per ogni ora a partire dalle 10:00) - CHF 25.",
+        "3": "Penale per smarrimento della chiave - 50 CHF/pz.",
+        "4": "Pulizia extra su richiesta - CHF 40/pulizia singola.",
+        "5": "Telo piscina extra - CHF 5/cad.",
+        "6": "Accappatoio piscina - CHF 8/cad.",
+        "7": "Frigorifero extra su richiesta (soggetto a disponibilità) - CHF 20/cad.",
+        "8": "Culla su richiesta (soggetto a disponibilità) - CHF 25/cad.",
+        "9": "Letto pieghevole extra in camera (soggetto a disponibilità e spazio in camera) - CHF 50.",
+        "10": "Supplemento per animali domestici - CHF 20/giorno/animale.",
+        "11": "Supplemento per l'attivazione dell'allarme antincendio - non inferiore a CHF 1.500. NOTA: l'ospite si fa carico di tutti i costi relativi all'intervento dei vigili del fuoco o di altri servizi di emergenza - non inferiore a CHF 1.500 (il costo minimo che l'hotel deve sostenere in relazione all'attivazione dell'allarme e all'intervento dei vigili del fuoco).",
+        "12": "Colazione (salvo se già inclusa nella tariffa della camera) - CHF 12 a persona (da pagare alla reception)."
       }
     },
     "tv": {
@@ -368,7 +370,7 @@
       "title": "Altre richieste degli ospiti",
       "body": "Il nostro team si sta preparando per il vostro arrivo e non vede l'ora di darvi il benvenuto nel nostro hotel. Vi preghiamo di comunicarci prima del vostro arrivo se possiamo esservi d'aiuto in altro modo."
     },
-    "signoff": "Cordiali saluti — il team dell'Hotel Al Ponte Albergo."
+    "signoff": "Cordiali saluti - il team dell'Hotel Al Ponte Albergo."
   },
   "attractions": {
     "teaserCta": "Scopri le attrazioni del Ticino",
@@ -626,7 +628,7 @@
   "seo": {
     "siteName": "Hotel Al Ponte Cademario",
     "titleTemplate": "%s | Hotel Al Ponte Cademario",
-    "ogAlt": "Hotel Al Ponte Cademario — albergo boutique sul Lago di Lugano, Ticino",
+    "ogAlt": "Hotel Al Ponte Cademario - albergo boutique sul Lago di Lugano, Ticino",
     "home": {
       "title": "Hotel Al Ponte Cademario – Camere e Appartamenti con vista sul Lago di Lugano",
       "description": "Hotel boutique a Cademario, sul Lago di Lugano. Camere e appartamenti con vista panoramica, piscina, Wi-Fi gratuito, parcheggio e pet friendly. Ticino Ticket incluso in ogni soggiorno."

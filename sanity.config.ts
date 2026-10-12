@@ -6,7 +6,7 @@ import { schemaTypes } from "./sanity/schemaTypes";
 
 export default defineConfig({
   name: "alponte",
-  title: "Al Ponte — Studio",
+  title: "Al Ponte - Studio",
   basePath: "/studio",
   projectId,
   dataset,

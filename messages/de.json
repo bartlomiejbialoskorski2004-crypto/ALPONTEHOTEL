@@ -26,11 +26,11 @@
     "rooms": {
       "apartments": {
         "title": "Apartments",
-        "desc": "Mit Küche und Bad — eine ausgezeichnete Wahl für Familien mit Kindern oder längere Aufenthalte."
+        "desc": "Mit Küche und Bad - eine ausgezeichnete Wahl für Familien mit Kindern oder längere Aufenthalte."
       },
       "superior": {
         "title": "Zimmer mit Seeblick",
-        "desc": "Zimmer mit höherem Standard, Bad und privatem Balkon mit herrlichem Blick auf Lugano, den See und die Berge — die ganze Atmosphäre des Tessins."
+        "desc": "Zimmer mit höherem Standard, Bad und privatem Balkon mit herrlichem Blick auf Lugano, den See und die Berge - die ganze Atmosphäre des Tessins."
       },
       "budgetPlus": {
         "title": "Budget-Plus-Zimmer",
@@ -38,7 +38,7 @@
       },
       "budget": {
         "title": "Budget-Zimmer",
-        "desc": "Unsere günstigsten Zimmer mit eigenem Bad — ideal für Geschäfts- und Fernreisende, die Komfort zu einem fairen Preis suchen."
+        "desc": "Unsere günstigsten Zimmer mit eigenem Bad - ideal für Geschäfts- und Fernreisende, die Komfort zu einem fairen Preis suchen."
       }
     },
     "attractions": {
@@ -51,7 +51,7 @@
   "hero": {
     "ctaContact": "Kontaktieren Sie uns",
     "scrollHint": "Scrollen",
-    "seoH1": "Hotel Al Ponte Cademario — Zimmer und Apartments mit Blick auf den Luganersee",
+    "seoH1": "Hotel Al Ponte Cademario - Zimmer und Apartments mit Blick auf den Luganersee",
     "imageAlt": "Hotel Al Ponte in Cademario mit Panoramablick auf den Luganersee"
   },
   "contact": {
@@ -64,7 +64,7 @@
   },
   "rooms": {
     "title": "Zimmer",
-    "intro": "Unser Hotel bietet Zimmer und Apartments in verschiedenen Größen und Kategorien, viele mit Blick auf den See und die Berge. Wir empfangen große und kleine Familien, Paare sowie Geschäftsreisende. Alle Zimmer verfügen über SMART TV und kostenloses WLAN. Rauchen ist nicht gestattet — jedes Zimmer hat ein modernes Brandschutzsystem.",
+    "intro": "Unser Hotel bietet Zimmer und Apartments in verschiedenen Größen und Kategorien, viele mit Blick auf den See und die Berge. Wir empfangen große und kleine Familien, Paare sowie Geschäftsreisende. Alle Zimmer verfügen über SMART TV und kostenloses WLAN. Rauchen ist nicht gestattet - jedes Zimmer hat ein modernes Brandschutzsystem.",
     "amenities": {
       "bath": "Privates Bad",
       "kitchen": "Private Küche",
@@ -215,7 +215,8 @@
     "title": "Ausstattung & Komfort des Hotels",
     "pool": {
       "title": "Schwimmbad",
-      "desc": "Erfrischen Sie sich in unserem Außenpool mit Panoramablick auf den Luganersee."
+      "desc": "Erfrischen Sie sich in unserem Außenpool mit Panoramablick auf den Luganersee.",
+      "note": "Vorübergehend geschlossen: 12.10.2026 - 14.03.2027"
     },
     "pet": {
       "title": "Haustierfreundlich",
@@ -231,7 +232,7 @@
     },
     "ticket": {
       "title": "Ticino Ticket",
-      "desc": "Kostenlose unbegrenzte Nutzung des öffentlichen Verkehrs im Tessin — in jedem Aufenthalt inklusive."
+      "desc": "Kostenlose unbegrenzte Nutzung des öffentlichen Verkehrs im Tessin - in jedem Aufenthalt inklusive."
     },
     "wifi": {
       "title": "Kostenloses WLAN",
@@ -239,11 +240,11 @@
     },
     "renovated": {
       "title": "Renoviert 2026",
-      "desc": "Komplett renoviert im Jahr 2026 — frische, moderne Zimmer mit atemberaubendem Panoramablick."
+      "desc": "Komplett renoviert im Jahr 2026 - frische, moderne Zimmer mit atemberaubendem Panoramablick."
     },
     "parking": {
       "title": "Parkplatz",
-      "desc": "Bequemer öffentlicher Parkplatz direkt am Hotel — CHF 5 pro Tag, keine Reservierung nötig."
+      "desc": "Bequemer öffentlicher Parkplatz direkt am Hotel - CHF 5 pro Tag, keine Reservierung nötig."
     }
   },
   "gallery": {
@@ -308,7 +309,7 @@
       "receptionNote": "Auch Fr & Sa 15:30–19:30"
     },
     "hours": {
-      "title": "Grundlegende Informationen — Öffnungszeiten",
+      "title": "Grundlegende Informationen - Öffnungszeiten",
       "openYearRound": "Das Hotel ist ganzjährig geöffnet.",
       "checkInOut": "Der Check-in beginnt um 15:30 Uhr und der Check-out endet um 10:00 Uhr.",
       "receptionHours": "Die Rezeption ist von 7:30 bis 11:00 Uhr geöffnet, freitags und samstags zusätzlich von 15:30 bis 19:30 Uhr.",
@@ -316,20 +317,21 @@
       "emailOutsideHours": "Außerhalb der Öffnungszeiten der Rezeption ist eine Kontaktaufnahme per E-Mail unter gatti@al-ponte.ch oder über den Chat von Booking.com möglich.",
       "checkInDetails": "Check-in: möglich von 15:30 bis 24:00 Uhr; nach 19:30 Uhr ist die Rezeption geschlossen und es ist nur ein Selbst-Check-in möglich.",
       "checkInBox": "Hinweis: Sollten wir Sie nicht persönlich empfangen können, hinterlegen wir Ihre Schlüssel in einem abschließbaren Safe (BOX) und senden Ihnen den Code für den Safe zu.",
-      "checkOutDetails": "Check-out: 7:30 — 10:00 Uhr.",
+      "checkOutDetails": "Check-out: 7:30 - 10:00 Uhr.",
       "breakfast": "Frühstück (im Frühstücksraum): von 8:00 bis 10:00 Uhr.",
-      "pool": "Der Pool ist von 8:00 bis 19:30 Uhr geöffnet.",
+      "pool": "Der Pool ist von 8:00 bis 19:30 Uhr geöffnet (vom 12.10.2026 bis zum 14.03.2027 vorübergehend geschlossen).",
       "quietHours": "Die Nachtruhe gilt von 22:00 bis 7:00 Uhr."
     },
     "safety": {
       "intro": "In unserem Hotel können Sie sich sicher fühlen. Alle Räumlichkeiten, einschließlich aller Hotelzimmer, sind mit einem modernen Brandschutz- und Alarmsystem ausgestattet. Aus diesem Grund ist es auf dem gesamten Gelände (einschließlich der Zimmer) verboten, Zigaretten oder andere Tabakwaren (einschließlich E-Zigaretten) sowie Kerzen, Feuerwerkskörper oder andere Feuer- oder Rauchquellen zu verwenden. Alle Gemeinschaftsräume des Hotels (wie z. B. Lobby, Rezeption, Flure, Terrasse, Treppenhäuser und Frühstücksraum) werden mit CCTV-Kameras überwacht. Der Datenverantwortliche ist die Firma Al Ponte Albergo SAGL.",
       "smokingBan": "Auf dem gesamten Gelände der Anlage gilt ein absolutes Rauchverbot für Zigaretten und alle anderen Tabakwaren im gesamten Gebäude, darunter u. a. in allen Zimmern, Fluren und im Frühstücksraum. Dies ergibt sich aus der Notwendigkeit, ein hochsensibles Brandmeldesystem zu installieren und in Betrieb zu nehmen, was gesetzlich vorgeschrieben ist.",
       "acknowledgment": "Mit der Buchung eines Zimmers in unserem Hotel bestätigen Sie, dass Sie die Hausordnung unserer Einrichtung zur Kenntnis genommen haben und allen darin enthaltenen Bestimmungen zustimmen, insbesondere den Brandschutzvorschriften, und dass Sie akzeptieren, dass Sie im Falle der Nichtbeachtung des absoluten Rauchverbots für Zigaretten oder andere Tabakwaren auf dem gesamten Gelände im Falle der Auslösung eines Feueralarms freiwillig und ohne Widerspruch eine zusätzliche Gebühr für die Auslösung des Feueralarms zu tragen haben.",
-      "pleaseNote": "ACHTUNG: Der Gast trägt alle Kosten im Zusammenhang mit dem Einsatz der Feuerwehr oder anderer Ordnungskräfte — mindestens 1500 CHF (Mindestkosten, die dem Hotel durch den Einsatz der Feuerwehr entstehen — ACHTUNG: Diese Kosten können um ein Vielfaches höher ausfallen)."
+      "pleaseNote": "ACHTUNG: Der Gast trägt alle Kosten im Zusammenhang mit dem Einsatz der Feuerwehr oder anderer Ordnungskräfte - mindestens 1500 CHF (Mindestkosten, die dem Hotel durch den Einsatz der Feuerwehr entstehen - ACHTUNG: Diese Kosten können um ein Vielfaches höher ausfallen)."
     },
     "pool": {
       "title": "Informationen zum Schwimmbad",
-      "body": "Auf dem Hotelgelände steht den Gästen ein Hallenbad zur Verfügung. Die Nutzung des Schwimmbads ist kostenlos, zusätzliche Handtücher und Bademäntel sind jedoch kostenpflichtig — diese werden auf Wunsch des Gastes an der Rezeption (während der Öffnungszeiten der Rezeption) ausgegeben."
+      "closure": "Das Schwimmbad ist vom 12.10.2026 bis zum 14.03.2027 vorübergehend geschlossen.",
+      "body": "Auf dem Hotelgelände steht den Gästen ein Hallenbad zur Verfügung. Die Nutzung des Schwimmbads ist kostenlos, zusätzliche Handtücher und Bademäntel sind jedoch kostenpflichtig - diese werden auf Wunsch des Gastes an der Rezeption (während der Öffnungszeiten der Rezeption) ausgegeben."
     },
     "parking": {
       "title": "Informationen zum Parken",
@@ -342,18 +344,18 @@
     "services": {
       "title": "Preisliste für Zusatzleistungen",
       "items": {
-        "1": "Früher Check-in (für jede angefangene Stunde vor der regulären Check-in-Zeit) — 20 CHF.",
-        "2": "Später Check-out (für jede angefangene Stunde nach 10:00 Uhr) — 25 CHF.",
-        "3": "Gebühr für verlorenen Schlüssel — 50 CHF/Stück.",
-        "4": "Zusätzliche Reinigung auf Anfrage — 40 CHF/einmalige Reinigung.",
-        "5": "Zusätzliches Badetuch für den Pool — 5 CHF/Stück.",
-        "6": "Bademantel für den Pool — 8 CHF/Stück.",
-        "7": "Zusätzlicher Kühlschrank auf Anfrage (je nach Verfügbarkeit) — 20 CHF/Stück.",
-        "8": "Babybett auf Anfrage (je nach Verfügbarkeit) — 25 CHF/Stück.",
-        "9": "Zusätzliches Klappbett im Zimmer (je nach Verfügbarkeit und Platz im Zimmer) — 50 CHF.",
-        "10": "Gebühr für Haustiere — 20 CHF/Tag/Tier.",
-        "11": "Zusatzgebühr im Zusammenhang mit der Auslösung des Feueralarms — mindestens 1500 CHF. HINWEIS: Der Gast trägt alle Kosten im Zusammenhang mit dem Einsatz der Feuerwehr oder anderer Ordnungskräfte — mindestens 1500 CHF (Mindestkosten, die dem Hotel durch die Auslösung des Alarms und den Einsatz der Feuerwehr entstehen).",
-        "12": "Frühstück (sofern nicht bereits im Übernachtungspreis enthalten) — 12 CHF pro Person (Bezahlung an der Rezeption)."
+        "1": "Früher Check-in (für jede angefangene Stunde vor der regulären Check-in-Zeit) - 20 CHF.",
+        "2": "Später Check-out (für jede angefangene Stunde nach 10:00 Uhr) - 25 CHF.",
+        "3": "Gebühr für verlorenen Schlüssel - 50 CHF/Stück.",
+        "4": "Zusätzliche Reinigung auf Anfrage - 40 CHF/einmalige Reinigung.",
+        "5": "Zusätzliches Badetuch für den Pool - 5 CHF/Stück.",
+        "6": "Bademantel für den Pool - 8 CHF/Stück.",
+        "7": "Zusätzlicher Kühlschrank auf Anfrage (je nach Verfügbarkeit) - 20 CHF/Stück.",
+        "8": "Babybett auf Anfrage (je nach Verfügbarkeit) - 25 CHF/Stück.",
+        "9": "Zusätzliches Klappbett im Zimmer (je nach Verfügbarkeit und Platz im Zimmer) - 50 CHF.",
+        "10": "Gebühr für Haustiere - 20 CHF/Tag/Tier.",
+        "11": "Zusatzgebühr im Zusammenhang mit der Auslösung des Feueralarms - mindestens 1500 CHF. HINWEIS: Der Gast trägt alle Kosten im Zusammenhang mit dem Einsatz der Feuerwehr oder anderer Ordnungskräfte - mindestens 1500 CHF (Mindestkosten, die dem Hotel durch die Auslösung des Alarms und den Einsatz der Feuerwehr entstehen).",
+        "12": "Frühstück (sofern nicht bereits im Übernachtungspreis enthalten) - 12 CHF pro Person (Bezahlung an der Rezeption)."
       }
     },
     "tv": {
@@ -368,7 +370,7 @@
       "title": "Sonstige Gästewünsche",
       "body": "Unser Team bereitet sich auf Ihre Ankunft vor und freut sich darauf, Sie in unserem Hotel begrüßen zu dürfen. Bitte teilen Sie uns vor Ihrer Ankunft mit, ob wir Ihnen noch in irgendeiner Weise behilflich sein können."
     },
-    "signoff": "Mit freundlichen Grüßen — das Team des Hotels Al Ponte Albergo."
+    "signoff": "Mit freundlichen Grüßen - das Team des Hotels Al Ponte Albergo."
   },
   "attractions": {
     "teaserCta": "Entdecken Sie die Ausflugsziele im Tessin",
@@ -626,7 +628,7 @@
   "seo": {
     "siteName": "Hotel Al Ponte Cademario",
     "titleTemplate": "%s | Hotel Al Ponte Cademario",
-    "ogAlt": "Hotel Al Ponte Cademario — Boutiquehotel am Luganersee, Tessin",
+    "ogAlt": "Hotel Al Ponte Cademario - Boutiquehotel am Luganersee, Tessin",
     "home": {
       "title": "Hotel Al Ponte Cademario – Zimmer & Apartments mit Blick auf den Luganersee",
       "description": "Boutiquehotel in Cademario, am Luganersee. Zimmer und Apartments mit Panoramablick, Schwimmbad, kostenloses WLAN, Parkplatz und haustierfreundlich. Ticino Ticket bei jedem Aufenthalt inklusive."
@@ -677,7 +679,7 @@
         "meta": "Indien"
       },
       "icegirl": {
-        "quote": "Familiengeführtes Hotel, klein aber fein! Super freundliche Menschen — wir sind schon das zweite Jahr in Folge hier.",
+        "quote": "Familiengeführtes Hotel, klein aber fein! Super freundliche Menschen - wir sind schon das zweite Jahr in Folge hier.",
         "meta": ""
       },
       "romuald": {

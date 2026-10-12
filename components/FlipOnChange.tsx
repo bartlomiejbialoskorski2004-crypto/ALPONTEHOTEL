@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
-// Flips a text value when it changes — the old value slides up and out while
+// Flips a text value when it changes - the old value slides up and out while
 // the new value rises from below, matching the navbar FlipText direction.
 // Use for dynamic, value-changing text (scroll-spy labels, counters).
 export default function FlipOnChange({

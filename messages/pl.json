@@ -26,11 +26,11 @@
     "rooms": {
       "apartments": {
         "title": "Apartamenty",
-        "desc": "Z aneksem kuchennym i łazienką — doskonały wybór dla rodzin z dziećmi lub na dłuższe pobyty."
+        "desc": "Z aneksem kuchennym i łazienką - doskonały wybór dla rodzin z dziećmi lub na dłuższe pobyty."
       },
       "superior": {
         "title": "Widok na jezioro",
-        "desc": "Pokoje o wyższym standardzie z łazienką i prywatnym balkonem z zapierającym dech widokiem na Lugano, jezioro i góry — pełnia atmosfery Ticino."
+        "desc": "Pokoje o wyższym standardzie z łazienką i prywatnym balkonem z zapierającym dech widokiem na Lugano, jezioro i góry - pełnia atmosfery Ticino."
       },
       "budgetPlus": {
         "title": "Pokoje Budget Plus",
@@ -38,7 +38,7 @@
       },
       "budget": {
         "title": "Pokoje Budget",
-        "desc": "Najtańsze pokoje z prywatną łazienką — idealne dla podróżujących służbowo lub na długich trasach, szukających komfortu w dobrej cenie."
+        "desc": "Najtańsze pokoje z prywatną łazienką - idealne dla podróżujących służbowo lub na długich trasach, szukających komfortu w dobrej cenie."
       }
     },
     "attractions": {
@@ -51,7 +51,7 @@
   "hero": {
     "ctaContact": "Skontaktuj się",
     "scrollHint": "Przewiń",
-    "seoH1": "Hotel Al Ponte Cademario — pokoje i apartamenty z widokiem na Jezioro Lugano",
+    "seoH1": "Hotel Al Ponte Cademario - pokoje i apartamenty z widokiem na Jezioro Lugano",
     "imageAlt": "Hotel Al Ponte w Cademario z panoramicznym widokiem na Jezioro Lugano"
   },
   "contact": {
@@ -64,7 +64,7 @@
   },
   "rooms": {
     "title": "Pokoje",
-    "intro": "Nasz hotel oferuje pokoje i apartamenty o różnych metrażach i standardach, wiele z widokiem na jezioro i góry. Witamy duże i małe rodziny, pary oraz osoby podróżujące służbowo. Wszystkie pokoje wyposażone są w SMART TV oraz bezpłatne Wi-Fi. Palenie jest zabronione — każdy pokój ma nowoczesny system przeciwpożarowy.",
+    "intro": "Nasz hotel oferuje pokoje i apartamenty o różnych metrażach i standardach, wiele z widokiem na jezioro i góry. Witamy duże i małe rodziny, pary oraz osoby podróżujące służbowo. Wszystkie pokoje wyposażone są w SMART TV oraz bezpłatne Wi-Fi. Palenie jest zabronione - każdy pokój ma nowoczesny system przeciwpożarowy.",
     "amenities": {
       "bath": "Prywatna łazienka",
       "kitchen": "Prywatna kuchnia",
@@ -215,7 +215,8 @@
     "title": "Udogodnienia i komfort hotelu",
     "pool": {
       "title": "Basen",
-      "desc": "Odśwież się w naszym odkrytym basenie z panoramą jeziora Lugano."
+      "desc": "Odśwież się w naszym odkrytym basenie z panoramą jeziora Lugano.",
+      "note": "Czasowo zamknięty: 12.10.2026 - 14.03.2027"
     },
     "pet": {
       "title": "Przyjazny zwierzętom",
@@ -231,7 +232,7 @@
     },
     "ticket": {
       "title": "Ticino Ticket",
-      "desc": "Bezpłatny nielimitowany transport publiczny w całym Ticino — wliczony w cenę pobytu."
+      "desc": "Bezpłatny nielimitowany transport publiczny w całym Ticino - wliczony w cenę pobytu."
     },
     "wifi": {
       "title": "Bezpłatne Wi-Fi",
@@ -239,11 +240,11 @@
     },
     "renovated": {
       "title": "Remont w 2026",
-      "desc": "Całkowicie odnowiony w 2026 — świeże, nowoczesne pokoje z zapierającą dech panoramą."
+      "desc": "Całkowicie odnowiony w 2026 - świeże, nowoczesne pokoje z zapierającą dech panoramą."
     },
     "parking": {
       "title": "Parking",
-      "desc": "Wygodny parking publiczny przy hotelu — 5 CHF/dzień, bez rezerwacji."
+      "desc": "Wygodny parking publiczny przy hotelu - 5 CHF/dzień, bez rezerwacji."
     }
   },
   "gallery": {
@@ -308,28 +309,29 @@
       "receptionNote": "Pt i Sb także 15:30–19:30"
     },
     "hours": {
-      "title": "Podstawowe informacje — godziny pracy",
+      "title": "Podstawowe informacje - godziny pracy",
       "openYearRound": "Hotel jest czynny cały rok.",
       "checkInOut": "Doba hotelowa zaczyna się o godzinie 15:30, a kończy się o godzinie 10:00.",
       "receptionHours": "Recepcja czynna jest w godzinach: od 7:30 do 11:00, a w piątki i soboty dodatkowo od 15:30 do 19:30.",
       "phone": "W godzinach pracy recepcji możliwy kontakt telefoniczny pod numerem +41 91 605 24 92.",
       "emailOutsideHours": "Poza godzinami pracy recepcji kontakt możliwy przez e-mail: gatti@al-ponte.ch lub przez chat Booking.com.",
-      "checkInDetails": "Zameldowanie (Check-in): możliwe w godzinach 15:30 — 24:00, ale po godzinie 19:30 recepcja jest nieczynna i możliwe jest tylko samodzielne zameldowanie (self check-in).",
+      "checkInDetails": "Zameldowanie (Check-in): możliwe w godzinach 15:30 - 24:00, ale po godzinie 19:30 recepcja jest nieczynna i możliwe jest tylko samodzielne zameldowanie (self check-in).",
       "checkInBox": "UWAGA: Jeśli nie będziemy mogli powitać Państwa osobiście, to zostawimy dla Państwa klucze w specjalnym zamykanym boksie (BOX) i wyślemy Państwu specjalną instrukcję z kodem do tego boksu.",
-      "checkOutDetails": "Wymeldowanie (Check-out): 7:30 — 10:00.",
+      "checkOutDetails": "Wymeldowanie (Check-out): 7:30 - 10:00.",
       "breakfast": "Śniadanie (dostępne w sali śniadaniowej): od 8:00 do 10:00.",
-      "pool": "Basen jest czynny od godziny 8:00 do 19:30.",
+      "pool": "Basen jest czynny od godziny 8:00 do 19:30 (czasowo zamknięty od 12.10.2026 do 14.03.2027).",
       "quietHours": "Cisza nocna obowiązuje od godziny 22:00 do 7:00."
     },
     "safety": {
       "intro": "W naszym hotelu możesz się czuć bezpiecznie. Wszystkie pomieszczenia, w tym wszystkie pokoje hotelowe, są wyposażone w nowoczesny system przeciwpożarowy i alarmowy, co powoduje, że na terenie całego obiektu (w tym w pokojach) nie wolno palić papierosów ani żadnych innych wyrobów tytoniowych (w tym e-papierosów) lub świec, ogni sztucznych ani innych źródeł ognia lub dymu. Wszystkie pomieszczenia wspólne w hotelu (takie jak m.in. lobby, recepcja, korytarze, taras, klatki schodowe oraz sala śniadaniowa) są monitorowane za pomocą kamer monitoringu CCTV. Administratorem danych jest firma Al Ponte Albergo SAGL.",
       "smokingBan": "Na terenie obiektu obowiązuje całkowity zakaz palenia papierosów i wszelkich innych wyrobów tytoniowych w całym budynku, w tym m.in. we wszystkich pokojach, korytarzach, sali śniadaniowej. Wynika on z konieczności zainstalowania i uruchomienia bardzo czułego systemu przeciwpożarowego, co wynika z przepisów prawa.",
       "acknowledgment": "Dokonując rezerwacji pokoju w naszym hotelu poświadczasz, że zapoznałeś się z regulaminem naszego obiektu oraz zgadzasz się z wszelkimi jego postanowieniami, w tym przede wszystkim z przepisami przeciwpożarowymi, oraz akceptujesz fakt, że w sytuacji niezastosowania się do całkowitego zakazu palenia papierosów lub innych wyrobów tytoniowych na terenie całego obiektu, w razie wywołania alarmu pożarowego dobrowolnie i bez żadnego sprzeciwu poniesiesz opłatę dodatkową związaną z wyzwoleniem alarmu przeciwpożarowego.",
-      "pleaseNote": "UWAGA: gość pokrywa wszystkie koszty związane z interwencją straży pożarnej lub innych służb porządkowych — nie mniej niż 1500 CHF (minimalny koszt jaki hotel musi ponieść w związku z interwencją straży pożarnej — UWAGA: koszty te mogą być wielokrotnie wyższe)."
+      "pleaseNote": "UWAGA: gość pokrywa wszystkie koszty związane z interwencją straży pożarnej lub innych służb porządkowych - nie mniej niż 1500 CHF (minimalny koszt jaki hotel musi ponieść w związku z interwencją straży pożarnej - UWAGA: koszty te mogą być wielokrotnie wyższe)."
     },
     "pool": {
       "title": "Informacja na temat basenu",
-      "body": "Na terenie hotelu do dyspozycji gości znajduje się kryty basen. Korzystanie z basenu jest bezpłatne, natomiast opłatom podlegają dodatkowe ręczniki oraz szlafrok — wydawane są one w recepcji (w godzinach pracy recepcji) na życzenie klienta."
+      "closure": "Basen jest czasowo zamknięty od 12.10.2026 do 14.03.2027.",
+      "body": "Na terenie hotelu do dyspozycji gości znajduje się kryty basen. Korzystanie z basenu jest bezpłatne, natomiast opłatom podlegają dodatkowe ręczniki oraz szlafrok - wydawane są one w recepcji (w godzinach pracy recepcji) na życzenie klienta."
     },
     "parking": {
       "title": "Informacja na temat parkingu",
@@ -337,23 +339,23 @@
     },
     "tax": {
       "title": "Podatek turystyczny",
-      "body": "Cena noclegu (rezerwacji) nie obejmuje podatku turystycznego, który wynosi 4,20 CHF za osobę za dobę hotelową i powinien zostać uiszczony w recepcji podczas zameldowania (a w przypadku gości, którzy przyjechali późno i korzystali z self check-in — następnego dnia rano)."
+      "body": "Cena noclegu (rezerwacji) nie obejmuje podatku turystycznego, który wynosi 4,20 CHF za osobę za dobę hotelową i powinien zostać uiszczony w recepcji podczas zameldowania (a w przypadku gości, którzy przyjechali późno i korzystali z self check-in - następnego dnia rano)."
     },
     "services": {
       "title": "Cennik usług dodatkowych",
       "items": {
-        "1": "Wcześniejsze zameldowanie (za każdą rozpoczętą godzinę przed standardowym czasem zameldowania) — 20 CHF.",
-        "2": "Późniejsze wymeldowanie (za każdą rozpoczętą godzinę po godzinie 10:00) — 25 CHF.",
-        "3": "Opłata za zgubienie klucza — 50 CHF/szt.",
-        "4": "Dodatkowe sprzątanie na życzenie — 40 CHF/pojedyncze sprzątanie.",
-        "5": "Dodatkowy ręcznik na basen — 5 CHF/szt.",
-        "6": "Szlafrok na basen — 8 CHF/szt.",
-        "7": "Dodatkowa lodówka na życzenie (w miarę dostępności) — 20 CHF/szt.",
-        "8": "Łóżeczko dla dziecka na życzenie (w miarę dostępności) — 25 CHF/szt.",
-        "9": "Dodatkowe rozkładane łóżko w pokoju (w miarę dostępności i miejsca w pokoju) — 50 CHF.",
-        "10": "Opłata za zwierzęta domowe — 20 CHF/dzień/zwierzę.",
-        "11": "Opłata dodatkowa związana z wyzwoleniem alarmu przeciwpożarowego — nie mniej niż 1500 CHF. UWAGA: gość pokrywa wszystkie koszty związane z interwencją straży pożarnej lub innych służb porządkowych — nie mniej niż 1500 CHF (minimalny koszt jaki hotel musi ponieść w związku z wyzwoleniem alarmu oraz interwencją straży pożarnej).",
-        "12": "Śniadanie (o ile nie jest już wliczone w cenę noclegu) — 12 CHF od osoby (płatność w recepcji)."
+        "1": "Wcześniejsze zameldowanie (za każdą rozpoczętą godzinę przed standardowym czasem zameldowania) - 20 CHF.",
+        "2": "Późniejsze wymeldowanie (za każdą rozpoczętą godzinę po godzinie 10:00) - 25 CHF.",
+        "3": "Opłata za zgubienie klucza - 50 CHF/szt.",
+        "4": "Dodatkowe sprzątanie na życzenie - 40 CHF/pojedyncze sprzątanie.",
+        "5": "Dodatkowy ręcznik na basen - 5 CHF/szt.",
+        "6": "Szlafrok na basen - 8 CHF/szt.",
+        "7": "Dodatkowa lodówka na życzenie (w miarę dostępności) - 20 CHF/szt.",
+        "8": "Łóżeczko dla dziecka na życzenie (w miarę dostępności) - 25 CHF/szt.",
+        "9": "Dodatkowe rozkładane łóżko w pokoju (w miarę dostępności i miejsca w pokoju) - 50 CHF.",
+        "10": "Opłata za zwierzęta domowe - 20 CHF/dzień/zwierzę.",
+        "11": "Opłata dodatkowa związana z wyzwoleniem alarmu przeciwpożarowego - nie mniej niż 1500 CHF. UWAGA: gość pokrywa wszystkie koszty związane z interwencją straży pożarnej lub innych służb porządkowych - nie mniej niż 1500 CHF (minimalny koszt jaki hotel musi ponieść w związku z wyzwoleniem alarmu oraz interwencją straży pożarnej).",
+        "12": "Śniadanie (o ile nie jest już wliczone w cenę noclegu) - 12 CHF od osoby (płatność w recepcji)."
       }
     },
     "tv": {
@@ -368,7 +370,7 @@
       "title": "Inne życzenia gości",
       "body": "Nasz zespół przygotowuje się na Państwa przyjazd i z niecierpliwością oczekuje na możliwość ugoszczenia Państwa w naszym hotelu. Prosimy o poinformowanie nas przed przyjazdem, jeśli możemy jeszcze w czymś Państwu pomóc."
     },
-    "signoff": "Serdecznie pozdrawiamy — Zespół Hotelu Al Ponte Albergo."
+    "signoff": "Serdecznie pozdrawiamy - Zespół Hotelu Al Ponte Albergo."
   },
   "attractions": {
     "teaserCta": "Odkryj atrakcje Ticino",
@@ -470,7 +472,7 @@
         "title": "Górskie Przygody",
         "items": [
           {
-            "text": "Spektakularne panoramy czekają na Ciebie na Monte Generoso, Monte Brè i Monte San Salvatore. Wszystkie trzy szczyty są widoczne z Al Ponte i można do nich łatwo dotrzeć autobusem lub pociągiem — całkowicie bezpłatnie z Twoim Ticino Ticket.",
+            "text": "Spektakularne panoramy czekają na Ciebie na Monte Generoso, Monte Brè i Monte San Salvatore. Wszystkie trzy szczyty są widoczne z Al Ponte i można do nich łatwo dotrzeć autobusem lub pociągiem - całkowicie bezpłatnie z Twoim Ticino Ticket.",
             "links": [
               {
                 "label": "Monte Generoso",
@@ -492,7 +494,7 @@
         "title": "Spacery na łonie natury",
         "items": [
           {
-            "text": "Zaledwie 1 km od hotelu znajdziesz idylliczne ścieżki przyrodnicze oferujące zapierające dech w piersiach widoki. Podążaj szlakiem, aby odkryć mały, orzeźwiający wodospad i stary Mulino (młyn) — idealne miejsce na spokojną popołudniową ucieczkę od codzienności.",
+            "text": "Zaledwie 1 km od hotelu znajdziesz idylliczne ścieżki przyrodnicze oferujące zapierające dech w piersiach widoki. Podążaj szlakiem, aby odkryć mały, orzeźwiający wodospad i stary Mulino (młyn) - idealne miejsce na spokojną popołudniową ucieczkę od codzienności.",
             "links": [
               {
                 "label": "Ścieżki przyrodnicze",
@@ -565,7 +567,7 @@
         "title": "Zakupy i Styl",
         "items": [
           {
-            "text": "Dla miłośników zakupów czeka Fox Town w Mendrisio z markowymi outletami i świetnymi okazjami — otwarte nawet w niedziele i łatwo dostępne pociągiem.",
+            "text": "Dla miłośników zakupów czeka Fox Town w Mendrisio z markowymi outletami i świetnymi okazjami - otwarte nawet w niedziele i łatwo dostępne pociągiem.",
             "links": [
               {
                 "label": "FoxTown Mendrisio",
@@ -593,7 +595,7 @@
         "title": "Wycieczki do Włoch",
         "items": [
           {
-            "text": "Rozszerz swoją przygodę o przejażdżkę pociągiem TILO do Como lub Mediolanu — idealnych miejsc na kontakt z kulturą, zakupy i słynne na całym świecie lody.",
+            "text": "Rozszerz swoją przygodę o przejażdżkę pociągiem TILO do Como lub Mediolanu - idealnych miejsc na kontakt z kulturą, zakupy i słynne na całym świecie lody.",
             "links": [
               {
                 "label": "Pociągi TILO",
@@ -626,7 +628,7 @@
   "seo": {
     "siteName": "Hotel Al Ponte Cademario",
     "titleTemplate": "%s | Hotel Al Ponte Cademario",
-    "ogAlt": "Hotel Al Ponte Cademario — butikowy hotel nad Jeziorem Lugano, Ticino",
+    "ogAlt": "Hotel Al Ponte Cademario - butikowy hotel nad Jeziorem Lugano, Ticino",
     "home": {
       "title": "Hotel Al Ponte Cademario – Pokoje i Apartamenty z widokiem na Jezioro Lugano",
       "description": "Butikowy hotel w Cademario, nad Jeziorem Lugano. Pokoje i apartamenty z panoramicznym widokiem, basen, darmowe Wi-Fi, parking i przyjazny zwierzętom. Bilet Ticino Ticket w cenie każdego pobytu."
@@ -677,7 +679,7 @@
         "meta": "Indie"
       },
       "icegirl": {
-        "quote": "Rodzinny hotel, mały, ale przyjemny! Super sympatyczni ludzie — jesteśmy tu już drugi rok z rzędu.",
+        "quote": "Rodzinny hotel, mały, ale przyjemny! Super sympatyczni ludzie - jesteśmy tu już drugi rok z rzędu.",
         "meta": ""
       },
       "romuald": {

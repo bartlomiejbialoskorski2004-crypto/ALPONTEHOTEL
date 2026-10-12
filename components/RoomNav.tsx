@@ -108,7 +108,7 @@ export default function RoomNav() {
 
   return (
     // Outer wrapper owns the header-follow lift (in px). The inner nav keeps its
-    // own panel show/hide animation (in %) — separating units avoids a px/%
+    // own panel show/hide animation (in %) - separating units avoids a px/%
     // clash on the same axis of one element.
     <motion.div
       initial={false}

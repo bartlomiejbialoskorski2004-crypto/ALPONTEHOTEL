@@ -216,7 +216,7 @@ export default function RoomPanelClient({
     setIndex(([i]) => [target, target === i ? 0 : target > i ? 1 : -1]);
 
   // Keep the active thumbnail centred in the strip. Horizontal-only scroll
-  // (not scrollIntoView), so it can never move the page vertically — on
+  // (not scrollIntoView), so it can never move the page vertically - on
   // mount, scrollIntoView used to ride the viewport down to the strips.
   useEffect(() => {
     const strip = stripRef.current;
@@ -300,7 +300,7 @@ export default function RoomPanelClient({
               {t(`rooms.items.${ns}.desc`)}
             </motion.p>
 
-            {/* Feature tiles — mobile carousel, desktop 3-col grid */}
+            {/* Feature tiles - mobile carousel, desktop 3-col grid */}
             <motion.ul
               ref={featRef}
               variants={fadeUp}
@@ -341,7 +341,7 @@ export default function RoomPanelClient({
               })}
             </motion.ul>
 
-            {/* Slider dots — mobile affordance for the features carousel */}
+            {/* Slider dots - mobile affordance for the features carousel */}
             {features.length > 1 && (
               <motion.div
                 variants={fadeUp}
@@ -388,7 +388,7 @@ export default function RoomPanelClient({
           </motion.a>
         </motion.div>
 
-        {/* Gallery — mobile gray card holds the title; desktop sticky carousel */}
+        {/* Gallery - mobile gray card holds the title; desktop sticky carousel */}
         <div className="relative order-2 bg-mist p-4 lg:order-none lg:m-0 lg:bg-transparent lg:p-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}

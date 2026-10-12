@@ -92,7 +92,7 @@ export default async function Informations() {
 
   return (
     <article className="bg-paper text-ink">
-      {/* Hero band — hotel facade under a forest wash. */}
+      {/* Hero band - hotel facade under a forest wash. */}
       <section className="relative flex min-h-[58svh] w-full items-end overflow-hidden bg-forest text-paper">
         <ParallaxImage src="/Hero2.jpg" alt={tHero("imageAlt")} priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/55 to-forest/90" />
@@ -180,6 +180,10 @@ export default async function Informations() {
 
           <section id="pool" className={block}>
             <SectionHead num="03" title={t("pool.title")} />
+            {/* Temporary closure notice (12.10.2026 - 14.03.2027). */}
+            <p className="mt-8 max-w-prose border-l-2 border-forest pl-6 text-base font-medium leading-relaxed text-forest lg:pl-8">
+              {t("pool.closure")}
+            </p>
             <p className={sectionBody}>{t("pool.body")}</p>
           </section>
 

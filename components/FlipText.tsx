@@ -1,7 +1,7 @@
 // Smooth "flip" label: the text slides up out of view while an identical
 // copy rises from below to take its place. The interaction is driven by the
 // nearest `.group` ancestor, so wrap the label in a link/button that carries
-// the `group` class (and let that element clip nothing — clipping happens
+// the `group` class (and let that element clip nothing - clipping happens
 // here). Keep the label to a single line; the duplicate is aria-hidden.
 
 type Props = {

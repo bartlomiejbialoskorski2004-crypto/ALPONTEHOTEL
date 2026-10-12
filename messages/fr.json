@@ -26,11 +26,11 @@
     "rooms": {
       "apartments": {
         "title": "Appartements",
-        "desc": "Avec cuisine et salle de bain — un excellent choix pour les familles avec enfants ou les longs séjours."
+        "desc": "Avec cuisine et salle de bain - un excellent choix pour les familles avec enfants ou les longs séjours."
       },
       "superior": {
         "title": "Chambres vue lac",
-        "desc": "Chambres de standing supérieur avec salle de bain et balcon privé offrant une vue magnifique sur Lugano, le lac et les montagnes — toute l'atmosphère du Tessin."
+        "desc": "Chambres de standing supérieur avec salle de bain et balcon privé offrant une vue magnifique sur Lugano, le lac et les montagnes - toute l'atmosphère du Tessin."
       },
       "budgetPlus": {
         "title": "Chambres Budget Plus",
@@ -38,7 +38,7 @@
       },
       "budget": {
         "title": "Chambres Budget",
-        "desc": "Nos chambres les plus abordables, avec salle de bain privée — idéales pour les voyageurs d'affaires ou longue distance en quête de confort à bon prix."
+        "desc": "Nos chambres les plus abordables, avec salle de bain privée - idéales pour les voyageurs d'affaires ou longue distance en quête de confort à bon prix."
       }
     },
     "attractions": {
@@ -51,7 +51,7 @@
   "hero": {
     "ctaContact": "Nous contacter",
     "scrollHint": "Faire défiler",
-    "seoH1": "Hotel Al Ponte Cademario — chambres et appartements avec vue sur le lac de Lugano",
+    "seoH1": "Hotel Al Ponte Cademario - chambres et appartements avec vue sur le lac de Lugano",
     "imageAlt": "Hôtel Al Ponte à Cademario avec vue panoramique sur le lac de Lugano"
   },
   "contact": {
@@ -64,7 +64,7 @@
   },
   "rooms": {
     "title": "Chambres",
-    "intro": "Notre hôtel propose chambres et appartements de différentes tailles et catégories, beaucoup avec vue sur le lac et les montagnes. Nous accueillons familles grandes et petites, couples et voyageurs d'affaires. Toutes les chambres sont équipées de SMART TV et de Wi-Fi gratuit. Il est interdit de fumer — chaque chambre dispose d'un système anti-incendie moderne.",
+    "intro": "Notre hôtel propose chambres et appartements de différentes tailles et catégories, beaucoup avec vue sur le lac et les montagnes. Nous accueillons familles grandes et petites, couples et voyageurs d'affaires. Toutes les chambres sont équipées de SMART TV et de Wi-Fi gratuit. Il est interdit de fumer - chaque chambre dispose d'un système anti-incendie moderne.",
     "amenities": {
       "bath": "Salle de bain privée",
       "kitchen": "Cuisine privée",
@@ -215,7 +215,8 @@
     "title": "Équipements et conforts de l'hôtel",
     "pool": {
       "title": "Piscine",
-      "desc": "Rafraîchissez-vous dans notre piscine extérieure avec vue panoramique sur le Lac de Lugano."
+      "desc": "Rafraîchissez-vous dans notre piscine extérieure avec vue panoramique sur le Lac de Lugano.",
+      "note": "Temporairement fermée : 12.10.2026 - 14.03.2027"
     },
     "pet": {
       "title": "Animaux acceptés",
@@ -231,7 +232,7 @@
     },
     "ticket": {
       "title": "Ticino Ticket",
-      "desc": "Transports publics illimités gratuits dans tout le Tessin — inclus dans chaque séjour."
+      "desc": "Transports publics illimités gratuits dans tout le Tessin - inclus dans chaque séjour."
     },
     "wifi": {
       "title": "Wi-Fi gratuit",
@@ -239,11 +240,11 @@
     },
     "renovated": {
       "title": "Rénové en 2026",
-      "desc": "Entièrement rénové en 2026 — chambres modernes et vues panoramiques magnifiques."
+      "desc": "Entièrement rénové en 2026 - chambres modernes et vues panoramiques magnifiques."
     },
     "parking": {
       "title": "Parking",
-      "desc": "Parking public pratique à l'hôtel — 5 CHF par jour, sans réservation."
+      "desc": "Parking public pratique à l'hôtel - 5 CHF par jour, sans réservation."
     }
   },
   "gallery": {
@@ -308,7 +309,7 @@
       "receptionNote": "Ven. et sam. aussi 15h30–19h30"
     },
     "hours": {
-      "title": "Informations générales — horaires d'ouverture",
+      "title": "Informations générales - horaires d'ouverture",
       "openYearRound": "L'hôtel est ouvert toute l'année.",
       "checkInOut": "L'enregistrement s'effectue à partir de 15h30 et le départ avant 10h00.",
       "receptionHours": "La réception est ouverte de 7h30 à 11h00, et les vendredis et samedis également de 15h30 à 19h30.",
@@ -318,18 +319,19 @@
       "checkInBox": "Remarque : Si nous ne sommes pas en mesure de vous accueillir en personne, nous déposerons vos clés dans un coffre-fort sécurisé (BOX) et vous enverrons les instructions ainsi que le code d'accès.",
       "checkOutDetails": "Départ (check-out) : de 7h30 à 10h00.",
       "breakfast": "Petit-déjeuner (servi dans la salle de petit-déjeuner) : de 8h00 à 10h00.",
-      "pool": "La piscine est ouverte de 8h00 à 19h30.",
+      "pool": "La piscine est ouverte de 8h00 à 19h30 (temporairement fermée du 12.10.2026 au 14.03.2027).",
       "quietHours": "Le silence nocturne est de rigueur de 22h00 à 7h00."
     },
     "safety": {
       "intro": "Vous pouvez vous sentir en sécurité dans notre hôtel. Tous les locaux, y compris toutes les chambres, sont équipés d'un système moderne de sécurité incendie et d'alarme. Par conséquent, il est interdit de fumer des cigarettes ou tout autre produit du tabac, d'allumer des bougies, des feux d'artifice ou toute autre source de feu ou de fumée dans l'ensemble de l'établissement (y compris dans les chambres). Tous les espaces communs de l'hôtel (tels que le hall d'entrée, la réception, les couloirs, la terrasse, les cages d'escalier et la salle de petit-déjeuner) sont surveillés par des caméras de vidéosurveillance. Le responsable du traitement des données est la société Al Ponte Albergo SAGL.",
       "smokingBan": "Il est strictement interdit de fumer des cigarettes et tout autre produit du tabac dans l'ensemble du bâtiment, y compris notamment dans toutes les chambres, les couloirs et la salle de petit-déjeuner. Cette interdiction résulte de la nécessité d'installer et de mettre en service un système de détection d'incendie très sensible, conformément à la législation en vigueur.",
       "acknowledgment": "En réservant une chambre dans notre hôtel, vous certifiez avoir pris connaissance du règlement de notre établissement et accepter toutes ses dispositions, notamment les règles de sécurité incendie, et vous acceptez le fait qu'en cas de non-respect de l'interdiction totale de fumer des cigarettes ou tout autre produit du tabac dans l'ensemble de l'établissement, en cas de déclenchement de l'alarme incendie, vous devrez volontairement et sans aucune objection vous acquitter d'un supplément lié au déclenchement de l'alarme incendie.",
-      "pleaseNote": "ATTENTION : le client prend en charge tous les frais liés à l'intervention des pompiers ou d'autres services d'urgence — au minimum 1 500 CHF (coût minimum que l'hôtel doit supporter en raison de l'intervention des pompiers — REMARQUE : ces coûts peuvent être plusieurs fois supérieurs)."
+      "pleaseNote": "ATTENTION : le client prend en charge tous les frais liés à l'intervention des pompiers ou d'autres services d'urgence - au minimum 1 500 CHF (coût minimum que l'hôtel doit supporter en raison de l'intervention des pompiers - REMARQUE : ces coûts peuvent être plusieurs fois supérieurs)."
     },
     "pool": {
       "title": "Informations sur la piscine",
-      "body": "L'hôtel dispose d'une piscine couverte à la disposition des clients. L'accès à la piscine est gratuit, mais des serviettes et un peignoir supplémentaires sont payants — ils sont disponibles à la réception (pendant les heures d'ouverture de la réception) sur demande."
+      "closure": "La piscine est temporairement fermée du 12.10.2026 au 14.03.2027.",
+      "body": "L'hôtel dispose d'une piscine couverte à la disposition des clients. L'accès à la piscine est gratuit, mais des serviettes et un peignoir supplémentaires sont payants - ils sont disponibles à la réception (pendant les heures d'ouverture de la réception) sur demande."
     },
     "parking": {
       "title": "Informations sur le parking",
@@ -342,18 +344,18 @@
     "services": {
       "title": "Tarifs des services supplémentaires",
       "items": {
-        "1": "Enregistrement anticipé (pour chaque heure entamée avant l'heure d'enregistrement standard) — 20 CHF.",
-        "2": "Départ tardif (pour chaque heure entamée après 10h00) — 25 CHF.",
-        "3": "Frais en cas de perte de clé — 50 CHF/pièce.",
-        "4": "Ménage supplémentaire sur demande — 40 CHF/ménage.",
-        "5": "Serviette de piscine supplémentaire — 5 CHF/pièce.",
-        "6": "Peignoir de piscine — 8 CHF/pièce.",
-        "7": "Réfrigérateur supplémentaire sur demande (sous réserve de disponibilité) — 20 CHF.",
-        "8": "Lit bébé sur demande (sous réserve de disponibilité) — 25 CHF.",
-        "9": "Lit d'appoint dans la chambre (sous réserve de disponibilité et d'espace dans la chambre) — 50 CHF.",
-        "10": "Supplément pour animal de compagnie — 20 CHF/jour/animal.",
-        "11": "Supplément lié au déclenchement de l'alarme incendie — au moins 1 500 CHF. ATTENTION : le client prend en charge tous les frais liés à l'intervention des pompiers ou d'autres services d'urgence — au moins 1 500 CHF (coût minimum que l'hôtel doit supporter en raison du déclenchement de l'alarme et de l'intervention des pompiers).",
-        "12": "Petit-déjeuner (s'il n'est pas déjà inclus dans le prix de la nuitée) — 12 CHF/personne (à régler à la réception)."
+        "1": "Enregistrement anticipé (pour chaque heure entamée avant l'heure d'enregistrement standard) - 20 CHF.",
+        "2": "Départ tardif (pour chaque heure entamée après 10h00) - 25 CHF.",
+        "3": "Frais en cas de perte de clé - 50 CHF/pièce.",
+        "4": "Ménage supplémentaire sur demande - 40 CHF/ménage.",
+        "5": "Serviette de piscine supplémentaire - 5 CHF/pièce.",
+        "6": "Peignoir de piscine - 8 CHF/pièce.",
+        "7": "Réfrigérateur supplémentaire sur demande (sous réserve de disponibilité) - 20 CHF.",
+        "8": "Lit bébé sur demande (sous réserve de disponibilité) - 25 CHF.",
+        "9": "Lit d'appoint dans la chambre (sous réserve de disponibilité et d'espace dans la chambre) - 50 CHF.",
+        "10": "Supplément pour animal de compagnie - 20 CHF/jour/animal.",
+        "11": "Supplément lié au déclenchement de l'alarme incendie - au moins 1 500 CHF. ATTENTION : le client prend en charge tous les frais liés à l'intervention des pompiers ou d'autres services d'urgence - au moins 1 500 CHF (coût minimum que l'hôtel doit supporter en raison du déclenchement de l'alarme et de l'intervention des pompiers).",
+        "12": "Petit-déjeuner (s'il n'est pas déjà inclus dans le prix de la nuitée) - 12 CHF/personne (à régler à la réception)."
       }
     },
     "tv": {
@@ -368,7 +370,7 @@
       "title": "Autres demandes des clients",
       "body": "Notre équipe se prépare à votre arrivée et se réjouit de vous accueillir dans notre hôtel. N'hésitez pas à nous faire savoir avant votre arrivée si nous pouvons vous aider davantage."
     },
-    "signoff": "Cordialement — l'équipe de l'hôtel Al Ponte Albergo."
+    "signoff": "Cordialement - l'équipe de l'hôtel Al Ponte Albergo."
   },
   "attractions": {
     "teaserCta": "Découvrez les attractions du Tessin",
@@ -470,7 +472,7 @@
         "title": "Aventures en Montagne",
         "items": [
           {
-            "text": "Des vues panoramiques spectaculaires vous attendent au Monte Generoso, au Monte Brè et au Monte San Salvatore. Ces trois sommets sont visibles depuis l'Al Ponte et sont facilement accessibles en bus ou en train — entièrement gratuit avec votre Ticino Ticket.",
+            "text": "Des vues panoramiques spectaculaires vous attendent au Monte Generoso, au Monte Brè et au Monte San Salvatore. Ces trois sommets sont visibles depuis l'Al Ponte et sont facilement accessibles en bus ou en train - entièrement gratuit avec votre Ticino Ticket.",
             "links": [
               {
                 "label": "Monte Generoso",
@@ -492,7 +494,7 @@
         "title": "Promenades en Pleine Nature",
         "items": [
           {
-            "text": "À seulement 1 km de l'hôtel, vous trouverez des sentiers naturels idylliques offrant des vues imprenables. Suivez le chemin pour découvrir une petite cascade rafraîchissante et un ancien Mulino (moulin) — parfait pour une escapade paisible l'après-midi.",
+            "text": "À seulement 1 km de l'hôtel, vous trouverez des sentiers naturels idylliques offrant des vues imprenables. Suivez le chemin pour découvrir une petite cascade rafraîchissante et un ancien Mulino (moulin) - parfait pour une escapade paisible l'après-midi.",
             "links": [
               {
                 "label": "Sentiers naturels",
@@ -565,7 +567,7 @@
         "title": "Shopping & Style",
         "items": [
           {
-            "text": "Pour les amateurs de shopping, Fox Town à Mendrisio vous attend avec ses outlets de créateurs et ses offres exceptionnelles — ouvert même le dimanche et facilement accessible en train.",
+            "text": "Pour les amateurs de shopping, Fox Town à Mendrisio vous attend avec ses outlets de créateurs et ses offres exceptionnelles - ouvert même le dimanche et facilement accessible en train.",
             "links": [
               {
                 "label": "FoxTown Mendrisio",
@@ -593,7 +595,7 @@
         "title": "Escapades en Italie",
         "items": [
           {
-            "text": "Prolongez votre aventure avec un trajet en train TILO vers Côme ou Milan — des destinations idéales pour la culture, le shopping et les célèbres gelatos.",
+            "text": "Prolongez votre aventure avec un trajet en train TILO vers Côme ou Milan - des destinations idéales pour la culture, le shopping et les célèbres gelatos.",
             "links": [
               {
                 "label": "Trains TILO",
@@ -626,7 +628,7 @@
   "seo": {
     "siteName": "Hotel Al Ponte Cademario",
     "titleTemplate": "%s | Hotel Al Ponte Cademario",
-    "ogAlt": "Hotel Al Ponte Cademario — hôtel boutique au lac de Lugano, Tessin",
+    "ogAlt": "Hotel Al Ponte Cademario - hôtel boutique au lac de Lugano, Tessin",
     "home": {
       "title": "Hotel Al Ponte Cademario – Chambres et Appartements avec vue sur le lac de Lugano",
       "description": "Hôtel boutique à Cademario, au lac de Lugano. Chambres et appartements avec vue panoramique, piscine, Wi-Fi gratuit, parking et animaux acceptés. Ticino Ticket inclus à chaque séjour."
@@ -677,7 +679,7 @@
         "meta": "Inde"
       },
       "icegirl": {
-        "quote": "Hôtel familial, petit mais charmant ! Des gens super sympathiques — nous venons ici pour la deuxième année consécutive.",
+        "quote": "Hôtel familial, petit mais charmant ! Des gens super sympathiques - nous venons ici pour la deuxième année consécutive.",
         "meta": ""
       },
       "romuald": {

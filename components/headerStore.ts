@@ -1,7 +1,7 @@
 // Tiny module-level holder for the main header's "hidden" (scrolled-away) state,
 // mirroring lenisStore. The Header is the single source of truth; sibling
 // components (e.g. RoomNav) subscribe so they can stay docked to the top when
-// the header slides out of view — without re-deriving the scroll math and
+// the header slides out of view - without re-deriving the scroll math and
 // drifting a frame out of sync.
 
 let hidden = false;

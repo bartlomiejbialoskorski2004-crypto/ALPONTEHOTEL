@@ -21,7 +21,7 @@ import { BOOKING } from "./contact-info";
 import { useAnchor } from "./useAnchor";
 import { setHeaderHidden } from "./headerStore";
 
-// Hex equivalents of the CSS @theme tokens — motion can't interpolate var()
+// Hex equivalents of the CSS @theme tokens - motion can't interpolate var()
 // cleanly, so we feed it real colour values for the adaptive bar.
 const COLORS = {
   paper: "#fafaf7",
@@ -31,7 +31,7 @@ const COLORS = {
 };
 
 // User-provided thumbnails for each megamenu item. Drop matching JPGs into
-// public/mega/ — onError in the render hides the <img> if a file is missing
+// public/mega/ - onError in the render hides the <img> if a file is missing
 // so the card text still reads cleanly.
 const MEGA_IMAGES: Record<string, string> = {
   // rooms
@@ -265,7 +265,7 @@ export default function Header({ bookingUrl }: Props) {
         />
 
         <div className="relative z-10 flex h-20 items-stretch justify-between px-6 lg:h-24 lg:px-10">
-          {/* Left logo — slides in from off-screen when the bar is active */}
+          {/* Left logo - slides in from off-screen when the bar is active */}
           <motion.div
             initial={false}
             animate={{ x: active ? 0 : -200, opacity: active ? 1 : 0 }}
@@ -415,7 +415,7 @@ export default function Header({ bookingUrl }: Props) {
       {/* Mobile top-left language switcher (letter format, e.g. "PL").
           Vertically centred to the header bar (level with the logo + menu
           toggle). Slides up and fades out on scroll, mirroring the centred
-          logo, so it never overlaps the logo — once scrolled, the right-side
+          logo, so it never overlaps the logo - once scrolled, the right-side
           flag switcher takes over. Hidden while the mobile menu is open. */}
       <motion.div
         initial={false}
@@ -440,7 +440,7 @@ export default function Header({ bookingUrl }: Props) {
       {/* Mobile top-right controls (above the overlay, z-[60]): the language
           flag (visible once scrolled) and the morphing menu toggle. The whole
           block rides up with the header when it hides on scroll-down, and
-          returns on scroll-up — except while the mobile menu is open, when the
+          returns on scroll-up - except while the mobile menu is open, when the
           toggle must stay reachable. */}
       <motion.div
         initial={false}

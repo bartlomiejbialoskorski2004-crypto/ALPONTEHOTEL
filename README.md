@@ -1,8 +1,8 @@
-# Al Ponte — Hotel landing page
+# Al Ponte - Hotel landing page
 
 Boutique hotel landing page built with **Next.js 15 (App Router) + TypeScript + Tailwind CSS v4 + Motion + Sanity**, ready to deploy to Vercel.
 
-The current page is intentionally minimal — a sticky header, a hero and a contact section — so content and additional sections (rooms, dining, gallery, booking flow) can be added without refactoring.
+The current page is intentionally minimal - a sticky header, a hero and a contact section - so content and additional sections (rooms, dining, gallery, booking flow) can be added without refactoring.
 
 ## Tech
 
@@ -11,7 +11,7 @@ The current page is intentionally minimal — a sticky header, a hero and a cont
 - Tailwind CSS v4 (CSS-first config via `@theme` in `app/globals.css`)
 - Motion (`motion/react`) for subtle entrance + scroll animations
 - `next-intl` with locales **IT (default), EN, PL, FR, DE**
-- Sanity v3 — embedded Studio at `/studio`, content fetched from CDN
+- Sanity v3 - embedded Studio at `/studio`, content fetched from CDN
 - SEO defaults: per-locale metadata, hreflang alternates, `robots.txt`, `sitemap.xml`
 - Security headers: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`
 
@@ -28,13 +28,13 @@ pnpm dev
 - Site: <http://localhost:3000>
 - Sanity Studio: <http://localhost:3000/studio>
 
-The site works without Sanity configured — it falls back to copy in `messages/*.json`. Once `NEXT_PUBLIC_SANITY_PROJECT_ID` is set and a `hotel` document exists, the site renders Sanity content.
+The site works without Sanity configured - it falls back to copy in `messages/*.json`. Once `NEXT_PUBLIC_SANITY_PROJECT_ID` is set and a `hotel` document exists, the site renders Sanity content.
 
 ## Deploy on Vercel
 
 ### One-time setup
 
-1. Push to GitHub (already done — `main` branch).
+1. Push to GitHub (already done - `main` branch).
 2. Go to <https://vercel.com/new> and **Import** the `ALPONTEHOTEL` repository.
 3. Vercel auto-detects:
    - Framework: **Next.js**
@@ -58,23 +58,23 @@ The site works without Sanity configured — it falls back to copy in `messages/
    - `https://<your-project>.vercel.app`
    - your custom domain (if any)
    Without this, `/studio` will fail to authenticate.
-2. Visit `/studio` in production, sign in with Google/GitHub, create the singleton `hotel` document — content goes live instantly.
+2. Visit `/studio` in production, sign in with Google/GitHub, create the singleton `hotel` document - content goes live instantly.
 3. Set a custom domain in Vercel (Settings → Domains) and update `NEXT_PUBLIC_SITE_URL` to match.
 
 ## Assets
 
 Drop these files into `public/`:
 
-- `public/logo.png` — circular "AP" monogram, **transparent background** (the hero/header tint it white via a CSS `invert` filter over the dark photos)
-- `public/hero-1.jpg` — balcony / lake-valley view
-- `public/hero-2.jpg` — pool terrace with lake view
-- `public/hero-3.jpg` — historic gate on the Lugano lakefront
+- `public/logo.png` - circular "AP" monogram, **transparent background** (the hero/header tint it white via a CSS `invert` filter over the dark photos)
+- `public/hero-1.jpg` - balcony / lake-valley view
+- `public/hero-2.jpg` - pool terrace with lake view
+- `public/hero-3.jpg` - historic gate on the Lugano lakefront
 
 The hero cycles through `hero-1..3.jpg` as a crossfade slideshow (see `SLIDES` in [components/Hero.tsx](components/Hero.tsx)). Add or reorder files there to change the rotation.
 
 Favicon: `app/icon.png` (generated from the monogram). Next.js auto-scales it.
 
-`public/logo-full.png` is the full lockup (monogram + "Albergo Al Ponte" wordmark) — kept for a future footer/print use; the header, hero and favicon use the monogram-only `logo.png` so the mark stays legible at small sizes.
+`public/logo-full.png` is the full lockup (monogram + "Albergo Al Ponte" wordmark) - kept for a future footer/print use; the header, hero and favicon use the monogram-only `logo.png` so the mark stays legible at small sizes.
 
 ## Project structure
 
@@ -93,8 +93,8 @@ public/            # logo.png, hero-1.jpg, hero-2.jpg, hero-3.jpg
 
 ## Scripts
 
-- `pnpm dev` — dev server
-- `pnpm build` — production build
-- `pnpm start` — run production build
-- `pnpm typecheck` — TypeScript check, no emit
-- `pnpm lint` — Next.js lint
+- `pnpm dev` - dev server
+- `pnpm build` - production build
+- `pnpm start` - run production build
+- `pnpm typecheck` - TypeScript check, no emit
+- `pnpm lint` - Next.js lint

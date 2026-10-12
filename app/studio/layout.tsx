@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Al Ponte — Studio",
+  title: "Al Ponte - Studio",
 };
 
 export default function StudioLayout({

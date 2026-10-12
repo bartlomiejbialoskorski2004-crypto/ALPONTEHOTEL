@@ -4,7 +4,7 @@
 // so the first Route Handler added can rate-limit with one line and without
 // rethinking the shape. Default is a process-local in-memory limiter (fine for
 // a single instance / local dev); swap in Upstash for serverless/multi-instance
-// production — see the TODO below.
+// production - see the TODO below.
 
 export type RateLimitResult = {
   success: boolean;
@@ -29,7 +29,7 @@ type Options = {
 };
 
 // In-memory fixed-window limiter. NOTE: state is per-process, so on Vercel's
-// serverless/edge runtime each instance counts independently — adequate for
+// serverless/edge runtime each instance counts independently - adequate for
 // dev and low-traffic single-instance setups, NOT for distributed production.
 export function inMemoryRateLimiter({
   requests,
@@ -63,7 +63,7 @@ export function inMemoryRateLimiter({
 // TODO(rate-limit): for production on Vercel, back this with Upstash Redis so the
 // window is shared across instances. Install `@upstash/ratelimit` + `@upstash/redis`,
 // set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN in the environment
-// (server-only — NO NEXT_PUBLIC_ prefix), then implement:
+// (server-only - NO NEXT_PUBLIC_ prefix), then implement:
 //
 //   import { Ratelimit } from "@upstash/ratelimit";
 //   import { Redis } from "@upstash/redis";

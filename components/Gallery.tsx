@@ -4,7 +4,7 @@ import InteractiveBentoGallery, {
 } from "./InteractiveBentoGallery";
 import MobileGallery from "./MobileGallery";
 
-// Bento layout — keep the spans from the source design (4 tall + 3 wide).
+// Bento layout - keep the spans from the source design (4 tall + 3 wide).
 // To add / reorder slots, edit this list. Drop the matching files in
 // public/gallery/ as 1.jpg .. 7.jpg.
 const SLOTS: { id: number; file: string; span: string }[] = [

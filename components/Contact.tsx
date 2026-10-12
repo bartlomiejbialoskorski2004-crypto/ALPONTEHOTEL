@@ -59,7 +59,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map — full-bleed across the viewport */}
+        {/* Map - full-bleed across the viewport */}
         <div className="relative mt-12 min-h-[24rem] w-full overflow-hidden border-y border-mist lg:mt-16 lg:min-h-[34rem]">
           <iframe
             title="Al Ponte"
@@ -69,7 +69,7 @@ export default function Contact() {
             className="absolute inset-0 h-full w-full border-0"
           />
 
-          {/* Switzerland outline — hints where the hotel sits on the map. */}
+          {/* Switzerland outline - hints where the hotel sits on the map. */}
           <div
             aria-hidden
             className="pointer-events-none absolute right-3 top-3 border border-mist bg-paper/95 p-3 backdrop-blur"

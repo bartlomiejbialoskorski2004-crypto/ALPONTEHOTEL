@@ -192,13 +192,16 @@ export default function PageToc({ sections, tocTitle }: Props) {
                 className="fixed inset-0 -z-10 bg-ink/30"
                 aria-hidden
               />
+              {/* data-lenis-prevent: a stopped Lenis cancels every touch/wheel
+                  event, which would otherwise block scrolling this list. */}
               <motion.ul
                 key="list"
+                data-lenis-prevent
                 initial={reduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
                 animate={reduceMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
                 exit={reduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-x-0 bottom-full max-h-[60vh] overflow-y-auto border-t border-mist bg-paper"
+                className="absolute inset-x-0 bottom-full max-h-[60vh] overflow-y-auto overscroll-contain border-t border-mist bg-paper"
               >
                 {sections.map((s) => {
                   const active = activeId === s.id;

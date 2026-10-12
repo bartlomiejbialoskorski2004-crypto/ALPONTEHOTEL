@@ -192,7 +192,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
     setIndex(([i]) => [target, target === i ? 0 : target > i ? 1 : -1]);
 
   // Keep the active thumbnail centred in the strip. Horizontal-only scroll
-  // (not scrollIntoView), so it can never move the page vertically — on
+  // (not scrollIntoView), so it can never move the page vertically - on
   // mount, scrollIntoView used to ride the viewport down to the strips.
   useEffect(() => {
     const strip = stripRef.current;
@@ -232,7 +232,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
       className="scroll-mt-28 bg-paper px-6 pb-16 pt-24 text-ink sm:py-24 lg:scroll-mt-36 lg:px-10 lg:py-32"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-10">
-        {/* Left — staggered content panel */}
+        {/* Left - staggered content panel */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -306,7 +306,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
               ))}
             </motion.ul>
 
-            {/* Slider dots — mobile affordance for the features carousel */}
+            {/* Slider dots - mobile affordance for the features carousel */}
             <motion.div
               variants={fadeUp}
               className="mt-4 flex items-center justify-center gap-2 lg:hidden"
@@ -351,7 +351,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
           </motion.a>
         </motion.div>
 
-        {/* Right — sticky carousel with thumbnail strip. On mobile it's a gray
+        {/* Right - sticky carousel with thumbnail strip. On mobile it's a gray
             (mist) card whose top holds the title, with the photo inside it;
             full desktop layout unchanged. */}
         <div className="relative order-2 bg-mist p-4 lg:order-none lg:m-0 lg:bg-transparent lg:p-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-24 lg:self-start">
@@ -493,7 +493,7 @@ export default function TripleDeluxeClient({ photos }: Props) {
         </div>
       </div>
 
-      {/* Lightbox — full image with object-contain */}
+      {/* Lightbox - full image with object-contain */}
       <AnimatePresence>
         {lightbox && hasPhotos && (
           <motion.div

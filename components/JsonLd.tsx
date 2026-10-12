@@ -1,6 +1,6 @@
 import { HOTEL, siteUrl, localeUrl } from "@/lib/site";
 
-// Server component — emits a JSON-LD <script>. No "use client".
+// Server component - emits a JSON-LD <script>. No "use client".
 function JsonLd({ data }: { data: object }) {
   return (
     <script

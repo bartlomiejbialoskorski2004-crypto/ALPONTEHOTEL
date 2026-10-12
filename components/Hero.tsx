@@ -17,7 +17,6 @@ import Image from "next/image";
 const SLIDES = [
   { src: "/hero1.jpg", position: "object-[75%_center]" },
   { src: "/Hero2.jpg", position: "object-center" },
-  { src: "/hero3.jpg", position: "object-[75%_center]" },
 ];
 const SLIDE_INTERVAL = 6000;
 
@@ -36,7 +35,7 @@ export default function Hero() {
   }, [reduceMotion]);
 
   // Scroll-driven parallax: the photo layer drifts vertically as the hero
-  // passes through the viewport — the same effect shared with the sub-page
+  // passes through the viewport - the same effect shared with the sub-page
   // heroes (see ParallaxImage). The layer is taller than the section so the
   // drift never exposes an edge.
   const ref = useRef<HTMLElement>(null);
@@ -55,7 +54,7 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-[100svh] w-full overflow-hidden"
     >
-      {/* Single semantic page heading — visually hidden so the minimalist hero
+      {/* Single semantic page heading - visually hidden so the minimalist hero
           stays image-only, but present for SEO and screen readers. */}
       <h1 className="sr-only">{t("seoH1")}</h1>
 

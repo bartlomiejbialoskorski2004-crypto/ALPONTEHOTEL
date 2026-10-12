@@ -52,7 +52,7 @@ type Props = {
   // overflow when the switcher sits near the screen's right edge (mobile bar).
   align?: "center" | "right" | "left";
   // "flag" (default) shows the country flag; "letters" shows the locale code
-  // (e.g. "PL") — a compact, always-legible text switcher.
+  // (e.g. "PL") - a compact, always-legible text switcher.
   variant?: "flag" | "letters";
 };
 

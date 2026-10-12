@@ -14,7 +14,7 @@ export type AnimatedGenerateButtonProps = {
   disabled?: boolean;
   id?: string;
   ariaLabel?: string;
-  /** `xs` drops the sparkle SVG and tightens chrome/tracking — built
+  /** `xs` drops the sparkle SVG and tightens chrome/tracking - built
       for narrow mobile rows where the default pill would overflow. */
   size?: "default" | "xs";
 };
@@ -224,7 +224,7 @@ export default function AnimatedGenerateButton({
         }
 
         /* Idle/active label swap is driven by React state + Tailwind
-           transition-opacity on the txt-1/txt-2 layers — see JSX. We
+           transition-opacity on the txt-1/txt-2 layers - see JSX. We
            intentionally do NOT animate opacity here on :focus, because
            that would fight the controlled prop and cause the active
            label to flash to 0 mid-animation. The focused-letter blur

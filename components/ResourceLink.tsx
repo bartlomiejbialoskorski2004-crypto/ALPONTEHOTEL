@@ -3,7 +3,7 @@ import FlipText from "./FlipText";
 
 export type LinkItem = { label: string; url: string };
 
-// A clearly tappable, button-style external link — replaces faint text links.
+// A clearly tappable, button-style external link - replaces faint text links.
 export function ResourceLink({ label, url }: LinkItem) {
   return (
     <a

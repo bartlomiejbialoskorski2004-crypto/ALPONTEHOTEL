@@ -16,7 +16,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
   primary: "bg-forest text-paper hover:bg-forest-soft",
   // Paper border on a transparent / dark background (e.g. hero photo)
   ghost: "border-paper text-paper hover:bg-paper hover:text-forest",
-  // Paper button on a forest bar — flips to forest on hover
+  // Paper button on a forest bar - flips to forest on hover
   light: "bg-paper text-forest hover:bg-forest hover:text-paper",
 };
 

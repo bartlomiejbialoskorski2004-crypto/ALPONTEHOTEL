@@ -77,6 +77,12 @@ export default function Amenities() {
               <p className="mt-2 max-w-xs text-xs leading-relaxed text-ink/60">
                 {t(`${key}.desc`)}
               </p>
+              {/* Temporary pool closure (12.10.2026 - 14.03.2027). */}
+              {key === "pool" && (
+                <p className="mt-2 max-w-xs text-xs font-medium leading-relaxed text-forest">
+                  {t("pool.note")}
+                </p>
+              )}
             </motion.li>
           ))}
         </ul>

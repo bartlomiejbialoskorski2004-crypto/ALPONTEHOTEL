@@ -84,7 +84,7 @@ export default function Rooms() {
                   {t(`mega.rooms.${key}.desc`)}
                 </p>
                 {/* Subtle tap affordance (mobile): a thin chevron that flips
-                    up when open — matches the site's line-icon style. */}
+                    up when open - matches the site's line-icon style. */}
                 <span
                   aria-hidden
                   className={`mt-3 inline-flex text-forest transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] sm:hidden ${

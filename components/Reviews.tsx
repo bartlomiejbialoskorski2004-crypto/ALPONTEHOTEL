@@ -199,7 +199,7 @@ export default function Reviews() {
           </a>
         </motion.div>
 
-        {/* Infinite marquees — two rows, opposite directions */}
+        {/* Infinite marquees - two rows, opposite directions */}
         <motion.div
           variants={fadeUp}
           className="mx-auto mt-10 flex max-w-5xl flex-col gap-3.5 overflow-hidden px-6 [mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,#000_6%,#000_94%,transparent)] lg:px-10"

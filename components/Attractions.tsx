@@ -45,7 +45,7 @@ export default async function Attractions() {
 
   return (
     <article className="bg-paper text-ink">
-      {/* Hero band — scenic photo under a forest wash. */}
+      {/* Hero band - scenic photo under a forest wash. */}
       <section className="relative flex min-h-[72svh] w-full items-end overflow-hidden bg-forest text-paper">
         <ParallaxImage src="/mega/Lakelugano.jpg" alt={t("lakeAlt")} priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/65 via-forest/45 to-forest/85" />

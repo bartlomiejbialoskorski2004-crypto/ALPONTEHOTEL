@@ -34,7 +34,7 @@ export default function Footer({ bookingUrl }: Props) {
   const { scrollYProgress } = useScroll({
     target: ref,
     // The footer is the last element on the page, so it never scrolls past
-    // the viewport top — end the range at "end end" (page fully scrolled) so
+    // the viewport top - end the range at "end end" (page fully scrolled) so
     // the parallax can actually run its full course.
     offset: ["start end", "end end"],
   });
@@ -229,7 +229,7 @@ export default function Footer({ bookingUrl }: Props) {
       <div className="border-t border-paper/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:grid sm:grid-cols-3 sm:items-center lg:px-10">
           <span className="sm:justify-self-start">©{year} Hotel Al Ponte Cademario</span>
-          {/* Credit — animated glass button. Idle: "VIRALABS.PL". After
+          {/* Credit - animated glass button. Idle: "VIRALABS.PL". After
               the 1s blur burst it flips to t("footer.bookCall"); a second
               click then opens viralabs.pl. Desktop slot only: column 2,
               with the "Created by" prefix above. Mobile copy lives inside
@@ -249,7 +249,7 @@ export default function Footer({ bookingUrl }: Props) {
               labelActive={t("footer.bookCall")}
               generating={viralabsClicked}
               highlightHueDeg={270}
-              ariaLabel="Viralabs.pl — created by"
+              ariaLabel="Viralabs.pl - created by"
               onClick={handleViralabsClick}
             />
           </div>
@@ -272,7 +272,7 @@ export default function Footer({ bookingUrl }: Props) {
                 ↑
               </span>
             </a>
-            {/* Mobile credit — pill only (no prefix), sits right of ↑.
+            {/* Mobile credit - pill only (no prefix), sits right of ↑.
                 Uses size="xs" to drop the sparkle SVG and tighten chrome
                 so the row fits on narrow phones. */}
             <div className="sm:hidden" style={viralabsTokens}>
@@ -282,7 +282,7 @@ export default function Footer({ bookingUrl }: Props) {
                 labelActive={t("footer.bookCall")}
                 generating={viralabsClicked}
                 highlightHueDeg={270}
-                ariaLabel="Viralabs.pl — created by"
+                ariaLabel="Viralabs.pl - created by"
                 onClick={handleViralabsClick}
               />
             </div>
@@ -290,7 +290,7 @@ export default function Footer({ bookingUrl }: Props) {
         </div>
       </div>
 
-      {/* Giant "Al Ponte" wordmark — full-bleed, rises with scroll, clipped
+      {/* Giant "Al Ponte" wordmark - full-bleed, rises with scroll, clipped
           by the footer's bottom edge. Sits clear below the copyright (mt gap)
           and only ever moves downward, so it never covers it. Decorative: the
           name is already exposed by the columns above. */}

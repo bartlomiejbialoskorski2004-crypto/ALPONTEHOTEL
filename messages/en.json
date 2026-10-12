@@ -26,11 +26,11 @@
     "rooms": {
       "apartments": {
         "title": "Apartments",
-        "desc": "With kitchens and bathrooms — an excellent choice for families with children or longer stays."
+        "desc": "With kitchens and bathrooms - an excellent choice for families with children or longer stays."
       },
       "superior": {
         "title": "Lake View Rooms",
-        "desc": "Higher-standard rooms with bathrooms and private balconies offering magnificent views of Lugano, the lake and the mountains — the full Ticino atmosphere."
+        "desc": "Higher-standard rooms with bathrooms and private balconies offering magnificent views of Lugano, the lake and the mountains - the full Ticino atmosphere."
       },
       "budgetPlus": {
         "title": "Budget Plus Rooms",
@@ -38,7 +38,7 @@
       },
       "budget": {
         "title": "Budget Rooms",
-        "desc": "Our most affordable rooms, with private bathrooms — ideal for business or long-distance travellers seeking comfort at a fair price."
+        "desc": "Our most affordable rooms, with private bathrooms - ideal for business or long-distance travellers seeking comfort at a fair price."
       }
     },
     "attractions": {
@@ -51,7 +51,7 @@
   "hero": {
     "ctaContact": "Get in touch",
     "scrollHint": "Scroll",
-    "seoH1": "Hotel Al Ponte Cademario — rooms and apartments with Lake Lugano views",
+    "seoH1": "Hotel Al Ponte Cademario - rooms and apartments with Lake Lugano views",
     "imageAlt": "Hotel Al Ponte in Cademario with panoramic views over Lake Lugano"
   },
   "contact": {
@@ -64,7 +64,7 @@
   },
   "rooms": {
     "title": "Rooms",
-    "intro": "Our hotel offers rooms and apartments of various sizes and standards, many with views of the lake and mountains. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted — every room is equipped with a modern fire & alarm system.",
+    "intro": "Our hotel offers rooms and apartments of various sizes and standards, many with views of the lake and mountains. We welcome large and small families, couples and business travellers. All rooms have SMART TV and free Wi-Fi. Smoking is not permitted - every room is equipped with a modern fire & alarm system.",
     "amenities": {
       "bath": "Private Bathroom",
       "kitchen": "Private Kitchen",
@@ -215,7 +215,8 @@
     "title": "Hotel amenities & comforts",
     "pool": {
       "title": "Swimming Pool",
-      "desc": "Cool off in our outdoor pool with panoramic views of Lake Lugano."
+      "desc": "Cool off in our outdoor pool with panoramic views of Lake Lugano.",
+      "note": "Temporarily closed: 12.10.2026 - 14.03.2027"
     },
     "pet": {
       "title": "Pet Friendly",
@@ -231,7 +232,7 @@
     },
     "ticket": {
       "title": "Ticino Ticket",
-      "desc": "Free unlimited public transport across Ticino — included with every stay."
+      "desc": "Free unlimited public transport across Ticino - included with every stay."
     },
     "wifi": {
       "title": "Free Wi-Fi",
@@ -239,11 +240,11 @@
     },
     "renovated": {
       "title": "Renovated in 2026",
-      "desc": "Fully renovated in 2026 — fresh, modern rooms with stunning panoramic views."
+      "desc": "Fully renovated in 2026 - fresh, modern rooms with stunning panoramic views."
     },
     "parking": {
       "title": "Parking Available",
-      "desc": "Convenient public parking right at the hotel — CHF 5 per day, no reservation needed."
+      "desc": "Convenient public parking right at the hotel - CHF 5 per day, no reservation needed."
     }
   },
   "gallery": {
@@ -308,7 +309,7 @@
       "receptionNote": "Also Fri & Sat 15:30–19:30"
     },
     "hours": {
-      "title": "Basic information — opening hours",
+      "title": "Basic information - opening hours",
       "openYearRound": "The hotel is open all year round.",
       "checkInOut": "Check-in is from 15:30 and check-out is by 10:00.",
       "receptionHours": "Reception is open from 07:30 to 11:00, and on Fridays and Saturdays also from 15:30 to 19:30.",
@@ -316,20 +317,21 @@
       "emailOutsideHours": "Outside reception opening hours, you can contact us by email at gatti@al-ponte.ch or via Booking.com chat.",
       "checkInDetails": "Check-in: available between 15:30 and 24:00, but after 19:30 the reception is closed and only self check-in is available.",
       "checkInBox": "NOTE: If we are unable to welcome you in person, we will leave your keys in a special locker (BOX) and send you instructions with the code for the locker.",
-      "checkOutDetails": "Check-out: 07:30 — 10:00.",
+      "checkOutDetails": "Check-out: 07:30 - 10:00.",
       "breakfast": "Breakfast (served in the breakfast room): from 08:00 to 10:00.",
-      "pool": "The swimming pool is open from 08:00 to 19:30.",
+      "pool": "The swimming pool is open from 08:00 to 19:30 (temporarily closed from 12.10.2026 to 14.03.2027).",
       "quietHours": "Quiet hours are from 22:00 to 07:00."
     },
     "safety": {
       "intro": "You can feel safe in our hotel. All areas, including all hotel rooms, are equipped with a modern fire and alarm system, which means that smoking, the use of any other tobacco products, candles, fireworks or other sources of fire or smoke is strictly prohibited throughout the premises (including in the rooms). All communal areas in the hotel (such as the lobby, reception, corridors, terrace, stairwells and breakfast room) are monitored by CCTV cameras. The data controller is Al Ponte Albergo SAGL.",
       "smokingBan": "Smoking of cigarettes and all other tobacco products is strictly prohibited throughout the entire building, including all rooms, corridors and the breakfast room. This is due to the need to install and operate a highly sensitive fire alarm system, as required by law.",
       "acknowledgment": "By booking a room at our hotel, you confirm that you have read our house rules and agree to all their provisions, including, in particular, the fire safety regulations, and you accept that in the event of failure to comply with the total ban on smoking cigarettes or other tobacco products throughout the premises, in the event of a fire alarm being triggered, you will voluntarily and without objection bear the additional cost associated with the activation of the fire alarm.",
-      "pleaseNote": "PLEASE NOTE: the guest shall cover all costs associated with the intervention of the fire brigade or other emergency services — not less than CHF 1,500 (the minimum cost the hotel must bear in connection with the fire brigade's intervention — PLEASE NOTE: these costs may be many times higher)."
+      "pleaseNote": "PLEASE NOTE: the guest shall cover all costs associated with the intervention of the fire brigade or other emergency services - not less than CHF 1,500 (the minimum cost the hotel must bear in connection with the fire brigade's intervention - PLEASE NOTE: these costs may be many times higher)."
     },
     "pool": {
       "title": "Information about the swimming pool",
-      "body": "There is an indoor swimming pool available to guests on the hotel premises. Use of the swimming pool is free of charge, but additional towels and a bathrobe are subject to a charge — these are issued at reception (during reception opening hours) upon the guest's request."
+      "closure": "The swimming pool is temporarily closed from 12.10.2026 to 14.03.2027.",
+      "body": "There is an indoor swimming pool available to guests on the hotel premises. Use of the swimming pool is free of charge, but additional towels and a bathrobe are subject to a charge - these are issued at reception (during reception opening hours) upon the guest's request."
     },
     "parking": {
       "title": "Parking",
@@ -342,18 +344,18 @@
     "services": {
       "title": "Price list for additional services",
       "items": {
-        "1": "Early check-in (for each hour or part thereof before the standard check-in time) — CHF 20.",
-        "2": "Late check-out (for each hour or part thereof after 10:00) — CHF 25.",
-        "3": "Key replacement fee — CHF 50 per key.",
-        "4": "Additional cleaning on request — CHF 40 per cleaning session.",
-        "5": "Additional pool towel — CHF 5 per towel.",
-        "6": "Bathrobe for the pool — CHF 8 per item.",
-        "7": "Additional fridge on request (subject to availability) — CHF 20 per item.",
-        "8": "Cot on request (subject to availability) — CHF 25 per item.",
-        "9": "Additional fold-out bed in the room (subject to availability and space in the room) — CHF 50.",
-        "10": "Pet fee — CHF 20 per day per pet.",
-        "11": "Additional charge for triggering the fire alarm — no less than CHF 1,500. PLEASE NOTE: the guest is liable for all costs associated with the intervention of the fire brigade or other emergency services — no less than CHF 1,500 (the minimum cost the hotel must bear in connection with the alarm being triggered and the fire brigade's intervention).",
-        "12": "Breakfast (unless already included in the room rate) — CHF 12 per person (payment at reception)."
+        "1": "Early check-in (for each hour or part thereof before the standard check-in time) - CHF 20.",
+        "2": "Late check-out (for each hour or part thereof after 10:00) - CHF 25.",
+        "3": "Key replacement fee - CHF 50 per key.",
+        "4": "Additional cleaning on request - CHF 40 per cleaning session.",
+        "5": "Additional pool towel - CHF 5 per towel.",
+        "6": "Bathrobe for the pool - CHF 8 per item.",
+        "7": "Additional fridge on request (subject to availability) - CHF 20 per item.",
+        "8": "Cot on request (subject to availability) - CHF 25 per item.",
+        "9": "Additional fold-out bed in the room (subject to availability and space in the room) - CHF 50.",
+        "10": "Pet fee - CHF 20 per day per pet.",
+        "11": "Additional charge for triggering the fire alarm - no less than CHF 1,500. PLEASE NOTE: the guest is liable for all costs associated with the intervention of the fire brigade or other emergency services - no less than CHF 1,500 (the minimum cost the hotel must bear in connection with the alarm being triggered and the fire brigade's intervention).",
+        "12": "Breakfast (unless already included in the room rate) - CHF 12 per person (payment at reception)."
       }
     },
     "tv": {
@@ -368,7 +370,7 @@
       "title": "Other guest requests",
       "body": "Our team is preparing for your arrival and looks forward to welcoming you to our hotel. Please let us know before your arrival if there is anything else we can assist you with."
     },
-    "signoff": "Warm regards — the Al Ponte Albergo Hotel team."
+    "signoff": "Warm regards - the Al Ponte Albergo Hotel team."
   },
   "attractions": {
     "teaserCta": "Discover Ticino's attractions",
@@ -470,7 +472,7 @@
         "title": "Mountain Adventures",
         "items": [
           {
-            "text": "Spectacular panoramic views await you on Monte Generoso, Monte Brè, and Monte San Salvatore. All three peaks are visible from Al Ponte and are easily reachable by bus or train—completely free with your Ticino Ticket.",
+            "text": "Spectacular panoramic views await you on Monte Generoso, Monte Brè, and Monte San Salvatore. All three peaks are visible from Al Ponte and are easily reachable by bus or train-completely free with your Ticino Ticket.",
             "links": [
               {
                 "label": "Monte Generoso",
@@ -492,7 +494,7 @@
         "title": "Walks in Nature",
         "items": [
           {
-            "text": "Just 1 km from the hotel you'll find idyllic nature trails offering breathtaking views. Follow the path to discover a small, refreshing waterfall and an old Mulino—perfect for a peaceful afternoon escape.",
+            "text": "Just 1 km from the hotel you'll find idyllic nature trails offering breathtaking views. Follow the path to discover a small, refreshing waterfall and an old Mulino-perfect for a peaceful afternoon escape.",
             "links": [
               {
                 "label": "Nature trails",
@@ -565,7 +567,7 @@
         "title": "Shopping & Style",
         "items": [
           {
-            "text": "For shopping lovers, Fox Town in Mendrisio awaits with designer outlets and great deals—open even on Sundays and easily reachable by train.",
+            "text": "For shopping lovers, Fox Town in Mendrisio awaits with designer outlets and great deals-open even on Sundays and easily reachable by train.",
             "links": [
               {
                 "label": "FoxTown Mendrisio",
@@ -593,7 +595,7 @@
         "title": "Trips to Italy",
         "items": [
           {
-            "text": "Extend your adventure with a TILO train ride to Como or Milan—ideal destinations for culture, shopping, and world-famous gelato.",
+            "text": "Extend your adventure with a TILO train ride to Como or Milan-ideal destinations for culture, shopping, and world-famous gelato.",
             "links": [
               {
                 "label": "TILO trains",
@@ -626,7 +628,7 @@
   "seo": {
     "siteName": "Hotel Al Ponte Cademario",
     "titleTemplate": "%s | Hotel Al Ponte Cademario",
-    "ogAlt": "Hotel Al Ponte Cademario — boutique hotel on Lake Lugano, Ticino",
+    "ogAlt": "Hotel Al Ponte Cademario - boutique hotel on Lake Lugano, Ticino",
     "home": {
       "title": "Hotel Al Ponte Cademario – Rooms & Apartments with Lake Lugano Views",
       "description": "Boutique hotel in Cademario, on Lake Lugano. Rooms and apartments with panoramic views, swimming pool, free Wi-Fi, parking and pet friendly. Ticino Ticket included with every stay."
@@ -677,7 +679,7 @@
         "meta": "India"
       },
       "icegirl": {
-        "quote": "Family-run hotel, small but nice! Super friendly people — we've been here for the second year in a row.",
+        "quote": "Family-run hotel, small but nice! Super friendly people - we've been here for the second year in a row.",
         "meta": ""
       },
       "romuald": {

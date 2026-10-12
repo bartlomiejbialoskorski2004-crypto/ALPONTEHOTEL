@@ -34,7 +34,7 @@ type HandlerConfig<TBody> = {
   limiter?: RateLimiter;
   /**
    * Require a matching secret in the `x-webhook-secret` header. Pass the env var
-   * NAME (not the value), e.g. "SANITY_WEBHOOK_SECRET" — read server-side only.
+   * NAME (not the value), e.g. "SANITY_WEBHOOK_SECRET" - read server-side only.
    */
   webhookSecretEnv?: string;
   handler: (ctx: HandlerContext<TBody>) => Promise<Response> | Response;
@@ -45,7 +45,7 @@ export function json(data: unknown, init?: ResponseInit): NextResponse {
   return NextResponse.json(data, init);
 }
 
-/** Consistent JSON error — never leaks internals. */
+/** Consistent JSON error - never leaks internals. */
 export function jsonError(status: number, message: string): NextResponse {
   return NextResponse.json({ error: message }, { status });
 }
@@ -96,7 +96,7 @@ export function createHandler<TBody = undefined>(
       // 5. Run the handler.
       return await config.handler({ request, body });
     } catch (error) {
-      // 6. Safe error handling — log server-side, return an opaque message.
+      // 6. Safe error handling - log server-side, return an opaque message.
       // Never serialize the error/stack to the client.
       console.error("[api-handler] unhandled error:", error);
       return jsonError(500, "Internal server error");
