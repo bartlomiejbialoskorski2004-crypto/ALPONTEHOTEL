@@ -117,10 +117,12 @@ export default function Rooms() {
                       scrollToRoom(firstPanel[key]);
                     }}
                     tabIndex={openKey === key ? 0 : -1}
-                    className="pointer-events-auto mt-3 inline-flex items-center gap-1.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-forest sm:hidden"
+                    className="pointer-events-auto mt-3 inline-block py-1 text-center text-[10px] font-medium uppercase leading-relaxed tracking-[0.15em] text-forest sm:hidden"
                   >
+                    {/* NBSP keeps the arrow glued to the last word when the
+                        label wraps in the narrow card. */}
                     {t("rooms.viewCategory")}
-                    <span aria-hidden>→</span>
+                    <span aria-hidden>{" →"}</span>
                   </a>
                 </div>
                 {/* Subtle tap affordance (mobile): a thin chevron that flips

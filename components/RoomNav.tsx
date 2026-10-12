@@ -10,20 +10,27 @@ import FlipOnChange from "./FlipOnChange";
 
 // Sits just below the fixed header (h-20 / lg:h-24).
 const HEADER_OFFSET = 96;
-// Extra room so a room's title clears both the header and this bar on click.
-const SCROLL_OFFSET = 150;
 
-// Shared with the room-category cards (Rooms.tsx) so every jump to a room
-// panel lands with the same offset.
+// Jump so the room panel opens the screen. Shared with the room-category
+// cards (Rooms.tsx). Scrolling down hides the header and docks this bar at the
+// top, so the section's top edge goes to the viewport top - its own top
+// padding (pt-24 / lg:pt-32) clears the bar. Scrolling up brings the header
+// back, so leave room for it too. A numeric target on purpose: for element
+// targets Lenis also subtracts the section's scroll-margin (sized for native
+// header-only anchors), which pushed the room halfway down the screen.
 export function scrollToRoom(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  let top = el.getBoundingClientRect().top + window.scrollY;
+  if (top < window.scrollY) {
+    top -= window.matchMedia("(min-width: 1024px)").matches ? 96 : 80;
+  }
   const lenis = getLenis();
   if (lenis) {
-    lenis.scrollTo(`#${id}`, { offset: -SCROLL_OFFSET });
+    lenis.scrollTo(top);
     return;
   }
-  document
-    .getElementById(id)
-    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.scrollTo({ top, behavior: "smooth" });
 }
 
 // Contextual sticky bar that appears only while the room panels are on
