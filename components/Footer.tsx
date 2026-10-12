@@ -253,7 +253,7 @@ export default function Footer({ bookingUrl }: Props) {
               onClick={handleViralabsClick}
             />
           </div>
-          <div className="flex items-center gap-6 sm:justify-self-end">
+          <div className="flex items-center gap-3 sm:gap-6 sm:justify-self-end">
             <Link
               href="/informations"
               className="group inline-flex transition-colors hover:text-paper"
@@ -272,9 +272,12 @@ export default function Footer({ bookingUrl }: Props) {
                 ↑
               </span>
             </a>
-            {/* Mobile credit — pill only (no prefix), sits right of ↑. */}
+            {/* Mobile credit — pill only (no prefix), sits right of ↑.
+                Uses size="xs" to drop the sparkle SVG and tighten chrome
+                so the row fits on narrow phones. */}
             <div className="sm:hidden" style={viralabsTokens}>
               <AnimatedGenerateButton
+                size="xs"
                 labelIdle="VIRALABS.PL"
                 labelActive={t("footer.bookCall")}
                 generating={viralabsClicked}
