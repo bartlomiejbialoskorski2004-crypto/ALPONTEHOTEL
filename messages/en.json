@@ -3,6 +3,7 @@
     "rooms": "Rooms",
     "contact": "Contact",
     "info": "Informations",
+    "events": "Events",
     "attractions": "Attractions",
     "gallery": "Gallery",
     "bookNow": "Book Now",
@@ -828,7 +829,8 @@
           "beds": "beds for the whole team",
           "dj": "on request, with dancing"
         },
-        "combine": "Combine with"
+        "combine": "Combine with",
+        "evening": "The evening"
       }
     },
     "glance": {
@@ -861,7 +863,7 @@
         "dinner": "Dinner (buffet)",
         "halfBoard": "Lunch-dinner",
         "or": "or",
-        "unit": "Prices in CHF per person."
+        "unit": "Prices per person."
       },
       "onSite": [
         "Restaurant with a terrace overlooking the lake and Lugano",

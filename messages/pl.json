@@ -3,6 +3,7 @@
     "rooms": "Pokoje",
     "contact": "Kontakt",
     "info": "Informacje",
+    "events": "Eventy",
     "attractions": "Atrakcje",
     "gallery": "Galeria",
     "bookNow": "Rezerwuj",
@@ -828,7 +829,8 @@
           "beds": "miejsca noclegowe dla zespołu",
           "dj": "na życzenie, z możliwością tańca"
         },
-        "combine": "Połącz z"
+        "combine": "Połącz z",
+        "evening": "Wieczór"
       }
     },
     "glance": {
@@ -861,7 +863,7 @@
         "dinner": "Kolacja (bufet)",
         "halfBoard": "Obiadokolacja",
         "or": "lub",
-        "unit": "Ceny w CHF za osobę."
+        "unit": "Ceny za osobę."
       },
       "onSite": [
         "Restauracja z tarasem z widokiem na jezioro i Lugano",

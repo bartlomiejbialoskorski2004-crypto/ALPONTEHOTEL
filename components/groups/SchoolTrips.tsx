@@ -10,6 +10,7 @@ import {
   TextLink,
   container,
   eyebrow,
+  heroHeight,
 } from "./shared";
 
 const TILES: { key: string; Icon: LucideIcon }[] = [
@@ -27,13 +28,13 @@ export default async function SchoolTrips() {
 
   return (
     <>
-      <section className="relative flex min-h-[78svh] w-full items-end overflow-hidden bg-forest">
+      <section className={`relative flex ${heroHeight} w-full items-end overflow-hidden bg-forest`}>
         <ParallaxImage src={GROUP_PAGES.schoolTrips.image} alt={p("imageAlt")} priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/65 via-forest/5 to-transparent" />
-        <div className={`relative ${container} pb-8 pt-40 lg:pb-14`}>
+        <div className={`relative ${container} pb-8 pt-28 lg:pb-14`}>
           <div className="max-w-xl bg-paper p-8 text-ink lg:p-12">
             <span className={`${eyebrow} text-forest`}>{t("eyebrow")}</span>
-            <h1 className="mt-5 text-balance font-serif text-3xl leading-[1.1] lg:text-5xl">
+            <h1 className="mt-5 text-balance break-words font-serif text-3xl leading-[1.1] hyphens-auto lg:text-5xl">
               {p("title")}
             </h1>
             <p className="mt-5 text-sm leading-relaxed text-ink/70 lg:text-base">

@@ -9,29 +9,22 @@ import {
   TextLink,
   container,
   eyebrow,
+  heroHeight,
 } from "./shared";
 
-// Music-choice panels: text sits on the bottom edge; smaller type on phones
-// so long words ("międzynarodowa") never push the page wider than the screen.
-const panel = "flex min-w-0 items-end border border-paper/15 p-6 sm:p-8 lg:min-h-56 lg:p-10";
-const panelText =
-  "break-words font-serif text-[1.75rem] leading-tight hyphens-auto sm:text-4xl lg:text-[2.6rem]";
+const pill =
+  "rounded-full border border-paper/25 px-4 py-1.5 text-xs tracking-wide text-paper/85";
 
-// Company events - "evening": the one dark page. Ink hero and module, the
-// music choice as two large panels, then back to paper for the shared frame.
+// Company events - "evening": the one dark page. Ink hero and a compact ink
+// module (three figures, the DJ's music choice as two small pills), then back
+// to paper for the shared frame.
 export default async function CompanyEvents() {
   const t = await getTranslations("groups");
   const p = (key: string) => t(`pages.companyEvents.${key}`);
 
-  const details = [
-    { value: String(GROUP_VENUES.restaurant), label: p("details.restaurant") },
-    { value: String(GROUP_MAX_GUESTS), label: p("details.beds") },
-    { value: "DJ", label: p("details.dj") },
-  ];
-
   return (
     <>
-      <section className="relative flex min-h-[72svh] w-full items-end overflow-hidden bg-ink text-paper">
+      <section className={`relative flex ${heroHeight} w-full items-end overflow-hidden bg-ink text-paper`}>
         <ParallaxImage
           src={GROUP_PAGES.companyEvents.image}
           alt={p("imageAlt")}
@@ -39,9 +32,9 @@ export default async function CompanyEvents() {
           className="object-cover object-center opacity-45"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/35 to-ink" />
-        <div className={`relative ${container} pb-14 pt-40 lg:pb-20 lg:pt-48`}>
+        <div className={`relative ${container} pb-14 pt-28 lg:pb-16`}>
           <span className={`${eyebrow} text-gold`}>{t("eyebrow")}</span>
-          <h1 className="mt-6 max-w-4xl text-balance font-serif text-4xl leading-[1.04] lg:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-balance break-words font-serif text-[2rem] leading-[1.04] hyphens-auto sm:text-4xl lg:text-7xl">
             {p("title")}
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-paper/75 lg:text-base">
@@ -55,33 +48,44 @@ export default async function CompanyEvents() {
 
       <section className="bg-ink py-20 text-paper lg:py-28">
         <div className={container}>
-          <span className={`${eyebrow} text-gold`}>{p("music.title")}</span>
-          <div className="mt-10 grid gap-4 lg:grid-cols-[1fr_auto_1fr] lg:gap-8">
-            <div className={panel}>
-              <span className={panelText}>{p("music.polish")}</span>
-            </div>
-            <span className="self-center text-center font-serif text-lg italic text-gold">
-              {p("music.or")}
-            </span>
-            <div className={panel}>
-              <span className={panelText}>{p("music.italian")}</span>
-            </div>
-          </div>
+          <span className={`${eyebrow} text-gold`}>{p("evening")}</span>
 
-          <ul className="mt-16 grid gap-8 border-t border-paper/15 pt-10 sm:grid-cols-3">
-            {details.map((d) => (
-              <li key={d.label}>
-                <span className="block font-serif text-4xl leading-none text-paper tabular-nums">
-                  {d.value}
-                </span>
-                <span className="mt-3 block text-sm leading-relaxed text-paper/60">
-                  {d.label}
-                </span>
-              </li>
-            ))}
+          <ul className="mt-10 grid gap-10 border-t border-paper/15 pt-10 sm:grid-cols-3 sm:gap-8">
+            <li>
+              <span className="block font-serif text-4xl leading-none tabular-nums">
+                {GROUP_VENUES.restaurant}
+              </span>
+              <span className="mt-3 block text-sm leading-relaxed text-paper/60">
+                {p("details.restaurant")}
+              </span>
+            </li>
+            <li>
+              <span className="block font-serif text-4xl leading-none tabular-nums">
+                {GROUP_MAX_GUESTS}
+              </span>
+              <span className="mt-3 block text-sm leading-relaxed text-paper/60">
+                {p("details.beds")}
+              </span>
+            </li>
+            <li>
+              <span className="block font-serif text-4xl leading-none">DJ</span>
+              <span className="mt-3 block text-sm leading-relaxed text-paper/60">
+                {p("details.dj")}
+              </span>
+              <span className="mt-6 block text-[10px] font-medium uppercase tracking-[0.25em] text-paper/45">
+                {p("music.title")}
+              </span>
+              <span className="mt-3 flex flex-wrap items-center gap-2">
+                <span className={pill}>{p("music.polish")}</span>
+                <em className="px-1 font-serif text-sm italic text-gold">
+                  {p("music.or")}
+                </em>
+                <span className={pill}>{p("music.italian")}</span>
+              </span>
+            </li>
           </ul>
 
-          <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4">
+          <div className="mt-16 flex flex-wrap items-center gap-x-10 gap-y-4">
             <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-paper/45">
               {p("combine")}
             </span>

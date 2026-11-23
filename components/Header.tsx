@@ -17,7 +17,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import MenuToggle from "./MenuToggle";
 import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
-import { GROUP_KEYS, GROUP_PAGES } from "./groupPages";
+import { GROUP_KEYS, GROUP_PAGES, type GroupKey } from "./groupPages";
 import { BOOKING } from "./contact-info";
 import { useAnchor } from "./useAnchor";
 import { setHeaderHidden } from "./headerStore";
@@ -54,6 +54,8 @@ export default function Header({ bookingUrl }: Props) {
   const [pastHero, setPastHero] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [openMenu, setOpenMenu] = useState<MegaGroup | null>(null);
+  // Offer previewed in the Events megamenu (photo follows hover/focus).
+  const [activeEvent, setActiveEvent] = useState<GroupKey>(GROUP_KEYS[0]);
   const [mobileOpen, setMobileOpen] = useState(false);
   // Hover only applies to devices with a real pointer. On touch, a tap fires
   // mouseenter without a matching mouseleave, which would latch `hovered` true
@@ -77,6 +79,22 @@ export default function Header({ bookingUrl }: Props) {
   }, []);
 
   useEffect(() => setMounted(true), []);
+
+  // 1024-1439px: six nav items leave no room for the centred logo, so it is
+  // hidden there (CSS) and the left logo stays docked instead.
+  const [midDesktop, setMidDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px) and (max-width: 1439.98px)");
+    const apply = () => setMidDesktop(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  // Each time the Events megamenu opens it starts on the first offer.
+  useEffect(() => {
+    if (openMenu !== "events") setActiveEvent(GROUP_KEYS[0]);
+  }, [openMenu]);
 
   // Mega/mobile menu must never stay behind a hidden header.
   useEffect(() => {
@@ -128,6 +146,9 @@ export default function Header({ bookingUrl }: Props) {
   // content sections below the hero.
   const onPaper = active && !pastHero;
   const onForest = active && pastHero;
+  // Left logo shows when the bar is active, and always on mid-width
+  // desktops where the centred logo is hidden (see midDesktop).
+  const logoDocked = active || midDesktop;
   const openEntry = NAV.find((n) => n.mega?.group === openMenu) ?? null;
 
   // Nav label with an elegant arrow that slides out to the right on hover,
@@ -229,7 +250,7 @@ export default function Header({ bookingUrl }: Props) {
         <Link
           href="/"
           aria-label="Al Ponte"
-          className="absolute left-1/2 top-0 z-0 flex h-20 -translate-x-1/2 items-center lg:h-24"
+          className="absolute left-1/2 top-0 z-0 flex h-20 -translate-x-1/2 items-center lg:h-24 lg:max-[1440px]:hidden"
         >
           <motion.span
             initial={false}
@@ -269,7 +290,7 @@ export default function Header({ bookingUrl }: Props) {
           {/* Left logo - slides in from off-screen when the bar is active */}
           <motion.div
             initial={false}
-            animate={{ x: active ? 0 : -200, opacity: active ? 1 : 0 }}
+            animate={{ x: logoDocked ? 0 : -200, opacity: logoDocked ? 1 : 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="absolute left-6 top-0 flex h-full items-center lg:left-10"
           >
@@ -278,7 +299,7 @@ export default function Header({ bookingUrl }: Props) {
               aria-label="Al Ponte"
               onMouseEnter={() => setOpenMenu(null)}
               className={`transition-[filter] duration-500 ${
-                onForest ? "[filter:invert(1)_brightness(1.5)]" : ""
+                onPaper ? "" : "[filter:invert(1)_brightness(1.5)]"
               }`}
             >
               <Image
@@ -293,7 +314,7 @@ export default function Header({ bookingUrl }: Props) {
 
           <motion.nav
             initial={false}
-            animate={{ paddingLeft: active ? 96 : 0 }}
+            animate={{ paddingLeft: logoDocked ? 96 : 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="hidden h-full items-center gap-6 lg:flex"
           >
@@ -329,6 +350,67 @@ export default function Header({ bookingUrl }: Props) {
               {(() => {
                 const group = openEntry.mega!.group;
 
+                // Events: offer list on the left, one large photo on the
+                // right that cross-fades to whichever offer is hovered.
+                if (group === "events") {
+                  return (
+                    <div className="mx-auto grid max-w-7xl grid-cols-[1fr_1.35fr] gap-16 px-6 py-12 lg:px-10">
+                      <div>
+                        <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                          {t("groups.menuTitle")}
+                        </span>
+                        <ul className="mt-6">
+                          {GROUP_KEYS.map((key) => (
+                            <li key={key}>
+                              <Link
+                                href={GROUP_PAGES[key].href}
+                                onClick={() => setOpenMenu(null)}
+                                onMouseEnter={() => setActiveEvent(key)}
+                                onFocus={() => setActiveEvent(key)}
+                                className="group flex items-center justify-between gap-4 border-b border-mist py-4"
+                              >
+                                <FlipText
+                                  className={`font-serif text-2xl leading-tight transition-colors duration-300 ${
+                                    activeEvent === key ? "text-ink" : "text-ink/45"
+                                  }`}
+                                >
+                                  {t(`groups.pages.${key}.navLabel`)}
+                                </FlipText>
+                                <span
+                                  className={`text-base text-forest transition-all duration-300 group-hover:translate-x-1 ${
+                                    activeEvent === key ? "opacity-100" : "opacity-0"
+                                  }`}
+                                >
+                                  →
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink/[0.06]">
+                          {GROUP_KEYS.map((key) => (
+                            <Image
+                              key={key}
+                              src={GROUP_PAGES[key].image}
+                              alt={activeEvent === key ? t(`groups.pages.${key}.imageAlt`) : ""}
+                              fill
+                              sizes="(max-width: 1024px) 0px, 50vw"
+                              className={`object-cover transition-opacity duration-500 ease-out ${
+                                activeEvent === key ? "opacity-100" : "opacity-0"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <p className="mt-5 max-w-xl text-sm leading-relaxed text-ink/65">
+                          {t(`groups.pages.${activeEvent}.intro`)}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                }
+
                 // Rooms keeps its real photo cards; Informations and
                 // Attractions render as clean text quick-links (no
                 // loosely-related imagery).
@@ -359,32 +441,6 @@ export default function Header({ bookingUrl }: Props) {
                           </Link>
                         ))}
                       </div>
-
-                      {/* Group-offer subpages, listed under Informations. */}
-                      {group === "informations" && (
-                        <>
-                          <span className="mt-10 block text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
-                            {t("groups.menuTitle")}
-                          </span>
-                          <div className="mt-6 grid grid-cols-2 gap-x-12 md:grid-cols-3">
-                            {GROUP_KEYS.map((key) => (
-                              <Link
-                                key={key}
-                                href={GROUP_PAGES[key].href}
-                                onClick={() => setOpenMenu(null)}
-                                className="group flex items-center justify-between gap-4 border-b border-mist py-4"
-                              >
-                                <FlipText className="font-serif text-lg leading-tight">
-                                  {t(`groups.pages.${key}.navLabel`)}
-                                </FlipText>
-                                <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
-                                  →
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
-                        </>
-                      )}
                     </div>
                   );
                 }

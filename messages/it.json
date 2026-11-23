@@ -3,6 +3,7 @@
     "rooms": "Camere",
     "contact": "Contatti",
     "info": "Informazioni",
+    "events": "Eventi",
     "attractions": "Attrazione",
     "gallery": "Galleria",
     "bookNow": "Prenota Ora",
@@ -828,7 +829,8 @@
           "beds": "posti letto per il team",
           "dj": "su richiesta, con possibilità di ballare"
         },
-        "combine": "Da abbinare a"
+        "combine": "Da abbinare a",
+        "evening": "La serata"
       }
     },
     "glance": {
@@ -861,7 +863,7 @@
         "dinner": "Cena (buffet)",
         "halfBoard": "Pranzo-cena",
         "or": "oppure",
-        "unit": "Prezzi in CHF a persona."
+        "unit": "Prezzi a persona."
       },
       "onSite": [
         "Ristorante con terrazza vista lago e Lugano",

@@ -79,7 +79,6 @@ export async function GroupRoute({
         locale={locale}
         items={[
           { name: t("seo.siteName"), path: "" },
-          { name: t("nav.info"), path: "/informations" },
           { name: t(`groups.pages.${page}.navLabel`), path: GROUP_PAGES[page].href },
         ]}
       />

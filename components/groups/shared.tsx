@@ -12,7 +12,18 @@ import {
   GROUP_ROOM_TYPES,
   type GroupKey,
 } from "../groupPages";
+import {
+  BedDouble,
+  Hotel,
+  Languages,
+  Ticket,
+  Tv,
+  Users,
+  UtensilsCrossed,
+  type LucideIcon,
+} from "lucide-react";
 import StripScroll from "./StripScroll";
+import StickyUnderHeader from "./StickyUnderHeader";
 
 // Building blocks shared by the five group-offer pages. Every page uses the
 // same frame (switcher, hotel-at-a-glance, enquiry) around its own hero and
@@ -20,6 +31,10 @@ import StripScroll from "./StripScroll";
 
 export const container = "mx-auto w-full max-w-6xl px-6 lg:px-10";
 export const eyebrow = "text-[11px] font-medium uppercase tracking-[0.3em]";
+
+// Every offer hero has exactly this height, so the offer switcher below it
+// sits in the same place on all five pages.
+export const heroHeight = "h-[max(80svh,38rem)]";
 
 type Tone = "light" | "dark";
 
@@ -96,9 +111,14 @@ export async function OfferSwitcher({
   const t = await getTranslations("groups");
   const dark = tone === "dark";
   return (
+    <StickyUnderHeader>
     <nav
       aria-label={t("switcherLabel")}
-      className={dark ? "border-b border-paper/10 bg-ink" : "border-b border-mist bg-paper"}
+      className={
+        dark
+          ? "border-b border-paper/10 bg-ink/90 backdrop-blur"
+          : "border-b border-mist bg-paper/90 backdrop-blur"
+      }
     >
       <div className={container}>
         <StripScroll className="-mx-6 flex gap-8 overflow-x-auto px-6 [scrollbar-width:none] lg:mx-0 lg:justify-between lg:px-0 [&::-webkit-scrollbar]:hidden">
@@ -132,14 +152,24 @@ export async function OfferSwitcher({
         </StripScroll>
       </div>
     </nav>
+    </StickyUnderHeader>
   );
 }
 
-// Spec-sheet row: label column + value column, hairline above.
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+// Spec-sheet row: icon + label column, value column, hairline above.
+function Row({
+  icon: Icon,
+  label,
+  children,
+}: {
+  icon: LucideIcon;
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="grid gap-3 border-t border-mist py-7 md:grid-cols-[11rem_1fr] md:gap-10">
-      <dt className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink/50 md:pt-1.5">
+    <div className="grid gap-3 border-t border-mist py-7 md:grid-cols-[12rem_1fr] md:gap-10">
+      <dt className="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.2em] text-ink/50 md:items-start md:pt-1">
+        <Icon aria-hidden className="h-4 w-4 shrink-0 text-forest" strokeWidth={1.25} />
         {label}
       </dt>
       <dd className="text-base leading-relaxed text-ink/85">{children}</dd>
@@ -167,7 +197,7 @@ export async function HotelAtAGlance() {
         </div>
 
         <dl className="mt-12 border-b border-mist">
-          <Row label={t("labels.capacity")}>
+          <Row icon={Users} label={t("labels.capacity")}>
             <span className="flex flex-wrap gap-x-10 gap-y-3">
               {GROUP_CAPACITY.map((c) => (
                 <span key={c.key} className="inline-flex items-baseline gap-2">
@@ -182,7 +212,7 @@ export async function HotelAtAGlance() {
             </span>
           </Row>
 
-          <Row label={t("labels.rooms")}>
+          <Row icon={BedDouble} label={t("labels.rooms")}>
             <ul className="space-y-1.5">
               {GROUP_ROOM_TYPES.map((r) => (
                 <li key={r.key} className="flex gap-4">
@@ -198,7 +228,7 @@ export async function HotelAtAGlance() {
             </p>
           </Row>
 
-          <Row label={t("labels.inRooms")}>
+          <Row icon={Tv} label={t("labels.inRooms")}>
             <ul className="space-y-1.5">
               {list("inRooms").map((line) => (
                 <li key={line}>{line}</li>
@@ -206,24 +236,18 @@ export async function HotelAtAGlance() {
             </ul>
           </Row>
 
-          <Row label={t("labels.meals")}>
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+          <Row icon={UtensilsCrossed} label={t("labels.meals")}>
+            {/* Restaurant-menu style: name, dotted leader, price - kept
+                deliberately unlike the big serif capacity figures. */}
+            <ul className="max-w-md">
               {[...GROUP_MEALS, GROUP_HALF_BOARD].map((m) => {
                 const alt = m.key === GROUP_HALF_BOARD.key;
                 return (
                   <li
                     key={m.key}
-                    className={alt ? "sm:border-l sm:border-mist sm:pl-8" : ""}
+                    className={`flex items-baseline gap-3 py-1 ${alt ? "mt-2 border-t border-mist pt-3" : ""}`}
                   >
-                    <span className="flex items-baseline gap-1.5">
-                      <span className="font-serif text-3xl leading-none text-forest tabular-nums">
-                        {m.price}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-[0.18em] text-ink/45">
-                        CHF
-                      </span>
-                    </span>
-                    <span className="mt-2 block text-sm leading-snug text-ink/75">
+                    <span className="min-w-0">
                       {alt && (
                         <em className="mr-1.5 font-serif italic text-ink/45">
                           {t("meals.or")}
@@ -231,14 +255,21 @@ export async function HotelAtAGlance() {
                       )}
                       {t(`meals.${m.key}`)}
                     </span>
+                    <span
+                      aria-hidden
+                      className="min-w-4 flex-1 -translate-y-1 border-b border-dotted border-ink/25"
+                    />
+                    <span className="shrink-0 text-sm font-medium tracking-wide text-ink tabular-nums">
+                      CHF {m.price}
+                    </span>
                   </li>
                 );
               })}
             </ul>
-            <p className="mt-5 text-xs text-ink/50">{t("meals.unit")}</p>
+            <p className="mt-4 text-xs text-ink/50">{t("meals.unit")}</p>
           </Row>
 
-          <Row label={t("labels.onSite")}>
+          <Row icon={Hotel} label={t("labels.onSite")}>
             <ul className="space-y-1.5">
               {list("onSite").map((line) => (
                 <li key={line}>{line}</li>
@@ -249,8 +280,12 @@ export async function HotelAtAGlance() {
             </p>
           </Row>
 
-          <Row label={t("labels.included")}>{t("included")}</Row>
-          <Row label={t("labels.service")}>{t("service")}</Row>
+          <Row icon={Ticket} label={t("labels.included")}>
+            {t("included")}
+          </Row>
+          <Row icon={Languages} label={t("labels.service")}>
+            {t("service")}
+          </Row>
         </dl>
       </div>
     </section>

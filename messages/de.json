@@ -3,6 +3,7 @@
     "rooms": "Zimmer",
     "contact": "Kontakt",
     "info": "Informationen",
+    "events": "Events",
     "attractions": "Attraktionen",
     "gallery": "Galerie",
     "bookNow": "Jetzt buchen",
@@ -828,7 +829,8 @@
           "beds": "Betten für das ganze Team",
           "dj": "auf Wunsch, mit Tanz"
         },
-        "combine": "Kombinierbar mit"
+        "combine": "Kombinierbar mit",
+        "evening": "Der Abend"
       }
     },
     "glance": {
@@ -861,7 +863,7 @@
         "dinner": "Abendessen (Buffet)",
         "halfBoard": "Mittag- und Abendessen kombiniert",
         "or": "oder",
-        "unit": "Preise in CHF pro Person."
+        "unit": "Preise pro Person."
       },
       "onSite": [
         "Restaurant mit Terrasse und Blick auf den See und Lugano",

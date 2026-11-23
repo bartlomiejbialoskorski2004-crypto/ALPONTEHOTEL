@@ -9,6 +9,7 @@ import {
   TextLink,
   container,
   eyebrow,
+  heroHeight,
 } from "./shared";
 
 type Step = { when: string; what: string };
@@ -22,13 +23,26 @@ export default async function Workshops() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-forest text-paper">
+      <section className={`relative flex ${heroHeight} w-full overflow-hidden bg-forest text-paper`}>
+        {/* Phones: the photo becomes a washed-out backdrop so the hero keeps
+            the shared height; desktop shows it framed on the right. */}
+        <div aria-hidden className="absolute inset-0 lg:hidden">
+          <Image
+            src={GROUP_PAGES.workshops.image}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-forest/85" />
+        </div>
         <div
-          className={`${container} grid gap-12 pb-16 pt-36 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-16 lg:pb-20 lg:pt-44`}
+          className={`relative ${container} grid h-full grid-rows-[1fr] items-end gap-16 pb-14 pt-28 lg:grid-cols-[1.1fr_1fr] lg:pb-16 lg:pt-32`}
         >
-          <div className="lg:pb-4">
+          <div>
             <span className={`${eyebrow} text-paper/70`}>{t("eyebrow")}</span>
-            <h1 className="mt-6 text-balance font-serif text-4xl leading-[1.05] lg:text-6xl">
+            <h1 className="mt-6 text-balance break-words font-serif text-[2rem] leading-[1.05] hyphens-auto sm:text-4xl lg:text-[3.4rem]">
               {p("title")}
             </h1>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-paper/80 lg:text-base">
@@ -36,13 +50,13 @@ export default async function Workshops() {
             </p>
             <HeroCta className="mt-10" />
           </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-[5/6]">
+          <div className="relative hidden h-full self-stretch overflow-hidden lg:block">
             <Image
               src={GROUP_PAGES.workshops.image}
               alt={p("imageAlt")}
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 45vw"
+              sizes="45vw"
               className="object-cover"
             />
           </div>

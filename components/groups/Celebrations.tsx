@@ -9,6 +9,7 @@ import {
   OfferSwitcher,
   container,
   eyebrow,
+  heroHeight,
 } from "./shared";
 
 // Celebrations - "invitation": a centred hero over the dusk terrace, then a
@@ -25,13 +26,13 @@ export default async function Celebrations() {
 
   return (
     <>
-      <section className="relative flex min-h-[80svh] w-full items-center justify-center overflow-hidden bg-forest text-center text-paper">
+      <section className={`relative flex ${heroHeight} w-full items-center justify-center overflow-hidden bg-forest text-center text-paper`}>
         <ParallaxImage src={GROUP_PAGES.celebrations.image} alt={p("imageAlt")} priority />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/25 to-forest/80" />
-        <div className={`relative ${container} pb-20 pt-40`}>
+        <div className={`relative ${container} pb-10 pt-24`}>
           <span className={`${eyebrow} text-paper/75`}>{t("eyebrow")}</span>
           <span aria-hidden className="mx-auto mt-6 block h-px w-12 bg-gold" />
-          <h1 className="mx-auto mt-6 max-w-3xl text-balance font-serif text-4xl leading-[1.08] lg:text-6xl">
+          <h1 className="mx-auto mt-6 max-w-3xl text-balance break-words font-serif text-[2rem] leading-[1.08] hyphens-auto sm:text-4xl lg:text-6xl">
             {p("title")}
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-paper/80 lg:text-base">

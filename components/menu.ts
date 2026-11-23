@@ -3,11 +3,14 @@
 // All entries render on the left of the bar. Sub-item / link hrefs are
 // placeholders (#top / #contact) until the matching sections exist.
 
-export type MegaGroup = "rooms" | "attractions" | "informations";
+import { GROUP_KEYS } from "./groupPages";
+
+export type MegaGroup = "rooms" | "attractions" | "informations" | "events";
 export type NavKey =
   | "rooms"
   | "contact"
   | "info"
+  | "events"
   | "attractions"
   | "gallery";
 
@@ -33,6 +36,13 @@ export const NAV: NavEntry[] = [
       group: "informations",
       items: ["hours", "pool", "parking", "services", "tax", "transport"],
     },
+  },
+  {
+    // Group offers. No overview page of its own: the tab opens the first
+    // offer; each offer page carries a switcher to the other four.
+    key: "events",
+    href: "/conferences",
+    mega: { group: "events", items: [...GROUP_KEYS] },
   },
   {
     key: "attractions",

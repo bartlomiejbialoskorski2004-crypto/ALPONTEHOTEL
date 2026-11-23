@@ -3,6 +3,7 @@
     "rooms": "Chambres",
     "contact": "Contact",
     "info": "Informations",
+    "events": "Événements",
     "attractions": "Attractions",
     "gallery": "Galerie",
     "bookNow": "Réserver",
@@ -828,7 +829,8 @@
           "beds": "lits pour toute l'équipe",
           "dj": "sur demande, avec possibilité de danser"
         },
-        "combine": "À combiner avec"
+        "combine": "À combiner avec",
+        "evening": "La soirée"
       }
     },
     "glance": {
@@ -861,7 +863,7 @@
         "dinner": "Dîner (buffet)",
         "halfBoard": "Déjeuner-dîner",
         "or": "ou",
-        "unit": "Prix en CHF par personne."
+        "unit": "Prix par personne."
       },
       "onSite": [
         "Restaurant avec terrasse face au lac et à Lugano",
