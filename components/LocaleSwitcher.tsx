@@ -15,27 +15,29 @@ import { routing } from "@/i18n/routing";
 
 type FlagComponent = ComponentType<{ className?: string; title?: string }>;
 
+// Flag list: a "staircase" reveal in the spirit of the FlipText roll on
+// "Book now" - each flag drops into its own clipped window from above, one
+// after another; on close they roll back up in reverse order. The container
+// itself does not fade, it only waits for the flags to finish leaving.
+const EASE = [0.22, 1, 0.36, 1] as const;
+const STEP = 0.08;
+
 const popoverVariants: Variants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: [0.22, 1, 0.36, 1],
-      staggerChildren: 0.05,
-      delayChildren: 0.05,
-    },
-  },
+  hidden: { transition: { when: "afterChildren" } },
+  visible: {},
 };
 
+// `custom` = [index, count] so open runs top->bottom and close bottom->top.
 const flagItemVariants: Variants = {
-  hidden: { opacity: 0, y: -8 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
-  },
+  // -140%: fully above the window even with its 6px padding.
+  hidden: ([i, n]: [number, number]) => ({
+    y: "-140%",
+    transition: { duration: 0.3, ease: EASE, delay: (n - 1 - i) * 0.05 },
+  }),
+  visible: ([i]: [number, number]) => ({
+    y: "0%",
+    transition: { duration: 0.45, ease: EASE, delay: i * STEP },
+  }),
 };
 
 const FLAGS: Record<string, FlagComponent> = {
@@ -184,22 +186,30 @@ export default function LocaleSwitcher({
               exit="hidden"
               className={`absolute top-full z-50 flex flex-row gap-2 pt-2 sm:flex-col sm:gap-1 ${alignClass}`}
             >
-              {others.map((code) => {
+              {others.map((code, i) => {
                 const Flag = FLAGS[code];
                 return (
+                  // Clipping window, padded so the flag's ring + shadow are
+                  // not cut off; the flag itself rolls in inside it.
                   <motion.button
                     key={code}
-                    variants={flagItemVariants}
                     type="button"
                     role="menuitem"
                     onClick={() => select(code)}
                     aria-label={code.toUpperCase()}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
+                    className="-m-1.5 overflow-hidden p-1.5"
                   >
-                    {Flag && (
-                      <Flag className="h-7 w-10 rounded-none shadow-md ring-1 ring-black/10 sm:h-6 sm:w-9" />
-                    )}
+                    <motion.span
+                      className="block"
+                      variants={flagItemVariants}
+                      custom={[i, others.length]}
+                    >
+                      {Flag && (
+                        <Flag className="h-7 w-10 rounded-none shadow-md ring-1 ring-black/10 sm:h-6 sm:w-9" />
+                      )}
+                    </motion.span>
                   </motion.button>
                 );
               })}

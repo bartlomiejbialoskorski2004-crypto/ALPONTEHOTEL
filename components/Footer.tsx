@@ -1,13 +1,17 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import FlipText from "./FlipText";
 import { NAV } from "./menu";
 import { useAnchor } from "./useAnchor";
-import AnimatedGenerateButton from "./ui/animated-generate-button-shadcn-tailwind";
+
+// Site credit in the bottom bar.
+const CREDIT_NAME = "Bartłomiej Białoskórski";
+const CREDIT_URL =
+  "https://www.linkedin.com/in/bartek-bia%C5%82osk%C3%B3rski-885096338/";
 import {
   BOOKING,
   EMAIL,
@@ -46,32 +50,6 @@ export default function Footer({ bookingUrl }: Props) {
 
   const name = t("fallback.name"); // "Al Ponte"
   const year = new Date().getFullYear();
-
-  // Credit button: first click plays the focus blur burst (1s) on the
-  // VIRALABS.PL label, then the label flips to t("footer.bookCall"); a
-  // second click on that active label opens viralabs.pl. The ref guards
-  // against repeat clicks while the swap timer is pending. We render
-  // the same button in two breakpoint-specific slots (desktop column 2,
-  // mobile inside the right-row), so the handler + token style are
-  // factored here and reused.
-  const [viralabsClicked, setViralabsClicked] = useState(false);
-  const viralabsSwapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const handleViralabsClick = () => {
-    if (viralabsClicked) {
-      window.open("https://viralabs.pl", "_blank", "noopener,noreferrer");
-      return;
-    }
-    if (viralabsSwapTimer.current !== null) return;
-    viralabsSwapTimer.current = setTimeout(() => {
-      setViralabsClicked(true);
-      viralabsSwapTimer.current = null;
-    }, 1000);
-  };
-  const viralabsTokens = {
-    ["--background" as string]: "0 0% 6%",
-    ["--foreground" as string]: "48 23% 97%",
-    ["--border" as string]: "0 0% 60%",
-  } as React.CSSProperties;
 
   const colHead =
     "text-[11px] font-medium uppercase tracking-[0.3em] text-paper/40";
@@ -229,29 +207,20 @@ export default function Footer({ bookingUrl }: Props) {
       <div className="border-t border-paper/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:grid sm:grid-cols-3 sm:items-center lg:px-10">
           <span className="sm:justify-self-start">©{year} Hotel Al Ponte Cademario</span>
-          {/* Credit - animated glass button. Idle: "VIRALABS.PL". After
-              the 1s blur burst it flips to t("footer.bookCall"); a second
-              click then opens viralabs.pl. Desktop slot only: column 2,
-              with the "Created by" prefix above. Mobile copy lives inside
-              the right-side row below (after ↑ DO GÓRY) and shares state
-              via the common handler. The button consumes shadcn-style
-              HSL tokens (--background / --foreground / --border) which
-              we scope locally so it renders correctly against bg-ink. */}
-          <div
-            className="hidden sm:flex sm:flex-col sm:items-center sm:gap-1 sm:justify-self-center"
-            style={viralabsTokens}
-          >
+          {/* Credit: plain link, "Created by" prefix above (centred column
+              on sm+, its own row on phones). */}
+          <div className="flex flex-col gap-1 sm:items-center sm:justify-self-center">
             <span className="text-[10px] uppercase tracking-[0.18em] text-paper/35">
               {t("footer.createdBy")}
             </span>
-            <AnimatedGenerateButton
-              labelIdle="VIRALABS.PL"
-              labelActive={t("footer.bookCall")}
-              generating={viralabsClicked}
-              highlightHueDeg={270}
-              ariaLabel="Viralabs.pl - created by"
-              onClick={handleViralabsClick}
-            />
+            <a
+              href={CREDIT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex w-fit transition-colors hover:text-paper"
+            >
+              <FlipText>{CREDIT_NAME}</FlipText>
+            </a>
           </div>
           <div className="flex items-center gap-3 sm:gap-6 sm:justify-self-end">
             <Link
@@ -272,36 +241,26 @@ export default function Footer({ bookingUrl }: Props) {
                 ↑
               </span>
             </a>
-            {/* Mobile credit - pill only (no prefix), sits right of ↑.
-                Uses size="xs" to drop the sparkle SVG and tighten chrome
-                so the row fits on narrow phones. */}
-            <div className="sm:hidden" style={viralabsTokens}>
-              <AnimatedGenerateButton
-                size="xs"
-                labelIdle="VIRALABS.PL"
-                labelActive={t("footer.bookCall")}
-                generating={viralabsClicked}
-                highlightHueDeg={270}
-                ariaLabel="Viralabs.pl - created by"
-                onClick={handleViralabsClick}
-              />
-            </div>
           </div>
         </div>
       </div>
 
       {/* Giant "Al Ponte" wordmark - full-bleed, rises with scroll, clipped
           by the footer's bottom edge. Sits clear below the copyright (mt gap)
-          and only ever moves downward, so it never covers it. Decorative: the
-          name is already exposed by the columns above. */}
+          and only ever moves downward, so it never covers it. Like every
+          Al Ponte logo it links home. */}
       <motion.div
         style={{ y: wordmarkY }}
-        aria-hidden
-        className="pointer-events-none mt-10 select-none lg:mt-16"
+        className="mt-10 select-none lg:mt-16"
       >
-        <span className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(4rem,26vw,24rem)] leading-[0.75] tracking-tight text-paper">
-          {name}
-        </span>
+        <Link href="/" aria-label={name} className="block">
+          <span
+            aria-hidden
+            className="-mb-[0.1em] block whitespace-nowrap text-center font-serif text-[clamp(4rem,26vw,24rem)] leading-[0.75] tracking-tight text-paper"
+          >
+            {name}
+          </span>
+        </Link>
       </motion.div>
     </footer>
   );

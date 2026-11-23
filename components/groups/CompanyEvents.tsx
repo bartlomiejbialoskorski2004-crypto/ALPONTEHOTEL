@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { BedDouble, Disc3, Wine } from "lucide-react";
 import ParallaxImage from "../ParallaxImage";
 import { GROUP_MAX_GUESTS, GROUP_PAGES, GROUP_VENUES } from "../groupPages";
 import {
@@ -14,6 +15,9 @@ import {
 
 const pill =
   "rounded-full border border-paper/25 px-4 py-1.5 text-xs tracking-wide text-paper/85";
+
+// Small, quiet line icons above each figure of the evening row.
+const icon = "mb-5 block h-5 w-5 text-gold/80";
 
 // Company events - "evening": the one dark page. Ink hero and a compact ink
 // module (three figures, the DJ's music choice as two small pills), then back
@@ -52,6 +56,7 @@ export default async function CompanyEvents() {
 
           <ul className="mt-10 grid gap-10 border-t border-paper/15 pt-10 sm:grid-cols-3 sm:gap-8">
             <li>
+              <Wine aria-hidden className={icon} strokeWidth={1.25} />
               <span className="block font-serif text-4xl leading-none tabular-nums">
                 {GROUP_VENUES.restaurant}
               </span>
@@ -60,6 +65,7 @@ export default async function CompanyEvents() {
               </span>
             </li>
             <li>
+              <BedDouble aria-hidden className={icon} strokeWidth={1.25} />
               <span className="block font-serif text-4xl leading-none tabular-nums">
                 {GROUP_MAX_GUESTS}
               </span>
@@ -68,6 +74,7 @@ export default async function CompanyEvents() {
               </span>
             </li>
             <li>
+              <Disc3 aria-hidden className={icon} strokeWidth={1.25} />
               <span className="block font-serif text-4xl leading-none">DJ</span>
               <span className="mt-3 block text-sm leading-relaxed text-paper/60">
                 {p("details.dj")}

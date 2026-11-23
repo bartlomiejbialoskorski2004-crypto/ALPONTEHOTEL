@@ -157,9 +157,11 @@ export default function Header({ bookingUrl }: Props) {
   const labelWithArrow = (key: string) => (
     <span className="inline-flex items-center">
       <FlipText>{t(`nav.${key}`)}</FlipText>
+      {/* Same glyph treatment as the megamenu arrows (regular weight, no
+          letter-spacing/uppercase from the nav label); size stays 11px. */}
       <span
         aria-hidden
-        className="inline-block max-w-0 -translate-x-1 overflow-hidden whitespace-nowrap leading-none opacity-0 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:ml-1.5 group-hover:max-w-[1.5em] group-hover:translate-x-0 group-hover:opacity-100"
+        className="inline-block max-w-0 -translate-x-1 overflow-hidden whitespace-nowrap font-normal normal-case leading-none tracking-normal opacity-0 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:ml-1.5 group-hover:max-w-[1.5em] group-hover:translate-x-0 group-hover:opacity-100"
       >
         →
       </span>
@@ -212,9 +214,9 @@ export default function Header({ bookingUrl }: Props) {
           <span className={`${labelClass} cursor-default`}>{labelInner}</span>
         )}
         <span
-          className={`absolute bottom-0 left-0 h-[2px] w-full origin-left bg-forest transition-transform duration-300 ${
-            isOpen ? "scale-x-100" : "scale-x-0"
-          }`}
+          className={`absolute bottom-0 left-0 h-[2px] w-full origin-left transition-transform duration-300 ${
+            onForest ? "bg-paper" : "bg-forest"
+          } ${isOpen ? "scale-x-100" : "scale-x-0"}`}
           aria-hidden
         />
       </div>
@@ -286,13 +288,16 @@ export default function Header({ bookingUrl }: Props) {
           className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 border-b lg:h-24"
         />
 
-        <div className="relative z-10 flex h-20 items-stretch justify-between px-6 lg:h-24 lg:px-10">
+        {/* Row is click-through (pointer-events-none) so the centred logo
+            underneath (z-0) stays tappable - on phones it is the main way
+            home. Interactive children opt back in with pointer-events-auto. */}
+        <div className="pointer-events-none relative z-10 flex h-20 items-stretch justify-between px-6 lg:h-24 lg:px-10">
           {/* Left logo - slides in from off-screen when the bar is active */}
           <motion.div
             initial={false}
             animate={{ x: logoDocked ? 0 : -200, opacity: logoDocked ? 1 : 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-6 top-0 flex h-full items-center lg:left-10"
+            className="pointer-events-auto absolute left-6 top-0 flex h-full items-center lg:left-10"
           >
             <Link
               href="/"
@@ -316,7 +321,7 @@ export default function Header({ bookingUrl }: Props) {
             initial={false}
             animate={{ paddingLeft: logoDocked ? 96 : 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden h-full items-center gap-6 lg:flex"
+            className="pointer-events-auto hidden h-full items-center gap-6 lg:flex"
           >
             {NAV.map(renderTopItem)}
           </motion.nav>
@@ -324,7 +329,7 @@ export default function Header({ bookingUrl }: Props) {
           <div className="ml-auto flex h-full items-center gap-5">
             <div
               onMouseEnter={() => setOpenMenu(null)}
-              className="relative z-30 hidden items-center gap-5 lg:flex"
+              className="pointer-events-auto relative z-30 hidden items-center gap-5 lg:flex"
             >
               <LocaleSwitcher tone={onPaper ? "dark" : "light"} />
               <BookNowButton
@@ -354,12 +359,12 @@ export default function Header({ bookingUrl }: Props) {
                 // right that cross-fades to whichever offer is hovered.
                 if (group === "events") {
                   return (
-                    <div className="mx-auto grid max-w-7xl grid-cols-[1fr_1.35fr] gap-16 px-6 py-12 lg:px-10">
+                    <div className="mx-auto grid max-w-7xl grid-cols-[1fr_1fr] gap-12 px-6 py-8 lg:px-10">
                       <div>
                         <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
                           {t("groups.menuTitle")}
                         </span>
-                        <ul className="mt-6">
+                        <ul className="mt-4">
                           {GROUP_KEYS.map((key) => (
                             <li key={key}>
                               <Link
@@ -367,10 +372,10 @@ export default function Header({ bookingUrl }: Props) {
                                 onClick={() => setOpenMenu(null)}
                                 onMouseEnter={() => setActiveEvent(key)}
                                 onFocus={() => setActiveEvent(key)}
-                                className="group flex items-center justify-between gap-4 border-b border-mist py-4"
+                                className="group flex items-center justify-between gap-4 border-b border-mist py-3"
                               >
                                 <FlipText
-                                  className={`font-serif text-2xl leading-tight transition-colors duration-300 ${
+                                  className={`font-serif text-xl leading-tight transition-colors duration-300 ${
                                     activeEvent === key ? "text-ink" : "text-ink/45"
                                   }`}
                                 >
@@ -389,7 +394,7 @@ export default function Header({ bookingUrl }: Props) {
                         </ul>
                       </div>
                       <div>
-                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink/[0.06]">
+                        <div className="relative aspect-[16/9] w-full overflow-hidden bg-ink/[0.06]">
                           {GROUP_KEYS.map((key) => (
                             <Image
                               key={key}
@@ -403,7 +408,7 @@ export default function Header({ bookingUrl }: Props) {
                             />
                           ))}
                         </div>
-                        <p className="mt-5 max-w-xl text-sm leading-relaxed text-ink/65">
+                        <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink/65">
                           {t(`groups.pages.${activeEvent}.intro`)}
                         </p>
                       </div>

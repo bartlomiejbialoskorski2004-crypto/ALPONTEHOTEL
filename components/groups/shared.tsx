@@ -32,9 +32,10 @@ import StickyUnderHeader from "./StickyUnderHeader";
 export const container = "mx-auto w-full max-w-6xl px-6 lg:px-10";
 export const eyebrow = "text-[11px] font-medium uppercase tracking-[0.3em]";
 
-// Every offer hero has exactly this height, so the offer switcher below it
-// sits in the same place on all five pages.
-export const heroHeight = "h-[max(80svh,38rem)]";
+// Every offer hero has exactly this height: the first screen (100svh) minus
+// the offer switcher (h-14), so the switcher's bottom edge lands where the
+// homepage hero ends - on all five pages. 38rem floor for very short windows.
+export const heroHeight = "h-[max(calc(100svh-3.5rem),38rem)]";
 
 type Tone = "light" | "dark";
 
@@ -114,14 +115,14 @@ export async function OfferSwitcher({
     <StickyUnderHeader>
     <nav
       aria-label={t("switcherLabel")}
-      className={
+      className={`h-14 ${
         dark
           ? "border-b border-paper/10 bg-ink/90 backdrop-blur"
           : "border-b border-mist bg-paper/90 backdrop-blur"
-      }
+      }`}
     >
-      <div className={container}>
-        <StripScroll className="-mx-6 flex gap-8 overflow-x-auto px-6 [scrollbar-width:none] lg:mx-0 lg:justify-between lg:px-0 [&::-webkit-scrollbar]:hidden">
+      <div className={`${container} h-full`}>
+        <StripScroll className="-mx-6 flex h-full gap-8 overflow-x-auto px-6 [scrollbar-width:none] lg:mx-0 lg:justify-between lg:px-0 [&::-webkit-scrollbar]:hidden">
           {GROUP_KEYS.map((key) => {
             const active = key === current;
             const color = active
@@ -132,11 +133,11 @@ export async function OfferSwitcher({
                 ? "text-paper/45 hover:text-paper"
                 : "text-ink/45 hover:text-ink";
             return (
-              <li key={key} className="shrink-0">
+              <li key={key} className="h-full shrink-0">
                 <Link
                   href={GROUP_PAGES[key].href}
                   aria-current={active ? "page" : undefined}
-                  className={`relative block whitespace-nowrap py-5 text-[11px] font-medium uppercase tracking-[0.18em] transition-colors ${color}`}
+                  className={`relative flex h-full items-center whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.18em] transition-colors ${color}`}
                 >
                   {t(`pages.${key}.navLabel`)}
                   {active && (
