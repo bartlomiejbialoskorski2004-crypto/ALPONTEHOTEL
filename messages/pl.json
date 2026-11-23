@@ -705,9 +705,8 @@
   "groups": {
     "menuTitle": "Oferta dla grup",
     "eyebrow": "Oferta dla grup",
-    "tocTitle": "Spis treści",
-    "backToTop": "Do góry",
     "enquiryCta": "Zapytaj o ofertę",
+    "switcherLabel": "Oferty dla grup",
     "pages": {
       "conferences": {
         "navLabel": "Konferencje",
@@ -716,77 +715,23 @@
         "seoDescription": "Konferencja w Ticino dla maks. 90 osób: nowoczesna sala z zapleczem cateringowym, sala seminaryjna, noclegi do 63 osób i obsługa po polsku w Hotelu Al Ponte.",
         "imageAlt": "Wschód słońca nad Lugano i Alpami widziany z Cademario",
         "title": "Konferencje z widokiem na Jezioro Lugano",
-        "intro": "Zorganizuj konferencję w słonecznym Ticino. W sąsiedztwie hotelu dysponujemy nowoczesną salą konferencyjną dla maksymalnie 90 osób z zapleczem cateringowym, a uczestnicy zamieszkają w hotelu z widokiem na jezioro i Lugano.",
-        "closing": "Dzień pełen merytoryki, wieczór z widokiem na Lugano. Zaplanujmy razem Twoją konferencję.",
-        "facts": [
-          {
-            "label": "Sala konferencyjna",
-            "value": "do 90 osób"
-          },
-          {
-            "label": "Sala seminaryjna",
-            "value": "do 28 osób"
-          },
-          {
-            "label": "Noclegi",
-            "value": "do 63 osób"
-          },
-          {
-            "label": "Obsługa",
-            "value": "także po polsku"
-          }
-        ],
-        "nav": {
-          "venue": "Sala konferencyjna",
-          "seminar": "Sala seminaryjna",
-          "organisation": "Organizacja"
-        },
-        "sections": {
-          "venue": {
-            "title": "Nowoczesna sala konferencyjna",
-            "items": [
-              {
-                "text": "W bezpośrednim sąsiedztwie hotelu dysponujemy nowoczesną salą konferencyjną, w której zorganizujemy konferencję nawet dla 90 uczestników."
-              },
-              {
-                "heading": "Zaplecze cateringowe",
-                "text": "Sala ma własne zaplecze cateringowe, dzięki czemu posiłki dla uczestników można zaplanować na miejscu, bez przenoszenia się w inne miejsce."
-              }
-            ]
+        "intro": "Nowoczesna sala konferencyjna obok hotelu, sala seminaryjna w hotelu i noclegi dla uczestników w jednym miejscu.",
+        "halls": {
+          "title": "Dwie sale",
+          "people": "osób",
+          "conference": {
+            "name": "Sala konferencyjna",
+            "where": "w sąsiedztwie hotelu",
+            "feature": "nowoczesna, z zapleczem cateringowym"
           },
           "seminar": {
-            "title": "Sala seminaryjna w hotelu",
-            "items": [
-              {
-                "text": "Na sesje w mniejszych grupach, spotkania zarządu czy warsztaty towarzyszące konferencji oddajemy do dyspozycji salę seminaryjną w hotelu: do 28 osób, z projektorem.",
-                "links": [
-                  {
-                    "label": "Warsztaty i szkolenia",
-                    "url": "/workshops"
-                  }
-                ]
-              }
-            ]
-          },
-          "organisation": {
-            "title": "Organizacja i obsługa po polsku",
-            "items": [
-              {
-                "text": "Pomożemy zaplanować całość: salę, noclegi dla uczestników i wyżywienie. W razie potrzeby zapewniamy obsługę w języku polskim."
-              },
-              {
-                "heading": "Wieczór integracyjny",
-                "text": "Po części merytorycznej zapraszamy do restauracji z tarasem. Możemy zorganizować imprezę firmową z DJ-em i tańcami.",
-                "links": [
-                  {
-                    "label": "Imprezy firmowe",
-                    "url": "/company-events"
-                  }
-                ]
-              }
-            ]
+            "name": "Sala seminaryjna",
+            "where": "w hotelu",
+            "feature": "z projektorem"
           }
-        }
+        },
+        "stay": "Uczestnicy nocują w hotelu: do {guests} osób.",
+        "evening": "Wieczór integracyjny z DJ-em"
       },
       "workshops": {
         "navLabel": "Warsztaty i szkolenia",
@@ -795,71 +740,29 @@
         "seoDescription": "Sala seminaryjna do 28 osób z projektorem, noclegi i wyżywienie w jednym miejscu, a po zajęciach basen i sauna. Warsztaty i szkolenia firmowe w Hotelu Al Ponte.",
         "imageAlt": "Hotel Al Ponte w Cademario i ośnieżone szczyty Ticino",
         "title": "Warsztaty, szkolenia firmowe i seminaria",
-        "intro": "Kameralna sala seminaryjna w hotelu, noclegi i posiłki pod jednym dachem, a po zajęciach basen, sauna i taras z widokiem na Jezioro Lugano. Dobre warunki do pracy w grupie do 28 osób.",
-        "closing": "Praca w skupieniu, odpoczynek z widokiem na jezioro.",
-        "facts": [
-          {
-            "label": "Sala seminaryjna",
-            "value": "do 28 osób"
-          },
-          {
-            "label": "Wyposażenie",
-            "value": "projektor"
-          },
-          {
-            "label": "Noclegi",
-            "value": "do 63 osób"
-          },
-          {
-            "label": "Obsługa",
-            "value": "także po polsku"
-          }
-        ],
-        "nav": {
-          "room": "Sala seminaryjna",
-          "stay": "Pod jednym dachem",
-          "afterHours": "Po zajęciach"
+        "intro": "Sala seminaryjna, noclegi i posiłki pod jednym dachem, a po zajęciach basen i taras z widokiem na jezioro.",
+        "day": {
+          "title": "Dzień szkoleniowy",
+          "steps": [
+            {
+              "when": "Rano",
+              "what": "Śniadanie w formie bufetu"
+            },
+            {
+              "when": "Zajęcia",
+              "what": "Sala seminaryjna do 28 osób z projektorem"
+            },
+            {
+              "when": "Po zajęciach",
+              "what": "Basen z jacuzzi, sauna fińska, taras widokowy"
+            },
+            {
+              "when": "Wieczorem",
+              "what": "Kolacja z widokiem na jezioro i Lugano"
+            }
+          ]
         },
-        "sections": {
-          "room": {
-            "title": "Sala seminaryjna z projektorem",
-            "items": [
-              {
-                "text": "Nasza sala szkoleniowo-seminaryjna mieści do 28 osób i jest wyposażona w projektor. Sprawdzi się podczas warsztatów, szkoleń firmowych, seminariów i spotkań zespołu."
-              },
-              {
-                "heading": "Większa grupa?",
-                "text": "Na wydarzenia do 90 osób oferujemy nowoczesną salę konferencyjną w sąsiedztwie hotelu.",
-                "links": [
-                  {
-                    "label": "Konferencje",
-                    "url": "/conferences"
-                  }
-                ]
-              }
-            ]
-          },
-          "stay": {
-            "title": "Wszystko pod jednym dachem",
-            "items": [
-              {
-                "text": "Uczestnicy mieszkają, pracują i jedzą w tym samym miejscu, bez dojazdów i straty czasu. Wyżywienie, od śniadań w formie bufetu po obiadokolacje, zaplanujemy razem z Tobą."
-              }
-            ]
-          },
-          "afterHours": {
-            "title": "Po zajęciach",
-            "items": [
-              {
-                "text": "Na zakończenie dnia czeka basen z jacuzzi, sauna fińska i taras widokowy, a wieczorem kolacja z widokiem na jezioro i Lugano."
-              },
-              {
-                "heading": "Obsługa po polsku",
-                "text": "W razie potrzeby zapewniamy obsługę w języku polskim."
-              }
-            ]
-          }
-        }
+        "bigger": "Większa grupa? Sala konferencyjna do {people} osób"
       },
       "celebrations": {
         "navLabel": "Przyjęcia i wesela",
@@ -868,70 +771,15 @@
         "seoDescription": "Przyjęcia okolicznościowe, rocznice i wesela do 70 osób w restauracji z tarasem z widokiem na Jezioro Lugano. Noclegi dla gości w Hotelu Al Ponte w Cademario.",
         "imageAlt": "Widok z tarasu hotelu na Lugano i jezioro o zmierzchu",
         "title": "Przyjęcia, rocznice i wesela z widokiem na jezioro",
-        "intro": "Świętuj z panoramą Lugano w tle. Nasza restauracja z tarasem pomieści do 70 gości, a ci, którzy przyjadą z daleka, zanocują w hotelu.",
-        "closing": "Wyjątkowe chwile zasługują na wyjątkowy widok.",
-        "facts": [
-          {
-            "label": "Restauracja z tarasem",
-            "value": "do 70 osób"
-          },
-          {
-            "label": "Widok",
-            "value": "jezioro i Lugano"
-          },
-          {
-            "label": "Noclegi",
-            "value": "do 63 osób"
-          },
-          {
-            "label": "Obsługa",
-            "value": "także po polsku"
-          }
+        "intro": "Restauracja z tarasem nad Jeziorem Lugano i noclegi dla gości w tym samym miejscu.",
+        "occasions": [
+          "Przyjęcia okolicznościowe",
+          "Rocznice",
+          "Wesela"
         ],
-        "nav": {
-          "venue": "Restauracja z tarasem",
-          "occasions": "Okazje",
-          "guests": "Noclegi dla gości"
-        },
-        "sections": {
-          "venue": {
-            "title": "Restauracja z tarasem",
-            "items": [
-              {
-                "text": "Hotel dysponuje własną salą restauracyjną z tarasem, z którego roztacza się niesamowity widok na jezioro i miasto Lugano. Zorganizujemy w niej przyjęcie nawet dla 70 osób."
-              }
-            ]
-          },
-          "occasions": {
-            "title": "Na każdą okazję",
-            "items": [
-              {
-                "heading": "Przyjęcia okolicznościowe",
-                "text": "Urodziny, jubileusze, spotkania rodzinne i inne okazje warte świętowania."
-              },
-              {
-                "heading": "Rocznice",
-                "text": "Rocznice ślubu i ważne daty, świętowane przy stole z widokiem na jezioro."
-              },
-              {
-                "heading": "Wesela",
-                "text": "Kameralne wesele z panoramą Lugano i Alp w tle, z noclegiem dla gości w tym samym miejscu."
-              }
-            ]
-          },
-          "guests": {
-            "title": "Noclegi dla gości",
-            "items": [
-              {
-                "text": "W hotelu zakwaterujemy do 63 osób, więc goście przyjeżdżający z daleka nie muszą szukać noclegu. Szczegóły pokoi znajdziesz poniżej."
-              },
-              {
-                "heading": "Obsługa po polsku",
-                "text": "W razie potrzeby zapewniamy obsługę w języku polskim."
-              }
-            ]
-          }
-        }
+        "guests": "osób w restauracji z tarasem",
+        "beds": "miejsca noclegowe dla gości",
+        "view": "Własna sala restauracyjna z tarasem i niesamowitym widokiem na jezioro i miasto Lugano."
       },
       "schoolTrips": {
         "navLabel": "Zielone szkoły",
@@ -940,71 +788,26 @@
         "seoDescription": "Zielona szkoła w Szwajcarii: noclegi do 63 osób, pokoje dla opiekunów, wyżywienie, darmowa komunikacja publiczna i obsługa po polsku. Hotel Al Ponte w Cademario.",
         "imageAlt": "Monte San Salvatore i Jezioro Lugano z lotu ptaka",
         "title": "Zielone szkoły w słonecznym Ticino",
-        "intro": "Wyjazd klasowy do Szwajcarii: pokoje z osobnymi łóżkami, osobne pokoje dla opiekunów, wyżywienie na miejscu i darmowa komunikacja publiczna na wycieczki po Ticino.",
-        "closing": "Lekcja przyrody i geografii z widokiem na Alpy.",
-        "facts": [
-          {
-            "label": "Noclegi",
-            "value": "do 63 osób"
+        "intro": "Wyjazd klasowy do Szwajcarii z noclegiem, wyżywieniem i darmową komunikacją publiczną na wycieczki.",
+        "tiles": {
+          "rooms": {
+            "title": "Pokoje dla 2, 3 i 5 osób",
+            "text": "Osobne łóżka, w każdym pokoju łazienka z prysznicem i WC."
           },
-          {
-            "label": "Pokoje dla opiekunów",
-            "value": "w osobnym budynku"
+          "staff": {
+            "title": "Pokoje dla opiekunów",
+            "text": "2 pokoje z łazienkami w osobnym budynku obok hotelu, także dla kierowców i pilotów."
           },
-          {
-            "label": "Komunikacja publiczna",
-            "value": "bezpłatna"
+          "transport": {
+            "title": "Darmowa komunikacja",
+            "text": "Bilety na komunikację publiczną w Ticino. Przystanek 25 m od hotelu."
           },
-          {
-            "label": "Obsługa",
-            "value": "także po polsku"
+          "classroom": {
+            "title": "Sala do zajęć",
+            "text": "Sala seminaryjna do 28 osób z projektorem."
           }
-        ],
-        "nav": {
-          "stay": "Zakwaterowanie",
-          "trips": "Wycieczki",
-          "classes": "Zajęcia"
         },
-        "sections": {
-          "stay": {
-            "title": "Zakwaterowanie dla klasy",
-            "items": [
-              {
-                "text": "Uczniów zakwaterujemy w pokojach z osobnymi łóżkami: dwu-, trzy- i pięcioosobowych, każdy z łazienką z prysznicem i WC."
-              },
-              {
-                "heading": "Pokoje dla opiekunów",
-                "text": "Dla opiekunów, kierowców i pilotów mamy w razie potrzeby 2 dodatkowe pokoje z łazienkami w osobnym budynku obok hotelu."
-              }
-            ]
-          },
-          "trips": {
-            "title": "Wycieczki bez kosztów transportu",
-            "items": [
-              {
-                "text": "Grupa otrzymuje darmowe bilety na komunikację publiczną w kantonie Ticino. Przystanek autobusowy jest zaledwie 25 metrów od hotelu, a Lugano, góry, jezioro i nadjeziorne wioski są w zasięgu ręki.",
-                "links": [
-                  {
-                    "label": "Atrakcje Ticino",
-                    "url": "/attractions"
-                  }
-                ]
-              }
-            ]
-          },
-          "classes": {
-            "title": "Zajęcia i czas wolny",
-            "items": [
-              {
-                "text": "Na zajęcia, prezentacje i spotkania grupy mamy salę seminaryjną z projektorem (do 28 osób). Po dniu pełnym wrażeń: basen i taras z widokiem na jezioro."
-              },
-              {
-                "heading": "Obsługa po polsku",
-                "text": "W razie potrzeby zapewniamy obsługę w języku polskim, od planowania wyjazdu po sam pobyt."
-              }
-            ]
-          }
-        }
+        "attractions": "Atrakcje Ticino"
       },
       "companyEvents": {
         "navLabel": "Imprezy firmowe",
@@ -1013,177 +816,72 @@
         "seoDescription": "Impreza firmowa lub integracyjna do 70 osób w restauracji z tarasem z widokiem na Lugano. DJ z muzyką polską albo włoską i międzynarodową, taniec i noclegi.",
         "imageAlt": "Basen i taras widokowy Hotelu Al Ponte nad Jeziorem Lugano",
         "title": "Imprezy firmowe i integracyjne",
-        "intro": "Wieczór z widokiem na Lugano: restauracja z tarasem dla maksymalnie 70 osób, DJ i taniec, a po imprezie nocleg w hotelu.",
-        "closing": "Wieczór, o którym zespół będzie długo opowiadać.",
-        "facts": [
-          {
-            "label": "Restauracja z tarasem",
-            "value": "do 70 osób"
-          },
-          {
-            "label": "DJ",
-            "value": "muzyka polska lub włoska"
-          },
-          {
-            "label": "Noclegi",
-            "value": "do 63 osób"
-          },
-          {
-            "label": "Obsługa",
-            "value": "także po polsku"
-          }
-        ],
-        "nav": {
-          "party": "Restauracja z tarasem",
-          "dj": "DJ i taniec",
-          "combine": "W pakiecie"
+        "intro": "Wieczór z widokiem na Lugano: restauracja z tarasem, DJ i taniec, a potem nocleg w hotelu.",
+        "music": {
+          "title": "Muzyka do wyboru",
+          "polish": "Polska",
+          "or": "albo",
+          "italian": "Włoska i międzynarodowa"
         },
-        "sections": {
-          "party": {
-            "title": "Impreza w restauracji z tarasem",
-            "items": [
-              {
-                "text": "Imprezy firmowe i integracyjne organizujemy w naszej restauracji z tarasem, z widokiem na jezioro i miasto Lugano, nawet dla 70 osób."
-              }
-            ]
-          },
-          "dj": {
-            "title": "DJ i taniec",
-            "items": [
-              {
-                "text": "Na życzenie zapewniamy DJ-a z muzyką do wyboru: polską albo włoską i międzynarodową. Jest też możliwość tańca."
-              }
-            ]
-          },
-          "combine": {
-            "title": "Konferencja, szkolenie i impreza w jednym",
-            "items": [
-              {
-                "text": "Imprezę łatwo połączyć z konferencją (do 90 osób) lub szkoleniem w sali seminaryjnej (do 28 osób) oraz noclegiem dla całego zespołu.",
-                "links": [
-                  {
-                    "label": "Konferencje",
-                    "url": "/conferences"
-                  },
-                  {
-                    "label": "Warsztaty i szkolenia",
-                    "url": "/workshops"
-                  }
-                ]
-              },
-              {
-                "heading": "Obsługa po polsku",
-                "text": "W razie potrzeby zapewniamy obsługę w języku polskim."
-              }
-            ]
-          }
-        }
+        "details": {
+          "restaurant": "osób w restauracji z tarasem z widokiem na Lugano",
+          "beds": "miejsca noclegowe dla zespołu",
+          "dj": "na życzenie, z możliwością tańca"
+        },
+        "combine": "Połącz z"
       }
     },
-    "shared": {
-      "nav": {
-        "hotel": "Hotel dla grup",
+    "glance": {
+      "eyebrow": "Al Ponte",
+      "title": "Hotel w skrócie",
+      "location": "Hotel Al Ponte leży w Cademario, nad Jeziorem Lugano, z widokiem na jezioro, Lugano i Alpy. Przystanek autobusowy jest 25 m od hotelu.",
+      "labels": {
+        "capacity": "Pojemność",
         "rooms": "Pokoje",
+        "inRooms": "Wyposażenie",
         "meals": "Wyżywienie",
-        "facilities": "Na miejscu",
-        "transport": "Komunikacja"
+        "onSite": "Na miejscu",
+        "included": "W cenie",
+        "service": "Obsługa"
       },
-      "hotel": {
-        "title": "Hotel dla grup w słonecznym Ticino",
-        "intro": "Hotel Al Ponte położony jest w Cademario, na zboczu nad Jeziorem Lugano, z panoramicznym widokiem na jezioro, miasto Lugano i Alpy. Przystanek autobusowy znajduje się 25 metrów od hotelu.",
-        "capacity": {
-          "guests": "maks. liczba gości",
-          "beds": "osobne łóżka",
-          "rooms": "pokoje dla grup"
-        },
-        "roomTypesTitle": "Pokoje przygotowane dla grup",
-        "roomTypes": {
-          "twin": "pokoi z dwoma osobnymi łóżkami",
-          "triple": "pokoje z trzema osobnymi łóżkami",
-          "single": "pokój z jednym łóżkiem",
-          "five": "pokój z pięcioma osobnymi łóżkami"
-        },
-        "staffRooms": "W razie potrzeby dla kierowców, pilotów i opiekunów mamy jeszcze 2 pokoje z łazienkami w osobnym budynku obok hotelu."
+      "capacity": {
+        "guests": "osoby maksymalnie",
+        "beds": "osobne łóżka",
+        "rooms": "pokoje dla grup"
       },
-      "rooms": {
-        "title": "Wyposażenie pokoi",
-        "items": [
-          {
-            "text": "Wszystkie pokoje mają łazienki z prysznicem i WC, bezpłatny internet oraz SMART TV."
-          },
-          {
-            "heading": "Balkony i tarasy",
-            "text": "16 pokoi ma balkony lub tarasy z widokiem na Lugano i jezioro."
-          },
-          {
-            "heading": "Aneksy kuchenne",
-            "text": "4 pokoje mają aneksy kuchenne."
-          }
-        ]
-      },
+      "staffRooms": "Dodatkowo 2 pokoje z łazienkami w osobnym budynku obok hotelu, dla kierowców, pilotów i opiekunów.",
+      "inRooms": [
+        "Łazienka z prysznicem i WC, bezpłatny internet i SMART TV w każdym pokoju",
+        "16 pokoi z balkonem lub tarasem z widokiem na Lugano i jezioro",
+        "4 pokoje z aneksem kuchennym"
+      ],
       "meals": {
-        "title": "Wyżywienie",
-        "intro": "Posiłki dla grup serwujemy w hotelowej restauracji. Ceny za osobę:",
-        "perPerson": "za osobę",
+        "breakfast": "Śniadanie (bufet)",
+        "lunch": "Obiad",
+        "dinner": "Kolacja (bufet)",
+        "halfBoard": "Obiadokolacja",
         "or": "lub",
-        "items": {
-          "breakfast": {
-            "label": "Śniadanie",
-            "note": "w formie bufetu"
-          },
-          "lunch": {
-            "label": "Obiad",
-            "note": "posiłek w środku dnia"
-          },
-          "dinner": {
-            "label": "Kolacja",
-            "note": "w formie bufetu"
-          },
-          "halfBoard": {
-            "label": "Obiadokolacja",
-            "note": "jeden posiłek zamiast obiadu i kolacji"
-          }
-        }
+        "unit": "Ceny w CHF za osobę."
       },
-      "facilities": {
-        "title": "Na miejscu",
-        "items": [
-          {
-            "heading": "Restauracja z tarasem",
-            "text": "Własna sala restauracyjna z tarasem z niesamowitym widokiem na jezioro i miasto Lugano."
-          },
-          {
-            "heading": "Sala seminaryjna",
-            "text": "Sala szkoleniowo-seminaryjna do 28 osób, wyposażona w projektor."
-          },
-          {
-            "heading": "Basen i sauna",
-            "text": "Basen z jacuzzi, sauną fińską i tarasem widokowym."
-          }
-        ]
-      },
-      "transport": {
-        "title": "Darmowa komunikacja publiczna",
-        "items": [
-          {
-            "text": "Goście otrzymują darmowe bilety na komunikację publiczną (Ticino Ticket). Przystanek autobusowy jest 25 metrów od hotelu, a autobusy kursują co godzinę.",
-            "links": [
-              {
-                "label": "Atrakcje w okolicy",
-                "url": "/attractions"
-              }
-            ]
-          }
-        ]
+      "onSite": [
+        "Restauracja z tarasem z widokiem na jezioro i Lugano",
+        "Sala seminaryjna do 28 osób z projektorem",
+        "Basen z jacuzzi, sauną fińską i tarasem widokowym"
+      ],
+      "included": "Darmowe bilety na komunikację publiczną",
+      "service": "W razie potrzeby po polsku",
+      "roomTypes": {
+        "twin": "pokoi z dwoma osobnymi łóżkami",
+        "triple": "pokoje z trzema osobnymi łóżkami",
+        "single": "pokój z jednym łóżkiem",
+        "five": "pokój z pięcioma osobnymi łóżkami"
       }
     },
-    "cta": {
-      "nav": "Zapytanie",
-      "title": "Zaplanujmy wyjazd Twojej grupy",
-      "body": "Wyślij e-mail lub zadzwoń, a przygotujemy ofertę dopasowaną do liczby osób, terminu i programu wyjazdu. W razie potrzeby rozmawiamy po polsku.",
-      "email": "Napisz e-mail",
-      "phone": "Zadzwoń",
-      "otherOffers": "Inne oferty dla grup"
+    "enquiry": {
+      "title": "Zapytaj o ofertę",
+      "body": "Przygotujemy ofertę dopasowaną do liczby osób, terminu i programu.",
+      "email": "Napisz",
+      "phone": "Zadzwoń"
     }
   }
 }

@@ -705,9 +705,8 @@
   "groups": {
     "menuTitle": "Offerte per gruppi",
     "eyebrow": "Offerte per gruppi",
-    "tocTitle": "Indice",
-    "backToTop": "Torna su",
     "enquiryCta": "Richiedi un'offerta",
+    "switcherLabel": "Offerte per gruppi",
     "pages": {
       "conferences": {
         "navLabel": "Conferenze",
@@ -716,77 +715,23 @@
         "seoDescription": "Conferenze in Ticino fino a 90 persone: sala moderna con servizio catering, sala seminari, pernottamento fino a 63 persone e assistenza anche in polacco all'Hotel Al Ponte.",
         "imageAlt": "Alba su Lugano e sulle Alpi vista da Cademario",
         "title": "Conferenze con vista sul Lago di Lugano",
-        "intro": "Organizza la tua conferenza nel soleggiato Ticino. Accanto all'hotel disponiamo di una moderna sala conferenze fino a 90 persone con servizio catering, mentre i partecipanti alloggiano in hotel con vista sul lago e su Lugano.",
-        "closing": "Una giornata di lavoro, una serata con vista su Lugano. Organizziamo insieme la tua conferenza.",
-        "facts": [
-          {
-            "label": "Sala conferenze",
-            "value": "fino a 90 persone"
-          },
-          {
-            "label": "Sala seminari",
-            "value": "fino a 28 persone"
-          },
-          {
-            "label": "Pernottamento",
-            "value": "fino a 63 persone"
-          },
-          {
-            "label": "Assistenza",
-            "value": "anche in polacco"
-          }
-        ],
-        "nav": {
-          "venue": "Sala conferenze",
-          "seminar": "Sala seminari",
-          "organisation": "Organizzazione"
-        },
-        "sections": {
-          "venue": {
-            "title": "Una moderna sala conferenze",
-            "items": [
-              {
-                "text": "Nelle immediate vicinanze dell'hotel disponiamo di una moderna sala conferenze, dove possiamo organizzare eventi fino a 90 partecipanti."
-              },
-              {
-                "heading": "Servizio catering",
-                "text": "La sala dispone di una propria area catering: i pasti per i partecipanti si possono organizzare sul posto, senza doversi spostare altrove."
-              }
-            ]
+        "intro": "Una moderna sala conferenze accanto all'hotel, una sala seminari in hotel e il pernottamento per i partecipanti, tutto in un unico luogo.",
+        "halls": {
+          "title": "Due sale",
+          "people": "persone",
+          "conference": {
+            "name": "Sala conferenze",
+            "where": "accanto all'hotel",
+            "feature": "moderna, con area catering"
           },
           "seminar": {
-            "title": "Sala seminari in hotel",
-            "items": [
-              {
-                "text": "Per sessioni in piccoli gruppi, riunioni del consiglio o workshop collegati alla conferenza mettiamo a disposizione la sala seminari dell'hotel: fino a 28 persone, con proiettore.",
-                "links": [
-                  {
-                    "label": "Workshop e formazione",
-                    "url": "/workshops"
-                  }
-                ]
-              }
-            ]
-          },
-          "organisation": {
-            "title": "Organizzazione e assistenza in polacco",
-            "items": [
-              {
-                "text": "Ti aiutiamo a pianificare tutto: sala, pernottamento dei partecipanti e pasti. Se necessario, offriamo assistenza anche in lingua polacca."
-              },
-              {
-                "heading": "Serata aziendale",
-                "text": "Dopo i lavori, la serata continua nel ristorante con terrazza. Possiamo organizzare una festa aziendale con DJ e balli.",
-                "links": [
-                  {
-                    "label": "Eventi aziendali",
-                    "url": "/company-events"
-                  }
-                ]
-              }
-            ]
+            "name": "Sala seminari",
+            "where": "in hotel",
+            "feature": "con proiettore"
           }
-        }
+        },
+        "stay": "I partecipanti pernottano in hotel: fino a {guests} persone.",
+        "evening": "Serata aziendale con DJ"
       },
       "workshops": {
         "navLabel": "Workshop e formazione",
@@ -795,71 +740,29 @@
         "seoDescription": "Sala seminari fino a 28 persone con proiettore, alloggio e pasti nello stesso luogo e, dopo le sessioni, piscina e sauna. Workshop e formazione aziendale all'Hotel Al Ponte.",
         "imageAlt": "L'Hotel Al Ponte a Cademario e le vette innevate del Ticino",
         "title": "Workshop, formazione aziendale e seminari",
-        "intro": "Una sala seminari raccolta in hotel, alloggio e pasti sotto lo stesso tetto e, dopo le sessioni, piscina, sauna e terrazza con vista sul Lago di Lugano. Le condizioni ideali per lavorare in gruppi fino a 28 persone.",
-        "closing": "Concentrazione durante il giorno, relax con vista lago la sera.",
-        "facts": [
-          {
-            "label": "Sala seminari",
-            "value": "fino a 28 persone"
-          },
-          {
-            "label": "Attrezzatura",
-            "value": "proiettore"
-          },
-          {
-            "label": "Pernottamento",
-            "value": "fino a 63 persone"
-          },
-          {
-            "label": "Assistenza",
-            "value": "anche in polacco"
-          }
-        ],
-        "nav": {
-          "room": "Sala seminari",
-          "stay": "Tutto in un posto",
-          "afterHours": "Dopo le sessioni"
+        "intro": "Sala seminari, alloggio e pasti sotto lo stesso tetto e, dopo le sessioni, piscina e terrazza con vista lago.",
+        "day": {
+          "title": "La giornata",
+          "steps": [
+            {
+              "when": "Mattina",
+              "what": "Colazione a buffet"
+            },
+            {
+              "when": "Sessioni",
+              "what": "Sala seminari fino a 28 persone con proiettore"
+            },
+            {
+              "when": "Dopo le sessioni",
+              "what": "Piscina con idromassaggio, sauna finlandese, terrazza panoramica"
+            },
+            {
+              "when": "Sera",
+              "what": "Cena con vista sul lago e su Lugano"
+            }
+          ]
         },
-        "sections": {
-          "room": {
-            "title": "Sala seminari con proiettore",
-            "items": [
-              {
-                "text": "La nostra sala per corsi e seminari accoglie fino a 28 persone ed è dotata di proiettore. Ideale per workshop, formazione aziendale, seminari e riunioni di team."
-              },
-              {
-                "heading": "Un gruppo più numeroso?",
-                "text": "Per eventi fino a 90 persone offriamo una moderna sala conferenze accanto all'hotel.",
-                "links": [
-                  {
-                    "label": "Conferenze",
-                    "url": "/conferences"
-                  }
-                ]
-              }
-            ]
-          },
-          "stay": {
-            "title": "Tutto sotto lo stesso tetto",
-            "items": [
-              {
-                "text": "I partecipanti alloggiano, lavorano e mangiano nello stesso luogo, senza spostamenti né perdite di tempo. Pianifichiamo insieme i pasti, dalla colazione a buffet al pranzo-cena."
-              }
-            ]
-          },
-          "afterHours": {
-            "title": "Dopo le sessioni",
-            "items": [
-              {
-                "text": "A fine giornata vi aspettano piscina con idromassaggio, sauna finlandese e terrazza panoramica; la sera, cena con vista sul lago e su Lugano."
-              },
-              {
-                "heading": "Assistenza in polacco",
-                "text": "Se necessario, offriamo assistenza anche in lingua polacca."
-              }
-            ]
-          }
-        }
+        "bigger": "Gruppo più numeroso? Sala conferenze fino a {people} persone"
       },
       "celebrations": {
         "navLabel": "Ricevimenti e matrimoni",
@@ -868,70 +771,15 @@
         "seoDescription": "Feste, anniversari e matrimoni fino a 70 persone nel ristorante con terrazza vista Lago di Lugano. Pernottamento per gli ospiti all'Hotel Al Ponte di Cademario.",
         "imageAlt": "Vista al tramonto dalla terrazza dell'hotel su Lugano e sul lago",
         "title": "Ricevimenti, anniversari e matrimoni con vista lago",
-        "intro": "Festeggia con il panorama di Lugano sullo sfondo. Il nostro ristorante con terrazza accoglie fino a 70 ospiti e chi arriva da lontano può pernottare in hotel.",
-        "closing": "I momenti speciali meritano una vista speciale.",
-        "facts": [
-          {
-            "label": "Ristorante con terrazza",
-            "value": "fino a 70 persone"
-          },
-          {
-            "label": "Vista",
-            "value": "lago e Lugano"
-          },
-          {
-            "label": "Pernottamento",
-            "value": "fino a 63 persone"
-          },
-          {
-            "label": "Assistenza",
-            "value": "anche in polacco"
-          }
+        "intro": "Ristorante con terrazza sul Lago di Lugano e pernottamento per gli ospiti nello stesso luogo.",
+        "occasions": [
+          "Feste e ricorrenze",
+          "Anniversari",
+          "Matrimoni"
         ],
-        "nav": {
-          "venue": "Ristorante con terrazza",
-          "occasions": "Occasioni",
-          "guests": "Alloggio per gli ospiti"
-        },
-        "sections": {
-          "venue": {
-            "title": "Ristorante con terrazza",
-            "items": [
-              {
-                "text": "L'hotel dispone di una propria sala ristorante con terrazza, da cui si gode una vista straordinaria sul lago e sulla città di Lugano. Possiamo organizzarvi ricevimenti fino a 70 persone."
-              }
-            ]
-          },
-          "occasions": {
-            "title": "Per ogni occasione",
-            "items": [
-              {
-                "heading": "Feste e ricorrenze",
-                "text": "Compleanni, giubilei, riunioni di famiglia e ogni altra occasione da festeggiare."
-              },
-              {
-                "heading": "Anniversari",
-                "text": "Anniversari di matrimonio e date importanti, celebrati a tavola con vista sul lago."
-              },
-              {
-                "heading": "Matrimoni",
-                "text": "Un matrimonio intimo con il panorama di Lugano e delle Alpi sullo sfondo e l'alloggio per gli ospiti nello stesso luogo."
-              }
-            ]
-          },
-          "guests": {
-            "title": "Alloggio per gli ospiti",
-            "items": [
-              {
-                "text": "L'hotel può ospitare fino a 63 persone: chi arriva da lontano non deve cercare un altro alloggio. Trovi i dettagli delle camere qui sotto."
-              },
-              {
-                "heading": "Assistenza in polacco",
-                "text": "Se necessario, offriamo assistenza anche in lingua polacca."
-              }
-            ]
-          }
-        }
+        "guests": "persone nel ristorante con terrazza",
+        "beds": "posti letto per gli ospiti",
+        "view": "Una sala ristorante propria con terrazza e una vista straordinaria sul lago e sulla città di Lugano."
       },
       "schoolTrips": {
         "navLabel": "Gite scolastiche",
@@ -940,71 +788,26 @@
         "seoDescription": "Gite scolastiche in Svizzera: alloggio fino a 63 persone, camere per gli accompagnatori, pasti, trasporto pubblico gratuito e assistenza in polacco. Hotel Al Ponte, Cademario.",
         "imageAlt": "Il Monte San Salvatore e il Lago di Lugano visti dall'alto",
         "title": "Gite scolastiche nel soleggiato Ticino",
-        "intro": "Una gita di classe in Svizzera: camere con letti separati, camere a parte per gli accompagnatori, pasti in hotel e trasporto pubblico gratuito per le escursioni in Ticino.",
-        "closing": "Una lezione di natura e geografia con vista sulle Alpi.",
-        "facts": [
-          {
-            "label": "Pernottamento",
-            "value": "fino a 63 persone"
+        "intro": "Una gita di classe in Svizzera con alloggio, pasti e trasporto pubblico gratuito per le escursioni.",
+        "tiles": {
+          "rooms": {
+            "title": "Camere da 2, 3 e 5 posti",
+            "text": "Letti separati, ogni camera con bagno con doccia e WC."
           },
-          {
-            "label": "Camere accompagnatori",
-            "value": "in un edificio separato"
+          "staff": {
+            "title": "Camere per gli accompagnatori",
+            "text": "2 camere con bagno in un edificio separato accanto all'hotel, anche per autisti e guide."
           },
-          {
-            "label": "Trasporto pubblico",
-            "value": "gratuito"
+          "transport": {
+            "title": "Trasporto gratuito",
+            "text": "Biglietti per i mezzi pubblici in Ticino. Fermata a 25 m dall'hotel."
           },
-          {
-            "label": "Assistenza",
-            "value": "anche in polacco"
+          "classroom": {
+            "title": "Aula per le lezioni",
+            "text": "Sala seminari fino a 28 persone con proiettore."
           }
-        ],
-        "nav": {
-          "stay": "Alloggio",
-          "trips": "Escursioni",
-          "classes": "Attività"
         },
-        "sections": {
-          "stay": {
-            "title": "Alloggio per la classe",
-            "items": [
-              {
-                "text": "Gli studenti alloggiano in camere con letti separati, da due, tre e cinque posti, ciascuna con bagno con doccia e WC."
-              },
-              {
-                "heading": "Camere per gli accompagnatori",
-                "text": "Per accompagnatori, autisti e guide abbiamo, se necessario, 2 camere aggiuntive con bagno in un edificio separato accanto all'hotel."
-              }
-            ]
-          },
-          "trips": {
-            "title": "Escursioni senza costi di trasporto",
-            "items": [
-              {
-                "text": "Il gruppo riceve biglietti gratuiti per i mezzi pubblici del Canton Ticino. La fermata dell'autobus è a soli 25 metri dall'hotel: Lugano, le montagne, il lago e i villaggi lacustri sono a portata di mano.",
-                "links": [
-                  {
-                    "label": "Attrazioni del Ticino",
-                    "url": "/attractions"
-                  }
-                ]
-              }
-            ]
-          },
-          "classes": {
-            "title": "Lezioni e tempo libero",
-            "items": [
-              {
-                "text": "Per lezioni, presentazioni e incontri del gruppo è disponibile la sala seminari con proiettore (fino a 28 persone). Dopo una giornata ricca di esperienze: piscina e terrazza con vista lago."
-              },
-              {
-                "heading": "Assistenza in polacco",
-                "text": "Se necessario, offriamo assistenza in lingua polacca, dalla pianificazione al soggiorno."
-              }
-            ]
-          }
-        }
+        "attractions": "Attrazioni del Ticino"
       },
       "companyEvents": {
         "navLabel": "Eventi aziendali",
@@ -1013,177 +816,72 @@
         "seoDescription": "Feste aziendali e team building fino a 70 persone nel ristorante con terrazza vista Lugano. DJ con musica polacca oppure italiana e internazionale, balli e pernottamento.",
         "imageAlt": "Piscina e terrazza panoramica dell'Hotel Al Ponte sul Lago di Lugano",
         "title": "Eventi aziendali e team building",
-        "intro": "Una serata con vista su Lugano: ristorante con terrazza fino a 70 persone, DJ e balli e, dopo la festa, il pernottamento in hotel.",
-        "closing": "Una serata di cui il team parlerà a lungo.",
-        "facts": [
-          {
-            "label": "Ristorante con terrazza",
-            "value": "fino a 70 persone"
-          },
-          {
-            "label": "DJ",
-            "value": "musica polacca o italiana"
-          },
-          {
-            "label": "Pernottamento",
-            "value": "fino a 63 persone"
-          },
-          {
-            "label": "Assistenza",
-            "value": "anche in polacco"
-          }
-        ],
-        "nav": {
-          "party": "Ristorante con terrazza",
-          "dj": "DJ e balli",
-          "combine": "Pacchetto completo"
+        "intro": "Una serata con vista su Lugano: ristorante con terrazza, DJ e balli, poi il pernottamento in hotel.",
+        "music": {
+          "title": "Musica a scelta",
+          "polish": "Polacca",
+          "or": "oppure",
+          "italian": "Italiana e internazionale"
         },
-        "sections": {
-          "party": {
-            "title": "La festa nel ristorante con terrazza",
-            "items": [
-              {
-                "text": "Organizziamo feste aziendali e di team building nel nostro ristorante con terrazza, con vista sul lago e sulla città di Lugano, fino a 70 persone."
-              }
-            ]
-          },
-          "dj": {
-            "title": "DJ e balli",
-            "items": [
-              {
-                "text": "Su richiesta mettiamo a disposizione un DJ con la musica che preferite: polacca oppure italiana e internazionale. E naturalmente si può ballare."
-              }
-            ]
-          },
-          "combine": {
-            "title": "Conferenza, formazione e festa in un unico evento",
-            "items": [
-              {
-                "text": "La festa si combina facilmente con una conferenza (fino a 90 persone) o una formazione nella sala seminari (fino a 28 persone) e con il pernottamento per tutto il team.",
-                "links": [
-                  {
-                    "label": "Conferenze",
-                    "url": "/conferences"
-                  },
-                  {
-                    "label": "Workshop e formazione",
-                    "url": "/workshops"
-                  }
-                ]
-              },
-              {
-                "heading": "Assistenza in polacco",
-                "text": "Se necessario, offriamo assistenza anche in lingua polacca."
-              }
-            ]
-          }
-        }
+        "details": {
+          "restaurant": "persone nel ristorante con terrazza vista Lugano",
+          "beds": "posti letto per il team",
+          "dj": "su richiesta, con possibilità di ballare"
+        },
+        "combine": "Da abbinare a"
       }
     },
-    "shared": {
-      "nav": {
-        "hotel": "Hotel per gruppi",
+    "glance": {
+      "eyebrow": "Al Ponte",
+      "title": "L'hotel in breve",
+      "location": "L'Hotel Al Ponte si trova a Cademario, sopra il Lago di Lugano, con vista sul lago, su Lugano e sulle Alpi. La fermata dell'autobus è a 25 m dall'hotel.",
+      "labels": {
+        "capacity": "Capienza",
         "rooms": "Camere",
+        "inRooms": "Dotazioni",
         "meals": "Pasti",
-        "facilities": "In hotel",
-        "transport": "Trasporti"
+        "onSite": "In hotel",
+        "included": "Incluso",
+        "service": "Assistenza"
       },
-      "hotel": {
-        "title": "Un hotel per gruppi nel soleggiato Ticino",
-        "intro": "L'Hotel Al Ponte si trova a Cademario, sulle pendici sopra il Lago di Lugano, con vista panoramica sul lago, sulla città di Lugano e sulle Alpi. La fermata dell'autobus è a 25 metri dall'hotel.",
-        "capacity": {
-          "guests": "ospiti al massimo",
-          "beds": "letti separati",
-          "rooms": "camere per gruppi"
-        },
-        "roomTypesTitle": "Camere riservate ai gruppi",
-        "roomTypes": {
-          "twin": "camere con due letti separati",
-          "triple": "camere con tre letti separati",
-          "single": "camera con un letto",
-          "five": "camera con cinque letti separati"
-        },
-        "staffRooms": "Se necessario, per autisti, guide e accompagnatori disponiamo di altre 2 camere con bagno in un edificio separato accanto all'hotel."
+      "capacity": {
+        "guests": "persone al massimo",
+        "beds": "letti separati",
+        "rooms": "camere per gruppi"
       },
-      "rooms": {
-        "title": "Dotazioni delle camere",
-        "items": [
-          {
-            "text": "Tutte le camere hanno bagno con doccia e WC, internet gratuito e SMART TV."
-          },
-          {
-            "heading": "Balconi e terrazze",
-            "text": "16 camere hanno balcone o terrazza con vista su Lugano e sul lago."
-          },
-          {
-            "heading": "Angoli cottura",
-            "text": "4 camere dispongono di angolo cottura."
-          }
-        ]
-      },
+      "staffRooms": "Inoltre 2 camere con bagno in un edificio separato accanto all'hotel, per autisti, guide e accompagnatori.",
+      "inRooms": [
+        "Bagno con doccia e WC, internet gratuito e SMART TV in ogni camera",
+        "16 camere con balcone o terrazza vista Lugano e lago",
+        "4 camere con angolo cottura"
+      ],
       "meals": {
-        "title": "Pasti",
-        "intro": "I pasti per i gruppi sono serviti nel ristorante dell'hotel. Prezzi a persona:",
-        "perPerson": "a persona",
+        "breakfast": "Colazione (buffet)",
+        "lunch": "Pranzo",
+        "dinner": "Cena (buffet)",
+        "halfBoard": "Pranzo-cena",
         "or": "oppure",
-        "items": {
-          "breakfast": {
-            "label": "Colazione",
-            "note": "a buffet"
-          },
-          "lunch": {
-            "label": "Pranzo",
-            "note": "pasto di mezzogiorno"
-          },
-          "dinner": {
-            "label": "Cena",
-            "note": "a buffet"
-          },
-          "halfBoard": {
-            "label": "Pranzo-cena",
-            "note": "un unico pasto al posto di pranzo e cena"
-          }
-        }
+        "unit": "Prezzi in CHF a persona."
       },
-      "facilities": {
-        "title": "In hotel",
-        "items": [
-          {
-            "heading": "Ristorante con terrazza",
-            "text": "Una sala ristorante propria con terrazza e una vista straordinaria sul lago e sulla città di Lugano."
-          },
-          {
-            "heading": "Sala seminari",
-            "text": "Sala per corsi e seminari fino a 28 persone, dotata di proiettore."
-          },
-          {
-            "heading": "Piscina e sauna",
-            "text": "Piscina con idromassaggio, sauna finlandese e terrazza panoramica."
-          }
-        ]
-      },
-      "transport": {
-        "title": "Trasporto pubblico gratuito",
-        "items": [
-          {
-            "text": "Gli ospiti ricevono biglietti gratuiti per i mezzi pubblici (Ticino Ticket). La fermata dell'autobus è a 25 metri dall'hotel e le corse sono ogni ora.",
-            "links": [
-              {
-                "label": "Attrazioni nei dintorni",
-                "url": "/attractions"
-              }
-            ]
-          }
-        ]
+      "onSite": [
+        "Ristorante con terrazza vista lago e Lugano",
+        "Sala seminari fino a 28 persone con proiettore",
+        "Piscina con idromassaggio, sauna finlandese e terrazza panoramica"
+      ],
+      "included": "Biglietti gratuiti per i mezzi pubblici",
+      "service": "Se necessario, anche in polacco",
+      "roomTypes": {
+        "twin": "camere con due letti separati",
+        "triple": "camere con tre letti separati",
+        "single": "camera con un letto",
+        "five": "camera con cinque letti separati"
       }
     },
-    "cta": {
-      "nav": "Richiesta",
-      "title": "Organizziamo il viaggio del tuo gruppo",
-      "body": "Scrivici o chiamaci: prepareremo un'offerta su misura per numero di persone, date e programma. Se necessario, parliamo anche polacco.",
+    "enquiry": {
+      "title": "Richiedi un'offerta",
+      "body": "Prepariamo un'offerta su misura per numero di persone, date e programma.",
       "email": "Scrivici",
-      "phone": "Chiamaci",
-      "otherOffers": "Altre offerte per gruppi"
+      "phone": "Chiamaci"
     }
   }
 }

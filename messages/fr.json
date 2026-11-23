@@ -705,9 +705,8 @@
   "groups": {
     "menuTitle": "Offres pour groupes",
     "eyebrow": "Offres pour groupes",
-    "tocTitle": "Sommaire",
-    "backToTop": "Haut de page",
     "enquiryCta": "Demander une offre",
+    "switcherLabel": "Offres pour groupes",
     "pages": {
       "conferences": {
         "navLabel": "Conférences",
@@ -716,77 +715,23 @@
         "seoDescription": "Conférences au Tessin jusqu'à 90 personnes : salle moderne avec espace traiteur, salle de séminaire, hébergement pour 63 personnes et service en polonais à l'Hôtel Al Ponte.",
         "imageAlt": "Lever de soleil sur Lugano et les Alpes vu depuis Cademario",
         "title": "Conférences avec vue sur le lac de Lugano",
-        "intro": "Organisez votre conférence dans le Tessin ensoleillé. Juste à côté de l'hôtel, nous disposons d'une salle de conférence moderne pour 90 personnes maximum, avec espace traiteur ; les participants logent à l'hôtel avec vue sur le lac et Lugano.",
-        "closing": "Une journée de travail, une soirée face à Lugano. Organisons ensemble votre conférence.",
-        "facts": [
-          {
-            "label": "Salle de conférence",
-            "value": "jusqu'à 90 personnes"
-          },
-          {
-            "label": "Salle de séminaire",
-            "value": "jusqu'à 28 personnes"
-          },
-          {
-            "label": "Hébergement",
-            "value": "jusqu'à 63 personnes"
-          },
-          {
-            "label": "Service",
-            "value": "aussi en polonais"
-          }
-        ],
-        "nav": {
-          "venue": "Salle de conférence",
-          "seminar": "Salle de séminaire",
-          "organisation": "Organisation"
-        },
-        "sections": {
-          "venue": {
-            "title": "Une salle de conférence moderne",
-            "items": [
-              {
-                "text": "À proximité immédiate de l'hôtel, nous disposons d'une salle de conférence moderne où nous pouvons accueillir jusqu'à 90 participants."
-              },
-              {
-                "heading": "Espace traiteur",
-                "text": "La salle dispose de son propre espace traiteur : les repas des participants s'organisent sur place, sans avoir à se déplacer."
-              }
-            ]
+        "intro": "Une salle de conférence moderne à côté de l'hôtel, une salle de séminaire à l'hôtel et l'hébergement des participants, au même endroit.",
+        "halls": {
+          "title": "Deux salles",
+          "people": "personnes",
+          "conference": {
+            "name": "Salle de conférence",
+            "where": "à côté de l'hôtel",
+            "feature": "moderne, avec espace traiteur"
           },
           "seminar": {
-            "title": "Salle de séminaire à l'hôtel",
-            "items": [
-              {
-                "text": "Pour les sessions en petits groupes, les réunions de direction ou les ateliers associés à la conférence, la salle de séminaire de l'hôtel est à votre disposition : jusqu'à 28 personnes, avec projecteur.",
-                "links": [
-                  {
-                    "label": "Ateliers et formations",
-                    "url": "/workshops"
-                  }
-                ]
-              }
-            ]
-          },
-          "organisation": {
-            "title": "Organisation et service en polonais",
-            "items": [
-              {
-                "text": "Nous vous aidons à tout planifier : la salle, l'hébergement des participants et les repas. Si nécessaire, nous assurons également un service en polonais."
-              },
-              {
-                "heading": "Soirée d'équipe",
-                "text": "Après les sessions, la soirée se poursuit au restaurant avec terrasse. Nous pouvons organiser une fête d'entreprise avec DJ et danse.",
-                "links": [
-                  {
-                    "label": "Événements d'entreprise",
-                    "url": "/company-events"
-                  }
-                ]
-              }
-            ]
+            "name": "Salle de séminaire",
+            "where": "à l'hôtel",
+            "feature": "avec projecteur"
           }
-        }
+        },
+        "stay": "Les participants dorment à l'hôtel : jusqu'à {guests} personnes.",
+        "evening": "Soirée d'équipe avec DJ"
       },
       "workshops": {
         "navLabel": "Ateliers et formations",
@@ -795,71 +740,29 @@
         "seoDescription": "Salle de séminaire jusqu'à 28 personnes avec projecteur, hébergement et repas au même endroit, piscine et sauna après les sessions. Ateliers et formations à l'Hôtel Al Ponte.",
         "imageAlt": "L'Hôtel Al Ponte à Cademario et les sommets enneigés du Tessin",
         "title": "Ateliers, formations en entreprise et séminaires",
-        "intro": "Une salle de séminaire intimiste à l'hôtel, hébergement et repas sous un même toit, et après les sessions, piscine, sauna et terrasse avec vue sur le lac de Lugano. Idéal pour les groupes jusqu'à 28 personnes.",
-        "closing": "Concentration le jour, détente face au lac le soir.",
-        "facts": [
-          {
-            "label": "Salle de séminaire",
-            "value": "jusqu'à 28 personnes"
-          },
-          {
-            "label": "Équipement",
-            "value": "projecteur"
-          },
-          {
-            "label": "Hébergement",
-            "value": "jusqu'à 63 personnes"
-          },
-          {
-            "label": "Service",
-            "value": "aussi en polonais"
-          }
-        ],
-        "nav": {
-          "room": "Salle de séminaire",
-          "stay": "Sous un même toit",
-          "afterHours": "Après les sessions"
+        "intro": "Salle de séminaire, hébergement et repas sous un même toit, et après les sessions, piscine et terrasse face au lac.",
+        "day": {
+          "title": "La journée",
+          "steps": [
+            {
+              "when": "Le matin",
+              "what": "Petit-déjeuner buffet"
+            },
+            {
+              "when": "Sessions",
+              "what": "Salle de séminaire jusqu'à 28 personnes avec projecteur"
+            },
+            {
+              "when": "Après les sessions",
+              "what": "Piscine avec jacuzzi, sauna finlandais, terrasse panoramique"
+            },
+            {
+              "when": "Le soir",
+              "what": "Dîner avec vue sur le lac et Lugano"
+            }
+          ]
         },
-        "sections": {
-          "room": {
-            "title": "Salle de séminaire avec projecteur",
-            "items": [
-              {
-                "text": "Notre salle de formation et de séminaire accueille jusqu'à 28 personnes et est équipée d'un projecteur. Elle convient aux ateliers, formations en entreprise, séminaires et réunions d'équipe."
-              },
-              {
-                "heading": "Un groupe plus important ?",
-                "text": "Pour les événements jusqu'à 90 personnes, nous proposons une salle de conférence moderne à côté de l'hôtel.",
-                "links": [
-                  {
-                    "label": "Conférences",
-                    "url": "/conferences"
-                  }
-                ]
-              }
-            ]
-          },
-          "stay": {
-            "title": "Tout sous un même toit",
-            "items": [
-              {
-                "text": "Les participants logent, travaillent et mangent au même endroit, sans trajets ni perte de temps. Nous planifions les repas avec vous, du petit-déjeuner buffet au repas déjeuner-dîner."
-              }
-            ]
-          },
-          "afterHours": {
-            "title": "Après les sessions",
-            "items": [
-              {
-                "text": "En fin de journée, piscine avec jacuzzi, sauna finlandais et terrasse panoramique vous attendent, puis le dîner avec vue sur le lac et Lugano."
-              },
-              {
-                "heading": "Service en polonais",
-                "text": "Si nécessaire, nous assurons un service en polonais."
-              }
-            ]
-          }
-        }
+        "bigger": "Un groupe plus grand ? Salle de conférence jusqu'à {people} personnes"
       },
       "celebrations": {
         "navLabel": "Réceptions et mariages",
@@ -868,70 +771,15 @@
         "seoDescription": "Fêtes, anniversaires et mariages jusqu'à 70 personnes au restaurant avec terrasse et vue sur le lac de Lugano. Hébergement des invités à l'Hôtel Al Ponte, Cademario.",
         "imageAlt": "Vue depuis la terrasse de l'hôtel sur Lugano et le lac au crépuscule",
         "title": "Réceptions, anniversaires et mariages avec vue sur le lac",
-        "intro": "Célébrez avec le panorama de Lugano en toile de fond. Notre restaurant avec terrasse accueille jusqu'à 70 invités, et ceux qui viennent de loin peuvent dormir à l'hôtel.",
-        "closing": "Les moments uniques méritent une vue unique.",
-        "facts": [
-          {
-            "label": "Restaurant avec terrasse",
-            "value": "jusqu'à 70 personnes"
-          },
-          {
-            "label": "Vue",
-            "value": "le lac et Lugano"
-          },
-          {
-            "label": "Hébergement",
-            "value": "jusqu'à 63 personnes"
-          },
-          {
-            "label": "Service",
-            "value": "aussi en polonais"
-          }
+        "intro": "Un restaurant avec terrasse au-dessus du lac de Lugano et l'hébergement des invités au même endroit.",
+        "occasions": [
+          "Fêtes de famille",
+          "Anniversaires",
+          "Mariages"
         ],
-        "nav": {
-          "venue": "Restaurant et terrasse",
-          "occasions": "Occasions",
-          "guests": "Hébergement des invités"
-        },
-        "sections": {
-          "venue": {
-            "title": "Restaurant avec terrasse",
-            "items": [
-              {
-                "text": "L'hôtel dispose de sa propre salle de restaurant avec une terrasse offrant une vue exceptionnelle sur le lac et la ville de Lugano. Nous pouvons y organiser des réceptions jusqu'à 70 personnes."
-              }
-            ]
-          },
-          "occasions": {
-            "title": "Pour chaque occasion",
-            "items": [
-              {
-                "heading": "Fêtes et événements familiaux",
-                "text": "Anniversaires, jubilés, réunions de famille et toute autre occasion à célébrer."
-              },
-              {
-                "heading": "Anniversaires de mariage",
-                "text": "Anniversaires de mariage et dates importantes, célébrés à table face au lac."
-              },
-              {
-                "heading": "Mariages",
-                "text": "Un mariage intime avec Lugano et les Alpes en toile de fond, et l'hébergement des invités sur place."
-              }
-            ]
-          },
-          "guests": {
-            "title": "Hébergement des invités",
-            "items": [
-              {
-                "text": "L'hôtel peut accueillir jusqu'à 63 personnes : les invités venus de loin n'ont pas à chercher d'hébergement. Vous trouverez le détail des chambres ci-dessous."
-              },
-              {
-                "heading": "Service en polonais",
-                "text": "Si nécessaire, nous assurons un service en polonais."
-              }
-            ]
-          }
-        }
+        "guests": "personnes au restaurant avec terrasse",
+        "beds": "lits pour vos invités",
+        "view": "Notre propre salle de restaurant avec terrasse et une vue exceptionnelle sur le lac et la ville de Lugano."
       },
       "schoolTrips": {
         "navLabel": "Classes vertes",
@@ -940,71 +788,26 @@
         "seoDescription": "Classes vertes en Suisse : hébergement jusqu'à 63 personnes, chambres pour les accompagnateurs, repas, transports publics gratuits et service en polonais. Hôtel Al Ponte, Cademario.",
         "imageAlt": "Vue aérienne du Monte San Salvatore et du lac de Lugano",
         "title": "Classes vertes dans le Tessin ensoleillé",
-        "intro": "Un voyage scolaire en Suisse : chambres à lits séparés, chambres à part pour les accompagnateurs, repas à l'hôtel et transports publics gratuits pour les excursions au Tessin.",
-        "closing": "Une leçon de nature et de géographie avec vue sur les Alpes.",
-        "facts": [
-          {
-            "label": "Hébergement",
-            "value": "jusqu'à 63 personnes"
+        "intro": "Un voyage scolaire en Suisse avec hébergement, repas et transports publics gratuits pour les excursions.",
+        "tiles": {
+          "rooms": {
+            "title": "Chambres de 2, 3 et 5 lits",
+            "text": "Lits séparés, chaque chambre avec salle de bains, douche et WC."
           },
-          {
-            "label": "Chambres accompagnateurs",
-            "value": "dans un bâtiment séparé"
+          "staff": {
+            "title": "Chambres pour les accompagnateurs",
+            "text": "2 chambres avec salle de bains dans un bâtiment séparé à côté de l'hôtel, aussi pour chauffeurs et guides."
           },
-          {
-            "label": "Transports publics",
-            "value": "gratuits"
+          "transport": {
+            "title": "Transports gratuits",
+            "text": "Billets de transports publics au Tessin. Arrêt de bus à 25 m de l'hôtel."
           },
-          {
-            "label": "Service",
-            "value": "aussi en polonais"
+          "classroom": {
+            "title": "Salle de cours",
+            "text": "Salle de séminaire jusqu'à 28 personnes avec projecteur."
           }
-        ],
-        "nav": {
-          "stay": "Hébergement",
-          "trips": "Excursions",
-          "classes": "Activités"
         },
-        "sections": {
-          "stay": {
-            "title": "Hébergement pour la classe",
-            "items": [
-              {
-                "text": "Les élèves logent dans des chambres à lits séparés, de deux, trois ou cinq lits, chacune avec salle de bains avec douche et WC."
-              },
-              {
-                "heading": "Chambres pour les accompagnateurs",
-                "text": "Pour les accompagnateurs, chauffeurs et guides, nous disposons au besoin de 2 chambres supplémentaires avec salle de bains dans un bâtiment séparé à côté de l'hôtel."
-              }
-            ]
-          },
-          "trips": {
-            "title": "Des excursions sans frais de transport",
-            "items": [
-              {
-                "text": "Le groupe reçoit des billets gratuits pour les transports publics du canton du Tessin. L'arrêt de bus se trouve à seulement 25 mètres de l'hôtel : Lugano, les montagnes, le lac et les villages lacustres sont à portée de main.",
-                "links": [
-                  {
-                    "label": "Attractions du Tessin",
-                    "url": "/attractions"
-                  }
-                ]
-              }
-            ]
-          },
-          "classes": {
-            "title": "Cours et temps libre",
-            "items": [
-              {
-                "text": "Pour les cours, présentations et réunions du groupe, la salle de séminaire avec projecteur (jusqu'à 28 personnes) est disponible. Après une journée bien remplie : piscine et terrasse avec vue sur le lac."
-              },
-              {
-                "heading": "Service en polonais",
-                "text": "Si nécessaire, nous assurons un service en polonais, de la préparation du voyage jusqu'au séjour."
-              }
-            ]
-          }
-        }
+        "attractions": "Attractions du Tessin"
       },
       "companyEvents": {
         "navLabel": "Événements d'entreprise",
@@ -1013,177 +816,72 @@
         "seoDescription": "Fêtes d'entreprise et team building jusqu'à 70 personnes au restaurant avec terrasse et vue sur Lugano. DJ avec musique polonaise ou italienne et internationale, danse et hébergement.",
         "imageAlt": "Piscine et terrasse panoramique de l'Hôtel Al Ponte au-dessus du lac de Lugano",
         "title": "Événements d'entreprise et team building",
-        "intro": "Une soirée face à Lugano : restaurant avec terrasse pour 70 personnes maximum, DJ et danse, puis une nuit à l'hôtel après la fête.",
-        "closing": "Une soirée dont votre équipe parlera longtemps.",
-        "facts": [
-          {
-            "label": "Restaurant avec terrasse",
-            "value": "jusqu'à 70 personnes"
-          },
-          {
-            "label": "DJ",
-            "value": "musique polonaise ou italienne"
-          },
-          {
-            "label": "Hébergement",
-            "value": "jusqu'à 63 personnes"
-          },
-          {
-            "label": "Service",
-            "value": "aussi en polonais"
-          }
-        ],
-        "nav": {
-          "party": "Restaurant et terrasse",
-          "dj": "DJ et danse",
-          "combine": "Formule complète"
+        "intro": "Une soirée face à Lugano : restaurant avec terrasse, DJ et danse, puis une nuit à l'hôtel.",
+        "music": {
+          "title": "Musique au choix",
+          "polish": "Polonaise",
+          "or": "ou",
+          "italian": "Italienne et internationale"
         },
-        "sections": {
-          "party": {
-            "title": "La fête au restaurant avec terrasse",
-            "items": [
-              {
-                "text": "Nous organisons des fêtes d'entreprise et des événements de team building dans notre restaurant avec terrasse, face au lac et à la ville de Lugano, jusqu'à 70 personnes."
-              }
-            ]
-          },
-          "dj": {
-            "title": "DJ et danse",
-            "items": [
-              {
-                "text": "Sur demande, nous proposons un DJ avec la musique de votre choix : polonaise, ou italienne et internationale. Et bien sûr, on peut danser."
-              }
-            ]
-          },
-          "combine": {
-            "title": "Conférence, formation et fête en un seul événement",
-            "items": [
-              {
-                "text": "La fête se combine facilement avec une conférence (jusqu'à 90 personnes) ou une formation dans la salle de séminaire (jusqu'à 28 personnes), ainsi qu'avec l'hébergement de toute l'équipe.",
-                "links": [
-                  {
-                    "label": "Conférences",
-                    "url": "/conferences"
-                  },
-                  {
-                    "label": "Ateliers et formations",
-                    "url": "/workshops"
-                  }
-                ]
-              },
-              {
-                "heading": "Service en polonais",
-                "text": "Si nécessaire, nous assurons un service en polonais."
-              }
-            ]
-          }
-        }
+        "details": {
+          "restaurant": "personnes au restaurant avec terrasse face à Lugano",
+          "beds": "lits pour toute l'équipe",
+          "dj": "sur demande, avec possibilité de danser"
+        },
+        "combine": "À combiner avec"
       }
     },
-    "shared": {
-      "nav": {
-        "hotel": "Hôtel pour groupes",
+    "glance": {
+      "eyebrow": "Al Ponte",
+      "title": "L'hôtel en bref",
+      "location": "L'Hôtel Al Ponte se trouve à Cademario, au-dessus du lac de Lugano, avec vue sur le lac, Lugano et les Alpes. L'arrêt de bus est à 25 m de l'hôtel.",
+      "labels": {
+        "capacity": "Capacité",
         "rooms": "Chambres",
+        "inRooms": "Équipement",
         "meals": "Repas",
-        "facilities": "Sur place",
-        "transport": "Transports"
+        "onSite": "Sur place",
+        "included": "Inclus",
+        "service": "Service"
       },
-      "hotel": {
-        "title": "Un hôtel pour groupes dans le Tessin ensoleillé",
-        "intro": "L'Hôtel Al Ponte se trouve à Cademario, sur les hauteurs du lac de Lugano, avec une vue panoramique sur le lac, la ville de Lugano et les Alpes. L'arrêt de bus est à 25 mètres de l'hôtel.",
-        "capacity": {
-          "guests": "personnes au maximum",
-          "beds": "lits séparés",
-          "rooms": "chambres pour groupes"
-        },
-        "roomTypesTitle": "Chambres réservées aux groupes",
-        "roomTypes": {
-          "twin": "chambres à deux lits séparés",
-          "triple": "chambres à trois lits séparés",
-          "single": "chambre à un lit",
-          "five": "chambre à cinq lits séparés"
-        },
-        "staffRooms": "Au besoin, nous disposons de 2 chambres supplémentaires avec salle de bains pour les chauffeurs, guides et accompagnateurs, dans un bâtiment séparé à côté de l'hôtel."
+      "capacity": {
+        "guests": "personnes au maximum",
+        "beds": "lits séparés",
+        "rooms": "chambres pour groupes"
       },
-      "rooms": {
-        "title": "Équipement des chambres",
-        "items": [
-          {
-            "text": "Toutes les chambres disposent d'une salle de bains avec douche et WC, d'internet gratuit et d'une SMART TV."
-          },
-          {
-            "heading": "Balcons et terrasses",
-            "text": "16 chambres ont un balcon ou une terrasse avec vue sur Lugano et le lac."
-          },
-          {
-            "heading": "Kitchenettes",
-            "text": "4 chambres disposent d'une kitchenette."
-          }
-        ]
-      },
+      "staffRooms": "En plus, 2 chambres avec salle de bains dans un bâtiment séparé à côté de l'hôtel, pour les chauffeurs, guides et accompagnateurs.",
+      "inRooms": [
+        "Salle de bains avec douche et WC, internet gratuit et SMART TV dans chaque chambre",
+        "16 chambres avec balcon ou terrasse face à Lugano et au lac",
+        "4 chambres avec kitchenette"
+      ],
       "meals": {
-        "title": "Repas",
-        "intro": "Les repas de groupe sont servis au restaurant de l'hôtel. Prix par personne :",
-        "perPerson": "par personne",
+        "breakfast": "Petit-déjeuner (buffet)",
+        "lunch": "Déjeuner",
+        "dinner": "Dîner (buffet)",
+        "halfBoard": "Déjeuner-dîner",
         "or": "ou",
-        "items": {
-          "breakfast": {
-            "label": "Petit-déjeuner",
-            "note": "buffet"
-          },
-          "lunch": {
-            "label": "Déjeuner",
-            "note": "repas de midi"
-          },
-          "dinner": {
-            "label": "Dîner",
-            "note": "buffet"
-          },
-          "halfBoard": {
-            "label": "Déjeuner-dîner",
-            "note": "un seul repas à la place du déjeuner et du dîner"
-          }
-        }
+        "unit": "Prix en CHF par personne."
       },
-      "facilities": {
-        "title": "Sur place",
-        "items": [
-          {
-            "heading": "Restaurant avec terrasse",
-            "text": "Notre propre salle de restaurant avec terrasse et une vue exceptionnelle sur le lac et la ville de Lugano."
-          },
-          {
-            "heading": "Salle de séminaire",
-            "text": "Une salle de formation et de séminaire jusqu'à 28 personnes, équipée d'un projecteur."
-          },
-          {
-            "heading": "Piscine et sauna",
-            "text": "Une piscine avec jacuzzi, un sauna finlandais et une terrasse panoramique."
-          }
-        ]
-      },
-      "transport": {
-        "title": "Transports publics gratuits",
-        "items": [
-          {
-            "text": "Les clients reçoivent des billets gratuits pour les transports publics (Ticino Ticket). L'arrêt de bus est à 25 mètres de l'hôtel, avec un bus toutes les heures.",
-            "links": [
-              {
-                "label": "Attractions à proximité",
-                "url": "/attractions"
-              }
-            ]
-          }
-        ]
+      "onSite": [
+        "Restaurant avec terrasse face au lac et à Lugano",
+        "Salle de séminaire jusqu'à 28 personnes avec projecteur",
+        "Piscine avec jacuzzi, sauna finlandais et terrasse panoramique"
+      ],
+      "included": "Billets de transports publics gratuits",
+      "service": "Si nécessaire, aussi en polonais",
+      "roomTypes": {
+        "twin": "chambres à deux lits séparés",
+        "triple": "chambres à trois lits séparés",
+        "single": "chambre à un lit",
+        "five": "chambre à cinq lits séparés"
       }
     },
-    "cta": {
-      "nav": "Demande",
-      "title": "Planifions le voyage de votre groupe",
-      "body": "Écrivez-nous ou appelez-nous : nous préparerons une offre adaptée au nombre de personnes, aux dates et au programme. Si nécessaire, nous parlons aussi polonais.",
+    "enquiry": {
+      "title": "Demander une offre",
+      "body": "Nous préparons une offre adaptée au nombre de personnes, aux dates et au programme.",
       "email": "Nous écrire",
-      "phone": "Nous appeler",
-      "otherOffers": "Autres offres pour groupes"
+      "phone": "Nous appeler"
     }
   }
 }

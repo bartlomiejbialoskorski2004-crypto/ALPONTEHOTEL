@@ -21,11 +21,20 @@ export const GROUP_PAGES: Record<GroupKey, { href: string; image: string }> = {
   companyEvents: { href: "/company-events", image: "/hero1.jpg" },
 };
 
+// Venue capacities (people).
+export const GROUP_VENUES = {
+  conference: 90,
+  seminar: 28,
+  restaurant: 70,
+} as const;
+
 // Shared hotel figures for groups (locale-independent).
+export const GROUP_MAX_GUESTS = 63;
+
 export const GROUP_CAPACITY = [
-  { key: "guests", value: "63" },
-  { key: "beds", value: "52" },
-  { key: "rooms", value: "23" },
+  { key: "guests", value: GROUP_MAX_GUESTS },
+  { key: "beds", value: 52 },
+  { key: "rooms", value: 23 },
 ] as const;
 
 export const GROUP_ROOM_TYPES = [
