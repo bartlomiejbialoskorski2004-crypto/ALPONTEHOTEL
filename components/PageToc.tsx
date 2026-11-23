@@ -295,6 +295,30 @@ export default function PageToc({ sections, tocTitle }: Props) {
 }
 
 // "Back to top" affordance reusing the same momentum scroll.
+// In-page jump link that scrolls through Lenis (same offset as the TOC).
+export function JumpLink({
+  target,
+  className,
+  children,
+}: {
+  target: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={target}
+      onClick={(e) => {
+        e.preventDefault();
+        scrollToTarget(target);
+      }}
+      className={className}
+    >
+      {children}
+    </a>
+  );
+}
+
 export function BackToTop({ label }: { label: string }) {
   return (
     <a

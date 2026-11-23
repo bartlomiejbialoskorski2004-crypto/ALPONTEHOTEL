@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { localeUrl, buildLanguages } from "@/lib/site";
+import { GROUP_KEYS, GROUP_PAGES } from "@/components/groupPages";
 
 // Indexable routes, each expanded across every locale below.
 const ROUTES: {
@@ -11,6 +12,11 @@ const ROUTES: {
   { path: "", priority: 1, changeFrequency: "monthly" },
   { path: "/attractions", priority: 0.8, changeFrequency: "monthly" },
   { path: "/informations", priority: 0.6, changeFrequency: "yearly" },
+  ...GROUP_KEYS.map((key) => ({
+    path: GROUP_PAGES[key].href,
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  })),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

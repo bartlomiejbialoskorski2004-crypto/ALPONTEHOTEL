@@ -300,7 +300,8 @@
       "services": "Services",
       "tv": "TV",
       "transport": "Ticino Ticket",
-      "requests": "Requests"
+      "requests": "Requests",
+      "groups": "Groups"
     },
     "facts": {
       "checkIn": "Check-in",
@@ -371,7 +372,11 @@
       "title": "Other guest requests",
       "body": "Our team is preparing for your arrival and looks forward to welcoming you to our hotel. Please let us know before your arrival if there is anything else we can assist you with."
     },
-    "signoff": "Warm regards - the Al Ponte Albergo Hotel team."
+    "signoff": "Warm regards - the Al Ponte Albergo Hotel team.",
+    "groups": {
+      "title": "Group offers",
+      "body": "Hotel Al Ponte welcomes groups of up to 63 people. See what we can organise for you:"
+    }
   },
   "attractions": {
     "teaserCta": "Discover Ticino's attractions",
@@ -695,6 +700,490 @@
         "quote": "Lovely hotel run by a family, with amazing views on Lake Lugano. Very nice, friendly owners.",
         "meta": "Netherlands"
       }
+    }
+  },
+  "groups": {
+    "menuTitle": "Group offers",
+    "eyebrow": "Group offers",
+    "tocTitle": "Contents",
+    "backToTop": "Back to top",
+    "enquiryCta": "Request a quote",
+    "pages": {
+      "conferences": {
+        "navLabel": "Conferences",
+        "mailSubject": "Group enquiry: conference",
+        "seoTitle": "Conferences on Lake Lugano",
+        "seoDescription": "Conferences in Ticino for up to 90 people: a modern venue with catering facilities, a seminar room, accommodation for 63 and Polish-speaking service at Hotel Al Ponte.",
+        "imageAlt": "Sunrise over Lugano and the Alps seen from Cademario",
+        "title": "Conferences with a view of Lake Lugano",
+        "intro": "Hold your conference in sunny Ticino. Right next to the hotel we have a modern conference hall for up to 90 people with catering facilities, and your participants stay at the hotel overlooking the lake and Lugano.",
+        "closing": "A productive day, an evening overlooking Lugano. Let's plan your conference together.",
+        "facts": [
+          {
+            "label": "Conference hall",
+            "value": "up to 90 people"
+          },
+          {
+            "label": "Seminar room",
+            "value": "up to 28 people"
+          },
+          {
+            "label": "Accommodation",
+            "value": "up to 63 people"
+          },
+          {
+            "label": "Service",
+            "value": "also in Polish"
+          }
+        ],
+        "nav": {
+          "venue": "Conference hall",
+          "seminar": "Seminar room",
+          "organisation": "Organisation"
+        },
+        "sections": {
+          "venue": {
+            "title": "A modern conference hall",
+            "items": [
+              {
+                "text": "Right next to the hotel we have a modern conference hall where we can host conferences for up to 90 participants."
+              },
+              {
+                "heading": "Catering facilities",
+                "text": "The hall has its own catering facilities, so meals for participants can be arranged on site without moving elsewhere."
+              }
+            ]
+          },
+          "seminar": {
+            "title": "Seminar room in the hotel",
+            "items": [
+              {
+                "text": "For breakout sessions, board meetings or workshops alongside the conference, the hotel's seminar room is at your disposal: up to 28 people, with a projector.",
+                "links": [
+                  {
+                    "label": "Workshops & training",
+                    "url": "/workshops"
+                  }
+                ]
+              }
+            ]
+          },
+          "organisation": {
+            "title": "Organisation and Polish-speaking service",
+            "items": [
+              {
+                "text": "We help you plan everything: the venue, accommodation for participants and meals. If needed, we also provide service in Polish."
+              },
+              {
+                "heading": "Team evening",
+                "text": "Once the sessions are over, the evening continues in the restaurant with terrace. We can organise a company party with a DJ and dancing.",
+                "links": [
+                  {
+                    "label": "Company events",
+                    "url": "/company-events"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "workshops": {
+        "navLabel": "Workshops & training",
+        "mailSubject": "Group enquiry: workshop / training",
+        "seoTitle": "Workshops and training in Ticino",
+        "seoDescription": "A seminar room for up to 28 people with a projector, accommodation and meals in one place, and a pool and sauna after sessions. Workshops and corporate training at Hotel Al Ponte.",
+        "imageAlt": "Hotel Al Ponte in Cademario with the snow-capped peaks of Ticino",
+        "title": "Workshops, corporate training and seminars",
+        "intro": "An intimate seminar room in the hotel, accommodation and meals under one roof, and after sessions a pool, sauna and terrace overlooking Lake Lugano. Ideal for groups of up to 28 people.",
+        "closing": "Focused work by day, a lake view to unwind by night.",
+        "facts": [
+          {
+            "label": "Seminar room",
+            "value": "up to 28 people"
+          },
+          {
+            "label": "Equipment",
+            "value": "projector"
+          },
+          {
+            "label": "Accommodation",
+            "value": "up to 63 people"
+          },
+          {
+            "label": "Service",
+            "value": "also in Polish"
+          }
+        ],
+        "nav": {
+          "room": "Seminar room",
+          "stay": "Under one roof",
+          "afterHours": "After sessions"
+        },
+        "sections": {
+          "room": {
+            "title": "Seminar room with projector",
+            "items": [
+              {
+                "text": "Our training and seminar room seats up to 28 people and is equipped with a projector. It works well for workshops, corporate training, seminars and team meetings."
+              },
+              {
+                "heading": "A larger group?",
+                "text": "For events of up to 90 people we offer a modern conference hall next to the hotel.",
+                "links": [
+                  {
+                    "label": "Conferences",
+                    "url": "/conferences"
+                  }
+                ]
+              }
+            ]
+          },
+          "stay": {
+            "title": "Everything under one roof",
+            "items": [
+              {
+                "text": "Participants stay, work and eat in the same place, with no commuting and no time lost. We plan the meals with you, from buffet breakfasts to a combined lunch-dinner."
+              }
+            ]
+          },
+          "afterHours": {
+            "title": "After sessions",
+            "items": [
+              {
+                "text": "At the end of the day, a pool with jacuzzi, a Finnish sauna and a panoramic terrace await, followed by dinner with a view of the lake and Lugano."
+              },
+              {
+                "heading": "Polish-speaking service",
+                "text": "If needed, we provide service in Polish."
+              }
+            ]
+          }
+        }
+      },
+      "celebrations": {
+        "navLabel": "Celebrations & weddings",
+        "mailSubject": "Enquiry: celebration / wedding",
+        "seoTitle": "Celebrations and weddings on Lake Lugano",
+        "seoDescription": "Parties, anniversaries and weddings for up to 70 guests in a restaurant with a terrace overlooking Lake Lugano. Accommodation for guests at Hotel Al Ponte, Cademario.",
+        "imageAlt": "View from the hotel terrace over Lugano and the lake at dusk",
+        "title": "Parties, anniversaries and weddings with a lake view",
+        "intro": "Celebrate with the Lugano panorama as your backdrop. Our restaurant with terrace seats up to 70 guests, and those travelling from afar can stay overnight at the hotel.",
+        "closing": "Special moments deserve a special view.",
+        "facts": [
+          {
+            "label": "Restaurant with terrace",
+            "value": "up to 70 people"
+          },
+          {
+            "label": "View",
+            "value": "the lake and Lugano"
+          },
+          {
+            "label": "Accommodation",
+            "value": "up to 63 people"
+          },
+          {
+            "label": "Service",
+            "value": "also in Polish"
+          }
+        ],
+        "nav": {
+          "venue": "Restaurant & terrace",
+          "occasions": "Occasions",
+          "guests": "Guest accommodation"
+        },
+        "sections": {
+          "venue": {
+            "title": "Restaurant with terrace",
+            "items": [
+              {
+                "text": "The hotel has its own restaurant with a terrace offering a stunning view of the lake and the city of Lugano. We can host receptions there for up to 70 people."
+              }
+            ]
+          },
+          "occasions": {
+            "title": "For every occasion",
+            "items": [
+              {
+                "heading": "Special occasions",
+                "text": "Birthdays, jubilees, family gatherings and any other occasion worth celebrating."
+              },
+              {
+                "heading": "Anniversaries",
+                "text": "Wedding anniversaries and milestone dates, celebrated at a table overlooking the lake."
+              },
+              {
+                "heading": "Weddings",
+                "text": "An intimate wedding with Lugano and the Alps as the backdrop, and accommodation for guests in the same place."
+              }
+            ]
+          },
+          "guests": {
+            "title": "Accommodation for guests",
+            "items": [
+              {
+                "text": "The hotel can accommodate up to 63 people, so guests coming from afar don't need to look for a place to stay. You'll find the room details below."
+              },
+              {
+                "heading": "Polish-speaking service",
+                "text": "If needed, we provide service in Polish."
+              }
+            ]
+          }
+        }
+      },
+      "schoolTrips": {
+        "navLabel": "School trips",
+        "mailSubject": "Group enquiry: school trip",
+        "seoTitle": "School trips to Ticino",
+        "seoDescription": "School trips to Switzerland: accommodation for up to 63 people, rooms for chaperones, meals, free public transport and Polish-speaking service. Hotel Al Ponte, Cademario.",
+        "imageAlt": "Aerial view of Monte San Salvatore and Lake Lugano",
+        "title": "School trips to sunny Ticino",
+        "intro": "A class trip to Switzerland: rooms with separate beds, separate rooms for chaperones, meals at the hotel and free public transport for excursions around Ticino.",
+        "closing": "A nature and geography lesson with a view of the Alps.",
+        "facts": [
+          {
+            "label": "Accommodation",
+            "value": "up to 63 people"
+          },
+          {
+            "label": "Chaperone rooms",
+            "value": "in a separate building"
+          },
+          {
+            "label": "Public transport",
+            "value": "free"
+          },
+          {
+            "label": "Service",
+            "value": "also in Polish"
+          }
+        ],
+        "nav": {
+          "stay": "Accommodation",
+          "trips": "Excursions",
+          "classes": "Activities"
+        },
+        "sections": {
+          "stay": {
+            "title": "Accommodation for the class",
+            "items": [
+              {
+                "text": "Students stay in rooms with separate beds, sleeping two, three or five, each with its own bathroom with shower and WC."
+              },
+              {
+                "heading": "Rooms for chaperones",
+                "text": "For chaperones, drivers and tour leaders we have, if needed, 2 additional rooms with bathrooms in a separate building next to the hotel."
+              }
+            ]
+          },
+          "trips": {
+            "title": "Excursions with no transport costs",
+            "items": [
+              {
+                "text": "The group receives free tickets for public transport across the canton of Ticino. The bus stop is just 25 metres from the hotel, putting Lugano, the mountains, the lake and the lakeside villages within easy reach.",
+                "links": [
+                  {
+                    "label": "Ticino attractions",
+                    "url": "/attractions"
+                  }
+                ]
+              }
+            ]
+          },
+          "classes": {
+            "title": "Lessons and free time",
+            "items": [
+              {
+                "text": "For lessons, presentations and group meetings, the seminar room with projector (up to 28 people) is available. After a day full of experiences: the pool and the terrace overlooking the lake."
+              },
+              {
+                "heading": "Polish-speaking service",
+                "text": "If needed, we provide service in Polish, from planning the trip to the stay itself."
+              }
+            ]
+          }
+        }
+      },
+      "companyEvents": {
+        "navLabel": "Company events",
+        "mailSubject": "Group enquiry: company event",
+        "seoTitle": "Company and team-building events in Ticino",
+        "seoDescription": "Company parties and team-building events for up to 70 people in a restaurant with a terrace overlooking Lugano. DJ with Polish or Italian and international music, dancing and accommodation.",
+        "imageAlt": "Pool and panoramic terrace of Hotel Al Ponte above Lake Lugano",
+        "title": "Company and team-building events",
+        "intro": "An evening overlooking Lugano: a restaurant with terrace for up to 70 people, a DJ and dancing, and a room at the hotel after the party.",
+        "closing": "An evening your team will be talking about for a long time.",
+        "facts": [
+          {
+            "label": "Restaurant with terrace",
+            "value": "up to 70 people"
+          },
+          {
+            "label": "DJ",
+            "value": "Polish or Italian music"
+          },
+          {
+            "label": "Accommodation",
+            "value": "up to 63 people"
+          },
+          {
+            "label": "Service",
+            "value": "also in Polish"
+          }
+        ],
+        "nav": {
+          "party": "Restaurant & terrace",
+          "dj": "DJ & dancing",
+          "combine": "All in one"
+        },
+        "sections": {
+          "party": {
+            "title": "A party in the restaurant with terrace",
+            "items": [
+              {
+                "text": "We host company and team-building events in our restaurant with a terrace overlooking the lake and the city of Lugano, for up to 70 people."
+              }
+            ]
+          },
+          "dj": {
+            "title": "DJ and dancing",
+            "items": [
+              {
+                "text": "On request we provide a DJ playing the music of your choice: Polish, or Italian and international. And of course there's room to dance."
+              }
+            ]
+          },
+          "combine": {
+            "title": "Conference, training and party in one",
+            "items": [
+              {
+                "text": "The party is easy to combine with a conference (up to 90 people) or training in the seminar room (up to 28 people), plus accommodation for the whole team.",
+                "links": [
+                  {
+                    "label": "Conferences",
+                    "url": "/conferences"
+                  },
+                  {
+                    "label": "Workshops & training",
+                    "url": "/workshops"
+                  }
+                ]
+              },
+              {
+                "heading": "Polish-speaking service",
+                "text": "If needed, we provide service in Polish."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "shared": {
+      "nav": {
+        "hotel": "Hotel for groups",
+        "rooms": "Rooms",
+        "meals": "Meals",
+        "facilities": "On site",
+        "transport": "Transport"
+      },
+      "hotel": {
+        "title": "A hotel for groups in sunny Ticino",
+        "intro": "Hotel Al Ponte is located in Cademario, on the hillside above Lake Lugano, with panoramic views of the lake, the city of Lugano and the Alps. The bus stop is 25 metres from the hotel.",
+        "capacity": {
+          "guests": "guests maximum",
+          "beds": "separate beds",
+          "rooms": "rooms for groups"
+        },
+        "roomTypesTitle": "Rooms set aside for groups",
+        "roomTypes": {
+          "twin": "rooms with two separate beds",
+          "triple": "rooms with three separate beds",
+          "single": "room with one bed",
+          "five": "room with five separate beds"
+        },
+        "staffRooms": "If needed, we have 2 more rooms with bathrooms for drivers, tour leaders and chaperones in a separate building next to the hotel."
+      },
+      "rooms": {
+        "title": "Room amenities",
+        "items": [
+          {
+            "text": "All rooms have a bathroom with shower and WC, free internet and a SMART TV."
+          },
+          {
+            "heading": "Balconies and terraces",
+            "text": "16 rooms have a balcony or terrace overlooking Lugano and the lake."
+          },
+          {
+            "heading": "Kitchenettes",
+            "text": "4 rooms have a kitchenette."
+          }
+        ]
+      },
+      "meals": {
+        "title": "Meals",
+        "intro": "Group meals are served in the hotel restaurant. Prices per person:",
+        "perPerson": "per person",
+        "or": "or",
+        "items": {
+          "breakfast": {
+            "label": "Breakfast",
+            "note": "buffet"
+          },
+          "lunch": {
+            "label": "Lunch",
+            "note": "midday meal"
+          },
+          "dinner": {
+            "label": "Dinner",
+            "note": "buffet"
+          },
+          "halfBoard": {
+            "label": "Lunch-dinner",
+            "note": "one meal instead of lunch and dinner"
+          }
+        }
+      },
+      "facilities": {
+        "title": "On site",
+        "items": [
+          {
+            "heading": "Restaurant with terrace",
+            "text": "Our own restaurant with a terrace and a stunning view of the lake and the city of Lugano."
+          },
+          {
+            "heading": "Seminar room",
+            "text": "A training and seminar room for up to 28 people, equipped with a projector."
+          },
+          {
+            "heading": "Pool and sauna",
+            "text": "A pool with jacuzzi, a Finnish sauna and a panoramic terrace."
+          }
+        ]
+      },
+      "transport": {
+        "title": "Free public transport",
+        "items": [
+          {
+            "text": "Guests receive free public transport tickets (Ticino Ticket). The bus stop is 25 metres from the hotel, with buses every hour.",
+            "links": [
+              {
+                "label": "Nearby attractions",
+                "url": "/attractions"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cta": {
+      "nav": "Enquiry",
+      "title": "Let's plan your group's trip",
+      "body": "Send us an e-mail or give us a call and we'll prepare an offer tailored to your group size, dates and programme. We can also speak Polish if needed.",
+      "email": "Send an e-mail",
+      "phone": "Call us",
+      "otherOffers": "Other group offers"
     }
   }
 }

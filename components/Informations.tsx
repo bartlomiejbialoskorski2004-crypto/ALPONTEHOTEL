@@ -2,6 +2,9 @@ import { getTranslations } from "next-intl/server";
 import PageToc, { BackToTop, type TocSection } from "./PageToc";
 import ParallaxImage from "./ParallaxImage";
 import DownloadLink from "./DownloadLink";
+import FlipText from "./FlipText";
+import { Link } from "@/i18n/navigation";
+import { GROUP_KEYS, GROUP_PAGES } from "./groupPages";
 
 // Locale-shared, multilingual rules PDF served from /public.
 const RULES_PDF = "/regulamin-al-ponte-albergo.pdf";
@@ -54,6 +57,7 @@ const NAV_KEYS = [
   "tv",
   "transport",
   "requests",
+  "groups",
 ] as const;
 
 const sectionBody = "mt-8 max-w-prose text-base leading-relaxed text-ink/80";
@@ -83,6 +87,7 @@ const block = "mt-20 scroll-mt-24 border-t border-mist pt-16 lg:mt-28 lg:scroll-
 export default async function Informations() {
   const t = await getTranslations("info");
   const tHero = await getTranslations("hero");
+  const tGroups = await getTranslations("groups");
 
   const tocSections: TocSection[] = NAV_KEYS.map((id, i) => ({
     id,
@@ -238,6 +243,29 @@ export default async function Informations() {
           <section id="requests" className={block}>
             <SectionHead num="09" title={t("otherRequests.title")} />
             <p className={sectionBody}>{t("otherRequests.body")}</p>
+          </section>
+
+          {/* Group-offer subpages (also the mobile route to them). */}
+          <section id="groups" className={block}>
+            <SectionHead num="10" title={t("groups.title")} />
+            <p className={sectionBody}>{t("groups.body")}</p>
+            <ul className="mt-8 grid gap-x-10 sm:grid-cols-2">
+              {GROUP_KEYS.map((key) => (
+                <li key={key}>
+                  <Link
+                    href={GROUP_PAGES[key].href}
+                    className="group flex items-center justify-between gap-4 border-b border-mist py-4"
+                  >
+                    <FlipText className="font-serif text-lg leading-tight">
+                      {tGroups(`pages.${key}.navLabel`)}
+                    </FlipText>
+                    <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <div className="mt-20 flex flex-col items-center border-t border-mist pt-16 text-center lg:mt-28 lg:pt-24">

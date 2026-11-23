@@ -300,7 +300,8 @@
       "services": "Leistungen",
       "tv": "Fernsehen",
       "transport": "Ticino Ticket",
-      "requests": "Wünsche"
+      "requests": "Wünsche",
+      "groups": "Gruppen"
     },
     "facts": {
       "checkIn": "Check-in",
@@ -371,7 +372,11 @@
       "title": "Sonstige Gästewünsche",
       "body": "Unser Team bereitet sich auf Ihre Ankunft vor und freut sich darauf, Sie in unserem Hotel begrüßen zu dürfen. Bitte teilen Sie uns vor Ihrer Ankunft mit, ob wir Ihnen noch in irgendeiner Weise behilflich sein können."
     },
-    "signoff": "Mit freundlichen Grüßen - das Team des Hotels Al Ponte Albergo."
+    "signoff": "Mit freundlichen Grüßen - das Team des Hotels Al Ponte Albergo.",
+    "groups": {
+      "title": "Gruppenangebote",
+      "body": "Das Hotel Al Ponte empfängt Gruppen mit bis zu 63 Personen. Entdecken Sie, was wir für Sie organisieren können:"
+    }
   },
   "attractions": {
     "teaserCta": "Entdecken Sie die Ausflugsziele im Tessin",
@@ -695,6 +700,490 @@
         "quote": "Schönes, familiengeführtes Hotel mit herrlichem Blick auf den Luganersee. Sehr nette, freundliche Besitzer.",
         "meta": "Niederlande"
       }
+    }
+  },
+  "groups": {
+    "menuTitle": "Gruppenangebote",
+    "eyebrow": "Gruppenangebote",
+    "tocTitle": "Inhalt",
+    "backToTop": "Nach oben",
+    "enquiryCta": "Angebot anfragen",
+    "pages": {
+      "conferences": {
+        "navLabel": "Konferenzen",
+        "mailSubject": "Gruppenanfrage: Konferenz",
+        "seoTitle": "Konferenzen am Luganersee",
+        "seoDescription": "Konferenzen im Tessin für bis zu 90 Personen: moderner Saal mit Catering-Bereich, Seminarraum, Übernachtung für 63 Personen und Service auf Polnisch im Hotel Al Ponte.",
+        "imageAlt": "Sonnenaufgang über Lugano und den Alpen, von Cademario aus gesehen",
+        "title": "Konferenzen mit Blick auf den Luganersee",
+        "intro": "Veranstalten Sie Ihre Konferenz im sonnigen Tessin. Direkt neben dem Hotel steht ein moderner Konferenzsaal für bis zu 90 Personen mit Catering-Bereich zur Verfügung, und Ihre Teilnehmenden wohnen im Hotel mit Blick auf den See und Lugano.",
+        "closing": "Ein produktiver Tag, ein Abend mit Blick auf Lugano. Planen wir Ihre Konferenz gemeinsam.",
+        "facts": [
+          {
+            "label": "Konferenzsaal",
+            "value": "bis zu 90 Personen"
+          },
+          {
+            "label": "Seminarraum",
+            "value": "bis zu 28 Personen"
+          },
+          {
+            "label": "Übernachtung",
+            "value": "bis zu 63 Personen"
+          },
+          {
+            "label": "Service",
+            "value": "auch auf Polnisch"
+          }
+        ],
+        "nav": {
+          "venue": "Konferenzsaal",
+          "seminar": "Seminarraum",
+          "organisation": "Organisation"
+        },
+        "sections": {
+          "venue": {
+            "title": "Ein moderner Konferenzsaal",
+            "items": [
+              {
+                "text": "In unmittelbarer Nähe des Hotels verfügen wir über einen modernen Konferenzsaal, in dem wir Konferenzen mit bis zu 90 Teilnehmenden ausrichten."
+              },
+              {
+                "heading": "Catering-Bereich",
+                "text": "Der Saal hat einen eigenen Catering-Bereich, sodass die Verpflegung der Teilnehmenden direkt vor Ort geplant werden kann, ohne Ortswechsel."
+              }
+            ]
+          },
+          "seminar": {
+            "title": "Seminarraum im Hotel",
+            "items": [
+              {
+                "text": "Für Breakout-Sessions, Vorstandssitzungen oder Workshops rund um die Konferenz steht Ihnen der Seminarraum im Hotel zur Verfügung: bis zu 28 Personen, mit Beamer.",
+                "links": [
+                  {
+                    "label": "Workshops & Schulungen",
+                    "url": "/workshops"
+                  }
+                ]
+              }
+            ]
+          },
+          "organisation": {
+            "title": "Organisation und Service auf Polnisch",
+            "items": [
+              {
+                "text": "Wir helfen Ihnen, alles zu planen: Saal, Übernachtung der Teilnehmenden und Verpflegung. Bei Bedarf bieten wir auch Service auf Polnisch an."
+              },
+              {
+                "heading": "Teamabend",
+                "text": "Nach dem offiziellen Teil geht der Abend im Restaurant mit Terrasse weiter. Gerne organisieren wir eine Firmenfeier mit DJ und Tanz.",
+                "links": [
+                  {
+                    "label": "Firmenevents",
+                    "url": "/company-events"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "workshops": {
+        "navLabel": "Workshops & Schulungen",
+        "mailSubject": "Gruppenanfrage: Workshop / Schulung",
+        "seoTitle": "Workshops und Schulungen im Tessin",
+        "seoDescription": "Seminarraum für bis zu 28 Personen mit Beamer, Übernachtung und Verpflegung an einem Ort und nach den Sessions Pool und Sauna. Workshops und Firmenschulungen im Hotel Al Ponte.",
+        "imageAlt": "Hotel Al Ponte in Cademario mit den verschneiten Gipfeln des Tessins",
+        "title": "Workshops, Firmenschulungen und Seminare",
+        "intro": "Ein intimer Seminarraum im Hotel, Übernachtung und Verpflegung unter einem Dach und nach den Sessions Pool, Sauna und Terrasse mit Blick auf den Luganersee. Ideal für Gruppen mit bis zu 28 Personen.",
+        "closing": "Konzentriert arbeiten am Tag, abends entspannen mit Seeblick.",
+        "facts": [
+          {
+            "label": "Seminarraum",
+            "value": "bis zu 28 Personen"
+          },
+          {
+            "label": "Ausstattung",
+            "value": "Beamer"
+          },
+          {
+            "label": "Übernachtung",
+            "value": "bis zu 63 Personen"
+          },
+          {
+            "label": "Service",
+            "value": "auch auf Polnisch"
+          }
+        ],
+        "nav": {
+          "room": "Seminarraum",
+          "stay": "Unter einem Dach",
+          "afterHours": "Nach den Sessions"
+        },
+        "sections": {
+          "room": {
+            "title": "Seminarraum mit Beamer",
+            "items": [
+              {
+                "text": "Unser Schulungs- und Seminarraum bietet Platz für bis zu 28 Personen und ist mit einem Beamer ausgestattet. Er eignet sich für Workshops, Firmenschulungen, Seminare und Teammeetings."
+              },
+              {
+                "heading": "Eine größere Gruppe?",
+                "text": "Für Veranstaltungen mit bis zu 90 Personen bieten wir einen modernen Konferenzsaal neben dem Hotel.",
+                "links": [
+                  {
+                    "label": "Konferenzen",
+                    "url": "/conferences"
+                  }
+                ]
+              }
+            ]
+          },
+          "stay": {
+            "title": "Alles unter einem Dach",
+            "items": [
+              {
+                "text": "Die Teilnehmenden wohnen, arbeiten und essen am selben Ort, ohne Anfahrtswege und Zeitverlust. Die Verpflegung, vom Frühstücksbuffet bis zum kombinierten Mittag- und Abendessen, planen wir gemeinsam mit Ihnen."
+              }
+            ]
+          },
+          "afterHours": {
+            "title": "Nach den Sessions",
+            "items": [
+              {
+                "text": "Zum Tagesausklang warten Pool mit Whirlpool, finnische Sauna und Panoramaterrasse, am Abend ein Essen mit Blick auf den See und Lugano."
+              },
+              {
+                "heading": "Service auf Polnisch",
+                "text": "Bei Bedarf bieten wir Service auf Polnisch an."
+              }
+            ]
+          }
+        }
+      },
+      "celebrations": {
+        "navLabel": "Feiern & Hochzeiten",
+        "mailSubject": "Anfrage: Feier / Hochzeit",
+        "seoTitle": "Feiern und Hochzeiten am Luganersee",
+        "seoDescription": "Feiern, Jubiläen und Hochzeiten mit bis zu 70 Gästen im Restaurant mit Terrasse und Blick auf den Luganersee. Übernachtung für Gäste im Hotel Al Ponte, Cademario.",
+        "imageAlt": "Blick von der Hotelterrasse auf Lugano und den See in der Abenddämmerung",
+        "title": "Feiern, Jubiläen und Hochzeiten mit Seeblick",
+        "intro": "Feiern Sie mit dem Panorama von Lugano im Hintergrund. Unser Restaurant mit Terrasse bietet Platz für bis zu 70 Gäste, und wer von weit her anreist, übernachtet im Hotel.",
+        "closing": "Besondere Momente verdienen einen besonderen Ausblick.",
+        "facts": [
+          {
+            "label": "Restaurant mit Terrasse",
+            "value": "bis zu 70 Personen"
+          },
+          {
+            "label": "Ausblick",
+            "value": "See und Lugano"
+          },
+          {
+            "label": "Übernachtung",
+            "value": "bis zu 63 Personen"
+          },
+          {
+            "label": "Service",
+            "value": "auch auf Polnisch"
+          }
+        ],
+        "nav": {
+          "venue": "Restaurant & Terrasse",
+          "occasions": "Anlässe",
+          "guests": "Übernachtung für Gäste"
+        },
+        "sections": {
+          "venue": {
+            "title": "Restaurant mit Terrasse",
+            "items": [
+              {
+                "text": "Das Hotel verfügt über einen eigenen Restaurantsaal mit Terrasse und einem atemberaubenden Blick auf den See und die Stadt Lugano. Hier richten wir Feiern mit bis zu 70 Personen aus."
+              }
+            ]
+          },
+          "occasions": {
+            "title": "Für jeden Anlass",
+            "items": [
+              {
+                "heading": "Feste und Familienfeiern",
+                "text": "Geburtstage, Jubiläen, Familientreffen und jeder andere Anlass, der gefeiert werden will."
+              },
+              {
+                "heading": "Jahrestage",
+                "text": "Hochzeitstage und besondere Daten, gefeiert an einer Tafel mit Seeblick."
+              },
+              {
+                "heading": "Hochzeiten",
+                "text": "Eine Hochzeit im kleinen Kreis mit Lugano und den Alpen als Kulisse und Übernachtung für die Gäste am selben Ort."
+              }
+            ]
+          },
+          "guests": {
+            "title": "Übernachtung für Gäste",
+            "items": [
+              {
+                "text": "Im Hotel können wir bis zu 63 Personen unterbringen, sodass Gäste mit weiter Anreise keine Unterkunft suchen müssen. Die Zimmerdetails finden Sie weiter unten."
+              },
+              {
+                "heading": "Service auf Polnisch",
+                "text": "Bei Bedarf bieten wir Service auf Polnisch an."
+              }
+            ]
+          }
+        }
+      },
+      "schoolTrips": {
+        "navLabel": "Klassenfahrten",
+        "mailSubject": "Gruppenanfrage: Klassenfahrt",
+        "seoTitle": "Klassenfahrten ins Tessin",
+        "seoDescription": "Klassenfahrten in die Schweiz: Unterkunft für bis zu 63 Personen, Zimmer für Begleitpersonen, Verpflegung, kostenloser ÖV und Service auf Polnisch. Hotel Al Ponte, Cademario.",
+        "imageAlt": "Luftaufnahme des Monte San Salvatore und des Luganersees",
+        "title": "Klassenfahrten ins sonnige Tessin",
+        "intro": "Eine Klassenfahrt in die Schweiz: Zimmer mit Einzelbetten, separate Zimmer für Begleitpersonen, Verpflegung im Hotel und kostenloser öffentlicher Verkehr für Ausflüge im Tessin.",
+        "closing": "Natur- und Erdkundeunterricht mit Blick auf die Alpen.",
+        "facts": [
+          {
+            "label": "Übernachtung",
+            "value": "bis zu 63 Personen"
+          },
+          {
+            "label": "Zimmer für Begleiter",
+            "value": "in separatem Gebäude"
+          },
+          {
+            "label": "Öffentlicher Verkehr",
+            "value": "kostenlos"
+          },
+          {
+            "label": "Service",
+            "value": "auch auf Polnisch"
+          }
+        ],
+        "nav": {
+          "stay": "Unterkunft",
+          "trips": "Ausflüge",
+          "classes": "Aktivitäten"
+        },
+        "sections": {
+          "stay": {
+            "title": "Unterkunft für die Klasse",
+            "items": [
+              {
+                "text": "Die Schülerinnen und Schüler übernachten in Zimmern mit Einzelbetten für zwei, drei oder fünf Personen, jeweils mit eigenem Bad mit Dusche und WC."
+              },
+              {
+                "heading": "Zimmer für Begleitpersonen",
+                "text": "Für Begleitpersonen, Fahrer und Reiseleiter stehen bei Bedarf 2 zusätzliche Zimmer mit Bad in einem separaten Gebäude neben dem Hotel bereit."
+              }
+            ]
+          },
+          "trips": {
+            "title": "Ausflüge ohne Transportkosten",
+            "items": [
+              {
+                "text": "Die Gruppe erhält kostenlose Tickets für den öffentlichen Verkehr im Kanton Tessin. Die Bushaltestelle liegt nur 25 Meter vom Hotel entfernt, Lugano, die Berge, der See und die Dörfer am Ufer sind schnell erreichbar.",
+                "links": [
+                  {
+                    "label": "Tessiner Attraktionen",
+                    "url": "/attractions"
+                  }
+                ]
+              }
+            ]
+          },
+          "classes": {
+            "title": "Unterricht und Freizeit",
+            "items": [
+              {
+                "text": "Für Unterricht, Präsentationen und Gruppentreffen steht der Seminarraum mit Beamer (bis zu 28 Personen) zur Verfügung. Nach einem erlebnisreichen Tag: Pool und Terrasse mit Seeblick."
+              },
+              {
+                "heading": "Service auf Polnisch",
+                "text": "Bei Bedarf bieten wir Service auf Polnisch an, von der Planung der Reise bis zum Aufenthalt."
+              }
+            ]
+          }
+        }
+      },
+      "companyEvents": {
+        "navLabel": "Firmenevents",
+        "mailSubject": "Gruppenanfrage: Firmenevent",
+        "seoTitle": "Firmenevents und Teambuilding im Tessin",
+        "seoDescription": "Firmenfeiern und Teambuilding für bis zu 70 Personen im Restaurant mit Terrasse und Blick auf Lugano. DJ mit polnischer oder italienischer und internationaler Musik, Tanz und Übernachtung.",
+        "imageAlt": "Pool und Panoramaterrasse des Hotels Al Ponte über dem Luganersee",
+        "title": "Firmenevents und Teambuilding",
+        "intro": "Ein Abend mit Blick auf Lugano: Restaurant mit Terrasse für bis zu 70 Personen, DJ und Tanz und nach der Feier die Übernachtung im Hotel.",
+        "closing": "Ein Abend, über den Ihr Team noch lange sprechen wird.",
+        "facts": [
+          {
+            "label": "Restaurant mit Terrasse",
+            "value": "bis zu 70 Personen"
+          },
+          {
+            "label": "DJ",
+            "value": "polnische oder italienische Musik"
+          },
+          {
+            "label": "Übernachtung",
+            "value": "bis zu 63 Personen"
+          },
+          {
+            "label": "Service",
+            "value": "auch auf Polnisch"
+          }
+        ],
+        "nav": {
+          "party": "Restaurant & Terrasse",
+          "dj": "DJ & Tanz",
+          "combine": "Alles in einem"
+        },
+        "sections": {
+          "party": {
+            "title": "Die Feier im Restaurant mit Terrasse",
+            "items": [
+              {
+                "text": "Firmenfeiern und Teambuilding-Events richten wir in unserem Restaurant mit Terrasse und Blick auf den See und die Stadt Lugano aus, für bis zu 70 Personen."
+              }
+            ]
+          },
+          "dj": {
+            "title": "DJ und Tanz",
+            "items": [
+              {
+                "text": "Auf Wunsch sorgt ein DJ für die Musik Ihrer Wahl: polnisch oder italienisch und international. Und natürlich darf getanzt werden."
+              }
+            ]
+          },
+          "combine": {
+            "title": "Konferenz, Schulung und Feier in einem",
+            "items": [
+              {
+                "text": "Die Feier lässt sich einfach mit einer Konferenz (bis zu 90 Personen) oder einer Schulung im Seminarraum (bis zu 28 Personen) sowie der Übernachtung für das ganze Team kombinieren.",
+                "links": [
+                  {
+                    "label": "Konferenzen",
+                    "url": "/conferences"
+                  },
+                  {
+                    "label": "Workshops & Schulungen",
+                    "url": "/workshops"
+                  }
+                ]
+              },
+              {
+                "heading": "Service auf Polnisch",
+                "text": "Bei Bedarf bieten wir Service auf Polnisch an."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "shared": {
+      "nav": {
+        "hotel": "Hotel für Gruppen",
+        "rooms": "Zimmer",
+        "meals": "Verpflegung",
+        "facilities": "Vor Ort",
+        "transport": "Verkehr"
+      },
+      "hotel": {
+        "title": "Ein Hotel für Gruppen im sonnigen Tessin",
+        "intro": "Das Hotel Al Ponte liegt in Cademario, am Hang über dem Luganersee, mit Panoramablick auf den See, die Stadt Lugano und die Alpen. Die Bushaltestelle befindet sich 25 Meter vom Hotel entfernt.",
+        "capacity": {
+          "guests": "Gäste maximal",
+          "beds": "Einzelbetten",
+          "rooms": "Zimmer für Gruppen"
+        },
+        "roomTypesTitle": "Zimmer für Gruppen",
+        "roomTypes": {
+          "twin": "Zimmer mit zwei Einzelbetten",
+          "triple": "Zimmer mit drei Einzelbetten",
+          "single": "Zimmer mit einem Bett",
+          "five": "Zimmer mit fünf Einzelbetten"
+        },
+        "staffRooms": "Bei Bedarf stehen für Fahrer, Reiseleiter und Begleitpersonen 2 weitere Zimmer mit Bad in einem separaten Gebäude neben dem Hotel zur Verfügung."
+      },
+      "rooms": {
+        "title": "Zimmerausstattung",
+        "items": [
+          {
+            "text": "Alle Zimmer haben ein Bad mit Dusche und WC, kostenloses Internet und SMART TV."
+          },
+          {
+            "heading": "Balkone und Terrassen",
+            "text": "16 Zimmer haben einen Balkon oder eine Terrasse mit Blick auf Lugano und den See."
+          },
+          {
+            "heading": "Kochnischen",
+            "text": "4 Zimmer verfügen über eine Kochnische."
+          }
+        ]
+      },
+      "meals": {
+        "title": "Verpflegung",
+        "intro": "Die Mahlzeiten für Gruppen servieren wir im Hotelrestaurant. Preise pro Person:",
+        "perPerson": "pro Person",
+        "or": "oder",
+        "items": {
+          "breakfast": {
+            "label": "Frühstück",
+            "note": "Buffet"
+          },
+          "lunch": {
+            "label": "Mittagessen",
+            "note": "Mahlzeit am Mittag"
+          },
+          "dinner": {
+            "label": "Abendessen",
+            "note": "Buffet"
+          },
+          "halfBoard": {
+            "label": "Mittag- und Abendessen kombiniert",
+            "note": "eine Mahlzeit statt Mittag- und Abendessen"
+          }
+        }
+      },
+      "facilities": {
+        "title": "Vor Ort",
+        "items": [
+          {
+            "heading": "Restaurant mit Terrasse",
+            "text": "Ein eigener Restaurantsaal mit Terrasse und atemberaubendem Blick auf den See und die Stadt Lugano."
+          },
+          {
+            "heading": "Seminarraum",
+            "text": "Ein Schulungs- und Seminarraum für bis zu 28 Personen, mit Beamer ausgestattet."
+          },
+          {
+            "heading": "Pool und Sauna",
+            "text": "Ein Pool mit Whirlpool, eine finnische Sauna und eine Panoramaterrasse."
+          }
+        ]
+      },
+      "transport": {
+        "title": "Kostenloser öffentlicher Verkehr",
+        "items": [
+          {
+            "text": "Gäste erhalten kostenlose Tickets für den öffentlichen Verkehr (Ticino Ticket). Die Bushaltestelle liegt 25 Meter vom Hotel entfernt, die Busse fahren stündlich.",
+            "links": [
+              {
+                "label": "Attraktionen in der Nähe",
+                "url": "/attractions"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cta": {
+      "nav": "Anfrage",
+      "title": "Planen wir die Reise Ihrer Gruppe",
+      "body": "Schreiben Sie uns oder rufen Sie an: Wir erstellen ein Angebot, das auf Gruppengröße, Termine und Programm zugeschnitten ist. Bei Bedarf sprechen wir auch Polnisch.",
+      "email": "E-Mail schreiben",
+      "phone": "Anrufen",
+      "otherOffers": "Weitere Gruppenangebote"
     }
   }
 }

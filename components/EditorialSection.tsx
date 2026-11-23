@@ -18,10 +18,10 @@ type Props = {
   first?: boolean;
 };
 
-function Body({ title, num, items }: Pick<Props, "title" | "num" | "items">) {
+// Section heading with an oversized ghost numeral behind it.
+export function SectionHead({ num, title }: { num: string; title: string }) {
   return (
-    <div className="relative">
-      {/* Oversized ghost numeral behind the heading. */}
+    <>
       <span
         aria-hidden
         className="pointer-events-none absolute -top-10 -left-2 select-none font-serif text-7xl leading-none text-forest/10 lg:-top-14 lg:text-8xl"
@@ -34,6 +34,21 @@ function Body({ title, num, items }: Pick<Props, "title" | "num" | "items">) {
       <h2 className="relative mt-4 font-serif text-3xl leading-tight lg:text-4xl">
         {title}
       </h2>
+    </>
+  );
+}
+
+// Section wrapper spacing: the first block sits flush, later ones get a rule.
+export function sectionClass(first?: boolean) {
+  return first
+    ? "scroll-mt-24 lg:scroll-mt-28"
+    : "mt-20 scroll-mt-24 border-t border-mist pt-16 lg:mt-28 lg:scroll-mt-28 lg:pt-24";
+}
+
+function Body({ title, num, items }: Pick<Props, "title" | "num" | "items">) {
+  return (
+    <div className="relative">
+      <SectionHead num={num} title={title} />
       <div className="mt-7 space-y-7">
         {items.map((item, idx) => (
           <div key={idx}>
@@ -66,13 +81,11 @@ export default function EditorialSection({
   flip,
   first,
 }: Props) {
-  const sectionClass = first
-    ? "scroll-mt-24 lg:scroll-mt-28"
-    : "mt-20 scroll-mt-24 border-t border-mist pt-16 lg:mt-28 lg:scroll-mt-28 lg:pt-24";
+  const cls = sectionClass(first);
 
   if (!image) {
     return (
-      <section id={id} className={sectionClass}>
+      <section id={id} className={cls}>
         <div className="max-w-2xl">
           <Body title={title} num={num} items={items} />
         </div>
@@ -81,7 +94,7 @@ export default function EditorialSection({
   }
 
   return (
-    <section id={id} className={sectionClass}>
+    <section id={id} className={cls}>
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div
           className={`relative aspect-[4/5] w-full overflow-hidden sm:aspect-[3/2] lg:aspect-[4/5] ${

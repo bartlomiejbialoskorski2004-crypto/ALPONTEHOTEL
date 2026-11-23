@@ -17,6 +17,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import MenuToggle from "./MenuToggle";
 import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
+import { GROUP_KEYS, GROUP_PAGES } from "./groupPages";
 import { BOOKING } from "./contact-info";
 import { useAnchor } from "./useAnchor";
 import { setHeaderHidden } from "./headerStore";
@@ -358,6 +359,32 @@ export default function Header({ bookingUrl }: Props) {
                           </Link>
                         ))}
                       </div>
+
+                      {/* Group-offer subpages, listed under Informations. */}
+                      {group === "informations" && (
+                        <>
+                          <span className="mt-10 block text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                            {t("groups.menuTitle")}
+                          </span>
+                          <div className="mt-6 grid grid-cols-2 gap-x-12 md:grid-cols-3">
+                            {GROUP_KEYS.map((key) => (
+                              <Link
+                                key={key}
+                                href={GROUP_PAGES[key].href}
+                                onClick={() => setOpenMenu(null)}
+                                className="group flex items-center justify-between gap-4 border-b border-mist py-4"
+                              >
+                                <FlipText className="font-serif text-lg leading-tight">
+                                  {t(`groups.pages.${key}.navLabel`)}
+                                </FlipText>
+                                <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
+                                  →
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        </>
+                      )}
                     </div>
                   );
                 }
