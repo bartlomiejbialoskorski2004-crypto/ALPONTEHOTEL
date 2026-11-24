@@ -36,7 +36,7 @@ function PerksTab() {
   const t = useTranslations("booking");
   const perks = t.raw("perks") as string[];
   return (
-    <ul className="flex max-w-[calc(100%-1.5rem)] flex-wrap items-center justify-center gap-x-2.5 gap-y-0.5 border border-b-0 border-ink/10 bg-white px-3 py-1 text-[9px] font-medium uppercase leading-snug tracking-[0.12em] text-ink/60">
+    <ul className="ml-4 flex max-w-[calc(100%-2rem)] flex-wrap items-center gap-x-2.5 self-start gap-y-0.5 border border-b-0 border-ink/10 bg-white px-3 py-1 text-[9px] font-medium uppercase leading-snug tracking-[0.12em] text-ink/60">
       {perks.map((p) => (
         <li key={p} className="inline-flex items-center gap-1 whitespace-nowrap">
           <Check aria-hidden className="h-2.5 w-2.5 text-forest" strokeWidth={2} />
@@ -120,17 +120,34 @@ export function DirectBookingLink({
   );
 }
 
+// "or book via Booking.com" on one line; rolls like the navbar "Book" label.
+function BookingLine({ tone = "dark" }: { tone?: "dark" | "light" }) {
+  const t = useTranslations("booking");
+  return (
+    <FlipText>
+      <span className="inline-flex items-baseline gap-2 whitespace-nowrap">
+        {t("or")} {t("via")}
+        <span className="text-[13px]">
+          <BookingLogo tone={tone} />
+        </span>
+      </span>
+    </FlipText>
+  );
+}
+
 // The two booking options as a pair (rooms, footer, in-hotel page, mobile
 // menu): the perks tab on top of the filled "Book with us" button, then a
 // quiet borderless "or book on Booking.com".
 export function BookingChoice({
   room,
   tone = "dark",
+  perks = true,
   onNavigate,
   className = "",
 }: {
   room?: string;
   tone?: "dark" | "light";
+  perks?: boolean;
   onNavigate?: () => void;
   className?: string;
 }) {
@@ -138,7 +155,7 @@ export function BookingChoice({
   const light = tone === "light";
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <PerksTab />
+      {perks && <PerksTab />}
       <DirectBookingLink
         room={room}
         onNavigate={onNavigate}
@@ -153,16 +170,11 @@ export function BookingChoice({
         target="_blank"
         rel="noopener noreferrer"
         onClick={onNavigate}
-        className={`group mt-2 inline-flex items-center justify-center gap-2 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.16em] transition-colors ${
+        className={`group mt-1 flex w-full items-center justify-center px-3 py-2.5 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors ${
           light ? "text-paper/75 hover:text-paper" : "text-ink/60 hover:text-ink"
         }`}
       >
-        <span className="whitespace-nowrap underline-offset-4 group-hover:underline">
-          {t("or")} {t("via")}
-        </span>
-        <span className="whitespace-nowrap text-[13px]">
-          <BookingLogo tone={tone} />
-        </span>
+        <BookingLine tone={tone} />
       </a>
     </div>
   );
@@ -181,17 +193,19 @@ const MENU_VARIANTS: Record<MenuVariant, string> = {
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-// Options roll in one after the other, like the language flags.
+// The panel slides down from under the button; closing is a quick fade.
+const sheetVariants: Variants = {
+  hidden: { y: "-100%", transition: { duration: 0 } },
+  visible: { y: "0%", transition: { duration: 0.45, ease: EASE } },
+};
+
+// Then the options settle in one after the other.
 const optionVariants: Variants = {
-  hidden: (i: number) => ({
-    opacity: 0,
-    y: -10,
-    transition: { duration: 0.2, ease: EASE, delay: (1 - i) * 0.04 },
-  }),
+  hidden: { opacity: 0, y: -8, transition: { duration: 0 } },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: EASE, delay: 0.05 + i * 0.08 },
+    transition: { duration: 0.4, ease: EASE, delay: 0.15 + i * 0.08 },
   }),
 };
 
@@ -225,9 +239,6 @@ export function BookMenu({ variant = "primary" }: { variant?: MenuVariant }) {
     };
   }, [open]);
 
-  const option =
-    "group block w-full px-5 py-4 text-left transition-colors hover:bg-ink/[0.04]";
-
   return (
     <div
       ref={ref}
@@ -252,42 +263,36 @@ export function BookMenu({ variant = "primary" }: { variant?: MenuVariant }) {
             role="menu"
             initial="hidden"
             animate="visible"
-            exit="hidden"
-            variants={{
-              // A real animated value so the exit always completes.
-              hidden: { opacity: 0, transition: { when: "afterChildren", duration: 0.08 } },
-              visible: { opacity: 1, transition: { duration: 0.01 } },
-            }}
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
             className="absolute right-0 top-full z-50 w-80 pt-3"
           >
-            <div className="overflow-hidden border border-mist bg-paper text-ink shadow-xl">
-              <motion.div custom={0} variants={optionVariants}>
-                <DirectBookingLink className={option} onNavigate={() => setOpen(false)}>
-                  <span className="block text-xs font-medium uppercase tracking-[0.2em] text-forest">
+            {/* Clips the sheet so it appears to slide out from under the bar. */}
+            <div className="overflow-hidden">
+              <motion.div
+                variants={sheetVariants}
+                className="border border-mist bg-paper p-4 text-ink shadow-xl"
+              >
+                <motion.div custom={0} variants={optionVariants}>
+                  <DirectBookingLink
+                    onNavigate={() => setOpen(false)}
+                    className="group flex w-full items-center justify-center bg-forest px-5 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-paper transition-colors duration-300 hover:bg-forest-soft"
+                  >
                     <FlipText>{t("booking.direct")}</FlipText>
-                  </span>
-                  <DirectPerks align="start" className="mt-2.5" />
-                </DirectBookingLink>
-              </motion.div>
-              <motion.div custom={1} variants={optionVariants} className="border-t border-mist">
-                <a
-                  href={BOOKING}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  role="menuitem"
-                  onClick={() => setOpen(false)}
-                  className={`${option} flex items-center justify-between`}
-                >
-                  <span className="flex items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.2em] text-ink/60">
-                    {t("booking.or")} {t("booking.via")}
-                    <span className="text-sm">
-                      <BookingLogo />
-                    </span>
-                  </span>
-                  <span aria-hidden className="text-ink/50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                    ↗
-                  </span>
-                </a>
+                  </DirectBookingLink>
+                  <DirectPerks align="start" className="mt-3" />
+                </motion.div>
+                <motion.div custom={1} variants={optionVariants} className="mt-3 border-t border-mist pt-1">
+                  <a
+                    href={BOOKING}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="menuitem"
+                    onClick={() => setOpen(false)}
+                    className="group flex w-full items-center justify-center px-3 py-2.5 text-[10px] font-medium uppercase tracking-[0.14em] text-ink/60 transition-colors hover:text-ink"
+                  >
+                    <BookingLine />
+                  </a>
+                </motion.div>
               </motion.div>
             </div>
           </motion.div>

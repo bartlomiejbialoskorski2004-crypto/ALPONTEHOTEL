@@ -13,6 +13,7 @@ const ROUTES: {
   { path: "/attractions", priority: 0.8, changeFrequency: "monthly" },
   { path: "/informations", priority: 0.6, changeFrequency: "yearly" },
   { path: "/hotel-attractions", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/gallery", priority: 0.6, changeFrequency: "monthly" },
   ...GROUP_KEYS.map((key) => ({
     path: GROUP_PAGES[key].href,
     priority: 0.7,

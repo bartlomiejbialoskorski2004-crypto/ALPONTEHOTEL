@@ -7,6 +7,7 @@ import { JumpLink } from "./PageToc";
 import InfoNote from "./InfoNote";
 import FlipText from "./FlipText";
 import { BookingChoice } from "./booking";
+import FloatingBadge from "./FloatingBadge";
 import { PriceBadge, SAUNA_IMAGE } from "./wellnessShared";
 import { HERO_TEXT_SCRIM } from "./groups/shared";
 
@@ -98,10 +99,11 @@ export default async function HotelAttractions() {
                   />
                 </div>
                 {key === "sauna" && (
-                  <PriceBadge
-                    perHour={tWell("perHour")}
+                  <FloatingBadge
                     className={`absolute -bottom-6 right-6 ${flip ? "lg:-left-8 lg:right-auto" : "lg:-right-8"}`}
-                  />
+                  >
+                    <PriceBadge perHour={tWell("perHour")} />
+                  </FloatingBadge>
                 )}
               </div>
 

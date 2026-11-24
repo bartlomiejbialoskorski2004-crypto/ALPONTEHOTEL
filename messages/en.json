@@ -74,6 +74,8 @@
       "children": "Children",
       "room": "Room",
       "roomAny": "Any – please advise",
+      "event": "Event",
+      "eventNone": "No event",
       "message": "Message",
       "optional": "optional",
       "submit": "Create enquiry e-mail",
@@ -194,7 +196,8 @@
       }
     },
     "heading": "Something for everyone",
-    "viewCategory": "View rooms"
+    "viewCategory": "View rooms",
+    "maxGuests": "Maximum guests: {count}"
   },
   "triple": {
     "title": "Triple Deluxe Apartment",
@@ -304,7 +307,20 @@
         "title": "Village at Dusk",
         "desc": "Houses and church beneath the Alps."
       }
-    }
+    },
+    "label": "Gallery",
+    "seoTitle": "Photo gallery: rooms, hotel and surroundings",
+    "seoDescription": "Photos of Hotel Al Ponte in Cademario: every room and apartment, the pool, sauna, terrace, event rooms and views over Lake Lugano and the area around.",
+    "intro": "All our photos in one place – rooms, the hotel, events and the area around. Click a photo to browse the album.",
+    "categories": {
+      "hotel": "Hotel & views",
+      "events": "Events",
+      "region": "Surroundings"
+    },
+    "photos": "{count, plural, one {# photo} other {# photos}}",
+    "close": "Close",
+    "prev": "Previous photo",
+    "next": "Next photo"
   },
   "info": {
     "eyebrow": "Informations",
@@ -847,10 +863,7 @@
         "title": "Company and team-building events",
         "intro": "An evening overlooking Lugano: a restaurant with terrace, a DJ and dancing, then a room at the hotel.",
         "music": {
-          "title": "Music of your choice",
-          "polish": "Polish",
-          "or": "or",
-          "italian": "Italian & international"
+          "text": "Music of your choice: Polish, or Italian and international."
         },
         "details": {
           "restaurant": "people in the restaurant with terrace overlooking Lugano",
@@ -926,7 +939,7 @@
       "booking": "Booked at reception"
     },
     "note": "To guarantee availability, please book at reception in advance.",
-    "cta": "At the hotel",
+    "cta": "More at the hotel",
     "details": "Details"
   },
   "hotelAttractions": {

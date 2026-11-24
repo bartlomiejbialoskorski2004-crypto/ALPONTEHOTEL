@@ -52,7 +52,7 @@ export const NAV: NavEntry[] = [
       items: ["mountains", "cademario", "lugano", "nature", "villages", "adventure"],
     },
   },
-  { key: "gallery", href: "#gallery" },
+  { key: "gallery", href: "/gallery" },
   { key: "contact", href: "#contact" },
 ];
 

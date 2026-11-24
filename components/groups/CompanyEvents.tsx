@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { BedDouble, Disc3, Wine } from "lucide-react";
 import { GROUP_MAX_GUESTS, GROUP_PAGES, GROUP_VENUES } from "../groupPages";
-import InfoNote from "../InfoNote";
 import {
   Enquiry,
   OfferHero,
@@ -12,14 +11,11 @@ import {
   eyebrow,
 } from "./shared";
 
-const pill =
-  "rounded-full border border-paper/25 px-4 py-1.5 text-xs tracking-wide text-paper/85";
-
 // Small, quiet line icons above each figure of the evening row.
 const icon = "mb-5 block h-5 w-5 text-gold/80";
 
 // Company events - "evening": the one dark page. Shared offer hero, a compact
-// ink module (three figures, the DJ's music choice as two small pills), then
+// ink module (three figures, the DJ's music choice as a plain line), then
 // back to paper for the shared frame.
 export default async function CompanyEvents() {
   const t = await getTranslations("groups");
@@ -60,18 +56,8 @@ export default async function CompanyEvents() {
               <span className="mt-3 block text-sm leading-relaxed text-paper/60">
                 {p("details.dj")}
               </span>
-              <InfoNote
-                as="span"
-                className="mt-6 font-medium uppercase tracking-[0.2em] text-paper/50"
-              >
-                {p("music.title")}
-              </InfoNote>
-              <span className="mt-3 flex flex-wrap items-center gap-2">
-                <span className={pill}>{p("music.polish")}</span>
-                <em className="px-1 font-serif text-sm italic text-gold">
-                  {p("music.or")}
-                </em>
-                <span className={pill}>{p("music.italian")}</span>
+              <span className="mt-2 block text-sm leading-relaxed text-paper/60">
+                {p("music.text")}
               </span>
             </li>
           </ul>

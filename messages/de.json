@@ -74,6 +74,8 @@
       "children": "Kinder",
       "room": "Zimmer",
       "roomAny": "Egal – bitte beraten Sie mich",
+      "event": "Veranstaltung",
+      "eventNone": "Keine Veranstaltung",
       "message": "Nachricht",
       "optional": "optional",
       "submit": "Anfrage-E-Mail erstellen",
@@ -194,7 +196,8 @@
       }
     },
     "heading": "Für jeden das Richtige",
-    "viewCategory": "Zimmer ansehen"
+    "viewCategory": "Zimmer ansehen",
+    "maxGuests": "Maximale Personenzahl: {count}"
   },
   "triple": {
     "title": "Triple Deluxe Apartment",
@@ -304,7 +307,20 @@
         "title": "Dorf in der Dämmerung",
         "desc": "Häuser und Kirche zu Füßen der Alpen."
       }
-    }
+    },
+    "label": "Galerie",
+    "seoTitle": "Fotogalerie: Zimmer, Hotel und Umgebung",
+    "seoDescription": "Fotos des Hotel Al Ponte in Cademario: alle Zimmer und Apartments, Pool, Sauna, Terrasse, Veranstaltungsräume und Ausblicke auf den Luganersee und die Umgebung.",
+    "intro": "Alle unsere Fotos an einem Ort – Zimmer, Hotel, Veranstaltungen und Umgebung. Klicken Sie auf ein Foto, um das Album anzusehen.",
+    "categories": {
+      "hotel": "Hotel & Aussicht",
+      "events": "Veranstaltungen",
+      "region": "Umgebung"
+    },
+    "photos": "{count, plural, one {# Foto} other {# Fotos}}",
+    "close": "Schließen",
+    "prev": "Vorheriges Foto",
+    "next": "Nächstes Foto"
   },
   "info": {
     "eyebrow": "Informationen",
@@ -847,10 +863,7 @@
         "title": "Firmenevents und Teambuilding",
         "intro": "Ein Abend mit Blick auf Lugano: Restaurant mit Terrasse, DJ und Tanz, danach die Übernachtung im Hotel.",
         "music": {
-          "title": "Musik nach Wahl",
-          "polish": "Polnisch",
-          "or": "oder",
-          "italian": "Italienisch & international"
+          "text": "Musik nach Wahl: polnisch oder italienisch und international."
         },
         "details": {
           "restaurant": "Personen im Restaurant mit Terrasse und Blick auf Lugano",
@@ -926,7 +939,7 @@
       "booking": "Reservierung an der Rezeption"
     },
     "note": "Um die Verfügbarkeit zu garantieren, ist eine vorherige Reservierung an der Rezeption erforderlich.",
-    "cta": "Im Hotel",
+    "cta": "Mehr im Hotel",
     "details": "Details"
   },
   "hotelAttractions": {

@@ -149,7 +149,7 @@ export default function Footer({ bookingUrl }: Props) {
             <p className="max-w-[16rem] text-sm leading-relaxed text-paper/65">
               {t("fallback.tagline")}
             </p>
-            <BookingChoice tone="light" className="mt-1 w-full max-w-[17rem]" />
+            <BookingChoice tone="light" perks={false} className="mt-1 w-full max-w-[17rem]" />
 
             {/* Social */}
             <div className="mt-2 flex items-center gap-5">

@@ -74,6 +74,8 @@
       "children": "Enfants",
       "room": "Chambre",
       "roomAny": "Indifférent – conseillez-moi",
+      "event": "Événement",
+      "eventNone": "Aucun événement",
       "message": "Message",
       "optional": "facultatif",
       "submit": "Créer l'e-mail de demande",
@@ -194,7 +196,8 @@
       }
     },
     "heading": "Il y en a pour tous les goûts",
-    "viewCategory": "Voir les chambres"
+    "viewCategory": "Voir les chambres",
+    "maxGuests": "Nombre maximum de personnes : {count}"
   },
   "triple": {
     "title": "Triple Deluxe Apartment",
@@ -304,7 +307,20 @@
         "title": "Village au crépuscule",
         "desc": "Maisons et église au pied des Alpes."
       }
-    }
+    },
+    "label": "Galerie",
+    "seoTitle": "Galerie photos : chambres, hôtel et environs",
+    "seoDescription": "Les photos de l'Hotel Al Ponte à Cademario : toutes les chambres et appartements, la piscine, le sauna, la terrasse, les salles d'événements et la vue sur le lac de Lugano et ses environs.",
+    "intro": "Toutes nos photos au même endroit : chambres, hôtel, événements et environs. Cliquez sur une photo pour parcourir l'album.",
+    "categories": {
+      "hotel": "Hôtel et vues",
+      "events": "Événements",
+      "region": "Environs"
+    },
+    "photos": "{count, plural, one {# photo} other {# photos}}",
+    "close": "Fermer",
+    "prev": "Photo précédente",
+    "next": "Photo suivante"
   },
   "info": {
     "eyebrow": "Informations",
@@ -847,10 +863,7 @@
         "title": "Événements d'entreprise et team building",
         "intro": "Une soirée face à Lugano : restaurant avec terrasse, DJ et danse, puis une nuit à l'hôtel.",
         "music": {
-          "title": "Musique au choix",
-          "polish": "Polonaise",
-          "or": "ou",
-          "italian": "Italienne et internationale"
+          "text": "Musique au choix : polonaise ou italienne et internationale."
         },
         "details": {
           "restaurant": "personnes au restaurant avec terrasse face à Lugano",
@@ -926,7 +939,7 @@
       "booking": "Réservation à la réception"
     },
     "note": "Pour garantir la disponibilité, une réservation à la réception est nécessaire.",
-    "cta": "À l'hôtel",
+    "cta": "Autres activités à l'hôtel",
     "details": "Détails"
   },
   "hotelAttractions": {

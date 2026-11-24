@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -75,6 +75,22 @@ export default function Header({ bookingUrl }: Props) {
   const [mounted, setMounted] = useState(false);
   const lastY = useRef(0);
   const reduceMotion = useReducedMotion();
+
+  // Measured height of the megamenu content, so the sheet can ease between
+  // groups of different heights. Reset when the menu closes.
+  const [megaH, setMegaH] = useState<number | null>(null);
+  const megaObserver = useRef<ResizeObserver | null>(null);
+  const megaContentRef = useCallback((el: HTMLDivElement | null) => {
+    megaObserver.current?.disconnect();
+    megaObserver.current = null;
+    if (!el) {
+      setMegaH(null);
+      return;
+    }
+    const ro = new ResizeObserver(() => setMegaH(el.offsetHeight));
+    ro.observe(el);
+    megaObserver.current = ro;
+  }, []);
 
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -347,16 +363,32 @@ export default function Header({ bookingUrl }: Props) {
           </div>
         </div>
 
+        {/* Megamenu: one persistent sheet that slides down from under the bar
+            on open and fades on close. Switching groups swaps the content
+            (new one drops in from above) while the sheet eases to the new
+            height - nothing ever travels upwards. */}
         <AnimatePresence initial={false}>
           {openEntry?.mega && (
             <motion.div
-              key={openEntry.mega.group}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 hidden overflow-hidden bg-paper text-ink lg:block"
+              key="mega"
+              exit={{ opacity: 0, transition: { duration: 0.2 } }}
+              className="relative z-10 hidden overflow-hidden lg:block"
             >
+              <motion.div
+                initial={{ y: "-100%" }}
+                animate={{ y: "0%", height: megaH ?? "auto" }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden bg-paper text-ink"
+              >
+                <div ref={megaContentRef} className="relative">
+                  <AnimatePresence initial={false} mode="popLayout">
+                    <motion.div
+                      key={openEntry.mega.group}
+                      initial={{ opacity: 0, y: -12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, transition: { duration: 0.15 } }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    >
               {(() => {
                 const group = openEntry.mega!.group;
 
@@ -534,6 +566,10 @@ export default function Header({ bookingUrl }: Props) {
                   </div>
                 );
               })()}
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

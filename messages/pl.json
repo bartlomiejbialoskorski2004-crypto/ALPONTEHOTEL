@@ -74,6 +74,8 @@
       "children": "Dzieci",
       "room": "Pokój",
       "roomAny": "Dowolny – doradźcie mi",
+      "event": "Wydarzenie",
+      "eventNone": "Bez wydarzenia",
       "message": "Wiadomość",
       "optional": "opcjonalnie",
       "submit": "Utwórz e-mail z zapytaniem",
@@ -194,7 +196,8 @@
       }
     },
     "heading": "Każdy znajdzie coś dla siebie",
-    "viewCategory": "Zobacz pokoje"
+    "viewCategory": "Zobacz pokoje",
+    "maxGuests": "Maksymalna liczba osób: {count}"
   },
   "triple": {
     "title": "Triple Deluxe Apartment",
@@ -304,7 +307,20 @@
         "title": "Wioska o zmierzchu",
         "desc": "Domy i kościół u stóp Alp."
       }
-    }
+    },
+    "label": "Galeria",
+    "seoTitle": "Galeria zdjęć: pokoje, hotel i okolica",
+    "seoDescription": "Zdjęcia Hotelu Al Ponte w Cademario: wszystkie pokoje i apartamenty, basen, sauna, taras, sale na eventy oraz widoki na Jezioro Lugano i okolicę.",
+    "intro": "Wszystkie nasze zdjęcia w jednym miejscu – pokoje, hotel, eventy i okolica. Kliknij zdjęcie, aby obejrzeć album.",
+    "categories": {
+      "hotel": "Hotel i widoki",
+      "events": "Eventy",
+      "region": "Okolica"
+    },
+    "photos": "{count, plural, one {# zdjęcie} few {# zdjęcia} many {# zdjęć} other {# zdjęcia}}",
+    "close": "Zamknij",
+    "prev": "Poprzednie zdjęcie",
+    "next": "Następne zdjęcie"
   },
   "info": {
     "eyebrow": "Informacje",
@@ -847,10 +863,7 @@
         "title": "Imprezy firmowe i integracyjne",
         "intro": "Wieczór z widokiem na Lugano: restauracja z tarasem, DJ i taniec, a potem nocleg w hotelu.",
         "music": {
-          "title": "Muzyka do wyboru",
-          "polish": "Polska",
-          "or": "albo",
-          "italian": "Włoska i międzynarodowa"
+          "text": "Muzyka do wyboru: polska albo włoska i międzynarodowa."
         },
         "details": {
           "restaurant": "osób w restauracji z tarasem z widokiem na Lugano",
@@ -926,7 +939,7 @@
       "booking": "Rezerwacja w recepcji"
     },
     "note": "Aby zagwarantować dostępność, wymagana jest wcześniejsza rezerwacja w recepcji.",
-    "cta": "Atrakcje w hotelu",
+    "cta": "Inne atrakcje w hotelu",
     "details": "Szczegóły"
   },
   "hotelAttractions": {

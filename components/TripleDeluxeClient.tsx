@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import FlipOnChange from "./FlipOnChange";
 import { BookingChoice } from "./booking";
+import GuestsTile from "./GuestsTile";
 
 const TAGS: { key: string; Icon: LucideIcon }[] = [
   { key: "bath", Icon: Bath },
@@ -220,6 +221,9 @@ export default function TripleDeluxeClient({ photos }: Props) {
           className="order-3 flex flex-col bg-mist lg:order-none lg:col-start-1 lg:row-start-1"
         >
           <div className="flex flex-1 flex-col px-4 pb-6 pt-1 sm:px-8 sm:pb-8 lg:p-12">
+            <motion.div variants={fadeUp} className="mb-4 hidden justify-center lg:flex">
+              <GuestsTile panelId="triple-deluxe" />
+            </motion.div>
             <motion.h2
               id="triple-title"
               variants={fadeUp}
@@ -330,9 +334,12 @@ export default function TripleDeluxeClient({ photos }: Props) {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="lg:hidden"
           >
-            <p className="mb-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-forest/70">
-              {tRooms("apartments.title")}
-            </p>
+            <div className="mb-1.5 flex items-center justify-between gap-3">
+              <p className="text-[9px] font-medium uppercase tracking-[0.2em] text-forest/70">
+                {tRooms("apartments.title")}
+              </p>
+              <GuestsTile panelId="triple-deluxe" />
+            </div>
             <h2 className="text-left font-serif text-3xl uppercase leading-[1.05] tracking-tight text-ink">
               {t("title")}
             </h2>

@@ -7,7 +7,6 @@ import Hero from "@/components/Hero";
 import Rooms from "@/components/Rooms";
 import TripleDeluxe from "@/components/TripleDeluxe";
 import Amenities from "@/components/Amenities";
-import Gallery from "@/components/Gallery";
 import AttractionsTeaser from "@/components/AttractionsTeaser";
 import Wellness from "@/components/Wellness";
 import Reviews from "@/components/Reviews";
@@ -49,7 +48,6 @@ export default async function HomePage({
       {ROOM_DETAILS.map((room) => (
         <RoomPanel key={room.id} {...room} />
       ))}
-      <Gallery />
       <Wellness />
       <AttractionsTeaser />
       <Reviews />
