@@ -1,16 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import { BedDouble, Bus, Presentation, Users, type LucideIcon } from "lucide-react";
-import ParallaxImage from "../ParallaxImage";
-import { GROUP_PAGES } from "../groupPages";
 import {
   Enquiry,
-  HeroCta,
+  OfferHero,
   HotelAtAGlance,
   OfferSwitcher,
   TextLink,
   container,
-  eyebrow,
-  heroHeight,
 } from "./shared";
 
 const TILES: { key: string; Icon: LucideIcon }[] = [
@@ -20,30 +16,15 @@ const TILES: { key: string; Icon: LucideIcon }[] = [
   { key: "classroom", Icon: Presentation },
 ];
 
-// School trips - "tiles": a bright daylight photo with the title on a paper
-// card, then four practical icon tiles.
+// School trips - "tiles": the shared offer hero, then four practical icon
+// tiles.
 export default async function SchoolTrips() {
   const t = await getTranslations("groups");
   const p = (key: string) => t(`pages.schoolTrips.${key}`);
 
   return (
     <>
-      <section className={`relative flex ${heroHeight} w-full items-end overflow-hidden bg-forest`}>
-        <ParallaxImage src={GROUP_PAGES.schoolTrips.image} alt={p("imageAlt")} priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/65 via-forest/5 to-transparent" />
-        <div className={`relative ${container} pb-8 pt-28 lg:pb-14`}>
-          <div className="max-w-xl bg-paper p-8 text-ink lg:p-12">
-            <span className={`${eyebrow} text-forest`}>{t("eyebrow")}</span>
-            <h1 className="mt-5 text-balance break-words font-serif text-3xl leading-[1.1] hyphens-auto lg:text-5xl">
-              {p("title")}
-            </h1>
-            <p className="mt-5 text-sm leading-relaxed text-ink/70 lg:text-base">
-              {p("intro")}
-            </p>
-            <HeroCta tone="dark" className="mt-8" />
-          </div>
-        </div>
-      </section>
+      <OfferHero page="schoolTrips" />
 
       <OfferSwitcher current="schoolTrips" />
 

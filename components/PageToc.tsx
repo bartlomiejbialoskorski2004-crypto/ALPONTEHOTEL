@@ -177,8 +177,17 @@ export default function PageToc({ sections, tocTitle }: Props) {
       </motion.nav>
 
       {/* Mobile: bottom dock with current section + prev/next; tap the title
-          to open the full list above it. Never covers the reading area. */}
-      <div className="fixed inset-x-0 bottom-0 z-30 lg:hidden" aria-label={tocTitle}>
+          to open the full list above it. Never covers the reading area -
+          like the desktop sidebar it only slides up once the full-screen
+          hero has scrolled away, so it never hides the hero's buttons. */}
+      <motion.div
+        initial={false}
+        animate={{ y: visible || open ? "0%" : "110%" }}
+        transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+        style={{ pointerEvents: visible || open ? "auto" : "none" }}
+        className="fixed inset-x-0 bottom-0 z-30 lg:hidden"
+        aria-label={tocTitle}
+      >
         <AnimatePresence>
           {open && (
             <>
@@ -289,7 +298,7 @@ export default function PageToc({ sections, tocTitle }: Props) {
             </svg>
           </button>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

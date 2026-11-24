@@ -1,21 +1,19 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { GROUP_PAGES, GROUP_VENUES } from "../groupPages";
 import {
   Enquiry,
-  HeroCta,
+  OfferHero,
   HotelAtAGlance,
   OfferSwitcher,
   TextLink,
   container,
   eyebrow,
-  heroHeight,
 } from "./shared";
 
 type Step = { when: string; what: string };
 
-// Workshops - "rhythm of the day": a solid forest hero with a framed photo,
-// then the training day as four steps on a thin timeline.
+// Workshops - "rhythm of the day": the shared offer hero, then the
+// training day as four steps on a thin timeline.
 export default async function Workshops() {
   const t = await getTranslations("groups");
   const p = (key: string) => t(`pages.workshops.${key}`);
@@ -23,45 +21,7 @@ export default async function Workshops() {
 
   return (
     <>
-      <section className={`relative flex ${heroHeight} w-full overflow-hidden bg-forest text-paper`}>
-        {/* Phones: the photo becomes a washed-out backdrop so the hero keeps
-            the shared height; desktop shows it framed on the right. */}
-        <div aria-hidden className="absolute inset-0 lg:hidden">
-          <Image
-            src={GROUP_PAGES.workshops.image}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-forest/85" />
-        </div>
-        <div
-          className={`relative ${container} grid h-full grid-rows-[1fr] items-end gap-16 pb-14 pt-28 lg:grid-cols-[1.1fr_1fr] lg:pb-16 lg:pt-32`}
-        >
-          <div>
-            <span className={`${eyebrow} text-paper/70`}>{t("eyebrow")}</span>
-            <h1 className="mt-6 text-balance break-words font-serif text-[2rem] leading-[1.05] hyphens-auto sm:text-4xl lg:text-[3.4rem]">
-              {p("title")}
-            </h1>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-paper/80 lg:text-base">
-              {p("intro")}
-            </p>
-            <HeroCta className="mt-10" />
-          </div>
-          <div className="relative hidden h-full self-stretch overflow-hidden lg:block">
-            <Image
-              src={GROUP_PAGES.workshops.image}
-              alt={p("imageAlt")}
-              fill
-              priority
-              sizes="45vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      <OfferHero page="workshops" />
 
       <OfferSwitcher current="workshops" />
 

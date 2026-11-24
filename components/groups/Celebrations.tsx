@@ -1,19 +1,16 @@
 import { Fragment } from "react";
 import { getTranslations } from "next-intl/server";
-import ParallaxImage from "../ParallaxImage";
-import { GROUP_MAX_GUESTS, GROUP_PAGES, GROUP_VENUES } from "../groupPages";
+import { GROUP_MAX_GUESTS, GROUP_VENUES } from "../groupPages";
 import {
   Enquiry,
-  HeroCta,
+  OfferHero,
   HotelAtAGlance,
   OfferSwitcher,
   container,
-  eyebrow,
-  heroHeight,
 } from "./shared";
 
-// Celebrations - "invitation": a centred hero over the dusk terrace, then a
-// centred typographic card with gold hairlines and two key numbers.
+// Celebrations - "invitation": the shared offer hero, then a centred
+// typographic card with gold hairlines and two key numbers.
 export default async function Celebrations() {
   const t = await getTranslations("groups");
   const p = (key: string) => t(`pages.celebrations.${key}`);
@@ -26,21 +23,7 @@ export default async function Celebrations() {
 
   return (
     <>
-      <section className={`relative flex ${heroHeight} w-full items-center justify-center overflow-hidden bg-forest text-center text-paper`}>
-        <ParallaxImage src={GROUP_PAGES.celebrations.image} alt={p("imageAlt")} priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/25 to-forest/80" />
-        <div className={`relative ${container} pb-10 pt-24`}>
-          <span className={`${eyebrow} text-paper/75`}>{t("eyebrow")}</span>
-          <span aria-hidden className="mx-auto mt-6 block h-px w-12 bg-gold" />
-          <h1 className="mx-auto mt-6 max-w-3xl text-balance break-words font-serif text-[2rem] leading-[1.08] hyphens-auto sm:text-4xl lg:text-6xl">
-            {p("title")}
-          </h1>
-          <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-paper/80 lg:text-base">
-            {p("intro")}
-          </p>
-          <HeroCta className="mt-10" />
-        </div>
-      </section>
+      <OfferHero page="celebrations" />
 
       <OfferSwitcher current="celebrations" />
 

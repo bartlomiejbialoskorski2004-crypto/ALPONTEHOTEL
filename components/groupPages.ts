@@ -14,11 +14,11 @@ export const GROUP_KEYS = [
 export type GroupKey = (typeof GROUP_KEYS)[number];
 
 export const GROUP_PAGES: Record<GroupKey, { href: string; image: string }> = {
-  conferences: { href: "/conferences", image: "/gallery/4.jpg" },
-  workshops: { href: "/workshops", image: "/gallery/6.jpg" },
-  celebrations: { href: "/celebrations", image: "/gallery/2.jpg" },
+  conferences: { href: "/conferences", image: "/events/conferences.jpg" },
+  workshops: { href: "/workshops", image: "/events/workshops.jpg" },
+  celebrations: { href: "/celebrations", image: "/events/celebrations.jpg" },
   schoolTrips: { href: "/school-trips", image: "/mega/sansalvatore.jpg" },
-  companyEvents: { href: "/company-events", image: "/hero1.jpg" },
+  companyEvents: { href: "/company-events", image: "/events/company-events.jpg" },
 };
 
 // Venue capacities (people).

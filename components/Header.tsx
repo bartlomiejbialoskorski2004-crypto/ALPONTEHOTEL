@@ -10,7 +10,8 @@ import {
 } from "motion/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { GROUP_ICONS } from "./groupIcons";
 import BookNowButton from "./BookNowButton";
 import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
@@ -55,7 +56,11 @@ export default function Header({ bookingUrl }: Props) {
   const [hovered, setHovered] = useState(false);
   const [openMenu, setOpenMenu] = useState<MegaGroup | null>(null);
   // Offer previewed in the Events megamenu (photo follows hover/focus).
-  const [activeEvent, setActiveEvent] = useState<GroupKey>(GROUP_KEYS[0]);
+  // Defaults to the offer of the current page (first offer elsewhere).
+  const pathname = usePathname();
+  const currentEvent: GroupKey =
+    GROUP_KEYS.find((k) => GROUP_PAGES[k].href === pathname) ?? GROUP_KEYS[0];
+  const [activeEvent, setActiveEvent] = useState<GroupKey>(currentEvent);
   const [mobileOpen, setMobileOpen] = useState(false);
   // Hover only applies to devices with a real pointer. On touch, a tap fires
   // mouseenter without a matching mouseleave, which would latch `hovered` true
@@ -93,8 +98,8 @@ export default function Header({ bookingUrl }: Props) {
 
   // Each time the Events megamenu opens it starts on the first offer.
   useEffect(() => {
-    if (openMenu !== "events") setActiveEvent(GROUP_KEYS[0]);
-  }, [openMenu]);
+    if (openMenu !== "events") setActiveEvent(currentEvent);
+  }, [openMenu, currentEvent]);
 
   // Mega/mobile menu must never stay behind a hidden header.
   useEffect(() => {
@@ -365,7 +370,10 @@ export default function Header({ bookingUrl }: Props) {
                           {t("groups.menuTitle")}
                         </span>
                         <ul className="mt-4">
-                          {GROUP_KEYS.map((key) => (
+                          {GROUP_KEYS.map((key) => {
+                            const Icon = GROUP_ICONS[key];
+                            const on = activeEvent === key;
+                            return (
                             <li key={key}>
                               <Link
                                 href={GROUP_PAGES[key].href}
@@ -374,23 +382,36 @@ export default function Header({ bookingUrl }: Props) {
                                 onFocus={() => setActiveEvent(key)}
                                 className="group flex items-center justify-between gap-4 border-b border-mist py-3"
                               >
-                                <FlipText
-                                  className={`font-serif text-xl leading-tight transition-colors duration-300 ${
-                                    activeEvent === key ? "text-ink" : "text-ink/45"
-                                  }`}
-                                >
-                                  {t(`groups.pages.${key}.navLabel`)}
-                                </FlipText>
+                                <span className="flex items-center">
+                                  {/* Offer icon slides out beside the
+                                      highlighted (hovered / current) offer. */}
+                                  <span
+                                    aria-hidden
+                                    className={`inline-flex overflow-hidden text-forest transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                                      on ? "mr-3 max-w-6 opacity-100" : "mr-0 max-w-0 opacity-0"
+                                    }`}
+                                  >
+                                    <Icon className="h-4 w-4 shrink-0" strokeWidth={1.25} />
+                                  </span>
+                                  <FlipText
+                                    className={`font-serif text-xl leading-tight transition-colors duration-300 ${
+                                      on ? "text-ink" : "text-ink/45"
+                                    }`}
+                                  >
+                                    {t(`groups.pages.${key}.navLabel`)}
+                                  </FlipText>
+                                </span>
                                 <span
                                   className={`text-base text-forest transition-all duration-300 group-hover:translate-x-1 ${
-                                    activeEvent === key ? "opacity-100" : "opacity-0"
+                                    on ? "opacity-100" : "opacity-0"
                                   }`}
                                 >
                                   →
                                 </span>
                               </Link>
                             </li>
-                          ))}
+                            );
+                          })}
                         </ul>
                       </div>
                       <div>

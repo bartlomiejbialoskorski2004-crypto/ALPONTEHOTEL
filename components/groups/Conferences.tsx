@@ -1,20 +1,18 @@
 import { getTranslations } from "next-intl/server";
-import ParallaxImage from "../ParallaxImage";
 import { GROUP_MAX_GUESTS, GROUP_PAGES, GROUP_VENUES } from "../groupPages";
 import {
   Enquiry,
-  HeroCta,
+  OfferHero,
   HotelAtAGlance,
   OfferSwitcher,
   TextLink,
   container,
   eyebrow,
-  heroHeight,
 } from "./shared";
 
 const HALLS = ["conference", "seminar"] as const;
 
-// Conferences - "two rooms": a full-bleed photo hero, then the two venues
+// Conferences - "two rooms": the shared offer hero, then the two venues
 // side by side, each led by its capacity in large numerals.
 export default async function Conferences() {
   const t = await getTranslations("groups");
@@ -22,20 +20,7 @@ export default async function Conferences() {
 
   return (
     <>
-      <section className={`relative flex ${heroHeight} w-full items-end overflow-hidden bg-forest text-paper`}>
-        <ParallaxImage src={GROUP_PAGES.conferences.image} alt={p("imageAlt")} priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/40 to-forest/85" />
-        <div className={`relative ${container} pb-14 pt-28 lg:pb-16`}>
-          <span className={`${eyebrow} text-paper/70`}>{t("eyebrow")}</span>
-          <h1 className="mt-6 max-w-3xl text-balance break-words font-serif text-[2rem] leading-[1.05] hyphens-auto sm:text-4xl lg:text-6xl">
-            {p("title")}
-          </h1>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-paper/80 lg:text-base">
-            {p("intro")}
-          </p>
-          <HeroCta className="mt-10" />
-        </div>
-      </section>
+      <OfferHero page="conferences" />
 
       <OfferSwitcher current="conferences" />
 

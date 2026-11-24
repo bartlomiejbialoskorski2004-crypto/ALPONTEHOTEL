@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import PageToc, { BackToTop, type TocSection } from "./PageToc";
 import ParallaxImage from "./ParallaxImage";
 import DownloadLink from "./DownloadLink";
+import InfoNote from "./InfoNote";
 import FlipText from "./FlipText";
 import { Link } from "@/i18n/navigation";
 import { GROUP_KEYS, GROUP_PAGES } from "./groupPages";
@@ -97,24 +98,26 @@ export default async function Informations() {
 
   return (
     <article className="bg-paper text-ink">
-      {/* Hero band - hotel facade under a forest wash. */}
-      <section className="relative flex min-h-[58svh] w-full items-end overflow-hidden bg-forest text-paper">
+      {/* Hero band - hotel facade under a forest wash. Full first screen,
+          like the homepage hero; content sits at the bottom and is kept
+          compact so it never runs below the fold (incl. 375x667, de/fr). */}
+      <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-forest text-paper">
         <ParallaxImage src="/Hero2.jpg" alt={tHero("imageAlt")} priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/55 to-forest/90" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-44 lg:px-10 lg:pb-16 lg:pt-48">
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-8 pt-28 sm:pb-10 lg:px-10 lg:pb-12">
           <span className="block pr-12 text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75 lg:pr-0">
             {t("eyebrow")}
           </span>
-          <h1 className="mt-6 max-w-3xl text-balance font-serif text-3xl leading-[1.08] sm:text-4xl sm:leading-[1.05] lg:text-6xl">
+          <h1 className="mt-4 max-w-3xl text-balance font-serif text-[1.75rem] leading-[1.08] sm:mt-6 sm:text-4xl sm:leading-[1.05] lg:text-6xl">
             {t("title")}
           </h1>
-          <div className="mt-10 h-px w-16 bg-paper/30" />
-          <p className="mt-6 text-sm tracking-wide text-paper/85 lg:text-base">
+          <div className="mt-6 h-px w-16 bg-paper/30 sm:mt-10" />
+          <p className="mt-4 text-sm tracking-wide text-paper/85 sm:mt-6 lg:text-base">
             {t("address")}
           </p>
 
           {/* Quick-reference facts. */}
-          <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-paper/20 pt-8 sm:gap-x-8 sm:grid-cols-4">
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-paper/20 pt-5 sm:mt-10 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-7 sm:pt-8">
             {FACTS.map((f) => (
               <div key={f.key}>
                 <dt className="text-[10px] font-medium uppercase leading-snug tracking-[0.2em] text-paper/60">
@@ -124,15 +127,18 @@ export default async function Informations() {
                   {f.value}
                 </dd>
                 {f.key === "reception" && (
-                  <dd className="mt-1 text-[10px] leading-snug tracking-wide text-paper/55">
+                  <InfoNote
+                    as="dd"
+                    className="mt-1.5 text-[10px] leading-snug tracking-wide text-paper/55"
+                  >
                     {t("facts.receptionNote")}
-                  </dd>
+                  </InfoNote>
                 )}
               </div>
             ))}
           </dl>
 
-          <div className="mt-10">
+          <div className="mt-6 sm:mt-8">
             <DownloadLink href={RULES_PDF} label={t("download")} variant="light" />
           </div>
         </div>

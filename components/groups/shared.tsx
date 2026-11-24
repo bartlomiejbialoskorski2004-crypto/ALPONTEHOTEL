@@ -24,6 +24,9 @@ import {
 } from "lucide-react";
 import StripScroll from "./StripScroll";
 import StickyUnderHeader from "./StickyUnderHeader";
+import ParallaxImage from "../ParallaxImage";
+import InfoNote from "../InfoNote";
+import { GROUP_ICONS } from "../groupIcons";
 
 // Building blocks shared by the five group-offer pages. Every page uses the
 // same frame (switcher, hotel-at-a-glance, enquiry) around its own hero and
@@ -61,12 +64,42 @@ export async function HeroCta({
         <FlipText>{t("enquiryCta")}</FlipText>
         <span
           aria-hidden
-          className="transition-transform duration-300 group-hover:translate-y-0.5"
+          className="transition-transform duration-300 group-hover:translate-x-1"
         >
-          ↓
+          →
         </span>
       </JumpLink>
     </div>
+  );
+}
+
+// The one hero every offer page uses: full-bleed photo under an ink wash,
+// gold eyebrow, title, intro and enquiry link bottom-left.
+export async function OfferHero({ page }: { page: GroupKey }) {
+  const t = await getTranslations("groups");
+  const p = (key: string) => t(`pages.${page}.${key}`);
+  return (
+    <section
+      className={`relative flex ${heroHeight} w-full items-end overflow-hidden bg-ink text-paper`}
+    >
+      <ParallaxImage
+        src={GROUP_PAGES[page].image}
+        alt={p("imageAlt")}
+        priority
+        className="object-cover object-center opacity-45"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/35 to-ink" />
+      <div className={`relative ${container} pb-14 pt-28 lg:pb-16`}>
+        <span className={`${eyebrow} text-gold`}>{t("eyebrow")}</span>
+        <h1 className="mt-6 max-w-4xl text-balance break-words font-serif text-[2rem] leading-[1.04] hyphens-auto sm:text-4xl lg:text-7xl">
+          {p("title")}
+        </h1>
+        <p className="mt-6 max-w-xl text-sm leading-relaxed text-paper/75 lg:text-base">
+          {p("intro")}
+        </p>
+        <HeroCta className="mt-10" />
+      </div>
+    </section>
   );
 }
 
@@ -132,13 +165,28 @@ export async function OfferSwitcher({
               : dark
                 ? "text-paper/45 hover:text-paper"
                 : "text-ink/45 hover:text-ink";
+            const Icon = GROUP_ICONS[key];
             return (
               <li key={key} className="h-full shrink-0">
                 <Link
                   href={GROUP_PAGES[key].href}
                   aria-current={active ? "page" : undefined}
-                  className={`relative flex h-full items-center whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.18em] transition-colors ${color}`}
+                  className={`group relative flex h-full items-center whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.18em] transition-colors ${color}`}
                 >
+                  {/* Offer icon, left of the label (absolute, so nothing
+                      shifts): always on for the current offer, fades in on
+                      hover for the others. */}
+                  <Icon
+                    aria-hidden
+                    strokeWidth={1.25}
+                    className={`absolute -left-5 h-3.5 w-3.5 transition-all duration-300 ${
+                      dark ? "text-gold" : "text-forest"
+                    } ${
+                      active
+                        ? "translate-x-0 opacity-100"
+                        : "-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                    }`}
+                  />
                   {t(`pages.${key}.navLabel`)}
                   {active && (
                     <span
@@ -224,9 +272,9 @@ export async function HotelAtAGlance() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-ink/60">
+            <InfoNote className="mt-4 text-sm leading-relaxed text-ink/60">
               {t("staffRooms")}
-            </p>
+            </InfoNote>
           </Row>
 
           <Row icon={Tv} label={t("labels.inRooms")}>
@@ -267,7 +315,7 @@ export async function HotelAtAGlance() {
                 );
               })}
             </ul>
-            <p className="mt-4 text-xs text-ink/50">{t("meals.unit")}</p>
+            <InfoNote className="mt-4 text-xs text-ink/50">{t("meals.unit")}</InfoNote>
           </Row>
 
           <Row icon={Hotel} label={t("labels.onSite")}>
@@ -276,9 +324,9 @@ export async function HotelAtAGlance() {
                 <li key={line}>{line}</li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-ink/60">
+            <InfoNote className="mt-4 text-sm leading-relaxed text-ink/60">
               {tInfo("pool.closure")}
-            </p>
+            </InfoNote>
           </Row>
 
           <Row icon={Ticket} label={t("labels.included")}>
