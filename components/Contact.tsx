@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import FlipText from "./FlipText";
+import ContactForm from "./ContactForm";
 import { EMAIL, MAPS_EMBED, MAPS_LINK, PHONE, PHONE_HREF } from "./contact-info";
 
 export default function Contact() {
@@ -58,6 +59,9 @@ export default function Contact() {
             </a>
           </div>
         </div>
+
+        {/* Direct-booking enquiry (composes an e-mail, no backend). */}
+        <ContactForm />
 
         {/* Map - full-bleed across the viewport */}
         <div className="relative mt-12 min-h-[24rem] w-full overflow-hidden border-y border-mist lg:mt-16 lg:min-h-[34rem]">

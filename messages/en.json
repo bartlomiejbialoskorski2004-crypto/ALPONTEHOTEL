@@ -60,7 +60,29 @@
     "address": "Address",
     "phone": "Phone",
     "email": "E-mail",
-    "directions": "Directions"
+    "directions": "Directions",
+    "form": {
+      "eyebrow": "Direct booking",
+      "title": "Ask about availability",
+      "name": "Full name",
+      "email": "E-mail",
+      "phone": "Phone",
+      "arrival": "Arrival",
+      "departure": "Departure",
+      "adults": "Adults",
+      "children": "Children",
+      "room": "Room",
+      "roomAny": "Any – please advise",
+      "message": "Message",
+      "optional": "optional",
+      "submit": "Create enquiry e-mail",
+      "note": "Your e-mail app will open with a ready-made message to the hotel – just press send.",
+      "subject": "Booking enquiry",
+      "greeting": "Hello,",
+      "request": "I would like to ask about availability and price for:",
+      "closing": "Kind regards,",
+      "orCall": "Prefer to call?"
+    }
   },
   "rooms": {
     "title": "Rooms",
@@ -215,8 +237,8 @@
     "eyebrow": "Amenities",
     "title": "Hotel amenities & comforts",
     "pool": {
-      "title": "Swimming Pool",
-      "desc": "Cool off in our indoor pool under a glass roof, with panoramic views of Lake Lugano.",
+      "title": "Sauna & pool",
+      "desc": "Cool off in our indoor pool with jacuzzi under a glass roof, with panoramic views of Lake Lugano.",
       "note": "Temporarily closed: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -295,6 +317,7 @@
       "hours": "Hours",
       "safety": "Safety",
       "pool": "Pool",
+      "sauna": "Sauna",
       "parking": "Parking",
       "tax": "Tourist tax",
       "services": "Services",
@@ -376,6 +399,10 @@
     "groups": {
       "title": "Group offers",
       "body": "Hotel Al Ponte welcomes groups of up to 63 people. See what we can organise for you:"
+    },
+    "sauna": {
+      "title": "Private sauna",
+      "body": "Guests can enjoy a private Finnish sauna for their exclusive use, at CHF 15 per hour. To guarantee availability, please book at reception in advance."
     }
   },
   "attractions": {
@@ -897,7 +924,8 @@
       "booking": "Booked at reception"
     },
     "note": "To guarantee availability, please book at reception in advance.",
-    "cta": "At the hotel"
+    "cta": "At the hotel",
+    "details": "Details"
   },
   "hotelAttractions": {
     "label": "At the hotel",
@@ -969,5 +997,20 @@
       "text": "The Ticino Ticket is included in your stay and the bus stop is 25 m from the hotel: Lugano, the mountains and the lake are within easy reach.",
       "cta": "Ticino attractions"
     }
+  },
+  "booking": {
+    "direct": "Book with us",
+    "via": "Book on",
+    "perks": [
+      "Best rate",
+      "Direct contact",
+      "Free Ticino Ticket"
+    ],
+    "benefitsTitle": "By booking directly, we assure you:",
+    "benefits": [
+      "The lowest rate possible for your stay",
+      "Direct contact with the hotel and personalised service",
+      "Ticino Ticket: free public transport in the whole Canton of Ticino"
+    ]
   }
 }

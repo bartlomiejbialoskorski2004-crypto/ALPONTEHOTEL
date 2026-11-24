@@ -5,11 +5,10 @@ import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import BookNowButton from "./BookNowButton";
+import { BookingChoice } from "./booking";
 import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { NAV } from "./menu";
-import { BOOKING } from "./contact-info";
 import { useAnchor } from "./useAnchor";
 
 type Props = {
@@ -78,11 +77,7 @@ export default function MobileMenu({ open, onClose, bookingUrl }: Props) {
 
           <div className="flex flex-col items-center gap-6 px-6 pb-10">
             <LocaleSwitcher tone="dark" />
-            <BookNowButton
-              href={BOOKING}
-              variant="primary"
-              className="w-full justify-center"
-            />
+            <BookingChoice onNavigate={onClose} className="w-full max-w-sm" />
           </div>
         </motion.div>
       )}

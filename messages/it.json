@@ -60,7 +60,29 @@
     "address": "Indirizzo",
     "phone": "Telefono",
     "email": "E-mail",
-    "directions": "Come raggiungerci"
+    "directions": "Come raggiungerci",
+    "form": {
+      "eyebrow": "Prenotazione diretta",
+      "title": "Chiedi la disponibilità",
+      "name": "Nome e cognome",
+      "email": "E-mail",
+      "phone": "Telefono",
+      "arrival": "Arrivo",
+      "departure": "Partenza",
+      "adults": "Adulti",
+      "children": "Bambini",
+      "room": "Camera",
+      "roomAny": "Qualsiasi – consigliatemi voi",
+      "message": "Messaggio",
+      "optional": "facoltativo",
+      "submit": "Crea l'e-mail di richiesta",
+      "note": "Si aprirà il tuo programma di posta con un'e-mail già pronta per l'hotel: basta inviarla.",
+      "subject": "Richiesta di prenotazione",
+      "greeting": "Buongiorno,",
+      "request": "vorrei conoscere disponibilità e prezzo per:",
+      "closing": "Cordiali saluti,",
+      "orCall": "Preferisci telefonare?"
+    }
   },
   "rooms": {
     "title": "Camere",
@@ -215,8 +237,8 @@
     "eyebrow": "Servizi",
     "title": "Servizi e comfort dell'hotel",
     "pool": {
-      "title": "Piscina",
-      "desc": "Rinfrescati nella nostra piscina coperta sotto un tetto di vetro, con vista panoramica sul Lago di Lugano.",
+      "title": "Sauna e piscina",
+      "desc": "Rinfrescati nella nostra piscina coperta con idromassaggio sotto un tetto di vetro, con vista panoramica sul Lago di Lugano.",
       "note": "Temporaneamente chiusa: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -295,6 +317,7 @@
       "hours": "Orari",
       "safety": "Sicurezza",
       "pool": "Piscina",
+      "sauna": "Sauna",
       "parking": "Parcheggio",
       "tax": "Tassa di soggiorno",
       "services": "Servizi",
@@ -376,6 +399,10 @@
     "groups": {
       "title": "Offerte per gruppi",
       "body": "L'Hotel Al Ponte può ospitare gruppi fino a 63 persone. Scopri cosa possiamo organizzare per voi:"
+    },
+    "sauna": {
+      "title": "Sauna privata",
+      "body": "Per gli ospiti è disponibile una sauna finlandese privata ad uso esclusivo, al prezzo di CHF 15 all'ora. Per garantire la disponibilità è necessaria la prenotazione presso la reception."
     }
   },
   "attractions": {
@@ -897,7 +924,8 @@
       "booking": "Prenotazione alla reception"
     },
     "note": "Per garantire la disponibilità è necessaria la prenotazione presso la reception.",
-    "cta": "In hotel"
+    "cta": "In hotel",
+    "details": "Dettagli"
   },
   "hotelAttractions": {
     "label": "In hotel",
@@ -969,5 +997,20 @@
       "text": "Ticino Ticket incluso nel soggiorno e fermata a 25 m dall'hotel: Lugano, le montagne e il lago a portata di mano.",
       "cta": "Attrazioni del Ticino"
     }
+  },
+  "booking": {
+    "direct": "Prenota con noi",
+    "via": "Prenota su",
+    "perks": [
+      "Miglior prezzo",
+      "Contatto diretto",
+      "Ticino Ticket gratis"
+    ],
+    "benefitsTitle": "Prenotando direttamente vi garantiamo:",
+    "benefits": [
+      "La tariffa più bassa possibile per il vostro soggiorno",
+      "Contatto diretto con l'hotel e un servizio personalizzato",
+      "Ticino Ticket: trasporto pubblico gratuito in tutto il Canton Ticino"
+    ]
   }
 }

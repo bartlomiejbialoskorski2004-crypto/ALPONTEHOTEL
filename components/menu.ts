@@ -34,7 +34,7 @@ export const NAV: NavEntry[] = [
     href: "/informations",
     mega: {
       group: "informations",
-      items: ["hours", "pool", "parking", "services", "tax", "transport"],
+      items: ["hours", "pool", "sauna", "parking", "services", "tax", "transport"],
     },
   },
   {

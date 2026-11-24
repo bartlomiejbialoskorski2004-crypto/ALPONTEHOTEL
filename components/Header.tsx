@@ -12,20 +12,21 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
 import { GROUP_ICONS } from "./groupIcons";
-import { SAUNA_IMAGE } from "./wellnessShared";
-import BookNowButton from "./BookNowButton";
+import { BookMenu } from "./booking";
 import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
 import MenuToggle from "./MenuToggle";
 import MobileMenu from "./MobileMenu";
 import { NAV, type MegaGroup, type NavEntry } from "./menu";
 import { GROUP_KEYS, GROUP_PAGES, type GroupKey } from "./groupPages";
-import { BOOKING } from "./contact-info";
 import { useAnchor } from "./useAnchor";
 import { setHeaderHidden } from "./headerStore";
 
 // Hex equivalents of the CSS @theme tokens - motion can't interpolate var()
 // cleanly, so we feed it real colour values for the adaptive bar.
+// In-hotel highlights listed under the Attractions megamenu.
+const HOTEL_ATTRACTIONS = ["pool", "sauna", "terrace", "garden"] as const;
+
 const COLORS = {
   paper: "#fafaf7",
   forest: "#1f3d2b",
@@ -338,8 +339,7 @@ export default function Header({ bookingUrl }: Props) {
               className="pointer-events-auto relative z-30 hidden items-center gap-5 lg:flex"
             >
               <LocaleSwitcher tone={onPaper ? "dark" : "light"} />
-              <BookNowButton
-                href={BOOKING}
+              <BookMenu
                 variant={
                   onForest ? "light" : onPaper ? "primary" : "ghost"
                 }
@@ -464,41 +464,32 @@ export default function Header({ bookingUrl }: Props) {
                     </div>
                   );
 
-                  // Attractions: an "At the hotel" photo tile first (pool,
-                  // sauna, terrace), then the Ticino quick-links.
+                  // Attractions: the Ticino quick-links, then an "At the hotel"
+                  // block (pool, sauna, terrace, garden) - text only.
                   if (group === "attractions") {
                     return (
-                      <div className="mx-auto grid max-w-7xl grid-cols-[17rem_1fr] gap-12 px-6 py-10 lg:px-10">
-                        <Link
-                          href="/hotel-attractions"
-                          onClick={() => setOpenMenu(null)}
-                          className="group flex flex-col"
-                        >
-                          <span className="relative block aspect-[4/3] w-full overflow-hidden bg-ink/[0.06]">
-                            <Image
-                              src={SAUNA_IMAGE}
-                              alt={t("hotelAttractions.menu.title")}
-                              fill
-                              sizes="(max-width: 1024px) 0px, 17rem"
-                              className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                            />
-                          </span>
-                          <span className="mt-4 text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
-                            {t("hotelAttractions.menu.eyebrow")}
-                          </span>
-                          <span className="mt-2 flex items-center justify-between gap-3">
-                            <FlipText className="font-serif text-xl leading-tight">
-                              {t("hotelAttractions.menu.title")}
-                            </FlipText>
-                            <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
-                              →
-                            </span>
-                          </span>
-                          <span className="mt-1 text-sm leading-relaxed text-ink/60">
-                            {t("hotelAttractions.menu.desc")}
-                          </span>
-                        </Link>
+                      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
                         {quickLinks}
+                        <span className="mt-10 block text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                          {t("hotelAttractions.label")}
+                        </span>
+                        <div className="mt-6 grid grid-cols-2 gap-x-12 md:grid-cols-4">
+                          {HOTEL_ATTRACTIONS.map((key) => (
+                            <Link
+                              key={key}
+                              href={`/hotel-attractions#${key}`}
+                              onClick={() => setOpenMenu(null)}
+                              className="group flex items-center justify-between gap-4 border-b border-mist py-4"
+                            >
+                              <FlipText className="font-serif text-lg leading-tight">
+                                {t(`hotelAttractions.highlights.${key}`)}
+                              </FlipText>
+                              <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
+                                →
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     );
                   }

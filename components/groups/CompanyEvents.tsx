@@ -62,7 +62,7 @@ export default async function CompanyEvents() {
               </span>
               <InfoNote
                 as="span"
-                className="mt-6 text-[10px] font-medium uppercase tracking-[0.25em] text-paper/45"
+                className="mt-6 font-medium uppercase tracking-[0.2em] text-paper/50"
               >
                 {p("music.title")}
               </InfoNote>

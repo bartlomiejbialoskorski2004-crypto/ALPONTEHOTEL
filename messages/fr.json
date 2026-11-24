@@ -60,7 +60,29 @@
     "address": "Adresse",
     "phone": "Téléphone",
     "email": "E-mail",
-    "directions": "Itinéraire"
+    "directions": "Itinéraire",
+    "form": {
+      "eyebrow": "Réservation directe",
+      "title": "Demander les disponibilités",
+      "name": "Nom et prénom",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "arrival": "Arrivée",
+      "departure": "Départ",
+      "adults": "Adultes",
+      "children": "Enfants",
+      "room": "Chambre",
+      "roomAny": "Indifférent – conseillez-moi",
+      "message": "Message",
+      "optional": "facultatif",
+      "submit": "Créer l'e-mail de demande",
+      "note": "Votre messagerie s'ouvrira avec un e-mail prêt pour l'hôtel : il suffit de l'envoyer.",
+      "subject": "Demande de réservation",
+      "greeting": "Bonjour,",
+      "request": "je souhaiterais connaître la disponibilité et le prix pour :",
+      "closing": "Cordialement,",
+      "orCall": "Vous préférez appeler ?"
+    }
   },
   "rooms": {
     "title": "Chambres",
@@ -215,8 +237,8 @@
     "eyebrow": "Services",
     "title": "Équipements et conforts de l'hôtel",
     "pool": {
-      "title": "Piscine",
-      "desc": "Rafraîchissez-vous dans notre piscine couverte sous un toit de verre, avec vue panoramique sur le lac de Lugano.",
+      "title": "Sauna et piscine",
+      "desc": "Rafraîchissez-vous dans notre piscine couverte avec jacuzzi sous un toit de verre, avec vue panoramique sur le lac de Lugano.",
       "note": "Temporairement fermée : 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -295,6 +317,7 @@
       "hours": "Horaires",
       "safety": "Sécurité",
       "pool": "Piscine",
+      "sauna": "Sauna",
       "parking": "Parking",
       "tax": "Taxe de séjour",
       "services": "Services",
@@ -376,6 +399,10 @@
     "groups": {
       "title": "Offres pour groupes",
       "body": "L'Hôtel Al Ponte accueille des groupes jusqu'à 63 personnes. Découvrez ce que nous pouvons organiser pour vous :"
+    },
+    "sauna": {
+      "title": "Sauna privé",
+      "body": "Les clients disposent d'un sauna finlandais privé à usage exclusif, au prix de CHF 15 l'heure. Pour garantir la disponibilité, merci de réserver à l'avance à la réception."
     }
   },
   "attractions": {
@@ -897,7 +924,8 @@
       "booking": "Réservation à la réception"
     },
     "note": "Pour garantir la disponibilité, une réservation à la réception est nécessaire.",
-    "cta": "À l'hôtel"
+    "cta": "À l'hôtel",
+    "details": "Détails"
   },
   "hotelAttractions": {
     "label": "À l'hôtel",
@@ -969,5 +997,20 @@
       "text": "Ticino Ticket inclus dans le séjour et arrêt de bus à 25 m de l'hôtel : Lugano, les montagnes et le lac à portée de main.",
       "cta": "Attractions du Tessin"
     }
+  },
+  "booking": {
+    "direct": "Réserver chez nous",
+    "via": "Réserver sur",
+    "perks": [
+      "Meilleur prix",
+      "Contact direct",
+      "Ticino Ticket gratuit"
+    ],
+    "benefitsTitle": "En réservant directement, nous vous garantissons :",
+    "benefits": [
+      "Le tarif le plus bas possible pour votre séjour",
+      "Un contact direct avec l'hôtel et un service personnalisé",
+      "Ticino Ticket : transports publics gratuits dans tout le canton du Tessin"
+    ]
   }
 }

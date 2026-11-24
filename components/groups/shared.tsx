@@ -73,6 +73,11 @@ export async function HeroCta({
   );
 }
 
+// Soft left-to-right scrim behind hero text on photo heroes that are not
+// darkened (offer pages, "At the hotel").
+export const HERO_TEXT_SCRIM =
+  "absolute inset-0 bg-gradient-to-r from-ink/50 via-ink/15 to-transparent lg:via-ink/10";
+
 // Only the company-events page is the dark, "evening" one; gold accents are
 // reserved for it and for celebrations/weddings.
 const DARK_HERO: GroupKey[] = ["companyEvents"];
@@ -100,9 +105,12 @@ export async function OfferHero({ page }: { page: GroupKey }) {
         className={`absolute inset-0 bg-gradient-to-b ${
           dark
             ? "from-ink/75 via-ink/35 to-ink"
-            : "from-ink/35 via-transparent to-ink/60"
+            : "from-ink/35 via-transparent to-ink/70"
         }`}
       />
+      {/* Light heroes: a soft scrim behind the text column only, so the
+          headline reads clearly without darkening the whole photo. */}
+      {!dark && <div className={HERO_TEXT_SCRIM} />}
       <div className={`relative ${container} pb-14 pt-28 lg:pb-16`}>
         <span
           className={`${eyebrow} ${GOLD_PAGES.includes(page) ? "text-gold" : "text-paper/80"}`}
@@ -151,6 +159,10 @@ export function TextLink({
   );
 }
 
+// Soft fade at both ends of the phone pill strip (no hard cut-off).
+const PILL_FADE =
+  "[mask-image:linear-gradient(to_right,transparent,black_24px,black_calc(100%-24px),transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_24px,black_calc(100%-24px),transparent)]";
+
 // Slim strip under each hero listing all five offers, current one marked -
 // the "you are here" anchor across the family.
 export async function OfferSwitcher({
@@ -172,8 +184,37 @@ export async function OfferSwitcher({
           : "border-b border-mist bg-paper/90 backdrop-blur"
       }`}
     >
-      <div className={`${container} h-full`}>
-        <StripScroll className="-mx-6 flex h-full gap-8 overflow-x-auto px-6 [scrollbar-width:none] lg:mx-0 lg:justify-between lg:px-0 [&::-webkit-scrollbar]:hidden">
+      {/* Phones: scrollable pills (icon + label, current one filled) with
+          soft-faded edges instead of a hard cut, current pill centred. */}
+      <StripScroll className={`flex h-full snap-x snap-mandatory items-center gap-2 overflow-x-auto px-6 [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden ${PILL_FADE}`}>
+        {GROUP_KEYS.map((key) => {
+          const active = key === current;
+          const Icon = GROUP_ICONS[key];
+          const pill = active
+            ? dark
+              ? "border-gold bg-gold text-ink"
+              : "border-forest bg-forest text-paper"
+            : dark
+              ? "border-paper/20 text-paper/80"
+              : "border-ink/15 bg-paper text-ink/75";
+          return (
+            <li key={key} className="shrink-0 snap-center">
+              <Link
+                href={GROUP_PAGES[key].href}
+                aria-current={active ? "page" : undefined}
+                className={`flex items-center gap-2 whitespace-nowrap rounded-full border px-3.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors ${pill}`}
+              >
+                <Icon aria-hidden className="h-3.5 w-3.5 shrink-0" strokeWidth={1.5} />
+                {t(`pages.${key}.navLabel`)}
+              </Link>
+            </li>
+          );
+        })}
+      </StripScroll>
+
+      {/* Desktop: the text strip; icon in the arrow's place. */}
+      <div className={`${container} hidden h-full lg:block`}>
+        <StripScroll className="flex h-full justify-between">
           {GROUP_KEYS.map((key) => {
             const active = key === current;
             const color = active
@@ -289,7 +330,7 @@ export async function HotelAtAGlance() {
                 </li>
               ))}
             </ul>
-            <InfoNote className="mt-4 text-sm leading-relaxed text-ink/60">
+            <InfoNote className="mt-4 text-ink/60">
               {t("staffRooms")}
             </InfoNote>
           </Row>
@@ -332,7 +373,7 @@ export async function HotelAtAGlance() {
                 );
               })}
             </ul>
-            <InfoNote className="mt-4 text-xs text-ink/50">{t("meals.unit")}</InfoNote>
+            <InfoNote className="mt-4 text-ink/55">{t("meals.unit")}</InfoNote>
           </Row>
 
           <Row icon={Hotel} label={t("labels.onSite")}>
@@ -341,7 +382,7 @@ export async function HotelAtAGlance() {
                 <li key={line}>{line}</li>
               ))}
             </ul>
-            <InfoNote className="mt-4 text-sm leading-relaxed text-ink/60">
+            <InfoNote className="mt-4 text-ink/60">
               {tInfo("pool.closure")}
             </InfoNote>
           </Row>

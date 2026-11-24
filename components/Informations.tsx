@@ -52,6 +52,7 @@ const NAV_KEYS = [
   "hours",
   "safety",
   "pool",
+  "sauna",
   "parking",
   "tax",
   "services",
@@ -60,6 +61,11 @@ const NAV_KEYS = [
   "requests",
   "groups",
 ] as const;
+
+// Section number from its position in NAV_KEYS (so inserting a section
+// renumbers the rest automatically).
+const num = (id: (typeof NAV_KEYS)[number]) =>
+  String(NAV_KEYS.indexOf(id) + 1).padStart(2, "0");
 
 const sectionBody = "mt-8 max-w-prose text-base leading-relaxed text-ink/80";
 
@@ -83,12 +89,28 @@ function SectionHead({ num, title }: { num: string; title: string }) {
   );
 }
 
+// Link from the pool / sauna facts to the warm "At the hotel" page.
+function HotelLink({ hash, label }: { hash: string; label: string }) {
+  return (
+    <Link
+      href={`/hotel-attractions#${hash}`}
+      className="group mt-8 inline-flex items-center gap-2 border border-ink/15 px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:border-forest hover:text-forest"
+    >
+      <FlipText>{label}</FlipText>
+      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+        →
+      </span>
+    </Link>
+  );
+}
+
 const block = "mt-20 scroll-mt-24 border-t border-mist pt-16 lg:mt-28 lg:scroll-mt-28 lg:pt-24";
 
 export default async function Informations() {
   const t = await getTranslations("info");
   const tHero = await getTranslations("hero");
   const tGroups = await getTranslations("groups");
+  const tHotel = await getTranslations("hotelAttractions");
 
   const tocSections: TocSection[] = NAV_KEYS.map((id, i) => ({
     id,
@@ -129,7 +151,7 @@ export default async function Informations() {
                 {f.key === "reception" && (
                   <InfoNote
                     as="dd"
-                    className="mt-1.5 text-[10px] leading-snug tracking-wide text-paper/55"
+                    className="mt-1.5 text-paper/60"
                   >
                     {t("facts.receptionNote")}
                   </InfoNote>
@@ -151,7 +173,7 @@ export default async function Informations() {
 
         <div className="min-w-0 pb-28 lg:pb-0">
           <section id="hours" className="scroll-mt-24 lg:scroll-mt-28">
-            <SectionHead num="01" title={t("hours.title")} />
+            <SectionHead num={num("hours")} title={t("hours.title")} />
             <div className="mt-10 divide-y divide-mist border-y border-mist">
               {HOURS_KEYS.map((k) => (
                 <p
@@ -173,7 +195,7 @@ export default async function Informations() {
               firstStop > 0 ? intro.slice(firstStop + 1).trim() : "";
             return (
               <section id="safety" className={block}>
-                <SectionHead num="02" title={heading} />
+                <SectionHead num={num("safety")} title={heading} />
                 <div className="mt-10 max-w-prose space-y-7 text-base leading-relaxed text-ink/80">
                   {introRest && <p>{introRest}</p>}
                   <p>{t("safety.smokingBan")}</p>
@@ -190,26 +212,33 @@ export default async function Informations() {
           })()}
 
           <section id="pool" className={block}>
-            <SectionHead num="03" title={t("pool.title")} />
+            <SectionHead num={num("pool")} title={t("pool.title")} />
             {/* Temporary closure notice (12.10.2026 - 14.03.2027). */}
             <p className="mt-8 max-w-prose border-l-2 border-forest pl-6 text-base font-medium leading-relaxed text-forest lg:pl-8">
               {t("pool.closure")}
             </p>
             <p className={sectionBody}>{t("pool.body")}</p>
+            <HotelLink hash="pool" label={tHotel("label")} />
+          </section>
+
+          <section id="sauna" className={block}>
+            <SectionHead num={num("sauna")} title={t("sauna.title")} />
+            <p className={sectionBody}>{t("sauna.body")}</p>
+            <HotelLink hash="sauna" label={tHotel("label")} />
           </section>
 
           <section id="parking" className={block}>
-            <SectionHead num="04" title={t("parking.title")} />
+            <SectionHead num={num("parking")} title={t("parking.title")} />
             <p className={sectionBody}>{t("parking.body")}</p>
           </section>
 
           <section id="tax" className={block}>
-            <SectionHead num="05" title={t("tax.title")} />
+            <SectionHead num={num("tax")} title={t("tax.title")} />
             <p className={sectionBody}>{t("tax.body")}</p>
           </section>
 
           <section id="services" className={block}>
-            <SectionHead num="06" title={t("services.title")} />
+            <SectionHead num={num("services")} title={t("services.title")} />
             <ol className="mt-10">
               {SERVICE_KEYS.map((k) => {
                 const isWarning = k === "11";
@@ -237,23 +266,23 @@ export default async function Informations() {
           </section>
 
           <section id="tv" className={block}>
-            <SectionHead num="07" title={t("tv.title")} />
+            <SectionHead num={num("tv")} title={t("tv.title")} />
             <p className={sectionBody}>{t("tv.body")}</p>
           </section>
 
           <section id="transport" className={block}>
-            <SectionHead num="08" title={t("transport.title")} />
+            <SectionHead num={num("transport")} title={t("transport.title")} />
             <p className={sectionBody}>{t("transport.body")}</p>
           </section>
 
           <section id="requests" className={block}>
-            <SectionHead num="09" title={t("otherRequests.title")} />
+            <SectionHead num={num("requests")} title={t("otherRequests.title")} />
             <p className={sectionBody}>{t("otherRequests.body")}</p>
           </section>
 
           {/* Group-offer subpages (also the mobile route to them). */}
           <section id="groups" className={block}>
-            <SectionHead num="10" title={t("groups.title")} />
+            <SectionHead num={num("groups")} title={t("groups.title")} />
             <p className={sectionBody}>{t("groups.body")}</p>
             <ul className="mt-8 grid gap-x-10 sm:grid-cols-2">
               {GROUP_KEYS.map((key) => (

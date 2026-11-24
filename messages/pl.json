@@ -60,7 +60,29 @@
     "address": "Adres",
     "phone": "Telefon",
     "email": "E-mail",
-    "directions": "Wskazówki dojazdu"
+    "directions": "Wskazówki dojazdu",
+    "form": {
+      "eyebrow": "Rezerwacja bezpośrednia",
+      "title": "Zapytaj o wolny termin",
+      "name": "Imię i nazwisko",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "arrival": "Przyjazd",
+      "departure": "Wyjazd",
+      "adults": "Dorośli",
+      "children": "Dzieci",
+      "room": "Pokój",
+      "roomAny": "Dowolny – doradźcie mi",
+      "message": "Wiadomość",
+      "optional": "opcjonalnie",
+      "submit": "Utwórz e-mail z zapytaniem",
+      "note": "Otworzy się Twój program pocztowy z gotowym e-mailem do hotelu – wystarczy go wysłać.",
+      "subject": "Zapytanie o rezerwację",
+      "greeting": "Dzień dobry,",
+      "request": "proszę o informację o dostępności i cenie:",
+      "closing": "Pozdrawiam,",
+      "orCall": "Wolisz zadzwonić?"
+    }
   },
   "rooms": {
     "title": "Pokoje",
@@ -215,8 +237,8 @@
     "eyebrow": "Udogodnienia",
     "title": "Udogodnienia i komfort hotelu",
     "pool": {
-      "title": "Basen",
-      "desc": "Odśwież się w krytym basenie pod szklanym dachem, z panoramą jeziora Lugano.",
+      "title": "Sauna i basen",
+      "desc": "Odśwież się w krytym basenie z jacuzzi pod szklanym dachem, z panoramą jeziora Lugano.",
       "note": "Czasowo zamknięty: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -295,6 +317,7 @@
       "hours": "Godziny",
       "safety": "Bezpieczeństwo",
       "pool": "Basen",
+      "sauna": "Sauna",
       "parking": "Parking",
       "tax": "Podatek turystyczny",
       "services": "Usługi",
@@ -376,6 +399,10 @@
     "groups": {
       "title": "Oferta dla grup",
       "body": "Hotel Al Ponte przyjmie grupę do 63 osób. Zobacz, co możemy dla Was zorganizować:"
+    },
+    "sauna": {
+      "title": "Prywatna sauna",
+      "body": "Do dyspozycji gości jest prywatna sauna fińska do wyłącznej dyspozycji, w cenie CHF 15 za godzinę. Aby zagwarantować dostępność, prosimy o wcześniejszą rezerwację w recepcji."
     }
   },
   "attractions": {
@@ -897,7 +924,8 @@
       "booking": "Rezerwacja w recepcji"
     },
     "note": "Aby zagwarantować dostępność, wymagana jest wcześniejsza rezerwacja w recepcji.",
-    "cta": "Atrakcje w hotelu"
+    "cta": "Atrakcje w hotelu",
+    "details": "Szczegóły"
   },
   "hotelAttractions": {
     "label": "Atrakcje w hotelu",
@@ -969,5 +997,20 @@
       "text": "Ticino Ticket w cenie pobytu i przystanek 25 m od hotelu: Lugano, góry i jezioro na wyciągnięcie ręki.",
       "cta": "Atrakcje Ticino"
     }
+  },
+  "booking": {
+    "direct": "Rezerwuj z nami",
+    "via": "Rezerwuj przez",
+    "perks": [
+      "Najniższa cena",
+      "Kontakt bezpośredni",
+      "Ticino Ticket gratis"
+    ],
+    "benefitsTitle": "Rezerwując bezpośrednio, gwarantujemy:",
+    "benefits": [
+      "Najniższą możliwą cenę za pobyt",
+      "Bezpośredni kontakt z hotelem i indywidualną obsługę",
+      "Ticino Ticket: bezpłatną komunikację publiczną w całym kantonie Ticino"
+    ]
   }
 }

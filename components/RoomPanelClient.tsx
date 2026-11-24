@@ -4,9 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
-  useMotionValue,
   useReducedMotion,
-  useSpring,
   type Variants,
 } from "motion/react";
 import { useTranslations } from "next-intl";
@@ -37,9 +35,8 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
-import FlipText from "./FlipText";
 import FlipOnChange from "./FlipOnChange";
-import { BOOKING } from "./contact-info";
+import { BookingChoice } from "./booking";
 
 // Shared amenity chip icons; labels come from `rooms.amenities.<key>`.
 const AMENITY_ICONS: Record<string, LucideIcon> = {
@@ -116,7 +113,6 @@ export default function RoomPanelClient({
   features,
 }: Props) {
   const t = useTranslations();
-  const tNav = useTranslations("nav");
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
   const [lightbox, setLightbox] = useState(false);
   const stripRef = useRef<HTMLDivElement>(null);
@@ -124,23 +120,7 @@ export default function RoomPanelClient({
   const roomName = t(`rooms.items.${ns}.name`);
   const photoAlt = (n: number) => (n > 1 ? `${roomName} (${n})` : roomName);
 
-  // Magnetic Book Now.
   const reduceMotion = useReducedMotion();
-  const bookRef = useRef<HTMLAnchorElement>(null);
-  const magX = useMotionValue(0);
-  const magY = useMotionValue(0);
-  const springX = useSpring(magX, { stiffness: 120, damping: 12, mass: 0.3 });
-  const springY = useSpring(magY, { stiffness: 120, damping: 12, mass: 0.3 });
-  const onBookMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (reduceMotion || !bookRef.current) return;
-    const r = bookRef.current.getBoundingClientRect();
-    magX.set((e.clientX - (r.left + r.width / 2)) * 0.3);
-    magY.set((e.clientY - (r.top + r.height / 2)) * 0.6);
-  };
-  const onBookLeave = () => {
-    magX.set(0);
-    magY.set(0);
-  };
 
   // Features slider (mobile only): autoplay + drag-to-scroll + dot sync.
   const featRef = useRef<HTMLUListElement>(null);
@@ -369,23 +349,11 @@ export default function RoomPanelClient({
             )}
           </div>
 
-          <motion.a
-            ref={bookRef}
-            href={BOOKING}
-            target="_blank"
-            rel="noopener noreferrer"
-            variants={fadeUp}
-            onMouseMove={onBookMove}
-            onMouseLeave={onBookLeave}
-            className="group relative mt-auto block bg-ink/[0.04] py-5 text-center text-xs font-medium uppercase tracking-[0.3em] text-ink transition-colors duration-500 hover:bg-forest hover:text-paper"
-          >
-            <motion.span
-              style={{ x: springX, y: springY }}
-              className="relative z-10 inline-block"
-            >
-              <FlipText>{tNav("bookNow")}</FlipText>
-            </motion.span>
-          </motion.a>
+          {/* Two ways to book: direct (preselects this room in the contact
+              form) or via Booking.com. */}
+          <motion.div variants={fadeUp} className="mt-auto">
+            <BookingChoice room={ns} />
+          </motion.div>
         </motion.div>
 
         {/* Gallery - mobile gray card holds the title; desktop sticky carousel */}

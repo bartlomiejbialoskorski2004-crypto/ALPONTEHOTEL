@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import FlipText from "./FlipText";
 import { NAV } from "./menu";
 import { useAnchor } from "./useAnchor";
+import { BookingChoice } from "./booking";
 
 // Site credit in the bottom bar.
 const CREDIT_NAME = "Bartłomiej Białoskórski";
@@ -32,20 +33,26 @@ export default function Footer({ bookingUrl }: Props) {
   // Locale-aware homepage anchors (works from sub-pages in any language).
   const anchor = useAnchor();
 
-  // Scroll-driven parallax: the giant wordmark rises from below the bottom
-  // edge as the footer passes through the viewport.
+  // Scroll-driven reveal: the giant wordmark slides up out of the footer's
+  // bottom edge. Tracked on the bottom bar + wordmark only (not the whole,
+  // very tall-on-phones footer), so the rise plays over the last few hundred
+  // pixels of scroll and is clearly visible on mobile too. The page ends at
+  // "end end", so the motion always completes.
   const ref = useRef<HTMLElement>(null);
+  const revealRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
-    // The footer is the last element on the page, so it never scrolls past
-    // the viewport top - end the range at "end end" (page fully scrolled) so
-    // the parallax can actually run its full course.
+    target: revealRef,
     offset: ["start end", "end end"],
   });
   const wordmarkY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["80%", "0%"],
+    reduceMotion ? ["0%", "0%"] : ["100%", "0%"],
+  );
+  const wordmarkOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.85],
+    reduceMotion ? [1, 1] : [0.35, 1],
   );
 
   const name = t("fallback.name"); // "Al Ponte"
@@ -142,20 +149,7 @@ export default function Footer({ bookingUrl }: Props) {
             <p className="max-w-[16rem] text-sm leading-relaxed text-paper/65">
               {t("fallback.tagline")}
             </p>
-            <a
-              href={BOOKING}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-1 inline-flex w-fit items-center gap-2 border border-paper/30 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-paper transition-colors hover:bg-paper hover:text-forest"
-            >
-              <FlipText>{t("nav.bookNow")}</FlipText>
-              <span
-                aria-hidden
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </a>
+            <BookingChoice tone="light" className="mt-1 w-full max-w-[17rem]" />
 
             {/* Social */}
             <div className="mt-2 flex items-center gap-5">
@@ -206,6 +200,8 @@ export default function Footer({ bookingUrl }: Props) {
         </div>
       </div>
 
+      {/* Bottom bar + wordmark: the scroll range of the wordmark reveal. */}
+      <div ref={revealRef}>
       {/* Bottom bar */}
       <div className="border-t border-paper/15">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-[11px] uppercase tracking-[0.15em] text-paper/45 sm:grid sm:grid-cols-3 sm:items-center lg:px-10">
@@ -253,7 +249,7 @@ export default function Footer({ bookingUrl }: Props) {
           and only ever moves downward, so it never covers it. Like every
           Al Ponte logo it links home. */}
       <motion.div
-        style={{ y: wordmarkY }}
+        style={{ y: wordmarkY, opacity: wordmarkOpacity }}
         className="mt-10 select-none lg:mt-16"
       >
         <Link href="/" aria-label={name} className="block">
@@ -265,6 +261,7 @@ export default function Footer({ bookingUrl }: Props) {
           </span>
         </Link>
       </motion.div>
+      </div>
     </footer>
   );
 }

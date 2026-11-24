@@ -80,7 +80,7 @@ export default function Amenities() {
               </p>
               {/* Temporary pool closure (12.10.2026 - 14.03.2027). */}
               {key === "pool" && (
-                <InfoNote className="mt-2 max-w-xs text-xs font-medium leading-relaxed text-forest">
+                <InfoNote className="mt-2 max-w-xs font-medium text-forest">
                   {t("pool.note")}
                 </InfoNote>
               )}

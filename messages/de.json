@@ -60,7 +60,29 @@
     "address": "Adresse",
     "phone": "Telefon",
     "email": "E-Mail",
-    "directions": "Anfahrt"
+    "directions": "Anfahrt",
+    "form": {
+      "eyebrow": "Direktbuchung",
+      "title": "Verfügbarkeit anfragen",
+      "name": "Vor- und Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "arrival": "Anreise",
+      "departure": "Abreise",
+      "adults": "Erwachsene",
+      "children": "Kinder",
+      "room": "Zimmer",
+      "roomAny": "Egal – bitte beraten Sie mich",
+      "message": "Nachricht",
+      "optional": "optional",
+      "submit": "Anfrage-E-Mail erstellen",
+      "note": "Ihr E-Mail-Programm öffnet sich mit einer fertigen Nachricht an das Hotel – Sie müssen sie nur noch senden.",
+      "subject": "Buchungsanfrage",
+      "greeting": "Guten Tag,",
+      "request": "ich möchte Verfügbarkeit und Preis anfragen für:",
+      "closing": "Freundliche Grüße,",
+      "orCall": "Lieber anrufen?"
+    }
   },
   "rooms": {
     "title": "Zimmer",
@@ -215,8 +237,8 @@
     "eyebrow": "Services",
     "title": "Ausstattung & Komfort des Hotels",
     "pool": {
-      "title": "Schwimmbad",
-      "desc": "Erfrischen Sie sich in unserem Hallenbad unter einem Glasdach mit Panoramablick auf den Luganersee.",
+      "title": "Sauna & Pool",
+      "desc": "Erfrischen Sie sich in unserem Hallenbad mit Whirlpool unter einem Glasdach, mit Panoramablick auf den Luganersee.",
       "note": "Vorübergehend geschlossen: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -295,6 +317,7 @@
       "hours": "Öffnungszeiten",
       "safety": "Sicherheit",
       "pool": "Schwimmbad",
+      "sauna": "Sauna",
       "parking": "Parken",
       "tax": "Kurtaxe",
       "services": "Leistungen",
@@ -376,6 +399,10 @@
     "groups": {
       "title": "Gruppenangebote",
       "body": "Das Hotel Al Ponte empfängt Gruppen mit bis zu 63 Personen. Entdecken Sie, was wir für Sie organisieren können:"
+    },
+    "sauna": {
+      "title": "Private Sauna",
+      "body": "Gästen steht eine private finnische Sauna zur exklusiven Nutzung zur Verfügung, für CHF 15 pro Stunde. Um die Verfügbarkeit zu garantieren, reservieren Sie bitte vorab an der Rezeption."
     }
   },
   "attractions": {
@@ -897,7 +924,8 @@
       "booking": "Reservierung an der Rezeption"
     },
     "note": "Um die Verfügbarkeit zu garantieren, ist eine vorherige Reservierung an der Rezeption erforderlich.",
-    "cta": "Im Hotel"
+    "cta": "Im Hotel",
+    "details": "Details"
   },
   "hotelAttractions": {
     "label": "Im Hotel",
@@ -969,5 +997,20 @@
       "text": "Ticino Ticket im Aufenthalt inbegriffen und Bushaltestelle 25 m vom Hotel: Lugano, die Berge und der See sind schnell erreichbar.",
       "cta": "Tessiner Attraktionen"
     }
+  },
+  "booking": {
+    "direct": "Direkt bei uns buchen",
+    "via": "Buchen über",
+    "perks": [
+      "Bester Preis",
+      "Direkter Kontakt",
+      "Ticino Ticket gratis"
+    ],
+    "benefitsTitle": "Bei Direktbuchung garantieren wir Ihnen:",
+    "benefits": [
+      "Den niedrigstmöglichen Preis für Ihren Aufenthalt",
+      "Direkten Kontakt mit dem Hotel und persönlichen Service",
+      "Ticino Ticket: kostenloser öffentlicher Verkehr im ganzen Kanton Tessin"
+    ]
   }
 }
