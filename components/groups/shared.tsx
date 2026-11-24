@@ -73,11 +73,19 @@ export async function HeroCta({
   );
 }
 
-// The one hero every offer page uses: full-bleed photo under an ink wash,
-// gold eyebrow, title, intro and enquiry link bottom-left.
+// Only the company-events page is the dark, "evening" one; gold accents are
+// reserved for it and for celebrations/weddings.
+const DARK_HERO: GroupKey[] = ["companyEvents"];
+const GOLD_PAGES: GroupKey[] = ["companyEvents", "celebrations"];
+
+// The one hero every offer page uses: full-bleed photo, eyebrow, title, intro
+// and enquiry link bottom-left. Company events keep the heavy ink wash; the
+// others show the photo as is, with only a soft top/bottom gradient so the
+// header and the white text stay legible.
 export async function OfferHero({ page }: { page: GroupKey }) {
   const t = await getTranslations("groups");
   const p = (key: string) => t(`pages.${page}.${key}`);
+  const dark = DARK_HERO.includes(page);
   return (
     <section
       className={`relative flex ${heroHeight} w-full items-end overflow-hidden bg-ink text-paper`}
@@ -86,11 +94,21 @@ export async function OfferHero({ page }: { page: GroupKey }) {
         src={GROUP_PAGES[page].image}
         alt={p("imageAlt")}
         priority
-        className="object-cover object-center opacity-45"
+        className={`object-cover object-center ${dark ? "opacity-45" : ""}`}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/35 to-ink" />
+      <div
+        className={`absolute inset-0 bg-gradient-to-b ${
+          dark
+            ? "from-ink/75 via-ink/35 to-ink"
+            : "from-ink/35 via-transparent to-ink/60"
+        }`}
+      />
       <div className={`relative ${container} pb-14 pt-28 lg:pb-16`}>
-        <span className={`${eyebrow} text-gold`}>{t("eyebrow")}</span>
+        <span
+          className={`${eyebrow} ${GOLD_PAGES.includes(page) ? "text-gold" : "text-paper/80"}`}
+        >
+          {t("eyebrow")}
+        </span>
         <h1 className="mt-6 max-w-4xl text-balance break-words font-serif text-[2rem] leading-[1.04] hyphens-auto sm:text-4xl lg:text-7xl">
           {p("title")}
         </h1>
@@ -173,21 +191,20 @@ export async function OfferSwitcher({
                   aria-current={active ? "page" : undefined}
                   className={`group relative flex h-full items-center whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.18em] transition-colors ${color}`}
                 >
-                  {/* Offer icon, left of the label (absolute, so nothing
-                      shifts): always on for the current offer, fades in on
-                      hover for the others. */}
-                  <Icon
+                  <FlipText>{t(`pages.${key}.navLabel`)}</FlipText>
+                  {/* Offer icon in the arrow's place, right of the label
+                      (absolute, so nothing shifts). Rolls with the label on
+                      hover; always on for the current offer. */}
+                  <span
                     aria-hidden
-                    strokeWidth={1.25}
-                    className={`absolute -left-5 h-3.5 w-3.5 transition-all duration-300 ${
+                    className={`absolute -right-5 transition-opacity duration-300 ${
                       dark ? "text-gold" : "text-forest"
-                    } ${
-                      active
-                        ? "translate-x-0 opacity-100"
-                        : "-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
-                    }`}
-                  />
-                  {t(`pages.${key}.navLabel`)}
+                    } ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                  >
+                    <FlipText>
+                      <Icon className="block h-3.5 w-3.5" strokeWidth={1.25} />
+                    </FlipText>
+                  </span>
                   {active && (
                     <span
                       aria-hidden

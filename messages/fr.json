@@ -216,7 +216,7 @@
     "title": "Équipements et conforts de l'hôtel",
     "pool": {
       "title": "Piscine",
-      "desc": "Rafraîchissez-vous dans notre piscine extérieure avec vue panoramique sur le Lac de Lugano.",
+      "desc": "Rafraîchissez-vous dans notre piscine couverte sous un toit de verre, avec vue panoramique sur le lac de Lugano.",
       "note": "Temporairement fermée : 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -883,6 +883,91 @@
       "body": "Nous préparons une offre adaptée au nombre de personnes, aux dates et au programme.",
       "email": "Nous écrire",
       "phone": "Nous appeler"
+    }
+  },
+  "wellness": {
+    "eyebrow": "Bien-être",
+    "title": "Un sauna privé rien que pour vous",
+    "intro": "Un sauna finlandais à usage exclusif : un moment de chaleur et de calme après une journée au Tessin.",
+    "imageAlt": "Sauna en bois avec une serviette et un seau",
+    "perHour": "l'heure",
+    "items": {
+      "exclusive": "À usage exclusif",
+      "price": "CHF 15 l'heure",
+      "booking": "Réservation à la réception"
+    },
+    "note": "Pour garantir la disponibilité, une réservation à la réception est nécessaire.",
+    "cta": "À l'hôtel"
+  },
+  "hotelAttractions": {
+    "label": "À l'hôtel",
+    "seoTitle": "À l'hôtel : piscine, sauna et terrasse",
+    "seoDescription": "Piscine couverte avec jacuzzi, sauna finlandais privé, terrasse face au lac de Lugano et jardin. Détendez-vous à l'Hôtel Al Ponte à Cademario sans quitter l'hôtel.",
+    "imageAlt": "Terrasse de l'hôtel au crépuscule avec vue sur Lugano et le lac",
+    "eyebrow": "À l'hôtel",
+    "title": "Se détendre sans quitter l'hôtel",
+    "intro": "Une piscine sous un toit de verre, un sauna privé, une terrasse face au lac et un jardin paisible. Le Tessin s'admire aussi depuis un transat.",
+    "highlights": {
+      "pool": "Piscine avec jacuzzi",
+      "sauna": "Sauna privé",
+      "terrace": "Terrasse panoramique",
+      "garden": "Jardin"
+    },
+    "menu": {
+      "eyebrow": "À l'hôtel",
+      "title": "Détente à l'hôtel",
+      "desc": "Piscine, sauna privé, terrasse"
+    },
+    "pool": {
+      "eyebrow": "Piscine",
+      "title": "Piscine couverte sous un toit de verre",
+      "text": "Une piscine avec jacuzzi sous un toit de verre et, juste à côté, une terrasse ensoleillée face au lac. Gratuite pour les clients de l'hôtel.",
+      "imageAlt": "Piscine couverte de l'hôtel et terrasse ensoleillée face au lac",
+      "facts": [
+        "Ouverte de 8h00 à 19h30",
+        "Gratuite pour les clients",
+        "Serviette supplémentaire CHF 5 · peignoir CHF 8 à la réception"
+      ]
+    },
+    "sauna": {
+      "eyebrow": "Sauna",
+      "title": "Sauna finlandais privé",
+      "text": "Un sauna à usage exclusif : personne ne viendra troubler votre moment de détente.",
+      "tagline": "Benessere · Relax · Rigenerazione",
+      "imageAlt": "Sauna en bois avec une serviette et un seau",
+      "facts": [
+        "À usage exclusif",
+        "CHF 15 l'heure"
+      ],
+      "note": "Pour garantir la disponibilité, une réservation à la réception est nécessaire."
+    },
+    "terrace": {
+      "eyebrow": "Terrasse",
+      "title": "Une terrasse face au lac",
+      "text": "Le lac de Lugano, la ville et les Alpes : au lever du soleil ou le soir, quand les lumières de Lugano s'allument.",
+      "imageAlt": "Lever de soleil sur Lugano vu depuis l'hôtel",
+      "facts": [
+        "Vue sur le lac, Lugano et les Alpes",
+        "Wi-Fi gratuit aussi sur les terrasses et à la piscine"
+      ]
+    },
+    "garden": {
+      "eyebrow": "Jardin",
+      "title": "Un coin tranquille au jardin",
+      "text": "Une cascade dans la verdure et un endroit paisible pour lire, loin de l'agitation de la ville.",
+      "imageAlt": "Cascade dans le jardin de l'hôtel",
+      "facts": []
+    },
+    "breakfast": {
+      "eyebrow": "Petit-déjeuner",
+      "title": "Bien commencer la journée",
+      "text": "Petit-déjeuner dans la salle de petit-déjeuner, tous les jours de 8h00 à 10h00.",
+      "note": "Si le petit-déjeuner n'est pas inclus dans votre tarif : CHF 12 par personne, à régler à la réception."
+    },
+    "outro": {
+      "title": "Et quand l'envie de sortir vous prend, le Tessin vous attend",
+      "text": "Ticino Ticket inclus dans le séjour et arrêt de bus à 25 m de l'hôtel : Lugano, les montagnes et le lac à portée de main.",
+      "cta": "Attractions du Tessin"
     }
   }
 }

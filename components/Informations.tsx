@@ -144,7 +144,7 @@ export default async function Informations() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 py-12 lg:grid lg:grid-cols-[15rem_1fr] lg:gap-16 lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-6xl px-6 pb-12 pt-24 lg:grid lg:grid-cols-[15rem_1fr] lg:gap-16 lg:px-10 lg:pb-20 lg:pt-36">
         <aside>
           <PageToc sections={tocSections} tocTitle={t("toc.title")} />
         </aside>

@@ -9,6 +9,9 @@
   --color-forest: #1f3d2b;
   --color-forest-soft: #2d5239;
   --color-gold: #c8a24a;
+  /* Warm beige for the wellness / in-hotel pages (vs. the black-on-white
+     Informations page). */
+  --color-sand: #f2ebe0;
   --color-mist: rgba(10, 10, 10, 0.08);
   --color-overlay: rgba(10, 10, 10, 0.35);
 }

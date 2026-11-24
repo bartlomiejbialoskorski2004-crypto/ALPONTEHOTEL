@@ -216,7 +216,7 @@
     "title": "Udogodnienia i komfort hotelu",
     "pool": {
       "title": "Basen",
-      "desc": "Odśwież się w naszym odkrytym basenie z panoramą jeziora Lugano.",
+      "desc": "Odśwież się w krytym basenie pod szklanym dachem, z panoramą jeziora Lugano.",
       "note": "Czasowo zamknięty: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -883,6 +883,91 @@
       "body": "Przygotujemy ofertę dopasowaną do liczby osób, terminu i programu.",
       "email": "Napisz",
       "phone": "Zadzwoń"
+    }
+  },
+  "wellness": {
+    "eyebrow": "Wellness",
+    "title": "Prywatna sauna tylko dla Ciebie",
+    "intro": "Sauna fińska do wyłącznej dyspozycji – chwila ciepła i ciszy po dniu w Ticino.",
+    "imageAlt": "Drewniana sauna z ręcznikiem i ceberkiem",
+    "perHour": "za godzinę",
+    "items": {
+      "exclusive": "Do wyłącznej dyspozycji",
+      "price": "CHF 15 za godzinę",
+      "booking": "Rezerwacja w recepcji"
+    },
+    "note": "Aby zagwarantować dostępność, wymagana jest wcześniejsza rezerwacja w recepcji.",
+    "cta": "Atrakcje w hotelu"
+  },
+  "hotelAttractions": {
+    "label": "Atrakcje w hotelu",
+    "seoTitle": "Atrakcje w hotelu: basen, sauna i taras",
+    "seoDescription": "Kryty basen z jacuzzi, prywatna sauna fińska, taras z widokiem na Jezioro Lugano i ogród. Odpocznij w Hotelu Al Ponte w Cademario, nie wychodząc z hotelu.",
+    "imageAlt": "Taras hotelu o zmierzchu z widokiem na Lugano i jezioro",
+    "eyebrow": "Atrakcje w hotelu",
+    "title": "Odpocznij, nie wychodząc z hotelu",
+    "intro": "Basen pod szklanym dachem, prywatna sauna, taras z widokiem na jezioro i cichy ogród. Ticino możesz podziwiać także z leżaka.",
+    "highlights": {
+      "pool": "Basen z jacuzzi",
+      "sauna": "Prywatna sauna",
+      "terrace": "Taras widokowy",
+      "garden": "Ogród"
+    },
+    "menu": {
+      "eyebrow": "W hotelu",
+      "title": "Atrakcje w hotelu",
+      "desc": "Basen, prywatna sauna, taras"
+    },
+    "pool": {
+      "eyebrow": "Basen",
+      "title": "Kryty basen pod szklanym dachem",
+      "text": "Basen z jacuzzi pod szklanym dachem, a tuż obok taras słoneczny z widokiem na jezioro. Dla gości hotelu bezpłatnie.",
+      "imageAlt": "Kryty basen hotelu i taras słoneczny z widokiem na jezioro",
+      "facts": [
+        "Czynny 8:00–19:30",
+        "Bezpłatnie dla gości",
+        "Dodatkowy ręcznik CHF 5 · szlafrok CHF 8 w recepcji"
+      ]
+    },
+    "sauna": {
+      "eyebrow": "Sauna",
+      "title": "Prywatna sauna fińska",
+      "text": "Sauna do wyłącznej dyspozycji – nikt nie przeszkodzi Ci w chwili relaksu.",
+      "tagline": "Benessere · Relax · Rigenerazione",
+      "imageAlt": "Drewniana sauna z ręcznikiem i ceberkiem",
+      "facts": [
+        "Do wyłącznej dyspozycji",
+        "CHF 15 za godzinę"
+      ],
+      "note": "Aby zagwarantować dostępność, wymagana jest rezerwacja w recepcji."
+    },
+    "terrace": {
+      "eyebrow": "Taras",
+      "title": "Taras z widokiem na jezioro",
+      "text": "Panorama Jeziora Lugano, miasta i Alp – o wschodzie słońca albo wieczorem, gdy zapalają się światła Lugano.",
+      "imageAlt": "Wschód słońca nad Lugano widziany z hotelu",
+      "facts": [
+        "Widok na jezioro, Lugano i Alpy",
+        "Bezpłatne Wi-Fi także na tarasach i przy basenie"
+      ]
+    },
+    "garden": {
+      "eyebrow": "Ogród",
+      "title": "Cichy zakątek w ogrodzie",
+      "text": "Kaskada wśród zieleni i spokojne miejsce na książkę, z dala od miejskiego zgiełku.",
+      "imageAlt": "Kaskada w hotelowym ogrodzie",
+      "facts": []
+    },
+    "breakfast": {
+      "eyebrow": "Śniadanie",
+      "title": "Dobry początek dnia",
+      "text": "Śniadanie w sali śniadaniowej, codziennie od 8:00 do 10:00.",
+      "note": "Jeśli śniadanie nie jest wliczone w cenę pobytu: CHF 12 od osoby, płatne w recepcji."
+    },
+    "outro": {
+      "title": "A gdy zechcesz wyjść – Ticino czeka",
+      "text": "Ticino Ticket w cenie pobytu i przystanek 25 m od hotelu: Lugano, góry i jezioro na wyciągnięcie ręki.",
+      "cta": "Atrakcje Ticino"
     }
   }
 }

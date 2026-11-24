@@ -9,6 +9,7 @@ import TripleDeluxe from "@/components/TripleDeluxe";
 import Amenities from "@/components/Amenities";
 import Gallery from "@/components/Gallery";
 import AttractionsTeaser from "@/components/AttractionsTeaser";
+import Wellness from "@/components/Wellness";
 import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 import RoomNav from "@/components/RoomNav";
@@ -49,6 +50,7 @@ export default async function HomePage({
         <RoomPanel key={room.id} {...room} />
       ))}
       <Gallery />
+      <Wellness />
       <AttractionsTeaser />
       <Reviews />
       <Contact />

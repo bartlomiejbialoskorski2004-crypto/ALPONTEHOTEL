@@ -216,7 +216,7 @@
     "title": "Ausstattung & Komfort des Hotels",
     "pool": {
       "title": "Schwimmbad",
-      "desc": "Erfrischen Sie sich in unserem Außenpool mit Panoramablick auf den Luganersee.",
+      "desc": "Erfrischen Sie sich in unserem Hallenbad unter einem Glasdach mit Panoramablick auf den Luganersee.",
       "note": "Vorübergehend geschlossen: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -883,6 +883,91 @@
       "body": "Wir erstellen ein Angebot, zugeschnitten auf Gruppengröße, Termine und Programm.",
       "email": "E-Mail",
       "phone": "Anrufen"
+    }
+  },
+  "wellness": {
+    "eyebrow": "Wellness",
+    "title": "Eine private Sauna nur für Sie",
+    "intro": "Eine finnische Sauna zur exklusiven Nutzung – ein Moment Wärme und Ruhe nach einem Tag im Tessin.",
+    "imageAlt": "Holzsauna mit Handtuch und Kübel",
+    "perHour": "pro Stunde",
+    "items": {
+      "exclusive": "Zur exklusiven Nutzung",
+      "price": "CHF 15 pro Stunde",
+      "booking": "Reservierung an der Rezeption"
+    },
+    "note": "Um die Verfügbarkeit zu garantieren, ist eine vorherige Reservierung an der Rezeption erforderlich.",
+    "cta": "Im Hotel"
+  },
+  "hotelAttractions": {
+    "label": "Im Hotel",
+    "seoTitle": "Im Hotel: Pool, Sauna und Terrasse",
+    "seoDescription": "Hallenbad mit Whirlpool, private finnische Sauna, Terrasse mit Blick auf den Luganersee und Garten. Entspannen Sie im Hotel Al Ponte in Cademario, ohne das Hotel zu verlassen.",
+    "imageAlt": "Hotelterrasse in der Abenddämmerung mit Blick auf Lugano und den See",
+    "eyebrow": "Im Hotel",
+    "title": "Entspannen, ohne das Hotel zu verlassen",
+    "intro": "Ein Pool unter einem Glasdach, eine private Sauna, eine Terrasse mit Seeblick und ein ruhiger Garten. Das Tessin lässt sich auch vom Liegestuhl aus genießen.",
+    "highlights": {
+      "pool": "Pool mit Whirlpool",
+      "sauna": "Private Sauna",
+      "terrace": "Panoramaterrasse",
+      "garden": "Garten"
+    },
+    "menu": {
+      "eyebrow": "Im Hotel",
+      "title": "Entspannung im Hotel",
+      "desc": "Pool, private Sauna, Terrasse"
+    },
+    "pool": {
+      "eyebrow": "Pool",
+      "title": "Hallenbad unter einem Glasdach",
+      "text": "Ein Pool mit Whirlpool unter einem Glasdach und gleich daneben eine Sonnenterrasse mit Seeblick. Für Hotelgäste kostenlos.",
+      "imageAlt": "Hallenbad und Sonnenterrasse des Hotels mit Seeblick",
+      "facts": [
+        "Geöffnet 8:00–19:30",
+        "Kostenlos für Gäste",
+        "Zusätzliches Handtuch CHF 5 · Bademantel CHF 8 an der Rezeption"
+      ]
+    },
+    "sauna": {
+      "eyebrow": "Sauna",
+      "title": "Private finnische Sauna",
+      "text": "Eine Sauna zur exklusiven Nutzung – niemand stört Ihren Moment der Entspannung.",
+      "tagline": "Benessere · Relax · Rigenerazione",
+      "imageAlt": "Holzsauna mit Handtuch und Kübel",
+      "facts": [
+        "Zur exklusiven Nutzung",
+        "CHF 15 pro Stunde"
+      ],
+      "note": "Um die Verfügbarkeit zu garantieren, ist eine Reservierung an der Rezeption erforderlich."
+    },
+    "terrace": {
+      "eyebrow": "Terrasse",
+      "title": "Eine Terrasse mit Seeblick",
+      "text": "Der Luganersee, die Stadt und die Alpen – bei Sonnenaufgang oder am Abend, wenn in Lugano die Lichter angehen.",
+      "imageAlt": "Sonnenaufgang über Lugano, vom Hotel aus gesehen",
+      "facts": [
+        "Blick auf See, Lugano und Alpen",
+        "Kostenloses WLAN auch auf den Terrassen und am Pool"
+      ]
+    },
+    "garden": {
+      "eyebrow": "Garten",
+      "title": "Ein ruhiger Winkel im Garten",
+      "text": "Eine Kaskade im Grünen und ein stiller Platz für ein Buch, fern vom Trubel der Stadt.",
+      "imageAlt": "Kaskade im Hotelgarten",
+      "facts": []
+    },
+    "breakfast": {
+      "eyebrow": "Frühstück",
+      "title": "Ein guter Start in den Tag",
+      "text": "Frühstück im Frühstücksraum, täglich von 8:00 bis 10:00 Uhr.",
+      "note": "Falls das Frühstück nicht im Preis inbegriffen ist: CHF 12 pro Person, zahlbar an der Rezeption."
+    },
+    "outro": {
+      "title": "Und wenn Sie hinaus möchten, wartet das Tessin",
+      "text": "Ticino Ticket im Aufenthalt inbegriffen und Bushaltestelle 25 m vom Hotel: Lugano, die Berge und der See sind schnell erreichbar.",
+      "cta": "Tessiner Attraktionen"
     }
   }
 }

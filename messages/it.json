@@ -216,7 +216,7 @@
     "title": "Servizi e comfort dell'hotel",
     "pool": {
       "title": "Piscina",
-      "desc": "Rinfrescati nella nostra piscina all'aperto con vista panoramica sul Lago di Lugano.",
+      "desc": "Rinfrescati nella nostra piscina coperta sotto un tetto di vetro, con vista panoramica sul Lago di Lugano.",
       "note": "Temporaneamente chiusa: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -883,6 +883,91 @@
       "body": "Prepariamo un'offerta su misura per numero di persone, date e programma.",
       "email": "Scrivici",
       "phone": "Chiamaci"
+    }
+  },
+  "wellness": {
+    "eyebrow": "Wellness",
+    "title": "Una sauna privata tutta per te",
+    "intro": "Sauna finlandese ad uso esclusivo: un momento di calore e silenzio dopo una giornata in Ticino.",
+    "imageAlt": "Sauna in legno con asciugamano e secchio",
+    "perHour": "all'ora",
+    "items": {
+      "exclusive": "Ad uso esclusivo",
+      "price": "CHF 15 all'ora",
+      "booking": "Prenotazione alla reception"
+    },
+    "note": "Per garantire la disponibilità è necessaria la prenotazione presso la reception.",
+    "cta": "In hotel"
+  },
+  "hotelAttractions": {
+    "label": "In hotel",
+    "seoTitle": "In hotel: piscina, sauna e terrazza",
+    "seoDescription": "Piscina coperta con idromassaggio, sauna finlandese privata, terrazza con vista sul Lago di Lugano e giardino. Rilassati all'Hotel Al Ponte di Cademario senza uscire dall'hotel.",
+    "imageAlt": "Terrazza dell'hotel al tramonto con vista su Lugano e sul lago",
+    "eyebrow": "In hotel",
+    "title": "Rilassati senza uscire dall'hotel",
+    "intro": "Piscina sotto un tetto di vetro, sauna privata, terrazza con vista lago e un giardino tranquillo. Il Ticino si ammira anche da una sdraio.",
+    "highlights": {
+      "pool": "Piscina con idromassaggio",
+      "sauna": "Sauna privata",
+      "terrace": "Terrazza panoramica",
+      "garden": "Giardino"
+    },
+    "menu": {
+      "eyebrow": "In hotel",
+      "title": "Relax in hotel",
+      "desc": "Piscina, sauna privata, terrazza"
+    },
+    "pool": {
+      "eyebrow": "Piscina",
+      "title": "Piscina coperta sotto un tetto di vetro",
+      "text": "Piscina con idromassaggio sotto un tetto di vetro e, accanto, una terrazza al sole con vista sul lago. Gratuita per gli ospiti dell'hotel.",
+      "imageAlt": "Piscina coperta dell'hotel e terrazza al sole con vista lago",
+      "facts": [
+        "Aperta dalle 8:00 alle 19:30",
+        "Gratuita per gli ospiti",
+        "Asciugamano extra CHF 5 · accappatoio CHF 8 alla reception"
+      ]
+    },
+    "sauna": {
+      "eyebrow": "Sauna",
+      "title": "Sauna finlandese privata",
+      "text": "Una sauna ad uso esclusivo: nessuno disturberà il tuo momento di relax.",
+      "tagline": "Benessere · Relax · Rigenerazione",
+      "imageAlt": "Sauna in legno con asciugamano e secchio",
+      "facts": [
+        "Ad uso esclusivo",
+        "CHF 15 all'ora"
+      ],
+      "note": "Per garantire la disponibilità è necessaria la prenotazione presso la reception."
+    },
+    "terrace": {
+      "eyebrow": "Terrazza",
+      "title": "Terrazza con vista lago",
+      "text": "Il panorama del Lago di Lugano, della città e delle Alpi: all'alba o la sera, quando si accendono le luci di Lugano.",
+      "imageAlt": "Alba su Lugano vista dall'hotel",
+      "facts": [
+        "Vista su lago, Lugano e Alpi",
+        "Wi-Fi gratuito anche sulle terrazze e in piscina"
+      ]
+    },
+    "garden": {
+      "eyebrow": "Giardino",
+      "title": "Un angolo tranquillo in giardino",
+      "text": "Una cascata nel verde e un posto tranquillo per un libro, lontano dal rumore della città.",
+      "imageAlt": "Cascata nel giardino dell'hotel",
+      "facts": []
+    },
+    "breakfast": {
+      "eyebrow": "Colazione",
+      "title": "Un buon inizio di giornata",
+      "text": "Colazione nella sala colazioni, ogni giorno dalle 8:00 alle 10:00.",
+      "note": "Se la colazione non è inclusa nel prezzo del soggiorno: CHF 12 a persona, da pagare alla reception."
+    },
+    "outro": {
+      "title": "E quando vuoi uscire, il Ticino ti aspetta",
+      "text": "Ticino Ticket incluso nel soggiorno e fermata a 25 m dall'hotel: Lugano, le montagne e il lago a portata di mano.",
+      "cta": "Attrazioni del Ticino"
     }
   }
 }

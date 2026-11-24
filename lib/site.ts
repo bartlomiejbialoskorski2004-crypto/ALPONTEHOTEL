@@ -76,6 +76,8 @@ export const HOTEL = {
   // Guest-facing amenities surfaced as schema amenityFeature.
   amenities: [
     "Indoor swimming pool",
+    "Hot tub",
+    "Private sauna",
     "Lake view",
     "Free parking nearby",
     "Breakfast",

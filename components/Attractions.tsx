@@ -2,6 +2,8 @@ import { getTranslations } from "next-intl/server";
 import PageToc, { BackToTop, type TocSection } from "./PageToc";
 import ParallaxImage from "./ParallaxImage";
 import EditorialSection, { type EditorialItem } from "./EditorialSection";
+import FlipText from "./FlipText";
+import { Link } from "@/i18n/navigation";
 
 type Section = { title: string; items: EditorialItem[] };
 
@@ -31,6 +33,7 @@ const SECTION_IMAGES: Partial<Record<(typeof SECTION_ORDER)[number], string>> = 
 
 export default async function Attractions() {
   const t = await getTranslations("attractions");
+  const tHotel = await getTranslations("hotelAttractions");
   const sections = t.raw("sections") as Record<string, Section>;
 
   const tocSections: TocSection[] = SECTION_ORDER.map((id, i) => ({
@@ -45,15 +48,16 @@ export default async function Attractions() {
 
   return (
     <article className="bg-paper text-ink">
-      {/* Hero band - scenic photo under a forest wash. */}
-      <section className="relative flex min-h-[72svh] w-full items-end overflow-hidden bg-forest text-paper">
+      {/* Hero band - scenic photo under a forest wash. Full first screen,
+          like the homepage and Informations heroes. */}
+      <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-forest text-paper">
         <ParallaxImage src="/mega/Lakelugano.jpg" alt={t("lakeAlt")} priority />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/65 via-forest/45 to-forest/85" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-16 pt-40 lg:px-10 lg:pb-24 lg:pt-48">
+        <div className="relative mx-auto w-full max-w-6xl px-6 pb-12 pt-28 lg:px-10 lg:pb-16">
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-paper/75">
             {t("eyebrow")}
           </span>
-          <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-[1.04] lg:text-7xl">
+          <h1 className="mt-6 max-w-3xl text-balance break-words font-serif text-4xl leading-[1.04] hyphens-auto lg:text-7xl">
             {t("title")}
           </h1>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-paper/85 lg:text-base">
@@ -62,7 +66,7 @@ export default async function Attractions() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 py-12 lg:grid lg:grid-cols-[15rem_1fr] lg:gap-16 lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-6xl px-6 pb-12 pt-24 lg:grid lg:grid-cols-[15rem_1fr] lg:gap-16 lg:px-10 lg:pb-20 lg:pt-36">
         <aside>
           <PageToc sections={tocSections} tocTitle={t("tocTitle")} />
         </aside>
@@ -109,6 +113,16 @@ export default async function Attractions() {
             <p className="max-w-prose font-serif text-xl italic leading-relaxed text-ink/80 lg:text-2xl">
               {t("closing")}
             </p>
+            {/* Cross-link to the in-hotel page (not in the mobile menu). */}
+            <Link
+              href="/hotel-attractions"
+              className="group mt-10 inline-flex items-center gap-2 border border-ink/15 px-6 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:border-forest hover:bg-forest hover:text-paper"
+            >
+              <FlipText>{tHotel("label")}</FlipText>
+              <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
             <BackToTop label={t("backToTop")} />
           </div>
         </div>

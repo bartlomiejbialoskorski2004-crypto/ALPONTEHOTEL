@@ -12,6 +12,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
 import { GROUP_ICONS } from "./groupIcons";
+import { SAUNA_IMAGE } from "./wellnessShared";
 import BookNowButton from "./BookNowButton";
 import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
@@ -382,31 +383,24 @@ export default function Header({ bookingUrl }: Props) {
                                 onFocus={() => setActiveEvent(key)}
                                 className="group flex items-center justify-between gap-4 border-b border-mist py-3"
                               >
-                                <span className="flex items-center">
-                                  {/* Offer icon slides out beside the
-                                      highlighted (hovered / current) offer. */}
-                                  <span
-                                    aria-hidden
-                                    className={`inline-flex overflow-hidden text-forest transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                                      on ? "mr-3 max-w-6 opacity-100" : "mr-0 max-w-0 opacity-0"
-                                    }`}
-                                  >
-                                    <Icon className="h-4 w-4 shrink-0" strokeWidth={1.25} />
-                                  </span>
-                                  <FlipText
-                                    className={`font-serif text-xl leading-tight transition-colors duration-300 ${
-                                      on ? "text-ink" : "text-ink/45"
-                                    }`}
-                                  >
-                                    {t(`groups.pages.${key}.navLabel`)}
-                                  </FlipText>
-                                </span>
+                                <FlipText
+                                  className={`font-serif text-xl leading-tight transition-colors duration-300 ${
+                                    on ? "text-ink" : "text-ink/45"
+                                  }`}
+                                >
+                                  {t(`groups.pages.${key}.navLabel`)}
+                                </FlipText>
+                                {/* The offer's icon takes the arrow's place
+                                    and rolls with the label on hover. */}
                                 <span
-                                  className={`text-base text-forest transition-all duration-300 group-hover:translate-x-1 ${
+                                  aria-hidden
+                                  className={`text-forest transition-opacity duration-300 ${
                                     on ? "opacity-100" : "opacity-0"
                                   }`}
                                 >
-                                  →
+                                  <FlipText>
+                                    <Icon className="block h-4 w-4" strokeWidth={1.25} />
+                                  </FlipText>
                                 </span>
                               </Link>
                             </li>
@@ -445,8 +439,8 @@ export default function Header({ bookingUrl }: Props) {
                     group === "attractions"
                       ? t(`attractions.nav.${key}`)
                       : t(`info.nav.${key}`);
-                  return (
-                    <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+                  const quickLinks = (
+                    <div>
                       <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
                         {t(`nav.${openEntry.key}`)}
                       </span>
@@ -467,6 +461,51 @@ export default function Header({ bookingUrl }: Props) {
                           </Link>
                         ))}
                       </div>
+                    </div>
+                  );
+
+                  // Attractions: an "At the hotel" photo tile first (pool,
+                  // sauna, terrace), then the Ticino quick-links.
+                  if (group === "attractions") {
+                    return (
+                      <div className="mx-auto grid max-w-7xl grid-cols-[17rem_1fr] gap-12 px-6 py-10 lg:px-10">
+                        <Link
+                          href="/hotel-attractions"
+                          onClick={() => setOpenMenu(null)}
+                          className="group flex flex-col"
+                        >
+                          <span className="relative block aspect-[4/3] w-full overflow-hidden bg-ink/[0.06]">
+                            <Image
+                              src={SAUNA_IMAGE}
+                              alt={t("hotelAttractions.menu.title")}
+                              fill
+                              sizes="(max-width: 1024px) 0px, 17rem"
+                              className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                            />
+                          </span>
+                          <span className="mt-4 text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
+                            {t("hotelAttractions.menu.eyebrow")}
+                          </span>
+                          <span className="mt-2 flex items-center justify-between gap-3">
+                            <FlipText className="font-serif text-xl leading-tight">
+                              {t("hotelAttractions.menu.title")}
+                            </FlipText>
+                            <span className="text-base text-forest transition-transform duration-300 group-hover:translate-x-1">
+                              →
+                            </span>
+                          </span>
+                          <span className="mt-1 text-sm leading-relaxed text-ink/60">
+                            {t("hotelAttractions.menu.desc")}
+                          </span>
+                        </Link>
+                        {quickLinks}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+                      {quickLinks}
                     </div>
                   );
                 }

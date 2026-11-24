@@ -216,7 +216,7 @@
     "title": "Hotel amenities & comforts",
     "pool": {
       "title": "Swimming Pool",
-      "desc": "Cool off in our outdoor pool with panoramic views of Lake Lugano.",
+      "desc": "Cool off in our indoor pool under a glass roof, with panoramic views of Lake Lugano.",
       "note": "Temporarily closed: 12.10.2026 - 14.03.2027"
     },
     "pet": {
@@ -883,6 +883,91 @@
       "body": "We'll prepare an offer tailored to your group size, dates and programme.",
       "email": "E-mail",
       "phone": "Call"
+    }
+  },
+  "wellness": {
+    "eyebrow": "Wellness",
+    "title": "A private sauna just for you",
+    "intro": "A Finnish sauna for your exclusive use – a moment of warmth and quiet after a day in Ticino.",
+    "imageAlt": "Wooden sauna with a towel and a bucket",
+    "perHour": "per hour",
+    "items": {
+      "exclusive": "For your exclusive use",
+      "price": "CHF 15 per hour",
+      "booking": "Booked at reception"
+    },
+    "note": "To guarantee availability, please book at reception in advance.",
+    "cta": "At the hotel"
+  },
+  "hotelAttractions": {
+    "label": "At the hotel",
+    "seoTitle": "At the hotel: pool, sauna and terrace",
+    "seoDescription": "Indoor pool with jacuzzi, private Finnish sauna, a terrace overlooking Lake Lugano and a garden. Unwind at Hotel Al Ponte in Cademario without leaving the hotel.",
+    "imageAlt": "Hotel terrace at dusk overlooking Lugano and the lake",
+    "eyebrow": "At the hotel",
+    "title": "Unwind without leaving the hotel",
+    "intro": "A pool under a glass roof, a private sauna, a terrace overlooking the lake and a quiet garden. Ticino looks just as good from a sun lounger.",
+    "highlights": {
+      "pool": "Pool with jacuzzi",
+      "sauna": "Private sauna",
+      "terrace": "Panoramic terrace",
+      "garden": "Garden"
+    },
+    "menu": {
+      "eyebrow": "At the hotel",
+      "title": "Relax at the hotel",
+      "desc": "Pool, private sauna, terrace"
+    },
+    "pool": {
+      "eyebrow": "Pool",
+      "title": "Indoor pool under a glass roof",
+      "text": "A pool with jacuzzi under a glass roof, with a sun terrace overlooking the lake right next to it. Free for hotel guests.",
+      "imageAlt": "The hotel's indoor pool and sun terrace with a lake view",
+      "facts": [
+        "Open 8:00–19:30",
+        "Free for guests",
+        "Extra towel CHF 5 · bathrobe CHF 8 at reception"
+      ]
+    },
+    "sauna": {
+      "eyebrow": "Sauna",
+      "title": "Private Finnish sauna",
+      "text": "A sauna for your exclusive use – nobody to interrupt your moment of relaxation.",
+      "tagline": "Benessere · Relax · Rigenerazione",
+      "imageAlt": "Wooden sauna with a towel and a bucket",
+      "facts": [
+        "For your exclusive use",
+        "CHF 15 per hour"
+      ],
+      "note": "To guarantee availability, please book at reception."
+    },
+    "terrace": {
+      "eyebrow": "Terrace",
+      "title": "A terrace with a lake view",
+      "text": "Lake Lugano, the city and the Alps – at sunrise, or in the evening as the lights of Lugano come on.",
+      "imageAlt": "Sunrise over Lugano seen from the hotel",
+      "facts": [
+        "Views of the lake, Lugano and the Alps",
+        "Free Wi-Fi on the terraces and by the pool too"
+      ]
+    },
+    "garden": {
+      "eyebrow": "Garden",
+      "title": "A quiet corner in the garden",
+      "text": "A cascade among the greenery and a peaceful spot for a book, far from the bustle of the city.",
+      "imageAlt": "Cascade in the hotel garden",
+      "facts": []
+    },
+    "breakfast": {
+      "eyebrow": "Breakfast",
+      "title": "A good start to the day",
+      "text": "Breakfast in the breakfast room, every day from 8:00 to 10:00.",
+      "note": "If breakfast is not included in your rate: CHF 12 per person, payable at reception."
+    },
+    "outro": {
+      "title": "And when you feel like going out, Ticino awaits",
+      "text": "The Ticino Ticket is included in your stay and the bus stop is 25 m from the hotel: Lugano, the mountains and the lake are within easy reach.",
+      "cta": "Ticino attractions"
     }
   }
 }
