@@ -26,17 +26,17 @@ export default function Wellness() {
     <section
       id="wellness"
       aria-label={t("eyebrow")}
-      className="bg-sand px-6 py-16 text-ink lg:px-10 lg:py-20"
+      className="bg-sand px-6 py-12 text-ink lg:px-10 lg:py-16"
     >
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[0.9fr_1fr] lg:gap-16"
+        className="mx-auto grid max-w-4xl items-center gap-7 md:grid-cols-[0.8fr_1fr] md:gap-12"
       >
         <div className="relative">
-          <div className="relative aspect-[3/2] w-full overflow-hidden">
+          <div className="relative aspect-[21/9] w-full overflow-hidden md:aspect-[4/3]">
             <Image
               src={SAUNA_IMAGE}
               alt={t("imageAlt")}
@@ -48,7 +48,7 @@ export default function Wellness() {
           <PriceBadge
             perHour={t("perHour")}
             size="sm"
-            className="absolute -bottom-5 right-5 lg:-right-6"
+            className="absolute -bottom-5 right-4 md:-right-5"
           />
         </div>
 
@@ -56,27 +56,27 @@ export default function Wellness() {
           <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-forest">
             {t("eyebrow")}
           </span>
-          <h2 className="mt-4 text-balance font-serif text-2xl leading-tight lg:text-4xl">
+          <h2 className="mt-3 text-balance font-serif text-2xl leading-tight lg:text-3xl">
             {t("title")}
           </h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/70 lg:text-base">
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-ink/70">
             {t("intro")}
           </p>
 
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+          <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
             {ITEMS.map(({ key, Icon }) => (
-              <li key={key} className="inline-flex items-center gap-2 text-sm text-ink/80">
-                <Icon aria-hidden className="h-4 w-4 text-forest" strokeWidth={1.25} />
+              <li key={key} className="inline-flex items-center gap-1.5 text-[13px] text-ink/80">
+                <Icon aria-hidden className="h-3.5 w-3.5 text-forest" strokeWidth={1.25} />
                 {t(`items.${key}`)}
               </li>
             ))}
           </ul>
-          <InfoNote className="mt-4 max-w-md text-ink/55">{t("note")}</InfoNote>
+          <InfoNote className="mt-3 max-w-md text-ink/55">{t("note")}</InfoNote>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link
               href="/hotel-attractions#sauna"
-              className="group inline-flex items-center gap-2 border border-ink/20 px-6 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:border-forest hover:bg-forest hover:text-paper"
+              className="group inline-flex items-center gap-2 border border-ink/20 px-5 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:border-forest hover:bg-forest hover:text-paper"
             >
               <FlipText>{t("details")}</FlipText>
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">

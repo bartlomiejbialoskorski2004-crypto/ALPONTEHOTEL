@@ -12,6 +12,8 @@
   /* Warm beige for the wellness / in-hotel pages (vs. the black-on-white
      Informations page). */
   --color-sand: #f2ebe0;
+  /* Pale sage for the garden band on the in-hotel page. */
+  --color-sage: #edf1ea;
   --color-mist: rgba(10, 10, 10, 0.08);
   --color-overlay: rgba(10, 10, 10, 0.35);
 }

@@ -5,6 +5,7 @@
     "info": "Informazioni",
     "events": "Eventi",
     "attractions": "Attrazione",
+    "regionAttractions": "Attrazioni della regione",
     "gallery": "Galleria",
     "bookNow": "Prenota Ora",
     "language": "Lingua",
@@ -81,7 +82,8 @@
       "greeting": "Buongiorno,",
       "request": "vorrei conoscere disponibilità e prezzo per:",
       "closing": "Cordiali saluti,",
-      "orCall": "Preferisci telefonare?"
+      "orCall": "Preferisci telefonare?",
+      "selfEmail": "Scrivi tu un'e-mail"
     }
   },
   "rooms": {
@@ -1011,6 +1013,7 @@
       "La tariffa più bassa possibile per il vostro soggiorno",
       "Contatto diretto con l'hotel e un servizio personalizzato",
       "Ticino Ticket: trasporto pubblico gratuito in tutto il Canton Ticino"
-    ]
+    ],
+    "or": "oppure"
   }
 }

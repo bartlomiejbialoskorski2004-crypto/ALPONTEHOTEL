@@ -32,7 +32,7 @@ const BLOCKS: {
   { key: "pool", Icon: Waves, image: "/hero1.jpg", bg: "bg-paper", focus: "object-[85%_50%]" },
   { key: "sauna", Icon: Flame, image: SAUNA_IMAGE, bg: "bg-sand" },
   { key: "terrace", Icon: Sunrise, image: "/gallery/4.jpg", bg: "bg-paper" },
-  { key: "garden", Icon: Flower2, image: "/gallery/3.jpg", bg: "bg-sand" },
+  { key: "garden", Icon: Flower2, image: "/gallery/3.jpg", bg: "bg-sage" },
 ];
 
 const container = "mx-auto w-full max-w-6xl px-6 lg:px-10";
@@ -85,10 +85,10 @@ export default async function HotelAttractions() {
         return (
           <section key={key} id={key} className={`${bg} scroll-mt-20`}>
             <div
-              className={`${container} grid items-center gap-10 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28`}
+              className={`${container} grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-14 lg:py-20`}
             >
               <div className={`relative ${flip ? "lg:order-2" : ""}`}>
-                <div className="relative aspect-[3/2] w-full overflow-hidden">
+                <div className="relative aspect-[16/9] w-full overflow-hidden lg:aspect-[3/2]">
                   <Image
                     src={image}
                     alt={b.imageAlt}
@@ -107,23 +107,23 @@ export default async function HotelAttractions() {
 
               <div className="max-w-md">
                 <span className={eyebrow}>{b.eyebrow}</span>
-                <h2 className="mt-4 text-balance font-serif text-3xl leading-tight lg:text-4xl">
+                <h2 className="mt-3 text-balance font-serif text-2xl leading-tight lg:text-3xl">
                   {b.title}
                 </h2>
-                <p className="mt-5 text-base leading-relaxed text-ink/70">{b.text}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{b.text}</p>
                 {b.facts.length > 0 && (
-                  <ul className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
+                  <ul className="mt-5 divide-y divide-ink/10 border-y border-ink/10">
                     {b.facts.map((fact) => (
-                      <li key={fact} className="py-3 text-[15px] text-ink/85">
+                      <li key={fact} className="py-2 text-sm text-ink/85">
                         {fact}
                       </li>
                     ))}
                   </ul>
                 )}
                 {key === "pool" && (
-                  <InfoNote className="mt-5 text-ink/55">{tInfo("pool.closure")}</InfoNote>
+                  <InfoNote className="mt-4 text-ink/55">{tInfo("pool.closure")}</InfoNote>
                 )}
-                {b.note && <InfoNote className="mt-5 text-ink/55">{b.note}</InfoNote>}
+                {b.note && <InfoNote className="mt-4 text-ink/55">{b.note}</InfoNote>}
               </div>
             </div>
           </section>
@@ -132,10 +132,10 @@ export default async function HotelAttractions() {
 
       {/* Breakfast: a quiet text band (no photo of the breakfast room). */}
       <section id="breakfast" className="scroll-mt-20 bg-paper">
-        <div className={`${container} py-20 text-center lg:py-24`}>
+        <div className={`${container} py-12 text-center lg:py-16`}>
           <span className={eyebrow}>{t("breakfast.eyebrow")}</span>
-          <h2 className="mt-4 font-serif text-3xl leading-tight">{t("breakfast.title")}</h2>
-          <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-ink/70">
+          <h2 className="mt-3 font-serif text-2xl leading-tight lg:text-3xl">{t("breakfast.title")}</h2>
+          <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-ink/70">
             {t("breakfast.text")}
           </p>
           <InfoNote className="mx-auto mt-4 w-fit max-w-md text-left text-ink/55">
@@ -147,7 +147,7 @@ export default async function HotelAttractions() {
       {/* Outro: going out is one bus away; or book. */}
       <section className="bg-forest text-paper">
         <div
-          className={`${container} flex flex-col gap-10 py-20 lg:flex-row lg:items-center lg:justify-between lg:py-24`}
+          className={`${container} flex flex-col gap-8 py-14 lg:flex-row lg:items-center lg:justify-between lg:py-20`}
         >
           <div className="max-w-xl">
             <h2 className="font-serif text-3xl leading-tight lg:text-4xl">{t("outro.title")}</h2>

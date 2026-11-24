@@ -17,22 +17,33 @@ export type DirectBookingDetail = { room?: string };
 
 const FORM_ID = "contact-form";
 
-// Booking.com mark: the blue "B." tile + wordmark (brand blue #003580).
+// Booking.com wordmark (brand blue #003580), text only.
 export function BookingLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
   return (
-    <span className="inline-flex items-center gap-1.5 normal-case tracking-normal">
-      <span
-        aria-hidden
-        className="inline-flex h-[1.35em] w-[1.35em] items-center justify-center rounded-[3px] bg-[#003580] font-sans text-[0.8em] font-bold leading-none text-paper"
-      >
-        B.
-      </span>
-      <span
-        className={`font-sans font-bold ${tone === "light" ? "text-paper" : "text-[#003580]"}`}
-      >
-        Booking<span className={tone === "light" ? "text-paper/70" : "text-[#0071c2]"}>.com</span>
-      </span>
+    <span
+      className={`font-sans font-bold normal-case tracking-normal ${
+        tone === "light" ? "text-paper" : "text-[#003580]"
+      }`}
+    >
+      Booking<span className={tone === "light" ? "text-paper/70" : "text-[#0071c2]"}>.com</span>
     </span>
+  );
+}
+
+// The three direct-booking perks as a thin white tab sitting on the top edge
+// of the "Book with us" button (not full width).
+function PerksTab() {
+  const t = useTranslations("booking");
+  const perks = t.raw("perks") as string[];
+  return (
+    <ul className="flex max-w-[calc(100%-1.5rem)] flex-wrap items-center justify-center gap-x-2.5 gap-y-0.5 border border-b-0 border-ink/10 bg-white px-3 py-1 text-[9px] font-medium uppercase leading-snug tracking-[0.12em] text-ink/60">
+      {perks.map((p) => (
+        <li key={p} className="inline-flex items-center gap-1 whitespace-nowrap">
+          <Check aria-hidden className="h-2.5 w-2.5 text-forest" strokeWidth={2} />
+          {p}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -109,8 +120,9 @@ export function DirectBookingLink({
   );
 }
 
-// The two booking buttons as a pair (rooms, footer, in-hotel page, mobile
-// menu): "Book with us" (filled) with its perks, then "Book on Booking.com".
+// The two booking options as a pair (rooms, footer, in-hotel page, mobile
+// menu): the perks tab on top of the filled "Book with us" button, then a
+// quiet borderless "or book on Booking.com".
 export function BookingChoice({
   room,
   tone = "dark",
@@ -124,35 +136,30 @@ export function BookingChoice({
 }) {
   const t = useTranslations("booking");
   const light = tone === "light";
-  const base =
-    "group flex w-full items-center justify-center gap-2 px-5 py-4 text-xs font-medium uppercase tracking-[0.22em] transition-colors duration-300";
   return (
-    <div className={`flex flex-col gap-2.5 ${className}`}>
+    <div className={`flex flex-col items-center ${className}`}>
+      <PerksTab />
       <DirectBookingLink
         room={room}
         onNavigate={onNavigate}
-        className={`${base} ${
-          light ? "bg-paper text-forest hover:bg-paper/90" : "bg-forest text-paper hover:bg-forest-soft"
+        className={`group flex w-full items-center justify-center px-5 py-4 text-xs font-medium uppercase tracking-[0.22em] transition-colors duration-300 ${
+          light ? "bg-paper text-forest hover:bg-white" : "bg-forest text-paper hover:bg-forest-soft"
         }`}
       >
         <FlipText>{t("direct")}</FlipText>
-        <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
-          →
-        </span>
       </DirectBookingLink>
-      <DirectPerks tone={tone} className="py-1" />
       <a
         href={BOOKING}
         target="_blank"
         rel="noopener noreferrer"
         onClick={onNavigate}
-        className={`${base} border ${
-          light
-            ? "border-paper/25 text-paper hover:border-paper"
-            : "border-ink/15 text-ink hover:border-[#003580]"
+        className={`group mt-2 inline-flex items-center justify-center gap-2 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.16em] transition-colors ${
+          light ? "text-paper/75 hover:text-paper" : "text-ink/60 hover:text-ink"
         }`}
       >
-        <span className="whitespace-nowrap text-[10px] tracking-[0.16em]">{t("via")}</span>
+        <span className="whitespace-nowrap underline-offset-4 group-hover:underline">
+          {t("or")} {t("via")}
+        </span>
         <span className="whitespace-nowrap text-[13px]">
           <BookingLogo tone={tone} />
         </span>
@@ -246,17 +253,18 @@ export function BookMenu({ variant = "primary" }: { variant?: MenuVariant }) {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            variants={{ hidden: { transition: { when: "afterChildren" } }, visible: {} }}
+            variants={{
+              // A real animated value so the exit always completes.
+              hidden: { opacity: 0, transition: { when: "afterChildren", duration: 0.08 } },
+              visible: { opacity: 1, transition: { duration: 0.01 } },
+            }}
             className="absolute right-0 top-full z-50 w-80 pt-3"
           >
             <div className="overflow-hidden border border-mist bg-paper text-ink shadow-xl">
               <motion.div custom={0} variants={optionVariants}>
                 <DirectBookingLink className={option} onNavigate={() => setOpen(false)}>
-                  <span className="flex items-center justify-between text-xs font-medium uppercase tracking-[0.2em] text-forest">
+                  <span className="block text-xs font-medium uppercase tracking-[0.2em] text-forest">
                     <FlipText>{t("booking.direct")}</FlipText>
-                    <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
                   </span>
                   <DirectPerks align="start" className="mt-2.5" />
                 </DirectBookingLink>
@@ -271,7 +279,7 @@ export function BookMenu({ variant = "primary" }: { variant?: MenuVariant }) {
                   className={`${option} flex items-center justify-between`}
                 >
                   <span className="flex items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.2em] text-ink/60">
-                    {t("booking.via")}
+                    {t("booking.or")} {t("booking.via")}
                     <span className="text-sm">
                       <BookingLogo />
                     </span>

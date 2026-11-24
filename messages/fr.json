@@ -5,6 +5,7 @@
     "info": "Informations",
     "events": "Événements",
     "attractions": "Attractions",
+    "regionAttractions": "Attractions de la région",
     "gallery": "Galerie",
     "bookNow": "Réserver",
     "language": "Langue",
@@ -81,7 +82,8 @@
       "greeting": "Bonjour,",
       "request": "je souhaiterais connaître la disponibilité et le prix pour :",
       "closing": "Cordialement,",
-      "orCall": "Vous préférez appeler ?"
+      "orCall": "Vous préférez appeler ?",
+      "selfEmail": "Écrire soi-même un e-mail"
     }
   },
   "rooms": {
@@ -1011,6 +1013,7 @@
       "Le tarif le plus bas possible pour votre séjour",
       "Un contact direct avec l'hôtel et un service personnalisé",
       "Ticino Ticket : transports publics gratuits dans tout le canton du Tessin"
-    ]
+    ],
+    "or": "ou"
   }
 }

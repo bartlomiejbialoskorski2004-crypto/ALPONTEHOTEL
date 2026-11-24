@@ -17,26 +17,29 @@ type FlagComponent = ComponentType<{ className?: string; title?: string }>;
 
 // Flag list: a "staircase" reveal in the spirit of the FlipText roll on
 // "Book now" - each flag drops into its own clipped window from above, one
-// after another; on close they roll back up in reverse order. The container
-// itself does not fade, it only waits for the flags to finish leaving.
+// after another; on close they roll back up in reverse order.
+// The flags fade while they move, so no ring/shadow sliver is ever left in
+// the window padding; the container animates a real value (opacity) after
+// its children, so its exit always completes and the popover is removed.
 const EASE = [0.22, 1, 0.36, 1] as const;
-const STEP = 0.08;
+const STEP = 0.07;
 
 const popoverVariants: Variants = {
-  hidden: { transition: { when: "afterChildren" } },
-  visible: {},
+  hidden: { opacity: 0, transition: { when: "afterChildren", duration: 0.08 } },
+  visible: { opacity: 1, transition: { duration: 0.01 } },
 };
 
 // `custom` = [index, count] so open runs top->bottom and close bottom->top.
 const flagItemVariants: Variants = {
-  // -140%: fully above the window even with its 6px padding.
   hidden: ([i, n]: [number, number]) => ({
-    y: "-140%",
-    transition: { duration: 0.3, ease: EASE, delay: (n - 1 - i) * 0.05 },
+    y: "-120%",
+    opacity: 0,
+    transition: { duration: 0.25, ease: EASE, delay: (n - 1 - i) * 0.04 },
   }),
   visible: ([i]: [number, number]) => ({
     y: "0%",
-    transition: { duration: 0.45, ease: EASE, delay: i * STEP },
+    opacity: 1,
+    transition: { duration: 0.4, ease: EASE, delay: i * STEP },
   }),
 };
 

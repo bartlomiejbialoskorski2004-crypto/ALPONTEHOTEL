@@ -5,6 +5,7 @@
     "info": "Informacje",
     "events": "Eventy",
     "attractions": "Atrakcje",
+    "regionAttractions": "Atrakcje w regionie",
     "gallery": "Galeria",
     "bookNow": "Rezerwuj",
     "language": "Język",
@@ -81,7 +82,8 @@
       "greeting": "Dzień dobry,",
       "request": "proszę o informację o dostępności i cenie:",
       "closing": "Pozdrawiam,",
-      "orCall": "Wolisz zadzwonić?"
+      "orCall": "Wolisz zadzwonić?",
+      "selfEmail": "Napisz e-mail samodzielnie"
     }
   },
   "rooms": {
@@ -1011,6 +1013,7 @@
       "Najniższą możliwą cenę za pobyt",
       "Bezpośredni kontakt z hotelem i indywidualną obsługę",
       "Ticino Ticket: bezpłatną komunikację publiczną w całym kantonie Ticino"
-    ]
+    ],
+    "or": "lub"
   }
 }

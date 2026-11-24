@@ -5,6 +5,7 @@
     "info": "Informations",
     "events": "Events",
     "attractions": "Attractions",
+    "regionAttractions": "Around the region",
     "gallery": "Gallery",
     "bookNow": "Book Now",
     "language": "Language",
@@ -81,7 +82,8 @@
       "greeting": "Hello,",
       "request": "I would like to ask about availability and price for:",
       "closing": "Kind regards,",
-      "orCall": "Prefer to call?"
+      "orCall": "Prefer to call?",
+      "selfEmail": "Write your own e-mail"
     }
   },
   "rooms": {
@@ -1011,6 +1013,7 @@
       "The lowest rate possible for your stay",
       "Direct contact with the hotel and personalised service",
       "Ticino Ticket: free public transport in the whole Canton of Ticino"
-    ]
+    ],
+    "or": "or"
   }
 }

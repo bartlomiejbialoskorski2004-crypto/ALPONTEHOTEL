@@ -11,7 +11,6 @@ import {
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
-import { GROUP_ICONS } from "./groupIcons";
 import { BookMenu } from "./booking";
 import FlipText from "./FlipText";
 import LocaleSwitcher from "./LocaleSwitcher";
@@ -372,7 +371,6 @@ export default function Header({ bookingUrl }: Props) {
                         </span>
                         <ul className="mt-4">
                           {GROUP_KEYS.map((key) => {
-                            const Icon = GROUP_ICONS[key];
                             const on = activeEvent === key;
                             return (
                             <li key={key}>
@@ -390,17 +388,13 @@ export default function Header({ bookingUrl }: Props) {
                                 >
                                   {t(`groups.pages.${key}.navLabel`)}
                                 </FlipText>
-                                {/* The offer's icon takes the arrow's place
-                                    and rolls with the label on hover. */}
                                 <span
                                   aria-hidden
-                                  className={`text-forest transition-opacity duration-300 ${
+                                  className={`text-base text-forest transition-all duration-300 group-hover:translate-x-1 ${
                                     on ? "opacity-100" : "opacity-0"
                                   }`}
                                 >
-                                  <FlipText>
-                                    <Icon className="block h-4 w-4" strokeWidth={1.25} />
-                                  </FlipText>
+                                  →
                                 </span>
                               </Link>
                             </li>

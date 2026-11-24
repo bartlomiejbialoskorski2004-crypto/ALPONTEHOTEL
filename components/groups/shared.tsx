@@ -26,7 +26,6 @@ import StripScroll from "./StripScroll";
 import StickyUnderHeader from "./StickyUnderHeader";
 import ParallaxImage from "../ParallaxImage";
 import InfoNote from "../InfoNote";
-import { GROUP_ICONS } from "../groupIcons";
 
 // Building blocks shared by the five group-offer pages. Every page uses the
 // same frame (switcher, hotel-at-a-glance, enquiry) around its own hero and
@@ -159,8 +158,8 @@ export function TextLink({
   );
 }
 
-// Soft fade at both ends of the phone pill strip (no hard cut-off).
-const PILL_FADE =
+// Soft fade at both ends of the phone strip (no hard cut-off).
+const EDGE_FADE =
   "[mask-image:linear-gradient(to_right,transparent,black_24px,black_calc(100%-24px),transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_24px,black_calc(100%-24px),transparent)]";
 
 // Slim strip under each hero listing all five offers, current one marked -
@@ -184,37 +183,11 @@ export async function OfferSwitcher({
           : "border-b border-mist bg-paper/90 backdrop-blur"
       }`}
     >
-      {/* Phones: scrollable pills (icon + label, current one filled) with
-          soft-faded edges instead of a hard cut, current pill centred. */}
-      <StripScroll className={`flex h-full snap-x snap-mandatory items-center gap-2 overflow-x-auto px-6 [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden ${PILL_FADE}`}>
-        {GROUP_KEYS.map((key) => {
-          const active = key === current;
-          const Icon = GROUP_ICONS[key];
-          const pill = active
-            ? dark
-              ? "border-gold bg-gold text-ink"
-              : "border-forest bg-forest text-paper"
-            : dark
-              ? "border-paper/20 text-paper/80"
-              : "border-ink/15 bg-paper text-ink/75";
-          return (
-            <li key={key} className="shrink-0 snap-center">
-              <Link
-                href={GROUP_PAGES[key].href}
-                aria-current={active ? "page" : undefined}
-                className={`flex items-center gap-2 whitespace-nowrap rounded-full border px-3.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors ${pill}`}
-              >
-                <Icon aria-hidden className="h-3.5 w-3.5 shrink-0" strokeWidth={1.5} />
-                {t(`pages.${key}.navLabel`)}
-              </Link>
-            </li>
-          );
-        })}
-      </StripScroll>
-
-      {/* Desktop: the text strip; icon in the arrow's place. */}
-      <div className={`${container} hidden h-full lg:block`}>
-        <StripScroll className="flex h-full justify-between">
+      {/* One text strip for all sizes. Phones: horizontally scrollable with
+          softly faded edges (no hard cut-off) and the current offer centred;
+          desktop: spread across the container. */}
+      <div className="mx-auto h-full w-full max-w-6xl lg:px-10">
+        <StripScroll className={`flex h-full snap-x snap-mandatory gap-7 overflow-x-auto px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${EDGE_FADE} lg:snap-none lg:justify-between lg:gap-0 lg:overflow-visible lg:px-0 lg:[-webkit-mask-image:none] lg:[mask-image:none]`}>
           {GROUP_KEYS.map((key) => {
             const active = key === current;
             const color = active
@@ -222,30 +195,16 @@ export async function OfferSwitcher({
                 ? "text-paper"
                 : "text-forest"
               : dark
-                ? "text-paper/45 hover:text-paper"
-                : "text-ink/45 hover:text-ink";
-            const Icon = GROUP_ICONS[key];
+                ? "text-paper/55 hover:text-paper"
+                : "text-ink/50 hover:text-ink";
             return (
-              <li key={key} className="h-full shrink-0">
+              <li key={key} className="h-full shrink-0 snap-center">
                 <Link
                   href={GROUP_PAGES[key].href}
                   aria-current={active ? "page" : undefined}
                   className={`group relative flex h-full items-center whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.18em] transition-colors ${color}`}
                 >
                   <FlipText>{t(`pages.${key}.navLabel`)}</FlipText>
-                  {/* Offer icon in the arrow's place, right of the label
-                      (absolute, so nothing shifts). Rolls with the label on
-                      hover; always on for the current offer. */}
-                  <span
-                    aria-hidden
-                    className={`absolute -right-5 transition-opacity duration-300 ${
-                      dark ? "text-gold" : "text-forest"
-                    } ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
-                  >
-                    <FlipText>
-                      <Icon className="block h-3.5 w-3.5" strokeWidth={1.25} />
-                    </FlipText>
-                  </span>
                   {active && (
                     <span
                       aria-hidden
