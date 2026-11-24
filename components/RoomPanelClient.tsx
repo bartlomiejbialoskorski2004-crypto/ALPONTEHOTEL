@@ -103,7 +103,8 @@ type Props = {
 
 // Generic room detail panel (Triple-Deluxe visual style without the bespoke
 // features carousel): sticky photo gallery + lightbox, mobile gray card with
-// the title, amenity chips, the 1:1 description, and a magnetic Book Now.
+// the title, amenity chips, the 1:1 description, and the two booking options
+// (direct with the hotel / Booking.com).
 export default function RoomPanelClient({
   id,
   photos,
