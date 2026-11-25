@@ -7,7 +7,8 @@ import { Link } from "@/i18n/navigation";
 // Turns key words in a plain translated string into quiet links to where they
 // are explained: the Ticino Ticket and parking to the Informations page, the
 // pool, sauna and breakfast to "At the hotel". Each word is linked once per
-// string (its first mention). Use only for visible body copy - never inside
+// string (its first mention). No underline - the link only dims on hover, so
+// the copy reads as plain text. Use only for visible body copy - never inside
 // another link, a button, alt/aria text or metadata.
 
 export type Keyword = "ticket" | "pool" | "sauna" | "parking" | "breakfast";
@@ -101,7 +102,7 @@ export default function LinkedText({
         key={`${key}-${m.index}`}
         href={hrefs[key] ?? HREF[key]}
         onClick={onNavigate}
-        className={`underline decoration-current/35 underline-offset-[3px] transition-colors hover:decoration-current ${className}`}
+        className={`transition-opacity duration-300 hover:opacity-60 ${className}`}
       >
         {m[0]}
       </Link>,
