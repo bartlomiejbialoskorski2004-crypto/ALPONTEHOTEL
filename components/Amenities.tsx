@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import InfoNote from "./InfoNote";
+import LinkedText from "./LinkedText";
 import {
   HandHeart,
   Hammer,
@@ -73,10 +74,10 @@ export default function Amenities() {
                 aria-hidden
               />
               <h3 className="mt-5 font-serif text-base leading-tight">
-                {t(`${key}.title`)}
+                <LinkedText text={t(`${key}.title`)} />
               </h3>
               <p className="mt-2 max-w-xs text-xs leading-relaxed text-ink/60">
-                {t(`${key}.desc`)}
+                <LinkedText text={t(`${key}.desc`)} />
               </p>
               {/* Temporary pool closure (12.10.2026 - 14.03.2027). */}
               {key === "pool" && (

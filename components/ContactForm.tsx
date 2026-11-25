@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Check } from "lucide-react";
 import FlipText from "./FlipText";
 import InfoNote from "./InfoNote";
+import LinkedText from "./LinkedText";
 import { EMAIL, MAPS_LINK, PHONE, PHONE_HREF } from "./contact-info";
 import { GROUP_KEYS, type GroupKey } from "./groupPages";
 import { ROOM_DETAILS } from "./roomData";
@@ -121,7 +122,9 @@ export default function ContactForm() {
               {benefits.map((b) => (
                 <li key={b} className="flex gap-2.5 text-sm leading-relaxed text-paper/80">
                   <Check aria-hidden className="mt-1 h-3.5 w-3.5 shrink-0 text-paper" strokeWidth={1.5} />
-                  {b}
+                  <span>
+                    <LinkedText text={b} />
+                  </span>
                 </li>
               ))}
             </ul>

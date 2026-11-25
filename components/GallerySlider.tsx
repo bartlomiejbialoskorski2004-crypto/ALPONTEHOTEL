@@ -18,12 +18,14 @@ const slideVariants = {
   exit: (dir: number) => ({ x: dir > 0 ? "-100%" : "100%", opacity: 0, scale: 1.03 }),
 };
 
+// Dark controls, as in the room lightbox.
 const navBtn =
-  "absolute top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-paper/85 text-ink shadow-sm backdrop-blur-md transition-colors hover:bg-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-forest sm:h-12 sm:w-12";
+  "absolute top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center bg-paper/10 text-paper backdrop-blur-md transition-colors hover:bg-paper/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-paper sm:h-12 sm:w-12";
 
-// Full-screen album viewer for the /gallery page, styled like the room
-// sliders: arrows, "01 / 12" counter, swipe, and a thumbnail strip that keeps
-// the current photo centred. Arrow keys / Escape work; page scroll is locked.
+// Full-screen album viewer for the /gallery page: dark like the room
+// lightbox, with the room slider's motion - arrows, "01 / 12" counter, swipe,
+// and a thumbnail strip that keeps the current photo centred. Arrow keys /
+// Escape work; page scroll is locked.
 export default function GallerySlider({
   title,
   eyebrow,
@@ -95,12 +97,12 @@ export default function GallerySlider({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-0 z-[70] flex flex-col bg-paper text-ink"
+      className="fixed inset-0 z-[70] flex flex-col bg-ink/95 text-paper backdrop-blur"
     >
       <div className="flex shrink-0 items-center justify-between gap-4 px-4 py-3 lg:px-10 lg:py-5">
         <div className="min-w-0">
           {eyebrow && (
-            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-forest">
+            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-paper/60">
               {eyebrow}
             </p>
           )}
@@ -112,13 +114,13 @@ export default function GallerySlider({
           aria-label={t("close")}
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center border border-ink/15 transition-colors hover:border-forest hover:text-forest"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center bg-paper/10 text-paper backdrop-blur-md transition-colors hover:bg-paper/20 sm:h-12 sm:w-12"
         >
           <X size={20} strokeWidth={1.5} />
         </motion.button>
       </div>
 
-      <div className="relative mx-4 min-h-0 flex-1 overflow-hidden bg-ink lg:mx-10">
+      <div className="relative mx-4 min-h-0 flex-1 overflow-hidden lg:mx-10">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
             key={index}
@@ -179,10 +181,10 @@ export default function GallerySlider({
           </>
         )}
 
-        <div className="absolute right-3 top-3 z-10 flex items-center bg-paper/85 px-3 py-1.5 font-serif text-xs tracking-[0.25em] text-ink backdrop-blur-md">
+        <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center font-serif text-sm tracking-[0.3em] text-paper/80">
           <FlipOnChange value={String(index + 1).padStart(2, "0")} />
-          <span className="mx-1 text-ink/40">/</span>
-          <span className="text-ink/60">{String(total).padStart(2, "0")}</span>
+          <span className="mx-2 text-paper/40">/</span>
+          {String(total).padStart(2, "0")}
         </div>
       </div>
 
@@ -199,8 +201,8 @@ export default function GallerySlider({
               onClick={() => jumpTo(i)}
               aria-label={`${i + 1} / ${total}`}
               aria-current={i === index}
-              className={`relative h-12 w-12 shrink-0 overflow-hidden bg-ink/10 transition-all duration-300 sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${
-                i === index ? "opacity-100 ring-2 ring-inset ring-forest" : "opacity-60 hover:opacity-100"
+              className={`relative h-12 w-12 shrink-0 overflow-hidden bg-paper/10 transition-all duration-300 sm:h-14 sm:w-14 lg:h-16 lg:w-16 ${
+                i === index ? "opacity-100 ring-2 ring-inset ring-paper" : "opacity-50 hover:opacity-100"
               }`}
             >
               <Image src={p.src} alt="" fill sizes="64px" className="object-cover" />

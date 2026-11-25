@@ -26,7 +26,7 @@ export default function FlipOnChange({
           animate={{ y: 0 }}
           exit={{ y: "-110%" }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="block whitespace-nowrap"
+          className="block min-w-0 overflow-hidden text-ellipsis whitespace-nowrap"
         >
           {value}
         </motion.span>

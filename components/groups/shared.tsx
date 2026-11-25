@@ -26,6 +26,7 @@ import StripScroll from "./StripScroll";
 import StickyUnderHeader from "./StickyUnderHeader";
 import ParallaxImage from "../ParallaxImage";
 import InfoNote from "../InfoNote";
+import LinkedText from "../LinkedText";
 
 // Building blocks shared by the five group-offer pages. Every page uses the
 // same frame (switcher, hotel-at-a-glance, enquiry) around its own hero and
@@ -120,7 +121,7 @@ export async function OfferHero({ page }: { page: GroupKey }) {
           {p("title")}
         </h1>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-paper/75 lg:text-base">
-          {p("intro")}
+          <LinkedText text={p("intro")} />
         </p>
         <HeroCta className="mt-10" />
       </div>
@@ -338,7 +339,9 @@ export async function HotelAtAGlance() {
           <Row icon={Hotel} label={t("labels.onSite")}>
             <ul className="space-y-1.5">
               {list("onSite").map((line) => (
-                <li key={line}>{line}</li>
+                <li key={line}>
+                  <LinkedText text={line} />
+                </li>
               ))}
             </ul>
             <InfoNote className="mt-4 text-ink/60">

@@ -8,6 +8,11 @@ import InfoNote from "./InfoNote";
 import FlipText from "./FlipText";
 import { BookingChoice } from "./booking";
 import FloatingBadge from "./FloatingBadge";
+import LinkedText, { type Keyword } from "./LinkedText";
+
+// A block never links to itself (the pool text doesn't link "pool").
+const skipOwn = (key: BlockKey): Keyword[] =>
+  key === "pool" || key === "sauna" ? [key] : [];
 import { PriceBadge, SAUNA_IMAGE } from "./wellnessShared";
 import { HERO_TEXT_SCRIM } from "./groups/shared";
 
@@ -112,12 +117,14 @@ export default async function HotelAttractions() {
                 <h2 className="mt-3 text-balance font-serif text-2xl leading-tight lg:text-3xl">
                   {b.title}
                 </h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{b.text}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
+                  <LinkedText text={b.text} skip={skipOwn(key)} />
+                </p>
                 {b.facts.length > 0 && (
                   <ul className="mt-5 divide-y divide-ink/10 border-y border-ink/10">
                     {b.facts.map((fact) => (
                       <li key={fact} className="py-2 text-sm text-ink/85">
-                        {fact}
+                        <LinkedText text={fact} skip={skipOwn(key)} />
                       </li>
                     ))}
                   </ul>
@@ -138,7 +145,7 @@ export default async function HotelAttractions() {
           <span className={eyebrow}>{t("breakfast.eyebrow")}</span>
           <h2 className="mt-3 font-serif text-2xl leading-tight lg:text-3xl">{t("breakfast.title")}</h2>
           <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-ink/70">
-            {t("breakfast.text")}
+            <LinkedText text={t("breakfast.text")} skip={["breakfast"]} />
           </p>
           <InfoNote className="mx-auto mt-4 w-fit max-w-md text-left text-ink/55">
             {t("breakfast.note")}
@@ -153,7 +160,9 @@ export default async function HotelAttractions() {
         >
           <div className="max-w-xl">
             <h2 className="font-serif text-3xl leading-tight lg:text-4xl">{t("outro.title")}</h2>
-            <p className="mt-5 text-base leading-relaxed text-paper/75">{t("outro.text")}</p>
+            <p className="mt-5 text-base leading-relaxed text-paper/75">
+              <LinkedText text={t("outro.text")} />
+            </p>
             <Link
               href="/attractions"
               className="group mt-8 inline-flex items-center gap-2 border border-paper/40 px-6 py-2.5 text-xs font-medium uppercase tracking-[0.2em] text-paper transition-colors hover:bg-paper hover:text-forest"

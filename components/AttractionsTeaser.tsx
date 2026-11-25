@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import FlipText from "./FlipText";
+import LinkedText from "./LinkedText";
 import ParallaxImage from "./ParallaxImage";
 
 // Small homepage band teasing the Discover Ticino attractions page.
@@ -36,7 +37,7 @@ export default function AttractionsTeaser() {
           {t("attractions.title")}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-paper/85 lg:text-base">
-          {t("attractions.intro")}
+          <LinkedText text={t("attractions.intro")} />
         </p>
         <Link
           href="/attractions"

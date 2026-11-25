@@ -314,7 +314,7 @@
     "intro": "Alle unsere Fotos an einem Ort – Zimmer, Hotel, Veranstaltungen und Umgebung. Klicken Sie auf ein Foto, um das Album anzusehen.",
     "categories": {
       "hotel": "Hotel & Aussicht",
-      "events": "Veranstaltungen",
+      "pool": "Pool",
       "region": "Umgebung"
     },
     "photos": "{count, plural, one {# Foto} other {# Fotos}}",

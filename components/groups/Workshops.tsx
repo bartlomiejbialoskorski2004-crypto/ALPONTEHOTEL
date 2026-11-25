@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { GROUP_PAGES, GROUP_VENUES } from "../groupPages";
+import LinkedText from "../LinkedText";
 import {
   Enquiry,
   OfferHero,
@@ -38,7 +39,9 @@ export default async function Workshops() {
                 <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-forest">
                   {s.when}
                 </span>
-                <p className="mt-3 font-serif text-xl leading-snug">{s.what}</p>
+                <p className="mt-3 font-serif text-xl leading-snug">
+                  <LinkedText text={s.what} />
+                </p>
               </li>
             ))}
           </ol>

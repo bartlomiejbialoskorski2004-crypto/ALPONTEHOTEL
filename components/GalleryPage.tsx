@@ -7,8 +7,6 @@ import GalleryAlbum from "./GalleryAlbum";
 import type { GalleryPhoto } from "./GallerySlider";
 import { ROOM_PANELS, type RoomPanel } from "./roomPanels";
 import { ROOM_DETAILS } from "./roomData";
-import { GROUP_PAGES } from "./groupPages";
-import { SAUNA_IMAGE } from "./wellnessShared";
 import { HERO_TEXT_SCRIM } from "./groups/shared";
 
 type Album = { title: string; photos: GalleryPhoto[] };
@@ -20,7 +18,6 @@ const ROOM_CATEGORIES: RoomPanel["categoryKey"][] = [
   "budgetPlus",
   "budget",
 ];
-const EVENT_KEYS = ["conferences", "workshops", "celebrations", "companyEvents"] as const;
 const REGION = ["Lakelugano.jpg", "Oldtown.jpg", "sansalvatore.jpg", "bre.jpg"];
 
 const container = "mx-auto w-full max-w-6xl px-6 lg:px-10";
@@ -30,22 +27,27 @@ const numbered = (name: string, n: number) => (n > 1 ? `${name} (${n})` : name);
 const roomFolder = (id: string) =>
   id === "triple-deluxe" ? "triple-deluxe" : ROOM_DETAILS.find((r) => r.id === id)?.folder;
 
-// /gallery: every photo on the site, grouped - the hotel and its views, the
-// four room categories (one album per room), events and the region. Byte-
-// identical copies are dropped. Thumbnails open the room-style slider.
+// /gallery: the hotel and its views, the pool, the four room categories (one
+// album per room) and the region. Byte-identical copies are dropped.
+// Thumbnails open the room-style slider (dark, like the room lightbox).
 export default async function GalleryPage() {
   const t = await getTranslations();
   const dedupe = createDedupe();
 
   const hotelTitle = t("gallery.categories.hotel");
-  const hotel: GalleryPhoto[] = dedupe([
-    ...[1, 2, 3, 4, 5, 6, 7].map((n) => ({
+  const hotel: GalleryPhoto[] = dedupe(
+    [1, 2, 3, 4, 5, 6, 7].map((n) => ({
       src: `/gallery/${n}.jpg`,
       alt: t(`gallery.items.${n}.title`),
     })),
+  );
+
+  // Pool: the terrace shot with the pool, plus anything dropped into
+  // public/pool/ later (picked up automatically).
+  const poolTitle = t("gallery.categories.pool");
+  const pool: GalleryPhoto[] = dedupe([
     { src: "/hero1.jpg", alt: t("hotelAttractions.pool.imageAlt") },
-    { src: "/Hero2.jpg", alt: hotelTitle },
-    { src: SAUNA_IMAGE, alt: t("wellness.imageAlt") },
+    ...listPhotos("pool").map((src, i) => ({ src, alt: numbered(poolTitle, i + 2) })),
   ]);
 
   const rooms: Category[] = ROOM_CATEGORIES.map((cat) => ({
@@ -67,14 +69,6 @@ export default async function GalleryPage() {
     }),
   }));
 
-  const eventsTitle = t("gallery.categories.events");
-  const events: GalleryPhoto[] = dedupe(
-    EVENT_KEYS.map((k) => ({
-      src: GROUP_PAGES[k].image,
-      alt: t(`groups.pages.${k}.imageAlt`),
-    })),
-  );
-
   const regionTitle = t("gallery.categories.region");
   const region: GalleryPhoto[] = dedupe(
     REGION.map((f, i) => ({ src: `/mega/${f}`, alt: numbered(regionTitle, i + 1) })),
@@ -83,8 +77,8 @@ export default async function GalleryPage() {
   const label = t("gallery.label");
   const categories: Category[] = [
     { id: "hotel", title: hotelTitle, eyebrow: label, albums: [{ title: hotelTitle, photos: hotel }] },
+    { id: "pool", title: poolTitle, eyebrow: label, albums: [{ title: poolTitle, photos: pool }] },
     ...rooms,
-    { id: "events", title: eventsTitle, eyebrow: label, albums: [{ title: eventsTitle, photos: events }] },
     { id: "region", title: regionTitle, eyebrow: label, albums: [{ title: regionTitle, photos: region }] },
   ]
     .map((c) => ({ ...c, albums: c.albums.filter((a) => a.photos.length > 0) }))
@@ -128,7 +122,7 @@ export default async function GalleryPage() {
         <section
           key={c.id}
           id={c.id}
-          className={`${i % 2 === 1 ? "bg-sand" : "bg-paper"} scroll-mt-20`}
+          className={`scroll-mt-20 bg-paper ${i > 0 ? "border-t border-ink/10" : ""}`}
         >
           <div className={`${container} py-12 lg:py-16`}>
             <div className="flex items-end justify-between gap-6">

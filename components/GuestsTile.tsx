@@ -1,52 +1,39 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Users } from "lucide-react";
 import { ROOM_PANELS } from "./roomPanels";
-import { getRoomDocked, subscribeRoomDocked } from "./roomDockStore";
+import StickyUnderHeader from "./groups/StickyUnderHeader";
 
-// Small capacity tile (people icon + max guests) at the top of a room panel.
-// Once it scrolls up under the RoomNav bar it lifts away "into" the bar, where
-// the same figure appears as a chip; scrolling back brings it out again.
-// The outer span stays static so RoomNav can measure it (`data-guests`).
-export default function GuestsTile({
-  panelId,
-  className = "",
-}: {
-  panelId: string;
-  className?: string;
-}) {
+// Max-guests tile of one room panel. It sits in an overlay that mirrors the
+// panel grid, at the same X as the empty slot in the RoomNav bar, and is
+// `sticky`: it scrolls up with the room, stops in the bar's slot (vertically
+// centred in the h-14 row, 14px below the header - or the top once the header
+// hides) and leaves with the end of its section. No horizontal jump, ever.
+// Render it as the first child of the (relative) room <section>.
+export default function GuestsTile({ panelId }: { panelId: string }) {
   const t = useTranslations("rooms");
-  const reduceMotion = useReducedMotion();
-  const index = ROOM_PANELS.findIndex((p) => p.id === panelId);
-  const count = ROOM_PANELS[index]?.maxGuests;
-  const [dockedIndex, setDockedIndex] = useState(-1);
-
-  useEffect(() => {
-    setDockedIndex(getRoomDocked());
-    return subscribeRoomDocked(setDockedIndex);
-  }, []);
-
+  const count = ROOM_PANELS.find((p) => p.id === panelId)?.maxGuests;
   if (!count) return null;
-  const docked = index <= dockedIndex;
-  const label = t("maxGuests", { count });
 
   return (
-    <span data-guests={panelId} className={`inline-flex ${className}`}>
-      <motion.span
-        initial={false}
-        animate={docked ? { opacity: 0, y: -10 } : { opacity: 1, y: 0 }}
-        transition={{ duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
-        title={label}
-        aria-label={label}
-        role="img"
-        className="inline-flex items-center gap-1.5 border border-ink/15 bg-paper/70 px-2 py-1 text-[11px] tabular-nums leading-none text-ink/70"
-      >
-        <Users aria-hidden size={12} strokeWidth={1.5} />
-        {count}
-      </motion.span>
-    </span>
+    <div className="pointer-events-none absolute inset-0 z-[35] px-6 lg:px-10">
+      <div className="mx-auto h-full max-w-7xl lg:grid lg:grid-cols-2 lg:gap-10">
+        <div className="flex h-full flex-col items-end pr-4 lg:pr-3">
+          {/* In-flow offset: the top-right of the mobile card / desktop panel. */}
+          <div aria-hidden className="h-[90px] shrink-0 lg:h-[124px]" />
+          <StickyUnderHeader className="pt-3.5">
+            <span
+              role="img"
+              aria-label={t("maxGuests", { count })}
+              className="inline-flex h-7 w-12 items-center justify-center gap-1.5 border border-ink/15 bg-paper text-[11px] tabular-nums leading-none text-ink/70"
+            >
+              <Users aria-hidden size={12} strokeWidth={1.5} />
+              {count}
+            </span>
+          </StickyUnderHeader>
+        </div>
+      </div>
+    </div>
   );
 }

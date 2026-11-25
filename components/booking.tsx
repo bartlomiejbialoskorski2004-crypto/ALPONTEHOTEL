@@ -5,6 +5,7 @@ import { AnimatePresence, motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Check } from "lucide-react";
 import FlipText from "./FlipText";
+import LinkedText from "./LinkedText";
 import { getLenis } from "./lenisStore";
 import { useAnchor } from "./useAnchor";
 import { BOOKING } from "./contact-info";
@@ -31,16 +32,17 @@ export function BookingLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
 }
 
 // The three direct-booking perks as a thin white tab sitting on the top edge
-// of the "Book with us" button (not full width).
-function PerksTab() {
+// of the "Book with us" button (not full width): centred on phones, slightly
+// left from sm up. "Ticino Ticket" links to its explanation.
+function PerksTab({ onNavigate }: { onNavigate?: () => void }) {
   const t = useTranslations("booking");
   const perks = t.raw("perks") as string[];
   return (
-    <ul className="ml-4 flex max-w-[calc(100%-2rem)] flex-wrap items-center gap-x-2.5 self-start gap-y-0.5 border border-b-0 border-ink/10 bg-white px-3 py-1 text-[9px] font-medium uppercase leading-snug tracking-[0.12em] text-ink/60">
+    <ul className="flex max-w-[calc(100%-2rem)] flex-wrap items-center justify-center gap-x-2.5 gap-y-0.5 self-center border border-b-0 border-ink/10 bg-white px-3 py-1 text-[9px] font-medium uppercase leading-snug tracking-[0.12em] text-ink/60 sm:ml-4 sm:justify-start sm:self-start">
       {perks.map((p) => (
         <li key={p} className="inline-flex items-center gap-1 whitespace-nowrap">
           <Check aria-hidden className="h-2.5 w-2.5 text-forest" strokeWidth={2} />
-          {p}
+          <LinkedText text={p} onNavigate={onNavigate} />
         </li>
       ))}
     </ul>
@@ -155,7 +157,7 @@ export function BookingChoice({
   const light = tone === "light";
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      {perks && <PerksTab />}
+      {perks && <PerksTab onNavigate={onNavigate} />}
       <DirectBookingLink
         room={room}
         onNavigate={onNavigate}
@@ -170,7 +172,7 @@ export function BookingChoice({
         target="_blank"
         rel="noopener noreferrer"
         onClick={onNavigate}
-        className={`group mt-1 flex w-full items-center justify-center px-3 py-2.5 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors ${
+        className={`group flex w-full items-center justify-center px-3 py-3 text-[10px] font-medium uppercase tracking-[0.14em] transition-colors ${
           light ? "text-paper/75 hover:text-paper" : "text-ink/60 hover:text-ink"
         }`}
       >
@@ -270,7 +272,7 @@ export function BookMenu({ variant = "primary" }: { variant?: MenuVariant }) {
             <div className="overflow-hidden">
               <motion.div
                 variants={sheetVariants}
-                className="border border-mist bg-paper p-4 text-ink shadow-xl"
+                className="border border-mist bg-paper px-4 pt-4 text-ink shadow-xl"
               >
                 <motion.div custom={0} variants={optionVariants}>
                   <DirectBookingLink
@@ -281,14 +283,14 @@ export function BookMenu({ variant = "primary" }: { variant?: MenuVariant }) {
                   </DirectBookingLink>
                   <DirectPerks align="start" className="mt-3" />
                 </motion.div>
-                <motion.div custom={1} variants={optionVariants} className="mt-3 border-t border-mist pt-1">
+                <motion.div custom={1} variants={optionVariants} className="mt-3 border-t border-mist">
                   <a
                     href={BOOKING}
                     target="_blank"
                     rel="noopener noreferrer"
                     role="menuitem"
                     onClick={() => setOpen(false)}
-                    className="group flex w-full items-center justify-center px-3 py-2.5 text-[10px] font-medium uppercase tracking-[0.14em] text-ink/60 transition-colors hover:text-ink"
+                    className="group flex w-full items-center justify-center px-3 py-3.5 text-[10px] font-medium uppercase tracking-[0.14em] text-ink/60 transition-colors hover:text-ink"
                   >
                     <BookingLine />
                   </a>

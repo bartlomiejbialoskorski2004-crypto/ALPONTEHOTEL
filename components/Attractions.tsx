@@ -3,6 +3,7 @@ import PageToc, { BackToTop, type TocSection } from "./PageToc";
 import ParallaxImage from "./ParallaxImage";
 import EditorialSection, { type EditorialItem } from "./EditorialSection";
 import FlipText from "./FlipText";
+import LinkedText from "./LinkedText";
 import { Link } from "@/i18n/navigation";
 
 type Section = { title: string; items: EditorialItem[] };
@@ -61,7 +62,7 @@ export default async function Attractions() {
             {t("title")}
           </h1>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-paper/85 lg:text-base">
-            {t("intro")}
+            <LinkedText text={t("intro")} />
           </p>
         </div>
       </section>
@@ -111,7 +112,7 @@ export default async function Attractions() {
 
           <div className="mt-20 flex flex-col items-center border-t border-mist pt-16 text-center lg:mt-28 lg:pt-24">
             <p className="max-w-prose font-serif text-xl italic leading-relaxed text-ink/80 lg:text-2xl">
-              {t("closing")}
+              <LinkedText text={t("closing")} />
             </p>
             {/* Cross-link to the in-hotel page (not in the mobile menu). */}
             <Link

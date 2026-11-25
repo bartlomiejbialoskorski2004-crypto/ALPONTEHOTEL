@@ -314,7 +314,7 @@
     "intro": "Tutte le nostre foto in un unico posto: camere, hotel, eventi e dintorni. Clicca su una foto per sfogliare l'album.",
     "categories": {
       "hotel": "Hotel e panorami",
-      "events": "Eventi",
+      "pool": "Piscina",
       "region": "Dintorni"
     },
     "photos": "{count, plural, one {# foto} other {# foto}}",

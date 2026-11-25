@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { LinkRow, type LinkItem } from "./ResourceLink";
+import LinkedText from "./LinkedText";
 
 export type EditorialItem = {
   heading?: string;
@@ -62,7 +63,7 @@ function Body({ title, num, items }: Pick<Props, "title" | "num" | "items">) {
                 item.heading ? "mt-2" : ""
               }`}
             >
-              {item.text}
+              <LinkedText text={item.text} />
             </p>
             <LinkRow links={item.links} />
           </div>

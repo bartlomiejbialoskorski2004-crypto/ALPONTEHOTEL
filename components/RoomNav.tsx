@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Users } from "lucide-react";
 import { getLenis } from "./lenisStore";
 import { getHeaderHidden, subscribeHeaderHidden } from "./headerStore";
-import { setRoomDocked } from "./roomDockStore";
 import { ROOM_PANELS } from "./roomPanels";
 import FlipOnChange from "./FlipOnChange";
 
@@ -43,8 +41,6 @@ export default function RoomNav() {
   const reduceMotion = useReducedMotion();
   const [visible, setVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [docked, setDocked] = useState(-1);
-  const navRef = useRef<HTMLElement>(null);
   // Follow the main header: when it slides away on scroll-down, this bar rides
   // up by the header height so it docks at the top instead of floating below a
   // gap; it drops back under the header when the header returns.
@@ -65,7 +61,6 @@ export default function RoomNav() {
   }, []);
 
   useEffect(() => {
-    let timer = 0;
     const compute = () => {
       const vh = window.innerHeight;
       const probe = HEADER_OFFSET + 80;
@@ -92,44 +87,16 @@ export default function RoomNav() {
 
       if (!anyPresent) {
         setVisible(false);
-        setRoomDocked(-1);
         return;
       }
-      const isVisible = firstTop <= vh * 0.6 && lastBottom >= HEADER_OFFSET + 8;
-      setVisible(isVisible);
+      setVisible(firstTop <= vh * 0.6 && lastBottom >= HEADER_OFFSET + 8);
       setActiveIndex(active);
-
-      // Capacity tiles: the last one that has scrolled up under the bar is
-      // "docked" (shown as the bar's chip). Measures the visible copy only.
-      let dockedAt = -1;
-      const nav = navRef.current;
-      if (isVisible && nav) {
-        const navBottom = nav.getBoundingClientRect().bottom;
-        ROOM_PANELS.forEach((p, i) => {
-          document
-            .querySelectorAll<HTMLElement>(`[data-guests="${p.id}"]`)
-            .forEach((el) => {
-              if (el.getClientRects().length === 0) return;
-              if (el.getBoundingClientRect().top < navBottom) dockedAt = i;
-            });
-        });
-      }
-      setRoomDocked(dockedAt);
-      setDocked(dockedAt);
     };
-
-    // The bar rides up/down with the header; re-measure once that settles.
-    const unsubscribe = subscribeHeaderHidden(() => {
-      window.clearTimeout(timer);
-      timer = window.setTimeout(compute, 450);
-    });
 
     compute();
     window.addEventListener("scroll", compute, { passive: true });
     window.addEventListener("resize", compute);
     return () => {
-      unsubscribe();
-      window.clearTimeout(timer);
       window.removeEventListener("scroll", compute);
       window.removeEventListener("resize", compute);
     };
@@ -137,10 +104,6 @@ export default function RoomNav() {
 
   const active = ROOM_PANELS[activeIndex] ?? ROOM_PANELS[0];
   if (!active) return null;
-  const dockedPanel = docked >= 0 ? ROOM_PANELS[docked] : undefined;
-  const guestsLabel = dockedPanel
-    ? t("rooms.maxGuests", { count: dockedPanel.maxGuests })
-    : "";
 
   // Position within the active room's category (e.g. 1/3 Apartments), not the
   // global 1/10. ROOM_PANELS is grouped contiguously by category.
@@ -151,6 +114,29 @@ export default function RoomNav() {
     0,
     catRooms.findIndex((p) => p.id === active.id),
   );
+
+  // Per-category position dashes (current one long).
+  const dashes =
+    catRooms.length > 1 ? (
+      <div className="flex shrink-0 items-center gap-2">
+        {catRooms.map((p, i) => (
+          <button
+            key={p.id}
+            type="button"
+            onClick={() => scrollToRoom(p.id)}
+            aria-label={t(p.nameKey)}
+            aria-current={i === posInCat}
+            className="group flex h-4 items-center"
+          >
+            <span
+              className={`block h-[2px] transition-all duration-300 ${
+                i === posInCat ? "w-6 bg-forest" : "w-3 bg-ink/30 group-hover:bg-ink/50"
+              }`}
+            />
+          </button>
+        ))}
+      </div>
+    ) : null;
 
   return (
     // Outer wrapper owns the header-follow lift (in px). The inner nav keeps its
@@ -163,7 +149,6 @@ export default function RoomNav() {
       className="pointer-events-none fixed inset-x-0 top-0 z-30"
     >
     <motion.nav
-      ref={navRef}
       aria-label={t("nav.rooms")}
       initial={false}
       animate={
@@ -175,70 +160,38 @@ export default function RoomNav() {
       style={{ pointerEvents: visible ? "auto" : "none" }}
       className="relative mt-20 border-b border-mist bg-paper/90 backdrop-blur lg:mt-24"
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2.5 lg:px-10">
-        <div className="flex min-w-0 items-center gap-3">
-          <button
-            type="button"
-            onClick={() => scrollToRoom(active.id)}
-            className="flex min-w-0 flex-col items-start text-left"
-          >
-            <FlipOnChange
-              value={t(`mega.rooms.${active.categoryKey}.title`)}
-              className="text-[10px] font-medium uppercase tracking-[0.25em] text-forest"
-            />
-            <FlipOnChange
-              value={t(active.nameKey)}
-              className="max-w-full font-serif text-sm leading-tight text-ink sm:text-base"
-            />
-          </button>
-          {/* Capacity tile docked from the room panel below. */}
-          <AnimatePresence initial={false}>
-            {dockedPanel && (
-              <motion.span
-                key="guests"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: reduceMotion ? 0 : 0.35, ease: [0.22, 1, 0.36, 1] }}
-                title={guestsLabel}
-                aria-label={guestsLabel}
-                role="img"
-                className="inline-flex shrink-0 items-center gap-1.5 border border-ink/15 bg-paper/70 px-2 py-1 text-[11px] tabular-nums leading-none text-ink/70"
-              >
-                <Users aria-hidden size={12} strokeWidth={1.5} />
-                <FlipOnChange value={dockedPanel.maxGuests} />
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </div>
+      {/* Same grid as the room panels (px-6/lg:px-10 > max-w-7xl > 2 cols), so
+          the empty slot lines up with each panel's sticky max-guests tile
+          (GuestsTile), which stops right here instead of jumping across. */}
+      <div className="px-6 lg:px-10">
+        <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 lg:grid lg:grid-cols-2 lg:gap-10 lg:px-0">
+          <div className="flex min-w-0 flex-1 items-center gap-3 lg:pl-12 lg:pr-3">
+            <button
+              type="button"
+              onClick={() => scrollToRoom(active.id)}
+              className="flex min-w-0 flex-1 flex-col items-start overflow-hidden text-left"
+            >
+              <FlipOnChange
+                value={t(`mega.rooms.${active.categoryKey}.title`)}
+                className="text-[10px] font-medium uppercase tracking-[0.25em] text-forest"
+              />
+              <FlipOnChange
+                value={t(active.nameKey)}
+                className="max-w-full font-serif text-sm leading-tight text-ink sm:text-base"
+              />
+            </button>
+            <div className="lg:hidden">{dashes}</div>
+            {/* Slot for the docked max-guests tile (rendered by the panel). */}
+            <span aria-hidden className="block h-7 w-12 shrink-0" />
+          </div>
 
-        <div className="flex shrink-0 items-center gap-3">
-          {catRooms.length > 1 && (
-            <div className="flex items-center gap-2">
-              {catRooms.map((p, i) => (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => scrollToRoom(p.id)}
-                  aria-label={t(p.nameKey)}
-                  aria-current={i === posInCat}
-                  className="group flex h-4 items-center"
-                >
-                  <span
-                    className={`block h-[2px] transition-all duration-300 ${
-                      i === posInCat
-                        ? "w-6 bg-forest"
-                        : "w-3 bg-ink/30 group-hover:bg-ink/50"
-                    }`}
-                  />
-                </button>
-              ))}
-            </div>
-          )}
-          <span className="flex items-center text-[11px] tabular-nums tracking-[0.15em] text-ink/45">
-            <FlipOnChange value={String(posInCat + 1).padStart(2, "0")} />/
-            {String(catRooms.length).padStart(2, "0")}
-          </span>
+          <div className="hidden items-center justify-end gap-3 lg:flex">
+            {dashes}
+            <span className="flex items-center text-[11px] tabular-nums tracking-[0.15em] text-ink/45">
+              <FlipOnChange value={String(posInCat + 1).padStart(2, "0")} />/
+              {String(catRooms.length).padStart(2, "0")}
+            </span>
+          </div>
         </div>
       </div>
     </motion.nav>

@@ -4,6 +4,7 @@ import ParallaxImage from "./ParallaxImage";
 import DownloadLink from "./DownloadLink";
 import InfoNote from "./InfoNote";
 import FlipText from "./FlipText";
+import LinkedText from "./LinkedText";
 import { Link } from "@/i18n/navigation";
 import { GROUP_KEYS, GROUP_PAGES } from "./groupPages";
 
@@ -180,7 +181,7 @@ export default async function Informations() {
                   key={k}
                   className="py-4 text-base leading-relaxed text-ink/80 tabular-nums"
                 >
-                  {t(`hours.${k}`)}
+                  <LinkedText text={t(`hours.${k}`)} />
                 </p>
               ))}
             </div>
@@ -217,19 +218,25 @@ export default async function Informations() {
             <p className="mt-8 max-w-prose border-l-2 border-forest pl-6 text-base font-medium leading-relaxed text-forest lg:pl-8">
               {t("pool.closure")}
             </p>
-            <p className={sectionBody}>{t("pool.body")}</p>
+            <p className={sectionBody}>
+              <LinkedText text={t("pool.body")} skip={["pool"]} />
+            </p>
             <HotelLink hash="pool" label={tHotel("label")} />
           </section>
 
           <section id="sauna" className={block}>
             <SectionHead num={num("sauna")} title={t("sauna.title")} />
-            <p className={sectionBody}>{t("sauna.body")}</p>
+            <p className={sectionBody}>
+              <LinkedText text={t("sauna.body")} skip={["sauna"]} />
+            </p>
             <HotelLink hash="sauna" label={tHotel("label")} />
           </section>
 
           <section id="parking" className={block}>
             <SectionHead num={num("parking")} title={t("parking.title")} />
-            <p className={sectionBody}>{t("parking.body")}</p>
+            <p className={sectionBody}>
+              <LinkedText text={t("parking.body")} skip={["parking"]} />
+            </p>
           </section>
 
           <section id="tax" className={block}>
@@ -257,7 +264,7 @@ export default async function Informations() {
                         isWarning ? "text-ink" : "text-ink/85"
                       }`}
                     >
-                      {t(`services.items.${k}`)}
+                      <LinkedText text={t(`services.items.${k}`)} />
                     </p>
                   </li>
                 );
@@ -272,7 +279,10 @@ export default async function Informations() {
 
           <section id="transport" className={block}>
             <SectionHead num={num("transport")} title={t("transport.title")} />
-            <p className={sectionBody}>{t("transport.body")}</p>
+            <p className={sectionBody}>
+              {/* Already the Ticino Ticket info - point to what it unlocks. */}
+              <LinkedText text={t("transport.body")} hrefs={{ ticket: "/attractions#ticket" }} />
+            </p>
           </section>
 
           <section id="requests" className={block}>

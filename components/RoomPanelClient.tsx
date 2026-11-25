@@ -235,8 +235,9 @@ export default function RoomPanelClient({
     <section
       id={id}
       aria-labelledby={titleId}
-      className="scroll-mt-28 bg-paper px-6 pb-16 pt-24 text-ink sm:py-24 lg:scroll-mt-36 lg:px-10 lg:py-32"
+      className="relative scroll-mt-28 bg-paper px-6 pb-16 pt-24 text-ink sm:py-24 lg:scroll-mt-36 lg:px-10 lg:py-32"
     >
+      <GuestsTile panelId={id} />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-10">
         {/* Content panel */}
         <motion.div
@@ -247,9 +248,6 @@ export default function RoomPanelClient({
           className="order-3 flex flex-col bg-mist lg:order-none lg:col-start-1 lg:row-start-1"
         >
           <div className="flex flex-1 flex-col px-4 pb-6 pt-1 sm:px-8 sm:pb-8 lg:p-12">
-            <motion.div variants={fadeUp} className="mb-4 hidden justify-center lg:flex">
-              <GuestsTile panelId={id} />
-            </motion.div>
             <motion.h2
               id={titleId}
               variants={fadeUp}
@@ -370,12 +368,9 @@ export default function RoomPanelClient({
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="lg:hidden"
           >
-            <div className="mb-1.5 flex items-center justify-between gap-3">
-              <p className="text-[9px] font-medium uppercase tracking-[0.2em] text-forest/70">
-                {t(`mega.rooms.${categoryKey}.title`)}
-              </p>
-              <GuestsTile panelId={id} />
-            </div>
+            <p className="mb-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-forest/70">
+              {t(`mega.rooms.${categoryKey}.title`)}
+            </p>
             <h2 className="text-left font-serif text-3xl uppercase leading-[1.05] tracking-tight text-ink">
               {t(`rooms.items.${ns}.name`)}
             </h2>
